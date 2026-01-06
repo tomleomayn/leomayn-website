@@ -56,5 +56,10 @@ dist/
 build/
 *.map
 
+# Next.js
+.next/
+out/
+next-env.d.ts
+
 # Private documentation and working files
 docs-git-ignore/
