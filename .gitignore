@@ -1,0 +1,60 @@
+# WordPress core files
+wp-admin/
+wp-includes/
+wp-*.php
+xmlrpc.php
+license.txt
+readme.html
+
+# WordPress config
+wp-config.php
+wp-config-local.php
+
+# WordPress cache and uploads
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/upgrade/
+
+# Plugin and theme files (only custom theme tracked)
+wp-content/plugins/
+wp-content/themes/twenty*/
+
+# Log files
+*.log
+error_log
+debug.log
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.local
+
+# Node modules (if using build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build files
+dist/
+build/
+*.map
+
+# Private documentation and working files
+docs-git-ignore/
