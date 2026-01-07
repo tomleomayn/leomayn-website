@@ -285,7 +285,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Working automation in weeks
+                Working automation creating impact
               </p>
             </div>
             <div className="text-center">
@@ -297,17 +297,17 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Support</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Keep systems optimised as you grow
+                Systems optimised and teams supported as you grow
               </p>
             </div>
           </div>
           <div className="text-center">
             <Link
               href="/services"
-              onClick={() => trackCTAClick('See the Full Framework', 'solution_section', '/services')}
+              onClick={() => trackCTAClick('See our full services', 'solution_section', '/services')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
             >
-              See the Full Framework
+              See our full services
             </Link>
           </div>
         </div>
