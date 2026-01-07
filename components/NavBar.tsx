@@ -44,7 +44,7 @@ export default function NavBar() {
               </Link>
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 -mt-px w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div className="absolute top-full left-0 mt-[1px] w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <Link href="/services/diagnose" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Diagnose
                 </Link>
