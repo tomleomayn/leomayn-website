@@ -1,10 +1,10 @@
 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Magnifying glass circle -->
-  <circle cx="85" cy="85" r="45" stroke="#1a3d56" stroke-width="3" fill="none"/>
+  <!-- Magnifying glass lens -->
+  <circle cx="80" cy="80" r="42" stroke="#1a3d56" stroke-width="5" fill="none"/>
 
-  <!-- Handle -->
-  <line x1="120" y1="120" x2="155" y2="155" stroke="#1a3d56" stroke-width="3" stroke-linecap="round"/>
+  <!-- Handle - properly connected to lens at angle -->
+  <line x1="112.73" y1="112.73" x2="155" y2="155" stroke="#1a3d56" stroke-width="5" stroke-linecap="round"/>
 
-  <!-- Highlighted dot inside lens -->
-  <circle cx="85" cy="85" r="8" fill="#9ab8cb"/>
+  <!-- Highlight dot inside lens -->
+  <circle cx="80" cy="80" r="10" fill="#9ab8cb"/>
 </svg>

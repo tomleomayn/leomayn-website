@@ -1,25 +1,39 @@
 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Left gear (slate) -->
-  <circle cx="75" cy="100" r="35" stroke="#1a3d56" stroke-width="3" fill="none"/>
-  <!-- Teeth for left gear -->
-  <circle cx="75" cy="65" r="4" fill="#1a3d56"/>
-  <circle cx="95" cy="78" r="4" fill="#1a3d56"/>
-  <circle cx="102" cy="100" r="4" fill="#1a3d56"/>
-  <circle cx="95" cy="122" r="4" fill="#1a3d56"/>
-  <circle cx="75" cy="135" r="4" fill="#1a3d56"/>
-  <circle cx="55" cy="122" r="4" fill="#1a3d56"/>
-  <circle cx="48" cy="100" r="4" fill="#1a3d56"/>
-  <circle cx="55" cy="78" r="4" fill="#1a3d56"/>
+  <!-- Left gear (slate) - gear teeth as a proper gear shape -->
+  <g>
+    <!-- Main circle -->
+    <circle cx="75" cy="100" r="28" stroke="#1a3d56" stroke-width="5" fill="none"/>
+
+    <!-- Gear teeth - 8 teeth around the circle -->
+    <rect x="73" y="62" width="4" height="10" fill="#1a3d56"/>
+    <rect x="95.85" y="73.35" width="4" height="10" fill="#1a3d56" transform="rotate(45 97.85 78.35)"/>
+    <rect x="107" y="98" width="4" height="10" fill="#1a3d56" transform="rotate(90 109 103)"/>
+    <rect x="95.85" y="122.65" width="4" height="10" fill="#1a3d56" transform="rotate(135 97.85 127.65)"/>
+    <rect x="73" y="128" width="4" height="10" fill="#1a3d56"/>
+    <rect x="50.15" y="122.65" width="4" height="10" fill="#1a3d56" transform="rotate(-135 52.15 127.65)"/>
+    <rect x="39" y="98" width="4" height="10" fill="#1a3d56" transform="rotate(-90 41 103)"/>
+    <rect x="50.15" y="73.35" width="4" height="10" fill="#1a3d56" transform="rotate(-45 52.15 78.35)"/>
+
+    <!-- Center hole -->
+    <circle cx="75" cy="100" r="8" fill="#1a3d56"/>
+  </g>
 
   <!-- Right gear (rock blue) -->
-  <circle cx="125" cy="100" r="35" stroke="#9ab8cb" stroke-width="3" fill="none"/>
-  <!-- Teeth for right gear -->
-  <circle cx="125" cy="65" r="4" fill="#9ab8cb"/>
-  <circle cx="145" cy="78" r="4" fill="#9ab8cb"/>
-  <circle cx="152" cy="100" r="4" fill="#9ab8cb"/>
-  <circle cx="145" cy="122" r="4" fill="#9ab8cb"/>
-  <circle cx="125" cy="135" r="4" fill="#9ab8cb"/>
-  <circle cx="105" cy="122" r="4" fill="#9ab8cb"/>
-  <circle cx="98" cy="100" r="4" fill="#9ab8cb"/>
-  <circle cx="105" cy="78" r="4" fill="#9ab8cb"/>
+  <g>
+    <!-- Main circle -->
+    <circle cx="125" cy="100" r="28" stroke="#9ab8cb" stroke-width="5" fill="none"/>
+
+    <!-- Gear teeth - 8 teeth around the circle -->
+    <rect x="123" y="62" width="4" height="10" fill="#9ab8cb"/>
+    <rect x="145.85" y="73.35" width="4" height="10" fill="#9ab8cb" transform="rotate(45 147.85 78.35)"/>
+    <rect x="157" y="98" width="4" height="10" fill="#9ab8cb" transform="rotate(90 159 103)"/>
+    <rect x="145.85" y="122.65" width="4" height="10" fill="#9ab8cb" transform="rotate(135 147.85 127.65)"/>
+    <rect x="123" y="128" width="4" height="10" fill="#9ab8cb"/>
+    <rect x="100.15" y="122.65" width="4" height="10" fill="#9ab8cb" transform="rotate(-135 102.15 127.65)"/>
+    <rect x="89" y="98" width="4" height="10" fill="#9ab8cb" transform="rotate(-90 91 103)"/>
+    <rect x="100.15" y="73.35" width="4" height="10" fill="#9ab8cb" transform="rotate(-45 102.15 78.35)"/>
+
+    <!-- Center hole -->
+    <circle cx="125" cy="100" r="8" fill="#9ab8cb"/>
+  </g>
 </svg>
