@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="font-sans font-bold text-white text-xl leading-none uppercase tracking-[0.12em]">
                 LEOMAYN
               </span>
-              <div className="bg-coral mt-1 h-[1.5px]" />
+              <div className="bg-coral mt-1 h-[3px] w-full" />
             </div>
             <p className="font-sans text-sm text-white/60">
               Operational architecture for professional services.
