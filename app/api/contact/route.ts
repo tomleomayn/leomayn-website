@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     // If Attio integration is configured, create a lead
     if (process.env.ATTIO_API_KEY && process.env.ATTIO_WEBSITE_LEADS_LIST_ID) {
       try {
-        await fetch(`https://api.attio.com/v2/lists/${process.env.ATTIO_WEBSITE_LEADS_LIST_ID}/entries`, {
+        const attioResponse = await fetch(`https://api.attio.com/v2/lists/${process.env.ATTIO_WEBSITE_LEADS_LIST_ID}/entries`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${process.env.ATTIO_API_KEY}`,
@@ -54,6 +54,17 @@ export async function POST(request: Request) {
             }
           })
         })
+
+        if (!attioResponse.ok) {
+          const errorText = await attioResponse.text()
+          console.error('Attio API error:', {
+            status: attioResponse.status,
+            statusText: attioResponse.statusText,
+            body: errorText
+          })
+        } else {
+          console.log('Attio lead created successfully')
+        }
       } catch (attioError) {
         // Log error but don't fail the request
         console.error('Attio integration error:', attioError)
