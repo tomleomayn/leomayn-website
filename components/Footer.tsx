@@ -6,7 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-slate py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="pb-8 border-b border-white/20"></div>
+        <div className="grid md:grid-cols-4 gap-12 mt-12">
 
           {/* Brand Column */}
           <div>
@@ -103,7 +104,10 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/20">
           <p className="text-sm text-white/40">
-            © {currentYear} Leomayn Solutions Ltd. All rights reserved.
+            © {currentYear} Leomayn Limited. All rights reserved.
+          </p>
+          <p className="text-sm text-white/40 mt-2">
+            Registered company number 16856146
           </p>
         </div>
       </div>
