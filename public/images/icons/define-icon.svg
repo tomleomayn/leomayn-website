@@ -1,12 +1,30 @@
 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Document rectangle with rounded corners -->
-  <rect x="55" y="45" width="90" height="110" stroke="#1a3d56" stroke-width="5" fill="none" rx="3"/>
+  <!-- Blueprint border -->
+  <rect x="50" y="50" width="100" height="100" stroke="#1a3d56" stroke-width="5" fill="none" rx="3"/>
 
-  <!-- Horizontal lines (3 lines) -->
-  <line x1="70" y1="75" x2="130" y2="75" stroke="#1a3d56" stroke-width="2" opacity="0.4"/>
-  <line x1="70" y1="100" x2="130" y2="100" stroke="#1a3d56" stroke-width="2" opacity="0.4"/>
-  <line x1="70" y1="125" x2="130" y2="125" stroke="#1a3d56" stroke-width="2" opacity="0.4"/>
+  <!-- Flow diagram - three boxes connected with arrows -->
 
-  <!-- Rock blue accent bar at top -->
-  <line x1="70" y1="62" x2="130" y2="62" stroke="#9ab8cb" stroke-width="4" stroke-linecap="round"/>
+  <!-- Box 1 (top) -->
+  <rect x="85" y="65" width="30" height="15" stroke="#1a3d56" stroke-width="2.5" fill="none"/>
+
+  <!-- Arrow down -->
+  <line x1="100" y1="80" x2="100" y2="95" stroke="#1a3d56" stroke-width="2.5"/>
+  <path d="M 100 95 L 97 90 L 103 90 Z" fill="#1a3d56"/>
+
+  <!-- Box 2 (middle left) -->
+  <rect x="60" y="95" width="30" height="15" stroke="#9ab8cb" stroke-width="2.5" fill="none"/>
+
+  <!-- Box 3 (middle right) -->
+  <rect x="110" y="95" width="30" height="15" stroke="#9ab8cb" stroke-width="2.5" fill="none"/>
+
+  <!-- Arrow from box 2 down -->
+  <line x1="75" y1="110" x2="75" y2="120" stroke="#1a3d56" stroke-width="2.5"/>
+  <path d="M 75 120 L 72 115 L 78 115 Z" fill="#1a3d56"/>
+
+  <!-- Arrow from box 3 down -->
+  <line x1="125" y1="110" x2="125" y2="120" stroke="#1a3d56" stroke-width="2.5"/>
+  <path d="M 125 120 L 122 115 L 128 115 Z" fill="#1a3d56"/>
+
+  <!-- Box 4 (bottom) -->
+  <rect x="85" y="120" width="30" height="15" stroke="#1a3d56" stroke-width="2.5" fill="none"/>
 </svg>

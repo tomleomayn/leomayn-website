@@ -1,39 +1,57 @@
 <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Left gear (slate) - gear teeth as a proper gear shape -->
+  <!-- Left gear (slate) with proper gear teeth -->
   <g>
-    <!-- Main circle -->
-    <circle cx="75" cy="100" r="28" stroke="#1a3d56" stroke-width="5" fill="none"/>
+    <!-- Outer gear teeth path -->
+    <path d="M 75 62
+             L 78 62 L 78 68 L 72 68 L 72 62 Z
+             M 95 67
+             L 97.5 69.5 L 93 74 L 90.5 71.5 Z
+             M 108 88
+             L 108 85 L 114 85 L 114 91 L 108 91 Z
+             M 103 108
+             L 105.5 110.5 L 100 115 L 97.5 112.5 Z
+             M 75 128
+             L 78 128 L 78 122 L 72 122 L 72 128 Z
+             M 55 123
+             L 52.5 120.5 L 57 116 L 59.5 118.5 Z
+             M 42 102
+             L 42 105 L 36 105 L 36 99 L 42 99 Z
+             M 47 82
+             L 44.5 79.5 L 49 75 L 51.5 77.5 Z"
+          fill="#1a3d56"/>
 
-    <!-- Gear teeth - 8 teeth around the circle -->
-    <rect x="73" y="62" width="4" height="10" fill="#1a3d56"/>
-    <rect x="95.85" y="73.35" width="4" height="10" fill="#1a3d56" transform="rotate(45 97.85 78.35)"/>
-    <rect x="107" y="98" width="4" height="10" fill="#1a3d56" transform="rotate(90 109 103)"/>
-    <rect x="95.85" y="122.65" width="4" height="10" fill="#1a3d56" transform="rotate(135 97.85 127.65)"/>
-    <rect x="73" y="128" width="4" height="10" fill="#1a3d56"/>
-    <rect x="50.15" y="122.65" width="4" height="10" fill="#1a3d56" transform="rotate(-135 52.15 127.65)"/>
-    <rect x="39" y="98" width="4" height="10" fill="#1a3d56" transform="rotate(-90 41 103)"/>
-    <rect x="50.15" y="73.35" width="4" height="10" fill="#1a3d56" transform="rotate(-45 52.15 78.35)"/>
+    <!-- Main gear circle -->
+    <circle cx="75" cy="95" r="30" stroke="#1a3d56" stroke-width="5" fill="none"/>
 
-    <!-- Center hole -->
-    <circle cx="75" cy="100" r="8" fill="#1a3d56"/>
+    <!-- Center circle -->
+    <circle cx="75" cy="95" r="10" fill="#1a3d56"/>
   </g>
 
-  <!-- Right gear (rock blue) -->
+  <!-- Right gear (rock blue) with proper gear teeth -->
   <g>
-    <!-- Main circle -->
-    <circle cx="125" cy="100" r="28" stroke="#9ab8cb" stroke-width="5" fill="none"/>
+    <!-- Outer gear teeth path -->
+    <path d="M 125 62
+             L 128 62 L 128 68 L 122 68 L 122 62 Z
+             M 145 67
+             L 147.5 69.5 L 143 74 L 140.5 71.5 Z
+             M 158 88
+             L 158 85 L 164 85 L 164 91 L 158 91 Z
+             M 153 108
+             L 155.5 110.5 L 150 115 L 147.5 112.5 Z
+             M 125 128
+             L 128 128 L 128 122 L 122 122 L 122 128 Z
+             M 105 123
+             L 102.5 120.5 L 107 116 L 109.5 118.5 Z
+             M 92 102
+             L 92 105 L 86 105 L 86 99 L 92 99 Z
+             M 97 82
+             L 94.5 79.5 L 99 75 L 101.5 77.5 Z"
+          fill="#9ab8cb"/>
 
-    <!-- Gear teeth - 8 teeth around the circle -->
-    <rect x="123" y="62" width="4" height="10" fill="#9ab8cb"/>
-    <rect x="145.85" y="73.35" width="4" height="10" fill="#9ab8cb" transform="rotate(45 147.85 78.35)"/>
-    <rect x="157" y="98" width="4" height="10" fill="#9ab8cb" transform="rotate(90 159 103)"/>
-    <rect x="145.85" y="122.65" width="4" height="10" fill="#9ab8cb" transform="rotate(135 147.85 127.65)"/>
-    <rect x="123" y="128" width="4" height="10" fill="#9ab8cb"/>
-    <rect x="100.15" y="122.65" width="4" height="10" fill="#9ab8cb" transform="rotate(-135 102.15 127.65)"/>
-    <rect x="89" y="98" width="4" height="10" fill="#9ab8cb" transform="rotate(-90 91 103)"/>
-    <rect x="100.15" y="73.35" width="4" height="10" fill="#9ab8cb" transform="rotate(-45 102.15 78.35)"/>
+    <!-- Main gear circle -->
+    <circle cx="125" cy="95" r="30" stroke="#9ab8cb" stroke-width="5" fill="none"/>
 
-    <!-- Center hole -->
-    <circle cx="125" cy="100" r="8" fill="#9ab8cb"/>
+    <!-- Center circle -->
+    <circle cx="125" cy="95" r="10" fill="#9ab8cb"/>
   </g>
 </svg>
