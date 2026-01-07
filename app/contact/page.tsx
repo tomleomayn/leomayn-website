@@ -128,7 +128,7 @@ export default function ContactPage() {
                   </div>
                   <div className="mt-8">
                     <a
-                      href="https://calendly.com/leomayn/discovery"
+                      href="https://calendly.com/tom-leomayn/30min"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleCalendlyClick}
