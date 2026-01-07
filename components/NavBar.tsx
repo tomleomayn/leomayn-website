@@ -64,7 +64,7 @@ export default function NavBar() {
               href="/approach"
               className={`text-sm font-sans ${isActive('/approach') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
             >
-              Approach
+              Our Approach
             </Link>
 
             <Link
@@ -106,7 +106,7 @@ export default function NavBar() {
           <div className="md:hidden py-4 space-y-2">
             <Link href="/" className="block py-2 text-sm font-sans text-slate">Home</Link>
             <Link href="/services" className="block py-2 text-sm font-sans text-slate">Services</Link>
-            <Link href="/approach" className="block py-2 text-sm font-sans text-slate">Approach</Link>
+            <Link href="/approach" className="block py-2 text-sm font-sans text-slate">Our Approach</Link>
             <Link href="/how-we-think" className="block py-2 text-sm font-sans text-slate">How We Think</Link>
             <Link href="/about" className="block py-2 text-sm font-sans text-slate">About</Link>
             <Link href="/contact" className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>

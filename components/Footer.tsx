@@ -63,7 +63,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/approach" className="text-sm text-white/60 hover:text-white transition-colors">
-                  Approach
+                  Our Approach
                 </Link>
               </li>
               <li>
