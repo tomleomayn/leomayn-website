@@ -52,6 +52,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSerif.variable} ${manrope.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link href="/webfonts/uicons-regular-straight.css" rel="stylesheet" />
+      </head>
       <body>
         <GoogleTagManager />
         {children}

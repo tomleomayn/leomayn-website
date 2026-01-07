@@ -254,14 +254,8 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="text-center">
               <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                  <Image
-                    src="/images/icons/diagnose-icon.png"
-                    alt="Diagnose phase icon"
-                    width={128}
-                    height={128}
-                    className="w-full h-auto"
-                  />
+                <div className="mx-auto mb-6 flex items-center justify-center">
+                  <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
                 <span className="text-4xl font-serif text-slate">1</span>
               </div>
@@ -272,14 +266,8 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                  <Image
-                    src="/images/icons/define-icon.png"
-                    alt="Define phase icon"
-                    width={128}
-                    height={128}
-                    className="w-full h-auto"
-                  />
+                <div className="mx-auto mb-6 flex items-center justify-center">
+                  <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
                 <span className="text-4xl font-serif text-slate">2</span>
               </div>
@@ -290,14 +278,8 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                  <Image
-                    src="/images/icons/deliver-icon.png"
-                    alt="Deliver phase icon"
-                    width={128}
-                    height={128}
-                    className="w-full h-auto"
-                  />
+                <div className="mx-auto mb-6 flex items-center justify-center">
+                  <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
                 <span className="text-4xl font-serif text-slate">3</span>
               </div>
@@ -308,14 +290,8 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                  <Image
-                    src="/images/icons/support-icon.png"
-                    alt="Support phase icon"
-                    width={128}
-                    height={128}
-                    className="w-full h-auto"
-                  />
+                <div className="mx-auto mb-6 flex items-center justify-center">
+                  <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
                 <span className="text-4xl font-serif text-slate">4</span>
               </div>
