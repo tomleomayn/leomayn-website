@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 
@@ -61,7 +62,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Manual work crowds out strategic work
+                  Repetitive work drowns out valuable work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Teams spend most of their day chasing updates, switching systems,
@@ -83,7 +84,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Automating broken workflows doesn't work
+                  Broken workflows stay broken
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Automating broken processes makes them faster but no less broken.
@@ -104,7 +105,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Tool choice before diagnosis creates waste
+                  Tool selection without diagnosis creates shelfware
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Organisations waste 30% of software spending on unused licenses.
@@ -133,7 +134,16 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-8 mb-4">
+                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                  <Image
+                    src="/images/icons/diagnose-icon.svg"
+                    alt="Diagnose phase icon"
+                    width={128}
+                    height={128}
+                    className="w-full h-auto"
+                  />
+                </div>
                 <span className="text-4xl font-serif text-slate">1</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Diagnose</h3>
@@ -142,7 +152,16 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-8 mb-4">
+                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                  <Image
+                    src="/images/icons/define-icon.svg"
+                    alt="Define phase icon"
+                    width={128}
+                    height={128}
+                    className="w-full h-auto"
+                  />
+                </div>
                 <span className="text-4xl font-serif text-slate">2</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Define</h3>
@@ -151,7 +170,16 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-8 mb-4">
+                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                  <Image
+                    src="/images/icons/deliver-icon.svg"
+                    alt="Deliver phase icon"
+                    width={128}
+                    height={128}
+                    className="w-full h-auto"
+                  />
+                </div>
                 <span className="text-4xl font-serif text-slate">3</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
@@ -160,7 +188,16 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-8 mb-4">
+                <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
+                  <Image
+                    src="/images/icons/support-icon.svg"
+                    alt="Support phase icon"
+                    width={128}
+                    height={128}
+                    className="w-full h-auto"
+                  />
+                </div>
                 <span className="text-4xl font-serif text-slate">4</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Support</h3>

@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left gear (slate) -->
+  <circle cx="75" cy="100" r="35" stroke="#1a3d56" stroke-width="3" fill="none"/>
+  <!-- Teeth for left gear -->
+  <circle cx="75" cy="65" r="4" fill="#1a3d56"/>
+  <circle cx="95" cy="78" r="4" fill="#1a3d56"/>
+  <circle cx="102" cy="100" r="4" fill="#1a3d56"/>
+  <circle cx="95" cy="122" r="4" fill="#1a3d56"/>
+  <circle cx="75" cy="135" r="4" fill="#1a3d56"/>
+  <circle cx="55" cy="122" r="4" fill="#1a3d56"/>
+  <circle cx="48" cy="100" r="4" fill="#1a3d56"/>
+  <circle cx="55" cy="78" r="4" fill="#1a3d56"/>
+
+  <!-- Right gear (rock blue) -->
+  <circle cx="125" cy="100" r="35" stroke="#9ab8cb" stroke-width="3" fill="none"/>
+  <!-- Teeth for right gear -->
+  <circle cx="125" cy="65" r="4" fill="#9ab8cb"/>
+  <circle cx="145" cy="78" r="4" fill="#9ab8cb"/>
+  <circle cx="152" cy="100" r="4" fill="#9ab8cb"/>
+  <circle cx="145" cy="122" r="4" fill="#9ab8cb"/>
+  <circle cx="125" cy="135" r="4" fill="#9ab8cb"/>
+  <circle cx="105" cy="122" r="4" fill="#9ab8cb"/>
+  <circle cx="98" cy="100" r="4" fill="#9ab8cb"/>
+  <circle cx="105" cy="78" r="4" fill="#9ab8cb"/>
+</svg>

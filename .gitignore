@@ -63,3 +63,5 @@ next-env.d.ts
 
 # Private documentation and working files
 docs-git-ignore/
+.vercel
+.env*.local
