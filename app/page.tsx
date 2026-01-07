@@ -256,7 +256,7 @@ export default function HomePage() {
               <div className="bg-coral rounded-lg p-8 mb-4">
                 <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
                   <Image
-                    src="/images/icons/diagnose-icon.svg"
+                    src="/images/icons/diagnose-icon.png"
                     alt="Diagnose phase icon"
                     width={128}
                     height={128}
@@ -274,7 +274,7 @@ export default function HomePage() {
               <div className="bg-coral rounded-lg p-8 mb-4">
                 <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
                   <Image
-                    src="/images/icons/define-icon.svg"
+                    src="/images/icons/define-icon.png"
                     alt="Define phase icon"
                     width={128}
                     height={128}
@@ -292,7 +292,7 @@ export default function HomePage() {
               <div className="bg-coral rounded-lg p-8 mb-4">
                 <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
                   <Image
-                    src="/images/icons/deliver-icon.svg"
+                    src="/images/icons/deliver-icon.png"
                     alt="Deliver phase icon"
                     width={128}
                     height={128}
@@ -310,7 +310,7 @@ export default function HomePage() {
               <div className="bg-coral rounded-lg p-8 mb-4">
                 <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
                   <Image
-                    src="/images/icons/support-icon.svg"
+                    src="/images/icons/support-icon.png"
                     alt="Support phase icon"
                     width={128}
                     height={128}
