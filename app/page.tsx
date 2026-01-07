@@ -211,7 +211,7 @@ export default function HomePage() {
               </p>
 
               {/* Supporting References */}
-              <p className="text-xs font-sans text-steel leading-relaxed mt-4 pt-4 border-t border-steel/10">
+              <p className="text-xs font-sans text-steel leading-relaxed mt-4 pb-4 border-b border-steel/10">
                 Additional supporting research:
                 <a
                   href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-of-workweek-on-manual-repetitive-tasks"
