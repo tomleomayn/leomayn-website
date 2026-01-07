@@ -83,7 +83,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Automating Broken Workflows Doesn't Work
+                  Automating broken workflows doesn't work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Automating broken processes makes them faster but no less broken.
