@@ -19,7 +19,7 @@ export default function NavBar() {
             <span className="font-sans font-bold text-slate text-2xl leading-none uppercase tracking-[0.12em]">
               LEOMAYN
             </span>
-            <div className="bg-coral mt-1 h-[1.5px]" />
+            <div className="bg-coral mt-1 h-[3px] w-full" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -81,7 +81,7 @@ export default function NavBar() {
               About
             </Link>
 
-            <Link href="/contact" className="text-sm font-sans text-slate hover:text-slate-dark font-semibold">
+            <Link href="/contact" className="inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all">
               Book Discovery Call
             </Link>
           </div>
