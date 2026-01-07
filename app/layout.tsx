@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Manrope, JetBrains_Mono } from 'next/font/google'
+import GoogleTagManager from '@/components/GoogleTagManager'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -48,7 +49,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSerif.variable} ${manrope.variable} ${jetbrainsMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <GoogleTagManager />
+        {children}
+      </body>
     </html>
   )
 }
