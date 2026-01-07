@@ -52,11 +52,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                     backgroundSize: '12px 12px',
-                     opacity: '0.08'
+                     backgroundSize: '12px 12px'
                    }}>
               </div>
 
@@ -75,11 +74,10 @@ export default function HomePage() {
 
             {/* Card 2 */}
             <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                     backgroundSize: '12px 12px',
-                     opacity: '0.08'
+                     backgroundSize: '12px 12px'
                    }}>
               </div>
 
@@ -97,20 +95,19 @@ export default function HomePage() {
 
             {/* Card 3 */}
             <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                     backgroundSize: '12px 12px',
-                     opacity: '0.08'
+                     backgroundSize: '12px 12px'
                    }}>
               </div>
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Tool selection without diagnosis creates shelfware
+                  Tool choice before diagnosis creates waste
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
-                  Organizations waste 30% of software spending on unused licenses.
+                  Organisations waste 30% of software spending on unused licenses.
                   Selecting technology before understanding the operational problem
                   leads to disappointing results. Diagnosis determines the right solution.
                 </p>
