@@ -11,7 +11,7 @@ export default function NavBar() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <nav className="sticky top-0 z-50 bg-pearl border-b border-steel">
+    <nav className="sticky top-0 z-50 bg-white border-b border-steel">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -41,7 +41,7 @@ export default function NavBar() {
               </button>
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-48 bg-pearl border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <Link href="/services" className="block px-4 py-3 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Overview
                 </Link>
@@ -81,7 +81,7 @@ export default function NavBar() {
               About
             </Link>
 
-            <Link href="/contact" className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all">
+            <Link href="/contact" className="text-sm font-sans text-slate hover:text-slate-dark font-semibold">
               Book Discovery Call
             </Link>
           </div>
