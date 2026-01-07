@@ -62,13 +62,18 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Repetitive work drowns out valuable work
+                  Manual work crowds out strategic work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Teams spend most of their day chasing updates, switching systems,
                   and doing manual data entry. Knowledge workers spend 60% of time
-                  on work about work rather than skilled tasks. Little capacity
-                  remains for strategic work that drives growth.
+                  on work about work rather than skilled tasks
+                  <sup>
+                    <a href="#ref1" className="text-coral hover:text-coral-dark no-underline">
+                      [1]
+                    </a>
+                  </sup>
+                  . Little capacity remains for strategic work that drives growth.
                 </p>
               </div>
             </div>
@@ -84,11 +89,16 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Broken workflows stay broken
+                  Automating broken workflows doesn't work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
-                  Automating broken processes makes them faster but no less broken.
-                  Technology overlaid on inefficient workflows magnifies problems
+                  Automating broken processes makes them faster but no less broken
+                  <sup>
+                    <a href="#ref2" className="text-coral hover:text-coral-dark no-underline">
+                      [2]
+                    </a>
+                  </sup>
+                  . Technology overlaid on inefficient workflows magnifies problems
                   rather than solving them. Fix the workflow first, then scale what works.
                 </p>
               </div>
@@ -105,75 +115,107 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Tool selection without diagnosis creates shelfware
+                  Tool choice before diagnosis creates waste
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
-                  Organisations waste 30% of software spending on unused licenses.
-                  Selecting technology before understanding the operational problem
+                  Organisations waste 30% of software spending on unused licenses
+                  <sup>
+                    <a href="#ref3" className="text-coral hover:text-coral-dark no-underline">
+                      [3]
+                    </a>
+                  </sup>
+                  . Selecting technology before understanding the operational problem
                   leads to disappointing results. Diagnosis determines the right solution.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Source Attribution */}
+          {/* References Section */}
           <div className="mt-12 pt-8 border-t border-steel/20">
-            <p className="text-sm font-sans text-steel text-center">
-              Sources:{' '}
-              <a
-                href="https://asana.com/resources/anatomy-of-work"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral hover:text-coral-dark underline"
-              >
-                Asana (2025)
-              </a>
-              {', '}
-              <a
-                href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-of-workweek-on-manual-repetitive-tasks"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral hover:text-coral-dark underline"
-              >
-                Smartsheet (2024)
-              </a>
-              {', '}
-              <a
-                href="https://www.goodreads.com/quotes/536961-the-first-rule-of-any-technology-used-in-a-business"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral hover:text-coral-dark underline"
-              >
-                Gates
-              </a>
-              {', '}
-              <a
-                href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral hover:text-coral-dark underline"
-              >
-                McKinsey (2025)
-              </a>
-              {', '}
-              <a
-                href="https://npifinancial.com/blog/it-cost-reduction-strategies/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral hover:text-coral-dark underline"
-              >
-                Gartner/NPI
-              </a>
-              {', '}
-              <a
-                href="https://www.flexera.com/about-us/press-center/flexera-releases-2025-state-of-itam-report.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-coral hover:text-coral-dark underline"
-              >
-                Flexera (2025)
-              </a>
-            </p>
+            <h4 className="text-sm font-sans font-semibold text-slate uppercase tracking-wider mb-4">
+              References
+            </h4>
+
+            <div className="space-y-3">
+              {/* Reference 1 */}
+              <p id="ref1" className="text-sm font-sans text-slate leading-relaxed">
+                [1] Asana. (2025).
+                <em> Anatomy of Work Index 2025</em>.
+                <a
+                  href="https://asana.com/resources/anatomy-of-work"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-coral hover:text-coral-dark underline ml-1"
+                >
+                  Available here
+                </a>
+              </p>
+
+              {/* Reference 2 */}
+              <p id="ref2" className="text-sm font-sans text-slate leading-relaxed">
+                [2] Gates, B. (1995).
+                <em> The Road Ahead</em>.
+                "The first rule of any technology used in a business is that automation
+                applied to an efficient operation will magnify the efficiency. The second
+                is that automation applied to an inefficient operation will magnify the
+                inefficiency."
+                <a
+                  href="https://www.goodreads.com/quotes/536961-the-first-rule-of-any-technology-used-in-a-business"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-coral hover:text-coral-dark underline ml-1"
+                >
+                  Source
+                </a>
+              </p>
+
+              {/* Reference 3 */}
+              <p id="ref3" className="text-sm font-sans text-slate leading-relaxed">
+                [3] Gartner & NPI Financial. (2024).
+                <em> IT Cost Reduction Strategies</em>.
+                Analysis of SaaS spending waste and unused licenses.
+                <a
+                  href="https://npifinancial.com/blog/it-cost-reduction-strategies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-coral hover:text-coral-dark underline ml-1"
+                >
+                  Full report
+                </a>
+              </p>
+
+              {/* Supporting References */}
+              <p className="text-xs font-sans text-steel leading-relaxed mt-4 pt-4 border-t border-steel/10">
+                Additional supporting research:
+                <a
+                  href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-of-workweek-on-manual-repetitive-tasks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-coral hover:text-coral-dark underline ml-1"
+                >
+                  Smartsheet (2024)
+                </a>
+                {', '}
+                <a
+                  href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-coral hover:text-coral-dark underline"
+                >
+                  McKinsey Global Institute (2025)
+                </a>
+                {', '}
+                <a
+                  href="https://www.flexera.com/about-us/press-center/flexera-releases-2025-state-of-itam-report.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-coral hover:text-coral-dark underline"
+                >
+                  Flexera (2025)
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
