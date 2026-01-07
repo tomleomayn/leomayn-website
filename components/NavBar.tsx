@@ -24,13 +24,6 @@ export default function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/"
-              className={`text-sm font-sans ${isActive('/') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
-            >
-              Home
-            </Link>
-
             {/* Services Dropdown */}
             <div className="relative group">
               <Link
@@ -81,7 +74,7 @@ export default function NavBar() {
               About
             </Link>
 
-            <Link href="/contact" className="inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all">
+            <Link href="/contact" className="inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
               Book Discovery Call
             </Link>
           </div>
