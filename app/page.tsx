@@ -17,11 +17,12 @@ export default function HomePage() {
             <p>
               We redesign knowledge work to remove bottlenecks, reduce repetitive work,
               and fix error-prone processes. Then we use automation and AI to free up
-              humans to focus on work which creates real value.
+              humans to focus on work which adds real value.
             </p>
             <p>
-              When we fix what's broken and remove what's unnecessary, people get the
-              space to do more, achieve more, and create real impact.
+              We transfer the skills and knowledge your team needs to use AI tools
+              effectively. You build the capability to maintain systems and drive
+              continuous improvement independently.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
