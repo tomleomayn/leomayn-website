@@ -1,9 +1,32 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 
+// Extend window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 export default function HomePage() {
+  // Track CTA clicks
+  const trackCTAClick = (ctaName: string, ctaLocation: string, destination: string) => {
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_name: ctaName,
+        cta_location: ctaLocation,
+        link_destination: destination,
+        page_location: window.location.href,
+        page_title: 'Home'
+      })
+    }
+  }
+
   return (
     <>
       <NavBar />
@@ -29,12 +52,14 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/contact"
+              onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
             >
               Book Discovery Call
             </Link>
             <Link
               href="/services"
+              onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
             >
               See Our Services
@@ -303,6 +328,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/services"
+              onClick={() => trackCTAClick('See the Full Framework', 'solution_section', '/services')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
             >
               See the Full Framework
@@ -346,6 +372,7 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/how-we-think"
+              onClick={() => trackCTAClick('See How We Think', 'how_we_work_section', '/how-we-think')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
             >
               See How We Think
@@ -366,6 +393,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/contact"
+            onClick={() => trackCTAClick('Book Discovery Call', 'final_cta', '/contact')}
             className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
           >
             Book Discovery Call

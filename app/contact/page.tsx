@@ -4,6 +4,13 @@ import { useState } from 'react'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 
+// Extend window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: any[]
+  }
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +19,19 @@ export default function ContactPage() {
     message: '',
   })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  const handleCalendlyClick = () => {
+    // Track Calendly discovery call booking click
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'generate_lead',
+        lead_type: 'discovery_call',
+        method: 'calendly',
+        page_location: window.location.href,
+        page_title: 'Contact'
+      })
+    }
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -29,6 +49,17 @@ export default function ContactPage() {
       if (response.ok) {
         setStatus('success')
         setFormData({ name: '', email: '', company: '', message: '' })
+
+        // Track successful contact form submission
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            event: 'generate_lead',
+            lead_type: 'contact_form',
+            method: 'form_submission',
+            page_location: window.location.href,
+            page_title: 'Contact'
+          })
+        }
       } else {
         setStatus('error')
       }
@@ -100,6 +131,7 @@ export default function ContactPage() {
                       href="https://calendly.com/leomayn/discovery"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleCalendlyClick}
                       className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all w-full"
                     >
                       Schedule a Call
