@@ -33,28 +33,28 @@ export default function NavBar() {
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="text-sm font-sans text-slate/70 hover:text-slate flex items-center gap-1">
+              <Link
+                href="/services"
+                className={`text-sm font-sans flex items-center gap-1 ${isActive('/services') || pathname?.startsWith('/services/') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              >
                 Services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
+              </Link>
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                <Link href="/services" className="block px-4 py-3 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
-                  Overview
-                </Link>
-                <Link href="/services/diagnose" className="block px-4 py-3 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+              <div className="absolute top-full left-0 mt-[17px] w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                <Link href="/services/diagnose" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Diagnose
                 </Link>
-                <Link href="/services/define" className="block px-4 py-3 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+                <Link href="/services/define" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Define
                 </Link>
-                <Link href="/services/deliver" className="block px-4 py-3 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+                <Link href="/services/deliver" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Deliver
                 </Link>
-                <Link href="/services/support" className="block px-4 py-3 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+                <Link href="/services/support" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Support
                 </Link>
               </div>
