@@ -114,6 +114,14 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm font-sans text-steel">
+              Sources: <a href="#" className="text-coral hover:text-coral-dark underline">Asana (2025)</a>,
+              <a href="#" className="text-coral hover:text-coral-dark underline"> Smartsheet (2024)</a>,
+              <a href="#" className="text-coral hover:text-coral-dark underline"> Gartner/NPI (2024)</a>
+            </p>
+          </div>
         </div>
       </section>
 
