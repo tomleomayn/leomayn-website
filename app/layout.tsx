@@ -27,6 +27,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Leomayn - Fix Work, Then Scale with AI',
   description: 'We redesign knowledge work to remove bottlenecks, reduce repetitive work, and fix error-prone processes. Then we use automation and AI to free up humans to focus on work which creates real value.',
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
     title: 'Leomayn - Fix Work, Then Scale with AI',
     description: 'We redesign knowledge work to remove bottlenecks, reduce repetitive work, and fix error-prone processes.',
