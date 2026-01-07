@@ -15,11 +15,11 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="font-sans font-bold text-slate text-2xl leading-none uppercase tracking-[0.12em]">
+          <Link href="/" className="flex flex-col group">
+            <span className="font-sans font-bold text-slate text-2xl leading-none uppercase tracking-[0.12em] transition-opacity group-hover:opacity-70">
               LEOMAYN
             </span>
-            <div className="bg-coral mt-1 h-[3px] w-full" />
+            <div className="bg-coral mt-1 h-[3px] w-full transition-all group-hover:h-[4px]" />
           </Link>
 
           {/* Desktop Navigation */}
