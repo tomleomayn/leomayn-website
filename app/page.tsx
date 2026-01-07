@@ -116,11 +116,63 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-sm font-sans text-steel">
-              Sources: <a href="#" className="text-coral hover:text-coral-dark underline">Asana (2025)</a>,
-              <a href="#" className="text-coral hover:text-coral-dark underline"> Smartsheet (2024)</a>,
-              <a href="#" className="text-coral hover:text-coral-dark underline"> Gartner/NPI (2024)</a>
+          {/* Source Attribution */}
+          <div className="mt-12 pt-8 border-t border-steel/20">
+            <p className="text-sm font-sans text-steel text-center">
+              Sources:{' '}
+              <a
+                href="https://asana.com/resources/anatomy-of-work"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-coral hover:text-coral-dark underline"
+              >
+                Asana (2025)
+              </a>
+              {', '}
+              <a
+                href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-of-workweek-on-manual-repetitive-tasks"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-coral hover:text-coral-dark underline"
+              >
+                Smartsheet (2024)
+              </a>
+              {', '}
+              <a
+                href="https://www.goodreads.com/quotes/536961-the-first-rule-of-any-technology-used-in-a-business"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-coral hover:text-coral-dark underline"
+              >
+                Gates
+              </a>
+              {', '}
+              <a
+                href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-coral hover:text-coral-dark underline"
+              >
+                McKinsey (2025)
+              </a>
+              {', '}
+              <a
+                href="https://npifinancial.com/blog/it-cost-reduction-strategies/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-coral hover:text-coral-dark underline"
+              >
+                Gartner/NPI
+              </a>
+              {', '}
+              <a
+                href="https://www.flexera.com/about-us/press-center/flexera-releases-2025-state-of-itam-report.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-coral hover:text-coral-dark underline"
+              >
+                Flexera (2025)
+              </a>
             </p>
           </div>
         </div>
