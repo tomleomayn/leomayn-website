@@ -25,7 +25,7 @@ export default function NavBar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {/* Services Dropdown */}
-            <div className="relative group">
+            <div className="relative group ml-4">
               <Link
                 href="/services"
                 className={`text-sm font-sans flex items-center gap-1 ${isActive('/services') || pathname?.startsWith('/services/') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}

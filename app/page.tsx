@@ -253,11 +253,11 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-6 mb-4">
+                <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
-                <span className="text-4xl font-serif text-slate">1</span>
+                <span className="text-4xl font-serif font-bold text-slate">1</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Diagnose</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
@@ -265,11 +265,11 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-6 mb-4">
+                <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
-                <span className="text-4xl font-serif text-slate">2</span>
+                <span className="text-4xl font-serif font-bold text-slate">2</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Define</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
@@ -277,27 +277,27 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-6 mb-4">
+                <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
-                <span className="text-4xl font-serif text-slate">3</span>
+                <span className="text-4xl font-serif font-bold text-slate">3</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Working automation creating impact
+                Working automations delivering value
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-8 mb-4">
-                <div className="mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-coral rounded-lg p-6 mb-4">
+                <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
-                <span className="text-4xl font-serif text-slate">4</span>
+                <span className="text-4xl font-serif font-bold text-slate">4</span>
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Support</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Systems optimised and teams supported as you grow
+                Systems optimised and teams empowered
               </p>
             </div>
           </div>
@@ -348,10 +348,10 @@ export default function HomePage() {
           <div className="text-center">
             <Link
               href="/how-we-think"
-              onClick={() => trackCTAClick('See How We Think', 'how_we_work_section', '/how-we-think')}
+              onClick={() => trackCTAClick('See how we think', 'how_we_work_section', '/how-we-think')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
             >
-              See How We Think
+              See how we think
             </Link>
           </div>
         </div>
