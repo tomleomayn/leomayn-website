@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+@theme {
+  /* Primary - Structure & Authority */
+  --color-slate: #1a3d56;
+  --color-slate-light: #2c4a62;
+  --color-slate-dark: #15283a;
+
+  /* Secondary - Primary Brand Colour */
+  --color-rock: #9ab8cb;
+  --color-rock-light: #b5c9d8;
+  --color-rock-dark: #7fa3bc;
+
+  /* Accent - Warmth & Highlights */
+  --color-coral: #f7c9c0;
+  --color-coral-light: #fae0dc;
+  --color-coral-dark: #f0b3a8;
+
+  /* Neutrals */
+  --color-chalk: #fffcfa;
+  --color-pearl: #fef8f1;
+  --color-canvas: #fafaf8;
+  --color-steel: #9da7b0;
+
+  /* Font Families */
+  --font-family-sans: Manrope, sans-serif;
+  --font-family-serif: "DM Serif Display", serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+}
+
 :root {
   color-scheme: light only;
 }
