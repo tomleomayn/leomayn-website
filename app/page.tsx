@@ -322,26 +322,26 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                Diagnose before prescribing
+                Diagnose before designing
               </h3>
               <p className="text-base font-sans leading-relaxed text-slate">
-                Understand the operational problem before selecting tools
+                Understand the operational problem before selecting tools and designing workflows
               </p>
             </div>
             <div>
               <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                Design for your constraints
+                Design for your reality
               </h3>
               <p className="text-base font-sans leading-relaxed text-slate">
-                Solutions must fit your data, systems, and governance requirements
+                Solutions built to fit your data, systems, and governance needs
               </p>
             </div>
             <div>
               <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                Transfer capability
+                Transfer systems, build capability
               </h3>
               <p className="text-base font-sans leading-relaxed text-slate">
-                You own the IP, learn to maintain it, and iterate independently
+                You own the IP, the platforms, and are empowered to iterate independently
               </p>
             </div>
           </div>
