@@ -43,38 +43,78 @@ export default function HomePage() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-24 px-6 lg:px-8 bg-chalk">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
-            Three operational challenges operations teams face
+      <section className="py-20 bg-chalk">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-serif text-slate mb-12 text-center">
+            Three problems to fix first
           </h2>
+
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-pearl border border-steel rounded-lg p-6 hover:border-coral transition-colors">
-              <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                Repetitive work drowns out valuable work
-              </h3>
-              <p className="text-base font-sans leading-relaxed text-slate">
-                Teams spend 40-60% of time on manual tasks that could be systematised,
-                leaving little capacity for strategic work that drives growth.
-              </p>
+            {/* Card 1 */}
+            <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                   style={{
+                     backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
+                     backgroundSize: '12px 12px',
+                     opacity: '0.08'
+                   }}>
+              </div>
+
+              <div className="relative z-10">
+                <h3 className="text-2xl font-serif text-slate mb-4">
+                  Manual work crowds out strategic work
+                </h3>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  Teams spend most of their day chasing updates, switching systems,
+                  and doing manual data entry. Knowledge workers spend 60% of time
+                  on work about work rather than skilled tasks. Little capacity
+                  remains for strategic work that drives growth.
+                </p>
+              </div>
             </div>
-            <div className="bg-pearl border border-steel rounded-lg p-6 hover:border-coral transition-colors">
-              <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                Broken workflows before automation compounds problems
-              </h3>
-              <p className="text-base font-sans leading-relaxed text-slate">
-                Automating broken processes makes them faster but no less broken.
-                Fix the workflow first, then scale what works.
-              </p>
+
+            {/* Card 2 */}
+            <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                   style={{
+                     backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
+                     backgroundSize: '12px 12px',
+                     opacity: '0.08'
+                   }}>
+              </div>
+
+              <div className="relative z-10">
+                <h3 className="text-2xl font-serif text-slate mb-4">
+                  Broken workflows stay broken
+                </h3>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  Automating broken processes makes them faster but no less broken.
+                  Technology overlaid on inefficient workflows magnifies problems
+                  rather than solving them. Fix the workflow first, then scale what works.
+                </p>
+              </div>
             </div>
-            <div className="bg-pearl border border-steel rounded-lg p-6 hover:border-coral transition-colors">
-              <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                Tool selection without diagnosis wastes investment
-              </h3>
-              <p className="text-base font-sans leading-relaxed text-slate">
-                Selecting technology before understanding the operational problem
-                leads to shelfware and disappointing results.
-              </p>
+
+            {/* Card 3 */}
+            <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                   style={{
+                     backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
+                     backgroundSize: '12px 12px',
+                     opacity: '0.08'
+                   }}>
+              </div>
+
+              <div className="relative z-10">
+                <h3 className="text-2xl font-serif text-slate mb-4">
+                  Tool selection without diagnosis creates shelfware
+                </h3>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  Organizations waste 30% of software spending on unused licenses.
+                  Selecting technology before understanding the operational problem
+                  leads to disappointing results. Diagnosis determines the right solution.
+                </p>
+              </div>
             </div>
           </div>
         </div>
