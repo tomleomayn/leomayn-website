@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY)
       await resend.emails.send({
-        from: 'Leomayn Website <hello@leomayn.com>',
+        from: 'Leomayn Website <website@leomayn.com>',
         to: 'website@leomayn.com',
         replyTo: email,
         subject: `New contact form submission from ${name}`,
