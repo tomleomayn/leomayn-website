@@ -46,7 +46,7 @@ export default function HomePage() {
             <p>
               We transfer the skills and knowledge your team needs to use AI tools
               effectively. You build the capability to maintain systems and drive
-              continuous improvement independently.
+              further improvement.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -72,7 +72,7 @@ export default function HomePage() {
       <section className="py-20 bg-chalk">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-serif text-slate mb-12 text-center">
-            We've set our sights on three problems faced by organizations:
+            We solve three problems faced by organisations
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -90,15 +90,15 @@ export default function HomePage() {
                   Manual work crowds out strategic work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
-                  Teams spend most of their day chasing updates, switching systems,
-                  and doing manual data entry. Knowledge workers spend 60% of time
-                  on work about work rather than skilled tasks
+                  Time spent chasing updates, switching systems, and doing manual data entry
+                  doesn't add value. Knowledge workers spend up to 60% of time on 'work about work'
+                  rather than skilled tasks
                   <sup>
                     <a href="#ref1" className="text-coral hover:text-coral-dark no-underline font-bold">
                       [1]
                     </a>
                   </sup>
-                  . Little capacity remains for strategic work that drives growth.
+                  . This reduces the capacity for strategic work that drives growth.
                 </p>
               </div>
             </div>
@@ -117,14 +117,13 @@ export default function HomePage() {
                   Automating broken workflows doesn't work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
-                  Automating broken processes makes them faster but no less broken
+                  Automating inefficient processes makes them faster but not better
                   <sup>
                     <a href="#ref2" className="text-coral hover:text-coral-dark no-underline font-bold">
                       [2]
                     </a>
                   </sup>
-                  . Technology overlaid on inefficient workflows magnifies problems
-                  rather than solving them. Fix the workflow first, then scale what works.
+                  {' - '}and in fact it magnifies problems rather than solving them.
                 </p>
               </div>
             </div>
@@ -149,8 +148,8 @@ export default function HomePage() {
                       [3]
                     </a>
                   </sup>
-                  . Selecting technology before understanding the operational problem
-                  leads to disappointing results. Diagnosis determines the right solution.
+                  . Leading with a technology choice before understanding the operational problem
+                  leads to disappointing results.
                 </p>
               </div>
             </div>
@@ -262,7 +261,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Diagnose</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Identify what's broken and what matters
+                Identify what's important and what to improve
               </p>
             </div>
             <div className="text-center">
@@ -274,7 +273,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Define</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Design the right solution once
+                Design a solution to fit your needs
               </p>
             </div>
             <div className="text-center">
@@ -286,7 +285,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Working automations delivering value
+                Deploy working automations that deliver value
               </p>
             </div>
             <div className="text-center">
@@ -298,7 +297,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-serif leading-snug text-slate mb-2">Support</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
-                Systems optimised and teams empowered
+                Empower teams and keep systems optimised
               </p>
             </div>
           </div>
@@ -318,7 +317,7 @@ export default function HomePage() {
       <section className="py-24 px-6 lg:px-8 bg-chalk">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
-            A systematic approach to operational improvement
+            Leomayn's approach to operational improvement through applied AI
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -334,7 +333,7 @@ export default function HomePage() {
                 Design for your reality
               </h3>
               <p className="text-base font-sans leading-relaxed text-slate">
-                Solutions built to fit your data, systems, and governance needs
+                Solutions designed and built to fit your data, systems, and governance needs
               </p>
             </div>
             <div>
@@ -342,7 +341,7 @@ export default function HomePage() {
                 Transfer systems, build capability
               </h3>
               <p className="text-base font-sans leading-relaxed text-slate">
-                You own the IP, the platforms, and are empowered to iterate independently
+                You own the IP and platforms. We support you to iterate independently
               </p>
             </div>
           </div>
@@ -362,7 +361,7 @@ export default function HomePage() {
       <section className="py-24 px-6 lg:px-8 bg-slate">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-            Ready to fix your operations?
+            Ready to level up your operations?
           </h2>
           <p className="text-xl font-sans leading-relaxed text-white mb-8">
             Book a 30-minute discovery call. We'll map one broken workflow
