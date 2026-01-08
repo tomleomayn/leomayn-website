@@ -276,49 +276,81 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 mb-8">
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
-                <div className="mx-auto mb-4 flex items-center justify-center">
-                  <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
+              <div className="relative bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto group overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
+                     style={{
+                       backgroundImage: `linear-gradient(#7BA3C5 1px, transparent 1px), linear-gradient(90deg, #7BA3C5 1px, transparent 1px)`,
+                       backgroundSize: '12px 12px'
+                     }}>
                 </div>
-                <span className="text-4xl font-serif font-bold text-slate">1</span>
+                <div className="relative z-10">
+                  <div className="mx-auto mb-4 flex items-center justify-center">
+                    <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
+                  </div>
+                  <div className="text-4xl font-serif font-bold text-slate mb-1">1</div>
+                  <h3 className="text-xl font-serif leading-snug text-slate">Diagnose</h3>
+                </div>
               </div>
-              <h3 className="text-xl font-serif leading-snug text-slate mb-2">Diagnose</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
                 Identify what's important and what to improve
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
-                <div className="mx-auto mb-4 flex items-center justify-center">
-                  <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
+              <div className="relative bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto group overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
+                     style={{
+                       backgroundImage: `linear-gradient(#7BA3C5 1px, transparent 1px), linear-gradient(90deg, #7BA3C5 1px, transparent 1px)`,
+                       backgroundSize: '12px 12px'
+                     }}>
                 </div>
-                <span className="text-4xl font-serif font-bold text-slate">2</span>
+                <div className="relative z-10">
+                  <div className="mx-auto mb-4 flex items-center justify-center">
+                    <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
+                  </div>
+                  <div className="text-4xl font-serif font-bold text-slate mb-1">2</div>
+                  <h3 className="text-xl font-serif leading-snug text-slate">Define</h3>
+                </div>
               </div>
-              <h3 className="text-xl font-serif leading-snug text-slate mb-2">Define</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
                 Design a solution to fit your needs
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
-                <div className="mx-auto mb-4 flex items-center justify-center">
-                  <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
+              <div className="relative bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto group overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
+                     style={{
+                       backgroundImage: `linear-gradient(#7BA3C5 1px, transparent 1px), linear-gradient(90deg, #7BA3C5 1px, transparent 1px)`,
+                       backgroundSize: '12px 12px'
+                     }}>
                 </div>
-                <span className="text-4xl font-serif font-bold text-slate">3</span>
+                <div className="relative z-10">
+                  <div className="mx-auto mb-4 flex items-center justify-center">
+                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
+                  </div>
+                  <div className="text-4xl font-serif font-bold text-slate mb-1">3</div>
+                  <h3 className="text-xl font-serif leading-snug text-slate">Deliver</h3>
+                </div>
               </div>
-              <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
                 Deploy working automations that deliver value
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
-                <div className="mx-auto mb-4 flex items-center justify-center">
-                  <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
+              <div className="relative bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto group overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
+                     style={{
+                       backgroundImage: `linear-gradient(#7BA3C5 1px, transparent 1px), linear-gradient(90deg, #7BA3C5 1px, transparent 1px)`,
+                       backgroundSize: '12px 12px'
+                     }}>
                 </div>
-                <span className="text-4xl font-serif font-bold text-slate">4</span>
+                <div className="relative z-10">
+                  <div className="mx-auto mb-4 flex items-center justify-center">
+                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
+                  </div>
+                  <div className="text-4xl font-serif font-bold text-slate mb-1">4</div>
+                  <h3 className="text-xl font-serif leading-snug text-slate">Support</h3>
+                </div>
               </div>
-              <h3 className="text-xl font-serif leading-snug text-slate mb-2">Support</h3>
               <p className="text-sm font-sans leading-relaxed text-slate">
                 Empower teams and keep systems optimised
               </p>
