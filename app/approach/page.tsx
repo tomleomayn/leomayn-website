@@ -28,7 +28,7 @@ export default function ApproachPage() {
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
-              Three principles that guide everything we do
+              How we deliver successful AI transformation projects
             </h2>
             <div className="space-y-12">
               <div>
