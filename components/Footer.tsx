@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="font-sans text-sm font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="font-sans text-sm font-bold text-white mb-4">
               Services
             </h4>
             <ul className="space-y-2">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h4 className="font-sans text-sm font-bold text-white uppercase tracking-wider mb-4">
+            <h4 className="font-sans text-sm font-bold text-white mb-4">
               Company
             </h4>
             <ul className="space-y-2">
@@ -83,10 +83,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal Column */}
+          {/* Resources Column */}
           <div>
-            <h4 className="font-sans text-sm font-bold text-white uppercase tracking-wider mb-4">
-              Legal
+            <h4 className="font-sans text-sm font-bold text-white mb-4">
+              Resources
             </h4>
             <ul className="space-y-2">
               <li>

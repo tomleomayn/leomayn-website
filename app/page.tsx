@@ -71,9 +71,12 @@ export default function HomePage() {
       {/* Context Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-serif text-slate mb-8 text-center">
+            AI helps great teams achieve more
+          </h2>
           <div className="space-y-6 text-lg leading-relaxed text-slate">
             <p>
-              Most organisations have capacity trapped in low-value work. Manual processes,
+              Most organisations have capacity trapped in low-value work: manual processes,
               error-prone handoffs, information scattered across systems. Time for strategic
               work that earns fees or creates differentiation gets eroded because day-to-day
               demands constant attention.
@@ -95,7 +98,7 @@ export default function HomePage() {
       <section className="py-20 bg-chalk">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-serif text-slate mb-12 text-center">
-            We solve three problems faced by organisations
+            Three problems we solve
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -110,7 +113,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Manual work crowds out strategic work
+                  Excessive manual work crowds out time for strategic work
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Time spent chasing updates, switching systems, and doing manual data entry
@@ -121,7 +124,7 @@ export default function HomePage() {
                       [1]
                     </a>
                   </sup>
-                  . This reduces the capacity for strategic work that drives growth.
+                  . Little capacity remains for strategic work that drives growth.
                 </p>
               </div>
             </div>
@@ -137,7 +140,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Automating broken workflows doesn't work
+                  Automating broken workflows compounds problems
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Automating inefficient processes makes them faster but not better
@@ -146,7 +149,7 @@ export default function HomePage() {
                       [2]
                     </a>
                   </sup>
-                  {' - '}and in fact it magnifies problems rather than solving them.
+                  . Technology overlaid on broken workflows magnifies problems rather than solving them. Fix the workflow first, then scale what works.
                 </p>
               </div>
             </div>
@@ -162,7 +165,7 @@ export default function HomePage() {
 
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif text-slate mb-4">
-                  Tool choice before diagnosis creates waste
+                  Tool selection before diagnosis creates waste
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Organisations waste 30% of software spending on unused licenses
@@ -171,8 +174,7 @@ export default function HomePage() {
                       [3]
                     </a>
                   </sup>
-                  . Leading with a technology choice before understanding the operational problem
-                  leads to disappointing results.
+                  . Selecting technology before understanding the operational problem leads to shelfware and disappointing results.
                 </p>
               </div>
             </div>
@@ -180,7 +182,7 @@ export default function HomePage() {
 
           {/* References Section */}
           <div className="mt-12 pt-4 border-t border-steel/20">
-            <h4 className="text-sm font-sans font-semibold text-slate uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-sans font-semibold text-slate mb-4">
               References
             </h4>
 
@@ -188,9 +190,9 @@ export default function HomePage() {
               {/* Reference 1 */}
               <p id="ref1" className="text-sm font-sans text-slate leading-relaxed">
                 [1] Asana. (2025).
-                <em> Anatomy of Work Index 2025</em>.
+                <em> Why Work About Work is Bad</em>.
                 <a
-                  href="https://asana.com/resources/anatomy-of-work"
+                  href="https://asana.com/resources/why-work-about-work-is-bad"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline ml-1"
@@ -201,14 +203,13 @@ export default function HomePage() {
 
               {/* Reference 2 */}
               <p id="ref2" className="text-sm font-sans text-slate leading-relaxed">
-                [2] Gates, B. (1995).
-                <em> The Road Ahead</em>.
+                [2] Gates, B.
                 "The first rule of any technology used in a business is that automation
                 applied to an efficient operation will magnify the efficiency. The second
                 is that automation applied to an inefficient operation will magnify the
                 inefficiency."
                 <a
-                  href="https://www.goodreads.com/quotes/536961-the-first-rule-of-any-technology-used-in-a-business"
+                  href="https://www.businessinsider.com/quotes-from-the-worlds-second-richest-man-2013-3"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline ml-1"
@@ -219,11 +220,10 @@ export default function HomePage() {
 
               {/* Reference 3 */}
               <p id="ref3" className="text-sm font-sans text-slate leading-relaxed">
-                [3] Gartner & NPI Financial. (2024).
-                <em> IT Cost Reduction Strategies</em>.
-                Analysis of SaaS spending waste and unused licenses.
+                [3] NPI Financial.
+                <em> 12 IT Cost Reduction Strategies to Eliminate Toxic Spend</em>.
                 <a
-                  href="https://npifinancial.com/blog/it-cost-reduction-strategies/"
+                  href="https://www.npifinancial.com/blog/12-it-cost-reduction-strategies-to-eliminate-toxic-spend"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline ml-1"
@@ -236,30 +236,30 @@ export default function HomePage() {
               <p className="text-xs font-sans text-slate leading-relaxed mt-4">
                 Additional supporting research:
                 <a
-                  href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-of-workweek-on-manual-repetitive-tasks"
+                  href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-work-week-manual-repetitive-tasks"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline ml-1"
                 >
-                  Smartsheet (2024)
+                  Smartsheet
                 </a>
                 {', '}
                 <a
-                  href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us"
+                  href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline"
                 >
-                  McKinsey Global Institute (2025)
+                  McKinsey Global Institute
                 </a>
                 {', '}
                 <a
-                  href="https://www.flexera.com/about-us/press-center/flexera-releases-2025-state-of-itam-report.html"
+                  href="https://www.flexera.com/about-us/press-center/it-teams-losing-visibility-according-to-flexera-2025-state-of-itam-report"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline"
                 >
-                  Flexera (2025)
+                  Flexera ITAM Report
                 </a>
               </p>
               <div className="border-t border-steel/10 pt-2"></div>
@@ -276,7 +276,7 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
@@ -288,7 +288,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
@@ -300,7 +300,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
@@ -312,7 +312,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
