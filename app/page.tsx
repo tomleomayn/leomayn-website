@@ -104,7 +104,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
                      backgroundSize: '12px 12px'
@@ -131,7 +131,7 @@ export default function HomePage() {
 
             {/* Card 2 */}
             <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
                      backgroundSize: '12px 12px'
@@ -156,7 +156,7 @@ export default function HomePage() {
 
             {/* Card 3 */}
             <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
                      backgroundSize: '12px 12px'

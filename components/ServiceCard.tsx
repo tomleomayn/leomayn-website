@@ -12,7 +12,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ number, title, subtitle, description, href, features }: ServiceCardProps) {
   return (
     <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none"
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
            style={{
              backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
              backgroundSize: '12px 12px'
@@ -47,7 +47,7 @@ export default function ServiceCard({ number, title, subtitle, description, href
 
         <Link
           href={href}
-          className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-6 py-3 rounded-lg hover:bg-slate hover:text-white transition-all w-full"
+          className="inline-flex items-center justify-center font-sans font-semibold text-base bg-pearl border-2 border-slate text-slate px-6 py-3 rounded-lg hover:bg-slate hover:text-white transition-all w-full"
         >
           Learn More
         </Link>
