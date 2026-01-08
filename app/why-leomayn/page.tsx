@@ -145,7 +145,7 @@ export default function WhyLeomaynPage() {
               Work with us
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call. We'll map one workflow and show you where operational leverage exists in your business.
+              Book a 30-minute discovery call. We'll map one workflow and show you where there may be the opportunity to operational leverage in your business.
             </p>
             <Link
               href="/contact"
