@@ -15,10 +15,12 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    confirmEmail: '',
     company: '',
     message: '',
   })
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [emailError, setEmailError] = useState('')
 
   const handleCalendlyClick = () => {
     // Track Calendly discovery call booking click
@@ -35,20 +37,31 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setEmailError('')
+
+    // Validate emails match
+    if (formData.email !== formData.confirmEmail) {
+      setEmailError('Email addresses do not match')
+      return
+    }
+
     setStatus('submitting')
 
     try {
+      // Remove confirmEmail from submission data
+      const { confirmEmail, ...submitData } = formData
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitData),
       })
 
       if (response.ok) {
         setStatus('success')
-        setFormData({ name: '', email: '', company: '', message: '' })
+        setFormData({ name: '', email: '', confirmEmail: '', company: '', message: '' })
 
         // Track successful contact form submission
         if (typeof window !== 'undefined' && window.dataLayer) {
@@ -69,6 +82,11 @@ export default function ContactPage() {
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    // Clear email error when user modifies email fields
+    if (e.target.name === 'email' || e.target.name === 'confirmEmail') {
+      setEmailError('')
+    }
+
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -191,6 +209,21 @@ export default function ContactPage() {
                     </div>
 
                     <div>
+                      <label htmlFor="confirmEmail" className="block text-sm font-sans font-semibold text-slate mb-2">
+                        Confirm Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="confirmEmail"
+                        name="confirmEmail"
+                        required
+                        value={formData.confirmEmail}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate"
+                      />
+                    </div>
+
+                    <div>
                       <label htmlFor="company" className="block text-sm font-sans font-semibold text-slate mb-2">
                         Company
                       </label>
@@ -218,6 +251,12 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate resize-none"
                       />
                     </div>
+
+                    {emailError && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800 text-sm">
+                        {emailError}
+                      </div>
+                    )}
 
                     {status === 'error' && (
                       <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800 text-sm">
