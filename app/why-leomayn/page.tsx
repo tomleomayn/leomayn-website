@@ -31,9 +31,12 @@ export default function WhyLeomaynPage() {
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Image */}
               <div className="aspect-square relative">
-                <div className="aspect-square bg-pearl rounded-lg flex items-center justify-center">
-                  <span className="text-steel text-sm">Photo placeholder</span>
-                </div>
+                <Image
+                  src="/images/tom-jones-founder.jpg"
+                  alt="Tom Jones, Founder of Leomayn"
+                  fill
+                  className="object-cover rounded-lg"
+                />
               </div>
 
               {/* Intro */}
