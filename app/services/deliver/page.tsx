@@ -125,31 +125,12 @@ export default function DeliverPage() {
 
               <div className="bg-pearl border border-steel rounded-lg p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Complete Documentation
-                </h3>
-                <p className="text-sm text-slate/70">
-                  User guides, administrator manuals, troubleshooting procedures, and
-                  technical documentation covering all workflows and configurations.
-                </p>
-              </div>
-
-              <div className="bg-pearl border border-steel rounded-lg p-6">
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Training Materials
-                </h3>
-                <p className="text-sm text-slate/70">
-                  Screen recordings, quick reference guides, and training sessions for
-                  users and administrators to operate and maintain the system.
-                </p>
-              </div>
-
-              <div className="bg-pearl border border-steel rounded-lg p-6">
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Full System Access
+                  System Access and Documentation
                 </h3>
                 <p className="text-sm text-slate/70">
                   All code, workflows, configurations, credentials, and admin access
                   transferred to your team. Complete ownership and control.
+                  Quick reference guides and documentation are provided.
                 </p>
               </div>
             </div>

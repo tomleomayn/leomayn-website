@@ -133,25 +133,6 @@ export default function DefinePage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Governance Documentation
-                </h3>
-                <p className="text-sm text-slate/70">
-                  Data handling protocols, access control matrix, audit requirements,
-                  and compliance mapping for your regulatory environment.
-                </p>
-              </div>
-
-              <div className="bg-pearl border border-steel rounded-lg p-6">
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Implementation Roadmap
-                </h3>
-                <p className="text-sm text-slate/70">
-                  Phased delivery plan with milestones, dependencies, resource requirements,
-                  and training schedule for successful rollout.
-                </p>
-              </div>
             </div>
           </div>
         </section>
