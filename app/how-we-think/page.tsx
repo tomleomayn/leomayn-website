@@ -32,24 +32,29 @@ export default function HowWeThinkPage() {
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                AI is a lever, not a silver bullet. Without fixing the underlying
-                workflow, AI just accelerates broken processes. We see companies
-                rushing to implement ChatGPT or Copilot without understanding what
-                operational problem they are solving.
+                Many AI and automation projects fail because they start with the technology
+                and work backwards to the problem. Tools are selected before understanding
+                constraints. Transformation is promised without diagnosing what needs fixing.
               </p>
               <p>
-                The result is predictable: pilot purgatory. Teams run experiments
-                that show promise but never scale. Shadow IT emerges. Governance
-                breaks down. Investment is wasted.
+                AI is a powerful lever. Without fixing the underlying workflow, it just
+                accelerates broken processes. We see companies implementing ChatGPT, Copilot,
+                or Claude without enabling teams or understanding what operational problem
+                they are solving.
               </p>
               <p>
-                We work the other way round. Fix the workflow first. Remove bottlenecks,
-                eliminate unnecessary handoffs, clarify decision rights, and standardize
-                where it matters. Only then does automation or AI make sense.
+                The result is predictable: pilot purgatory. Teams run experiments that show
+                promise but never scale. Shadow IT emerges. Governance breaks down. Investment
+                is wasted.
               </p>
               <p>
-                This is not slower. It is faster. Because you build once, not three times.
-                You deploy solutions that stick, not experiments that die in staging.
+                We work differently. We start with how your work actually runs today, identify
+                what's broken and what matters, redesign the workflow to remove inefficiencies,
+                and only then deploy AI and automation to scale what works.
+              </p>
+              <p>
+                This approach delivers working systems in weeks. Your team owns the result,
+                understands how it works, and can maintain it independently.
               </p>
             </div>
           </div>
@@ -63,14 +68,14 @@ export default function HowWeThinkPage() {
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                Most operational problems are not technical. They are organizational.
+                Most operational problems are not technical. They are organisational.
                 Unclear ownership, duplicated effort, manual handoffs between systems,
                 missing data, inconsistent processes across teams.
               </p>
               <p>
-                Adding technology to this mess creates more complexity, not less. You
-                now have the original organizational problem plus integration complexity,
-                tool sprawl, and maintenance burden.
+                Adding technology to this creates more complexity. You now have the original
+                organisational problem plus integration overhead, tool sprawl, and maintenance
+                burden.
               </p>
               <p>
                 Our approach strips out complexity before adding anything new. We clarify
@@ -99,7 +104,7 @@ export default function HowWeThinkPage() {
               </p>
               <p>
                 We design governance into the solution from the start. Who can access what
-                data? How is sensitive information protected? What gets logged? How do we
+                data? How is sensitive information protected? What gets logged? How do you
                 prove compliance?
               </p>
               <p>
@@ -107,37 +112,37 @@ export default function HowWeThinkPage() {
                 scale safely. Systems without it create liability.
               </p>
               <p>
-                For professional services firms handling client data, governance is the
-                difference between operational leverage and operational risk.
+                For firms handling client data, governance is the difference between
+                operational leverage and operational risk.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Transfer Capability, Not Dependency */}
+        {/* Transfer Capability */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Transfer capability, not dependency
+              Transfer capability
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
                 Many consultancies and vendors create dependency by design. Proprietary
-                platforms, complex configurations, undocumented customizations. You cannot
+                platforms, complex configurations, undocumented customisations. You cannot
                 maintain the system without them.
               </p>
               <p>
-                We do the opposite. Every solution is built on open platforms you can own.
-                Every workflow is documented. Every configuration is explained. Your team
-                receives training to maintain and improve the system independently.
+                We build every solution on platforms you control. Every workflow is documented.
+                Every configuration is explained. Your team receives training to maintain and
+                improve the system independently.
               </p>
               <p>
-                The goal is to make ourselves redundant, not indispensable. You should be
-                able to iterate, modify, and extend what we build without coming back to us.
+                The goal is to make ourselves redundant. You should be able to iterate, modify,
+                and extend what we build without coming back to us.
               </p>
               <p>
-                This creates better outcomes. When you own the capability, you adapt faster,
-                iterate more frequently, and compound improvements over time.
+                When you own the capability, you adapt faster, iterate more frequently, and
+                compound improvements over time.
               </p>
             </div>
           </div>
@@ -161,41 +166,11 @@ export default function HowWeThinkPage() {
               </p>
               <p>
                 Change management is not a phase at the end. It is a constraint throughout.
-                We do not build systems people will not use. We build systems that make their
-                work easier, clearer, and more valuable.
+                We build systems that make work easier, clearer, and more valuable.
               </p>
               <p>
                 The best automation is invisible. It removes friction without adding complexity.
-                People get better outcomes without feeling like they are using new technology.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Measure What Matters */}
-        <section className="py-24 px-6 lg:px-8 bg-pearl">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Measure what matters
-            </h2>
-            <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                Many AI projects measure activity instead of outcomes. Hours saved, tasks
-                automated, workflows digitized. These metrics miss the point.
-              </p>
-              <p>
-                We measure operational leverage: Can you deliver more value with the same
-                team? Can you maintain quality while growing revenue? Can your best people
-                spend more time on high-value work?
-              </p>
-              <p>
-                This requires different metrics. Throughput per person. Error rates. Cycle
-                time from intake to delivery. Time spent on value creation versus administration.
-              </p>
-              <p>
-                When you measure what matters, you optimize for the right things. Automation
-                that saves time but reduces quality is not success. Automation that frees
-                experts to focus on complex problems is.
+                People get better outcomes without feeling like they are learning new technology.
               </p>
             </div>
           </div>
@@ -208,7 +183,7 @@ export default function HowWeThinkPage() {
               See how we apply these principles
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call. We will discuss your operational
+              Book a 30-minute discovery call. We'll discuss your operational
               challenges and show you how our approach creates sustainable leverage.
             </p>
             <Link
