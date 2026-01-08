@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export const metadata = {
   title: 'Why Leomayn - Leomayn',
-  description: 'Founded by Tom Jones to solve operational challenges through AI and automation. Operations and AI consulting for professional and business services.',
+  description: 'Founded by Tom Jones to solve operational challenges through AI and automation. Operations and AI consulting for knowledge work.',
 }
 
 export default function WhyLeomaynPage() {
@@ -20,13 +20,30 @@ export default function WhyLeomaynPage() {
               Why Leomayn
             </h1>
             <p className="text-2xl leading-relaxed text-slate">
-              We provide operations and AI consulting to improve the delivery of knowledge work in professional services firms and business operations.
+              Operations and AI consulting for knowledge work
             </p>
           </div>
         </section>
 
-        {/* Founder Section */}
+        {/* Company Intro */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                Leomayn helps organisations fix operational foundations before scaling with
+                AI and automation. We deliver working systems, transfer capability, and
+                create sustainable leverage.
+              </p>
+              <p>
+                The consultancy was founded by Tom Jones, drawing on nearly two decades
+                of experience building and scaling operations in professional services.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Founder Section */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Image */}
@@ -39,10 +56,9 @@ export default function WhyLeomaynPage() {
                 />
               </div>
 
-              {/* Intro */}
+              {/* Bio */}
               <div>
-                <h2 className="text-3xl font-serif text-slate mb-2">Tom Jones</h2>
-                <p className="text-lg font-sans text-steel mb-4">Founder, Leomayn</p>
+                <h2 className="text-3xl font-serif text-slate mb-4">Tom Jones, Founder</h2>
                 <a
                   href="https://www.linkedin.com/in/thomasallanjones/"
                   target="_blank"
@@ -55,56 +71,59 @@ export default function WhyLeomaynPage() {
                     <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                   </svg>
                 </a>
-                <p className="text-base font-sans text-slate leading-relaxed">
-                  My career has been built on solving operational challenges. My brain
-                  thinks in inputs, processes, and outputs. I thrive on the buzz of
-                  delivering systems that work.
-                </p>
+                <div className="space-y-4 text-base font-sans text-slate leading-relaxed">
+                  <p>
+                    My career has been built on solving operational challenges. My brain
+                    thinks in inputs, processes, and outputs. I thrive on the buzz of
+                    delivering systems that work.
+                  </p>
+                  <p>
+                    I spent eight years at iCrossing delivering digital solutions to clients
+                    including Apple, Next, and Barclays, rising to Chief Client Officer on the
+                    executive team. Then 10 years as co-founder and COO of Everybody, a digital
+                    agency serving some of the world's biggest healthcare brands.
+                  </p>
+                  <p>
+                    At Everybody I built the product and operational systems that scaled the
+                    business from a kitchen table to £30m turnover, £6.75m fees, and 19% EBITDA.
+                    Clients included Boehringer Ingelheim, Nestlé, Pfizer, and Boston Scientific.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Experience */}
-        <section className="py-24 px-6 lg:px-8 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Experience
-            </h2>
-            <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                I spent eight years at iCrossing delivering digital solutions to clients
-                including Apple, Next, and Barclays, rising to Chief Client Officer on the
-                executive team. Then 10 years as co-founder and COO of Everybody, a digital
-                agency serving some of the world's biggest healthcare brands.
-              </p>
-              <p>
-                At Everybody I built the product and operational systems that scaled the
-                business from a kitchen table to £30m turnover, £6.75m fees, and 19% EBITDA.
-                Clients included Boehringer Ingelheim, Nestlé, Pfizer, and Boston Scientific.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* I Know Knowledge Work */}
+        {/* What We Bring */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              I know knowledge work
+              What we bring
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                I understand how to consistently deliver knowledge work while maintaining
-                quality standards. I know why delivery fails and the common failure modes
-                that compromise quality. I have deep first-hand experience of how
-                professional services firms actually work and the commercial models that
-                underpin them.
+                Leomayn combines deep operational experience with modern AI and automation
+                capability. We understand how professional services firms actually work -
+                the commercial models, delivery pressures, and quality standards.
               </p>
+              <p>Our approach draws on:</p>
+              <ul className="space-y-3 ml-6">
+                <li>
+                  <strong>Operational leadership</strong> - building and scaling delivery functions
+                </li>
+                <li>
+                  <strong>Client-side experience</strong> - understanding buyer needs and constraints
+                </li>
+                <li>
+                  <strong>Technical implementation</strong> - hands-on automation and AI deployment
+                </li>
+                <li>
+                  <strong>Change management</strong> - making new systems stick
+                </li>
+              </ul>
               <p>
-                My experience has taught me what actually works in operations improvement:
-                diagnose real problems, design for real constraints, build systems people
-                will actually use, and transfer capability so teams can iterate independently.
+                We partner with specialists when projects require additional expertise,
+                ensuring you get the right capability for each engagement.
               </p>
             </div>
           </div>
@@ -119,7 +138,7 @@ export default function WhyLeomaynPage() {
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
                 I started Leomayn because I'm fascinated by what AI makes possible and
-                wanted to build an AI-first business from the ground up.
+                wanted to build an AI-first consultancy from the ground up.
               </p>
               <p>
                 Too many firms know they have operational problems but don't have time to
@@ -145,7 +164,7 @@ export default function WhyLeomaynPage() {
               Work with us
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call. We'll map one workflow and show you where there may be the opportunity to operational leverage in your business.
+              Book a 30-minute discovery call. We'll map one workflow and show you where operational leverage exists in your business.
             </p>
             <Link
               href="/contact"
