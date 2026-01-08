@@ -32,15 +32,15 @@ export default function ApproachPage() {
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                Most AI and automation projects fail because they start with the technology
-                and work backwards to the problem. They automate broken workflows, making
-                them faster but no less broken. They select tools before understanding
-                constraints. They promise transformation without diagnosing what needs fixing.
+                Many AI and automation projects fail because they start with the technology
+                and work backwards to the problem. Broken workflows are automated, making
+                them faster but no less broken. Tools are selected before understanding
+                constraints. Transformation is promised without diagnosing what needs fixing.
               </p>
               <p>
                 We work the other way round. We start with how your work actually runs today,
                 identify what's broken and what matters, redesign the workflow to remove
-                inefficiencies, and only then deploy automation to scale what works.
+                inefficiencies, and only then deploy AI and automation to scale what works.
               </p>
               <p>
                 This approach delivers working systems in weeks, not theoretical frameworks
@@ -60,7 +60,7 @@ export default function ApproachPage() {
             <div className="space-y-12">
               <div>
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  1. Diagnose before prescribing
+                  1. Diagnose before prescribing:
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
                   We don't start with solutions. We start with stakeholder interviews,
@@ -73,26 +73,25 @@ export default function ApproachPage() {
 
               <div>
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  2. Design for your constraints
+                  2. Design for your reality:
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  Every organisation has unique constraints: legacy systems, data quality
-                  issues, regulatory requirements, team capabilities, and governance needs.
-                  Generic solutions ignore these realities. We design workflows and automation
-                  that fit your specific environment, using tools you can own, maintain, and
-                  adapt as requirements evolve.
+                  Every organisation is unique: legacy systems, data quality issues, regulatory
+                  requirements, team capabilities, and governance needs. Generic solutions ignore
+                  these realities. We design workflows and automation that fit your specific
+                  environment, using tools you can own, maintain, and adapt as requirements evolve.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  3. Transfer capability, not dependency
+                  3. Transfer capability, not dependency:
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
                   We don't create ongoing dependency on proprietary platforms or consultancy
-                  retainers. You own all code, configurations, and documentation. Your team
-                  receives training to maintain and improve the system independently. The
-                  goal is to make ourselves redundant, not indispensable.
+                  retainers. You own all code, configurations, and documentation. The goal is
+                  to make ourselves redundant, not indispensable. For any clients that require
+                  ongoing support that's also not a problem.
                 </p>
               </div>
             </div>
@@ -105,44 +104,40 @@ export default function ApproachPage() {
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-12">
               What makes us different
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  vs. AI consultants
+                  Working systems, not strategy decks
                 </h3>
-                <p className="text-base text-slate/70">
-                  We fix workflows before adding AI. They start with AI and retrofit
-                  problems. We deliver working systems. They deliver strategy decks.
+                <p className="text-base leading-relaxed text-slate">
+                  We deliver automation you can use, not just recommendations you have to implement.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  vs. Automation agencies
+                  Capability transfer
                 </h3>
-                <p className="text-base text-slate/70">
-                  We include change management and governance. They just build tools.
-                  We transfer capability. They create dependency.
+                <p className="text-base leading-relaxed text-slate">
+                  You own what we build, with the option to maintain it independently.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  vs. Management consultancies
+                  Designed for your constraints
                 </h3>
-                <p className="text-base text-slate/70">
-                  We actually build things. They deliver recommendations. We charge
-                  fixed prices. They bill hourly with scope creep.
+                <p className="text-base leading-relaxed text-slate">
+                  Solutions fit your data, systems, and governance requirements. Not off-the-shelf products.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  vs. Software vendors
+                  Fixed prices, defined scope
                 </h3>
-                <p className="text-base text-slate/70">
-                  We design for your constraints. They sell generic products. You own
-                  our work. They rent you licenses.
+                <p className="text-base leading-relaxed text-slate">
+                  You know the cost before we start. No hourly billing, no scope creep.
                 </p>
               </div>
             </div>
@@ -164,7 +159,7 @@ export default function ApproachPage() {
               <p>
                 Projects are priced based on complexity, not hours. You know the cost before
                 we start. No surprises, no scope creep, no hourly rate anxiety. Clear scope,
-                clear deliverables, clear timeline.
+                clear deliverables, clear timelines.
               </p>
               <p>
                 You can pause between phases. Complete a diagnosis and decide whether to
