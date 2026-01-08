@@ -76,7 +76,7 @@ export default function ServicesPage() {
               <ServiceCard
                 number="4"
                 title="Support"
-                subtitle="Optimise & Scale"
+                subtitle="Embed & Optimise"
                 description="Empower teams to use AI in their work. Keep systems optimised as you grow. Our technical support and training helps compound improvements over time."
                 href="/services/support"
                 features={[
