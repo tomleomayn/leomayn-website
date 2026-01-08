@@ -15,15 +15,15 @@ export default function SupportPage() {
         {/* Hero Section */}
         <section className="bg-pearl py-24 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 bg-coral rounded-lg flex items-center justify-center">
-                <span className="text-3xl font-serif text-slate">4</span>
+            <div className="flex items-end gap-6 mb-6">
+              <div className="w-20 h-20 bg-coral rounded-lg flex items-center justify-center">
+                <i className="fi fi-rs-hands-heart text-slate leading-none flex items-center justify-center" style={{ fontSize: '48px' }}></i>
               </div>
               <div>
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Support
                 </h1>
-                <p className="text-xl text-slate/60 mt-2">Optimise & Scale</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Embed & Optimise</p>
               </div>
             </div>
             <p className="text-2xl leading-relaxed text-slate">
