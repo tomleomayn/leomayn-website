@@ -106,8 +106,12 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-sm text-white/40">
-            Registered in England.  Company registration number: 16856146.  © 2026 Leomayn Limited.  All rights reserved.
+          <p className="text-sm text-white/40 leading-relaxed">
+            Registered in England.
+            <br />
+            Company registration number: 16856146.
+            <br />
+            © 2026 Leomayn Limited. All rights reserved.
           </p>
         </div>
       </div>
