@@ -17,12 +17,12 @@ export default function ServicesPage() {
         <section className="bg-pearl py-24 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
-              Four phases to operational improvement
+              Four steps to operational improvement
             </h1>
             <p className="text-xl leading-relaxed text-slate">
-              We diagnose the problem before prescribing solutions. We design workflows
-              to fit your constraints. We build working systems in weeks. We transfer
-              capability so you own the result.
+              We evaluate the situation before prescribing any solutions. New workflows
+              are designed to fit your business. We ship working systems not pilots. We
+              transfer capability so you own the results.
             </p>
           </div>
         </section>
@@ -35,13 +35,13 @@ export default function ServicesPage() {
                 number="1"
                 title="Diagnose"
                 subtitle="Discovery & Assessment"
-                description="Identify what's broken and what matters. We map current workflows, interview stakeholders, and pinpoint the operational bottlenecks limiting your effectiveness."
+                description="Identify what's broken and what moves the needle. We interview stakeholders, map current workflows, and pinpoint operational pain points that limit effectiveness."
                 href="/services/diagnose"
                 features={[
                   'Stakeholder interviews to surface pain points',
                   'Current state process mapping',
                   'Prioritised opportunity analysis',
-                  'Complexity scoring and effort estimation',
+                  'AI readiness assessment',
                 ]}
               />
 
@@ -49,13 +49,13 @@ export default function ServicesPage() {
                 number="2"
                 title="Define"
                 subtitle="Solution Design"
-                description="Design the right solution once. We create detailed blueprints that fit your data, systems, and governance requirements before building anything."
+                description="Design the right solution once and remove guesswork from the build phase. We create detailed blueprints that fit your data, systems, and governance requirements before building."
                 href="/services/define"
                 features={[
                   'Workflow redesign and specifications',
+                  'Business logic and schema design',
                   'Technical architecture and integration mapping',
-                  'Governance framework and data controls',
-                  'Change management and training plan',
+                  'Governance and data considerations',
                 ]}
               />
 
@@ -77,13 +77,13 @@ export default function ServicesPage() {
                 number="4"
                 title="Support"
                 subtitle="Optimise & Scale"
-                description="Keep systems optimised as you grow. Monthly advisory, ongoing improvements, and technical support to ensure your automation scales with your business."
+                description="Empower teams to use AI in their work. Keep systems optimised as you grow. Our technical support and training helps compound improvements over time."
                 href="/services/support"
                 features={[
+                  'Applied AI training',
                   'Monthly system health checks',
                   'Performance monitoring and optimisation',
                   'Incremental improvements and new features',
-                  'Technical support and troubleshooting',
                 ]}
               />
             </div>
@@ -95,10 +95,10 @@ export default function ServicesPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-4">
-                How the framework works
+                How we work
               </h2>
               <p className="text-xl text-slate/70 max-w-3xl mx-auto">
-                Each phase builds on the previous one. You can pause between phases,
+                Each phase of work builds on the previous one. You can pause between phases,
                 or engage us for the full journey from diagnosis through to ongoing support.
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Diagnose</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
-                  2-4 weeks
+                  c.2 - 4 weeks
                 </p>
               </div>
 
@@ -120,7 +120,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Define</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
-                  2-3 weeks
+                  c.2 - 3 weeks
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
-                  4-8 weeks
+                  c.4 - 8 weeks
                 </p>
               </div>
 
@@ -160,20 +160,22 @@ export default function ServicesPage() {
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-8">
-              Transparent, complexity-based pricing
+              Transparent pricing approach
             </h2>
             <div className="space-y-4 text-lg leading-relaxed text-slate">
               <p>
-                We don't charge by the hour. We price by project complexity across three bands:
-                low, standard, and high.
+                We don't charge by the hour, we price by project complexity: low, standard, and high.
               </p>
               <p>
-                Complexity is determined by factors like stakeholder count, systems requiring
-                integration, process maturity, and governance requirements. You know the price
-                before we start.
+                Complexity is determined by factors like the number of systems requiring integration,
+                number of stakeholder involved, process complexity and maturity, and governance
+                requirements. You know the price before we start.
               </p>
               <p>
-                Every project includes a fixed scope, clear deliverables, and a defined timeline.
+                Every project includes a fixed scope, clear deliverables, and a timeline. Any required
+                changes to scope are easily accommodated with a change request.
+              </p>
+              <p>
                 No surprises, no scope creep, no hourly rate anxiety.
               </p>
             </div>
@@ -187,8 +189,10 @@ export default function ServicesPage() {
               Ready to start?
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call. We'll map one broken workflow
-              and show you what's possible.
+              Book a 30-minute discovery call.
+            </p>
+            <p className="text-xl font-sans leading-relaxed text-white mb-8">
+              We'll map one broken workflow and show you what's possible.
             </p>
             <Link
               href="/contact"
