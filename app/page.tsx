@@ -68,6 +68,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Context Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="space-y-6 text-lg leading-relaxed text-slate">
+            <p>
+              Most organisations have capacity trapped in low-value work. Manual processes,
+              error-prone handoffs, information scattered across systems. Time for strategic
+              work that earns fees or creates differentiation gets eroded because day-to-day
+              demands constant attention.
+            </p>
+            <p>
+              AI and automation can reclaim this capacity, but only if the underlying
+              operations are sound. Automating broken processes makes them faster, not
+              better. Fix the workflow first, then apply technology to scale what works.
+            </p>
+            <p>
+              We help organisations redesign how work flows, then build automation
+              that frees people to focus on what matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section className="py-20 bg-chalk">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
