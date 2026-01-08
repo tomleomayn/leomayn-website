@@ -363,7 +363,7 @@ export default function HomePage() {
           <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
             Ready to level up your operations?
           </h2>
-          <p className="text-xl font-sans leading-relaxed text-white mb-8">
+          <p className="text-xl font-sans leading-relaxed text-white mb-6">
             Book a 30-minute discovery call. We'll map one broken workflow
             and show you what's possible.
           </p>
