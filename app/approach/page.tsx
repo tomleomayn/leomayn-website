@@ -117,6 +117,26 @@ export default function ApproachPage() {
           </div>
         </section>
 
+        {/* Who We Serve */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Who we serve
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                We work with professional services firms and the business services functions in other organisations: agencies, consultancies, expert service businesses. Typically 50-500 people, £5M-£50M revenue, with operations directors or COOs who are looking for support to create operational leverage.
+              </p>
+              <p>
+                Our clients face common challenges: manual processes limiting growth or reduce billable time, administrative drag eroding margins, team burnout from repetitive work, and pressure to adopt AI without a clear strategy.
+              </p>
+              <p>
+                We help them build operational systems that scale. Not through headcount, but through improved workflows, intelligent automation, and AI deployed where it solves real problems.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* How We Work */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
