@@ -22,7 +22,7 @@ export default function ServiceCard({ number, title, subtitle, description, href
       <div className="relative z-10">
         <div className="flex items-start gap-4 mb-4">
           <div className="flex-shrink-0 w-16 h-16 bg-coral rounded-lg flex items-center justify-center">
-            <span className="text-3xl font-serif text-slate">{number}</span>
+            <span className="text-xl font-serif text-slate">{number}</span>
           </div>
           <div className="flex-1">
             <h3 className="text-2xl font-serif leading-snug text-slate mb-1">{title}</h3>

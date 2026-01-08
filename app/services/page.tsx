@@ -106,7 +106,7 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
-                  <span className="text-4xl font-serif text-slate">1</span>
+                  <span className="text-xl font-serif text-slate">1</span>
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Diagnose</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
@@ -116,7 +116,7 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
-                  <span className="text-4xl font-serif text-slate">2</span>
+                  <span className="text-xl font-serif text-slate">2</span>
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Define</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
@@ -126,7 +126,7 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
-                  <span className="text-4xl font-serif text-slate">3</span>
+                  <span className="text-xl font-serif text-slate">3</span>
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Deliver</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
@@ -136,7 +136,7 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-6 mb-4 h-32 flex items-center justify-center">
-                  <span className="text-4xl font-serif text-slate">4</span>
+                  <span className="text-xl font-serif text-slate">4</span>
                 </div>
                 <h3 className="text-xl font-serif leading-snug text-slate mb-2">Support</h3>
                 <p className="text-sm font-sans leading-relaxed text-slate/70">
