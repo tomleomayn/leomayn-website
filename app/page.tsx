@@ -270,7 +270,7 @@ export default function HomePage() {
 
       {/* Solution Section */}
       <section className="py-24 px-6 lg:px-8 bg-pearl">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
             We fix the work first, then scale it with AI
           </h2>
