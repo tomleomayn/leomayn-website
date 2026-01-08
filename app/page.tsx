@@ -72,7 +72,7 @@ export default function HomePage() {
       <section className="py-20 bg-chalk">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-serif text-slate mb-12 text-center">
-            Three problems to fix first
+            We've set our sights on three problems faced by organizations:
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -94,7 +94,7 @@ export default function HomePage() {
                   and doing manual data entry. Knowledge workers spend 60% of time
                   on work about work rather than skilled tasks
                   <sup>
-                    <a href="#ref1" className="text-coral hover:text-coral-dark no-underline">
+                    <a href="#ref1" className="text-coral hover:text-coral-dark no-underline font-bold">
                       [1]
                     </a>
                   </sup>
@@ -119,7 +119,7 @@ export default function HomePage() {
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Automating broken processes makes them faster but no less broken
                   <sup>
-                    <a href="#ref2" className="text-coral hover:text-coral-dark no-underline">
+                    <a href="#ref2" className="text-coral hover:text-coral-dark no-underline font-bold">
                       [2]
                     </a>
                   </sup>
@@ -145,7 +145,7 @@ export default function HomePage() {
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Organisations waste 30% of software spending on unused licenses
                   <sup>
-                    <a href="#ref3" className="text-coral hover:text-coral-dark no-underline">
+                    <a href="#ref3" className="text-coral hover:text-coral-dark no-underline font-bold">
                       [3]
                     </a>
                   </sup>
@@ -157,7 +157,7 @@ export default function HomePage() {
           </div>
 
           {/* References Section */}
-          <div className="mt-12 pt-8 border-t border-steel/20">
+          <div className="mt-12 pt-4 border-t border-steel/20">
             <h4 className="text-sm font-sans font-semibold text-slate uppercase tracking-wider mb-4">
               References
             </h4>
@@ -211,7 +211,7 @@ export default function HomePage() {
               </p>
 
               {/* Supporting References */}
-              <p className="text-xs font-sans text-steel leading-relaxed mt-4 pb-6 border-b border-steel/10">
+              <p className="text-xs font-sans text-slate leading-relaxed mt-4">
                 Additional supporting research:
                 <a
                   href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-of-workweek-on-manual-repetitive-tasks"
@@ -240,6 +240,7 @@ export default function HomePage() {
                   Flexera (2025)
                 </a>
               </p>
+              <div className="border-t border-steel/10 pt-2"></div>
             </div>
           </div>
         </div>
@@ -253,7 +254,7 @@ export default function HomePage() {
           </h2>
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
@@ -265,7 +266,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
@@ -277,7 +278,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
@@ -289,7 +290,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-coral rounded-lg p-6 mb-4">
+              <div className="bg-coral rounded-lg p-4 md:p-6 mb-4">
                 <div className="mx-auto mb-4 flex items-center justify-center">
                   <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
                 </div>
