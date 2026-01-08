@@ -1,6 +1,7 @@
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Why Leomayn - Leomayn',
@@ -24,18 +25,50 @@ export default function WhyLeomaynPage() {
           </div>
         </section>
 
-        {/* Solving Operational Problems */}
+        {/* Founder Section */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Image */}
+              <div className="aspect-square relative">
+                <div className="aspect-square bg-pearl rounded-lg flex items-center justify-center">
+                  <span className="text-steel text-sm">Photo placeholder</span>
+                </div>
+              </div>
+
+              {/* Intro */}
+              <div>
+                <h2 className="text-3xl font-serif text-slate mb-2">Tom Jones</h2>
+                <p className="text-lg font-sans text-steel mb-4">Founder, Leomayn</p>
+                <a
+                  href="https://www.linkedin.com/in/thomasallanjones/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-coral hover:text-coral-dark mb-6"
+                >
+                  <span>LinkedIn</span>
+                  <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                  </svg>
+                </a>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  My career has been built on solving operational challenges. My brain
+                  thinks in inputs, processes, and outputs. I thrive on the buzz of
+                  delivering systems that work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Solving operational problems
+              Experience
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                My career has been built on solving operational challenges. My brain thinks
-                in inputs, processes, and outputs. I thrive on the buzz of delivering
-                systems that work.
-              </p>
               <p>
                 I spent eight years at iCrossing delivering digital solutions to clients
                 including Apple, Next, and Barclays, rising to Chief Client Officer on the
@@ -52,7 +85,7 @@ export default function WhyLeomaynPage() {
         </section>
 
         {/* I Know Knowledge Work */}
-        <section className="py-24 px-6 lg:px-8 bg-white">
+        <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
               I know knowledge work
@@ -75,7 +108,7 @@ export default function WhyLeomaynPage() {
         </section>
 
         {/* Why Leomayn Exists */}
-        <section className="py-24 px-6 lg:px-8 bg-pearl">
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
               Why Leomayn exists
