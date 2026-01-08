@@ -1,8 +1,6 @@
 import Link from 'next/link'
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
   return (
     <footer className="bg-slate py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -104,10 +102,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/20">
           <p className="text-sm text-white/40">
-            © {currentYear} Leomayn Limited. All rights reserved.
-          </p>
-          <p className="text-sm text-white/40 mt-2">
-            Registered company number 16856146
+            Registered in England. Company registration number: 16856146. © 2026 Leomayn Limited. All rights reserved.
           </p>
         </div>
       </div>
