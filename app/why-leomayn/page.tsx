@@ -20,7 +20,7 @@ export default function WhyLeomaynPage() {
               Why Leomayn
             </h1>
             <p className="text-2xl leading-relaxed text-slate">
-              We provide operations and AI consulting to improve the delivery of knowledge work in professional services firms and business services.
+              We provide operations and AI consulting to improve the delivery of knowledge work in professional services firms and business operations.
             </p>
           </div>
         </section>
