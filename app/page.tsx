@@ -274,7 +274,7 @@ export default function HomePage() {
           <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
             We fix the work first, then scale it with AI
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 mb-8">
             <div className="text-center">
               <div className="bg-coral rounded-lg p-4 md:p-6 mb-4 max-w-[50%] mx-auto">
                 <div className="mx-auto mb-4 flex items-center justify-center">
