@@ -61,115 +61,118 @@ export default function HowWeThinkPage() {
           </div>
         </section>
 
-        {/* Four Principles */}
+        {/* Complexity is the Enemy */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
-          <div className="max-w-4xl mx-auto space-y-16">
-            {/* Complexity is the Enemy */}
-            <div>
-              <h2 className="text-2xl lg:text-3xl font-serif leading-tight text-slate mb-6">
-                Complexity is the enemy
-              </h2>
-              <div className="space-y-4 text-base leading-relaxed text-slate">
-                <p>
-                  Most operational problems are not technical. They are organisational.
-                  Unclear ownership, duplicated effort, manual handoffs between systems,
-                  missing data, inconsistent processes across teams.
-                </p>
-                <p>
-                  Adding technology to this creates more complexity. You now have the original
-                  organisational problem plus integration overhead, tool sprawl, and maintenance
-                  burden.
-                </p>
-                <p>
-                  Our approach strips out complexity before adding anything new. We clarify
-                  who does what, consolidate duplicated work, remove unnecessary steps, and
-                  document the simplified process.
-                </p>
-                <p>
-                  Then we automate the simple version. Automation on top of simplicity
-                  compounds. Automation on top of complexity collapses.
-                </p>
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Complexity is the enemy
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                Most operational problems are not technical. They are organisational.
+                Unclear ownership, duplicated effort, manual handoffs between systems,
+                missing data, inconsistent processes across teams.
+              </p>
+              <p>
+                Adding technology to this creates more complexity. You now have the original
+                organisational problem plus integration overhead, tool sprawl, and maintenance
+                burden.
+              </p>
+              <p>
+                Our approach strips out complexity before adding anything new. We clarify
+                who does what, consolidate duplicated work, remove unnecessary steps, and
+                document the simplified process.
+              </p>
+              <p>
+                Then we automate the simple version. Automation on top of simplicity
+                compounds. Automation on top of complexity collapses.
+              </p>
             </div>
+          </div>
+        </section>
 
-            {/* Governance is Not Optional */}
-            <div>
-              <h2 className="text-2xl lg:text-3xl font-serif leading-tight text-slate mb-6">
-                Governance is not optional
-              </h2>
-              <div className="space-y-4 text-base leading-relaxed text-slate">
-                <p>
-                  Many automation projects skip governance because it feels like overhead.
-                  This is a mistake. Without clear data handling protocols, access controls,
-                  and audit trails, you create risk that compounds over time.
-                </p>
-                <p>
-                  We design governance into the solution from the start. Who can access what
-                  data? How is sensitive information protected? What gets logged? How do you
-                  prove compliance?
-                </p>
-                <p>
-                  This is not bureaucracy. It is insurance. Systems with clear governance
-                  scale safely. Systems without it create liability.
-                </p>
-                <p>
-                  For firms handling client data, governance is the difference between
-                  operational leverage and operational risk.
-                </p>
-              </div>
+        {/* Governance is Not Optional */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Governance is not optional
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                Many automation projects skip governance because it feels like overhead.
+                This is a mistake. Without clear data handling protocols, access controls,
+                and audit trails, you create risk that compounds over time.
+              </p>
+              <p>
+                We design governance into the solution from the start. Who can access what
+                data? How is sensitive information protected? What gets logged? How do you
+                prove compliance?
+              </p>
+              <p>
+                This is not bureaucracy. It is insurance. Systems with clear governance
+                scale safely. Systems without it create liability.
+              </p>
+              <p>
+                For firms handling client data, governance is the difference between
+                operational leverage and operational risk.
+              </p>
             </div>
+          </div>
+        </section>
 
-            {/* Transfer Capability */}
-            <div>
-              <h2 className="text-2xl lg:text-3xl font-serif leading-tight text-slate mb-6">
-                Transfer capability
-              </h2>
-              <div className="space-y-4 text-base leading-relaxed text-slate">
-                <p>
-                  Many consultancies and vendors create dependency by design. Proprietary
-                  platforms, complex configurations, undocumented customisations. You cannot
-                  maintain the system without them.
-                </p>
-                <p>
-                  We build every solution on platforms you control. Every workflow is documented.
-                  Every configuration is explained. Your team receives training to maintain and
-                  improve the system independently.
-                </p>
-                <p>
-                  The goal is to make ourselves redundant. You should be able to iterate, modify,
-                  and extend what we build without coming back to us.
-                </p>
-                <p>
-                  When you own the capability, you adapt faster, iterate more frequently, and
-                  compound improvements over time.
-                </p>
-              </div>
+        {/* Transfer Capability */}
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Transfer capability
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                Many consultancies and vendors create dependency by design. Proprietary
+                platforms, complex configurations, undocumented customisations. You cannot
+                maintain the system without them.
+              </p>
+              <p>
+                We build every solution on platforms you control. Every workflow is documented.
+                Every configuration is explained. Your team receives training to maintain and
+                improve the system independently.
+              </p>
+              <p>
+                The goal is to make ourselves redundant. You should be able to iterate, modify,
+                and extend what we build without coming back to us.
+              </p>
+              <p>
+                When you own the capability, you adapt faster, iterate more frequently, and
+                compound improvements over time.
+              </p>
             </div>
+          </div>
+        </section>
 
-            {/* Build for Humans */}
-            <div>
-              <h2 className="text-2xl lg:text-3xl font-serif leading-tight text-slate mb-6">
-                Build for humans
-              </h2>
-              <div className="space-y-4 text-base leading-relaxed text-slate">
-                <p>
-                  Automation projects often treat people as an afterthought. The system gets
-                  built, then training happens, then adoption struggles, then the system fails.
-                </p>
-                <p>
-                  We design for human adoption from the start. What does the user experience?
-                  How do they learn the new workflow? What happens when they make a mistake?
-                  How do we measure success from their perspective?
-                </p>
-                <p>
-                  Change management is not a phase at the end. It is a constraint throughout.
-                  We build systems that make work easier, clearer, and more valuable.
-                </p>
-                <p>
-                  The best automation is invisible. It removes friction without adding complexity.
-                  People get better outcomes without feeling like they are learning new technology.
-                </p>
-              </div>
+        {/* Build for Humans */}
+        <section className="py-24 px-6 lg:px-8 bg-pearl">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Build for humans
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                Automation projects often treat people as an afterthought. The system gets
+                built, then training happens, then adoption struggles, then the system fails.
+              </p>
+              <p>
+                We design for human adoption from the start. What does the user experience?
+                How do they learn the new workflow? What happens when they make a mistake?
+                How do we measure success from their perspective?
+              </p>
+              <p>
+                Change management is not a phase at the end. It is a constraint throughout.
+                We build systems that make work easier, clearer, and more valuable.
+              </p>
+              <p>
+                The best automation is invisible. It removes friction without adding complexity.
+                People get better outcomes without feeling like they are learning new technology.
+              </p>
             </div>
           </div>
         </section>
