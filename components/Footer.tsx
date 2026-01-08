@@ -71,8 +71,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-white/60 hover:text-white transition-colors">
-                  About
+                <Link href="/why-leomayn" className="text-sm text-white/60 hover:text-white transition-colors">
+                  Why Leomayn
                 </Link>
               </li>
               <li>

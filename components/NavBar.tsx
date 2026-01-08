@@ -68,10 +68,10 @@ export default function NavBar() {
             </Link>
 
             <Link
-              href="/about"
-              className={`text-sm font-sans ${isActive('/about') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              href="/why-leomayn"
+              className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
             >
-              About
+              Why Leomayn
             </Link>
 
             <Link href="/contact" className="inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
@@ -101,7 +101,7 @@ export default function NavBar() {
             <Link href="/services" className="block py-2 text-sm font-sans text-slate">Services</Link>
             <Link href="/approach" className="block py-2 text-sm font-sans text-slate">Our Approach</Link>
             <Link href="/how-we-think" className="block py-2 text-sm font-sans text-slate">How We Think</Link>
-            <Link href="/about" className="block py-2 text-sm font-sans text-slate">About</Link>
+            <Link href="/why-leomayn" className="block py-2 text-sm font-sans text-slate">Why Leomayn</Link>
             <Link href="/contact" className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
           </div>
         )}
