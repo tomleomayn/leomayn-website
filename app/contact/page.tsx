@@ -101,9 +101,9 @@ export default function ContactPage() {
                   Book a discovery call
                 </h2>
                 <p className="text-base leading-relaxed text-slate mb-8">
-                  The fastest way to start is a 30-minute discovery call. We will map
-                  one workflow, identify improvement opportunities, and show you what
-                  is possible.
+                  The fastest way to start is a 30-minute discovery call. We'll map
+                  one workflow, identify improvement opportunities, and discuss the
+                  possibilities.
                 </p>
                 <div className="bg-pearl border border-steel rounded-lg p-8">
                   <div className="space-y-4 text-base text-slate">
