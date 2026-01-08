@@ -288,7 +288,7 @@ export default function HomePage() {
                     <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
                   </div>
                   <div className="text-4xl font-serif font-bold text-slate mb-1">1</div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">Diagnose</h3>
+                  <h3 className="text-xl font-serif font-bold leading-snug text-slate">Diagnose</h3>
                 </div>
               </div>
               <p className="text-sm font-sans leading-relaxed text-slate">
@@ -308,7 +308,7 @@ export default function HomePage() {
                     <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
                   </div>
                   <div className="text-4xl font-serif font-bold text-slate mb-1">2</div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">Define</h3>
+                  <h3 className="text-xl font-serif font-bold leading-snug text-slate">Define</h3>
                 </div>
               </div>
               <p className="text-sm font-sans leading-relaxed text-slate">
@@ -328,7 +328,7 @@ export default function HomePage() {
                     <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
                   </div>
                   <div className="text-4xl font-serif font-bold text-slate mb-1">3</div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">Deliver</h3>
+                  <h3 className="text-xl font-serif font-bold leading-snug text-slate">Deliver</h3>
                 </div>
               </div>
               <p className="text-sm font-sans leading-relaxed text-slate">
@@ -348,7 +348,7 @@ export default function HomePage() {
                     <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
                   </div>
                   <div className="text-4xl font-serif font-bold text-slate mb-1">4</div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">Support</h3>
+                  <h3 className="text-xl font-serif font-bold leading-snug text-slate">Support</h3>
                 </div>
               </div>
               <p className="text-sm font-sans leading-relaxed text-slate">
