@@ -81,8 +81,8 @@ export default function ServicesPage() {
                 href="/services/support"
                 features={[
                   'Applied AI training',
-                  'Monthly system health checks',
                   'Performance monitoring and optimisation',
+                  'Quarterly system health checks',
                   'Incremental improvements and new features',
                 ]}
               />

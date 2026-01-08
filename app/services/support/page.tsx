@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'Support Phase - Leomayn',
-  description: 'Keep systems optimised as you grow. Monthly advisory, ongoing improvements, and technical support.',
+  description: 'Keep systems optimised as you grow. Quarterly advisory, ongoing improvements, and technical support.',
 }
 
 export default function SupportPage() {
@@ -27,7 +27,7 @@ export default function SupportPage() {
               </div>
             </div>
             <p className="text-2xl leading-relaxed text-slate">
-              Keep systems optimised as you grow
+              Empower teams and keep systems optimised
             </p>
           </div>
         </section>
@@ -39,14 +39,14 @@ export default function SupportPage() {
               What this phase delivers
             </h2>
             <p className="text-lg leading-relaxed text-slate mb-6">
-              The Support phase keeps your automation performing as your business evolves.
-              Monthly system reviews, performance monitoring, incremental improvements,
-              and technical support ensure your operational leverage compounds over time.
+              The support phase keeps your automation performing as your business evolves.
+              Performance monitoring, quarterly system reviews, technical support, and
+              AI capability training ensure your operational leverage compounds over time.
             </p>
             <p className="text-lg leading-relaxed text-slate">
               This is ongoing partnership, not just maintenance. We proactively identify
               optimisation opportunities, help you adapt workflows as requirements change,
-              and ensure your automation scales with your growth.
+              build your team's AI skills, and ensure your automation scales with your growth.
             </p>
           </div>
         </section>
@@ -60,12 +60,13 @@ export default function SupportPage() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
-                  Monthly system health checks
+                  Building AI capability
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  Regular reviews of automation performance, error rates, throughput,
-                  and system reliability. We identify issues before they become problems
-                  and recommend proactive improvements.
+                  We run intensive workshops covering AI capabilities, limitations, practical
+                  applications, and implementation risks. Content customised to your tools and
+                  use cases with hands-on exercises. You get trained team members who understand
+                  what AI can and cannot do in your specific context.
                 </p>
               </div>
 
@@ -77,6 +78,17 @@ export default function SupportPage() {
                   Continuous monitoring of workflow efficiency, processing times, and
                   resource utilisation. We tune configurations, eliminate bottlenecks,
                   and ensure systems run at peak performance.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
+                  Quarterly system health checks
+                </h3>
+                <p className="text-base leading-relaxed text-slate">
+                  Regular reviews of automation performance, error rates, throughput,
+                  and system reliability. We identify issues before they become problems
+                  and recommend proactive improvements.
                 </p>
               </div>
 
@@ -112,21 +124,21 @@ export default function SupportPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-pearl border border-steel rounded-lg p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Monthly Performance Reports
+                  AI Capability Training
                 </h3>
                 <p className="text-sm text-slate/70">
-                  System health dashboard showing automation performance, error rates,
-                  throughput metrics, and optimisation recommendations.
+                  Intensive workshops covering AI capabilities, limitations, and practical
+                  applications customised to your tools and use cases.
                 </p>
               </div>
 
               <div className="bg-pearl border border-steel rounded-lg p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Advisory Sessions
+                  Performance Reports and Advisory
                 </h3>
                 <p className="text-sm text-slate/70">
-                  Monthly calls to review performance, discuss improvements, prioritise
-                  enhancements, and plan next quarter's optimisation roadmap.
+                  Regular reviews of automation performance, error rates, and throughput
+                  metrics with advisory sessions to discuss improvements and priorities.
                 </p>
               </div>
 
@@ -165,7 +177,7 @@ export default function SupportPage() {
                   Standard Support
                 </h3>
                 <p className="text-base text-slate/70 mb-6">
-                  Monthly advisory and system monitoring for established automation
+                  Quarterly advisory and system monitoring for established automation
                   requiring maintenance and incremental improvements.
                 </p>
                 <ul className="space-y-2 text-sm text-slate mb-6">
@@ -173,13 +185,13 @@ export default function SupportPage() {
                     <svg className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    Monthly health checks and reporting
+                    Quarterly health checks and reporting
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    Monthly advisory session
+                    Quarterly advisory session
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -215,7 +227,7 @@ export default function SupportPage() {
                     <svg className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    Bi-weekly advisory sessions
+                    Monthly advisory sessions
                   </li>
                   <li className="flex items-start gap-2">
                     <svg className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
