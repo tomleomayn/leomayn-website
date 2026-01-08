@@ -24,35 +24,8 @@ export default function ApproachPage() {
           </div>
         </section>
 
-        {/* Core Philosophy */}
-        <section className="py-24 px-6 lg:px-8 bg-chalk">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Why operations before automation
-            </h2>
-            <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                Many AI and automation projects fail because they start with the technology
-                and work backwards to the problem. Broken workflows are automated, making
-                them faster but no less broken. Tools are selected before understanding
-                constraints. Transformation is promised without diagnosing what needs fixing.
-              </p>
-              <p>
-                We work the other way round. We start with how your work actually runs today,
-                identify what's broken and what matters, redesign the workflow to remove
-                inefficiencies, and only then deploy AI and automation to scale what works.
-              </p>
-              <p>
-                This approach delivers working systems in weeks, not theoretical frameworks
-                in months. Your team owns the result, understands how it works, and can
-                maintain it independently.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* Three Principles */}
-        <section className="py-24 px-6 lg:px-8 bg-pearl">
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
               Three principles that guide everything we do
@@ -99,7 +72,7 @@ export default function ApproachPage() {
         </section>
 
         {/* What Makes Us Different */}
-        <section className="py-24 px-6 lg:px-8 bg-chalk">
+        <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-12">
               What makes us different
@@ -145,7 +118,7 @@ export default function ApproachPage() {
         </section>
 
         {/* How We Work */}
-        <section className="py-24 px-6 lg:px-8 bg-pearl">
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
               How we work with you
