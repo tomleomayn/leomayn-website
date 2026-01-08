@@ -86,7 +86,7 @@ export default function ContactPage() {
               Get in touch
             </h1>
             <p className="text-2xl leading-relaxed text-slate">
-              Book a 30-minute discovery call or send us a message
+              Book a 30-minute discovery call, send us a message, or drop us an email.
             </p>
           </div>
         </section>
