@@ -285,12 +285,12 @@ export default function HomePage() {
                 </div>
                 <div className="relative z-10">
                   <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '72px' }}></i>
+                    <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '96px' }}></i>
                   </div>
                   <h3 className="text-xl font-serif leading-snug text-slate">1 · Diagnose</h3>
                 </div>
               </div>
-              <p className="text-sm font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
                 Identify what's important and what to improve
               </p>
             </div>
@@ -304,12 +304,12 @@ export default function HomePage() {
                 </div>
                 <div className="relative z-10">
                   <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '72px' }}></i>
+                    <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '96px' }}></i>
                   </div>
                   <h3 className="text-xl font-serif leading-snug text-slate">2 · Define</h3>
                 </div>
               </div>
-              <p className="text-sm font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
                 Design a solution to fit your needs
               </p>
             </div>
@@ -323,12 +323,12 @@ export default function HomePage() {
                 </div>
                 <div className="relative z-10">
                   <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '72px' }}></i>
+                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '96px' }}></i>
                   </div>
                   <h3 className="text-xl font-serif leading-snug text-slate">3 · Deliver</h3>
                 </div>
               </div>
-              <p className="text-sm font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
                 Deploy working automations that deliver value
               </p>
             </div>
@@ -342,12 +342,12 @@ export default function HomePage() {
                 </div>
                 <div className="relative z-10">
                   <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '72px' }}></i>
+                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '96px' }}></i>
                   </div>
                   <h3 className="text-xl font-serif leading-snug text-slate">4 · Support</h3>
                 </div>
               </div>
-              <p className="text-sm font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
                 Empower teams and keep systems optimised
               </p>
             </div>
