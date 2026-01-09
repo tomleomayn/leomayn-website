@@ -16,7 +16,7 @@ export default function Footer() {
               <div className="bg-coral mt-1 h-[3px] w-full" />
             </div>
             <p className="font-sans text-sm text-white/60">
-              Operations and AI consulting for improving knowledge work
+              Operations and AI consulting for knowledge work
             </p>
           </div>
 
