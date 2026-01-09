@@ -66,18 +66,18 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              href="/contact"
-              onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
-            >
-              Book Discovery Call
-            </Link>
-            <Link
               href="/services"
               onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all w-64"
             >
               See Our Services
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all w-64"
+            >
+              Book Discovery Call
             </Link>
           </div>
         </div>
