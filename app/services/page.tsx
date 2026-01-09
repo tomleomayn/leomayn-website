@@ -125,7 +125,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center">
+              <div className="text-center max-w-xs mx-auto md:max-w-none">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Diagnose</span>
                 </div>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center max-w-xs mx-auto md:max-w-none">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Define</span>
                 </div>
@@ -145,7 +145,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center max-w-xs mx-auto md:max-w-none">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
                 </div>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="text-center">
+              <div className="text-center max-w-xs mx-auto md:max-w-none">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
                 </div>
