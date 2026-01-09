@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Privacy Policy - Leomayn',
-  description: 'Privacy policy for Leomayn Solutions Ltd - how we collect, use, and protect your personal information.',
+  description: 'Privacy policy for Leomayn Limited - how we collect, use, and protect your personal information.',
 }
 
 export default function PrivacyPage() {
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
                 Introduction
               </h2>
               <p className="text-base leading-relaxed text-slate">
-                Leomayn Solutions Ltd operates the website leomayn.com. This page informs you
+                Leomayn Limited operates the website leomayn.com. This page informs you
                 of our policies regarding the collection, use, and disclosure of personal
                 information we receive from users of the site.
               </p>
@@ -171,7 +171,7 @@ export default function PrivacyPage() {
                 personal information, please contact us at:
               </p>
               <p className="text-base leading-relaxed text-slate mt-4">
-                <strong>Leomayn Solutions Ltd</strong><br />
+                <strong>Leomayn Limited</strong><br />
                 Email: <a href="mailto:hello@leomayn.com" className="text-coral hover:underline">hello@leomayn.com</a>
               </p>
             </div>

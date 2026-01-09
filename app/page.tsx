@@ -41,7 +41,7 @@ export default function HomePage() {
             <p>
               We redesign knowledge work to remove bottlenecks, reduce repetitive work,
               and fix error-prone processes. Then we use automation and AI to free up
-              humans to focus on work which adds real value.
+              humans to focus on work that adds real value.
             </p>
             <p>
               We transfer the skills and knowledge your team needs to use AI tools

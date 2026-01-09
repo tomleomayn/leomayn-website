@@ -63,8 +63,8 @@ export default function ApproachPage() {
                 <p className="text-base leading-relaxed text-slate">
                   We don't create ongoing dependency on proprietary platforms or consultancy
                   retainers. You own all code, configurations, and documentation. The goal is
-                  to make ourselves redundant, not indispensable. For any clients that require
-                  ongoing support that's also not a problem.
+                  to make ourselves redundant, not indispensable. We also offer ongoing
+                  support for clients who need it.
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function ApproachPage() {
                 We work with professional services firms and the business services functions in other organisations: agencies, consultancies, expert service businesses. Typically 50-500 people, £5M-£50M revenue, with operations directors or COOs who are looking for support to create operational leverage.
               </p>
               <p>
-                Our clients face common challenges: manual processes limiting growth or reduce billable time, administrative drag eroding margins, team burnout from repetitive work, and pressure to adopt AI without a clear strategy.
+                Our clients face common challenges: manual processes limiting growth or reducing billable time, administrative drag eroding margins, team burnout from repetitive work, and pressure to adopt AI without a clear strategy.
               </p>
               <p>
                 We help them build operational systems that scale. Not through headcount, but through improved workflows, intelligent automation, and AI deployed where it solves real problems.

@@ -46,7 +46,7 @@ export default function DiagnosePage() {
             </p>
             <p className="text-lg leading-relaxed text-slate">
               You get a clear picture of where time and quality leak out of your processes,
-              prioritised by impact and effort. No assumptions, no generic advice just
+              prioritised by impact and effort. No assumptions, no generic advice—just
               evidence-based analysis of your specific operational reality.
             </p>
           </div>

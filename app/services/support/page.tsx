@@ -44,7 +44,7 @@ export default function SupportPage() {
               AI capability training ensure your operational leverage compounds over time.
             </p>
             <p className="text-lg leading-relaxed text-slate">
-              This is ongoing partnership, not just maintenance. We proactively identify
+              This is an ongoing partnership, not just maintenance. We proactively identify
               optimisation opportunities, help you adapt workflows as requirements change,
               build your team's AI skills, and ensure your automation scales with your growth.
             </p>

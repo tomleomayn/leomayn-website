@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 number="4"
                 title="Support"
                 subtitle="Embed & Optimise"
-                description="Empower teams to use AI in their work. Keep systems optimised as you grow. Our technical support and training helps compound improvements over time."
+                description="Empower teams to use AI in their work. Keep systems optimised as you grow. Our technical support and training help compound improvements over time."
                 href="/services/support"
                 features={[
                   'Applied AI training',
@@ -168,7 +168,7 @@ export default function ServicesPage() {
               </p>
               <p>
                 Complexity is determined by factors like the number of systems requiring integration,
-                number of stakeholder involved, process complexity and maturity, and governance
+                number of stakeholders involved, process complexity and maturity, and governance
                 requirements. You know the price before we start.
               </p>
               <p>
