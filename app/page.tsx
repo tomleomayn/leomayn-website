@@ -68,14 +68,14 @@ export default function HomePage() {
             <Link
               href="/services"
               onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all w-64"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all w-full max-w-xs sm:w-64"
             >
               See Our Services
             </Link>
             <Link
               href="/contact"
               onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all w-64"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all w-full max-w-xs sm:w-64"
             >
               Book Discovery Call
             </Link>
