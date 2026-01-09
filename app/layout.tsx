@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Manrope, JetBrains_Mono } from 'next/font/google'
 import GoogleTagManager from '@/components/GoogleTagManager'
+import SchemaMarkup from '@/components/SchemaMarkup'
 import './globals.css'
 
 const dmSerif = DM_Serif_Display({
@@ -50,10 +51,39 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Leomayn",
+    "legalName": "Leomayn Limited",
+    "url": "https://leomayn.com",
+    "logo": "https://leomayn.com/images/leomayn-logo.png",
+    "description": "Operations and AI consulting for knowledge work",
+    "foundingDate": "2024",
+    "founder": {
+      "@type": "Person",
+      "name": "Tom Jones"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@leomayn.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/thomasallanjones/"
+    ],
+    "taxID": "16856146"
+  }
+
   return (
     <html lang="en" className={`${dmSerif.variable} ${manrope.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link href="/webfonts/uicons-regular-straight.css" rel="stylesheet" />
+        <SchemaMarkup data={organizationSchema} />
       </head>
       <body>
         <GoogleTagManager />

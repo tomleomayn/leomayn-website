@@ -1,6 +1,7 @@
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
   title: 'Diagnose Phase - Leomayn',
@@ -8,8 +9,52 @@ export const metadata = {
 }
 
 export default function DiagnosePage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Operations Consulting",
+    "name": "Diagnose - Discovery & Assessment",
+    "description": "Identify operational bottlenecks through stakeholder interviews, process mapping, and opportunity analysis. Delivers assessment report, workflow maps, and prioritised improvement recommendations.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Leomayn"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    "url": "https://leomayn.com/services/diagnose"
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://leomayn.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://leomayn.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Diagnose",
+        "item": "https://leomayn.com/services/diagnose"
+      }
+    ]
+  }
+
   return (
     <>
+      <SchemaMarkup data={serviceSchema} />
+      <SchemaMarkup data={breadcrumbSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}

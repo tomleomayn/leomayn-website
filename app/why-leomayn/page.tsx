@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
   title: 'Why Leomayn - Leomayn',
@@ -9,8 +10,31 @@ export const metadata = {
 }
 
 export default function WhyLeomaynPage() {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tom Jones",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Leomayn"
+    },
+    "url": "https://leomayn.com/why-leomayn",
+    "sameAs": [
+      "https://www.linkedin.com/in/thomasallanjones/"
+    ],
+    "knowsAbout": [
+      "Operations consulting",
+      "AI automation",
+      "Process improvement",
+      "Professional services"
+    ],
+    "description": "Operations specialist with 18 years experience. Former COO of Everybody (scaled to £30m turnover). Chief Client Officer at iCrossing."
+  }
+
   return (
     <>
+      <SchemaMarkup data={personSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}

@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import ServiceCard from '@/components/ServiceCard'
 import Link from 'next/link'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
   title: 'Services - Leomayn',
@@ -9,8 +10,28 @@ export const metadata = {
 }
 
 export default function ServicesPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://leomayn.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://leomayn.com/services"
+      }
+    ]
+  }
+
   return (
     <>
+      <SchemaMarkup data={breadcrumbSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}

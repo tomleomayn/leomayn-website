@@ -2,8 +2,10 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import Head from 'next/head'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 // Extend window interface for dataLayer
 declare global {
@@ -27,8 +29,21 @@ export default function HomePage() {
     }
   }
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Leomayn",
+    "url": "https://leomayn.com",
+    "description": "Operations and AI consulting for knowledge work",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Leomayn"
+    }
+  }
+
   return (
     <>
+      <SchemaMarkup data={websiteSchema} />
       <NavBar />
       <main className="min-h-screen">
       {/* Hero Section */}
