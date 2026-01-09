@@ -43,7 +43,7 @@ export default function WhyLeomaynPage() {
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
               Why Leomayn
             </h1>
-            <p className="text-2xl leading-relaxed text-slate">
+            <p className="text-2xl leading-relaxed text-coral-accessible">
               Operations and AI consulting for knowledge work
             </p>
           </div>

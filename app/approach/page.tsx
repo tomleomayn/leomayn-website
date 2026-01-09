@@ -18,7 +18,7 @@ export default function ApproachPage() {
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
               Our approach
             </h1>
-            <p className="text-2xl leading-relaxed text-slate">
+            <p className="text-2xl leading-relaxed text-coral-accessible">
               Fix the work first, then scale with AI
             </p>
           </div>

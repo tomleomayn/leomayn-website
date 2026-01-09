@@ -40,7 +40,7 @@ export default function ServicesPage() {
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
               Four steps to operational improvement
             </h1>
-            <p className="text-xl leading-relaxed text-slate">
+            <p className="text-xl leading-relaxed text-coral-accessible">
               We evaluate the situation before prescribing any solutions. New workflows
               are designed to fit your business. We ship working systems not pilots. We
               transfer capability so you own the results.

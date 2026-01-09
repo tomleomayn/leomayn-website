@@ -19,7 +19,7 @@ export default function HowWeThinkPage() {
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
               How we think
             </h1>
-            <p className="text-2xl leading-relaxed text-slate">
+            <p className="text-2xl leading-relaxed text-coral-accessible">
               How we apply AI to deliver operational improvements
             </p>
           </div>
