@@ -168,7 +168,7 @@ export default function HomePage() {
                   Tool selection before diagnosis creates waste
                 </h3>
                 <p className="text-base font-sans text-slate leading-relaxed">
-                  Organisations waste 30% of software spending on unused licenses
+                  Organisations waste 20% - 30% of software spending on unused licenses
                   <sup>
                     <a href="#ref3" className="text-coral hover:text-coral-dark no-underline font-bold">
                       [3]
@@ -220,10 +220,10 @@ export default function HomePage() {
 
               {/* Reference 3 */}
               <p id="ref3" className="text-sm font-sans text-slate leading-relaxed">
-                [3] NPI Financial.
-                <em> 12 IT Cost Reduction Strategies to Eliminate Toxic Spend</em>.
+                [3] Flexera.
+                <em> 2024 State of ITAM Report</em>.
                 <a
-                  href="https://www.npifinancial.com/blog/12-it-cost-reduction-strategies-to-eliminate-toxic-spend"
+                  href="https://www.flexera.com/about-us/press-center/flexera-2024-state-of-itam-report-finds-software-audit-costs-continue-to-rise"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-coral hover:text-coral-dark underline ml-1"
