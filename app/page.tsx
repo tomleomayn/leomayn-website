@@ -52,7 +52,7 @@ export default function HomePage() {
           <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
             Fix work, then scale with AI
           </h1>
-          <div className="max-w-3xl mx-auto space-y-4 text-xl leading-relaxed text-slate mb-8">
+          <div className="max-w-3xl mx-auto space-y-4 text-xl leading-relaxed text-coral-accessible mb-8">
             <p>
               We redesign knowledge work to remove bottlenecks, reduce repetitive work,
               and fix error-prone processes. Then we use automation and AI to free up
