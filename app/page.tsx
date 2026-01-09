@@ -135,7 +135,7 @@ export default function HomePage() {
                   doesn't add value. Knowledge workers spend up to 60% of time on 'work about work'
                   rather than skilled tasks
                   <sup>
-                    <a href="#ref1" className="text-coral hover:text-coral-dark no-underline font-bold">
+                    <a href="#ref1" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
                       [1]
                     </a>
                   </sup>
@@ -160,7 +160,7 @@ export default function HomePage() {
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Automating inefficient processes makes them faster but not better
                   <sup>
-                    <a href="#ref2" className="text-coral hover:text-coral-dark no-underline font-bold">
+                    <a href="#ref2" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
                       [2]
                     </a>
                   </sup>
@@ -185,7 +185,7 @@ export default function HomePage() {
                 <p className="text-base font-sans text-slate leading-relaxed">
                   Organisations waste 20% - 30% of software spending on unused licenses
                   <sup>
-                    <a href="#ref3" className="text-coral hover:text-coral-dark no-underline font-bold">
+                    <a href="#ref3" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
                       [3]
                     </a>
                   </sup>
@@ -210,7 +210,7 @@ export default function HomePage() {
                   href="https://asana.com/resources/why-work-about-work-is-bad"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-coral hover:text-coral-dark underline ml-1"
+                  className="text-coral-accessible hover:text-coral-dark underline ml-1"
                 >
                   Available here
                 </a>
@@ -227,7 +227,7 @@ export default function HomePage() {
                   href="https://www.businessinsider.com/quotes-from-the-worlds-second-richest-man-2013-3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-coral hover:text-coral-dark underline ml-1"
+                  className="text-coral-accessible hover:text-coral-dark underline ml-1"
                 >
                   Source
                 </a>
@@ -241,7 +241,7 @@ export default function HomePage() {
                   href="https://www.flexera.com/about-us/press-center/flexera-2024-state-of-itam-report-finds-software-audit-costs-continue-to-rise"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-coral hover:text-coral-dark underline ml-1"
+                  className="text-coral-accessible hover:text-coral-dark underline ml-1"
                 >
                   Full report
                 </a>
@@ -254,7 +254,7 @@ export default function HomePage() {
                   href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-work-week-manual-repetitive-tasks"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-coral hover:text-coral-dark underline ml-1"
+                  className="text-coral-accessible hover:text-coral-dark underline ml-1"
                 >
                   Smartsheet
                 </a>
@@ -263,7 +263,7 @@ export default function HomePage() {
                   href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-coral hover:text-coral-dark underline"
+                  className="text-coral-accessible hover:text-coral-dark underline"
                 >
                   McKinsey Global Institute
                 </a>
@@ -272,7 +272,7 @@ export default function HomePage() {
                   href="https://www.flexera.com/about-us/press-center/it-teams-losing-visibility-according-to-flexera-2025-state-of-itam-report"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-coral hover:text-coral-dark underline"
+                  className="text-coral-accessible hover:text-coral-dark underline"
                 >
                   Flexera ITAM Report
                 </a>

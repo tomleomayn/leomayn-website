@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  compiler: {
+    // Remove React properties in production
+    reactRemoveProperties: true,
+    // Remove console logs in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Enable experimental optimizations
+  experimental: {
+    optimizePackageImports: ['react', 'react-dom'],
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

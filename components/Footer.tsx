@@ -22,9 +22,9 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="font-sans text-sm font-bold text-white mb-4">
+            <p className="font-sans text-sm font-bold text-white mb-4">
               Services
-            </h4>
+            </p>
             <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-sm text-white/60 hover:text-white transition-colors">
@@ -56,9 +56,9 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h4 className="font-sans text-sm font-bold text-white mb-4">
+            <p className="font-sans text-sm font-bold text-white mb-4">
               Company
-            </h4>
+            </p>
             <ul className="space-y-2">
               <li>
                 <Link href="/approach" className="text-sm text-white/60 hover:text-white transition-colors">
@@ -85,9 +85,9 @@ export default function Footer() {
 
           {/* Resources Column */}
           <div>
-            <h4 className="font-sans text-sm font-bold text-white mb-4">
+            <p className="font-sans text-sm font-bold text-white mb-4">
               Resources
-            </h4>
+            </p>
             <ul className="space-y-2">
               <li>
                 <Link href="/privacy" className="text-sm text-white/60 hover:text-white transition-colors">
@@ -106,7 +106,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-sm text-white/40 leading-relaxed">
+          <p className="text-sm text-white/60 leading-relaxed">
             Registered in England.
             <br />
             Company registration number: 16856146.

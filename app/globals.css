@@ -15,6 +15,7 @@
   --color-coral: #f7c9c0;
   --color-coral-light: #fae0dc;
   --color-coral-dark: #f0b3a8;
+  --color-coral-accessible: #c8675a; /* WCAG AA compliant for light backgrounds */
 
   /* Neutrals */
   --color-chalk: #fffcfa;
