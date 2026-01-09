@@ -126,7 +126,7 @@ export default function ServicesPage() {
 
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
-                <div className="bg-rock rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
+                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Diagnose</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase I</h3>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <div className="bg-rock rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
+                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Define</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase II</h3>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <div className="bg-rock rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
+                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase III</h3>
@@ -156,7 +156,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <div className="bg-rock rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
+                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase IV</h3>
