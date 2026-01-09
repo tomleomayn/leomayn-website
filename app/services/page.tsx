@@ -127,9 +127,9 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">Diagnose</span>
+                  <span className="text-2xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Diagnose</span>
                 </div>
-                <h3 className="text-2xl font-sans leading-snug text-slate mb-1">Phase I</h3>
+                <h3 className="text-2xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase I</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   c.2 - 4 weeks
                 </p>
@@ -137,9 +137,9 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">Define</span>
+                  <span className="text-2xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Define</span>
                 </div>
-                <h3 className="text-2xl font-sans leading-snug text-slate mb-1">Phase II</h3>
+                <h3 className="text-2xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase II</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   c.2 - 3 weeks
                 </p>
@@ -147,9 +147,9 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">Deliver</span>
+                  <span className="text-2xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
                 </div>
-                <h3 className="text-2xl font-sans leading-snug text-slate mb-1">Phase III</h3>
+                <h3 className="text-2xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase III</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   c.4 - 8 weeks
                 </p>
@@ -157,9 +157,9 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">Support</span>
+                  <span className="text-2xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
                 </div>
-                <h3 className="text-2xl font-sans leading-snug text-slate mb-1">Phase IV</h3>
+                <h3 className="text-2xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase IV</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   Ongoing
                 </p>
