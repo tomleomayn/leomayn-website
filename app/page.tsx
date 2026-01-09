@@ -219,10 +219,6 @@ export default function HomePage() {
               {/* Reference 2 */}
               <p id="ref2" className="text-sm font-sans text-slate leading-relaxed">
                 [2] Gates, B.
-                "The first rule of any technology used in a business is that automation
-                applied to an efficient operation will magnify the efficiency. The second
-                is that automation applied to an inefficient operation will magnify the
-                inefficiency."
                 <a
                   href="https://www.businessinsider.com/quotes-from-the-worlds-second-richest-man-2013-3"
                   target="_blank"
@@ -246,39 +242,24 @@ export default function HomePage() {
                   Full report
                 </a>
               </p>
-
-              {/* Supporting References */}
-              <p className="text-xs font-sans text-slate leading-relaxed mt-4">
-                Additional supporting research:
-                <a
-                  href="https://www.smartsheet.com/content-center/product-news/automation/workers-waste-quarter-work-week-manual-repetitive-tasks"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-coral-accessible hover:text-coral-dark underline ml-1"
-                >
-                  Smartsheet
-                </a>
-                {', '}
-                <a
-                  href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-coral-accessible hover:text-coral-dark underline"
-                >
-                  McKinsey Global Institute
-                </a>
-                {', '}
-                <a
-                  href="https://www.flexera.com/about-us/press-center/it-teams-losing-visibility-according-to-flexera-2025-state-of-itam-report"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-coral-accessible hover:text-coral-dark underline"
-                >
-                  Flexera ITAM Report
-                </a>
-              </p>
-              <div className="border-t border-steel/10 pt-2"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bill Gates Quote Hero */}
+      <section className="py-20 bg-slate">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-2xl md:text-3xl text-coral leading-relaxed mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
+              "The first rule of any technology used in a business is that automation
+              applied to an efficient operation will magnify the efficiency. The second
+              is that automation applied to an inefficient operation will magnify the
+              inefficiency."
+            </p>
+            <p className="text-lg text-chalk" style={{ fontFamily: 'var(--font-serif)' }}>
+              — Bill Gates
+            </p>
           </div>
         </div>
       </section>
@@ -291,7 +272,7 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 mb-8">
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-6 md:p-8 mb-4 max-w-xs mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -299,18 +280,18 @@ export default function HomePage() {
                      }}>
                 </div>
                 <div className="relative z-10">
-                  <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '96px' }}></i>
+                  <div className="mx-auto flex items-center justify-center">
+                    <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">1 · Diagnose</h3>
+                  <h3 className="text-3xl font-serif leading-snug text-slate">1 · Diagnose</h3>
                 </div>
               </div>
-              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Identify what's important and what to improve
               </p>
             </div>
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-6 md:p-8 mb-4 max-w-xs mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -318,18 +299,18 @@ export default function HomePage() {
                      }}>
                 </div>
                 <div className="relative z-10">
-                  <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '96px' }}></i>
+                  <div className="mx-auto flex items-center justify-center">
+                    <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">2 · Define</h3>
+                  <h3 className="text-3xl font-serif leading-snug text-slate">2 · Define</h3>
                 </div>
               </div>
-              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Design a solution to fit your needs
               </p>
             </div>
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-6 md:p-8 mb-4 max-w-xs mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -337,18 +318,18 @@ export default function HomePage() {
                      }}>
                 </div>
                 <div className="relative z-10">
-                  <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '96px' }}></i>
+                  <div className="mx-auto flex items-center justify-center">
+                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">3 · Deliver</h3>
+                  <h3 className="text-3xl font-serif leading-snug text-slate">3 · Deliver</h3>
                 </div>
               </div>
-              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Deploy working automations that deliver value
               </p>
             </div>
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-6 md:p-8 mb-4 max-w-xs mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -356,13 +337,13 @@ export default function HomePage() {
                      }}>
                 </div>
                 <div className="relative z-10">
-                  <div className="mx-auto mb-4 flex items-center justify-center">
-                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '96px' }}></i>
+                  <div className="mx-auto flex items-center justify-center">
+                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
-                  <h3 className="text-xl font-serif leading-snug text-slate">4 · Support</h3>
+                  <h3 className="text-3xl font-serif leading-snug text-slate">4 · Support</h3>
                 </div>
               </div>
-              <p className="text-base font-sans leading-relaxed text-slate max-w-xs mx-auto">
+              <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Empower teams and keep systems optimised
               </p>
             </div>
@@ -383,7 +364,7 @@ export default function HomePage() {
       <section className="py-24 px-6 lg:px-8 bg-chalk">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
-            Leomayn's approach to operational improvement through applied AI
+            How we deliver operational improvements by applying AI
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>

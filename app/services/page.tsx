@@ -127,9 +127,9 @@ export default function ServicesPage() {
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">1</span>
+                  <span className="text-2xl font-sans text-slate">Diagnose</span>
                 </div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Diagnose</h3>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Phase I</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   c.2 - 4 weeks
                 </p>
@@ -137,9 +137,9 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">2</span>
+                  <span className="text-2xl font-sans text-slate">Define</span>
                 </div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Define</h3>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Phase II</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   c.2 - 3 weeks
                 </p>
@@ -147,9 +147,9 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">3</span>
+                  <span className="text-2xl font-sans text-slate">Deliver</span>
                 </div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Deliver</h3>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Phase III</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   c.4 - 8 weeks
                 </p>
@@ -157,9 +157,9 @@ export default function ServicesPage() {
 
               <div className="text-center">
                 <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center">
-                  <span className="text-2xl font-serif text-slate">4</span>
+                  <span className="text-2xl font-sans text-slate">Support</span>
                 </div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Support</h3>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-1">Phase IV</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   Ongoing
                 </p>
