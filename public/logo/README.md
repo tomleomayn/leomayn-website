@@ -70,7 +70,7 @@ Exported at standard sizes with transparent backgrounds.
 
 - **Slate (Dark)**: #15283a
 - **Coral (Accent)**: #f7c9c0
-- **White**: #ffffff
+- **Chalk**: #fffcfa
 
 ## Typography
 
