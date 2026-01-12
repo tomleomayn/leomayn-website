@@ -1,0 +1,7 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Letter L in white -->
+  <text x="96" y="144" font-family="system-ui, -apple-system, sans-serif" font-size="144" font-weight="700" fill="#ffffff" text-anchor="middle" dominant-baseline="auto" letter-spacing="0.12em">L</text>
+
+  <!-- Coral underline -->
+  <rect x="36" y="156" width="120" height="18" fill="#f7c9c0"/>
+</svg>
