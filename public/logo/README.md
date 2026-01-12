@@ -12,10 +12,11 @@ All SVG files have **transparent backgrounds** and scale infinitely without qual
 - `logo-icon-light.svg` - For dark backgrounds (white L with coral underline)
 - Dimensions: 192×192 viewBox
 
-#### Horizontal (Icon + Text)
+#### Horizontal (Wordmark)
 - `logo-horizontal.svg` - For light backgrounds
 - `logo-horizontal-light.svg` - For dark backgrounds
-- Dimensions: 800×192 viewBox
+- Dimensions: 600×150 viewBox
+- Letter spacing: 0.12em (matches website)
 
 ### PNG (Raster - for compatibility)
 Exported at standard sizes with transparent backgrounds.
@@ -71,10 +72,12 @@ Exported at standard sizes with transparent backgrounds.
 - **Coral (Accent)**: #f7c9c0
 - **White**: #ffffff
 
-## Fonts
+## Typography
 
-- **"L" Icon**: System fonts (system-ui, -apple-system, sans-serif), weight 700
-- **"LEOMAYN" Text**: System fonts (system-ui, -apple-system, sans-serif), weight 700
+- **Font Family**: System fonts (system-ui, -apple-system, sans-serif)
+- **Font Weight**: 700 (bold)
+- **Letter Spacing**: 0.12em
+- **Underline Height**: 8px (in 72px font context), proportional to 3px at website text sizes
 
 ## Examples
 
