@@ -8,7 +8,7 @@
     <!-- Letter L as path (dark slate) -->
     <path
       d="M 138.99609,144 H 63.480469 V 39.304687 h 27 V 123.75 h 48.515621 z"
-      fill="#15283a" />
+      fill="#1a3d56" />
 
     <!-- Coral underline - matches L width exactly -->
     <rect x="63.4805" y="156" width="75.5156" height="18" fill="#f7c9c0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Slate dark background -->
-  <rect width="1200" height="630" fill="#15283a"/>
+  <rect width="1200" height="630" fill="#1a3d56"/>
 
   <!-- Centered horizontal logo -->
   <g transform="translate(300, 240) scale(1)">

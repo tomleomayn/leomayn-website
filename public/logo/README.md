@@ -57,7 +57,7 @@ Exported at standard sizes with transparent backgrounds.
 ### Background Selection
 
 **Dark version** (logo-*-light.svg/png):
-- Use on dark backgrounds (#15283a slate or darker)
+- Use on dark backgrounds (#1a3d56 slate or darker)
 - Use on colorful backgrounds where dark text would lack contrast
 - Use on photography/images with dark tones
 
@@ -68,7 +68,7 @@ Exported at standard sizes with transparent backgrounds.
 
 ## Brand Colors
 
-- **Slate (Dark)**: #15283a
+- **Slate**: #1a3d56
 - **Coral (Accent)**: #f7c9c0
 - **Chalk**: #fffcfa
 
