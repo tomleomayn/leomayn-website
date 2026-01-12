@@ -3,5 +3,5 @@
   <text x="300" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.12em">LEOMAYN</text>
 
   <!-- Coral underline - positioned to match text width exactly -->
-  <rect x="110" y="105" width="380" height="8" fill="#f7c9c0"/>
+  <rect x="110" y="105" width="390" height="8" fill="#f7c9c0"/>
 </svg>
