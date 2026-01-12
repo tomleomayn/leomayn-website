@@ -1,10 +1,7 @@
-<svg width="800" height="192" viewBox="0 0 800 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Letter L in dark slate -->
-  <text x="96" y="144" font-family="system-ui, -apple-system, sans-serif" font-size="144" font-weight="700" fill="#15283a" text-anchor="middle" dominant-baseline="auto" letter-spacing="0.12em">L</text>
-
-  <!-- Coral underline under L -->
-  <rect x="36" y="156" width="120" height="18" fill="#f7c9c0"/>
-
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- LEOMAYN text in dark slate -->
-  <text x="220" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#15283a" letter-spacing="0.08em">LEOMAYN</text>
+  <text x="400" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" fill="#15283a" text-anchor="middle" letter-spacing="0.08em">LEOMAYN</text>
+
+  <!-- Coral underline under full word -->
+  <rect x="100" y="140" width="600" height="20" fill="#f7c9c0"/>
 </svg>
