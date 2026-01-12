@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 50px;
+      background: white;
+    }
+    .logo-text {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 72px;
+      letter-spacing: 0.12em;
+      color: #15283a;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .underline {
+      height: 8px;
+      background: #f7c9c0;
+      margin-top: 4px;
+    }
+    .measurement {
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-text" id="logo">LEOMAYN</div>
+  <div class="underline" id="underline"></div>
+  <div class="measurement" id="measurements"></div>
+
+  <script>
+    const logo = document.getElementById('logo');
+    const underline = document.getElementById('underline');
+
+    // Get the bounding box (visual bounds)
+    const bbox = logo.getBoundingClientRect();
+
+    // offsetWidth includes the letter-spacing extension
+    const offsetWidth = logo.offsetWidth;
+
+    // Calculate letter-spacing value
+    const fontSize = 72;
+    const letterSpacingEm = 0.12;
+    const letterSpacingPx = fontSize * letterSpacingEm;
+
+    // There are 7 letters, so 6 spaces between them
+    // Plus half-spacing before and after = 7 total spacing units
+    // So the leading/trailing space is letterSpacingPx (one full unit)
+    const visualWidth = offsetWidth - letterSpacingPx;
+
+    // Set underline to visual width
+    underline.style.width = visualWidth + 'px';
+
+    document.getElementById('measurements').innerHTML = `
+      offsetWidth (with spacing): ${offsetWidth}px<br>
+      Letter spacing at 72px: ${letterSpacingPx.toFixed(2)}px<br>
+      Visual width (letters only): ${visualWidth.toFixed(2)}px<br>
+      <br>
+      <strong>Underline should be: ${visualWidth.toFixed(2)}px</strong>
+    `;
+
+    console.log('Visual width for underline:', visualWidth);
+  </script>
+</body>
+</html>
