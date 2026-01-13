@@ -58,11 +58,6 @@ export default function HomePage() {
               and fix error-prone processes. Then we use automation and AI to free up
               humans to focus on work that adds real value.
             </p>
-            <p>
-              We transfer the skills and knowledge your team needs to use AI tools
-              effectively. You build the capability to maintain systems and drive
-              further improvement.
-            </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
@@ -102,8 +97,24 @@ export default function HomePage() {
               better. Fix the workflow first, then apply technology to scale what works.
             </p>
             <p>
-              We help organisations redesign how work flows, then build automation
-              that frees people to focus on what matters.
+              We help organisations redesign how work flows, build automation that
+              frees people to focus on what matters, and transfer the skills your
+              team needs to maintain and improve on their own.
+            </p>
+            <p>
+              Our AI consulting approach starts with diagnosis, not technology. We work
+              with you to review your operations and pinpoint where you'll get the biggest
+              return: better quality, less wasted effort, and your team focused where they
+              add the most value.
+            </p>
+          </div>
+          <div className="mt-8 p-6 bg-coral/70 rounded-lg">
+            <p className="text-lg leading-relaxed text-slate">
+              <strong>If you have</strong> manual processes slowing your team down,
+              <strong> we</strong> diagnose the root cause and redesign the workflow,
+              <strong> so you get</strong> automation that actually works, the ability
+              to maintain it, and your team empowered to create maximum value for your
+              organisation.
             </p>
           </div>
         </div>

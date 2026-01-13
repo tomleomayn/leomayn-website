@@ -26,14 +26,14 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Leomayn - Fix Work, Then Scale with AI',
-  description: 'We redesign knowledge work to remove bottlenecks, reduce repetitive work, and fix error-prone processes. Then we use automation and AI to free up humans to focus on work which creates real value.',
+  title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
+  description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation. Book a discovery call.',
   icons: {
     icon: '/favicon-192.svg',
   },
   openGraph: {
-    title: 'Leomayn - Fix Work, Then Scale with AI',
-    description: 'We redesign knowledge work to remove bottlenecks, reduce repetitive work, and fix error-prone processes.',
+    title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
+    description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation.',
     url: 'https://leomayn.com',
     siteName: 'Leomayn',
     locale: 'en_GB',
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leomayn - Fix Work, Then Scale with AI',
-    description: 'We redesign knowledge work to remove bottlenecks, reduce repetitive work, and fix error-prone processes.',
+    title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
+    description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation.',
   },
 }
 
