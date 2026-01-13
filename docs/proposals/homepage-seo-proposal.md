@@ -174,19 +174,21 @@ AI helps great teams achieve more
 
 ## Notion Updates Required
 
-| Item | Action |
-|------|--------|
-| HP-01 | Mark "Done" after implementation |
-| HP-02 | Mark "Done" after implementation |
-| HP-03 | Mark "Done" after implementation |
-| HP-04 | Mark "Deferred" - covered by DL-07 |
-| HP-05 | Mark "Done" after implementation |
+| Item | Action | Status |
+|------|--------|--------|
+| HP-01 | Mark "Done" after implementation | ✓ Done |
+| HP-02 | Mark "Done" after implementation | ✓ Done |
+| HP-03 | Mark "Done" after implementation | ✓ Done |
+| HP-04 | Mark "Deferred" - covered by DL-07 | ✓ Backlog (deferred) |
+| HP-05 | Mark "Done" after implementation | ✓ Done |
 
 ---
 
 ## Post-Implementation
 
-- [ ] Verify title/meta render correctly in browser
-- [ ] Check OpenGraph preview (use og:image debugger)
-- [ ] Submit to Google Search Console for re-indexing
-- [ ] Monitor rankings for "ai consulting" over 4 weeks
+QA items created in Notion Website Backlog (SEO category, "Next up" status):
+
+- [x] QA-HP-01: Verify title/meta render correctly in browser
+- [x] QA-HP-02: Check OpenGraph preview (use og:image debugger)
+- [x] QA-HP-03: Submit to Google Search Console for re-indexing
+- [x] QA-HP-04: Monitor rankings for "ai consulting" over 4 weeks
