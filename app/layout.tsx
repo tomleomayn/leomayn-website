@@ -38,11 +38,18 @@ export const metadata: Metadata = {
     siteName: 'Leomayn',
     locale: 'en_GB',
     type: 'website',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
     description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation.',
+    images: ['https://leomayn.com/logo/logo-social-1200x630.png'],
   },
 }
 
