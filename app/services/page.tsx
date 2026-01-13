@@ -5,8 +5,8 @@ import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
-  title: 'Services - Leomayn',
-  description: 'Four-phase framework for operational improvement: Diagnose, Define, Deliver, Support. Fix the work first, then scale with AI.',
+  title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
+  description: 'AI consulting services built on our four-phase framework. We diagnose, define, deliver, and support. Fix operations before scaling with AI. Book a call.',
 }
 
 export default function ServicesPage() {
@@ -38,12 +38,13 @@ export default function ServicesPage() {
         <section className="bg-pearl py-24 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
-              Four steps to operational improvement
+              AI consulting that delivers operational improvement
             </h1>
             <p className="text-xl leading-relaxed text-coral-accessible">
-              We evaluate the situation before prescribing any solutions. New workflows
-              are designed to fit your business. We ship working systems not pilots. We
-              transfer capability so you own the results.
+              We evaluate the situation before prescribing any solutions. As part of
+              our AI consulting services, new workflows are designed to fit your
+              business. We ship working systems, not pilots. We transfer capability
+              so you own the results.
             </p>
           </div>
         </section>
@@ -181,7 +182,7 @@ export default function ServicesPage() {
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-8">
-              Transparent pricing approach
+              How we price
             </h2>
             <div className="space-y-4 text-lg leading-relaxed text-slate">
               <p>
@@ -217,9 +218,9 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all min-w-[220px]"
             >
-              Book Discovery Call
+              Let's talk
             </Link>
           </div>
         </section>
