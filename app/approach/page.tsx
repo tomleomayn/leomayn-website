@@ -31,14 +31,15 @@ export default function ApproachPage() {
             <div className="max-w-2xl flex items-stretch">
               <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                We deliver working AI systems that add value, reduce friction,
-                and free your team to focus on what really matters.
+                Fix work first, then scale with AI. We deliver working systems
+                that add value, reduce friction, and free your team to focus on
+                what really matters.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section 1: Rigour */}
+        {/* Section 1: We understand before we prescribe */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
@@ -63,14 +64,13 @@ export default function ApproachPage() {
               <p>
                 Governance is designed in from the start. Who can access what data?
                 How is sensitive information protected? What gets logged? How do you
-                demonstrate compliance? We answer these questions before we build,
-                not after.
+                demonstrate compliance? We answer these questions before we build.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section 2: Delivery */}
+        {/* Section 2: Working systems that add value */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
@@ -83,8 +83,9 @@ export default function ApproachPage() {
                 tested, documented, deployed.
               </p>
               <p>
-                We work around your operations. We schedule work to minimise
-                disruption to client delivery and billable time.
+                We work alongside your team throughout. You're involved in reviewing
+                process maps, approving designs, testing systems before deployment,
+                and learning to maintain what we build.
               </p>
               <p>
                 The goal is to save you time, reduce administrative friction, and
@@ -94,7 +95,7 @@ export default function ApproachPage() {
           </div>
         </section>
 
-        {/* Section 3: Ownership */}
+        {/* Section 3: You own it */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
@@ -120,7 +121,7 @@ export default function ApproachPage() {
           </div>
         </section>
 
-        {/* Section 4: Commercial */}
+        {/* Section 4: Fixed pricing */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
@@ -129,7 +130,8 @@ export default function ApproachPage() {
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
                 You know the cost before we start. We price by complexity and
-                outcomes. No scope creep, no billing surprises.
+                outcomes. No scope creep, no billing surprises. Clear scope, clear
+                deliverables, clear timelines.
               </p>
               <p>
                 You can pause between phases. Complete a diagnosis and decide
@@ -139,6 +141,37 @@ export default function ApproachPage() {
               <p>
                 We agree what success looks like before we start, and we track
                 outcomes so you can see the value delivered.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: Who we serve */}
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Who we serve
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                We work with professional services firms and the business services
+                functions in larger organisations: agencies, consultancies, expert
+                service businesses. Typically 50-500 people, £5M-£50M revenue, with
+                operations directors or COOs looking to create operational leverage.
+              </p>
+              <p>
+                Our clients face common challenges:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Manual processes limiting growth or reducing billable time</li>
+                <li>Administrative drag eroding margins</li>
+                <li>Team burnout from repetitive work</li>
+                <li>Pressure to adopt AI without a clear strategy</li>
+              </ul>
+              <p>
+                We help them build operational systems that scale. Through improved
+                workflows, intelligent automation, and AI deployed where it solves
+                real problems.
               </p>
             </div>
           </div>
