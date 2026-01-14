@@ -3,8 +3,18 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Our Approach - Leomayn',
-  description: 'Fix the work first, then scale with AI. Our systematic approach to operational improvement for professional services firms.',
+  title: 'Our Approach to AI Consulting | Leomayn',
+  description: 'We diagnose before we prescribe, design for your business, and deliver working systems you own. Fixed pricing by complexity and outcomes. Phased commitment.',
+  openGraph: {
+    title: 'Our Approach to AI Consulting | Leomayn',
+    description: 'We diagnose before we prescribe, design for your business, and deliver working systems you own. Fixed pricing by complexity and outcomes. Phased commitment.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
+  },
 }
 
 export default function ApproachPage() {
@@ -14,150 +24,121 @@ export default function ApproachPage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
-              Our approach
-            </h1>
-            <p className="text-2xl leading-relaxed text-coral-accessible">
-              Fix the work first, then scale with AI
-            </p>
-          </div>
-        </section>
-
-        {/* Three Principles */}
-        <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
-              How we deliver successful AI transformation projects
-            </h2>
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  1. Diagnose before prescribing:
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  We don't start with solutions. We start with stakeholder interviews,
-                  process mapping, and operational analysis to understand where time and
-                  quality leak out of your workflows. Only after diagnosing the actual
-                  problem do we recommend technology or automation. This prevents expensive
-                  mistakes and ensures we solve the right problem.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  2. Design for your reality:
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  Every organisation is unique: legacy systems, data quality issues, regulatory
-                  requirements, team capabilities, and governance needs. Generic solutions ignore
-                  these realities. We design workflows and automation that fit your specific
-                  environment, using tools you can own, maintain, and adapt as requirements evolve.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  3. Transfer capability, not dependency:
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  We don't create ongoing dependency on proprietary platforms or consultancy
-                  retainers. You own all code, configurations, and documentation. The goal is
-                  to make ourselves redundant, not indispensable. We also offer ongoing
-                  support for clients who need it.
-                </p>
-              </div>
+            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
+              AI consulting that delivers
+            </h1>
+            <div className="max-w-2xl flex items-stretch">
+              <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+              <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
+                We deliver working AI systems that add value, reduce friction,
+                and free your team to focus on what really matters.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* What Makes Us Different */}
+        {/* Section 1: Rigour */}
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              We understand before we prescribe
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                We don't arrive with a solution looking for a problem.
+              </p>
+              <p>
+                Every engagement starts with diagnosis. We interview stakeholders,
+                map workflows, and analyse where time and quality leak out of your
+                operations. We identify the problems that matter before recommending
+                any technology.
+              </p>
+              <p>
+                We design for your business. Your legacy systems, your data quality,
+                your regulatory requirements, your team's capabilities. Solutions
+                that ignore these realities fail. We build for the environment you
+                actually operate in.
+              </p>
+              <p>
+                Governance is designed in from the start. Who can access what data?
+                How is sensitive information protected? What gets logged? How do you
+                demonstrate compliance? We answer these questions before we build,
+                not after.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Delivery */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-12">
-              What makes us different
-            </h2>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Working systems, not strategy decks
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  We deliver automation you can use, not just recommendations you have to implement.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Capability transfer
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  You own what we build, with the option to maintain it independently.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Designed for your constraints
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  Solutions fit your data, systems, and governance requirements. Not off-the-shelf products.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Fixed prices, defined scope
-                </h3>
-                <p className="text-base leading-relaxed text-slate">
-                  You know the cost before we start. No hourly billing, no scope creep.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Who We Serve */}
-        <section className="py-24 px-6 lg:px-8 bg-white">
-          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Who we serve
+              Working systems that add value
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                We work with professional services firms and the business services functions in other organisations: agencies, consultancies, expert service businesses. Typically 50-500 people, £5M-£50M revenue, with operations directors or COOs who are looking for support to create operational leverage.
+                We deliver automation you can use. Recommendations are worthless
+                without implementation. Our engagements produce working systems:
+                tested, documented, deployed.
               </p>
               <p>
-                Our clients face common challenges: manual processes limiting growth or reducing billable time, administrative drag eroding margins, team burnout from repetitive work, and pressure to adopt AI without a clear strategy.
+                We work around your operations. We schedule work to minimise
+                disruption to client delivery and billable time.
               </p>
               <p>
-                We help them build operational systems that scale. Not through headcount, but through improved workflows, intelligent automation, and AI deployed where it solves real problems.
+                The goal is to save you time, reduce administrative friction, and
+                free your team to focus on work that creates value.
               </p>
             </div>
           </div>
         </section>
 
-        {/* How We Work */}
+        {/* Section 3: Ownership */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              How we work with you
+              You own it, with support available
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                We work alongside your team, not in isolation. You're involved throughout:
-                reviewing process maps, approving designs, testing systems before deployment,
-                and learning to maintain what we build.
+                You own the implementation. All code, configurations, and
+                documentation belong to you. We use open platforms you can control.
+                Nothing proprietary, nothing locked to our involvement.
               </p>
               <p>
-                Projects are priced based on complexity, not hours. You know the cost before
-                we start. No surprises, no scope creep, no hourly rate anxiety. Clear scope,
-                clear deliverables, clear timelines.
+                Your team uses what we build, with full documentation provided.
+                The focus is on capability transfer: we want you to understand how
+                things work and be able to extend them over time.
               </p>
               <p>
-                You can pause between phases. Complete a diagnosis and decide whether to
-                proceed. Get a blueprint designed and choose when to build. There's no
-                pressure to commit to the full journey upfront.
+                We also offer ongoing support for clients who want it. Whether you
+                run things independently or prefer continued partnership, the choice
+                is yours.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: Commercial */}
+        <section className="py-24 px-6 lg:px-8 bg-pearl">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+              Fixed pricing, phased commitment
+            </h2>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <p>
+                You know the cost before we start. We price by complexity and
+                outcomes. No scope creep, no billing surprises.
+              </p>
+              <p>
+                You can pause between phases. Complete a diagnosis and decide
+                whether to proceed. Get a blueprint designed and choose when to
+                build. There's no pressure to commit to the full journey upfront.
+              </p>
+              <p>
+                We agree what success looks like before we start, and we track
+                outcomes so you can see the value delivered.
               </p>
             </div>
           </div>
@@ -170,8 +151,8 @@ export default function ApproachPage() {
               See how it works in practice
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call. We'll map one workflow and show you
-              where improvement opportunities exist.
+              Book a 30-minute discovery call. We'll discuss one workflow and
+              show you where we'd focus.
             </p>
             <Link
               href="/contact"
