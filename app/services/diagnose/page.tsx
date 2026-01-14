@@ -4,8 +4,18 @@ import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
-  title: 'Diagnose Phase - Leomayn',
-  description: 'Identify what is broken and what matters. Map current workflows, interview stakeholders, and pinpoint operational bottlenecks.',
+  title: 'AI Consulting: Diagnose - Discovery & Assessment | Leomayn',
+  description: 'AI consulting starts with diagnosis. We map workflows, interview stakeholders, and identify bottlenecks before recommending technology. Book a discovery call.',
+  openGraph: {
+    title: 'AI Consulting: Diagnose - Discovery & Assessment | Leomayn',
+    description: 'AI consulting starts with diagnosis. We map workflows, interview stakeholders, and identify bottlenecks before recommending technology. Book a discovery call.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
+  },
 }
 
 export default function DiagnosePage() {
@@ -68,7 +78,7 @@ export default function DiagnosePage() {
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Diagnose
                 </h1>
-                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Discovery & Assessment</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Discovery & Operational Assessment</p>
               </div>
             </div>
             <p className="text-2xl leading-relaxed text-slate">

@@ -4,8 +4,18 @@ import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
-  title: 'Define Phase - Leomayn',
-  description: 'Design the right solution once. Create detailed blueprints that fit your data, systems, and governance requirements.',
+  title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
+  description: 'Design the right AI solution once. We create detailed blueprints covering workflows, architecture, and governance before building begins. Learn more.',
+  openGraph: {
+    title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
+    description: 'Design the right AI solution once. We create detailed blueprints covering workflows, architecture, and governance before building begins. Learn more.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
+  },
 }
 
 export default function DefinePage() {
@@ -68,7 +78,7 @@ export default function DefinePage() {
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Define
                 </h1>
-                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Solution Design</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">AI Strategy & Solution Design</p>
               </div>
             </div>
             <p className="text-2xl leading-relaxed text-slate">

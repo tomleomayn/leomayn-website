@@ -4,8 +4,18 @@ import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
-  title: 'Support Phase - Leomayn',
-  description: 'Keep systems optimised as you grow. Quarterly advisory, ongoing improvements, and technical support.',
+  title: 'AI Training & Support - Ongoing Optimisation | Leomayn',
+  description: 'AI training and ongoing support to keep automation optimised. Quarterly health checks, performance monitoring, and capability building. Learn about our plans.',
+  openGraph: {
+    title: 'AI Training & Support - Ongoing Optimisation | Leomayn',
+    description: 'AI training and ongoing support to keep automation optimised. Quarterly health checks, performance monitoring, and capability building. Learn about our plans.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
+  },
 }
 
 export default function SupportPage() {
@@ -68,7 +78,7 @@ export default function SupportPage() {
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Support
                 </h1>
-                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Embed & Optimise</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">AI Training & Support</p>
               </div>
             </div>
             <p className="text-2xl leading-relaxed text-slate">

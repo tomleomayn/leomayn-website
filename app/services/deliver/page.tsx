@@ -4,8 +4,18 @@ import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
-  title: 'Deliver Phase - Leomayn',
-  description: 'Working automation in weeks. Build, test, and deploy solutions with your team involved throughout.',
+  title: 'AI Automation Services - Deliver Phase | Leomayn',
+  description: 'AI automation services that deliver working systems. We build, test, and deploy with your team involved. You own all code and IP. Get started.',
+  openGraph: {
+    title: 'AI Automation Services - Deliver Phase | Leomayn',
+    description: 'AI automation services that deliver working systems. We build, test, and deploy with your team involved. You own all code and IP. Get started.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
+  },
 }
 
 export default function DeliverPage() {
@@ -68,7 +78,7 @@ export default function DeliverPage() {
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Deliver
                 </h1>
-                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Build & Deploy</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">AI Workflow Automation & Deployment</p>
               </div>
             </div>
             <p className="text-2xl leading-relaxed text-slate">
