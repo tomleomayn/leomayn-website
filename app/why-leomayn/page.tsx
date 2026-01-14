@@ -76,7 +76,7 @@ export default function WhyLeomaynPage() {
                   src="/images/tom-jones-founder.jpg"
                   alt="Tom Jones, Founder of Leomayn"
                   fill
-                  className="object-cover rounded-lg"
+                  className="object-cover rounded-md"
                 />
               </div>
 
@@ -192,7 +192,7 @@ export default function WhyLeomaynPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
               Book Discovery Call
             </Link>

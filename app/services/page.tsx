@@ -46,16 +46,19 @@ export default function ServicesPage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
               AI consulting that delivers operational improvement
             </h1>
-            <p className="text-xl leading-relaxed text-coral-accessible">
-              We evaluate the situation before prescribing any solutions. As part of
-              our AI consulting services, new workflows are designed to fit your
-              business. We ship working systems, not pilots. We transfer capability
-              so you own the results.
-            </p>
+            <div className="max-w-2xl flex items-stretch">
+              <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+              <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
+                We evaluate the situation before prescribing any solutions. As part of
+                our AI consulting services, new workflows are designed to fit your
+                business. We ship working systems, not pilots. We transfer capability
+                so you own the results.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -137,7 +140,7 @@ export default function ServicesPage() {
 
             <div className="grid md:grid-cols-4 gap-6 mb-12">
               <div className="text-center">
-                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
+                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Diagnose</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase I</h3>
@@ -147,7 +150,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
+                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Define</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase II</h3>
@@ -157,7 +160,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
+                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase III</h3>
@@ -167,7 +170,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <div className="bg-coral rounded-lg p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
+                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
                   <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase IV</h3>
@@ -180,7 +183,7 @@ export default function ServicesPage() {
             <div className="text-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
+                className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
                 Discuss Your Needs
               </Link>
@@ -228,7 +231,7 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all min-w-[220px]"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
               Let's talk
             </Link>

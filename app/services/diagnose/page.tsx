@@ -61,7 +61,7 @@ export default function DiagnosePage() {
         <section className="bg-pearl py-24 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-end gap-6 mb-6">
-              <div className="w-20 h-20 bg-coral rounded-lg flex items-center justify-center">
+              <div className="w-20 h-20 bg-coral rounded-md flex items-center justify-center">
                 <i className="fi fi-rs-brain-circuit text-slate leading-none flex items-center justify-center" style={{ fontSize: '48px' }}></i>
               </div>
               <div>
@@ -158,7 +158,7 @@ export default function DiagnosePage() {
               What you receive
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Assessment Report
                 </h3>
@@ -168,7 +168,7 @@ export default function DiagnosePage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Visual Workflow Maps
                 </h3>
@@ -178,7 +178,7 @@ export default function DiagnosePage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Opportunity Matrix
                 </h3>
@@ -188,7 +188,7 @@ export default function DiagnosePage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Complexity Scoring
                 </h3>
@@ -279,7 +279,7 @@ export default function DiagnosePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
               Book Discovery Call
             </Link>

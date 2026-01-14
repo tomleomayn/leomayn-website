@@ -121,7 +121,7 @@ export default function ContactPage() {
                 <p className="text-base leading-relaxed text-slate mb-8">
                   The fastest way to start is a 30-minute discovery call. We'll discuss your goals, map one workflow, and consider improvement opportunities.
                 </p>
-                <div className="bg-pearl border border-steel rounded-lg p-8">
+                <div className="bg-pearl border border-steel rounded-md p-8">
                   <div className="space-y-4 text-base text-slate">
                     <div className="flex items-start gap-3">
                       <svg className="w-6 h-6 text-coral flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleCalendlyClick}
-                      className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all w-full"
+                      className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all w-full"
                     >
                       Schedule a Call
                     </a>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                 </p>
 
                 {status === 'success' ? (
-                  <div className="bg-coral rounded-lg p-8 text-center h-full flex flex-col justify-center">
+                  <div className="bg-coral rounded-md p-8 text-center h-full flex flex-col justify-center">
                     <svg className="w-16 h-16 text-slate mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate"
+                        className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate"
                       />
                     </div>
 
@@ -202,7 +202,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate"
+                        className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate"
                       />
                     </div>
 
@@ -217,7 +217,7 @@ export default function ContactPage() {
                         required
                         value={formData.confirmEmail}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate"
+                        className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate"
                       />
                     </div>
 
@@ -231,7 +231,7 @@ export default function ContactPage() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate"
+                        className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate"
                       />
                     </div>
 
@@ -246,18 +246,18 @@ export default function ContactPage() {
                         rows={6}
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-steel rounded-lg focus:outline-none focus:border-coral bg-white text-slate resize-none"
+                        className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate resize-none"
                       />
                     </div>
 
                     {emailError && (
-                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800 text-sm">
+                      <div className="bg-red-50 border border-red-200 rounded-md p-4 text-red-800 text-sm">
                         {emailError}
                       </div>
                     )}
 
                     {status === 'error' && (
-                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-800 text-sm">
+                      <div className="bg-red-50 border border-red-200 rounded-md p-4 text-red-800 text-sm">
                         There was an error sending your message. Please try again or email us directly.
                       </div>
                     )}
@@ -265,7 +265,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="w-full inline-flex items-center justify-center font-sans font-semibold text-base bg-slate text-white px-8 py-4 rounded-lg hover:bg-slate-light transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full inline-flex items-center justify-center font-sans font-semibold text-base bg-slate text-white px-8 py-4 rounded-md hover:bg-slate-light transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {status === 'submitting' ? 'Sending...' : 'Send Message'}
                     </button>

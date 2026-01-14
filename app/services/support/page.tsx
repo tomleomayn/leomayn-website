@@ -61,7 +61,7 @@ export default function SupportPage() {
         <section className="bg-pearl py-24 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-end gap-6 mb-6">
-              <div className="w-20 h-20 bg-coral rounded-lg flex items-center justify-center">
+              <div className="w-20 h-20 bg-coral rounded-md flex items-center justify-center">
                 <i className="fi fi-rs-hands-heart text-slate leading-none flex items-center justify-center" style={{ fontSize: '48px' }}></i>
               </div>
               <div>
@@ -167,7 +167,7 @@ export default function SupportPage() {
               What you receive
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   AI Capability Training
                 </h3>
@@ -177,7 +177,7 @@ export default function SupportPage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Performance Reports and Advisory
                 </h3>
@@ -187,7 +187,7 @@ export default function SupportPage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Ongoing Improvements
                 </h3>
@@ -197,7 +197,7 @@ export default function SupportPage() {
                 </p>
               </div>
 
-              <div className="bg-pearl border border-steel rounded-lg p-6">
+              <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Technical Support
                 </h3>
@@ -217,7 +217,7 @@ export default function SupportPage() {
               Support tiers
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-chalk border-2 border-steel rounded-lg p-8">
+              <div className="bg-chalk border-2 border-steel rounded-md p-8">
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
                   Standard Support
                 </h3>
@@ -253,7 +253,7 @@ export default function SupportPage() {
                 </ul>
               </div>
 
-              <div className="bg-chalk border-2 border-coral rounded-lg p-8">
+              <div className="bg-chalk border-2 border-coral rounded-md p-8">
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
                   Premium Support
                 </h3>
@@ -304,7 +304,7 @@ export default function SupportPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
               Book Discovery Call
             </Link>

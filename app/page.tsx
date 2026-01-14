@@ -48,29 +48,30 @@ export default function HomePage() {
       <main className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-pearl py-24 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
             Fix work, then scale with AI
           </h1>
-          <div className="max-w-3xl mx-auto space-y-4 text-xl leading-relaxed text-coral-accessible mb-8">
-            <p>
+          <div className="max-w-2xl mb-8 flex items-stretch">
+            <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+            <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
               We redesign knowledge work to remove bottlenecks, reduce repetitive work,
               and fix error-prone processes. Then we use automation and AI to free up
               humans to focus on work that adds real value.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
             <Link
               href="/services"
               onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all w-full max-w-xs sm:w-64"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate bg-pearl text-slate px-8 py-4 rounded-md hover:bg-[#9ab8cb] hover:border-[#9ab8cb] hover:text-white transition-all min-w-[220px]"
             >
               See Our Services
             </Link>
             <Link
               href="/contact"
               onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all w-full max-w-xs sm:w-64"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
               Book Discovery Call
             </Link>
@@ -108,7 +109,7 @@ export default function HomePage() {
               add the most value.
             </p>
           </div>
-          <div className="mt-8 p-6 bg-coral/70 rounded-lg">
+          <div className="mt-8 p-6 bg-coral/70 rounded-md">
             <p className="text-lg leading-relaxed text-slate">
               <strong>If you have</strong> manual processes slowing your team down,
               <strong> we</strong> diagnose the root cause and redesign the workflow,
@@ -129,7 +130,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
+            <div className="relative bg-pearl border border-steel rounded-md p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
@@ -156,7 +157,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 2 */}
-            <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
+            <div className="relative bg-pearl border border-steel rounded-md p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
@@ -181,7 +182,7 @@ export default function HomePage() {
             </div>
 
             {/* Card 3 */}
-            <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
+            <div className="relative bg-pearl border border-steel rounded-md p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                    style={{
                      backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
@@ -283,7 +284,7 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 mb-8">
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -302,7 +303,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -321,7 +322,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -340,7 +341,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="relative bg-coral rounded-lg p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
                      style={{
                        backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
@@ -363,7 +364,7 @@ export default function HomePage() {
             <Link
               href="/services"
               onClick={() => trackCTAClick('See our full services', 'solution_section', '/services')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px]"
             >
               See our full services
             </Link>
@@ -407,7 +408,7 @@ export default function HomePage() {
             <Link
               href="/how-we-think"
               onClick={() => trackCTAClick('See how we think', 'how_we_work_section', '/how-we-think')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-lg hover:bg-slate hover:text-white transition-all"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px]"
             >
               See how we think
             </Link>
@@ -428,7 +429,7 @@ export default function HomePage() {
           <Link
             href="/contact"
             onClick={() => trackCTAClick('Book Discovery Call', 'final_cta', '/contact')}
-            className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-lg hover:bg-coral-dark transition-all"
+            className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
           >
             Book Discovery Call
           </Link>
