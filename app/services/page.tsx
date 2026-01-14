@@ -7,6 +7,10 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 export const metadata = {
   title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
   description: 'AI consulting services built on our four-phase framework. We diagnose, define, deliver, and support. Fix operations before scaling with AI. Book a call.',
+  openGraph: {
+    title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
+    description: 'AI consulting services built on our four-phase framework. We diagnose, define, deliver, and support. Fix operations before scaling with AI. Book a call.',
+  },
 }
 
 export default function ServicesPage() {

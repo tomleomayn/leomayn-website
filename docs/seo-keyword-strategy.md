@@ -21,13 +21,32 @@
 ### Formatting Rules
 
 - **Title Case** for all page titles and H1s
-- **Sentence case** for meta descriptions
+- **Sentence case** for meta descriptions and H1s
 - **Primary keyword** MUST appear in Title, H1, AND Meta Description
 - **Unique content** - each Title, H1, Meta must be unique across all URLs
 - **H1 ≠ Title** - titles and H1s must differ (rephrase, don't duplicate)
 - **Brand suffix** - always end titles with " | Leomayn" (pipe format, consistent)
 - **CTA in meta** - include action phrase ("Book a discovery call", "Learn how", etc.)
 - **No unsubstantiated claims** - avoid "guaranteed results", "best in class", unsupported statistics
+
+### Page Metadata Implementation Checklist
+
+When updating SEO metadata for any page, ensure ALL of these are set:
+
+```tsx
+export const metadata = {
+  title: '...',           // Required - appears in browser tab, search results
+  description: '...',     // Required - appears in search results
+  openGraph: {            // Required - for social sharing (Facebook, LinkedIn)
+    title: '...',         // Usually matches title
+    description: '...',   // Usually matches description
+  },
+}
+```
+
+**Why this matters:** Without explicit `openGraph` properties, pages inherit from `layout.tsx` which shows homepage content when sharing on social media. Each page needs its own OG metadata for correct social previews.
+
+**QA validation:** Run `python website-qa-all.py /path` to verify all metadata is correctly set before considering any SEO task complete.
 
 ### Meta Description Opening Approaches
 
