@@ -40,11 +40,17 @@ export const metadata = {
   openGraph: {            // Required - for social sharing (Facebook, LinkedIn)
     title: '...',         // Usually matches title
     description: '...',   // Usually matches description
+    images: [{            // Required - must be included, not inherited from layout
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
   },
 }
 ```
 
-**Why this matters:** Without explicit `openGraph` properties, pages inherit from `layout.tsx` which shows homepage content when sharing on social media. Each page needs its own OG metadata for correct social previews.
+**Why this matters:** Page-level `openGraph` objects completely override (not merge with) the layout's openGraph. Without explicit `images`, social shares will have no preview image. Each page needs the full openGraph object including images.
 
 **QA validation:** Run `python website-qa-all.py /path` to verify all metadata is correctly set before considering any SEO task complete.
 

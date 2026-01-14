@@ -10,6 +10,12 @@ export const metadata = {
   openGraph: {
     title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
     description: 'AI consulting services built on our four-phase framework. We diagnose, define, deliver, and support. Fix operations before scaling with AI. Book a call.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
   },
 }
 
