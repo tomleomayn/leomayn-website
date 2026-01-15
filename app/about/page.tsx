@@ -3,8 +3,18 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'About - Leomayn',
-  description: 'Founded by Tom Jones, Leomayn helps professional services firms build operational leverage through systematic workflow improvement and AI automation.',
+  title: 'About Us | AI Consultants for Professional Services | Leomayn',
+  description: 'Meet the AI consultants behind Leomayn. We help professional services firms build operational leverage through workflow improvement and AI automation.',
+  openGraph: {
+    title: 'About Us | AI Consultants for Professional Services | Leomayn',
+    description: 'Meet the AI consultants behind Leomayn. We help professional services firms build operational leverage through workflow improvement and AI automation.',
+    images: [{
+      url: 'https://leomayn.com/logo/logo-social-1200x630.png',
+      width: 1200,
+      height: 630,
+      alt: 'Leomayn - AI Consulting',
+    }],
+  },
 }
 
 export default function AboutPage() {
