@@ -38,14 +38,43 @@ export default function WhyLeomaynPage() {
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
+        <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
+          {/* Background blobs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute -bottom-24 -left-16 w-96 h-96 rounded-full opacity-40 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral)',
+                animation: 'blobFloat 21s ease-in-out infinite',
+              }}
+            />
+            <div
+              className="absolute -top-16 left-1/3 w-72 h-72 rounded-full opacity-30 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-rock)',
+                animation: 'blobFloat 26s ease-in-out infinite reverse',
+                animationDelay: '-6s',
+              }}
+            />
+            <div
+              className="absolute top-1/3 -right-20 w-80 h-80 rounded-full opacity-35 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral-light)',
+                animation: 'blobFloat 19s ease-in-out infinite',
+                animationDelay: '-11s',
+              }}
+            />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
               Why Leomayn
             </h1>
-            <p className="text-2xl leading-relaxed text-coral-accessible">
-              Operations and AI consulting for knowledge work
-            </p>
+            <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
+              <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
+              <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
+                Operations and AI consulting for knowledge work
+              </p>
+            </div>
           </div>
         </section>
 

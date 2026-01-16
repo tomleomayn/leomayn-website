@@ -11,7 +11,7 @@ export default function NavBar() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-steel">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-steel">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -28,7 +28,7 @@ export default function NavBar() {
             <div className="relative group ml-4">
               <Link
                 href="/services"
-                className={`text-sm font-sans flex items-center gap-1 ${isActive('/services') || pathname?.startsWith('/services/') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+                className={`text-sm font-sans flex items-center gap-1 ${isActive('/services') || pathname?.startsWith('/services/') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
               >
                 Services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,7 @@ export default function NavBar() {
               </Link>
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-[1px] w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 <Link href="/services/diagnose" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   Diagnose
                 </Link>
@@ -55,21 +55,21 @@ export default function NavBar() {
 
             <Link
               href="/approach"
-              className={`text-sm font-sans ${isActive('/approach') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              className={`text-sm font-sans ${isActive('/approach') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
               Our Approach
             </Link>
 
             <Link
               href="/how-we-think"
-              className={`text-sm font-sans ${isActive('/how-we-think') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              className={`text-sm font-sans ${isActive('/how-we-think') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
               How We Think
             </Link>
 
             <Link
               href="/why-leomayn"
-              className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
               Why Leomayn
             </Link>

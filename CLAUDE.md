@@ -32,6 +32,42 @@ Notion databases are accessed via API, not web scraping (WebFetch won't work on 
   - Client templates
   - Integration credentials
 
+## Development Workflow
+
+**Branches:**
+- `main` — Production (auto-deploys to leomayn.com)
+- `develop` — Staging/development work
+
+**Workflow:**
+```
+Local changes → commit → push to develop → create PR → Vercel preview → merge → production
+```
+
+| Environment | URL | Trigger |
+|-------------|-----|---------|
+| Local | http://localhost:3000 | `npm run dev` |
+| Preview | PR-specific Vercel URL | Open PR from develop to main |
+| Production | leomayn.com | Merge PR to main |
+
+**Commands:**
+```bash
+# Start local dev
+npm run dev
+
+# After making changes
+git add .
+git commit -m "Description of changes"
+git push origin develop
+
+# Create PR for preview
+gh pr create --base main --head develop --title "..." --body "..."
+
+# After review, merge via GitHub or:
+gh pr merge --squash
+```
+
+**Note:** Files added to the folder are not synced until you explicitly commit and push.
+
 ## Key Files
 
 - `app/page.tsx` - Homepage

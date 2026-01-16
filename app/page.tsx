@@ -6,6 +6,8 @@ import Head from 'next/head'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import HeroBlobs from '@/components/HeroBlobs'
+import ScrollReveal from '@/components/ScrollReveal'
 
 // Extend window interface for dataLayer
 declare global {
@@ -47,31 +49,32 @@ export default function HomePage() {
       <NavBar />
       <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-pearl py-24 px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
+      <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
+        <HeroBlobs />
+        <div className="max-w-4xl mx-auto relative z-10">
+          <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
             Fix work, then scale with AI
           </h1>
-          <div className="max-w-2xl mb-8 flex items-stretch">
-            <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+          <div className="max-w-2xl mb-8 flex items-stretch animate-fade-in-up stagger-1">
+            <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
             <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
               We redesign knowledge work to remove bottlenecks, reduce repetitive work,
               and fix error-prone processes. Then we use automation and AI to free up
               humans to focus on work that adds real value.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 items-start">
+          <div className="flex flex-col sm:flex-row gap-4 items-start animate-fade-in-up stagger-2">
             <Link
               href="/services"
               onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate bg-pearl text-slate px-8 py-4 rounded-md hover:bg-[#9ab8cb] hover:border-[#9ab8cb] hover:text-white transition-all min-w-[220px]"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate bg-pearl text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px] w-full sm:w-auto"
             >
               See Our Services
             </Link>
             <Link
               href="/contact"
               onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
+              className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark hover:shadow-lg hover:-translate-y-0.5 transition-all min-w-[220px] w-full sm:w-auto"
             >
               Book Discovery Call
             </Link>
@@ -89,7 +92,7 @@ export default function HomePage() {
             <p>
               Most organisations have capacity trapped in low-value work: manual processes,
               error-prone handoffs, information scattered across systems. Time for strategic
-              work that earns fees or creates differentiation gets eroded because day-to-day
+              work that earns fees or creates differentiation gets eroded because the day-to-day
               demands constant attention.
             </p>
             <p>
@@ -130,81 +133,96 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="relative bg-pearl border border-steel rounded-md p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                   style={{
-                     backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                     backgroundSize: '12px 12px'
-                   }}>
-              </div>
+            <ScrollReveal delay={0}>
+              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
+                {/* Hover blobs */}
+                <div
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 15s ease-in-out infinite' }}
+                />
+                <div
+                  className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 18s ease-in-out infinite reverse' }}
+                />
 
-              <div className="relative z-10">
-                <h3 className="text-2xl font-serif text-slate mb-4">
-                  Excessive manual work crowds out time for strategic work
-                </h3>
-                <p className="text-base font-sans text-slate leading-relaxed">
-                  Time spent chasing updates, switching systems, and doing manual data entry
-                  doesn't add value. Knowledge workers spend up to 60% of time on 'work about work'
-                  rather than skilled tasks
-                  <sup>
-                    <a href="#ref1" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
-                      [1]
-                    </a>
-                  </sup>
-                  . Little capacity remains for strategic work that drives growth.
-                </p>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-serif text-slate mb-4">
+                    Excessive manual work crowds out time for strategic work
+                  </h3>
+                  <p className="text-base font-sans text-slate leading-relaxed">
+                    Time spent chasing updates, switching systems, and doing manual data entry
+                    doesn't add value. Knowledge workers spend up to 60% of time on 'work about work'
+                    rather than skilled tasks
+                    <sup>
+                      <a href="#ref1" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
+                        [1]
+                      </a>
+                    </sup>
+                    . Little capacity remains for strategic work that drives growth.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Card 2 */}
-            <div className="relative bg-pearl border border-steel rounded-md p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                   style={{
-                     backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                     backgroundSize: '12px 12px'
-                   }}>
-              </div>
+            <ScrollReveal delay={0.1}>
+              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
+                {/* Hover blobs */}
+                <div
+                  className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 16s ease-in-out infinite' }}
+                />
+                <div
+                  className="absolute -bottom-10 -right-10 w-28 h-28 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 20s ease-in-out infinite reverse' }}
+                />
 
-              <div className="relative z-10">
-                <h3 className="text-2xl font-serif text-slate mb-4">
-                  Automating broken workflows compounds problems
-                </h3>
-                <p className="text-base font-sans text-slate leading-relaxed">
-                  Automating inefficient processes makes them faster but not better
-                  <sup>
-                    <a href="#ref2" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
-                      [2]
-                    </a>
-                  </sup>
-                  . Technology overlaid on broken workflows magnifies problems rather than solving them. Fix the workflow first, then scale what works.
-                </p>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-serif text-slate mb-4">
+                    Automating broken workflows compounds problems
+                  </h3>
+                  <p className="text-base font-sans text-slate leading-relaxed">
+                    Automating inefficient processes makes them faster but not better
+                    <sup>
+                      <a href="#ref2" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
+                        [2]
+                      </a>
+                    </sup>
+                    . Technology overlaid on broken workflows magnifies problems rather than solving them. Fix the workflow first, then scale what works.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Card 3 */}
-            <div className="relative bg-pearl border border-steel rounded-md p-8 hover:border-coral transition-all duration-300 group overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                   style={{
-                     backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                     backgroundSize: '12px 12px'
-                   }}>
-              </div>
+            <ScrollReveal delay={0.2}>
+              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
+                {/* Hover blobs */}
+                <div
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 17s ease-in-out infinite' }}
+                />
+                <div
+                  className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 19s ease-in-out infinite reverse' }}
+                />
 
-              <div className="relative z-10">
-                <h3 className="text-2xl font-serif text-slate mb-4">
-                  Tool selection before diagnosis creates waste
-                </h3>
-                <p className="text-base font-sans text-slate leading-relaxed">
-                  Organisations waste 20% - 30% of software spending on unused licenses
-                  <sup>
-                    <a href="#ref3" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
-                      [3]
-                    </a>
-                  </sup>
-                  . Selecting technology before understanding the operational problem leads to shelfware and disappointing results.
-                </p>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-serif text-slate mb-4">
+                    Tool selection before diagnosis creates waste
+                  </h3>
+                  <p className="text-base font-sans text-slate leading-relaxed">
+                    Organisations waste 20% - 30% of software spending on unused licenses
+                    <sup>
+                      <a href="#ref3" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
+                        [3]
+                      </a>
+                    </sup>
+                    . Selecting technology before understanding the operational problem leads to shelfware and disappointing results.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* References Section */}
@@ -262,14 +280,29 @@ export default function HomePage() {
       {/* Bill Gates Quote Hero */}
       <section className="py-20 bg-slate">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-2xl md:text-3xl text-coral leading-relaxed mb-6" style={{ fontFamily: 'var(--font-serif)' }}>
-              "The first rule of any technology used in a business is that automation
+          <div className="text-center relative">
+            {/* Decorative quote marks */}
+            <span
+              className="absolute -top-2 left-0 md:-left-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+              aria-hidden="true"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              &ldquo;
+            </span>
+            <span
+              className="absolute -bottom-6 right-0 md:-right-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+              aria-hidden="true"
+              style={{ fontFamily: 'Georgia, serif' }}
+            >
+              &rdquo;
+            </span>
+            <p className="text-2xl md:text-3xl text-coral leading-relaxed mb-6 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+              The first rule of any technology used in a business is that automation
               applied to an efficient operation will magnify the efficiency. The second
               is that automation applied to an inefficient operation will magnify the
-              inefficiency."
+              inefficiency.
             </p>
-            <p className="text-lg text-chalk" style={{ fontFamily: 'var(--font-serif)' }}>
+            <p className="text-lg text-chalk italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
               — Bill Gates
             </p>
           </div>
@@ -283,16 +316,10 @@ export default function HomePage() {
             We fix the work first, then scale it with AI
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 mb-8">
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            <Link href="/services/diagnose" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">1 · Diagnose</h3>
@@ -301,17 +328,11 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Identify what's important and what to improve
               </p>
-            </div>
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            </Link>
+            <Link href="/services/define" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">2 · Define</h3>
@@ -320,17 +341,11 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Design a solution to fit your needs
               </p>
-            </div>
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            </Link>
+            <Link href="/services/deliver" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">3 · Deliver</h3>
@@ -339,17 +354,11 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Deploy working automations that deliver value
               </p>
-            </div>
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            </Link>
+            <Link href="/services/support" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">4 · Support</h3>
@@ -358,7 +367,7 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Empower teams and keep systems optimised
               </p>
-            </div>
+            </Link>
           </div>
           <div className="text-center">
             <Link

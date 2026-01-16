@@ -68,9 +68,35 @@ export default function DeliverPage() {
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-end gap-6 mb-6">
+        <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
+          {/* Background blobs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute -top-20 -left-16 w-80 h-80 rounded-full opacity-40 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral)',
+                animation: 'blobFloat 20s ease-in-out infinite',
+              }}
+            />
+            <div
+              className="absolute -bottom-16 right-1/3 w-72 h-72 rounded-full opacity-30 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-rock)',
+                animation: 'blobFloat 24s ease-in-out infinite reverse',
+                animationDelay: '-9s',
+              }}
+            />
+            <div
+              className="absolute top-1/3 -right-20 w-88 h-88 rounded-full opacity-35 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral-light)',
+                animation: 'blobFloat 17s ease-in-out infinite',
+                animationDelay: '-5s',
+              }}
+            />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <div className="flex items-end gap-6 mb-6 animate-fade-in-up">
               <div className="w-20 h-20 bg-coral rounded-md flex items-center justify-center">
                 <i className="fi fi-rs-system-cloud text-slate leading-none flex items-center justify-center" style={{ fontSize: '48px' }}></i>
               </div>
@@ -81,9 +107,12 @@ export default function DeliverPage() {
                 <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">AI Workflow Automation & Deployment</p>
               </div>
             </div>
-            <p className="text-2xl leading-relaxed text-slate">
-              Working automation in weeks
-            </p>
+            <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
+              <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
+              <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
+                Working automation in weeks
+              </p>
+            </div>
           </div>
         </section>
 

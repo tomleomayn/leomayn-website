@@ -23,13 +23,39 @@ export default function HowWeThinkPage() {
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
+        <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
+          {/* Background blobs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute top-1/2 -left-24 w-88 h-88 rounded-full opacity-40 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-rock)',
+                animation: 'blobFloat 19s ease-in-out infinite',
+              }}
+            />
+            <div
+              className="absolute -bottom-16 left-1/3 w-72 h-72 rounded-full opacity-35 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral)',
+                animation: 'blobFloat 23s ease-in-out infinite reverse',
+                animationDelay: '-8s',
+              }}
+            />
+            <div
+              className="absolute -top-16 -right-16 w-80 h-80 rounded-full opacity-30 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral-light)',
+                animation: 'blobFloat 17s ease-in-out infinite',
+                animationDelay: '-4s',
+              }}
+            />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
               Our philosophy on AI strategy
             </h1>
-            <div className="max-w-2xl flex items-stretch">
-              <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+            <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
+              <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
                 AI gives people unprecedented access to knowledge and capability.
                 We help organisations and their people harness it.
