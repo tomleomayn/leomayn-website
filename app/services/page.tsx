@@ -45,13 +45,39 @@ export default function ServicesPage() {
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
+        <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
+          {/* Background blobs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute -bottom-20 -left-20 w-96 h-96 rounded-full opacity-40 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral)',
+                animation: 'blobFloat 22s ease-in-out infinite',
+              }}
+            />
+            <div
+              className="absolute -top-20 right-1/4 w-72 h-72 rounded-full opacity-30 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-rock)',
+                animation: 'blobFloat 20s ease-in-out infinite reverse',
+                animationDelay: '-7s',
+              }}
+            />
+            <div
+              className="absolute top-1/2 -right-16 w-80 h-80 rounded-full opacity-35 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral-light)',
+                animation: 'blobFloat 25s ease-in-out infinite',
+                animationDelay: '-12s',
+              }}
+            />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
               AI consulting that delivers operational improvement
             </h1>
-            <div className="max-w-2xl flex items-stretch">
-              <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+            <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
+              <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
                 We evaluate the situation before prescribing any solutions. As part of
                 our AI consulting services, new workflows are designed to fit your
@@ -138,46 +164,58 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <div className="text-center">
-                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
-                  <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Diagnose</span>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto lg:max-w-none">
+              <Link href="/services/diagnose" className="text-center group">
+                <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '48px' }}></i>
+                  </div>
+                  <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Diagnose</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase I</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
-                  c.2 - 4 weeks
+                  Est. duration: 2 - 4 weeks
                 </p>
-              </div>
+              </Link>
 
-              <div className="text-center">
-                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
-                  <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Define</span>
+              <Link href="/services/define" className="text-center group">
+                <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '48px' }}></i>
+                  </div>
+                  <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Define</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase II</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
-                  c.2 - 3 weeks
+                  Est. duration: 2 - 3 weeks
                 </p>
-              </div>
+              </Link>
 
-              <div className="text-center">
-                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
-                  <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
+              <Link href="/services/deliver" className="text-center group">
+                <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '48px' }}></i>
+                  </div>
+                  <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase III</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
-                  c.4 - 8 weeks
+                  Est. duration: 4 - 8 weeks
                 </p>
-              </div>
+              </Link>
 
-              <div className="text-center">
-                <div className="bg-coral rounded-md p-5 mb-2 h-28 flex items-center justify-center w-full max-w-xs mx-auto md:w-auto">
-                  <span className="text-3xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
+              <Link href="/services/support" className="text-center group">
+                <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
+                  <div className="transition-transform duration-300 group-hover:scale-110">
+                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '48px' }}></i>
+                  </div>
+                  <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase IV</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
                   Ongoing
                 </p>
-              </div>
+              </Link>
             </div>
 
             <div className="text-center">

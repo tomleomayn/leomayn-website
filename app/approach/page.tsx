@@ -23,13 +23,39 @@ export default function ApproachPage() {
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-pearl py-24 px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
+        <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
+          {/* Background blobs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            <div
+              className="absolute -top-20 -left-16 w-80 h-80 rounded-full opacity-40 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral)',
+                animation: 'blobFloat 24s ease-in-out infinite',
+              }}
+            />
+            <div
+              className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full opacity-30 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-rock)',
+                animation: 'blobFloat 18s ease-in-out infinite reverse',
+                animationDelay: '-5s',
+              }}
+            />
+            <div
+              className="absolute top-1/3 right-1/3 w-64 h-64 rounded-full opacity-35 blur-3xl"
+              style={{
+                backgroundColor: 'var(--color-coral-light)',
+                animation: 'blobFloat 21s ease-in-out infinite',
+                animationDelay: '-9s',
+              }}
+            />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10">
+            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
               AI consulting that delivers
             </h1>
-            <div className="max-w-2xl flex items-stretch">
-              <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+            <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
+              <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
                 Fix work first, then scale with AI. We deliver working systems
                 that add value, reduce friction, and free your team to focus on

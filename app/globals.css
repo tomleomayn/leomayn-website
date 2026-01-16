@@ -120,144 +120,155 @@ p, li, span, div {
    ANIMATION UTILITY CLASSES
    ============================================ */
 
-/* Fade In Up Animation */
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s var(--ease-out-expo) forwards;
-  opacity: 0;
-}
+@layer utilities {
+  /* Fade In Up Animation */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s var(--ease-out-expo) forwards;
+    opacity: 0;
+  }
 
-/* Stagger Delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
+  /* Stagger Delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
 
-/* Scroll Animation Classes */
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
-}
+  /* Scroll Animation Classes */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+  }
 
-.scroll-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================
    BUTTON EFFECTS
    ============================================ */
 
-/* Primary Button - Shimmer Effect */
-.btn-shimmer {
-  position: relative;
-  overflow: hidden;
-}
+@layer components {
+  /* Primary Button - Shimmer Effect */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
 
-.btn-shimmer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
+  .btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
 
-.btn-shimmer:hover::after {
-  animation: shimmer 1.2s ease-in-out;
-  opacity: 1;
-}
+  .btn-shimmer:hover::after {
+    animation: shimmer 1.2s ease-in-out;
+    opacity: 1;
+  }
 
-/* Secondary Button - Fill From Bottom */
-.btn-fill-bottom {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
+  /* Secondary Button - Fill From Bottom */
+  .btn-fill-bottom {
+    position: relative;
+    overflow: hidden;
+  }
 
-.btn-fill-bottom::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background-color: var(--color-slate);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.3s var(--ease-out-expo);
-  z-index: -1;
-}
+  .btn-fill-bottom::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--color-slate);
+    transition: height 0.3s var(--ease-smooth);
+    z-index: 1;
+  }
 
-.btn-fill-bottom:hover {
-  color: white;
-}
+  .btn-fill-bottom > span {
+    position: relative;
+    z-index: 2;
+  }
 
-.btn-fill-bottom:hover::before {
-  transform: scaleY(1);
+  .btn-fill-bottom:hover {
+    color: white;
+    transform: translateY(-3px);
+  }
+
+  .btn-fill-bottom:hover::before {
+    height: 100%;
+  }
 }
 
 /* ============================================
    NAV LINK ANIMATION
    ============================================ */
 
-.nav-link-animated {
-  position: relative;
-}
+@layer components {
+  .nav-link-animated {
+    position: relative;
+  }
 
-.nav-link-animated::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-coral);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s var(--ease-out-expo);
-}
+  .nav-link-animated::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-coral);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s var(--ease-out-expo);
+  }
 
-.nav-link-animated:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  .nav-link-animated:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 }
 
 /* ============================================
    CARD EFFECTS
    ============================================ */
 
-/* Gradient Border Reveal */
-.card-gradient-border {
-  position: relative;
-}
+@layer components {
+  /* Gradient Border Reveal */
+  .card-gradient-border {
+    position: relative;
+  }
 
-.card-gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--color-coral), var(--color-rock));
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s var(--ease-smooth);
-  pointer-events: none;
-}
+  .card-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--color-coral), var(--color-rock));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-smooth);
+    pointer-events: none;
+  }
 
-.card-gradient-border:hover::before {
-  opacity: 1;
+  .card-gradient-border:hover::before {
+    opacity: 1;
+  }
 }

@@ -56,7 +56,7 @@ export default function HomePage() {
             Fix work, then scale with AI
           </h1>
           <div className="max-w-2xl mb-8 flex items-stretch animate-fade-in-up stagger-1">
-            <div className="w-1.5 bg-[#9ab8cb] rounded-full my-[5px]"></div>
+            <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
             <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
               We redesign knowledge work to remove bottlenecks, reduce repetitive work,
               and fix error-prone processes. Then we use automation and AI to free up
@@ -67,7 +67,7 @@ export default function HomePage() {
             <Link
               href="/services"
               onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
-              className="btn-fill-bottom inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate bg-pearl text-slate px-8 py-4 rounded-md transition-all min-w-[220px] w-full sm:w-auto"
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border-2 border-slate bg-pearl text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px] w-full sm:w-auto"
             >
               See Our Services
             </Link>
@@ -92,7 +92,7 @@ export default function HomePage() {
             <p>
               Most organisations have capacity trapped in low-value work: manual processes,
               error-prone handoffs, information scattered across systems. Time for strategic
-              work that earns fees or creates differentiation gets eroded because day-to-day
+              work that earns fees or creates differentiation gets eroded because the day-to-day
               demands constant attention.
             </p>
             <p>
@@ -134,13 +134,16 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <ScrollReveal delay={0}>
-              <div className="card-gradient-border relative bg-gradient-to-br from-pearl to-chalk border border-steel rounded-md p-8 hover:border-coral hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
+                {/* Hover blobs */}
+                <div
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 15s ease-in-out infinite' }}
+                />
+                <div
+                  className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 18s ease-in-out infinite reverse' }}
+                />
 
                 <div className="relative z-10">
                   <h3 className="text-2xl font-serif text-slate mb-4">
@@ -163,13 +166,16 @@ export default function HomePage() {
 
             {/* Card 2 */}
             <ScrollReveal delay={0.1}>
-              <div className="card-gradient-border relative bg-gradient-to-br from-pearl to-chalk border border-steel rounded-md p-8 hover:border-coral hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
+                {/* Hover blobs */}
+                <div
+                  className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 16s ease-in-out infinite' }}
+                />
+                <div
+                  className="absolute -bottom-10 -right-10 w-28 h-28 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 20s ease-in-out infinite reverse' }}
+                />
 
                 <div className="relative z-10">
                   <h3 className="text-2xl font-serif text-slate mb-4">
@@ -190,13 +196,16 @@ export default function HomePage() {
 
             {/* Card 3 */}
             <ScrollReveal delay={0.2}>
-              <div className="card-gradient-border relative bg-gradient-to-br from-pearl to-chalk border border-steel rounded-md p-8 hover:border-coral hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
+                {/* Hover blobs */}
+                <div
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 17s ease-in-out infinite' }}
+                />
+                <div
+                  className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
+                  style={{ animation: 'blobFloat 19s ease-in-out infinite reverse' }}
+                />
 
                 <div className="relative z-10">
                   <h3 className="text-2xl font-serif text-slate mb-4">
@@ -274,14 +283,14 @@ export default function HomePage() {
           <div className="text-center relative">
             {/* Decorative quote marks */}
             <span
-              className="absolute -top-4 left-0 md:-left-8 text-7xl md:text-8xl text-coral leading-none opacity-30 select-none"
+              className="absolute -top-2 left-0 md:-left-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
               aria-hidden="true"
               style={{ fontFamily: 'Georgia, serif' }}
             >
               &ldquo;
             </span>
             <span
-              className="absolute -bottom-8 right-0 md:-right-8 text-7xl md:text-8xl text-coral leading-none opacity-30 select-none"
+              className="absolute -bottom-6 right-0 md:-right-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
               aria-hidden="true"
               style={{ fontFamily: 'Georgia, serif' }}
             >
@@ -307,16 +316,10 @@ export default function HomePage() {
             We fix the work first, then scale it with AI
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-6 mb-8">
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            <Link href="/services/diagnose" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">1 · Diagnose</h3>
@@ -325,17 +328,11 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Identify what's important and what to improve
               </p>
-            </div>
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            </Link>
+            <Link href="/services/define" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">2 · Define</h3>
@@ -344,17 +341,11 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Design a solution to fit your needs
               </p>
-            </div>
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            </Link>
+            <Link href="/services/deliver" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">3 · Deliver</h3>
@@ -363,17 +354,11 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Deploy working automations that deliver value
               </p>
-            </div>
-            <div className="text-center">
-              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center group overflow-hidden">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-                     style={{
-                       backgroundImage: `linear-gradient(#fffcfa 1px, transparent 1px), linear-gradient(90deg, #fffcfa 1px, transparent 1px)`,
-                       backgroundSize: '12px 12px'
-                     }}>
-                </div>
+            </Link>
+            <Link href="/services/support" className="text-center group">
+              <div className="relative bg-coral rounded-md p-5 mb-4 max-w-[280px] mx-auto aspect-square flex items-center justify-center overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="relative z-10">
-                  <div className="mx-auto flex items-center justify-center">
+                  <div className="mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '120px', marginBottom: '-8px' }}></i>
                   </div>
                   <h3 className="text-3xl font-serif leading-snug text-slate">4 · Support</h3>
@@ -382,7 +367,7 @@ export default function HomePage() {
               <p className="text-base font-sans leading-relaxed text-slate max-w-[280px] mx-auto">
                 Empower teams and keep systems optimised
               </p>
-            </div>
+            </Link>
           </div>
           <div className="text-center">
             <Link
