@@ -11,7 +11,7 @@ export default function NavBar() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-steel">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-steel">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -55,21 +55,21 @@ export default function NavBar() {
 
             <Link
               href="/approach"
-              className={`text-sm font-sans ${isActive('/approach') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              className={`text-sm font-sans ${isActive('/approach') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
               Our Approach
             </Link>
 
             <Link
               href="/how-we-think"
-              className={`text-sm font-sans ${isActive('/how-we-think') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              className={`text-sm font-sans ${isActive('/how-we-think') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
               How We Think
             </Link>
 
             <Link
               href="/why-leomayn"
-              className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate'}`}
+              className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
               Why Leomayn
             </Link>
