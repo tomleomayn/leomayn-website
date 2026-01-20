@@ -131,7 +131,8 @@ export default function DeliverPage() {
               You own the result. All code, configurations, and documentation transfer
               to you. We don't create dependency on proprietary platforms or lock you
               into ongoing fees. Your team learns to maintain and improve the system
-              independently.
+              independently. You're not dependent on us. Your team can maintain, modify,
+              and extend the system without us involved.
             </p>
           </div>
         </section>

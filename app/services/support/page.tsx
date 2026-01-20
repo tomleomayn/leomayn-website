@@ -110,7 +110,7 @@ export default function SupportPage() {
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                Empower teams and keep systems optimised
+                Empower teams, keep systems optimised, compound your advantage over time
               </p>
             </div>
           </div>
@@ -144,13 +144,13 @@ export default function SupportPage() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
-                  Building AI capability
+                  Applied AI coaching
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  We run intensive workshops covering AI capabilities, limitations, practical
-                  applications, and implementation risks. Content customised to your tools and
-                  use cases with hands-on exercises. You get trained team members who understand
-                  what AI can and cannot do in your specific context.
+                  We build confidence in using AI in daily work through three layers: foundational
+                  knowledge of what AI can and cannot do, hands-on training with the tools your
+                  team uses, and practice on real situations from your actual processes. Your
+                  team learns to apply AI effectively in their specific context.
                 </p>
               </div>
 
@@ -208,41 +208,53 @@ export default function SupportPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  AI Capability Training
+                  Applied AI Coaching
                 </h3>
-                <p className="text-sm text-slate/70">
-                  Intensive workshops covering AI capabilities, limitations, and practical
-                  applications customised to your tools and use cases.
+                <p className="text-sm text-slate/70 mb-3">
+                  Foundational knowledge, hands-on tool training, and practice on real
+                  situations from your actual processes.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Confidence in using AI in daily work
                 </p>
               </div>
 
               <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Performance Reports and Advisory
+                  Performance Monitoring
                 </h3>
-                <p className="text-sm text-slate/70">
-                  Regular reviews of automation performance, error rates, and throughput
-                  metrics with advisory sessions to discuss improvements and priorities.
+                <p className="text-sm text-slate/70 mb-3">
+                  Continuous monitoring of workflow efficiency, processing times, and
+                  resource utilisation with proactive alerts.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Early warning before small issues grow
                 </p>
               </div>
 
               <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Ongoing Improvements
+                  Quarterly Health Checks
                 </h3>
-                <p className="text-sm text-slate/70">
-                  Incremental enhancements, bug fixes, performance tuning, and new features
+                <p className="text-sm text-slate/70 mb-3">
+                  Regular reviews of automation performance, error rates, throughput,
+                  and system reliability with recommendations for improvement.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Peace of mind — systems stay reliable as you scale
+                </p>
+              </div>
+
+              <div className="bg-pearl border border-steel rounded-md p-6">
+                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
+                  Incremental Improvements
+                </h3>
+                <p className="text-sm text-slate/70 mb-3">
+                  Ongoing enhancements, bug fixes, performance tuning, and new features
                   based on evolving requirements and usage patterns.
                 </p>
-              </div>
-
-              <div className="bg-pearl border border-steel rounded-md p-6">
-                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  Technical Support
-                </h3>
-                <p className="text-sm text-slate/70">
-                  Email and async support for troubleshooting, configuration questions,
-                  and technical guidance. Response within one business day.
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Compound gains — automation improves, not stales
                 </p>
               </div>
             </div>
