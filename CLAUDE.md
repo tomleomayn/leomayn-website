@@ -24,13 +24,39 @@ Notion databases are accessed via API, not web scraping (WebFetch won't work on 
 
 **Website Backlog Database:** `NOTION_DB_WEBSITE_BACKLOG` in the `.env` file
 
+## Brand & Voice (from Leomayn HQ)
+
+All content must follow Leomayn voice and visual standards. These live in leomayn-hq (single source of truth):
+
+| Resource | Location |
+|----------|----------|
+| Voice guide | `leomayn-hq/brain/frameworks/leomayn-voice-guide.md` |
+| Visual style guide | `leomayn-hq/brain/frameworks/leomayn-visual-style-guide.md` |
+| Service framework | `leomayn-hq/brain/frameworks/service-framework-schema.md` |
+
+**Quick voice rules:**
+- UK English only (prioritise, organisation, programme)
+- Collaborative: "together we'll" not "we'll do for you"
+- No hedging, no hype, no jargon unless earned
+
+## Skills (from Leomayn HQ)
+
+Skills for structured workflows live in leomayn-hq. Relevant for website work:
+
+| Skill | Purpose | Location |
+|-------|---------|----------|
+| schema-markup-skill | Generate JSON-LD structured data | `leomayn-hq/.claude/skills/schema-markup-skill/SKILL.md` |
+
+To use a skill from leomayn-hq, read the SKILL.md file and follow its workflow.
+
 ## Related Resources
 
 - **Leomayn HQ (main brain):** `/Users/tomjones/Documents/Dev/leomayn-hq/`
-  - Brand guidelines
+  - Brand guidelines and voice guide
   - Service frameworks
   - Client templates
   - Integration credentials
+  - Skills and automation workflows
 
 ## Development Workflow
 

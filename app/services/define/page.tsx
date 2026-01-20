@@ -110,7 +110,7 @@ export default function DefinePage() {
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                Design the right solution once
+                Get the design right, build it right the first time
               </p>
             </div>
           </div>
@@ -167,12 +167,12 @@ export default function DefinePage() {
 
               <div>
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
-                  Governance framework
+                  Governance checklist
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  Data handling protocols, access controls, audit logging, and compliance
-                  requirements. We specify who can do what, how data is protected, and
-                  how the system maintains accountability.
+                  A representation of what you have in place: data handling protocols, access
+                  controls, audit logging, and compliance requirements. We specify who can do
+                  what, how data is protected, and how the system maintains accountability.
                 </p>
               </div>
 
@@ -181,9 +181,9 @@ export default function DefinePage() {
                   Change management plan
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  Rollout strategy, training requirements, communication plan, and success
-                  metrics. We design how the new system gets adopted, not just how it
-                  gets built.
+                  Rollout strategy covering who needs to use the system, which teams, frequency
+                  of use, and visibility mechanisms so your organisation can track adoption.
+                  We design how the new system gets adopted, not just how it gets built.
                 </p>
               </div>
             </div>
@@ -201,19 +201,51 @@ export default function DefinePage() {
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Solution Blueprint
                 </h3>
-                <p className="text-sm text-slate/70">
+                <p className="text-sm text-slate/70 mb-3">
                   Comprehensive design document covering workflow specifications,
                   technical architecture, integration points, and implementation sequence.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: No rework — every decision documented before the build
                 </p>
               </div>
 
               <div className="bg-pearl border border-steel rounded-md p-6">
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
-                  System Architecture Diagram
+                  System Architecture
                 </h3>
-                <p className="text-sm text-slate/70">
+                <p className="text-sm text-slate/70 mb-3">
                   Visual map of all systems, integrations, data flows, and API connections
                   with security and governance controls clearly marked.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Reduced risk — see exactly how systems connect
+                </p>
+              </div>
+
+              <div className="bg-pearl border border-steel rounded-md p-6">
+                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
+                  Governance Checklist
+                </h3>
+                <p className="text-sm text-slate/70 mb-3">
+                  Documentation of data handling protocols, access controls, audit logging,
+                  and compliance requirements that the solution must satisfy.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Compliance designed in, not bolted on
+                </p>
+              </div>
+
+              <div className="bg-pearl border border-steel rounded-md p-6">
+                <h3 className="text-xl font-serif leading-snug text-slate mb-3">
+                  Change Management Plan
+                </h3>
+                <p className="text-sm text-slate/70 mb-3">
+                  Rollout strategy covering who uses the system, which teams, frequency,
+                  and visibility mechanisms to track adoption across the organisation.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Adoption from day one — teams ready to use it
                 </p>
               </div>
 

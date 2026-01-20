@@ -110,7 +110,7 @@ export default function DiagnosePage() {
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                Identify what's broken and what matters
+                Know exactly where to focus to create the most impact
               </p>
             </div>
           </div>
@@ -201,9 +201,12 @@ export default function DiagnosePage() {
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Assessment Report
                 </h3>
-                <p className="text-sm text-slate/70">
+                <p className="text-sm text-slate/70 mb-3">
                   Comprehensive analysis including interview summaries, operational assessment,
                   and prioritised opportunities with 1-2 focus areas recommended.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Clarity on where time actually goes
                 </p>
               </div>
 
@@ -211,9 +214,12 @@ export default function DiagnosePage() {
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Visual Workflow Maps
                 </h3>
-                <p className="text-sm text-slate/70">
+                <p className="text-sm text-slate/70 mb-3">
                   Current state process diagrams showing bottlenecks, handoffs, rework loops,
                   and inefficiencies in your existing workflows.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Shared understanding across stakeholders
                 </p>
               </div>
 
@@ -221,9 +227,12 @@ export default function DiagnosePage() {
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Opportunity Matrix
                 </h3>
-                <p className="text-sm text-slate/70">
+                <p className="text-sm text-slate/70 mb-3">
                   Impact vs effort scoring for each improvement opportunity, with estimated
                   time savings and quality improvements.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: Confidence in what to fix first
                 </p>
               </div>
 
@@ -231,9 +240,12 @@ export default function DiagnosePage() {
                 <h3 className="text-xl font-serif leading-snug text-slate mb-3">
                   Complexity Scoring
                 </h3>
-                <p className="text-sm text-slate/70">
+                <p className="text-sm text-slate/70 mb-3">
                   Transparent complexity assessment showing effort required for each opportunity
                   based on stakeholders, systems, and change management needs.
+                </p>
+                <p className="text-sm font-semibold text-coral-accessible">
+                  So you have: No surprises on effort or investment
                 </p>
               </div>
             </div>
