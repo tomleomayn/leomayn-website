@@ -67,12 +67,12 @@ export default function WhyLeomaynPage() {
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              Why Leomayn
+              We empower people & companies to win in a changing world
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                Operations and AI consulting for knowledge work
+                When you need help to embed AI in real processes, we provide operations and AI consulting support to make it happen.
               </p>
             </div>
           </div>

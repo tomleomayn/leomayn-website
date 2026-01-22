@@ -74,7 +74,7 @@ export default function NavBar() {
               Why Leomayn
             </Link>
 
-            <Link href="/contact" className="inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
+            <Link href="/contact" className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
               Book Discovery Call
             </Link>
           </div>

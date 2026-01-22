@@ -52,7 +52,7 @@ export default function HowWeThinkPage() {
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              Our philosophy on AI strategy
+              AI strategy pillars to help chart the transition ahead
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
@@ -68,12 +68,12 @@ export default function HowWeThinkPage() {
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Our purpose
+              We help people and organisations succeed in the transition to an AI-enabled workplace
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
-                Leomayn exists to empower people and businesses to succeed in a
-                changing landscape.
+                Leomayn's purpose is to empower people & companies to win in a
+                changing world.
               </p>
               <p>
                 AI is rewriting the rules of knowledge work. When{' '}
@@ -117,7 +117,7 @@ export default function HowWeThinkPage() {
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Context engineering is the skill
+              Context engineering is a new and vital skill
             </h2>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
@@ -140,6 +140,9 @@ export default function HowWeThinkPage() {
                 effort. Organisations that invest in developing this skill across
                 their teams will outperform those that treat AI as something you
                 simply switch on.
+              </p>
+              <p>
+                Leomayn exists to help people and organisations develop this competency.
               </p>
             </div>
           </div>
