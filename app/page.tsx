@@ -484,7 +484,7 @@ export default function HomePage() {
               <Link
                 href="/how-we-think"
                 onClick={() => trackCTAClick('See how we think', 'how_we_work_section', '/how-we-think')}
-                className="inline-flex items-center justify-center font-sans font-semibold text-base border border-slate text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px]"
+className="inline-flex items-center justify-center font-sans font-semibold text-base border border-slate text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px]"
               >
                 See how we think
               </Link>
