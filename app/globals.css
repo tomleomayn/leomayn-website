@@ -95,15 +95,54 @@ p, li, span, div {
   }
 }
 
-@keyframes blobFloat {
+@keyframes blobWander1 {
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
-  33% {
-    transform: translate(30px, -20px) scale(1.05);
+  20% {
+    transform: translate(60px, -40px) scale(1.08);
   }
-  66% {
-    transform: translate(-20px, 15px) scale(0.95);
+  40% {
+    transform: translate(-30px, 20px) scale(0.95);
+  }
+  60% {
+    transform: translate(40px, 50px) scale(1.03);
+  }
+  80% {
+    transform: translate(-50px, -30px) scale(0.97);
+  }
+}
+
+@keyframes blobWander2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-45px, 35px) scale(1.05);
+  }
+  50% {
+    transform: translate(55px, -25px) scale(0.92);
+  }
+  75% {
+    transform: translate(-25px, -45px) scale(1.06);
+  }
+}
+
+@keyframes blobWander3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  15% {
+    transform: translate(35px, 45px) scale(0.96);
+  }
+  35% {
+    transform: translate(-55px, -15px) scale(1.04);
+  }
+  55% {
+    transform: translate(20px, -50px) scale(1.02);
+  }
+  75% {
+    transform: translate(-40px, 30px) scale(0.94);
   }
 }
 
@@ -176,7 +215,7 @@ p, li, span, div {
   }
 
   .btn-shimmer:hover::after {
-    animation: shimmer 1.2s ease-in-out;
+    animation: shimmer 2.4s ease-in-out;
     opacity: 1;
   }
 
