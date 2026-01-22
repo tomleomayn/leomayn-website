@@ -1,6 +1,7 @@
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata = {
   title: 'About Us | AI Consultants for Professional Services | Leomayn',

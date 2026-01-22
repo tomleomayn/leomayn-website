@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import ServiceCard from '@/components/ServiceCard'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata = {
   title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
@@ -92,61 +93,69 @@ export default function ServicesPage() {
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
-              <ServiceCard
-                number="1"
-                title="Diagnose"
-                subtitle="Discovery & Assessment"
-                description="Identify what's broken and what moves the needle. We interview stakeholders, map current workflows, and pinpoint operational pain points that limit effectiveness."
-                href="/services/diagnose"
-                features={[
-                  'Stakeholder interviews to surface pain points',
-                  'Current state process mapping',
-                  'Prioritised opportunity analysis',
-                  'AI readiness assessment',
-                ]}
-              />
+              <ScrollReveal delay={0}>
+                <ServiceCard
+                  number="1"
+                  title="Diagnose"
+                  subtitle="Discovery & Assessment"
+                  description="Identify what's broken and what moves the needle. We interview stakeholders, map current workflows, and pinpoint operational pain points that limit effectiveness."
+                  href="/services/diagnose"
+                  features={[
+                    'Stakeholder interviews to surface pain points',
+                    'Current state process mapping',
+                    'Prioritised opportunity analysis',
+                    'AI readiness assessment',
+                  ]}
+                />
+              </ScrollReveal>
 
-              <ServiceCard
-                number="2"
-                title="Define"
-                subtitle="Solution Design"
-                description="Design the right solution once and remove guesswork from the build phase. We create detailed blueprints that fit your data, systems, and governance requirements before building."
-                href="/services/define"
-                features={[
-                  'Workflow redesign and specifications',
-                  'Business logic and schema design',
-                  'Technical architecture and integration mapping',
-                  'Governance and data considerations',
-                ]}
-              />
+              <ScrollReveal delay={0.1}>
+                <ServiceCard
+                  number="2"
+                  title="Define"
+                  subtitle="Solution Design"
+                  description="Design the right solution once and remove guesswork from the build phase. We create detailed blueprints that fit your data, systems, and governance requirements before building."
+                  href="/services/define"
+                  features={[
+                    'Workflow redesign and specifications',
+                    'Business logic and schema design',
+                    'Technical architecture and integration mapping',
+                    'Governance and data considerations',
+                  ]}
+                />
+              </ScrollReveal>
 
-              <ServiceCard
-                number="3"
-                title="Deliver"
-                subtitle="Build & Deploy"
-                description="Working automation in weeks. We build, test, and deploy the solution with your team involved throughout. You own the IP and learn to maintain it."
-                href="/services/deliver"
-                features={[
-                  'Automation build and system integration',
-                  'Testing and quality assurance',
-                  'Team training and documentation',
-                  'Deployment and handover',
-                ]}
-              />
+              <ScrollReveal delay={0.2}>
+                <ServiceCard
+                  number="3"
+                  title="Deliver"
+                  subtitle="Build & Deploy"
+                  description="Working automation in weeks. We build, test, and deploy the solution with your team involved throughout. You own the IP and learn to maintain it."
+                  href="/services/deliver"
+                  features={[
+                    'Automation build and system integration',
+                    'Testing and quality assurance',
+                    'Team training and documentation',
+                    'Deployment and handover',
+                  ]}
+                />
+              </ScrollReveal>
 
-              <ServiceCard
-                number="4"
-                title="Support"
-                subtitle="Embed & Optimise"
-                description="Empower teams to use AI in their work. Keep systems optimised as you grow. Our technical support and training help compound improvements over time."
-                href="/services/support"
-                features={[
-                  'Applied AI training',
-                  'Performance monitoring and optimisation',
-                  'Quarterly system health checks',
-                  'Incremental improvements and new features',
-                ]}
-              />
+              <ScrollReveal delay={0.3}>
+                <ServiceCard
+                  number="4"
+                  title="Support"
+                  subtitle="Embed & Optimise"
+                  description="Empower teams to use AI in their work. Keep systems optimised as you grow. Our technical support and training help compound improvements over time."
+                  href="/services/support"
+                  features={[
+                    'Applied AI training',
+                    'Performance monitoring and optimisation',
+                    'Quarterly system health checks',
+                    'Incremental improvements and new features',
+                  ]}
+                />
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -154,18 +163,21 @@ export default function ServicesPage() {
         {/* Framework Section */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-4">
-                How we work
-              </h2>
-              <p className="text-xl text-slate/70 max-w-3xl mx-auto">
-                Each phase of work builds on the previous one. You can pause between phases,
-                or engage us for the full journey from diagnosis through to ongoing support.
-              </p>
-            </div>
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-4">
+                  How we work
+                </h2>
+                <p className="text-xl text-slate/70 max-w-3xl mx-auto">
+                  Each phase of work builds on the previous one. You can pause between phases,
+                  or engage us for the full journey from diagnosis through to ongoing support.
+                </p>
+              </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto lg:max-w-none">
-              <Link href="/services/diagnose" className="text-center group">
+              <ScrollReveal delay={0}>
+                <Link href="/services/diagnose" className="text-center group block">
                 <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
                   <div className="transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-brain-circuit text-slate" style={{ fontSize: '48px' }}></i>
@@ -174,11 +186,13 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase I</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
-                  Est. duration: 2 - 4 weeks
-                </p>
-              </Link>
+                    Est. duration: 2 - 4 weeks
+                  </p>
+                </Link>
+              </ScrollReveal>
 
-              <Link href="/services/define" className="text-center group">
+              <ScrollReveal delay={0.1}>
+                <Link href="/services/define" className="text-center group block">
                 <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
                   <div className="transition-transform duration-300 group-hover:scale-110">
                     <i className="fi fi-rs-machine-learning text-slate" style={{ fontSize: '48px' }}></i>
@@ -187,70 +201,87 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase II</h3>
                 <p className="text-base font-sans leading-relaxed text-slate/70">
-                  Est. duration: 2 - 3 weeks
-                </p>
-              </Link>
+                    Est. duration: 2 - 3 weeks
+                  </p>
+                </Link>
+              </ScrollReveal>
 
-              <Link href="/services/deliver" className="text-center group">
-                <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
-                  <div className="transition-transform duration-300 group-hover:scale-110">
-                    <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '48px' }}></i>
+              <ScrollReveal delay={0.2}>
+                <Link href="/services/deliver" className="text-center group block">
+                  <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
+                    <div className="transition-transform duration-300 group-hover:scale-110">
+                      <i className="fi fi-rs-system-cloud text-slate" style={{ fontSize: '48px' }}></i>
+                    </div>
+                    <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
                   </div>
-                  <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Deliver</span>
-                </div>
-                <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase III</h3>
-                <p className="text-base font-sans leading-relaxed text-slate/70">
-                  Est. duration: 4 - 8 weeks
-                </p>
-              </Link>
+                  <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase III</h3>
+                  <p className="text-base font-sans leading-relaxed text-slate/70">
+                    Est. duration: 4 - 8 weeks
+                  </p>
+                </Link>
+              </ScrollReveal>
 
-              <Link href="/services/support" className="text-center group">
-                <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
-                  <div className="transition-transform duration-300 group-hover:scale-110">
-                    <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '48px' }}></i>
+              <ScrollReveal delay={0.3}>
+                <Link href="/services/support" className="text-center group block">
+                  <div className="bg-coral rounded-md p-5 mb-2 aspect-square flex flex-col items-center justify-center max-w-[160px] mx-auto hover:shadow-lg transition-all duration-300">
+                    <div className="transition-transform duration-300 group-hover:scale-110">
+                      <i className="fi fi-rs-hands-heart text-slate" style={{ fontSize: '48px' }}></i>
+                    </div>
+                    <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
                   </div>
-                  <span className="text-xl text-slate" style={{ fontFamily: 'var(--font-serif)' }}>Support</span>
-                </div>
-                <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase IV</h3>
-                <p className="text-base font-sans leading-relaxed text-slate/70">
-                  Ongoing
-                </p>
-              </Link>
+                  <h3 className="text-xl leading-snug text-slate mb-1" style={{ fontFamily: 'var(--font-sans)' }}>Phase IV</h3>
+                  <p className="text-base font-sans leading-relaxed text-slate/70">
+                    Ongoing
+                  </p>
+                </Link>
+              </ScrollReveal>
             </div>
 
-            <div className="text-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
-              >
-                Discuss Your Needs
-              </Link>
-            </div>
+            <ScrollReveal delay={0.4}>
+              <div className="text-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
+                >
+                  Discuss Your Needs
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Pricing Philosophy */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-8">
-              How we price
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-8">
+                How we price
+              </h2>
+            </ScrollReveal>
             <div className="space-y-4 text-lg leading-relaxed text-slate">
-              <p>
-                We don't charge by the hour, we price by project complexity: low, standard, and high.
-              </p>
-              <p>
-                Complexity is determined by factors like the number of systems requiring integration,
-                number of stakeholders involved, process complexity and maturity, and governance
-                requirements. You know the price before we start.
-              </p>
-              <p>
-                Every project includes a fixed scope, clear deliverables, and a timeline. Any required
-                changes to scope are easily accommodated with a change request.
-              </p>
-              <p>
-                No surprises, no scope creep, no hourly rate anxiety.
-              </p>
+              <ScrollReveal delay={0.1}>
+                <p>
+                  We don't charge by the hour, we price by project complexity: low, standard, and high.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  Complexity is determined by factors like the number of systems requiring integration,
+                  number of stakeholders involved, process complexity and maturity, and governance
+                  requirements. You know the price before we start.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  Every project includes a fixed scope, clear deliverables, and a timeline. Any required
+                  changes to scope are easily accommodated with a change request.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.25}>
+                <p>
+                  No surprises, no scope creep, no hourly rate anxiety.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -258,21 +289,29 @@ export default function ServicesPage() {
         {/* CTA Section */}
         <section className="py-24 px-6 lg:px-8 bg-slate">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-              Ready to start?
-            </h2>
-            <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call.
-            </p>
-            <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              We'll map one broken workflow and show you what's possible.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
-            >
-              Let's talk
-            </Link>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
+                Ready to start?
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="text-xl font-sans leading-relaxed text-white mb-8">
+                Book a 30-minute discovery call.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <p className="text-xl font-sans leading-relaxed text-white mb-8">
+                We'll map one broken workflow and show you what's possible.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
+              >
+                Let's talk
+              </Link>
+            </ScrollReveal>
           </div>
         </section>
       </main>

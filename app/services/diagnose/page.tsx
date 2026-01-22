@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata = {
   title: 'AI Consulting: Diagnose - Discovery & Assessment | Leomayn',

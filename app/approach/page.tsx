@@ -1,6 +1,7 @@
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata = {
   title: 'Our Approach to AI Consulting | Leomayn',
@@ -68,30 +69,40 @@ export default function ApproachPage() {
         {/* Section 1: We understand before we prescribe */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              We understand before we prescribe
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+                We understand before we prescribe
+              </h2>
+            </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                We don't arrive with a solution looking for a problem.
-              </p>
-              <p>
-                Every engagement starts with diagnosis. We interview stakeholders,
-                map workflows, and analyse where time and quality leak out of your
-                operations. We identify the problems that matter before recommending
-                any technology.
-              </p>
-              <p>
-                We design for your business. Your legacy systems, your data quality,
-                your regulatory requirements, your team's capabilities. Solutions
-                that ignore these realities fail. We build for the environment you
-                actually operate in.
-              </p>
-              <p>
-                Governance is designed in from the start. Who can access what data?
-                How is sensitive information protected? What gets logged? How do you
-                demonstrate compliance? We answer these questions before we build.
-              </p>
+              <ScrollReveal delay={0.1}>
+                <p>
+                  We don't arrive with a solution looking for a problem.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  Every engagement starts with diagnosis. We interview stakeholders,
+                  map workflows, and analyse where time and quality leak out of your
+                  operations. We identify the problems that matter before recommending
+                  any technology.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  We design for your business. Your legacy systems, your data quality,
+                  your regulatory requirements, your team's capabilities. Solutions
+                  that ignore these realities fail. We build for the environment you
+                  actually operate in.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.25}>
+                <p>
+                  Governance is designed in from the start. Who can access what data?
+                  How is sensitive information protected? What gets logged? How do you
+                  demonstrate compliance? We answer these questions before we build.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -99,24 +110,32 @@ export default function ApproachPage() {
         {/* Section 2: Working systems that add value */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Working systems that add value
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+                Working systems that add value
+              </h2>
+            </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                We deliver automation you can use. Recommendations are worthless
-                without implementation. Our engagements produce working systems:
-                tested, documented, deployed.
-              </p>
-              <p>
-                We work alongside your team throughout. You're involved in reviewing
-                process maps, approving designs, testing systems before deployment,
-                and learning to maintain what we build.
-              </p>
-              <p>
-                The goal is to save you time, reduce administrative friction, and
-                free your team to focus on work that creates value.
-              </p>
+              <ScrollReveal delay={0.1}>
+                <p>
+                  We deliver automation you can use. Recommendations are worthless
+                  without implementation. Our engagements produce working systems:
+                  tested, documented, deployed.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  We work alongside your team throughout. You're involved in reviewing
+                  process maps, approving designs, testing systems before deployment,
+                  and learning to maintain what we build.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  The goal is to save you time, reduce administrative friction, and
+                  free your team to focus on work that creates value.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -124,25 +143,33 @@ export default function ApproachPage() {
         {/* Section 3: You own it */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              You own it, with support available
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+                You own it, with support available
+              </h2>
+            </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                You own the implementation. All code, configurations, and
-                documentation belong to you. We use open platforms you can control.
-                Nothing proprietary, nothing locked to our involvement.
-              </p>
-              <p>
-                Your team uses what we build, with full documentation provided.
-                The focus is on capability transfer: we want you to understand how
-                things work and be able to extend them over time.
-              </p>
-              <p>
-                We also offer ongoing support for clients who want it. Whether you
-                run things independently or prefer continued partnership, the choice
-                is yours.
-              </p>
+              <ScrollReveal delay={0.1}>
+                <p>
+                  You own the implementation. All code, configurations, and
+                  documentation belong to you. We use open platforms you can control.
+                  Nothing proprietary, nothing locked to our involvement.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  Your team uses what we build, with full documentation provided.
+                  The focus is on capability transfer: we want you to understand how
+                  things work and be able to extend them over time.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  We also offer ongoing support for clients who want it. Whether you
+                  run things independently or prefer continued partnership, the choice
+                  is yours.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -150,24 +177,32 @@ export default function ApproachPage() {
         {/* Section 4: Fixed pricing */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Fixed pricing, phased commitment
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+                Fixed pricing, phased commitment
+              </h2>
+            </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                You know the cost before we start. We price by complexity and
-                outcomes. No scope creep, no billing surprises. Clear scope, clear
-                deliverables, clear timelines.
-              </p>
-              <p>
-                You can pause between phases. Complete a diagnosis and decide
-                whether to proceed. Get a blueprint designed and choose when to
-                build. There's no pressure to commit to the full journey upfront.
-              </p>
-              <p>
-                We agree what success looks like before we start, and we track
-                outcomes so you can see the value delivered.
-              </p>
+              <ScrollReveal delay={0.1}>
+                <p>
+                  You know the cost before we start. We price by complexity and
+                  outcomes. No scope creep, no billing surprises. Clear scope, clear
+                  deliverables, clear timelines.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  You can pause between phases. Complete a diagnosis and decide
+                  whether to proceed. Get a blueprint designed and choose when to
+                  build. There's no pressure to commit to the full journey upfront.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  We agree what success looks like before we start, and we track
+                  outcomes so you can see the value delivered.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -175,30 +210,38 @@ export default function ApproachPage() {
         {/* Section 5: Who we serve */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-              Who we serve
-            </h2>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+                Who we serve
+              </h2>
+            </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <p>
-                We work with professional services firms and the business services
-                functions in larger organisations: agencies, consultancies, expert
-                service businesses. Typically 50-500 people, £5M-£50M revenue, with
-                operations directors or COOs looking to create operational leverage.
-              </p>
-              <p>
-                Our clients face common challenges:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Manual processes limiting growth or reducing billable time</li>
-                <li>Administrative drag eroding margins</li>
-                <li>Team burnout from repetitive work</li>
-                <li>Pressure to adopt AI without a clear strategy</li>
-              </ul>
-              <p>
-                We help them build operational systems that scale. Through improved
-                workflows, intelligent automation, and AI deployed where it solves
-                real problems.
-              </p>
+              <ScrollReveal delay={0.1}>
+                <p>
+                  We work with professional services firms and the business services
+                  functions in larger organisations: agencies, consultancies, expert
+                  service businesses. Typically 50-500 people, £5M-£50M revenue, with
+                  operations directors or COOs looking to create operational leverage.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  Our clients face common challenges:
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Manual processes limiting growth or reducing billable time</li>
+                  <li>Administrative drag eroding margins</li>
+                  <li>Team burnout from repetitive work</li>
+                  <li>Pressure to adopt AI without a clear strategy</li>
+                </ul>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  We help them build operational systems that scale. Through improved
+                  workflows, intelligent automation, and AI deployed where it solves
+                  real problems.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -206,19 +249,25 @@ export default function ApproachPage() {
         {/* CTA Section */}
         <section className="py-24 px-6 lg:px-8 bg-slate">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-              See how it works in practice
-            </h2>
-            <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a 30-minute discovery call. We'll discuss one workflow and
-              show you where we'd focus.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
-            >
-              Book Discovery Call
-            </Link>
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
+                See how it works in practice
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="text-xl font-sans leading-relaxed text-white mb-8">
+                Book a 30-minute discovery call. We'll discuss one workflow and
+                show you where we'd focus.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
+              >
+                Book Discovery Call
+              </Link>
+            </ScrollReveal>
           </div>
         </section>
       </main>
