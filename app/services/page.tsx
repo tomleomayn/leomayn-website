@@ -75,7 +75,7 @@ export default function ServicesPage() {
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              AI consulting that delivers operational improvement
+              AI consulting that delivers real operational improvement
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
