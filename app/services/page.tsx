@@ -6,16 +6,16 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata = {
-  title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
-  description: 'AI consulting services built on our four-phase framework. We diagnose, define, deliver, and support. Fix operations before scaling with AI. Book a call.',
+  title: 'AI consulting for service organisations | Leomayn',
+  description: 'We diagnose what\'s broken, redesign how work flows, then use AI to scale what works. Workflow redesign and AI implementation for service organisations.',
   openGraph: {
-    title: 'AI Consulting Services - Our Four-Phase Framework | Leomayn',
-    description: 'AI consulting services built on our four-phase framework. We diagnose, define, deliver, and support. Fix operations before scaling with AI. Book a call.',
+    title: 'AI consulting for service organisations | Leomayn',
+    description: 'We diagnose what\'s broken, redesign how work flows, then use AI to scale what works. Workflow redesign and AI implementation for service organisations.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
       height: 630,
-      alt: 'Leomayn - AI Consulting',
+      alt: 'Leomayn - Workflow redesign and AI implementation',
     }],
   },
 }
@@ -75,16 +75,18 @@ export default function ServicesPage() {
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              AI consulting that delivers real operational improvement
+              Workflow redesign and AI implementation
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
-              <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                We evaluate the situation before prescribing any solutions. As part of
-                our AI consulting services, new workflows are designed to fit your
-                business. We ship working systems, not pilots. We transfer capability
-                so you own the results.
-              </p>
+              <div className="text-xl leading-[1.6] text-coral-accessible pl-6 space-y-4">
+                <p>
+                  Evaluation before prescription. We diagnose what's broken, redesign how work flows, and use AI to scale what works for your business.
+                </p>
+                <p>
+                  We transfer capability so you own the results. The result is more capacity, less rework, and delivery you can rely on.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -175,6 +177,14 @@ export default function ServicesPage() {
               </div>
             </ScrollReveal>
 
+            <ScrollReveal delay={0.1}>
+              <div className="max-w-2xl mx-auto mb-12 p-6 bg-coral/20 rounded-md text-center">
+                <p className="text-lg text-slate">
+                  Most clients start with Diagnose. It gives you the evidence, priority order, and ROI case before you build anything.
+                </p>
+              </div>
+            </ScrollReveal>
+
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto lg:max-w-none">
               <ScrollReveal delay={0}>
                 <Link href="/services/diagnose" className="text-center group block">
@@ -240,10 +250,10 @@ export default function ServicesPage() {
             <ScrollReveal delay={0.4}>
               <div className="text-center">
                 <Link
-                  href="/contact"
+                  href="/services/diagnose"
                   className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
                 >
-                  Discuss Your Needs
+                  Start with Diagnose
                 </Link>
               </div>
             </ScrollReveal>

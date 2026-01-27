@@ -36,7 +36,7 @@ export default function HomePage() {
     "@type": "WebSite",
     "name": "Leomayn",
     "url": "https://leomayn.com",
-    "description": "Operations and AI consulting for knowledge work",
+    "description": "Workflow redesign and AI implementation for service organisations",
     "publisher": {
       "@type": "Organization",
       "name": "Leomayn"
@@ -52,32 +52,37 @@ export default function HomePage() {
       <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
         <HeroBlobs />
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
+          <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-4 animate-fade-in-up">
             Fix work, then scale with AI
           </h1>
           <div className="max-w-2xl mb-8 flex items-stretch animate-fade-in-up stagger-1">
             <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
-            <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-              Your team's capacity is stuck in manual processes, scattered information,
-              and error-prone handoffs. We diagnose what's actually broken, redesign how
-              work flows, then apply AI to scale what works. To free up humans to focus
-              on work that adds real value.
-            </p>
+            <div className="text-xl leading-[1.6] text-coral-accessible pl-6 space-y-4">
+              <p>
+                Your team's capacity is stuck in manual processes, scattered information, and error-prone handoffs.
+              </p>
+              <p>
+                We diagnose what's broken, redesign how work flows, then use AI to scale what works.
+              </p>
+              <p>
+                We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.
+              </p>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 items-start animate-fade-in-up stagger-2">
             <Link
-              href="/services"
-              onClick={() => trackCTAClick('See Our Services', 'hero', '/services')}
-              className="inline-flex items-center justify-center font-sans font-semibold text-base border border-slate bg-pearl text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px] w-full sm:w-auto"
-            >
-              See Our Services
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => trackCTAClick('Book Discovery Call', 'hero', '/contact')}
+              href="/services/diagnose"
+              onClick={() => trackCTAClick('Start with Diagnose', 'hero', '/services/diagnose')}
               className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark hover:shadow-lg hover:-translate-y-0.5 transition-all min-w-[220px] w-full sm:w-auto"
             >
-              Book Discovery Call
+              Start with Diagnose
+            </Link>
+            <Link
+              href="/services"
+              onClick={() => trackCTAClick('View services', 'hero', '/services')}
+              className="inline-flex items-center justify-center font-sans font-semibold text-base border border-slate bg-pearl text-slate px-8 py-4 rounded-md hover:bg-slate hover:text-white transition-all min-w-[220px] w-full sm:w-auto"
+            >
+              View services
             </Link>
           </div>
         </div>
@@ -147,10 +152,10 @@ export default function HomePage() {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p>
-                Our AI consulting approach starts with diagnosis, not technology. We work
-                with you to review your operations and pinpoint where you'll get the biggest
-                return: better quality, less wasted effort, and your team focused where they
-                add the most value.
+                Our approach starts with diagnosis, not technology. We work with you to
+                review your operations and pinpoint where you'll get the biggest return:
+                better quality, less wasted effort, and your team focused where they add
+                the most value.
               </p>
             </ScrollReveal>
           </div>

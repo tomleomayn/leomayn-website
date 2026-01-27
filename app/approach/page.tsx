@@ -53,7 +53,7 @@ export default function ApproachPage() {
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              AI consulting that delivers outcomes
+              How we use AI to create operational leverage
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
@@ -63,6 +63,37 @@ export default function ApproachPage() {
                 what really matters.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Context Bridge */}
+        <section className="py-16 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="p-8 bg-chalk rounded-md">
+                <p className="text-lg leading-relaxed text-slate">
+                  AI performance now matches or exceeds human experts on most knowledge tasks. In December 2025, OpenAI reported{' '}
+                  <a
+                    href="https://openai.com/index/introducing-gpt-5-2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-coral-accessible hover:text-coral-dark underline"
+                  >
+                    GPT-5.2
+                  </a>{' '}
+                  Thinking beat or tied experts on 70.9% of{' '}
+                  <a
+                    href="https://openai.com/index/gdpval/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-coral-accessible hover:text-coral-dark underline"
+                  >
+                    GDPval
+                  </a>{' '}
+                  tasks across 44 occupations. The constraint has shifted from capability to implementation: how work is designed, how context flows, and how decisions get made.
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 

@@ -5,11 +5,11 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 
 export const metadata = {
-  title: 'AI Consulting: Diagnose - Discovery & Assessment | Leomayn',
-  description: 'AI consulting starts with diagnosis. We map workflows, interview stakeholders, and identify bottlenecks before recommending technology. Book a discovery call.',
+  title: 'Diagnose: Delivery Friction Audit | Leomayn',
+  description: 'Start here to identify where capacity is stuck. We map workflows, interview stakeholders, and quantify delivery friction before recommending solutions.',
   openGraph: {
-    title: 'AI Consulting: Diagnose - Discovery & Assessment | Leomayn',
-    description: 'AI consulting starts with diagnosis. We map workflows, interview stakeholders, and identify bottlenecks before recommending technology. Book a discovery call.',
+    title: 'Diagnose: Delivery Friction Audit | Leomayn',
+    description: 'Start here to identify where capacity is stuck. We map workflows, interview stakeholders, and quantify delivery friction before recommending solutions.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
@@ -105,7 +105,7 @@ export default function DiagnosePage() {
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Diagnose
                 </h1>
-                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Discovery & Operational Assessment</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">Delivery Friction Audit</p>
               </div>
             </div>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
@@ -114,6 +114,39 @@ export default function DiagnosePage() {
                 Know exactly where to focus to create the most impact
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Start here when */}
+        <section className="py-16 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="p-8 bg-coral/20 rounded-md">
+                <h2 className="text-2xl font-serif text-slate mb-4">Start here when:</h2>
+                <ul className="space-y-2 text-lg text-slate">
+                  <li className="flex items-start gap-3">
+                    <span className="text-coral mt-1">•</span>
+                    Your team's capacity is stuck in manual processes
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-coral mt-1">•</span>
+                    Delivery depends on a few key people
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-coral mt-1">•</span>
+                    AI pilots stalled or never made it past experimentation
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-coral mt-1">•</span>
+                    Work is trapped in handoffs, approvals, and missing context
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-coral mt-1">•</span>
+                    You need more capacity without adding headcount
+                  </li>
+                </ul>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 

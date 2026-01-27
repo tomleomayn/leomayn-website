@@ -26,14 +26,14 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
-  description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation. Book a discovery call.',
+  title: 'Fix work, then scale with AI | Leomayn',
+  description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
   icons: {
     icon: '/favicon-192.svg',
   },
   openGraph: {
-    title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
-    description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation.',
+    title: 'Fix work, then scale with AI | Leomayn',
+    description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
     url: 'https://leomayn.com',
     siteName: 'Leomayn',
     locale: 'en_GB',
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
       height: 630,
-      alt: 'Leomayn - AI Consulting',
+      alt: 'Leomayn - Workflow redesign and AI implementation',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Consulting - Fix Work, Then Scale with AI | Leomayn',
-    description: 'AI consulting that frees your team to focus on work that creates real value. We fix operations first, then scale with automation.',
+    title: 'Fix work, then scale with AI | Leomayn',
+    description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
     images: ['https://leomayn.com/logo/logo-social-1200x630.png'],
   },
 }
@@ -65,7 +65,7 @@ export default function RootLayout({
     "legalName": "Leomayn Limited",
     "url": "https://leomayn.com",
     "logo": "https://leomayn.com/images/leomayn-logo.png",
-    "description": "Operations and AI consulting for knowledge work",
+    "description": "Workflow redesign and AI implementation for service organisations",
     "foundingDate": "2024",
     "founder": {
       "@type": "Person",

@@ -105,7 +105,7 @@ export default function DefinePage() {
                 <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate">
                   Define
                 </h1>
-                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">AI Strategy & Solution Design</p>
+                <p className="text-sm tracking-widest text-slate/60 mt-2 uppercase">AI Strategy, Solution Design & Workflow Blueprint</p>
               </div>
             </div>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">

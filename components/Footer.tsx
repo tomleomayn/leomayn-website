@@ -16,7 +16,7 @@ export default function Footer() {
               <div className="bg-coral mt-1 h-[3px] w-full" />
             </div>
             <p className="font-sans text-sm text-white/60">
-              Operations and AI consulting for knowledge work
+              Workflow redesign and AI implementation for service organisations
             </p>
           </div>
 
@@ -97,6 +97,11 @@ export default function Footer() {
               <li>
                 <Link href="/sitemap.xml" className="text-sm text-white/60 hover:text-white transition-colors">
                   Sitemap
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-consulting" className="text-sm text-white/60 hover:text-white transition-colors">
+                  AI Consulting
                 </Link>
               </li>
             </ul>
