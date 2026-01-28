@@ -151,7 +151,7 @@ export default function WhyLeomaynPage() {
                   <ScrollReveal delay={0.25}>
                     <p>
                       At Everybody I built the product and operational systems that scaled the
-                      business from a kitchen table to £30m turnover, £6.75m fees, and 19% EBITDA.
+                      business from a kitchen table to $28M turnover, £6.75m fees, and 19% EBITDA.
                       Clients included Boehringer Ingelheim, Nestlé, Pfizer, and Boston Scientific.
                     </p>
                   </ScrollReveal>
