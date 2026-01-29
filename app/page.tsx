@@ -204,11 +204,7 @@ export default function HomePage() {
                     Time spent chasing updates, switching systems, and doing manual data entry
                     doesn't add value. Knowledge workers spend up to 60% of time on 'work about work'
                     rather than skilled tasks
-                    <sup>
-                      <a href="#ref1" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
-                        [1]
-                      </a>
-                    </sup>
+                    <sup className="text-coral-accessible font-bold">[1]</sup>
                     . Little capacity remains for strategic work that drives growth.
                   </p>
                 </div>
@@ -234,11 +230,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-base font-sans text-slate leading-relaxed">
                     Automating inefficient processes makes them faster but not better
-                    <sup>
-                      <a href="#ref2" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
-                        [2]
-                      </a>
-                    </sup>
+                    <sup className="text-coral-accessible font-bold">[2]</sup>
                     . Technology overlaid on broken workflows magnifies problems rather than solving them. Fix the workflow first, then scale what works.
                   </p>
                 </div>
@@ -264,11 +256,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-base font-sans text-slate leading-relaxed">
                     Organisations waste 20% - 30% of software spending on unused licenses
-                    <sup>
-                      <a href="#ref3" className="text-coral-accessible hover:text-coral-dark no-underline font-bold">
-                        [3]
-                      </a>
-                    </sup>
+                    <sup className="text-coral-accessible font-bold">[3]</sup>
                     . Selecting technology before understanding the operational problem leads to shelfware and disappointing results.
                   </p>
                 </div>
