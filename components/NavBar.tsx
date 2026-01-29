@@ -4,12 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-// Extend window interface for dataLayer
-declare global {
-  interface Window {
-    dataLayer: Record<string, unknown>[]
-  }
-}
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
