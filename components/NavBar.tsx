@@ -4,11 +4,29 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+// Extend window interface for dataLayer
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[]
+  }
+}
+
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
   const isActive = (path: string) => pathname === path
+
+  const trackNavCTA = () => {
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_name: 'Book Discovery Call',
+        cta_location: 'top_nav',
+        link_destination: '/contact'
+      })
+    }
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-steel">
@@ -74,7 +92,7 @@ export default function NavBar() {
               Why Leomayn
             </Link>
 
-            <Link href="/contact" className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
+            <Link href="/contact" onClick={trackNavCTA} className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
               Book Discovery Call
             </Link>
           </div>
@@ -104,7 +122,7 @@ export default function NavBar() {
             <Link href="/approach" className="block py-2 text-sm font-sans text-slate">Our Approach</Link>
             <Link href="/how-we-think" className="block py-2 text-sm font-sans text-slate">How We Think</Link>
             <Link href="/why-leomayn" className="block py-2 text-sm font-sans text-slate">Why Leomayn</Link>
-            <Link href="/contact" className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
+            <Link href="/contact" onClick={trackNavCTA} className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
           </div>
         )}
       </div>

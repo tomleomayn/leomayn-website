@@ -28,10 +28,20 @@ export default function ContactPage() {
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({
         event: 'generate_lead',
-        lead_type: 'discovery_call',
-        method: 'calendly',
-        page_location: window.location.href,
-        page_title: 'Contact'
+        lead_type: 'calendly_booking',
+        method: 'calendly'
+      })
+    }
+  }
+
+  const handleMailtoClick = () => {
+    // Track mailto link click
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: 'cta_click',
+        cta_name: 'Email Us',
+        cta_location: 'contact_page',
+        link_destination: 'mailto:hello@leomayn.com'
       })
     }
   }
@@ -69,9 +79,7 @@ export default function ContactPage() {
           window.dataLayer.push({
             event: 'generate_lead',
             lead_type: 'contact_form',
-            method: 'form_submission',
-            page_location: window.location.href,
-            page_title: 'Contact'
+            method: 'form_submit'
           })
         }
       } else {
@@ -313,7 +321,7 @@ export default function ContactPage() {
               Or email us directly
             </h2>
             <p className="text-xl leading-relaxed text-slate mb-4">
-              <a href="mailto:hello@leomayn.com" className="text-coral hover:underline">
+              <a href="mailto:hello@leomayn.com" onClick={handleMailtoClick} className="text-coral hover:underline">
                 hello@leomayn.com
               </a>
             </p>
