@@ -1,5 +1,7 @@
 import Script from 'next/script'
 
+const CONSENT_KEY = 'leomayn_cookie_consent'
+
 export default function GoogleTagManager() {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -7,8 +9,36 @@ export default function GoogleTagManager() {
     return null
   }
 
+  // Note: dangerouslySetInnerHTML is safe here as content is static, not user-provided
   return (
     <>
+      {/* Consent Mode Default - Must load before GTM */}
+      <Script
+        id="consent-default"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            // Check stored consent
+            var stored = localStorage.getItem('${CONSENT_KEY}');
+            var consentState = stored === 'granted' ? 'granted' : 'denied';
+
+            // Set default consent (denied until user accepts)
+            gtag('consent', 'default', {
+              'analytics_storage': consentState,
+              'ad_storage': consentState,
+              'ad_user_data': consentState,
+              'ad_personalization': consentState,
+              'wait_for_update': 500
+            });
+
+            window.gtag = gtag;
+          `,
+        }}
+      />
+
       {/* Google Tag Manager Script */}
       <Script
         id="google-tag-manager"

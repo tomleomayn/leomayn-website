@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Serif_Display, Manrope, JetBrains_Mono } from 'next/font/google'
 import GoogleTagManager from '@/components/GoogleTagManager'
+import CookieBanner from '@/components/CookieBanner'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import './globals.css'
 
@@ -95,6 +96,7 @@ export default function RootLayout({
       <body>
         <GoogleTagManager />
         {children}
+        <CookieBanner />
       </body>
     </html>
   )
