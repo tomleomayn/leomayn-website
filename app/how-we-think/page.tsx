@@ -6,6 +6,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'AI Strategy & Implementation Philosophy | Leomayn',
   description: 'AI gives people unprecedented access to knowledge and capability. The opportunity is real. So is the risk. We help organisations build the skills to lead.',
+  alternates: {
+    canonical: '/how-we-think',
+  },
   openGraph: {
     title: 'AI Strategy & Implementation Philosophy | Leomayn',
     description: 'AI gives people unprecedented access to knowledge and capability. The opportunity is real. So is the risk. We help organisations build the skills to lead.',

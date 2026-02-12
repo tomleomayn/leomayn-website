@@ -6,6 +6,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'About Us | AI Consultants for Professional Services | Leomayn',
   description: 'Meet the AI consultants behind Leomayn. We help professional services firms build operational leverage through workflow improvement and AI automation.',
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: 'About Us | AI Consultants for Professional Services | Leomayn',
     description: 'Meet the AI consultants behind Leomayn. We help professional services firms build operational leverage through workflow improvement and AI automation.',

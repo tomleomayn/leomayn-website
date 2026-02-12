@@ -7,6 +7,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'Diagnose: Delivery Friction Audit | Leomayn',
   description: 'Start here to identify where capacity is stuck. We map workflows, interview stakeholders, and quantify delivery friction before recommending solutions.',
+  alternates: {
+    canonical: '/services/diagnose',
+  },
   openGraph: {
     title: 'Diagnose: Delivery Friction Audit | Leomayn',
     description: 'Start here to identify where capacity is stuck. We map workflows, interview stakeholders, and quantify delivery friction before recommending solutions.',

@@ -7,6 +7,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
   description: 'Design the right AI solution once. We create detailed blueprints covering workflows, architecture, and governance before building begins. Learn more.',
+  alternates: {
+    canonical: '/services/define',
+  },
   openGraph: {
     title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
     description: 'Design the right AI solution once. We create detailed blueprints covering workflows, architecture, and governance before building begins. Learn more.',

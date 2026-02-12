@@ -18,7 +18,7 @@ export const metadata = {
     }],
   },
   alternates: {
-    canonical: 'https://leomayn.com/ai-consulting',
+    canonical: '/ai-consulting',
   },
 }
 

@@ -6,6 +6,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'Our Approach to AI Consulting | Leomayn',
   description: 'We diagnose before we prescribe, design for your business, and deliver working systems you own. Fixed pricing by complexity and outcomes. Phased commitment.',
+  alternates: {
+    canonical: '/approach',
+  },
   openGraph: {
     title: 'Our Approach to AI Consulting | Leomayn',
     description: 'We diagnose before we prescribe, design for your business, and deliver working systems you own. Fixed pricing by complexity and outcomes. Phased commitment.',

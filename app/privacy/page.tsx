@@ -4,6 +4,9 @@ import Footer from '@/components/Footer'
 export const metadata = {
   title: 'Privacy Policy - Leomayn',
   description: 'Privacy policy for Leomayn Limited - how we collect, use, and protect your personal information.',
+  alternates: {
+    canonical: '/privacy',
+  },
 }
 
 export default function PrivacyPage() {

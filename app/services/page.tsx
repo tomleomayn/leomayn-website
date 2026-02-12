@@ -8,6 +8,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'AI consulting for service organisations | Leomayn',
   description: 'We diagnose what\'s broken, redesign how work flows, then use AI to scale what works. Workflow redesign and AI implementation for service organisations.',
+  alternates: {
+    canonical: '/services',
+  },
   openGraph: {
     title: 'AI consulting for service organisations | Leomayn',
     description: 'We diagnose what\'s broken, redesign how work flows, then use AI to scale what works. Workflow redesign and AI implementation for service organisations.',

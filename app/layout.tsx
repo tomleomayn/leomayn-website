@@ -27,8 +27,12 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://leomayn.com'),
   title: 'Fix work, then scale with AI | Leomayn',
   description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/favicon-192.svg',
   },

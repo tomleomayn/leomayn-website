@@ -7,6 +7,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'AI Automation Services - Deliver Phase | Leomayn',
   description: 'AI automation services that deliver working systems. We build, test, and deploy with your team involved. You own all code and IP. Get started.',
+  alternates: {
+    canonical: '/services/deliver',
+  },
   openGraph: {
     title: 'AI Automation Services - Deliver Phase | Leomayn',
     description: 'AI automation services that deliver working systems. We build, test, and deploy with your team involved. You own all code and IP. Get started.',

@@ -80,6 +80,13 @@ export default function NavBar() {
             </Link>
 
             <Link
+              href="/applied-ai"
+              className={`text-sm font-sans ${isActive('/applied-ai') || pathname?.startsWith('/applied-ai/') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
+            >
+              Applied AI
+            </Link>
+
+            <Link
               href="/why-leomayn"
               className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
             >
@@ -115,6 +122,7 @@ export default function NavBar() {
             <Link href="/services" className="block py-2 text-sm font-sans text-slate">Services</Link>
             <Link href="/approach" className="block py-2 text-sm font-sans text-slate">Our Approach</Link>
             <Link href="/how-we-think" className="block py-2 text-sm font-sans text-slate">How We Think</Link>
+            <Link href="/applied-ai" className="block py-2 text-sm font-sans text-slate">Applied AI</Link>
             <Link href="/why-leomayn" className="block py-2 text-sm font-sans text-slate">Why Leomayn</Link>
             <Link href="/contact" onClick={trackNavCTA} className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
           </div>

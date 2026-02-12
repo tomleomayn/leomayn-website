@@ -8,6 +8,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'Why Leomayn - Leomayn',
   description: 'Founded by Tom Jones to solve operational challenges through AI and automation. Operations and AI consulting for knowledge work.',
+  alternates: {
+    canonical: '/why-leomayn',
+  },
 }
 
 export default function WhyLeomaynPage() {

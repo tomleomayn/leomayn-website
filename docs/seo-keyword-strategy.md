@@ -77,7 +77,11 @@ Vary the opening approach across pages to avoid repetitive patterns:
 | 2 | AI Agents / Agentic AI | 37,000+ | NEW: /ai-agents |
 | 3 | AI Automation | 2,200+ | /services/deliver |
 | 4 | AI Strategy | 1,200+ | /how-we-think |
-| 5 | Industry-Specific | Niche | Future content |
+| 5 | AI Implementation Failure | Long-tail | /applied-ai/why-ai-projects-fail |
+| 6 | Professional Services Pricing | Long-tail | /applied-ai/beyond-hourly-billing |
+| 7 | AI Scaling / Operational Leverage | Long-tail | /applied-ai/scale-without-headcount |
+| 8 | AI Operating Architecture | Long-tail | /applied-ai/operating-architecture |
+| 9 | Industry-Specific | Niche | Future content |
 
 ### Primary Keywords Reference
 
@@ -423,6 +427,106 @@ Vary the opening approach across pages to avoid repetitive patterns:
 | CT-01 | Ensure title tag is set properly | Low | To Do |
 | CT-02 | Update meta description | Low | To Do |
 | CT-03 | Vary CTA copy from other pages | Low | To Do |
+
+---
+
+### 3.12 Insights Hub (`/insights`)
+
+**Target Keywords:** ai consulting insights, AI implementation insights
+
+**Current State (Implemented):**
+- Title: "AI Consulting Insights for Professional Services | Leomayn"
+- H1: "Insights"
+- Meta: "Practical insights on AI implementation, operating architecture, and scaling professional services firms. Written for operations leaders. Book a discovery call."
+- Keywords meta: ai consulting insights, AI implementation, professional services AI, operating architecture, AI strategy
+- Schema: CollectionPage + BreadcrumbList + ItemList
+
+**Status:** Done
+
+---
+
+### 3.13 Why AI Projects Fail (`/applied-ai/why-ai-projects-fail`)
+
+**Target Keywords:** why AI projects fail, AI implementation failure, AI pilot failure
+
+**Current State (Implemented):**
+- Title: "Why AI Projects Fail Before the AI Is Deployed | Leomayn" (56 chars)
+- H1: "Why AI projects fail before the AI is deployed"
+- Meta: "Most AI projects fail because the work was never ready for the technology. Three failure modes explain why pilots stall. Book a discovery call." (142 chars)
+- Keywords meta: why AI projects fail, AI implementation failure, AI pilot failure, AI workflow redesign, operations, professional services
+- Schema: Article (enhanced) + BreadcrumbList
+- Internal links: /services/diagnose
+- Sources: MIT NANDA, McKinsey, BCG
+
+**Status:** Done
+
+---
+
+### 3.14 Beyond Hourly Billing (`/applied-ai/beyond-hourly-billing`)
+
+**Target Keywords:** AI professional services pricing, hourly billing AI, value based pricing
+
+**Current State (Implemented):**
+- Title: "Beyond Hourly Billing: AI and Services Pricing | Leomayn" (56 chars)
+- H1: "Beyond hourly billing"
+- Meta: "If AI makes your team faster and you bill by the hour, efficiency becomes a revenue problem. Learn how to transition to value-based pricing. Book a discovery call." (163 chars)
+- Keywords meta: AI professional services pricing, hourly billing AI, value based pricing, productised services, AI economics
+- Schema: Article (enhanced) + BreadcrumbList
+- Internal links: /services/diagnose
+- Sources: Simon-Kucher, Brynjolfsson/TIME
+
+**Status:** Done
+
+---
+
+### 3.15 Scale Without Headcount (`/applied-ai/scale-without-headcount`)
+
+**Target Keywords:** AI scaling operations, scale without hiring, operational leverage AI
+
+**Current State (Implemented):**
+- Title: "Scale Without Headcount: AI for Mid-Market Growth | Leomayn" (59 chars)
+- H1: "Scale without scaling headcount"
+- Meta: "Your board wants growth. Your ops team is stretched. Learn how mid-market firms use AI to create operational leverage without hiring. Book a discovery call." (155 chars)
+- Keywords meta: AI scaling operations, scale without hiring, operational leverage AI, AI mid-market, AI business growth
+- Schema: Article (enhanced) + BreadcrumbList
+- Internal links: /services/deliver
+- Sources: Brynjolfsson/TIME, HBR/Gartner
+
+**Status:** Done
+
+---
+
+### 3.16 Operating Architecture (`/applied-ai/operating-architecture`)
+
+**Target Keywords:** AI operating architecture, AI workflow design, AI integration framework
+
+**Current State (Implemented):**
+- Title: "The Operating Architecture Your AI Tools Need | Leomayn" (55 chars)
+- H1: "The operating architecture your AI tools need"
+- Meta: "Your AI tools are not failing. The layer beneath them is missing. Six elements of operating architecture that separate real value from pilots. Book a discovery call." (163 chars)
+- Keywords meta: AI operating architecture, AI workflow design, AI integration framework, operating model AI, professional services
+- Schema: Article (enhanced) + BreadcrumbList
+- Internal links: /services/diagnose
+- Sources: McKinsey
+
+**Status:** Done
+
+---
+
+### 3.17 AI Agents for Business (`/applied-ai/ai-agents-for-business`)
+
+**Target Keywords:** AI agents for business, agentic AI, AI agent implementation
+
+**Current State (Implemented):**
+- Title: "AI Agents for Business: Where to Draw the Line | Leomayn" (57 chars)
+- H1: "AI agents are coming to your operations. The question is where to draw the line."
+- Meta: "79% of companies use agentic AI but fewer than one in 20 capture value. Learn where AI agents work and how to draw the line. Book a discovery call." (146 chars)
+- Keywords meta: AI agents for business, agentic AI, AI agent implementation, AI agents examples, AI governance, professional services
+- Schema: Article (enhanced) + BreadcrumbList
+- Internal links: /applied-ai/operating-architecture, /services/diagnose
+- Sources: BCG (Widening AI Value Gap), Brynjolfsson/TIME, BCG (Process Redesign)
+
+**Status:** Done
 
 ---
 

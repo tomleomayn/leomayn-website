@@ -7,6 +7,9 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata = {
   title: 'AI Training & Support - Ongoing Optimisation | Leomayn',
   description: 'AI training and ongoing support to keep automation optimised. Quarterly health checks, performance monitoring, and capability building. Learn about our plans.',
+  alternates: {
+    canonical: '/services/support',
+  },
   openGraph: {
     title: 'AI Training & Support - Ongoing Optimisation | Leomayn',
     description: 'AI training and ongoing support to keep automation optimised. Quarterly health checks, performance monitoring, and capability building. Learn about our plans.',
