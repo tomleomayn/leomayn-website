@@ -182,7 +182,7 @@ export default function WhyLeomaynPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <p>Our approach draws on:</p>
-                <ul className="space-y-3 ml-6">
+                <ul className="space-y-3 ml-6 mt-6">
                   <li>
                     <strong>Operational leadership</strong> - building and scaling delivery functions
                   </li>
