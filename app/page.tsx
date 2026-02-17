@@ -147,8 +147,8 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <p className="text-lg leading-relaxed text-chalk text-center mt-8">
-              This is why we start with workflows, not tools.
+            <p className="text-xl md:text-2xl leading-relaxed text-chalk text-center mt-8">
+              This is why when we start a new project, we start with workflows, not tools.
             </p>
           </ScrollReveal>
         </div>

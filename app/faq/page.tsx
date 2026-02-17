@@ -49,10 +49,6 @@ const faqs = [
         a: 'Fixed-price per phase, based on complexity. You know the exact investment before committing. No day rates, no hourly billing, no surprise overruns. Complexity is scored during discovery so pricing reflects your actual situation.',
       },
       {
-        q: 'What is the typical investment range?',
-        a: 'Diagnose: from £3K. Define: from £5K. Deliver: varies by scope. We publish ranges because we believe in transparency. Exact pricing is confirmed after a discovery call where we assess complexity.',
-      },
-      {
         q: 'What is the ROI?',
         a: 'We typically target 25-75% time reduction for AI-augmented processes. We work with you to evaluate workflows in terms of their potential impact and ability to drive an ROI. Success metrics are agreed before starting and measured after implementation.',
       },
