@@ -133,7 +133,7 @@ export default function DiagnosePage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-coral mt-1">•</span>
-                    Delivery depends on a few key people
+                    You want to integrate AI into your workflows, but don't know where to start
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-coral mt-1">•</span>
@@ -170,6 +170,41 @@ export default function DiagnosePage() {
               prioritised by impact and effort. We don't make assumptions or offer generic advice.
               We provide evidence-based analysis of your specific operational reality.
             </p>
+          </div>
+        </section>
+
+        {/* Evidence Block */}
+        <section className="py-20 px-6 lg:px-8 bg-slate">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center relative">
+                <span
+                  className="absolute -top-2 left-0 md:-left-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+                  aria-hidden="true"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  &ldquo;
+                </span>
+                <span
+                  className="absolute -bottom-6 right-0 md:-right-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+                  aria-hidden="true"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  &rdquo;
+                </span>
+                <p className="text-2xl md:text-3xl text-coral leading-relaxed mb-6 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+                  98% of AI investments fail to deliver transformational value. The 2% that succeed start with process expertise.
+                </p>
+                <p className="text-sm text-chalk/60 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+                  Gartner CIO Survey, cited in HBR <em>&ldquo;9 Trends Shaping Work in 2026 and Beyond&rdquo;</em>
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="text-lg leading-relaxed text-chalk text-center mt-8">
+                That is what Diagnose is for. Understanding your operations before choosing any technology.
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -285,6 +320,43 @@ export default function DiagnosePage() {
                   So you have: No surprises on effort or investment
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What Good Looks Like */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-10">
+                What good looks like
+              </h2>
+            </ScrollReveal>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <ScrollReveal delay={0.1}>
+                <p>
+                  <strong className="font-semibold">A clear picture of how work gets done.</strong>{' '}
+                  Mapped workflows showing exactly where capacity leaks, handoffs break, and rework accumulates. Evidence, not opinion.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  <strong className="font-semibold">Prioritised opportunities with numbers attached.</strong>{' '}
+                  Each improvement opportunity scored for impact, feasibility, and complexity. You know which workflows to fix first and why.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  <strong className="font-semibold">Something concrete for your leadership team.</strong>{' '}
+                  A report you can put in front of your board that says: here is what is broken, and here is what it costs us. No jargon, no speculation.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.25}>
+                <p>
+                  <strong className="font-semibold">Confidence to make a decision.</strong>{' '}
+                  Whether that is proceeding to Define, building internally with the roadmap we have provided, or deciding the status quo is acceptable. You will have the evidence either way.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
