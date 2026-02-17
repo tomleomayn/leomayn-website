@@ -226,6 +226,82 @@ export default function DeliverPage() {
           </div>
         </section>
 
+        {/* What This Looks Like in Practice */}
+        <section className="py-24 px-6 lg:px-8 bg-pearl">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-10">
+                What this looks like in practice
+              </h2>
+            </ScrollReveal>
+
+            <div className="space-y-10">
+              <ScrollReveal delay={0.1}>
+                <div className="bg-chalk rounded-md p-8">
+                  <h3 className="text-2xl font-serif text-slate mb-4">End-to-end client onboarding</h3>
+                  <div className="space-y-3 text-base leading-relaxed text-slate">
+                    <p><strong className="font-semibold">Trigger:</strong> New client signed in CRM.</p>
+                    <p><strong className="font-semibold">What gets built:</strong> Automated data collection, routing logic, system provisioning, welcome sequence, and status dashboard.</p>
+                    <p><strong className="font-semibold">Integrations:</strong> CRM → project management → document generation → email.</p>
+                    <p><strong className="font-semibold">Training:</strong> Two-hour team workshop, step-by-step operating guide, and troubleshooting reference.</p>
+                    <p><strong className="font-semibold">Outcome:</strong> Reduced cycle time, zero manual handoffs, full audit trail.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.15}>
+                <div className="bg-chalk rounded-md p-8">
+                  <h3 className="text-2xl font-serif text-slate mb-4">Automated reporting pipeline</h3>
+                  <div className="space-y-3 text-base leading-relaxed text-slate">
+                    <p><strong className="font-semibold">Trigger:</strong> Scheduled or on-demand.</p>
+                    <p><strong className="font-semibold">What gets built:</strong> Data extraction from source systems, transformation logic, report generation, and distribution.</p>
+                    <p><strong className="font-semibold">Integrations:</strong> Time tracking → data layer → reporting → email and Slack.</p>
+                    <p><strong className="font-semibold">Training:</strong> Dashboard walkthrough and report customisation guide.</p>
+                    <p><strong className="font-semibold">Outcome:</strong> Monday morning reports ready before anyone arrives.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* What Good Looks Like */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-10">
+                What good looks like
+              </h2>
+            </ScrollReveal>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <ScrollReveal delay={0.1}>
+                <p>
+                  <strong className="font-semibold">Working systems, not promises.</strong>{' '}
+                  Tested, deployed automation handling real workflows with real data. Not a demo, not a prototype. Production-ready systems your team uses every day.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  <strong className="font-semibold">A team that knows how to run it.</strong>{' '}
+                  Hands-on training, not just documentation. Your team can operate, troubleshoot, and adapt the system without calling us.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  <strong className="font-semibold">Everything you own.</strong>{' '}
+                  All code, all IP, all documentation. No vendor lock-in, no recurring licence dependency on us. You could walk away tomorrow and keep everything.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.25}>
+                <p>
+                  <strong className="font-semibold">Measurable results from day one.</strong>{' '}
+                  Baseline metrics established before we started, actual results measured after deployment. Concrete before-and-after numbers: time saved, errors eliminated, capacity released.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* Timeline & Investment */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
@@ -296,11 +372,11 @@ export default function DeliverPage() {
         <section className="py-24 px-6 lg:px-8 bg-slate">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-              Ready to build?
+              Start with the deliver phase
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a call to discuss your automation project and how the Deliver
-              phase turns blueprints into working systems.
+              Turns blueprints into working systems.<br />
+              Book a call to discuss your automation project.
             </p>
             <Link
               href="/contact"

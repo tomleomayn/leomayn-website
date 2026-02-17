@@ -76,6 +76,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/security-compliance" className="text-sm text-white/60 hover:text-white transition-colors">
+                  Security & Compliance
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-sm text-white/60 hover:text-white transition-colors">
                   Contact
                 </Link>
@@ -92,6 +97,11 @@ export default function Footer() {
               <li>
                 <Link href="/applied-ai" className="text-sm text-white/60 hover:text-white transition-colors">
                   Applied AI
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-sm text-white/60 hover:text-white transition-colors">
+                  FAQ
                 </Link>
               </li>
               <li>

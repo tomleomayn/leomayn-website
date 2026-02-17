@@ -119,6 +119,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Evidence Section - Gartner Quote */}
+      <section className="py-20 bg-slate">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center relative">
+              <span
+                className="absolute -top-2 left-0 md:-left-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+                aria-hidden="true"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                &ldquo;
+              </span>
+              <span
+                className="absolute -bottom-6 right-0 md:-right-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+                aria-hidden="true"
+                style={{ fontFamily: 'Georgia, serif' }}
+              >
+                &rdquo;
+              </span>
+              <p className="text-2xl md:text-3xl text-coral leading-relaxed mb-6 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+                Firms that paired process expertise with AI capability were twice as likely to exceed their revenue goals.
+              </p>
+              <p className="text-sm text-chalk/60 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+                Gartner CIO Survey, cited in HBR <em>&ldquo;9 Trends Shaping Work in 2026 and Beyond&rdquo;</em>
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-xl md:text-2xl leading-relaxed text-chalk text-center mt-8">
+              This is why when we start a new project, we start with workflows, not tools.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Context Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
@@ -343,7 +378,7 @@ export default function HomePage() {
                 inefficiency.
               </p>
               <p className="text-lg text-chalk italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
-                — Bill Gates
+                Bill Gates
               </p>
             </div>
           </ScrollReveal>
@@ -428,6 +463,61 @@ export default function HomePage() {
             >
               See our full services
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Common Workflows Section */}
+      <section className="py-24 px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-12">
+              What workflows might we start on?
+            </h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ScrollReveal delay={0}>
+              <div className="bg-pearl rounded-md p-6 h-full">
+                <h3 className="text-xl font-serif text-slate mb-3">Client onboarding</h3>
+                <p className="text-sm text-slate/60 mb-2">Before: Six manual handoffs, three systems, two weeks of chasing.</p>
+                <p className="text-sm font-semibold text-coral-accessible">After: Automated intake, routing, and status tracking. Reduced cycle time and team processing.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.05}>
+              <div className="bg-pearl rounded-md p-6 h-full">
+                <h3 className="text-xl font-serif text-slate mb-3">Proposal and scoping</h3>
+                <p className="text-sm text-slate/60 mb-2">Before: Every proposal starts from scratch. Senior time burned on formatting, not strategy.</p>
+                <p className="text-sm font-semibold text-coral-accessible">After: Templated generation with firm-specific data. Scoping in hours, not days.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="bg-pearl rounded-md p-6 h-full">
+                <h3 className="text-xl font-serif text-slate mb-3">Reporting and MI</h3>
+                <p className="text-sm text-slate/60 mb-2">Before: Monday mornings spent pulling numbers from four systems into a spreadsheet.</p>
+                <p className="text-sm font-semibold text-coral-accessible">After: Automated reporting with real-time dashboards. Hours reclaimed for analysis.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <div className="bg-pearl rounded-md p-6 h-full">
+                <h3 className="text-xl font-serif text-slate mb-3">Compliance and audit prep</h3>
+                <p className="text-sm text-slate/60 mb-2">Before: Annual audit prep is a fire drill. Evidence scattered, team stretched.</p>
+                <p className="text-sm font-semibold text-coral-accessible">After: Continuous evidence collection. Audit-ready at any point, not just once a year.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="bg-pearl rounded-md p-6 h-full">
+                <h3 className="text-xl font-serif text-slate mb-3">Resource allocation</h3>
+                <p className="text-sm text-slate/60 mb-2">Before: Capacity planning lives in one person&apos;s head and a shared spreadsheet.</p>
+                <p className="text-sm font-semibold text-coral-accessible">After: Visible capacity across teams. Allocation decisions based on data, not gut feel.</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.25}>
+              <div className="bg-pearl rounded-md p-6 h-full">
+                <h3 className="text-xl font-serif text-slate mb-3">Invoice and billing</h3>
+                <p className="text-sm text-slate/60 mb-2">Before: Manual time capture, rate calculations, and invoice generation. Errors caught late.</p>
+                <p className="text-sm font-semibold text-coral-accessible">After: Automated capture-to-invoice with validation checks. Billing accuracy up, cycle time down.</p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

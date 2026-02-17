@@ -245,7 +245,7 @@ export default function SupportPage() {
                   and system reliability with recommendations for improvement.
                 </p>
                 <p className="text-sm font-semibold text-coral-accessible">
-                  So you have: Peace of mind — systems stay reliable as you scale
+                  So you have: Peace of mind. Systems stay reliable as you scale
                 </p>
               </div>
 
@@ -258,9 +258,46 @@ export default function SupportPage() {
                   based on evolving requirements and usage patterns.
                 </p>
                 <p className="text-sm font-semibold text-coral-accessible">
-                  So you have: Compound gains — automation improves, not stales
+                  So you have: Compound gains. Automation improves over time
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What Good Looks Like */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-10">
+                What good looks like
+              </h2>
+            </ScrollReveal>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <ScrollReveal delay={0.1}>
+                <p>
+                  <strong className="font-semibold">Systems that keep improving, not just running.</strong>{' '}
+                  Quarterly health checks catch drift before it becomes a problem. Performance monitoring flags issues before your team notices them.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  <strong className="font-semibold">Capacity to evolve.</strong>{' '}
+                  As your business changes, your automation changes with it. New workflows, new integrations, and incremental improvements without starting from scratch.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  <strong className="font-semibold">A safety net for your team.</strong>{' '}
+                  When something unexpected happens, you have expert support within agreed response times. Your team handles the day-to-day; we handle the edge cases.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.25}>
+                <p>
+                  <strong className="font-semibold">Evidence of ongoing value.</strong>{' '}
+                  Regular reporting showing system performance, time savings maintained, and improvements delivered. The business case does not stop at deployment. It compounds.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>
