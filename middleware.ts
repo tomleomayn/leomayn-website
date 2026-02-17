@@ -7,7 +7,8 @@ import type { NextRequest } from 'next/server'
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
 
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000 // 1 hour in milliseconds
-const MAX_REQUESTS = 10 // 10 requests per hour per IP
+const MAX_REQUESTS_CONTACT = 10 // 10 requests per hour per IP for contact form
+const MAX_REQUESTS_PLANNER = 5 // 5 requests per hour per IP for planner generate
 
 function getClientIP(request: NextRequest): string {
   // Vercel provides the real IP in x-forwarded-for
@@ -19,7 +20,7 @@ function getClientIP(request: NextRequest): string {
   return request.headers.get('x-real-ip') || '127.0.0.1'
 }
 
-function isRateLimited(ip: string): { limited: boolean; remaining: number } {
+function isRateLimited(ip: string, maxRequests: number): { limited: boolean; remaining: number } {
   const now = Date.now()
   const record = rateLimitMap.get(ip)
 
@@ -34,45 +35,56 @@ function isRateLimited(ip: string): { limited: boolean; remaining: number } {
 
   if (!record || now > record.resetTime) {
     rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW })
-    return { limited: false, remaining: MAX_REQUESTS - 1 }
+    return { limited: false, remaining: maxRequests - 1 }
   }
 
-  if (record.count >= MAX_REQUESTS) {
+  if (record.count >= maxRequests) {
     return { limited: true, remaining: 0 }
   }
 
   record.count++
-  return { limited: false, remaining: MAX_REQUESTS - record.count }
+  return { limited: false, remaining: maxRequests - record.count }
+}
+
+// Rate-limited POST routes with their per-IP limits
+const RATE_LIMITED_ROUTES: Record<string, number> = {
+  '/api/contact': MAX_REQUESTS_CONTACT,
+  '/api/planner/generate': MAX_REQUESTS_PLANNER,
 }
 
 export function middleware(request: NextRequest) {
-  // Only rate limit the contact API endpoint
-  if (request.nextUrl.pathname === '/api/contact' && request.method === 'POST') {
-    const ip = getClientIP(request)
-    const { limited, remaining } = isRateLimited(ip)
-
-    if (limited) {
-      return NextResponse.json(
-        { error: 'Too many requests. Please try again later.' },
-        {
-          status: 429,
-          headers: {
-            'Retry-After': '3600',
-            'X-RateLimit-Limit': String(MAX_REQUESTS),
-            'X-RateLimit-Remaining': '0',
-          },
-        }
-      )
-    }
-
-    // Add rate limit headers to successful requests
-    const response = NextResponse.next()
-    response.headers.set('X-RateLimit-Limit', String(MAX_REQUESTS))
-    response.headers.set('X-RateLimit-Remaining', String(remaining))
-    return response
+  if (request.method !== 'POST') {
+    return NextResponse.next()
   }
 
-  return NextResponse.next()
+  const maxRequests = RATE_LIMITED_ROUTES[request.nextUrl.pathname]
+  if (!maxRequests) {
+    return NextResponse.next()
+  }
+
+  const ip = getClientIP(request)
+  // Use path-specific key to separate rate limit counters
+  const rateLimitKey = `${ip}:${request.nextUrl.pathname}`
+  const { limited, remaining } = isRateLimited(rateLimitKey, maxRequests)
+
+  if (limited) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      {
+        status: 429,
+        headers: {
+          'Retry-After': '3600',
+          'X-RateLimit-Limit': String(maxRequests),
+          'X-RateLimit-Remaining': '0',
+        },
+      }
+    )
+  }
+
+  const response = NextResponse.next()
+  response.headers.set('X-RateLimit-Limit', String(maxRequests))
+  response.headers.set('X-RateLimit-Remaining', String(remaining))
+  return response
 }
 
 export const config = {

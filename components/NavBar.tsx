@@ -65,12 +65,25 @@ export default function NavBar() {
               </div>
             </div>
 
-            <Link
-              href="/approach"
-              className={`text-sm font-sans ${isActive('/approach') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
-            >
-              Our Approach
-            </Link>
+            {/* Our Approach Dropdown */}
+            <div className="relative group">
+              <Link
+                href="/approach"
+                className={`text-sm font-sans flex items-center gap-1 ${isActive('/approach') || isActive('/security-compliance') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
+              >
+                Our Approach
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                <Link href="/security-compliance" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+                  Security &amp; Compliance
+                </Link>
+              </div>
+            </div>
 
             <Link
               href="/how-we-think"
@@ -86,12 +99,25 @@ export default function NavBar() {
               Applied AI
             </Link>
 
-            <Link
-              href="/why-leomayn"
-              className={`text-sm font-sans ${isActive('/why-leomayn') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
-            >
-              Why Leomayn
-            </Link>
+            {/* Why Leomayn Dropdown */}
+            <div className="relative group">
+              <Link
+                href="/why-leomayn"
+                className={`text-sm font-sans flex items-center gap-1 ${isActive('/why-leomayn') || isActive('/faq') ? 'text-slate font-semibold border-b-2 border-coral pb-1' : 'text-slate/70 hover:text-slate nav-link-animated'}`}
+              >
+                Why Leomayn
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Link>
+
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                <Link href="/faq" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+                  FAQ
+                </Link>
+              </div>
+            </div>
 
             <Link href="/contact" onClick={trackNavCTA} className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
               Book Discovery Call
@@ -121,9 +147,11 @@ export default function NavBar() {
             <Link href="/" className="block py-2 text-sm font-sans text-slate">Home</Link>
             <Link href="/services" className="block py-2 text-sm font-sans text-slate">Services</Link>
             <Link href="/approach" className="block py-2 text-sm font-sans text-slate">Our Approach</Link>
+            <Link href="/security-compliance" className="block py-2 text-sm font-sans text-slate pl-4">Security &amp; Compliance</Link>
             <Link href="/how-we-think" className="block py-2 text-sm font-sans text-slate">How We Think</Link>
             <Link href="/applied-ai" className="block py-2 text-sm font-sans text-slate">Applied AI</Link>
             <Link href="/why-leomayn" className="block py-2 text-sm font-sans text-slate">Why Leomayn</Link>
+            <Link href="/faq" className="block py-2 text-sm font-sans text-slate pl-4">FAQ</Link>
             <Link href="/contact" onClick={trackNavCTA} className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
           </div>
         )}

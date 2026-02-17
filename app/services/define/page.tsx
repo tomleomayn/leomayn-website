@@ -140,6 +140,41 @@ export default function DefinePage() {
           </div>
         </section>
 
+        {/* Evidence Block */}
+        <section className="py-20 px-6 lg:px-8 bg-slate">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="text-center relative">
+                <span
+                  className="absolute -top-2 left-0 md:-left-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+                  aria-hidden="true"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  &ldquo;
+                </span>
+                <span
+                  className="absolute -bottom-6 right-0 md:-right-6 text-5xl md:text-6xl text-coral leading-none opacity-50 select-none"
+                  aria-hidden="true"
+                  style={{ fontFamily: 'Georgia, serif' }}
+                >
+                  &rdquo;
+                </span>
+                <p className="text-2xl md:text-3xl text-coral leading-relaxed mb-6 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+                  Organisations scaling AI successfully invest 70% of effort in people and processes, not technology.
+                </p>
+                <p className="text-sm text-chalk/60 italic relative z-10" style={{ fontFamily: 'var(--font-serif)' }}>
+                  BCG, <em>&ldquo;Scaling AI Requires New Processes, Not Just New Tools&rdquo;</em> (January 2026)
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="text-lg leading-relaxed text-chalk text-center mt-8">
+                Define is where that 70% gets designed.
+              </p>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* What We Do */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
@@ -210,7 +245,7 @@ export default function DefinePage() {
                   technical architecture, integration points, and implementation sequence.
                 </p>
                 <p className="text-sm font-semibold text-coral-accessible">
-                  So you have: No rework — every decision documented before the build
+                  So you have: No rework. Every decision documented before the build
                 </p>
               </div>
 
@@ -223,7 +258,7 @@ export default function DefinePage() {
                   with security and governance controls clearly marked.
                 </p>
                 <p className="text-sm font-semibold text-coral-accessible">
-                  So you have: Reduced risk — see exactly how systems connect
+                  So you have: Reduced risk. See exactly how systems connect
                 </p>
               </div>
 
@@ -236,7 +271,7 @@ export default function DefinePage() {
                   and compliance requirements that the solution must satisfy.
                 </p>
                 <p className="text-sm font-semibold text-coral-accessible">
-                  So you have: Compliance designed in, not bolted on
+                  So you have: Compliance designed in from the start
                 </p>
               </div>
 
@@ -249,10 +284,41 @@ export default function DefinePage() {
                   and visibility mechanisms to track adoption across the organisation.
                 </p>
                 <p className="text-sm font-semibold text-coral-accessible">
-                  So you have: Adoption from day one — teams ready to use it
+                  So you have: Adoption from day one. Teams ready to use it
                 </p>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* What Good Looks Like */}
+        <section className="py-24 px-6 lg:px-8 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-10">
+                What good looks like
+              </h2>
+            </ScrollReveal>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <ScrollReveal delay={0.1}>
+                <p>
+                  <strong className="font-semibold">A blueprint your team can actually follow.</strong>{' '}
+                  Not a slide deck that sits in a drawer. A detailed technical specification, workflow design, and implementation plan that your team, or any competent partner, could build from.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  <strong className="font-semibold">No surprises when building starts.</strong>{' '}
+                  Integrations, dependencies, and edge cases identified upfront. The blueprint is the contract between what is designed and what gets built.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p>
+                  <strong className="font-semibold">Governance sorted before it becomes a problem.</strong>{' '}
+                  Data classification, access controls, human review points, and compliance documentation. All designed in from the start.
+                </p>
+              </ScrollReveal>
             </div>
           </div>
         </section>

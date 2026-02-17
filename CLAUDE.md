@@ -46,6 +46,7 @@ Skills for structured workflows live in leomayn-hq. Relevant for website work:
 | Skill | Purpose | Location |
 |-------|---------|----------|
 | schema-markup-skill | Generate JSON-LD structured data | `leomayn-hq/.claude/skills/schema-markup-skill/SKILL.md` |
+| web-content-publisher | Multi-page content creation and publishing with editorial, SEO, schema, and dev workflow | `leomayn-hq/.claude/skills/web-content-publisher/SKILL.md` |
 
 To use a skill from leomayn-hq, read the SKILL.md file and follow its workflow.
 
@@ -62,17 +63,17 @@ To use a skill from leomayn-hq, read the SKILL.md file and follow its workflow.
 
 **Branches:**
 - `main` — Production (auto-deploys to leomayn.com)
-- `develop` — Staging/development work
+- `content/[name]` — Feature branches for content work
 
 **Workflow:**
 ```
-Local changes → commit → push to develop → create PR → Vercel preview → merge → production
+Local changes → feature branch → commit → push → create PR → Vercel preview → merge to main → production
 ```
 
 | Environment | URL | Trigger |
 |-------------|-----|---------|
 | Local | http://localhost:3000 | `npm run dev` |
-| Preview | PR-specific Vercel URL | Open PR from develop to main |
+| Preview | PR-specific Vercel URL | Open PR to main |
 | Production | leomayn.com | Merge PR to main |
 
 **Commands:**
@@ -80,13 +81,16 @@ Local changes → commit → push to develop → create PR → Vercel preview �
 # Start local dev
 npm run dev
 
+# Create feature branch for content work
+git checkout -b content/descriptive-name
+
 # After making changes
-git add .
+git add [specific files]
 git commit -m "Description of changes"
-git push origin develop
+git push origin content/descriptive-name
 
 # Create PR for preview
-gh pr create --base main --head develop --title "..." --body "..."
+gh pr create --base main --title "..." --body "..."
 
 # After review, merge via GitHub or:
 gh pr merge --squash
