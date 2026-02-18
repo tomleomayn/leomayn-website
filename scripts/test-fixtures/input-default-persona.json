@@ -1,0 +1,74 @@
+{
+  "qualification": {
+    "name": "Jon Raven",
+    "email": "tom@leomayn.com",
+    "company": "Emsere",
+    "companyWebsite": "www.Emsere.com",
+    "role": "c-suite",
+    "roleOther": "",
+    "turnover": "20m-50m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "internal-services",
+    "teamSize": "76-150",
+    "strategicFocus": {
+      "primary": "capacity",
+      "secondary": "quality"
+    },
+    "painPoints": [
+      {
+        "area": "proposals",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "reporting",
+        "symptom": "handoff-friction"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "inconsistency"
+      },
+      {
+        "area": "proposals",
+        "symptom": "rework"
+      },
+      {
+        "area": "reporting",
+        "symptom": "scope-creep"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "tool-limitation"
+      }
+    ],
+    "aiAdoption": "embedded",
+    "techEnvironment": "fully-integrated",
+    "processKnowledge": "well-documented",
+    "dataFoundations": "strong",
+    "billableSplit": 65
+  },
+  "sizing": [
+    {
+      "archetypeId": "project-delivery",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": "It's always late information; it doesn't work. \n"
+    },
+    {
+      "archetypeId": "proposal-scoping",
+      "peopleInvolved": "9-15",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": "Inaccurate information and time-consuming. "
+    },
+    {
+      "archetypeId": "management-reporting",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "75k-100k",
+      "freeText": "It's never on time and it's inaccurate. "
+    }
+  ]
+}
