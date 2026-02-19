@@ -1,0 +1,74 @@
+{
+  "qualification": {
+    "name": "Tom Jones",
+    "email": "test-everybody@leomayn.com",
+    "company": "Everybody",
+    "companyWebsite": "www.everybodyagency.com",
+    "role": "founder-ceo",
+    "roleOther": "",
+    "turnover": "1m-5m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "agency",
+    "teamSize": "31-75",
+    "strategicFocus": {
+      "primary": "capacity",
+      "secondary": "quality"
+    },
+    "painPoints": [
+      {
+        "area": "documents",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "invoicing",
+        "symptom": "production-heavy"
+      },
+      {
+        "area": "documents",
+        "symptom": "production-heavy"
+      },
+      {
+        "area": "invoicing",
+        "symptom": "decision-bottleneck"
+      },
+      {
+        "area": "knowledge",
+        "symptom": "inconsistency"
+      },
+      {
+        "area": "knowledge",
+        "symptom": "production-heavy"
+      }
+    ],
+    "aiAdoption": "individual",
+    "techEnvironment": "integrated",
+    "processKnowledge": "well-documented",
+    "dataFoundations": "mixed",
+    "billableSplit": 50
+  },
+  "sizing": [
+    {
+      "archetypeId": "document-processing",
+      "peopleInvolved": "16-30",
+      "weeklyHours": "5-15",
+      "costPerPerson": "30k-50k",
+      "freeText": "Reviewing compliance documentation manually for HPRC submissions for pharma is really detailed work, really time-consuming, really manual, and really high jeopardy if you get it wrong. "
+    },
+    {
+      "archetypeId": "management-reporting",
+      "peopleInvolved": "9-15",
+      "weeklyHours": "5-15",
+      "costPerPerson": "under-30k",
+      "freeText": "Oh, I mean, it's just a pain. This is very difficult to pull all the information we need, and it's just very painful. Still inaccurate. It's a time wasted presenting in PowerPoint and not enough time spent on insights. "
+    },
+    {
+      "archetypeId": "proposal-scoping",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": "It just takes loads of time to do it well. It's time-sensitive, and actually the result is that mostly it's not done well enough. \n"
+    }
+  ]
+}

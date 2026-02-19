@@ -1,0 +1,163 @@
+{
+  "status": "success",
+  "report": {
+    "id": "c1f6e1c1-8d5b-4080-ad09-648f1cd81022",
+    "situationSummary": "Sarah, you are running a 100-person consulting firm where 65% of capacity is billable, but invisible work is eating the other 35%. Your team spends roughly 28,500 hours per year on coordination, rework, and research that could be structured differently. The symptoms you identified \u2014 research taking too long, handoffs causing dropped work, and proposals requiring multiple revisions \u2014 are connected. They all stem from knowledge that lives in people's heads rather than in reusable systems. That pattern costs Meridian roughly \u00a31.5 million annually in senior time that could be deployed on client work or business development.",
+    "workflows": [
+      {
+        "archetypeId": "research-analysis",
+        "name": "Research and analysis for client work",
+        "whyThisMatters": "Your team spends 12,150 hours per year on client research \u2014 competitive analysis, market intelligence, background work that feeds into proposals and delivery. You identified too much time on coordination and admin around the real work. Research is where that pattern hits hardest: junior consultants spend days tracking down information that someone else found six months ago, and findings are not captured in a way that makes them reusable. Fixing this workflow addresses both the research bottleneck and the coordination overhead, because structured research reduces the need for constant status updates and handoffs.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": true,
+          "complexity": true,
+          "learning": true
+        },
+        "currentState": "A consultant receives a brief requiring market research or competitive analysis. They start by asking around: who worked on something similar, where did we get that data last time, what sources are reliable. They spend hours searching email, shared drives, and past project folders. Once they find something relevant, they adapt it manually. The research gets done, but the process is invisible to everyone else until the output lands. Quality depends entirely on who is doing the work and how much institutional knowledge they carry.",
+        "futureState": "Research requests are logged with structured metadata: topic, scope, client context. An AI agent searches past research, extracts relevant findings, and surfaces gaps. The consultant reviews the synthesised output, validates sources, and adds new insights. The AI updates a research library with structured tags so the next person can find it. Senior consultants review patterns quarterly to identify research that should become a standard offering. Research time drops by half, and junior staff learn faster because they see how experienced consultants structure their thinking.",
+        "considerations": "This workflow delivers fastest value if you can identify 3-5 recurring research types: market sizing, competitor profiling, regulatory landscape, customer segmentation. Start there rather than trying to systematise all research at once. You will need to decide early whether research outputs are tagged by topic, client sector, or methodology. That choice shapes how reusable the library becomes. Your mixed data foundations mean some research sources will integrate cleanly and others will require manual input for the first few months.",
+        "prerequisites": [
+          "Identifiable research patterns or types",
+          "Quality standards for research output",
+          "Access to information sources"
+        ],
+        "pitfalls": [
+          "Treating all research as equally systematisable when some is genuinely bespoke",
+          "Building a research library without governance, so it becomes another place to search",
+          "Underestimating the effort required to tag and structure legacy research"
+        ]
+      },
+      {
+        "archetypeId": "project-delivery",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "You identified that things fall through the cracks when work moves between people or teams. That is the signature problem of project delivery coordination in a firm your size: enough people that handoffs are unavoidable, not enough structure to make handoffs reliable. Your team spends 10,350 hours per year on status updates, task tracking, and chasing work that should flow automatically. This workflow matters because it sits underneath everything else. When delivery coordination is manual, every other process \u2014 research, proposals, client communication \u2014 inherits the same friction.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": true,
+          "complexity": true,
+          "learning": true
+        },
+        "currentState": "Projects are tracked in a combination of spreadsheets, email threads, and project management tools that are not connected to each other. A project manager maintains a master status document, updated manually each week by asking team leads what is happening. When work moves from research to delivery, or from one consultant to another, the handoff happens through a meeting or an email. There is no automatic record of what was agreed, what context was transferred, or what quality checks were applied. Senior consultants get pulled into status meetings because they are the only ones who know what is actually happening.",
+        "futureState": "Each project has a structured workflow with defined stages, handoff points, and quality gates. An AI agent monitors task completion, flags delays, and prompts the next person in the sequence when their input is needed. Handoffs include a structured brief: what was done, what decisions were made, what the next person needs to know. The system generates status updates automatically by reading task completion data and flagging exceptions. Senior consultants review dashboards instead of attending status meetings. The team learns to design workflows that make coordination automatic rather than heroic.",
+        "considerations": "Start with one project type where the stages are predictable: a standard consulting engagement, a recurring client deliverable, or a proposal-to-delivery sequence. Map the current handoffs, identify where things get dropped, and design the AI-augmented version for that one workflow. Do not try to systematise every project type at once. You will need to decide whether the system enforces stage gates or just prompts people when a handoff is due. Enforcement works better for junior staff, prompts work better for senior consultants who resist process.",
+        "prerequisites": [
+          "Some form of project tracking, even informal",
+          "Identifiable project stages and handoff points"
+        ],
+        "pitfalls": [
+          "Designing workflows that assume perfect compliance when reality is messier",
+          "Creating so many status categories that the system becomes a reporting burden",
+          "Underestimating how much tacit knowledge currently transfers through conversation"
+        ]
+      },
+      {
+        "archetypeId": "proposals-scoping",
+        "name": "Proposal and scoping",
+        "whyThisMatters": "You identified that proposals require revisions and rework. That symptom connects to your strategic goal of increasing capacity without hiring: every hour spent rewriting a proposal is an hour not spent on billable work or business development. Your team spends 6,075 hours per year on proposal production, and much of that time is rework caused by inconsistent scoping, unclear pricing, or senior consultants rewriting what junior staff drafted. This workflow matters because it is the front door to new work. When proposals are slow or inconsistent, you lose deals or win them at the wrong price.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": true,
+          "complexity": true,
+          "learning": true
+        },
+        "currentState": "A new enquiry arrives. Someone is assigned to draft a proposal. They search past proposals for something similar, copy sections, and adapt the scope and pricing based on their judgment. The draft goes to a senior consultant for review. The senior consultant rewrites large sections because the scope was not tight enough, the pricing did not reflect the actual effort, or the structure did not match the client's brief. The proposal goes through two or three rounds of revision before it is ready to send. Pricing is inconsistent because there is no single source of truth for what different types of work should cost.",
+        "futureState": "An enquiry is logged with structured metadata: client sector, project type, rough scope. An AI agent retrieves relevant past proposals, extracts pricing patterns, and generates a first draft with scope, methodology, and indicative pricing. The consultant reviews the draft, adjusts for client-specific factors, and adds narrative. The system flags where the proposed pricing is outside normal ranges and prompts for justification. Senior consultants review pricing patterns quarterly to update the pricing framework. Proposal time drops by half, and pricing becomes more consistent because it is based on actual historical data rather than individual judgment.",
+        "considerations": "This workflow depends on having some form of pricing framework, even a rough one. If pricing is entirely bespoke, start by analysing past proposals to extract patterns: what types of work exist, what they typically cost, what factors drive variation. You will need to decide whether the AI generates full proposal text or just scope and pricing. Full text is faster but requires more training data. Scope and pricing alone is easier to start with and still saves significant time. Your partially documented processes mean some proposal types will systematise easily and others will require senior input to define the pattern.",
+        "prerequisites": [
+          "Some form of pricing framework, even rough",
+          "Access to past proposals for pattern extraction"
+        ],
+        "pitfalls": [
+          "Generating proposals that sound generic because the AI has not learned your firm's voice",
+          "Underestimating how much pricing depends on factors that are not in past proposals",
+          "Building a system that works for standard proposals but breaks for complex bespoke work"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "research-analysis",
+          "annualHours": 12150,
+          "annualCost": 787500,
+          "recoveryRange": {
+            "low": 393750,
+            "high": 393750
+          }
+        },
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 10350,
+          "annualCost": 479167,
+          "recoveryRange": {
+            "low": 239583,
+            "high": 239583
+          }
+        },
+        {
+          "archetypeId": "document-processing",
+          "annualHours": 6075,
+          "annualCost": 281250,
+          "recoveryRange": {
+            "low": 210938,
+            "high": 210938
+          }
+        }
+      ],
+      "totalAnnualHours": 28575,
+      "totalAnnualCost": 1547917,
+      "conservativeRecovery": {
+        "low": 844271,
+        "high": 844271
+      },
+      "weeklyHoursRecovered": {
+        "low": 346,
+        "high": 346
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Your team is already using AI tools individually, which means there is appetite for AI-augmented workflows and less change resistance than in firms starting from zero.",
+        "You have partially documented processes, which gives you a foundation to build on rather than starting from scratch.",
+        "Your mixed data foundations mean some workflows will integrate cleanly while others require manual input, but you are not blocked by complete data chaos."
+      ],
+      "development": [
+        "Your systems are siloed \u2014 CRM, project management, and finance are not connected \u2014 which means workflow automation will require integration work or manual bridging in the short term.",
+        "Process knowledge is inconsistent: some processes are documented, others depend on who you ask, which means systematising workflows will surface disagreements about how things should work.",
+        "Your data foundations are mixed, which means some workflows will require data cleanup or validation before AI can operate reliably on them."
+      ]
+    },
+    "quickWins": [
+      "Audit your last ten proposals: extract the project types, scope patterns, and pricing ranges. That analysis will reveal whether you have enough structure to systematise proposal generation.",
+      "Map the handoffs in one recurring project type: who does what, when work moves between people, and where things typically get dropped. That map becomes the blueprint for an AI-augmented coordination workflow.",
+      "Identify your three most common research requests from the last quarter. If the same questions come up repeatedly, those are the first candidates for a structured research library."
+    ],
+    "readiness": {
+      "strengths": [
+        "Your team size and billable split mean you have enough volume to justify workflow investment without needing enterprise-scale infrastructure.",
+        "Individual AI adoption means your team will recognise the value of AI-augmented workflows and adapt faster than teams starting from zero.",
+        "Your strategic focus on capacity without hiring aligns perfectly with workflow automation: you are not looking to cut headcount, you are looking to redirect effort to higher-value work."
+      ],
+      "gaps": [
+        "Your siloed systems mean workflow automation will require integration work or manual bridging in the short term. That is not a blocker, but it shapes the implementation sequence: start with workflows that live mostly in one system.",
+        "Your partially documented processes mean systematising workflows will surface disagreements about how things should work. That is healthy, but it requires senior leadership to make decisions about the standard approach.",
+        "Your mixed data foundations mean some workflows will require data cleanup or validation before AI can operate reliably. Start with workflows where the data is already clean, then build data quality disciplines as you expand."
+      ]
+    },
+    "nextSteps": [
+      "Choose one of the two top workflows \u2014 research or project delivery \u2014 based on where the pain is sharpest this quarter. Both scored almost identically, so the right choice depends on whether your immediate priority is reducing research time or fixing handoff friction.",
+      "Map the current state of your chosen workflow in detail: who does what, what data they use, where decisions are made, and where things break. That map becomes the blueprint for the AI-augmented version.",
+      "Identify the 3-5 most common instances of your chosen workflow: the research types that recur most often, or the project types with the most predictable stages. Start there rather than trying to systematise everything at once.",
+      "Assess your data foundations for the chosen workflow: what data exists, where it lives, and whether it is reliable enough for AI to operate on. If not, design a data quality process that improves as you go rather than waiting for perfection.",
+      "Design the AI-augmented workflow: what the AI does, what humans do, and where judgment is required. Distinguish between velocity gains (doing the same work faster) and capability gains (doing new things that were not possible before).",
+      "Run a pilot with a small team on a real project. Measure time saved, quality impact, and what the team learns. Use that pilot to refine the workflow before scaling it across Meridian."
+    ],
+    "generatedAt": "2026-02-18T11:46:39.256Z"
+  },
+  "reportId": "c1f6e1c1-8d5b-4080-ad09-648f1cd81022"
+}

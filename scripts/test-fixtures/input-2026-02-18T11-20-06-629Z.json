@@ -1,0 +1,62 @@
+{
+  "qualification": {
+    "name": "Jon Raven",
+    "email": "tom@leomayn.com",
+    "company": "Emsere",
+    "companyWebsite": "www.emsere.com",
+    "role": "c-suite",
+    "roleOther": "",
+    "turnover": "20m-50m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "internal-services",
+    "teamSize": "76-150",
+    "strategicFocus": {
+      "primary": "capacity",
+      "secondary": "speed"
+    },
+    "painPoints": [
+      {
+        "area": "proposals",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "research",
+        "symptom": "inconsistency"
+      },
+      {
+        "area": "onboarding",
+        "symptom": "work-about-work"
+      }
+    ],
+    "aiAdoption": "individual",
+    "techEnvironment": "disconnected",
+    "processKnowledge": "mostly-undocumented",
+    "dataFoundations": "strong",
+    "billableSplit": 25
+  },
+  "sizing": [
+    {
+      "archetypeId": "document-processing",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "under-5",
+      "costPerPerson": "30k-50k",
+      "freeText": "I'm not really sure what you mean about document processing and review. "
+    },
+    {
+      "archetypeId": "proposal-scoping",
+      "peopleInvolved": "9-15",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": "It takes a long amount of time to do each proposal, and they're still not always very good. "
+    },
+    {
+      "archetypeId": "client-onboarding",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": "It's really important to us that we onboard clients as quickly and as efficiently as possible. They get a really good experience. "
+    }
+  ]
+}

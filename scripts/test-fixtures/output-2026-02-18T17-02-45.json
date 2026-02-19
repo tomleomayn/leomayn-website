@@ -1,0 +1,164 @@
+{
+  "status": "success",
+  "report": {
+    "id": "1b63ad8e-1193-437c-9a56-7bf89958a2f6",
+    "situationSummary": "Sarah, you are running a 76\u2013150 person consulting firm where 65% of your time is billable, yet your team is spending roughly 28,575 hours per year on manual coordination, research duplication, and proposal rework. That is the equivalent of 14 full-time people doing work that does not directly serve clients. You have identified three pressure points: proposals that require multiple rounds of correction, project handoffs where work falls through the cracks, and research that consumes disproportionate time relative to its value. These are not separate problems. They are symptoms of the same underlying issue: your workflows were designed for a smaller firm, and they have not scaled with your headcount.",
+    "priorityMapIntro": "We scored nine workflow archetypes against your diagnostic inputs and ranked them by impact, feasibility, and learning value. Two workflows emerged as equally strong starting points: research and analysis, which directly addresses the coordination overhead you described, and project delivery coordination, which tackles the handoff friction between teams. Proposal and scoping ranked third, though document processing scored almost identically. The recommendations below reflect where AI can recover the most capacity given your current foundations and strategic focus on increasing team capacity without hiring.",
+    "workflows": [
+      {
+        "archetypeId": "research-analysis",
+        "name": "Research and analysis for client work",
+        "whyThisMatters": "Your team spends roughly 12,150 hours per year on research for client work, yet you identified coordination and admin around the real work as a primary pain point. This is the cross-cutting insight: research is not just time-consuming in itself, it generates invisible work. Chasing down who did similar research last quarter. Reformatting findings into the house style. Explaining context to the next person who picks it up. Fixing this workflow addresses both the research bottleneck and the coordination tax that surrounds it.",
+        "impactPotential": "high",
+        "implementationComplexity": "medium",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "green"
+        },
+        "currentState": "Research happens in silos. A consultant receives a brief, spends hours gathering intelligence from disparate sources, produces a deck or memo, and moves on. The next project with a similar research requirement starts from scratch because no one knows what has already been done. Junior staff spend disproportionate time on background research that senior people could shortcut in minutes if they were involved earlier. Quality varies depending on who is doing the work and how much time they have.",
+        "futureState": "AI becomes your research infrastructure. When a new brief arrives, the system surfaces relevant past research, flags knowledge gaps, and generates a structured research plan based on your firm's standards. As the consultant works, AI assists with source synthesis, competitive analysis, and formatting to house style. The output is automatically tagged and stored for reuse. Senior consultants review AI-generated research summaries rather than doing the work themselves. This is both a velocity gain (research takes half the time) and a capability gain (your team builds a searchable research asset that compounds in value).",
+        "considerations": "This workflow delivers full value only if you address two things early: defining what counts as reusable research (not everything should be stored), and establishing quality standards for AI-assisted output. You indicated your AI adoption is at the individual level, which means some team members are already using tools like ChatGPT for research. The risk is inconsistent quality and no institutional learning. A structured approach turns individual experimentation into organisational capability.",
+        "prerequisites": [
+          "Identifiable research patterns or types",
+          "Quality standards for research output",
+          "Access to information sources"
+        ],
+        "pitfalls": [
+          "Storing everything without curation leads to noise, not signal",
+          "AI-generated research without human review risks factual errors",
+          "Focusing only on speed without addressing reuse misses half the value"
+        ]
+      },
+      {
+        "archetypeId": "project-delivery",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "You identified handoff friction as a primary pain point: things fall through the cracks when work moves between people or teams. This is the invisible work that scales badly. In a 76\u2013150 person firm, the number of potential handoffs grows exponentially with headcount, but your coordination mechanisms probably have not. Project delivery coordination is where that friction accumulates. Fixing it does not just speed up projects, it reduces the cognitive load on your team and makes quality more predictable.",
+        "impactPotential": "high",
+        "implementationComplexity": "high",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "amber",
+          "learning": "green"
+        },
+        "currentState": "Project coordination happens through a mix of spreadsheets, email threads, and verbal updates. A project manager tracks tasks manually, chases people for status updates, and escalates blockers when they are already causing delays. Handoffs between teams rely on whoever remembers to pass the baton. Quality gates are inconsistent: some projects get rigorous review, others slip through because everyone assumed someone else was checking. When a project goes off track, it is hard to diagnose why because the coordination layer is invisible.",
+        "futureState": "AI monitors project flow in real time, flagging risks before they become crises. When a task is marked complete, the system automatically notifies the next person in the chain and surfaces the context they need. Status updates are generated from activity data rather than manual reporting. Quality gates are enforced by the system: work cannot progress to the next stage until predefined checks are complete. Project managers spend less time chasing and more time on exception handling and client communication. This is primarily a velocity gain, but it also builds process discipline that transfers across the firm.",
+        "considerations": "This workflow requires some integration work. You indicated your tech environment consists of dedicated systems for each function that do not talk to each other. To get full value from AI-assisted coordination, you will need to connect your project tracking, communication, and document systems, or consolidate onto a platform that handles all three. That is not a blocker, but it does mean implementation will take longer than the other two workflows. The payoff is a coordination layer that scales with your headcount rather than against it.",
+        "prerequisites": [
+          "Some form of project tracking, even informal",
+          "Identifiable project stages and handoff points"
+        ],
+        "pitfalls": [
+          "Automating a broken handoff process just makes the breakage faster",
+          "Over-reliance on AI monitoring can reduce human accountability",
+          "Integration work is often underestimated in time and cost"
+        ]
+      },
+      {
+        "archetypeId": "proposal-scoping",
+        "name": "Proposal and scoping",
+        "whyThisMatters": "You identified rework as a primary symptom in your proposal process: work gets done more than once due to revisions, corrections, and miscommunication. Proposals are high-stakes documents that involve multiple contributors, tight deadlines, and senior review. When the process is manual, every proposal reinvents the wheel. AI can turn your past proposals into a reusable asset, reducing both the time to produce a proposal and the inconsistency in pricing and positioning.",
+        "impactPotential": "medium",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "amber",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "A new enquiry arrives. Someone digs through past proposals to find a similar project, copies sections into a new document, adjusts the scope and pricing, and circulates for review. Senior people rewrite sections to match the firm's current positioning. Pricing is recalculated from scratch because no one is sure what was charged last time. The proposal goes through multiple rounds of revision before it is ready to send. The process takes days, and much of that time is spent on work that has been done before.",
+        "futureState": "AI generates a first-draft proposal based on the enquiry and your library of past work. It suggests scope based on similar projects, pulls in relevant case studies, and applies your current pricing framework. The output is not final, but it gives the team a structured starting point rather than a blank page. Senior review focuses on strategy and client fit rather than formatting and boilerplate. Proposals are produced in hours rather than days, and pricing becomes more consistent because it is anchored to your historical data. This is primarily a velocity gain, though it also builds pricing discipline.",
+        "considerations": "This workflow is the easiest of the three to start because it works with your existing tools and does not require system integration. However, it delivers less transformational value than the other two. You are automating a process that is already relatively well-understood. The risk is treating this as a quick win without addressing the underlying issue: why do proposals require so many rounds of revision in the first place? Often the answer is unclear scope or misaligned expectations with the client. AI speeds up document production, but it does not fix miscommunication.",
+        "prerequisites": [
+          "Some form of pricing framework, even rough",
+          "Access to past proposals for pattern extraction"
+        ],
+        "pitfalls": [
+          "AI-generated proposals can feel generic if not customised to the client",
+          "Focusing only on speed without improving scoping clarity misses the root cause",
+          "Over-reliance on past proposals can lock in outdated positioning"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "research-analysis",
+          "annualHours": 12150,
+          "annualCost": 787500,
+          "recoveryRange": {
+            "low": 275625,
+            "high": 511875
+          }
+        },
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 10350,
+          "annualCost": 479167,
+          "recoveryRange": {
+            "low": 167708,
+            "high": 311458
+          }
+        },
+        {
+          "archetypeId": "proposal-scoping",
+          "annualHours": 6075,
+          "annualCost": 281250,
+          "recoveryRange": {
+            "low": 98438,
+            "high": 182813
+          }
+        }
+      ],
+      "totalAnnualHours": 28575,
+      "totalAnnualCost": 1547917,
+      "conservativeRecovery": {
+        "low": 541771,
+        "high": 1006146
+      },
+      "weeklyHoursRecovered": {
+        "low": 222,
+        "high": 413
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Your team is already experimenting with AI at the individual level, which means you have early adopters who can champion a structured rollout.",
+        "You have partial process documentation, which gives you a foundation to build on rather than starting from scratch.",
+        "Your data foundations are mixed but not broken: some systems are reliable, which means you can start with those and improve the others over time."
+      ],
+      "development": [
+        "Your tech environment consists of siloed systems that do not talk to each other, which will limit the value of AI-assisted coordination until you address integration.",
+        "Process knowledge is inconsistent: some processes are written down, others depend on who you ask, which means AI will surface that inconsistency rather than hide it.",
+        "Your AI adoption is at the individual level, which means there is no shared learning or quality control across the team yet."
+      ]
+    },
+    "quickWins": [
+      "Audit your current research process: ask three consultants to describe how they approach a typical research task and compare the answers. The variation will show you where standards are needed.",
+      "Map your proposal workflow on a whiteboard: every step from enquiry to send, every handoff, every review loop. Name the bottlenecks. This takes two hours and will clarify where AI can help most.",
+      "Run a retrospective on your last three projects that had handoff issues: what fell through the cracks, and why? The patterns will guide your coordination workflow design."
+    ],
+    "readiness": {
+      "strengths": [
+        "You have a clear strategic focus on increasing capacity without hiring, which aligns directly with the value AI can deliver in these workflows.",
+        "Your team size (76\u2013150 people) means you have enough volume to justify investment in workflow infrastructure, but you are not so large that change management becomes unmanageable.",
+        "Your billable split (65% client-facing) means you have capacity to invest in process improvement without pulling people off client work."
+      ],
+      "gaps": [
+        "Your tech environment will require some integration work before AI-assisted coordination can deliver full value. This is not a blocker, but it does mean implementation will take longer than a firm with a unified platform.",
+        "Your process documentation is partial, which means some of the workflow design will involve codifying what currently lives in people's heads. That is valuable work, but it takes time.",
+        "Your AI adoption is at the individual level, which means you will need to build shared standards and quality controls as you roll out structured AI workflows. This is a capability-building exercise, not just a tool deployment."
+      ]
+    },
+    "nextSteps": [
+      "Choose your starting point: research and analysis or project delivery coordination. Both scored almost identically. The right choice depends on whether you want to start with a workflow that is easier to implement (research) or one that addresses your most acute pain point (handoffs).",
+      "Run a light diagnostic with your team: interview 5\u20138 people across different roles and ask them to describe their current workflow in one of the three areas. The goal is to surface the invisible work and identify where the biggest friction points are.",
+      "Define success metrics before you start: what does good look like for this workflow? Hours saved is one measure, but also consider quality improvements, reduced rework, and team satisfaction. AI delivers value in multiple dimensions.",
+      "Identify your early adopters: who on your team is already using AI tools effectively? They will be your champions for the structured rollout. Involve them in the design process.",
+      "Assess your data readiness for the chosen workflow: what data do you need to train AI effectively, and where does it currently live? For research, that is past reports and briefs. For project delivery, that is task and status data. For proposals, that is past proposals and pricing records.",
+      "Consider a Diagnose engagement: this report is based on a structured questionnaire, but we have not seen your systems, spoken to your team, or reviewed your data. A full diagnostic would give you a detailed implementation roadmap, not just directional recommendations."
+    ],
+    "generatedAt": "2026-02-18T17:02:45.422Z"
+  },
+  "reportId": "1b63ad8e-1193-437c-9a56-7bf89958a2f6"
+}

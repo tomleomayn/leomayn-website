@@ -1,0 +1,61 @@
+{
+  "qualification": {
+    "name": "Sarah Mitchell",
+    "email": "test@leomayn-internal.com",
+    "company": "Meridian Consulting",
+    "companyWebsite": "https://meridianconsulting.co.uk",
+    "role": "director-vp",
+    "turnover": "5m-10m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "consulting",
+    "teamSize": "76-150",
+    "strategicFocus": {
+      "primary": "capacity",
+      "secondary": "quality"
+    },
+    "painPoints": [
+      {
+        "area": "proposals",
+        "symptom": "rework"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "handoff-friction"
+      },
+      {
+        "area": "research",
+        "symptom": "work-about-work"
+      }
+    ],
+    "aiAdoption": "individual",
+    "techEnvironment": "disconnected",
+    "processKnowledge": "partially-documented",
+    "dataFoundations": "mixed",
+    "billableSplit": 65
+  },
+  "sizing": [
+    {
+      "archetypeId": "research-analysis",
+      "peopleInvolved": "9-15",
+      "weeklyHours": "15-30",
+      "costPerPerson": "75k-100k",
+      "freeText": ""
+    },
+    {
+      "archetypeId": "project-delivery",
+      "peopleInvolved": "16-30",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": ""
+    },
+    {
+      "archetypeId": "proposal-scoping",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "15-30",
+      "costPerPerson": "50k-75k",
+      "freeText": ""
+    }
+  ]
+}

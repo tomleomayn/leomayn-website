@@ -1,0 +1,167 @@
+{
+  "status": "success",
+  "report": {
+    "id": "c9741b67-c310-423b-8b33-6b4c63135f9d",
+    "situationSummary": "Jon, you are running a 76\u2013150 person internal business services team with strong foundations: documented processes, trusted data, embedded AI adoption, and an integrated platform. Yet you are still losing time to coordination overhead, handoff friction, and rework. The invisible work is coordination itself: chasing updates, reconciling information across systems, managing scope drift as projects move between people. Your team is capable, but the connective tissue between tasks is manual.",
+    "priorityMapIntro": "Your diagnostic revealed a pattern: the work itself is not the problem, the handoffs are. Three workflows emerged as high-impact starting points because they all involve moving information between people, systems, or stages. Project delivery coordination and proposal scoping scored almost identically \u2014 both accumulate signal from multiple pain points you named. Management reporting ranked third, with the highest automation potential of the three.",
+    "workflows": [
+      {
+        "archetypeId": "project-delivery-coordination",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "You described late information, handoff friction, inconsistent quality, and workarounds for system limitations. These are not separate problems. They are symptoms of the same root cause: project coordination relies on manual status updates, ad-hoc communication, and people remembering to pass things on. For an internal services team with 65% client-facing work, every delay compounds. AI can automate the connective tissue: status synthesis, handoff triggers, quality checks at transition points.",
+        "impactPotential": "high",
+        "implementationComplexity": "medium",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "Project status lives in multiple places: your integrated platform, email threads, Slack channels, someone's head. Updates are manual. When work moves between people, context gets lost. Quality depends on who picks it up because there is no automated quality gate at handoff points. You work around system limitations because building the workflow logic manually would take too long.",
+        "futureState": "AI monitors your platform and communication channels to synthesise project status in real time. When a task completes, the system triggers the next handoff automatically and surfaces the context the next person needs. Quality checks run at transition points: scope against original brief, deliverable against template, timeline against plan. Senior people get exception alerts, not status requests. The platform becomes intelligent infrastructure, not just a database.",
+        "considerations": "Your integrated platform is an advantage here: AI can read structured data and trigger workflows without requiring new systems. The challenge is defining what constitutes a handoff and what context needs to travel with it. You will need to map your current project stages explicitly, even if they feel obvious. Start with one project type, prove the pattern, then extend.",
+        "prerequisites": [
+          "Identifiable project stages and handoff points",
+          "Access to project data in your integrated platform",
+          "Clear definition of what constitutes 'done' at each stage"
+        ],
+        "pitfalls": [
+          "Automating handoffs before clarifying what information needs to travel with them",
+          "Building AI monitoring without defining exception thresholds (when does a human need to intervene?)",
+          "Assuming the platform's existing workflow logic is optimal just because it is documented"
+        ]
+      },
+      {
+        "archetypeId": "proposal-and-scoping",
+        "name": "Proposal and scoping",
+        "whyThisMatters": "You flagged proposals for both coordination overhead and rework. That combination is diagnostic: the process involves multiple contributors (hence coordination), and the output often needs revision (hence rework). For an internal services team, every proposal cycle that drags on delays revenue recognition or capacity allocation. AI can compress the cycle by automating research, pricing consistency checks, and document generation, while keeping human judgment on scope and risk.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "Proposals are inaccurate and time-consuming because they require pulling information from past projects, reconciling pricing across similar scopes, and coordinating input from multiple people. Rework happens when pricing is inconsistent, scope is ambiguous, or someone spots an error late in the review cycle. Senior people bottleneck the process because they hold the pricing logic and risk judgment in their heads.",
+        "futureState": "AI drafts proposals by retrieving comparable past projects, applying your documented pricing framework, and generating scope narratives based on the brief. Pricing consistency checks run automatically: if this scope is priced differently from a similar one last month, the system flags it. Senior review focuses on risk and client fit, not formatting and arithmetic. Rework drops because the first draft is already 80% accurate.",
+        "considerations": "Your strong process documentation and data foundations mean AI can learn your pricing patterns and scope templates quickly. The risk is over-automating: proposals still need human judgment on client context and risk. Define clearly where AI assists (research, drafting, consistency checks) and where humans decide (scope boundaries, pricing strategy, risk appetite). Start with internal proposals or lower-stakes scopes to build confidence.",
+        "prerequisites": [
+          "Access to past proposals for pattern extraction",
+          "Documented pricing framework or rate card",
+          "Clear definition of what makes a proposal 'good' (accuracy, completeness, tone)"
+        ],
+        "pitfalls": [
+          "Automating proposal generation without defining quality criteria first",
+          "Assuming AI can price edge cases without human oversight",
+          "Skipping the step of teaching AI your firm's tone and positioning"
+        ]
+      },
+      {
+        "archetypeId": "management-reporting",
+        "name": "Management reporting",
+        "whyThisMatters": "You described reporting as never on time and inaccurate, with scope creep and handoff friction contributing to the problem. Management reporting is infrastructure: it underpins decision-making across the organisation. When reports are late or inaccurate, leadership loses confidence in the data, and the team wastes time defending numbers instead of acting on them. AI can automate the data reconciliation, formatting, and distribution, freeing your team to focus on insight rather than compilation.",
+        "impactPotential": "medium",
+        "implementationComplexity": "high",
+        "threeConditionsCheck": {
+          "impact": "amber",
+          "complexity": "green",
+          "learning": "red"
+        },
+        "currentState": "Reports are compiled manually by pulling data from your integrated platform, reconciling discrepancies, and formatting for leadership. Scope expands because stakeholders request additional cuts or comparisons mid-cycle. Handoff friction occurs when the person compiling the report needs input from project leads or finance. The process is reliable in structure but fragile in execution: if one data source is late, the whole report is late.",
+        "futureState": "AI pulls data from your platform on a schedule, applies your reporting templates, and flags anomalies for human review before distribution. Scope creep is managed by versioning: the core report runs automatically, and ad-hoc requests are logged as separate queries. Leadership gets consistent, on-time reports with commentary generated by AI and reviewed by your team. The hours saved (up to 75% of current effort) get redirected to analysis and insight.",
+        "considerations": "Your integrated platform and strong data foundations make this workflow highly automatable. The complexity is not technical, it is organisational: defining what reports are mandatory versus ad-hoc, and training stakeholders to trust automated output. You will need to run parallel reporting (manual and automated) for a transition period to build confidence. Start with one high-frequency report (weekly utilisation, monthly revenue) and prove the pattern.",
+        "prerequisites": [
+          "Clear reporting requirements and cadence",
+          "Identifiable data sources within your platform",
+          "Stakeholder agreement on what constitutes 'accurate' (tolerance for rounding, timing of data cuts)"
+        ],
+        "pitfalls": [
+          "Automating reporting without defining exception handling (what happens when data is missing?)",
+          "Assuming stakeholders will trust automated reports without a transition period",
+          "Building rigid automation that cannot accommodate reasonable ad-hoc requests"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 2700,
+          "annualCost": 125000,
+          "recoveryRange": {
+            "low": 43750,
+            "high": 81250
+          }
+        },
+        {
+          "archetypeId": "proposal-scoping",
+          "annualHours": 5400,
+          "annualCost": 250000,
+          "recoveryRange": {
+            "low": 87500,
+            "high": 162500
+          }
+        },
+        {
+          "archetypeId": "management-reporting",
+          "annualHours": 2700,
+          "annualCost": 175000,
+          "recoveryRange": {
+            "low": 105000,
+            "high": 148750
+          }
+        }
+      ],
+      "totalAnnualHours": 10800,
+      "totalAnnualCost": 550000,
+      "conservativeRecovery": {
+        "low": 236250,
+        "high": 392500
+      },
+      "weeklyHoursRecovered": {
+        "low": 103,
+        "high": 171
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Your processes are well documented, which means AI can learn your workflows without requiring you to articulate them from scratch.",
+        "Your data is trusted and accessible, which removes the most common blocker to AI deployment: garbage in, garbage out.",
+        "AI is already embedded across the organisation, so your team understands how to collaborate with it rather than treating it as a black box.",
+        "Your integrated platform provides structured data and workflow logic, which AI can read and act on without requiring new systems."
+      ],
+      "development": [
+        "Your team is working around system limitations, which suggests the platform's workflow logic may not match how work actually flows. AI can help, but only if you map the real process first.",
+        "Handoff friction and scope creep indicate that transition points between people and stages are not clearly defined. AI will expose these gaps, not paper over them.",
+        "Rework and inconsistency suggest that quality criteria are implicit rather than explicit. AI needs clear definitions of 'done' and 'good' to assist effectively."
+      ]
+    },
+    "quickWins": [
+      "Audit one high-frequency report: map where the data comes from, what transformations happen manually, and where the time goes. This will surface the automation opportunities.",
+      "For your next proposal, use AI to draft the scope narrative based on the brief and a comparable past project. Time how long it takes to review and refine versus drafting from scratch.",
+      "Map the handoff points in one project type: what information needs to travel from stage to stage, and what currently gets lost or delayed. This will clarify where AI monitoring adds value."
+    ],
+    "readiness": {
+      "strengths": [
+        "Your documented processes and strong data foundations mean you can move quickly: AI can learn your patterns without requiring months of process mapping.",
+        "Your embedded AI adoption means your team already understands how to collaborate with AI tools, which reduces change management overhead.",
+        "Your integrated platform provides the structured data and workflow hooks AI needs to automate handoffs and reporting."
+      ],
+      "gaps": [
+        "Handoff friction and rework suggest that transition points between people and stages are not explicitly defined. AI will require you to map these clearly.",
+        "Scope creep indicates that boundaries between planned and ad-hoc work are fuzzy. AI can enforce boundaries, but only if you define them first.",
+        "Working around system limitations suggests the platform's workflow logic may not match reality. AI can help, but you will need to decide whether to fix the platform or build AI workarounds."
+      ]
+    },
+    "nextSteps": [
+      "Choose between project delivery coordination and proposal scoping as your starting point. Both scored almost identically. The right choice depends on where the pain is sharpest this quarter: if late project information is costing you client trust, start with coordination. If proposal cycles are delaying revenue recognition, start with scoping.",
+      "For your chosen workflow, map the current state in detail: who does what, where information lives, what handoffs occur, and where time is lost. This is the architecture work that makes AI deployment durable.",
+      "Define quality criteria explicitly: what makes a proposal 'good', a handoff 'complete', or a report 'accurate'. AI needs these definitions to assist effectively.",
+      "Run a pilot on one project type, proposal category, or report. Prove the pattern works, measure the time saved, and document what the team learned. Then extend to other areas.",
+      "Address the system limitations you are working around. Decide whether to fix the platform's workflow logic or build AI workarounds. Both are valid, but the choice shapes your long-term architecture.",
+      "Redirect recovered capacity deliberately. If AI saves 103\u2013171 hours per week, where do those hours go? Higher-value client work? Process improvement? Strategic projects? Make the reallocation explicit, or the time will disappear into coordination overhead again."
+    ],
+    "generatedAt": "2026-02-18T14:11:22.312Z"
+  },
+  "reportId": "c9741b67-c310-423b-8b33-6b4c63135f9d"
+}

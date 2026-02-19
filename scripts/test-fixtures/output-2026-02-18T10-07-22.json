@@ -1,0 +1,165 @@
+{
+  "status": "success",
+  "report": {
+    "id": "990a55db-2747-47e2-b6a7-02182117df0b",
+    "situationSummary": "Sarah, you are managing a 100-person consulting team where 65% of capacity is billable, but invisible work is eating the other 35%. Your team spends roughly 28,500 hours per year on coordination, rework, and manual handoffs \u2014 work that does not appear on timesheets but shows up as missed deadlines, inconsistent quality, and capacity constraints. The pattern you described \u2014 research duplication, handoff friction in delivery, and proposal rework \u2014 points to three workflows where structured AI collaboration could recover 300+ hours per week without changing headcount.",
+    "workflows": [
+      {
+        "archetypeId": "research-analysis",
+        "name": "Research and analysis for client work",
+        "whyThisMatters": "Your team spends roughly 12,000 hours per year conducting bespoke research for client engagements. The symptom you identified \u2014 too much time on coordination and admin around the real work \u2014 suggests research is not just slow, it is also duplicated and poorly captured. When findings are not reused, every project starts from scratch. AI can structure research workflows so insights accumulate rather than evaporate.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": true,
+          "complexity": true,
+          "learning": true
+        },
+        "currentState": "Consultants conduct research individually, often duplicating work done on previous projects. Findings live in email threads, slide decks, or someone's head. Junior staff spend disproportionate time on background research that senior staff have already done elsewhere. Quality varies depending on who is doing the work and how much time they have.",
+        "futureState": "AI assists with initial research synthesis, competitive intelligence gathering, and pattern identification across sources. Consultants spend less time compiling and more time interpreting. Findings are captured in a structured format that makes them discoverable for future projects. The team builds a research library that compounds in value rather than starting fresh each time.",
+        "considerations": "This workflow delivers velocity gains \u2014 research that took two days now takes half a day \u2014 but the bigger opportunity is capability. When research is structured and reusable, junior staff can access senior-level insights without senior-level time. The hours saved redirect to client-facing work, not just faster research. You will need to define what 'good enough' research looks like and where human judgment remains essential.",
+        "prerequisites": [
+          "Identifiable research patterns or types (market analysis, competitive intelligence, due diligence)",
+          "Quality standards for research output",
+          "Access to information sources (databases, reports, internal knowledge)"
+        ],
+        "pitfalls": [
+          "Treating AI as a search engine rather than a research assistant \u2014 it works best when given structure",
+          "Automating research without defining reuse standards \u2014 you get faster one-off work, not compounding value",
+          "Assuming AI can replace domain expertise \u2014 it accelerates synthesis, it does not replace judgment"
+        ]
+      },
+      {
+        "archetypeId": "project-delivery",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "You identified handoff friction as a primary symptom: things fall through the cracks when work moves between people or teams. In a 100-person firm with dedicated but disconnected systems, this is predictable. Project coordination is invisible work \u2014 status updates, task assignment, quality gates \u2014 that does not feel like the bottleneck until you measure it. Your team spends roughly 10,000 hours per year on this. AI can structure handoffs so context travels with the work.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": true,
+          "complexity": true,
+          "learning": true
+        },
+        "currentState": "Project status lives in multiple places: CRM, project management tools, email, and people's heads. Handoffs between teams rely on informal communication. Quality varies depending on who is involved. Scope creep happens silently because no one has a single view of what changed. Status updates are manual, unreliable, and consume hours each week.",
+        "futureState": "AI monitors project state across systems and surfaces risks before they become crises. Handoffs are structured: when work moves from scoping to delivery, the context moves with it. Status updates are generated automatically from task completion data. The team spends less time chasing and more time delivering. Quality becomes more consistent because the workflow enforces gates rather than relying on individual discipline.",
+        "considerations": "This workflow addresses both velocity and capability. Velocity: hours spent on status updates and coordination drop significantly. Capability: the team learns to design workflows with explicit handoff points and quality gates, which improves delivery even without AI. The challenge is not technical \u2014 it is getting the team to trust structured handoffs over informal communication. Start with one project type, prove the model, then expand.",
+        "prerequisites": [
+          "Some form of project tracking, even if informal",
+          "Identifiable project stages and handoff points",
+          "Willingness to make implicit coordination explicit"
+        ],
+        "pitfalls": [
+          "Automating coordination without fixing the underlying workflow \u2014 you get faster chaos",
+          "Treating AI as a project manager rather than a coordination assistant \u2014 human judgment still drives decisions",
+          "Implementing across all projects at once \u2014 start with one repeatable project type"
+        ]
+      },
+      {
+        "archetypeId": "document-processing",
+        "name": "Document processing and review",
+        "whyThisMatters": "Proposal and scoping work gets done more than once: revisions, corrections, miscommunication. This is the symptom of weak document infrastructure. When templates are inconsistent and version control is chaotic, every proposal starts from scratch. Document processing underpins both research and project delivery by providing the templates and standards that prevent the rework you described. Your team spends roughly 6,000 hours per year on this.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": true,
+          "complexity": true,
+          "learning": true
+        },
+        "currentState": "Proposals are assembled manually from previous examples. Templates exist but are not enforced. Version control relies on file naming conventions. Extracting key terms from contracts or agreements is manual. Quality varies depending on who wrote the last version. Rework happens because the first draft missed something that should have been standard.",
+        "futureState": "AI generates first drafts from structured inputs, enforces template standards, and extracts key terms from contracts automatically. Consultants spend less time formatting and more time refining the argument. Version control is automatic. The team builds a library of reusable components \u2014 scoping language, pricing models, risk frameworks \u2014 that improve with use. Proposals become faster and more consistent.",
+        "considerations": "This workflow delivers the highest recovery rate of the three: 75% of document processing hours are automatable because most of it is data entry and reconciliation. The hours saved redirect to client-facing work or higher-value scoping. The challenge is not technical \u2014 it is getting the team to adopt structured inputs rather than starting with a blank page. Document processing is infrastructure: it makes research and delivery workflows more effective.",
+        "prerequisites": [
+          "Sample documents for pattern identification",
+          "Clear quality standards for proposals and contracts",
+          "Identified document types to prioritise (proposals, scoping documents, agreements)"
+        ],
+        "pitfalls": [
+          "Automating document generation without defining quality standards \u2014 you get faster inconsistency",
+          "Treating AI as a writer rather than an assembly assistant \u2014 it works best with structured inputs",
+          "Implementing without addressing version control \u2014 automation does not fix chaos, it accelerates it"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "proposal-scoping",
+          "annualHours": 12150,
+          "annualCost": 562500,
+          "recoveryRange": {
+            "low": 281250,
+            "high": 281250
+          }
+        },
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 10350,
+          "annualCost": 479167,
+          "recoveryRange": {
+            "low": 239583,
+            "high": 239583
+          }
+        },
+        {
+          "archetypeId": "research-analysis",
+          "annualHours": 6075,
+          "annualCost": 393750,
+          "recoveryRange": {
+            "low": 196875,
+            "high": 196875
+          }
+        }
+      ],
+      "totalAnnualHours": 28575,
+      "totalAnnualCost": 1435417,
+      "conservativeRecovery": {
+        "low": 717708,
+        "high": 717708
+      },
+      "weeklyHoursRecovered": {
+        "low": 317,
+        "high": 317
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Individual team members are already using AI tools, which means you have early adopters who can champion structured workflows.",
+        "Partial process documentation gives you a foundation to build on \u2014 you know where the gaps are.",
+        "Mixed data foundations are honest and typical \u2014 some systems are reliable, others need work, and that is where you start."
+      ],
+      "development": [
+        "Dedicated systems that are not connected create handoff friction \u2014 integration does not have to be perfect, but key data needs to flow between systems.",
+        "Process knowledge that depends on who you ask means workflows are not repeatable \u2014 making implicit knowledge explicit is the first step to scaling it.",
+        "AI adoption at the individual level is valuable, but structured AI collaboration at the team level is where the capacity gains come from."
+      ]
+    },
+    "quickWins": [
+      "Audit your current proposal templates and identify the three most common proposal types \u2014 this is the foundation for document processing improvements.",
+      "Map the handoff points in one repeatable project type \u2014 where does work move between people, and what context gets lost in the handoff?",
+      "Identify the three research questions your team answers most frequently \u2014 these are the patterns where AI-assisted research delivers the fastest return."
+    ],
+    "readiness": {
+      "strengths": [
+        "Your team size and billable split mean you have the capacity to invest in workflow improvements without pausing client work.",
+        "Individual AI adoption means you have champions who understand the tools \u2014 the challenge is moving from individual productivity to team capability.",
+        "Your strategic focus on capacity without hiring aligns perfectly with the workflows recommended \u2014 these are capacity multipliers, not headcount reducers."
+      ],
+      "gaps": [
+        "Disconnected systems mean you will need to define integration points for project delivery coordination \u2014 not full integration, just key data flows.",
+        "Partial process documentation means some workflows will need to be made explicit before AI can assist \u2014 this is not a blocker, it is part of the work.",
+        "Mixed data foundations mean you will need to prioritise which systems to clean up first \u2014 start with the data that supports the highest-impact workflow."
+      ]
+    },
+    "nextSteps": [
+      "Define the research patterns your team repeats most frequently \u2014 market analysis, competitive intelligence, due diligence \u2014 and identify one to pilot.",
+      "Map the handoff points in one repeatable project type and define what context needs to travel with the work.",
+      "Audit your proposal templates and identify the three most common types \u2014 these are the foundation for document processing improvements.",
+      "Assess your current project tracking system and identify where status data lives \u2014 CRM, project management tools, email, or people's heads.",
+      "Identify 2-3 early adopters who can champion structured AI workflows and involve them in designing the pilot.",
+      "Schedule a Diagnose engagement to assess your process knowledge and data foundations in detail \u2014 this is where you identify the highest-impact starting point and the specific integration points that matter most."
+    ],
+    "generatedAt": "2026-02-18T10:07:22.756Z"
+  },
+  "reportId": "990a55db-2747-47e2-b6a7-02182117df0b"
+}

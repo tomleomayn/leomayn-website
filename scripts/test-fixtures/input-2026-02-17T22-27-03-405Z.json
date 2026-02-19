@@ -1,0 +1,58 @@
+{
+  "qualification": {
+    "name": "wewer",
+    "email": "qweq@lkasdax.xcom",
+    "company": "awas",
+    "companyWebsite": "asdasda",
+    "role": "ceo",
+    "roleOther": "",
+    "turnover": "50m-plus",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "law",
+    "teamSize": "151-300",
+    "strategicFocus": {
+      "primary": "costs",
+      "secondary": "capacity"
+    },
+    "painPoints": [
+      {
+        "area": "project-delivery",
+        "symptom": "inconsistency"
+      },
+      {
+        "area": "reporting",
+        "symptom": "rework"
+      }
+    ],
+    "aiAdoption": "individual",
+    "techEnvironment": "basic",
+    "processKnowledge": "partially-documented",
+    "dataFoundations": "mixed",
+    "billableSplit": 80
+  },
+  "sizing": [
+    {
+      "archetypeId": "document-processing",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "50k-75k",
+      "freeText": "It's just a really annoying process. "
+    },
+    {
+      "archetypeId": "project-delivery",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "under-5",
+      "costPerPerson": "50k-75k",
+      "freeText": "Yeah, we got just lots of different systems that don't talk to each other. "
+    },
+    {
+      "archetypeId": "proposal-scoping",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "75k-100k",
+      "freeText": "Proposals are expensive to produce. We don't get a very high close rate, and it takes our partners off paying business "
+    }
+  ]
+}
