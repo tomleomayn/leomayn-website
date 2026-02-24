@@ -14,6 +14,12 @@ const LOCAL_CHROME_PATHS = [
   '/Applications/Chromium.app/Contents/MacOS/Chromium',
 ]
 
+// Remote Chromium binary for @sparticuz/chromium-min on Vercel.
+// Downloaded once per cold start to /tmp, reused on warm invocations.
+// Must match the installed chromium-min version (143.0.4).
+const CHROMIUM_PACK_URL =
+  'https://github.com/Sparticuz/chromium/releases/download/v143.0.4/chromium-v143.0.4-pack.x64.tar'
+
 async function getExecutablePath(): Promise<string> {
   if (IS_LOCAL) {
     for (const p of LOCAL_CHROME_PATHS) {
@@ -21,15 +27,15 @@ async function getExecutablePath(): Promise<string> {
     }
     throw new Error('No Chrome/Chromium found. Install Google Chrome.')
   }
-  const chromium = await import('@sparticuz/chromium')
-  return await chromium.default.executablePath()
+  const chromium = await import('@sparticuz/chromium-min')
+  return await chromium.default.executablePath(CHROMIUM_PACK_URL)
 }
 
 async function getLaunchArgs(): Promise<string[]> {
   if (IS_LOCAL) {
     return ['--no-sandbox', '--disable-setuid-sandbox']
   }
-  const chromium = await import('@sparticuz/chromium')
+  const chromium = await import('@sparticuz/chromium-min')
   return chromium.default.args
 }
 

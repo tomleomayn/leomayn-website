@@ -10,7 +10,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
   // Enable experimental optimizations
-  serverExternalPackages: ['@sparticuz/chromium'],
   experimental: {
     optimizePackageImports: ['react', 'react-dom'],
   },
@@ -19,7 +18,6 @@ const nextConfig = {
       './lib/planner/fonts/**/*',
       './public/logo/logo-horizontal-1200x300.png',
       './public/logo/logo-horizontal.svg',
-      './node_modules/@sparticuz/chromium/bin/**/*',
     ],
   },
   images: {

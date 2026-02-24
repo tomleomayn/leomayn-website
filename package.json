@@ -23,6 +23,7 @@
     "@anthropic-ai/sdk": "^0.74.0",
     "@hookform/resolvers": "^5.2.2",
     "@sparticuz/chromium": "^143.0.4",
+    "@sparticuz/chromium-min": "^143.0.4",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25.0.3",
     "@types/react": "^19.2.7",
