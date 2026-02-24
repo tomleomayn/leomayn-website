@@ -72,8 +72,6 @@ export async function GET(
     })
   } catch (error) {
     console.error('PDF generation error:', error)
-    const message = error instanceof Error ? error.message : String(error)
-    const stack = error instanceof Error ? error.stack?.split('\n').slice(0, 5).join('\n') : ''
-    return NextResponse.json({ error: 'PDF generation failed', detail: message, stack }, { status: 500 })
+    return NextResponse.json({ error: 'PDF generation failed' }, { status: 500 })
   }
 }
