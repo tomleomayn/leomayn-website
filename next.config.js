@@ -19,6 +19,7 @@ const nextConfig = {
       './lib/planner/fonts/**/*',
       './public/logo/logo-horizontal-1200x300.png',
       './public/logo/logo-horizontal.svg',
+      './node_modules/@sparticuz/chromium/bin/**/*',
     ],
   },
   images: {
