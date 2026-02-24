@@ -13,6 +13,12 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['react', 'react-dom'],
   },
+  outputFileTracingIncludes: {
+    '/api/planner/pdf/[id]': [
+      './lib/planner/fonts/**/*',
+      './public/logo/logo-horizontal-1200x300.png',
+    ],
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

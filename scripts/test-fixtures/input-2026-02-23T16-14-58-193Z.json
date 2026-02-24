@@ -1,7 +1,7 @@
 {
   "qualification": {
     "name": "Jon Raven",
-    "email": "tom@leomayn.com",
+    "email": "test-emsere-v3@leomayn.com",
     "company": "Emsere",
     "companyWebsite": "www.Emsere.com",
     "role": "c-suite",
@@ -54,21 +54,21 @@
       "peopleInvolved": "4-8",
       "weeklyHours": "5-15",
       "costPerPerson": "senior",
-      "freeText": "It's always late information; it doesn't work. \n"
+      "freeText": "It's always late information; it doesn't work."
     },
     {
       "archetypeId": "proposal-scoping",
       "peopleInvolved": "9-15",
       "weeklyHours": "5-15",
       "costPerPerson": "senior",
-      "freeText": "Inaccurate information and time-consuming. "
+      "freeText": "Inaccurate information and time-consuming."
     },
     {
       "archetypeId": "management-reporting",
       "peopleInvolved": "4-8",
       "weeklyHours": "5-15",
       "costPerPerson": "lead-manager",
-      "freeText": "It's never on time and it's inaccurate. "
+      "freeText": "It's never on time and it's inaccurate."
     }
   ]
 }

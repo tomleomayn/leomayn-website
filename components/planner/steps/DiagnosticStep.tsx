@@ -78,7 +78,7 @@ export default function DiagnosticStep() {
 
       updateDiagnostic(data)
       setScoringResult(scoringResult)
-      setStep(2)
+      setStep(1)
     } catch {
       setSubmitError('We could not process your diagnostic. Please try again.')
     } finally {
@@ -88,6 +88,13 @@ export default function DiagnosticStep() {
 
   return (
     <div>
+      {/* Who this is for */}
+      <div className="bg-pearl rounded-lg p-5 mb-8 border border-coral/30">
+        <p className="text-sm text-slate/80">
+          This tool is designed for leaders in professional services and knowledge-work organisations with 10+ employees. You will answer ten questions about your firm, then receive a personalised report with prioritised workflow recommendations and business case numbers.
+        </p>
+      </div>
+
       <h2 className="text-3xl font-serif text-slate mb-2">About your organisation</h2>
       <p className="text-base text-slate/70 mb-8">
         Ten questions that help us understand your situation. Each one shapes your personalised report. Answer to the best of your ability.

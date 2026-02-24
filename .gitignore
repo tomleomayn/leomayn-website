@@ -72,3 +72,7 @@ docs/
 
 # QA screenshots
 qa-screenshots/
+
+# PDF test outputs
+scripts/test-output.*
+scripts/test-page-*.png

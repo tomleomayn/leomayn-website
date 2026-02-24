@@ -85,9 +85,9 @@ export default function WizardShell() {
   const renderStep = () => {
     switch (state.currentStep) {
       case 0:
-        return <QualificationStep />
-      case 1:
         return <DiagnosticStep />
+      case 1:
+        return <QualificationStep />
       case 2:
         return <SizingStep />
       case 3:

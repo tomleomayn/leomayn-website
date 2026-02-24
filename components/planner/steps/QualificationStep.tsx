@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useRouter } from 'next/navigation'
 import { usePlanner } from '../PlannerContext'
 import { TextField, SelectField, CheckboxField } from '../ui/FormFields'
 import { qualificationSchema, type QualificationData } from '@/lib/planner/types'
@@ -11,7 +10,6 @@ import { ROLE_OPTIONS, TURNOVER_OPTIONS } from '@/lib/planner/constants'
 
 export default function QualificationStep() {
   const { state, updateQualification, setStep } = usePlanner()
-  const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
@@ -40,19 +38,6 @@ export default function QualificationStep() {
     setSubmitting(true)
     setSubmitError('')
 
-    // Check turnover — route under £1M to decline
-    if (data.turnover === 'under-1m') {
-      // Fire-and-forget: send to qualify API for Attio lead capture
-      fetch('/api/planner/qualify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      }).catch(() => {})
-
-      router.push('/planning-for-ai-deployment/decline')
-      return
-    }
-
     try {
       // Send to qualify API for Attio lead capture (fire-and-forget)
       fetch('/api/planner/qualify', {
@@ -71,7 +56,7 @@ export default function QualificationStep() {
       }
 
       updateQualification(data)
-      setStep(1)
+      setStep(2)
     } catch {
       setSubmitError('Something went wrong. Please try again.')
     } finally {
@@ -81,9 +66,9 @@ export default function QualificationStep() {
 
   return (
     <div>
-      <h2 className="text-3xl font-serif text-slate mb-2">Tell us about you</h2>
+      <h2 className="text-3xl font-serif text-slate mb-2">Generate your personalised report</h2>
       <p className="text-base text-slate/70 mb-8">
-        We will use this to personalise your diagnostic report. Takes about one minute.
+        Your diagnostic is complete. To generate your personalised AI deployment report, we need a few details about you and your organisation.
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

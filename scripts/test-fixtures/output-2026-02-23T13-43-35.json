@@ -1,0 +1,166 @@
+{
+  "status": "success",
+  "report": {
+    "id": "d509f0f2-6abb-4a20-b9a3-34819a7fe037",
+    "situationSummary": "Emsere is a clinical trial solutions partner providing equipment rental, logistics, and site support services across 100+ countries. With a team of 76\u2013150 people and 65% of time spent on client-facing work, you are managing complex multi-site operations where coordination failures have direct consequences for trial timelines. You described a pattern that is common in clinical trial logistics: information arrives late and inaccurate, proposals take too long to scope and price, and reports are never on time. The invisible work is the constant chasing, reconciling, and firefighting that keeps your team from focusing on the client relationship. What positions you well: your processes are documented, your data foundations are strong, and AI is already embedded in how your organisation works. That means you are not starting from scratch \u2014 you are ready to redesign workflows that currently drain capacity.",
+    "priorityMapIntro": "Your diagnostic surfaced two workflows with almost identical priority: project delivery coordination and proposal and scoping. Both scored within half a point of each other, which means the right starting point depends on where you want the capacity gains to land. Project delivery coordination addresses the late, inaccurate information that cascades through your multi-site operations. Proposal and scoping addresses the time-consuming, inaccurate scoping process that bottlenecks your commercial pipeline. Management reporting ranked third, driven by the scope creep and handoff friction you described. All three workflows are viable starting points given your strong foundations.",
+    "workflows": [
+      {
+        "archetypeId": "project-delivery-coordination",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "In clinical trial logistics, late information compounds across sites, vendors, and timelines. You described information arriving late and systems that do not work \u2014 a pattern that suggests your coordination overhead is absorbing capacity that should be focused on client delivery. This workflow addresses the handoff friction between your internal teams and the inconsistency in how work gets picked up and progressed. Fixing this frees your team to focus on the client relationship rather than chasing status updates.",
+        "impactPotential": "high",
+        "implementationComplexity": "medium",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "Your team is managing multi-site trial logistics where information flows through multiple handoffs: equipment requests, site readiness checks, customs clearance, delivery confirmations. When information arrives late or incomplete, it cascades. Someone chases the vendor. Someone else updates the client. A third person reconciles the system. The work gets done, but the coordination overhead is invisible until you map it. Quality depends on who picks it up, and things fall through the cracks when work moves between people.",
+        "futureState": "AI-augmented coordination means automated status tracking across sites, proactive alerts when dependencies are at risk, and structured handoff protocols that ensure context travels with the work. Your team still makes the decisions \u2014 which site gets priority, how to handle a customs delay \u2014 but the system surfaces the information they need without manual chasing. The velocity gain is in eliminating the coordination tax. The capability gain is in building a coordination discipline that scales as you add sites or services.",
+        "considerations": "Your integrated line-of-business platform is an advantage here \u2014 AI can work with your existing workflows rather than requiring a parallel system. The challenge will be ensuring the AI understands the nuances of clinical trial timelines: a delay at one site may have no impact, while the same delay at another site could jeopardise a milestone. You will need to train the system on your prioritisation logic, which means involving the people who currently make those calls.",
+        "prerequisites": [
+          "Identifiable project stages and handoff points",
+          "Some form of project tracking system (even informal)",
+          "Clear ownership of coordination tasks within the team"
+        ],
+        "pitfalls": [
+          "Automating status updates without fixing the underlying handoff process \u2014 you get faster alerts about the same problems",
+          "Assuming AI can prioritise without human judgment \u2014 clinical trial logistics require context that only your team has",
+          "Rolling out across all sites at once \u2014 start with one high-volume route and prove the model"
+        ]
+      },
+      {
+        "archetypeId": "proposal-and-scoping",
+        "name": "Proposal and scoping",
+        "whyThisMatters": "You described proposals as time-consuming and inaccurate, with too much coordination overhead and rework. In clinical trial logistics, every proposal requires scoping across equipment types, site locations, customs requirements, and delivery timelines. That complexity means your commercial pipeline is bottlenecked by the people who know how to price it. This workflow addresses both the time drain and the inconsistency, freeing senior capacity while improving pricing accuracy.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "green"
+        },
+        "currentState": "A request comes in for equipment rental across multiple trial sites. Someone pulls past proposals to estimate pricing. Someone else checks equipment availability. A third person reviews customs requirements for each country. The proposal gets drafted, reviewed, revised, and sent. The process works, but it is slow and inconsistent. Pricing depends on who scopes it and whether they remember the edge cases from the last similar trial. Rework happens when the initial scope missed a requirement or underestimated complexity.",
+        "futureState": "AI-augmented scoping means the system drafts the initial proposal by pulling from past trials with similar profiles: equipment types, site locations, customs complexity. Your team reviews and adjusts based on client-specific nuances \u2014 trial phase, timeline constraints, special handling requirements. The velocity gain is in eliminating the manual assembly of pricing components. The capability gain is in building a scoping discipline that captures your institutional knowledge: which equipment combinations are common, which countries have customs delays, which clients have non-standard requirements.",
+        "considerations": "Your strong data foundations mean you likely have the historical proposal data needed to train the system. The challenge will be ensuring the AI understands the difference between a straightforward equipment rental and a complex multi-site logistics package. You will need to define the scoping variables that matter \u2014 trial phase, site count, equipment complexity \u2014 and ensure the system surfaces them for human review rather than auto-generating a price.",
+        "prerequisites": [
+          "Access to past proposals for pattern extraction",
+          "Some form of pricing framework (even rough)",
+          "Clear ownership of the proposal process"
+        ],
+        "pitfalls": [
+          "Automating pricing without capturing the judgment calls that experienced team members make \u2014 you get faster proposals that miss edge cases",
+          "Treating all proposals as equivalent \u2014 a Phase I trial with 5 sites is not the same as a Phase III trial with 50 sites",
+          "Skipping the review step to save time \u2014 AI should draft, humans should validate"
+        ]
+      },
+      {
+        "archetypeId": "management-reporting",
+        "name": "Management reporting",
+        "whyThisMatters": "You described reports that are never on time and never accurate. In a clinical trial logistics operation, management reporting pulls data from multiple sources: equipment utilisation, site delivery status, revenue by trial phase, customs delays. The manual reconciliation absorbs hours every week, and the delays mean leadership is making decisions on stale data. This workflow addresses both the time drain and the trust gap, freeing capacity while improving decision quality.",
+        "impactPotential": "medium",
+        "implementationComplexity": "high",
+        "threeConditionsCheck": {
+          "impact": "amber",
+          "complexity": "amber",
+          "learning": "red"
+        },
+        "currentState": "Someone pulls utilisation data from the equipment tracking system, revenue data from the finance system, and delivery status from the logistics platform. They reconcile discrepancies, format the data for leadership, and send the report. By the time it is ready, the data is already outdated. Leadership does not fully trust the numbers because they know the manual reconciliation introduces errors. The process works, but it is fragile and time-consuming.",
+        "futureState": "AI-augmented reporting means automated data pulls, reconciliation, and formatting. The system flags discrepancies for human review rather than forcing someone to hunt for them. Your team still interprets the data and adds context \u2014 why utilisation dropped last month, which trials are at risk \u2014 but the mechanical work of assembling the report is automated. The velocity gain is in eliminating the weekly reconciliation grind. The capability gain is in building a reporting discipline that ensures data quality at source rather than fixing it downstream.",
+        "considerations": "Your integrated line-of-business platform should make this workflow more straightforward than it would be in a disconnected tech environment. The challenge will be ensuring the AI understands the reporting logic: how to handle equipment that is in transit, how to allocate revenue across multi-site trials, how to flag customs delays that impact delivery timelines. You will need to involve the people who currently own the reporting process to define those rules.",
+        "prerequisites": [
+          "Identifiable data sources across systems",
+          "Clear reporting requirements and cadence",
+          "Someone who currently owns the reporting process"
+        ],
+        "pitfalls": [
+          "Automating the report without fixing the underlying data quality issues \u2014 you get faster reports with the same errors",
+          "Assuming AI can interpret the data without human context \u2014 leadership needs the story, not just the numbers",
+          "Rolling out across all reports at once \u2014 start with one high-frequency report and prove the model"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 2700,
+          "annualCost": 130000,
+          "recoveryRange": {
+            "low": 55250,
+            "high": 74750
+          }
+        },
+        {
+          "archetypeId": "proposal-scoping",
+          "annualHours": 5400,
+          "annualCost": 260000,
+          "recoveryRange": {
+            "low": 110500,
+            "high": 149500
+          }
+        },
+        {
+          "archetypeId": "management-reporting",
+          "annualHours": 2700,
+          "annualCost": 170000,
+          "recoveryRange": {
+            "low": 114750,
+            "high": 140250
+          }
+        }
+      ],
+      "totalAnnualHours": 10800,
+      "totalAnnualCost": 560000,
+      "conservativeRecovery": {
+        "low": 280500,
+        "high": 364500
+      },
+      "weeklyHoursRecovered": {
+        "low": 120,
+        "high": 156
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Your processes are well documented with SOPs, templates, and playbooks, which means you have the structured workflows needed to train AI systems effectively.",
+        "Your data foundations are strong \u2014 data is consistent, accessible, and trusted for decisions \u2014 which eliminates the most common blocker to AI deployment.",
+        "AI is already embedded in how your organisation works, which means your team has the literacy and adoption momentum to move quickly on new workflows."
+      ],
+      "development": [
+        "Your integrated line-of-business platform is an advantage, but it also means AI workflows will need to integrate with existing systems rather than operating in parallel \u2014 this requires technical coordination.",
+        "Leadership alignment will be critical: you are targeting capacity gains without hiring, which means redirecting recovered hours to higher-value work rather than absorbing them as slack.",
+        "Change management across a 76\u2013150 person team will require structured communication and training to ensure adoption is consistent rather than patchy."
+      ]
+    },
+    "quickWins": [
+      "Map your proposal workflow on a whiteboard with the people who currently own it: identify every handoff, decision point, and data source. This surfaces the coordination overhead that AI can eliminate.",
+      "Run a retrospective on your last three project delivery issues: what information arrived late, who chased it, and how long it took to resolve. This builds the case for automated coordination.",
+      "Audit your management reporting process: track how long it takes to compile each report, where discrepancies come from, and how often leadership questions the numbers. This quantifies the trust gap."
+    ],
+    "readiness": {
+      "strengths": [
+        "Your strong data foundations mean you can move quickly on AI workflows without spending months cleaning data or building integrations.",
+        "Your documented processes provide the structured workflows needed to train AI systems effectively \u2014 you are not starting from scratch.",
+        "Your existing AI adoption means your team has the literacy and momentum to adopt new workflows without extensive change management."
+      ],
+      "gaps": [
+        "Leadership alignment on where recovered capacity gets redirected: capacity gains only deliver value if the hours are reinvested in higher-value work, not absorbed as slack.",
+        "Change management discipline across a 76\u2013150 person team: adoption will be uneven unless you have a structured rollout plan with training and feedback loops.",
+        "Technical coordination with your integrated line-of-business platform: AI workflows will need to integrate with existing systems, which requires planning and testing."
+      ]
+    },
+    "nextSteps": [
+      "Choose your starting workflow based on where you want the capacity gains to land: project delivery coordination frees operational capacity, proposal and scoping frees commercial capacity. Both are equally viable given your foundations.",
+      "Engage with Leomayn for a full Diagnose: this light diagnostic identified the workflows, but a full engagement would map the specific handoffs, data flows, and decision points that AI needs to understand. That requires access to your team, systems, and historical data.",
+      "Define the success metrics for your chosen workflow: how much time should be recovered, what quality improvements matter, and where the freed capacity gets redirected. This ensures the business case is grounded in your specific economics.",
+      "Identify the internal owners for each workflow: who currently manages project delivery coordination, who owns the proposal process, who compiles management reports. These people will be critical to designing the AI-augmented workflow.",
+      "Plan the rollout: start with one high-volume workflow (e.g. one trial route for project delivery, one proposal type for scoping) and prove the model before scaling across the organisation.",
+      "Build the change management plan: how will you communicate the change, train the team, and gather feedback. Adoption is the difference between a successful deployment and a tool that sits unused."
+    ],
+    "generatedAt": "2026-02-23T13:43:35.865Z"
+  },
+  "reportId": "d509f0f2-6abb-4a20-b9a3-34819a7fe037"
+}

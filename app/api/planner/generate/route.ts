@@ -199,6 +199,7 @@ export async function POST(request: Request) {
           name: qualification.name,
           qualification,
           diagnostic,
+          topArchetypes,
           companyContext,
           createdAt: new Date().toISOString(),
         },

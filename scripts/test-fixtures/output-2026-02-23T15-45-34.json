@@ -1,0 +1,168 @@
+{
+  "status": "success",
+  "report": {
+    "id": "aab0f025-e2c5-4909-9594-b7f750cd9602",
+    "situationSummary": "Emsere operates at the intersection of clinical trial logistics and equipment management, supporting pharmaceutical and biotech clients across 100+ countries. With a team of 76 to 150 people, you are managing complex, multi-stage projects where timing, accuracy, and coordination are critical. The pain you described is consistent across three operational areas: project delivery arrives late with incomplete information, proposals consume disproportionate time despite strong documentation, and management reporting is chronically late and unreliable. What is working in your favour: you have well-documented processes, strong data foundations, embedded AI adoption, and an integrated platform. You are not starting from scratch. The challenge is that your current workflows were designed for a smaller operation, and the coordination overhead is now outpacing the value work.",
+    "priorityMapIntro": "Two workflows emerged as equally strong starting points: project delivery coordination and proposal and scoping. Both scored within half a point of each other, and both connect directly to the pain signals you identified. Project delivery coordination addresses the late information and handoff friction you described in reporting and active delivery. Proposal and scoping tackles the time-consuming coordination work and rework patterns that slow down your client-facing process. Management reporting ranked third, driven by scope creep and tool limitations. The right starting point depends on whether you prioritise internal delivery flow or client-facing responsiveness.",
+    "workflows": [
+      {
+        "archetypeId": "project-delivery-coordination",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "You identified a pattern where information arrives late and work falls through the cracks during handoffs. In clinical trial logistics, where equipment availability, customs clearance, and site readiness are time-sensitive, late information cascades into delays, rework, and client escalations. This workflow addresses the root cause: the coordination overhead that prevents your team from seeing what is coming, what is blocked, and where decisions are needed.",
+        "impactPotential": "high",
+        "implementationComplexity": "medium",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "A project moves from study startup through equipment deployment, site training, and closedown. Each stage involves multiple handoffs: procurement to logistics, logistics to training, training to site management. Status updates are manual. Someone chases for confirmation that equipment shipped, that training happened, that customs cleared. Information arrives in emails, spreadsheets, and your platform, but no single view shows what is at risk. By the time a delay surfaces, it is already impacting the client timeline.",
+        "futureState": "If you were to redesign this workflow with AI assistance, the system would monitor project stages in real time, flag dependencies before they become blockers, and surface decisions that need human judgment. When equipment is delayed at customs, the system alerts the project lead and suggests mitigation options based on past similar cases. When a training session is overdue, it escalates automatically. Your team still makes the calls on client communication and contingency plans, but the system removes the chasing, the manual status checks, and the risk of something slipping through. The velocity gain is faster handoffs. The capability gain is predictive visibility: you see problems forming, not just problems that have already landed.",
+        "considerations": "Your integrated platform is an advantage here, but it also means the workflow redesign will need to work within that system's constraints. The question is whether your platform can surface the right signals at the right time, or whether you need a coordination layer that sits on top of it. The other consideration is change management: your team is used to chasing updates manually. Shifting to a system that surfaces what needs attention requires trust that the system will not miss something critical.",
+        "prerequisites": [
+          "Identifiable project stages and handoff points within your platform",
+          "Clear ownership of each stage (even if informal)",
+          "Access to historical project data to train pattern recognition"
+        ],
+        "pitfalls": [
+          "Automating status updates without fixing the underlying handoff process just produces faster noise",
+          "Over-reliance on the system: if the team stops proactively communicating, you lose the informal intelligence that catches edge cases",
+          "Assuming the platform will surface everything: some risks are contextual and require human judgment to spot"
+        ]
+      },
+      {
+        "archetypeId": "proposal-and-scoping",
+        "name": "Proposal and scoping",
+        "whyThisMatters": "You identified that proposals are time-consuming despite having strong documentation, and that work gets done more than once due to revisions and miscommunication. In clinical trial logistics, where proposals involve equipment lists, customs requirements, site-specific logistics, and pricing across multiple countries, the coordination overhead is significant. This workflow addresses both the time drain and the rework pattern by structuring how information flows from enquiry through to scoped, priced proposal.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "An enquiry arrives: a pharmaceutical client needs equipment for a Phase III trial across 15 sites in 8 countries. Someone pulls together equipment lists, checks availability, confirms customs requirements, calculates pricing, and drafts the proposal. Each step involves chasing information: what did we quote for a similar trial last year, what are the current customs rules in Brazil, is this equipment available in the required timeframe. The proposal goes through internal review, comes back with questions, gets revised, and finally goes to the client. The work is not complex, but it is fragmented. The time cost is in the coordination, not the thinking.",
+        "futureState": "If you were to redesign this workflow with AI assistance, the system would pull together the initial scope based on the enquiry: equipment lists from similar past trials, current availability from your inventory system, customs requirements by country, and pricing based on your framework. The first draft is 80% complete before a human touches it. Your team reviews, adjusts for client-specific nuances, and adds the strategic positioning. The system flags where information is missing or where assumptions need validation. The velocity gain is faster turnaround. The capability gain is consistency: every proposal starts from the same structured foundation, and your team's time goes into the client-specific value, not the assembly work.",
+        "considerations": "Your strong process documentation and data foundations mean this workflow is well-positioned to move quickly. The challenge is ensuring the system learns from your team's adjustments: when someone overrides a pricing assumption or adds a custom logistics solution, that intelligence needs to feed back into the system. The other consideration is client expectations: if you can turn proposals around faster, does that change how clients engage with you, and are you ready for that shift.",
+        "prerequisites": [
+          "Access to past proposals and pricing data for pattern extraction",
+          "Clear pricing framework (even if it allows for discretion)",
+          "Identifiable proposal stages: enquiry, scoping, pricing, review, delivery"
+        ],
+        "pitfalls": [
+          "Automating proposal generation without fixing the scoping process just produces faster inaccurate proposals",
+          "Over-standardisation: clinical trials vary significantly, and the system needs to allow for custom solutions",
+          "Losing the client relationship intelligence that comes from manual proposal work: your team knows which clients need more hand-holding, which are price-sensitive, which value speed over cost"
+        ]
+      },
+      {
+        "archetypeId": "management-reporting",
+        "name": "Management reporting",
+        "whyThisMatters": "You identified that reports are never on time and are inaccurate, and that scope expands beyond what was planned. In a clinical trial logistics operation, where leadership needs visibility on utilisation, revenue, pipeline, and project status across multiple countries and clients, late or unreliable reporting creates blind spots. This workflow addresses the root cause: the manual data reconciliation and formatting work that delays reports and introduces errors.",
+        "impactPotential": "medium",
+        "implementationComplexity": "high",
+        "threeConditionsCheck": {
+          "impact": "amber",
+          "complexity": "amber",
+          "learning": "red"
+        },
+        "currentState": "Someone pulls data from your platform: project status, equipment utilisation, revenue by client, pipeline by region. They cross-reference with finance data, check for discrepancies, format into a report, and send to leadership. The process takes hours, sometimes days. By the time the report lands, some of the data is already outdated. Leadership asks follow-up questions, which require pulling more data, and the cycle repeats. The work is not intellectually demanding, but it is time-consuming and error-prone. The person doing it knows the data is not always accurate, but there is no time to dig deeper.",
+        "futureState": "If you were to redesign this workflow with AI assistance, the system would pull data from your platform in real time, reconcile discrepancies automatically, and generate reports on demand. Leadership gets a dashboard that updates continuously, not a static report that is out of date by the time it arrives. When someone asks a follow-up question, the system surfaces the underlying data and flags where assumptions or estimates are involved. The velocity gain is faster reporting. The capability gain is real-time visibility: leadership can see what is happening now, not what happened last week.",
+        "considerations": "Your integrated platform and strong data foundations mean this workflow is technically feasible, but the implementation complexity is higher because it requires connecting multiple data sources and ensuring the reconciliation logic is robust. The other consideration is change management: leadership is used to receiving reports, not interrogating dashboards. The shift from static reports to real-time visibility requires a different way of working, and not everyone will adapt at the same pace.",
+        "prerequisites": [
+          "Identifiable data sources within your platform and finance systems",
+          "Clear reporting requirements: what leadership needs to see and how often",
+          "Someone who currently owns the reporting process and understands the reconciliation logic"
+        ],
+        "pitfalls": [
+          "Automating reporting without fixing the underlying data quality issues just produces faster inaccurate reports",
+          "Over-engineering the dashboard: leadership does not need every data point, they need the signals that matter for decisions",
+          "Assuming real-time reporting eliminates the need for human interpretation: some trends and risks require context that only your team can provide"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 2700,
+          "annualCost": 130000,
+          "recoveryRange": {
+            "low": 55250,
+            "high": 74750
+          }
+        },
+        {
+          "archetypeId": "proposal-scoping",
+          "annualHours": 5400,
+          "annualCost": 260000,
+          "recoveryRange": {
+            "low": 110500,
+            "high": 149500
+          }
+        },
+        {
+          "archetypeId": "management-reporting",
+          "annualHours": 2700,
+          "annualCost": 170000,
+          "recoveryRange": {
+            "low": 114750,
+            "high": 140250
+          }
+        }
+      ],
+      "totalAnnualHours": 10800,
+      "totalAnnualCost": 560000,
+      "conservativeRecovery": {
+        "low": 280500,
+        "high": 364500
+      },
+      "weeklyHoursRecovered": {
+        "low": 120,
+        "high": 156
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Well-documented processes with SOPs, templates, and playbooks provide a strong foundation for workflow redesign.",
+        "Strong data foundations mean the system can trust the inputs and focus on surfacing insights rather than cleaning data.",
+        "AI is already embedded across the organisation, so the team is familiar with AI-assisted workflows and the change management overhead is lower.",
+        "Fully integrated platform means data flows are already structured, reducing the technical complexity of connecting systems."
+      ],
+      "development": [
+        "Leadership alignment on what real-time visibility means in practice: dashboards require a different engagement model than static reports.",
+        "Change management capability to shift the team from manual coordination to system-assisted workflows without losing the informal intelligence that catches edge cases.",
+        "Training on how to interpret AI-generated outputs: the team needs to know when to trust the system and when to override it based on contextual judgment."
+      ]
+    },
+    "quickWins": [
+      "Map your proposal workflow on a whiteboard with your team: from enquiry through to delivery, identify every handoff, decision point, and place where information gets chased.",
+      "Run a retrospective on your last three late projects: what information arrived late, who was waiting for it, and what would have prevented the delay.",
+      "Audit your management reporting process: time how long it takes to produce the next report, and document every data source, reconciliation step, and formatting decision."
+    ],
+    "readiness": {
+      "strengths": [
+        "Strong process documentation means you can move quickly from diagnosis to implementation without spending months mapping workflows.",
+        "Embedded AI adoption means your team is already comfortable with AI-assisted work and the learning curve is shorter.",
+        "Integrated platform reduces the technical complexity of connecting data sources and automating workflows.",
+        "Clear strategic focus on increasing capacity without hiring aligns with the velocity and capability gains these workflows deliver."
+      ],
+      "gaps": [
+        "Leadership communication on what changes and what stays the same: your team needs to understand that AI assistance is about removing coordination overhead, not replacing their judgment.",
+        "Time to upskill on AI collaboration: even with embedded AI adoption, these workflows require structured interaction with AI systems, and that is a learnable skill.",
+        "Governance around when to trust the system and when to override it: you need clear principles for how the team engages with AI-generated outputs."
+      ]
+    },
+    "nextSteps": [
+      "Choose your starting point: project delivery coordination or proposal and scoping. Both are equally strong candidates. The right choice depends on whether you prioritise internal delivery flow or client-facing responsiveness.",
+      "Run a two-week workflow audit on your chosen area: map the current state in detail, time every step, and identify where coordination overhead is highest.",
+      "Convene a cross-functional working group: include people who own the workflow today, people who depend on its outputs, and someone with technical knowledge of your platform.",
+      "Define success metrics before you start: what does better look like in concrete terms? Faster turnaround, fewer errors, less time chasing information, more capacity for strategic work?",
+      "Identify a pilot project: a single client engagement or a single reporting cycle where you can test the redesigned workflow without risking business-critical operations.",
+      "Document what you learn: the pilot will surface assumptions, edge cases, and constraints that were not visible in the diagnostic. Capture those insights and use them to refine the workflow before scaling."
+    ],
+    "generatedAt": "2026-02-23T15:45:34.003Z"
+  },
+  "reportId": "aab0f025-e2c5-4909-9594-b7f750cd9602"
+}

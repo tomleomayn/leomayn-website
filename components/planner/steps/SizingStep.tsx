@@ -20,7 +20,16 @@ import {
 
 const sizingFormSchema = z.object({
   entries: z.array(sizingEntrySchema).length(3),
-})
+}).refine(
+  (data) => {
+    const first = data.entries[0]
+    return first && first.freeText && first.freeText.trim().length > 0
+  },
+  {
+    message: 'Please describe what frustrates you about this workflow',
+    path: ['entries', 0, 'freeText'],
+  }
+)
 
 type SizingFormData = z.infer<typeof sizingFormSchema>
 
@@ -172,7 +181,7 @@ export default function SizingStep() {
               />
 
               <SelectField
-                label="Approximate average base salary for people involved in this workflow"
+                label="Typical seniority level of people involved"
                 error={errors.entries?.[index]?.costPerPerson}
                 context={QUESTION_CONTEXT.costPerPerson}
                 registration={register(`entries.${index}.costPerPerson`)}
@@ -187,10 +196,13 @@ export default function SizingStep() {
                 <textarea
                   maxLength={500}
                   rows={3}
-                  placeholder="Optional, but even a sentence or two helps us personalise your report"
+                  placeholder={index === 0 ? 'Even a sentence or two helps us personalise your report' : 'Optional, but even a sentence or two helps us personalise your report'}
                   className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate resize-none text-sm"
                   {...register(`entries.${index}.freeText`)}
                 />
+                {index === 0 && errors.entries?.[0]?.freeText && (
+                  <p className="text-red-600 text-xs mt-1">{errors.entries[0].freeText.message}</p>
+                )}
               </FieldWrapper>
 
               <input type="hidden" {...register(`entries.${index}.archetypeId`)} />

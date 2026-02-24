@@ -536,12 +536,11 @@ export const WEEKLY_HOURS_OPTIONS = [
 ] as const
 
 export const COST_PER_PERSON_OPTIONS = [
-  { value: 'under-30k', label: 'Under \u00a330K', midpoint: 25000 },
-  { value: '30k-50k', label: '\u00a330K\u2013\u00a350K', midpoint: 40000 },
-  { value: '50k-75k', label: '\u00a350K\u2013\u00a375K', midpoint: 62500 },
-  { value: '75k-100k', label: '\u00a375K\u2013\u00a3100K', midpoint: 87500 },
-  { value: '100k-150k', label: '\u00a3100K\u2013\u00a3150K', midpoint: 125000 },
-  { value: 'over-150k', label: 'Over \u00a3150K', midpoint: 175000 },
+  { value: 'junior', label: 'Junior (0\u20133 years)', midpoint: 30000 },
+  { value: 'mid-level', label: 'Mid-level (3\u20137 years)', midpoint: 45000 },
+  { value: 'senior', label: 'Senior (7\u201312 years)', midpoint: 65000 },
+  { value: 'lead-manager', label: 'Lead / Manager', midpoint: 85000 },
+  { value: 'director-partner', label: 'Director / Partner', midpoint: 125000 },
 ] as const
 
 // ============================================
@@ -570,7 +569,7 @@ export const QUESTION_CONTEXT: Record<string, string> = {
   billableSplit:
     'This matters because improving workflows for client-facing staff has a direct revenue impact. Their recovered time can be reinvested in client work.',
   costPerPerson:
-    'Annual base salary before pension, NI, and benefits. We apply a standard employer cost uplift in the calculation.',
+    'This helps us estimate the cost of time spent on this workflow. We map seniority to a salary midpoint and apply a standard employer cost uplift.',
   freeText:
     'The more context you give us, the more specific your report will be. Even a sentence or two makes a difference.',
 }
@@ -583,7 +582,7 @@ export const QUESTION_CONTEXT: Record<string, string> = {
 export const GOAL_PRIMARY_WEIGHT = 2
 export const GOAL_SECONDARY_WEIGHT = 1
 export const FEASIBILITY_BONUS = 2
-export const FEASIBILITY_PENALTY = -3
+export const FEASIBILITY_PENALTY = -1
 export const FOUNDATION_PENALTY_WEIGHT = 2
 export const WORKING_WEEKS_PER_YEAR = 45
 export const HOURS_PER_WEEK = 37.5
@@ -599,9 +598,9 @@ export const RECOVERY_CEILING = 0.85
 // ============================================
 
 export const CONDITION_LABELS = {
-  impact: { green: 'High impact', amber: 'Medium impact', red: 'Low impact' },
-  complexity: { green: 'Low complexity', amber: 'Medium complexity', red: 'High complexity' },
-  learning: { green: 'High learning value', amber: 'Moderate learning value', red: 'Low learning value' },
+  impact: { green: 'Strong impact alignment', amber: 'Moderate impact alignment', red: 'Limited impact alignment' },
+  complexity: { green: 'Low implementation complexity', amber: 'Moderate implementation complexity', red: 'High implementation complexity' },
+  learning: { green: 'High learning value', amber: 'Moderate learning value', red: 'Limited learning value' },
 } as const
 
 // ============================================
@@ -616,6 +615,20 @@ export const FIRM_TYPE_REPORT_LABELS: Record<string, string> = {
   law: 'legal practice',
   consulting: 'consulting firm',
   other: 'service organisation',
+}
+
+// ============================================
+// Role display labels (human-readable for PDF cover page)
+// ============================================
+
+export const ROLE_DISPLAY_LABELS: Record<string, string> = {
+  'founder-ceo': 'Founder & CEO',
+  'c-suite': 'C-Suite Executive',
+  'director-vp': 'Director',
+  'head-of': 'Head of Department',
+  'manager': 'Manager',
+  'consultant': 'Consultant',
+  'other': '',
 }
 
 // ============================================
@@ -646,8 +659,8 @@ export function getRecoveryPercentageRange(archetypeId: string): { low: number; 
 // ============================================
 
 export const WIZARD_STEPS = [
-  { label: 'About you', shortLabel: 'You' },
   { label: 'Your firm', shortLabel: 'Firm' },
+  { label: 'About you', shortLabel: 'You' },
   { label: 'Size it up', shortLabel: 'Sizing' },
   { label: 'Your report', shortLabel: 'Report' },
 ] as const

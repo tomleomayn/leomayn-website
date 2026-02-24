@@ -55,7 +55,7 @@ export function PlannerProvider({ children }: { children: ReactNode }) {
   // Hydrate from sessionStorage on mount
   useEffect(() => {
     const stored = loadFromStorage()
-    if (stored && stored.qualification) {
+    if (stored && (stored.qualification || stored.diagnostic)) {
       setHasExistingSession(true)
       setState(stored)
     }

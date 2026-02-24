@@ -35,21 +35,21 @@
       "archetypeId": "document-processing",
       "peopleInvolved": "16-30",
       "weeklyHours": "5-15",
-      "costPerPerson": "30k-50k",
+      "costPerPerson": "mid-level",
       "freeText": "Reviewing compliance documentation manually for HPRC submissions for pharma is really detailed work, really time-consuming, really manual, and really high jeopardy if you get it wrong. "
     },
     {
       "archetypeId": "management-reporting",
       "peopleInvolved": "9-15",
       "weeklyHours": "5-15",
-      "costPerPerson": "under-30k",
+      "costPerPerson": "junior",
       "freeText": "Oh, I mean, it's just a pain. This is very difficult to pull all the information we need, and it's just very painful. Still inaccurate. It's a time wasted presenting in PowerPoint and not enough time spent on insights. "
     },
     {
       "archetypeId": "proposal-scoping",
       "peopleInvolved": "4-8",
       "weeklyHours": "5-15",
-      "costPerPerson": "50k-75k",
+      "costPerPerson": "senior",
       "freeText": "It just takes loads of time to do it well. It's time-sensitive, and actually the result is that mostly it's not done well enough. \n"
     }
   ]

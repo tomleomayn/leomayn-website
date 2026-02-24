@@ -1,12 +1,10 @@
 import { NextResponse } from 'next/server'
 import { kv } from '@vercel/kv'
-import { renderToBuffer } from '@react-pdf/renderer'
-import type { DocumentProps } from '@react-pdf/renderer'
-import React from 'react'
-import { PlannerPdfDocument } from '@/lib/planner/pdf-template'
-import type { GeneratedReport, QualificationData, DiagnosticData } from '@/lib/planner/types'
+import { buildPdfHtml } from '@/lib/planner/pdf-html-template'
+import { renderPdfWithPuppeteer } from '@/lib/planner/pdf-renderer'
+import type { GeneratedReport, QualificationData, DiagnosticData, RankedArchetype } from '@/lib/planner/types'
 
-export const maxDuration = 60
+export const maxDuration = 120
 
 interface StoredReport {
   report: GeneratedReport
@@ -15,6 +13,7 @@ interface StoredReport {
   name: string
   qualification?: QualificationData
   diagnostic?: DiagnosticData
+  topArchetypes?: RankedArchetype[]
   companyContext?: string
   createdAt: string
 }
@@ -41,25 +40,32 @@ export async function GET(
       )
     }
 
-    // Generate PDF on-demand
-    // Type assertion: PlannerPdfDocument returns <Document> but TS can't infer through the wrapper
-    const pdfBuffer = await renderToBuffer(
-      React.createElement(PlannerPdfDocument, {
-        report: stored.report,
-        companyName: stored.company,
-        recipientName: stored.name,
-        qualification: stored.qualification,
-        diagnostic: stored.diagnostic,
-        companyContext: stored.companyContext,
-      }) as unknown as React.ReactElement<DocumentProps>
-    )
+    // Validate required fields
+    if (!stored.report || !stored.company || !stored.name) {
+      return NextResponse.json(
+        { error: 'Stored report data is incomplete' },
+        { status: 500 }
+      )
+    }
 
-    // Return PDF (convert Buffer to Uint8Array for Response compatibility)
+    // Generate PDF via Puppeteer
+    const html = buildPdfHtml({
+      report: stored.report,
+      companyName: stored.company,
+      recipientName: stored.name,
+      qualification: stored.qualification,
+      diagnostic: stored.diagnostic,
+      topArchetypes: stored.topArchetypes,
+      companyContext: stored.companyContext,
+    })
+
+    const pdfBuffer = await renderPdfWithPuppeteer(html)
+
     return new Response(new Uint8Array(pdfBuffer), {
       status: 200,
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': `inline; filename="AI-Deployment-Plan-${stored.company.replace(/[^a-zA-Z0-9]/g, '-')}.pdf"`,
+        'Content-Disposition': `inline; filename="AI-Deployment-Report-${stored.company.replace(/[^a-zA-Z0-9]/g, '-')}.pdf"`,
         'Cache-Control': 'private, max-age=3600',
       },
     })
