@@ -53,21 +53,21 @@
       "archetypeId": "project-delivery",
       "peopleInvolved": "4-8",
       "weeklyHours": "5-15",
-      "costPerPerson": "senior",
+      "costPerPerson": "tier-4",
       "freeText": "It's always late information; it doesn't work."
     },
     {
       "archetypeId": "proposal-scoping",
       "peopleInvolved": "9-15",
       "weeklyHours": "5-15",
-      "costPerPerson": "senior",
+      "costPerPerson": "tier-4",
       "freeText": "Inaccurate information and time-consuming."
     },
     {
       "archetypeId": "management-reporting",
       "peopleInvolved": "4-8",
       "weeklyHours": "5-15",
-      "costPerPerson": "lead-manager",
+      "costPerPerson": "tier-5",
       "freeText": "It's never on time and it's inaccurate."
     }
   ]

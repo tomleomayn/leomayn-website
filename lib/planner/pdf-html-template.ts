@@ -5,6 +5,7 @@ import {
   CONDITION_LABELS,
   ROLE_DISPLAY_LABELS,
   FIRM_TYPE_REPORT_LABELS,
+  FIRM_TYPE_OPTIONS,
   TECH_ENVIRONMENT_DESCRIPTIONS,
   STRATEGIC_FOCUS_OPTIONS,
   TEAM_SIZE_OPTIONS,
@@ -13,6 +14,8 @@ import {
   AI_ADOPTION_OPTIONS,
   PROCESS_KNOWLEDGE_OPTIONS,
   DATA_FOUNDATIONS_OPTIONS,
+  getSalaryTiers,
+  EMPLOYER_COST_UPLIFT,
 } from './constants'
 import { escapeHtml } from './sanitise'
 import {
@@ -29,6 +32,7 @@ export interface PdfTemplateData {
   report: GeneratedReport
   companyName: string
   recipientName: string
+  jobTitle?: string
   qualification?: QualificationData
   diagnostic?: DiagnosticData
   topArchetypes?: RankedArchetype[]
@@ -85,9 +89,9 @@ const CONDITION_PILL: Record<ConditionLevel, { bg: string; color: string }> = {
 }
 
 const CONDITION_LEGEND: Record<ConditionLevel, string> = {
-  green: 'Strong fit with your situation',
-  amber: 'Moderate fit, some considerations',
-  red: 'Potential constraint, may need groundwork',
+  green: 'Higher potential fit',
+  amber: 'Moderate potential fit',
+  red: 'Lower potential fit',
 }
 
 // ── CSS ──
@@ -765,7 +769,8 @@ function coverPage(data: PdfTemplateData, dateStr: string, heroRecovery: string,
         <div class="toc-row"><span class="toc-label">What makes AI adoption stick</span><span class="toc-page">7</span></div>
         <div class="toc-row"><span class="toc-label">Your current position</span><span class="toc-page">8</span></div>
         <div class="toc-row"><span class="toc-label">Your roadmap from here</span><span class="toc-page">9</span></div>
-        ${data.diagnostic ? `<div class="toc-row"><span class="toc-label">Appendix: What you told us</span><span class="toc-page">${totalPages}</span></div>` : ''}
+        ${data.diagnostic ? `<div class="toc-row"><span class="toc-label">Appendix 1: What you told us</span><span class="toc-page">${totalPages - 1}</span></div>
+        <div class="toc-row"><span class="toc-label">Appendix 2: Salary benchmarks</span><span class="toc-page">${totalPages}</span></div>` : ''}
       </div>
 
       <p class="paragraph">
@@ -1138,7 +1143,7 @@ function appendixPage(data: PdfTemplateData, dateStr: string, totalPages: number
     <div class="page page-break">
       ${pageHeader(companyName, dateStr)}
 
-      <div class="section-title">Appendix: What you told us</div>
+      <div class="section-title">Appendix 1: What you told us</div>
 
       <div class="diag-section">
         <div class="diag-group-title">Organisation</div>
@@ -1166,6 +1171,56 @@ function appendixPage(data: PdfTemplateData, dateStr: string, totalPages: number
   `
 }
 
+function salaryBenchmarksAppendix(data: PdfTemplateData, dateStr: string): string {
+  const { companyName, diagnostic } = data
+  if (!diagnostic) return ''
+
+  const firmType = diagnostic.firmType
+  const tiers = getSalaryTiers(firmType)
+  const industryLabel = FIRM_TYPE_OPTIONS.find(o => o.value === firmType)?.label ?? firmType
+  const upliftMultiplier = 1 + EMPLOYER_COST_UPLIFT
+
+  // Check if tiers use the new tier-1..tier-6 format
+  const hasNewTiers = tiers.some(t => t.value.startsWith('tier-'))
+  if (!hasNewTiers) return ''
+
+  return `
+    <div class="page page-break">
+      ${pageHeader(companyName, dateStr)}
+
+      <div class="section-title">Appendix 2: Salary benchmarks</div>
+
+      <p class="paragraph" style="margin-bottom:12px">
+        UK benchmarks for ${h(industryLabel.toLowerCase())}, outside London. A 25% employer cost uplift covers pension, NI, and benefits.
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width:50%">Seniority level</th>
+            <th class="text-right">Base salary midpoint</th>
+            <th class="text-right">Fully loaded (\u00d71.25)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${tiers.map(tier => `
+            <tr>
+              <td>${h(tier.label)}</td>
+              <td class="text-right">${formatCurrency(tier.midpoint)}</td>
+              <td class="text-right">${formatCurrency(Math.round(tier.midpoint * upliftMultiplier))}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+
+      <p class="disclaimer">
+        Compiled from Hays, ICAEW, Ascent, BARBRI, EMBS, and ONS data (2024\u20132026). Midpoints represent typical base salaries for the seniority band. Actual salaries vary by region, specialism, and firm size.
+      </p>
+
+    </div>
+  `
+}
+
 // ── Main export ──
 
 export function buildPdfHtml(data: PdfTemplateData): string {
@@ -1177,8 +1232,8 @@ export function buildPdfHtml(data: PdfTemplateData): string {
   })
   const heroRecovery = formatRecovery(report.businessCase.conservativeRecovery)
 
-  // Total pages: cover + priority map + business case + 3 workflows + foundations + readiness + roadmap + optional appendix
-  const totalPages = diagnostic ? 10 : 9
+  // Total pages: cover + priority map + business case + 3 workflows + foundations + readiness + roadmap + optional appendix + salary benchmarks
+  const totalPages = diagnostic ? 11 : 9
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -1195,6 +1250,7 @@ export function buildPdfHtml(data: PdfTemplateData): string {
   ${readinessPage(data, dateStr, totalPages)}
   ${roadmapPage(data, dateStr, totalPages)}
   ${appendixPage(data, dateStr, totalPages)}
+  ${salaryBenchmarksAppendix(data, dateStr)}
 </body>
 </html>`
 }

@@ -18,6 +18,7 @@ import {
   TECH_ENVIRONMENT_OPTIONS,
   FIRM_TYPE_REPORT_LABELS,
   TECH_ENVIRONMENT_DESCRIPTIONS,
+  getSalaryTiers,
 } from './constants'
 import { wrapUserContext } from './sanitise'
 
@@ -66,7 +67,10 @@ Prerequisites: ${full.prerequisites.join('; ')}`
     ? `\n## Company personalisation\nWhen company context is provided, use it to: reference their specific services or positioning in the situation summary; use their language where appropriate; make currentState descriptions feel specific to their work. Do not fabricate details. Only use what is provided.\n`
     : ''
 
-  return `## Confidence calibration (high-order rule)
+  return `## ABSOLUTE RULE: No em dashes
+NEVER use the em dash character (\u2014) anywhere in your output. Not in any field. Not in any sentence. Not between clauses. Replace with full stops, commas, colons, or semicolons. This rule has zero exceptions. If you find yourself reaching for an em dash, use a full stop and start a new sentence. Any output containing \u2014 is invalid.
+
+## Confidence calibration (high-order rule)
 
 You have not met this prospect, seen their systems, or spoken to their team. Everything you know comes from a structured questionnaire. Calibrate your language accordingly:
 
@@ -241,45 +245,50 @@ This report is based on a light diagnostic: the prospect answered structured que
 ${archetypeContext}
 ${firmTypeSection}${companyPersonalisation}
 ## Output format
-Return ONLY valid JSON matching this exact structure. No markdown, no code fences, no commentary outside the JSON:
+Return ONLY valid JSON matching this exact structure. No markdown, no code fences, no commentary outside the JSON.
+
+CRITICAL: Every string value must respect its character limit. Count characters before finalising. No em dashes (\u2014) anywhere.
 
 {
-  "situationSummary": "2-3 sentence summary reflecting their situation",
-  "priorityMapIntro": "1-2 sentences connecting the three recommendations to the prospect's specific inputs. Do NOT repeat the scoring methodology explanation (that is already shown as static text). Go straight to what the results mean for this prospect: which workflows emerged strongest and why, referencing their pain points and context.",
+  "situationSummary": "5-8 sentences. MAX 600 CHARACTERS. Open with company context, name the invisible work, close with what positions them to act.",
+  "priorityMapIntro": "1-2 sentences. MAX 250 CHARACTERS. What the results mean for this prospect: which workflows emerged strongest and why.",
   "workflows": [
     {
       "archetypeId": "string",
-      "name": "string",
-      "whyThisMatters": "2-3 sentences connecting their situation to this workflow",
+      "name": "string (use the archetype name provided)",
+      "whyThisMatters": "2-3 sentences. MAX 250 CHARACTERS. Why this workflow matters for their specific situation.",
       "impactPotential": "high|medium|low (must vary across the three workflows)",
       "implementationComplexity": "high|medium|low (must vary across the three workflows)",
       "threeConditionsCheck": { "impact": "green|amber|red", "complexity": "green|amber|red", "learning": "green|amber|red" },
-      "currentState": "2-3 sentences, pattern they would recognise",
-      "futureState": "2-3 sentences, AI-augmented workflow sketch",
-      "considerations": "2-3 sentences, specific to their inputs",
-      "prerequisites": ["list of prerequisites"],
-      "pitfalls": ["common pitfalls for this workflow in their firm type"]
+      "currentState": "2-3 sentences. MAX 350 CHARACTERS. Pattern they would recognise from their week.",
+      "futureState": "2-3 sentences. MAX 350 CHARACTERS. AI-augmented workflow sketch.",
+      "considerations": "2-3 sentences. MAX 300 CHARACTERS. Specific to their inputs.",
+      "prerequisites": ["MAX 3 items. Each MAX 120 CHARACTERS. Start with capital letter."],
+      "pitfalls": ["MAX 3 items. Each MAX 120 CHARACTERS. Start with capital letter."]
     }
   ],
   "maturityAssessment": {
-    "strengths": ["1-sentence strength based on Q6-Q9 data"],
-    "development": ["1-sentence area for development based on Q6-Q9 data"]
+    "strengths": ["2-3 items. Each MAX 150 CHARACTERS. One sentence per item."],
+    "development": ["2-3 items. Each MAX 150 CHARACTERS. One sentence per item."]
   },
-  "quickWins": ["genuinely actionable thing they can start this week"],
+  "quickWins": ["2-3 items. Each MAX 200 CHARACTERS. Zero-cost internal actions only."],
   "readiness": {
-    "strengths": ["what is working for them"],
-    "gaps": ["where they need to build foundations"]
+    "strengths": ["2-3 items. Each MAX 150 CHARACTERS."],
+    "gaps": ["2-3 items. Each MAX 150 CHARACTERS."]
   },
-  "nextSteps": ["actionable checklist items, customised to their situation"]
+  "nextSteps": ["4-6 items. Each MAX 200 CHARACTERS. Self-serve actions only, never 'contact Leomayn'."]
 }
 
-workflows array must contain exactly 3 items, matching the archetypes provided.
-threeConditionsCheck values must be "green", "amber", or "red" — not booleans. They must vary across the three workflows.
-impactPotential and implementationComplexity must vary — do not set all three to the same value.
-maturityAssessment.strengths and maturityAssessment.development should each contain 2-3 items.
-quickWins should contain 2-3 items. Only include when recommended workflows have foundation gaps.
-nextSteps array should contain 4-6 items.
-readiness.strengths and readiness.gaps should each contain 2-4 items.`
+Hard constraints on output:
+- workflows array: exactly 3 items, matching the archetypes provided.
+- threeConditionsCheck: "green", "amber", or "red" only. Must vary across the three workflows.
+- impactPotential and implementationComplexity: must vary across the three workflows.
+- maturityAssessment.strengths and .development: 2-3 items each.
+- quickWins: 2-3 items.
+- nextSteps: 4-6 items.
+- readiness.strengths and .gaps: 2-3 items each.
+- ZERO em dashes (\u2014) in the entire output. Use full stops, commas, colons, or semicolons instead.
+- Every string must respect its MAX CHARACTERS limit.`
 }
 
 export function buildUserPrompt(
@@ -429,10 +438,14 @@ These figures are directional estimates based on the sizing data the prospect pr
 ${businessCase.revenueFraming ? '- Revenue framing: Team is predominantly billable — recovered hours have direct revenue potential' : ''}
 
 Per-area breakdown:
-${businessCase.perArea.map((area, i) => {
-  const archetype = topArchetypes[i]
-  return `- ${archetype?.name}: ${area.annualHours.toLocaleString('en-GB')} hours/year, ${formatCurrency(area.annualCost)} cost, recovery ${formatCurrency(area.recoveryRange.low)}–${formatCurrency(area.recoveryRange.high)}`
-}).join('\n')}
+${(() => {
+  const tiers = getSalaryTiers(diagnostic.firmType)
+  return businessCase.perArea.map((area, i) => {
+    const archetype = topArchetypes[i]
+    const tierLabel = tiers.find(t => t.value === sizing[i]?.costPerPerson)?.label ?? sizing[i]?.costPerPerson ?? 'unknown'
+    return `- ${archetype?.name}: ${area.annualHours.toLocaleString('en-GB')} hours/year, ${formatCurrency(area.annualCost)} cost, recovery ${formatCurrency(area.recoveryRange.low)}–${formatCurrency(area.recoveryRange.high)} (typical seniority: ${tierLabel})`
+  }).join('\n')
+})()}
 ${freeTextSection}
 ${companyContext ? `\n## Company context (from their website)\n${companyContext}\n` : ''}
 Generate the diagnostic report for this prospect. Make it specific to their situation — reference their firm type, team size, strategic focus, and pain points throughout. The situation summary should make them feel understood. The workflow recommendations should feel tailored, not generic.`

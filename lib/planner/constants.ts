@@ -535,13 +535,74 @@ export const WEEKLY_HOURS_OPTIONS = [
   { value: '60-plus', label: '60+ hours', midpoint: 80 },
 ] as const
 
-export const COST_PER_PERSON_OPTIONS = [
-  { value: 'junior', label: 'Junior (0\u20133 years)', midpoint: 30000 },
-  { value: 'mid-level', label: 'Mid-level (3\u20137 years)', midpoint: 45000 },
-  { value: 'senior', label: 'Senior (7\u201312 years)', midpoint: 65000 },
-  { value: 'lead-manager', label: 'Lead / Manager', midpoint: 85000 },
-  { value: 'director-partner', label: 'Director / Partner', midpoint: 125000 },
-] as const
+export interface SalaryTier {
+  value: string
+  label: string
+  midpoint: number
+}
+
+export const INDUSTRY_SALARY_TIERS: Record<string, readonly SalaryTier[]> = {
+  accounting: [
+    { value: 'tier-1', label: 'Trainee / Part-qualified (0\u20133 years)', midpoint: 28000 },
+    { value: 'tier-2', label: 'Newly qualified (3\u20135 years)', midpoint: 42000 },
+    { value: 'tier-3', label: 'Senior Accountant (5\u20138 years)', midpoint: 55000 },
+    { value: 'tier-4', label: 'Manager (8\u201312 years)', midpoint: 72000 },
+    { value: 'tier-5', label: 'Senior Manager / Associate Director', midpoint: 95000 },
+    { value: 'tier-6', label: 'Director / Partner', midpoint: 130000 },
+  ],
+  law: [
+    { value: 'tier-1', label: 'Paralegal / Trainee (0\u20132 years)', midpoint: 32000 },
+    { value: 'tier-2', label: 'Newly qualified (0\u20133 PQE)', midpoint: 48000 },
+    { value: 'tier-3', label: 'Associate (3\u20136 PQE)', midpoint: 62000 },
+    { value: 'tier-4', label: 'Senior Associate (6\u201310 PQE)', midpoint: 78000 },
+    { value: 'tier-5', label: 'Salaried Partner / Legal Director', midpoint: 100000 },
+    { value: 'tier-6', label: 'Equity Partner', midpoint: 120000 },
+  ],
+  consulting: [
+    { value: 'tier-1', label: 'Analyst (0\u20132 years)', midpoint: 38000 },
+    { value: 'tier-2', label: 'Consultant (2\u20135 years)', midpoint: 52000 },
+    { value: 'tier-3', label: 'Senior Consultant (5\u20138 years)', midpoint: 72000 },
+    { value: 'tier-4', label: 'Manager (8\u201312 years)', midpoint: 95000 },
+    { value: 'tier-5', label: 'Principal / Associate Director', midpoint: 130000 },
+    { value: 'tier-6', label: 'Director / Partner', midpoint: 165000 },
+  ],
+  agency: [
+    { value: 'tier-1', label: 'Executive / Coordinator (0\u20133 years)', midpoint: 26000 },
+    { value: 'tier-2', label: 'Mid-weight / Account Manager (3\u20135 years)', midpoint: 36000 },
+    { value: 'tier-3', label: 'Senior Manager (5\u20138 years)', midpoint: 48000 },
+    { value: 'tier-4', label: 'Group Head (8\u201312 years)', midpoint: 62000 },
+    { value: 'tier-5', label: 'Associate Director / Head of', midpoint: 85000 },
+    { value: 'tier-6', label: 'Director / Partner', midpoint: 110000 },
+  ],
+  technical: [
+    { value: 'tier-1', label: 'Graduate / Junior (0\u20133 years)', midpoint: 33000 },
+    { value: 'tier-2', label: 'Engineer / Intermediate (3\u20135 years)', midpoint: 44000 },
+    { value: 'tier-3', label: 'Senior / Chartered (5\u20138 years)', midpoint: 58000 },
+    { value: 'tier-4', label: 'Principal / Team Lead (8\u201312 years)', midpoint: 75000 },
+    { value: 'tier-5', label: 'Associate Director / Engineering Manager', midpoint: 100000 },
+    { value: 'tier-6', label: 'Director / CTO', midpoint: 120000 },
+  ],
+  'internal-services': [
+    { value: 'tier-1', label: 'Coordinator / Analyst (0\u20133 years)', midpoint: 28000 },
+    { value: 'tier-2', label: 'Officer / Specialist (3\u20135 years)', midpoint: 36000 },
+    { value: 'tier-3', label: 'Senior Specialist (5\u20138 years)', midpoint: 48000 },
+    { value: 'tier-4', label: 'Team Lead / Manager (8\u201312 years)', midpoint: 60000 },
+    { value: 'tier-5', label: 'Senior Manager / Head of', midpoint: 78000 },
+    { value: 'tier-6', label: 'Director', midpoint: 95000 },
+  ],
+  other: [
+    { value: 'tier-1', label: 'Junior (0\u20133 years)', midpoint: 31000 },
+    { value: 'tier-2', label: 'Intermediate (3\u20135 years)', midpoint: 43000 },
+    { value: 'tier-3', label: 'Senior (5\u20138 years)', midpoint: 57000 },
+    { value: 'tier-4', label: 'Manager (8\u201312 years)', midpoint: 74000 },
+    { value: 'tier-5', label: 'Senior Manager / Associate Director', midpoint: 98000 },
+    { value: 'tier-6', label: 'Director / Partner', midpoint: 123000 },
+  ],
+}
+
+export function getSalaryTiers(firmType: string): readonly SalaryTier[] {
+  return INDUSTRY_SALARY_TIERS[firmType] ?? INDUSTRY_SALARY_TIERS['other']
+}
 
 // ============================================
 // Educational Context (per question)
@@ -569,7 +630,7 @@ export const QUESTION_CONTEXT: Record<string, string> = {
   billableSplit:
     'This matters because improving workflows for client-facing staff has a direct revenue impact. Their recovered time can be reinvested in client work.',
   costPerPerson:
-    'This helps us estimate the cost of time spent on this workflow. We map seniority to a salary midpoint and apply a standard employer cost uplift.',
+    'Salary benchmarks are calibrated to your industry. We map seniority to an industry-specific midpoint and apply a 25% employer cost uplift for pension, NI, and benefits.',
   freeText:
     'The more context you give us, the more specific your report will be. Even a sentence or two makes a difference.',
 }
@@ -598,9 +659,9 @@ export const RECOVERY_CEILING = 0.85
 // ============================================
 
 export const CONDITION_LABELS = {
-  impact: { green: 'Strong impact alignment', amber: 'Moderate impact alignment', red: 'Limited impact alignment' },
-  complexity: { green: 'Low implementation complexity', amber: 'Moderate implementation complexity', red: 'High implementation complexity' },
-  learning: { green: 'High learning value', amber: 'Moderate learning value', red: 'Limited learning value' },
+  impact: { green: 'Higher potential impact', amber: 'Medium potential impact', red: 'Lower potential impact' },
+  complexity: { green: 'Lower implementation complexity', amber: 'Medium implementation complexity', red: 'Higher implementation complexity' },
+  learning: { green: 'Higher learning value', amber: 'Moderate learning value', red: 'Lower learning value' },
 } as const
 
 // ============================================

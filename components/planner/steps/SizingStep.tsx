@@ -11,7 +11,7 @@ import type { SizingEntry, RankedArchetype } from '@/lib/planner/types'
 import {
   PEOPLE_INVOLVED_OPTIONS,
   WEEKLY_HOURS_OPTIONS,
-  COST_PER_PERSON_OPTIONS,
+  getSalaryTiers,
   AREA_OPTIONS,
   SYMPTOM_OPTIONS,
   STRATEGIC_FOCUS_OPTIONS,
@@ -86,6 +86,11 @@ export default function SizingStep() {
   const topArchetypes = useMemo(
     () => reorderByUserAreas(rawArchetypes, userAreas),
     [rawArchetypes, userAreas]
+  )
+
+  const salaryTiers = useMemo(
+    () => getSalaryTiers(state.diagnostic?.firmType ?? 'other'),
+    [state.diagnostic?.firmType]
   )
 
   const defaultEntries: SizingEntry[] = topArchetypes.map(a => ({
@@ -185,7 +190,7 @@ export default function SizingStep() {
                 error={errors.entries?.[index]?.costPerPerson}
                 context={QUESTION_CONTEXT.costPerPerson}
                 registration={register(`entries.${index}.costPerPerson`)}
-                options={COST_PER_PERSON_OPTIONS}
+                options={salaryTiers}
                 placeholder="Select..."
               />
 

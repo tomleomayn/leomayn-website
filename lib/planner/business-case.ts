@@ -3,7 +3,7 @@ import {
   ARCHETYPES,
   PEOPLE_INVOLVED_OPTIONS,
   WEEKLY_HOURS_OPTIONS,
-  COST_PER_PERSON_OPTIONS,
+  getSalaryTiers,
   WORKING_WEEKS_PER_YEAR,
   HOURS_PER_WEEK,
   EMPLOYER_COST_UPLIFT,
@@ -27,10 +27,11 @@ export function calculateBusinessCase(
   sizing: SizingEntry[],
   diagnostic: DiagnosticData
 ): BusinessCase {
+  const tiers = getSalaryTiers(diagnostic.firmType)
   const perArea: AreaBusinessCase[] = sizing.map(entry => {
     const people = getMidpoint(entry.peopleInvolved, PEOPLE_INVOLVED_OPTIONS)
     const weeklyHours = getMidpoint(entry.weeklyHours, WEEKLY_HOURS_OPTIONS)
-    const baseSalary = getMidpoint(entry.costPerPerson, COST_PER_PERSON_OPTIONS)
+    const baseSalary = getMidpoint(entry.costPerPerson, tiers)
     const fullyLoadedCost = baseSalary * (1 + EMPLOYER_COST_UPLIFT)
 
     const annualHours = people * weeklyHours * WORKING_WEEKS_PER_YEAR
