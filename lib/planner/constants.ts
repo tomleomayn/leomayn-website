@@ -661,7 +661,7 @@ export const RECOVERY_CEILING = 0.85
 export const CONDITION_LABELS = {
   impact: { green: 'Higher potential impact', amber: 'Medium potential impact', red: 'Lower potential impact' },
   complexity: { green: 'Lower implementation complexity', amber: 'Medium implementation complexity', red: 'Higher implementation complexity' },
-  learning: { green: 'Higher learning value', amber: 'Moderate learning value', red: 'Lower learning value' },
+  learning: { green: 'Higher learning value', amber: 'Medium learning value', red: 'Lower learning value' },
 } as const
 
 // ============================================

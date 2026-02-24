@@ -1,7 +1,8 @@
 import type { Browser } from 'puppeteer-core'
 import { existsSync } from 'fs'
 import { platform } from 'os'
-import { LOGO_DATA_URI } from './pdf-assets'
+import { PDFDocument, rgb } from 'pdf-lib'
+import { LOGO_DATA_URI, MANROPE_400_BASE64 } from './pdf-assets'
 
 const PDF_TIMEOUT_MS = 30_000
 
@@ -33,11 +34,22 @@ async function getLaunchArgs(): Promise<string[]> {
 }
 
 // Puppeteer footer template — rendered by Chrome outside the page content area
+// Page 1 footer is blanked by pdf-lib post-processing (see removeFirstPageFooter)
 const footerTemplate = `
-  <div style="width:100%;padding:0 18mm;font-family:Manrope,sans-serif;font-size:7pt;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f7c9c0;padding-top:4px">
-    <img src="${LOGO_DATA_URI}" style="width:60px;height:auto" />
-    <span style="color:#9da7b0;flex:1;text-align:center">leomayn.com</span>
-    <span style="color:#9da7b0">Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
+  <style>
+    @font-face {
+      font-family: 'Manrope';
+      font-weight: 400;
+      font-style: normal;
+      src: url(data:font/woff2;base64,${MANROPE_400_BASE64}) format('woff2');
+    }
+  </style>
+  <div id="footer-wrap" style="width:100%;padding:0 18mm;font-family:Manrope,sans-serif;font-size:7pt;">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f7c9c0;padding-top:10px">
+      <img src="${LOGO_DATA_URI}" style="width:80px;height:auto" />
+      <span style="color:#9da7b0;flex:1;text-align:center">leomayn.com</span>
+      <span style="color:#9da7b0">Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
+    </div>
   </div>
 `
 
@@ -71,8 +83,30 @@ export async function renderPdfWithPuppeteer(html: string): Promise<Buffer> {
     ])
 
     await page.close()
-    return Buffer.from(pdfBuffer)
+    const rawPdf = Buffer.from(pdfBuffer)
+    return await removeFirstPageFooter(rawPdf)
   } finally {
     if (browser) await browser.close()
   }
+}
+
+// Paint a white rectangle over the footer area on page 1 (cover page).
+// Puppeteer's footer template cannot be conditionally hidden per page,
+// so we blank it after rendering.
+async function removeFirstPageFooter(pdfBytes: Buffer): Promise<Buffer> {
+  const doc = await PDFDocument.load(pdfBytes)
+  const page = doc.getPage(0)
+  const { width } = page.getSize()
+  // Footer sits in the bottom 24mm margin. Cover the bottom 20mm to blank
+  // the logo, text, and coral rule without touching content.
+  const footerHeight = 20 * 2.835 // mm → points
+  page.drawRectangle({
+    x: 0,
+    y: 0,
+    width,
+    height: footerHeight,
+    color: rgb(1, 1, 1),
+  })
+  const modified = await doc.save()
+  return Buffer.from(modified)
 }

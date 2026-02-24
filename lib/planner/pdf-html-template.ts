@@ -24,6 +24,7 @@ import {
   MANROPE_700_BASE64,
   DM_SERIF_400_BASE64,
   LOGO_DATA_URI,
+  LOGO_SVG_DATA_URI,
 } from './pdf-assets'
 
 // ── Types ──
@@ -43,6 +44,14 @@ export interface PdfTemplateData {
 
 function h(text: string): string {
   return escapeHtml(text)
+}
+
+function stripEmDashes(text: string): string {
+  // Spaced em-dash → sentence break with capitalised next word
+  let result = text.replace(/ \u2014 (\w)/g, (_, ch: string) => `. ${ch.toUpperCase()}`)
+  // Catch any remaining (unspaced) em-dashes
+  result = result.replace(/\u2014/g, '. ')
+  return result
 }
 
 function formatCurrency(amount: number): string {
@@ -89,10 +98,14 @@ const CONDITION_PILL: Record<ConditionLevel, { bg: string; color: string }> = {
 }
 
 const CONDITION_LEGEND: Record<ConditionLevel, string> = {
-  green: 'Higher potential fit',
-  amber: 'Moderate potential fit',
-  red: 'Lower potential fit',
+  green: 'Strong alignment',
+  amber: 'Partial alignment',
+  red: 'Preparation needed',
 }
+
+// ── Report title (used across cover, header, TOC) ──
+
+const REPORT_TITLE = 'AI Opportunity Report'
 
 // ── CSS ──
 
@@ -134,6 +147,7 @@ function cssBlock(): string {
       --pearl: #fef8f1;
       --steel: #9da7b0;
       --white: #ffffff;
+      --light-blue: #f0f5f8;
       --font-sans: 'Manrope', sans-serif;
       --font-serif: 'DM Serif Display', serif;
     }
@@ -170,9 +184,8 @@ function cssBlock(): string {
     .situation-box {
       page-break-inside: avoid;
     }
-    /* Allow detail/two-col boxes to split if needed — prevents mostly-empty overflow pages */
 
-    /* Page header */
+    /* Page header — no logo, just title + date */
     .page-header {
       display: flex;
       justify-content: space-between;
@@ -180,15 +193,6 @@ function cssBlock(): string {
       padding-bottom: 10px;
       border-bottom: 1px solid var(--coral);
       margin-bottom: 16px;
-    }
-    .page-header-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .page-header-logo {
-      width: 80px;
-      height: auto;
     }
     .page-header-title {
       font-size: 9pt;
@@ -199,8 +203,6 @@ function cssBlock(): string {
       font-size: 9pt;
       color: var(--slate);
     }
-
-    /* Footer handled by Puppeteer footerTemplate */
 
     /* Typography */
     .section-title {
@@ -234,7 +236,7 @@ function cssBlock(): string {
     .section-band {
       background: var(--slate);
       padding: 10px 16px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -275,26 +277,15 @@ function cssBlock(): string {
       color: var(--slate);
       margin-bottom: 3px;
     }
-    .hero-stat {
-      margin-top: 18px;
-      margin-bottom: 14px;
-    }
-    .hero-label {
-      font-size: 10pt;
+    .about-report-title {
+      font-family: var(--font-serif);
+      font-size: 13pt;
       color: var(--slate);
       margin-bottom: 6px;
+      margin-top: 16px;
     }
-    .hero-value {
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 22pt;
-      color: var(--coral-text);
-    }
-    .hero-context {
-      font-size: 9pt;
-      color: var(--slate);
-      margin-top: 4px;
-    }
+
+    /* Situation box (used on exec summary) */
     .situation-box {
       background: var(--slate);
       padding: 12px 16px;
@@ -311,6 +302,30 @@ function cssBlock(): string {
       font-size: 10pt;
       line-height: 1.6;
       color: #dce6ed;
+    }
+
+    /* Hero saving stat (exec summary) */
+    .hero-stat {
+      margin-top: 18px;
+      margin-bottom: 14px;
+    }
+    .hero-label {
+      font-family: var(--font-serif);
+      font-size: 13pt;
+      color: var(--slate);
+      margin-bottom: 6px;
+    }
+    .hero-value {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 22pt;
+      color: var(--coral-text);
+    }
+    .hero-context {
+      font-size: 10pt;
+      color: var(--slate);
+      margin-top: 4px;
+      line-height: 1.5;
     }
 
     /* TOC */
@@ -346,13 +361,12 @@ function cssBlock(): string {
 
     /* Workflow cards (priority map) */
     .workflow-card {
-      border-left: 4px solid var(--coral);
       border: 1px solid #e5e5e5;
       border-left: 4px solid var(--coral);
       border-radius: 4px;
-      padding: 12px;
-      margin-bottom: 6px;
-      background: var(--white);
+      padding: 14px;
+      margin-bottom: 12px;
+      background: var(--light-blue);
     }
     .workflow-card-header {
       display: flex;
@@ -388,7 +402,7 @@ function cssBlock(): string {
     .score-bar-container {
       width: 80px;
       height: 6px;
-      background: var(--pearl);
+      background: #dce2e7;
       border-radius: 3px;
       margin-left: 8px;
       display: inline-block;
@@ -396,15 +410,15 @@ function cssBlock(): string {
     }
     .score-bar-fill {
       height: 6px;
-      background: var(--coral);
+      background: var(--slate);
       border-radius: 3px;
     }
 
-    /* Condition pills */
+    /* Condition pills — equal sized */
     .pill-row {
       display: flex;
-      gap: 6px;
-      margin-top: 4px;
+      gap: 8px;
+      margin-top: 6px;
     }
     .pill {
       border-radius: 10px;
@@ -412,6 +426,8 @@ function cssBlock(): string {
       font-size: 8pt;
       font-weight: 700;
       display: inline-block;
+      min-width: 155px;
+      text-align: center;
     }
     .legend-row {
       display: flex;
@@ -439,8 +455,8 @@ function cssBlock(): string {
     .pull-quote {
       border-left: 4px solid var(--coral);
       background: var(--pearl);
-      padding: 10px 14px;
-      margin-bottom: 10px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
     }
     .pull-quote-text {
       font-size: 11pt;
@@ -452,7 +468,7 @@ function cssBlock(): string {
     /* Two-column layout */
     .two-col {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 8px;
     }
     .col {
@@ -460,45 +476,45 @@ function cssBlock(): string {
     }
     .col-box {
       background: var(--pearl);
-      padding: 12px;
+      padding: 10px 12px;
       border-radius: 4px;
       flex: 1;
     }
     .col-box-accent {
       background: #fdf0ed;
-      padding: 12px;
+      padding: 10px 12px;
       border-radius: 4px;
       flex: 1;
     }
     .col-label {
-      font-size: 9pt;
+      font-size: 10pt;
       font-weight: 700;
       color: var(--slate);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .list-item {
       font-size: 9pt;
-      line-height: 1.5;
+      line-height: 1.45;
       color: var(--slate);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       padding-left: 8px;
     }
 
     /* Detail boxes (prerequisites, pitfalls) */
     .detail-box {
       background: var(--pearl);
-      padding: 12px;
+      padding: 10px 12px;
       border-radius: 4px;
       flex: 1;
     }
     .detail-box-warn {
       background: #fef2f0;
-      padding: 12px;
+      padding: 10px 12px;
       border-radius: 4px;
       flex: 1;
     }
 
-    /* Stat cards */
+    /* Stat cards — equal sizing */
     .stat-row {
       display: flex;
       gap: 12px;
@@ -511,23 +527,23 @@ function cssBlock(): string {
       text-align: center;
       flex: 1;
     }
-    .stat-box-hero {
+    .stat-box-accent {
       background: #fdf0ed;
       padding: 16px;
       border-radius: 4px;
       text-align: center;
-      flex: 2;
+      flex: 1;
     }
     .stat-value {
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 18pt;
+      font-size: 20pt;
       color: var(--slate);
     }
     .stat-value-coral {
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 22pt;
+      font-size: 20pt;
       color: var(--coral-text);
     }
     .stat-label {
@@ -549,6 +565,7 @@ function cssBlock(): string {
       font-weight: 700;
       padding: 10px;
       text-align: left;
+      white-space: nowrap;
     }
     .data-table thead th:first-child {
       border-top-left-radius: 4px;
@@ -567,6 +584,7 @@ function cssBlock(): string {
     }
     .data-table tbody td.text-right {
       text-align: right;
+      white-space: nowrap;
     }
     .data-table tfoot td {
       font-size: 9pt;
@@ -574,6 +592,10 @@ function cssBlock(): string {
       color: var(--slate);
       padding: 10px;
       background: var(--pearl);
+    }
+    .data-table tfoot td.text-right {
+      text-align: right;
+      white-space: nowrap;
     }
     .data-table tfoot td:first-child {
       border-bottom-left-radius: 4px;
@@ -589,6 +611,12 @@ function cssBlock(): string {
     /* SVG bar chart */
     .bar-chart {
       margin: 16px 0;
+    }
+    .chart-title {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 8px;
     }
 
     /* Foundation cards */
@@ -611,14 +639,14 @@ function cssBlock(): string {
       margin-bottom: 4px;
     }
     .foundation-label {
-      font-size: 8pt;
+      font-size: 9pt;
       font-weight: 700;
       color: var(--slate);
       margin-top: 6px;
       margin-bottom: 2px;
     }
     .foundation-text {
-      font-size: 8pt;
+      font-size: 9pt;
       color: var(--slate);
       line-height: 1.5;
     }
@@ -626,33 +654,58 @@ function cssBlock(): string {
     /* CTA */
     .cta-box {
       background: var(--slate);
-      padding: 20px;
+      padding: 24px;
       border-radius: 4px;
       margin-top: 16px;
     }
     .cta-title {
       font-family: var(--font-serif);
-      font-size: 13pt;
+      font-size: 15pt;
       color: var(--white);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .cta-text {
       font-size: 10pt;
       line-height: 1.5;
       color: #b5c9d8;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .cta-link {
-      font-size: 10pt;
+      font-size: 11pt;
       font-weight: 700;
       color: var(--coral);
+    }
+    .cta-steps {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .cta-step {
+      flex: 1;
+      text-align: center;
+      color: #b5c9d8;
+      font-size: 9pt;
+      line-height: 1.4;
+    }
+    .cta-step-number {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background: var(--coral);
+      color: var(--slate);
+      font-weight: 700;
+      font-size: 9pt;
+      line-height: 20px;
+      text-align: center;
+      margin-bottom: 4px;
     }
 
     /* Numbered step */
     .step-row {
       display: flex;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       align-items: flex-start;
     }
     .step-number {
@@ -699,24 +752,27 @@ function cssBlock(): string {
       font-size: 8pt;
       color: var(--slate);
     }
+
+    /* Key considerations box */
+    .considerations-box {
+      background: var(--light-blue);
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
   `
 }
 
 // ── Section renderers ──
 
-function pageHeader(companyName: string, dateStr: string, showTitle: boolean = true): string {
+function pageHeader(companyName: string, dateStr: string): string {
   return `
     <div class="page-header">
-      <div class="page-header-left">
-        <img src="${LOGO_DATA_URI}" class="page-header-logo" />
-        ${showTitle ? `<span class="page-header-title">AI Deployment Report \u2014 ${h(companyName)}</span>` : ''}
-      </div>
+      <span class="page-header-title">${REPORT_TITLE} | ${h(companyName)}</span>
       <span class="page-header-date">${h(dateStr)}</span>
     </div>
   `
 }
-
-// Footer is rendered by Puppeteer's footerTemplate — no inline footer needed
 
 function sectionBand(number: string, title: string): string {
   return `
@@ -733,67 +789,116 @@ function conditionPill(level: ConditionLevel, label: string): string {
   return `<span class="pill" style="background:${pill.bg};color:${pill.color}">${h(label)}</span>`
 }
 
-function coverPage(data: PdfTemplateData, dateStr: string, heroRecovery: string, totalPages: number): string {
+// ── Page 1: Cover ──
+
+function coverPage(data: PdfTemplateData, dateStr: string, totalPages: number): string {
   const { report, companyName, recipientName, qualification } = data
   const roleLabel = getRoleDisplayLabel(qualification)
+  const jobTitle = qualification?.jobTitle
   const workflows = report.workflows
+
+  // Display job title if provided, otherwise fall back to role label
+  const titleLine = jobTitle ? h(jobTitle) : (roleLabel ? h(roleLabel) : '')
 
   return `
     <div class="page">
-      <img src="${LOGO_DATA_URI}" style="width:140px;margin-left:-8px;margin-bottom:20px;margin-top:8px" />
+      <img src="${LOGO_SVG_DATA_URI}" style="width:200px;margin-bottom:28px;margin-top:12px" />
 
-      <div class="cover-title">AI Deployment Report</div>
+      <div class="cover-title">${REPORT_TITLE}</div>
       <div class="cover-divider"></div>
-      <div class="cover-meta">Prepared for: ${h(recipientName)}${roleLabel ? `, ${h(roleLabel)}` : ''}</div>
+      <div class="cover-meta">Prepared for: ${h(recipientName)}${titleLine ? `, ${titleLine}` : ''}</div>
       <div class="cover-meta">Company: ${h(companyName)}</div>
-      <div class="cover-meta" style="margin-top:4px">${h(dateStr)}</div>
+      <div class="cover-meta" style="margin-top:4px">Date: ${h(dateStr)}</div>
 
-      <div class="hero-stat">
-        <div class="hero-label">Estimated annual saving opportunity</div>
-        <div class="hero-value">${heroRecovery}</div>
-        <div class="hero-context">Across three workflows identified from your diagnostic data</div>
-      </div>
-
-      <div class="situation-box">
-        <div class="situation-title">Your situation</div>
-        <div class="situation-text">${h(report.situationSummary)}</div>
-      </div>
+      <div class="about-report-title">About this report</div>
+      <p class="paragraph">
+        Use this report as a starting point for prioritisation. The business case numbers are directional estimates based on the sizing data you provided, not financial forecasts. A full Diagnose engagement would validate these figures with access to your team, data, and systems.
+      </p>
 
       <div class="toc">
         <div class="toc-title">Contents</div>
-        <div class="toc-row"><span class="toc-label">Where to start</span><span class="toc-page">2</span></div>
-        <div class="toc-row"><span class="toc-label">The business case</span><span class="toc-page">3</span></div>
+        <div class="toc-row"><span class="toc-label">Executive summary</span><span class="toc-page">2</span></div>
+        <div class="toc-row"><span class="toc-label">Where to start</span><span class="toc-page">3</span></div>
+        <div class="toc-row"><span class="toc-label">The business case</span><span class="toc-page">4</span></div>
         ${workflows.map((wf, i) => `
-          <div class="toc-row"><span class="toc-label">${h(wf.name)}</span><span class="toc-page">${i + 4}</span></div>
+          <div class="toc-row"><span class="toc-label">${h(wf.name)}</span><span class="toc-page">${i + 5}</span></div>
         `).join('')}
-        <div class="toc-row"><span class="toc-label">What makes AI adoption stick</span><span class="toc-page">7</span></div>
-        <div class="toc-row"><span class="toc-label">Your current position</span><span class="toc-page">8</span></div>
-        <div class="toc-row"><span class="toc-label">Your roadmap from here</span><span class="toc-page">9</span></div>
+        <div class="toc-row"><span class="toc-label">Your current situation</span><span class="toc-page">8</span></div>
+        <div class="toc-row"><span class="toc-label">What makes AI adoption stick</span><span class="toc-page">9</span></div>
+        <div class="toc-row"><span class="toc-label">Suggested roadmap</span><span class="toc-page">10</span></div>
         ${data.diagnostic ? `<div class="toc-row"><span class="toc-label">Appendix 1: What you told us</span><span class="toc-page">${totalPages - 1}</span></div>
         <div class="toc-row"><span class="toc-label">Appendix 2: Salary benchmarks</span><span class="toc-page">${totalPages}</span></div>` : ''}
       </div>
-
-      <p class="paragraph">
-        Use this report as a starting point for prioritisation. The business case numbers are directional estimates, not financial forecasts.
-      </p>
-
-      <p class="disclaimer">
-        This report is based on a light diagnostic. We have not had access to your team, data, or systems. Recommendations reflect patterns in what you told us.
-      </p>
 
     </div>
   `
 }
 
-function priorityMapPage(data: PdfTemplateData, dateStr: string, totalPages: number): string {
+// ── Page 2: Executive Summary ──
+
+function executiveSummaryPage(data: PdfTemplateData, dateStr: string, heroRecovery: string): string {
   const { report, companyName, topArchetypes } = data
   const maxScore = 25
 
   return `
     <div class="page page-break">
       ${pageHeader(companyName, dateStr)}
+      ${sectionBand('01', 'Executive summary')}
 
-      <div class="section-title">Where to start</div>
+      <div class="situation-box">
+        <div class="situation-title">Your situation</div>
+        <div class="situation-text">${h(report.situationSummary)}</div>
+      </div>
+
+      <div class="hero-stat">
+        <div class="hero-label">Estimated annual saving opportunity</div>
+        <div class="hero-value">${heroRecovery}</div>
+        <div class="hero-context">
+          The potential value of time saved by achieving target improvement rates across three high-potential workflows identified from your diagnostic data. These are directional estimates designed to frame the scale of the opportunity.
+        </div>
+      </div>
+
+      <div class="section-subtitle">Three workflows to investigate</div>
+      <p class="paragraph" style="margin-bottom:10px">${report.priorityMapIntro ? h(report.priorityMapIntro) : 'We scored nine workflow archetypes against your diagnostic inputs and ranked them by impact, feasibility, and learning value. These three emerged as the strongest starting points.'}</p>
+
+      ${report.workflows.map((wf, i) => {
+        const impact = normaliseCondition(wf.threeConditionsCheck.impact)
+        const complexity = normaliseCondition(wf.threeConditionsCheck.complexity)
+        const compositeScore = topArchetypes?.find(
+          a => a.id === wf.archetypeId || normalise(wf.archetypeId).startsWith(normalise(a.id))
+        )?.compositeScore
+        const barWidth = compositeScore !== undefined ? Math.round((compositeScore / maxScore) * 100) : 0
+
+        return `
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;margin-bottom:4px;background:var(--light-blue);border-radius:4px;border-left:3px solid var(--coral)">
+            <div class="workflow-number">${i + 1}</div>
+            <div style="flex:1">
+              <span style="font-weight:700;font-size:10pt;color:var(--slate)">${h(wf.name)}</span>
+              ${compositeScore !== undefined ? `
+                <span style="font-size:9pt;color:var(--steel);margin-left:6px">${compositeScore.toFixed(1)} / ${maxScore}</span>
+              ` : ''}
+            </div>
+            <span class="pill" style="background:${CONDITION_PILL[impact].bg};color:${CONDITION_PILL[impact].color};min-width:0;font-size:7pt;padding:2px 8px">${h(CONDITION_LABELS.impact[impact])}</span>
+            <span class="pill" style="background:${CONDITION_PILL[complexity].bg};color:${CONDITION_PILL[complexity].color};min-width:0;font-size:7pt;padding:2px 8px">${h(CONDITION_LABELS.complexity[complexity])}</span>
+          </div>
+        `
+      }).join('')}
+
+    </div>
+  `
+}
+
+// ── Page 3: Where to start (priority map) ──
+
+function priorityMapPage(data: PdfTemplateData, dateStr: string): string {
+  const { report, companyName, topArchetypes } = data
+  const maxScore = 25
+
+  return `
+    <div class="page page-break">
+      ${pageHeader(companyName, dateStr)}
+      ${sectionBand('02', 'Where to start')}
+
       ${report.priorityMapIntro ? `<p class="paragraph">${h(report.priorityMapIntro)}</p>` : ''}
 
       <div class="legend-row">
@@ -821,7 +926,7 @@ function priorityMapPage(data: PdfTemplateData, dateStr: string, totalPages: num
               <div style="flex:1">
                 <span class="workflow-name">${h(wf.name)}</span>
                 ${compositeScore !== undefined ? `
-                  <span class="workflow-score"> (score: ${compositeScore.toFixed(1)})</span>
+                  <span class="workflow-score"> (${compositeScore.toFixed(1)} / ${maxScore})</span>
                   <div class="score-bar-container">
                     <div class="score-bar-fill" style="width:${barWidth}%"></div>
                   </div>
@@ -842,7 +947,9 @@ function priorityMapPage(data: PdfTemplateData, dateStr: string, totalPages: num
   `
 }
 
-function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: string, totalPages: number): string {
+// ── Page 4: Business case ──
+
+function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: string): string {
   const { report, companyName } = data
   const { businessCase } = report
 
@@ -851,30 +958,33 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
     : `${businessCase.weeklyHoursRecovered.low} \u2013 ${businessCase.weeklyHoursRecovered.high}`
 
   // SVG bar chart data
-  const maxCost = Math.max(...businessCase.perArea.map(a => a.annualCost))
+  const maxVal = Math.max(
+    ...businessCase.perArea.map(a => a.annualCost),
+    ...businessCase.perArea.map(a => a.recoveryRange.high)
+  )
   const chartWidth = 500
   const barHeight = 28
   const barGap = 10
   const labelWidth = 140
-  const chartAreaWidth = chartWidth - labelWidth
-  const svgHeight = businessCase.perArea.length * (barHeight + barGap) + 10
+  const chartAreaWidth = chartWidth - labelWidth - 80 // leave room for value labels
+  const svgHeight = businessCase.perArea.length * (barHeight + barGap) + 30
 
   return `
     <div class="page page-break">
-      ${pageHeader(companyName, dateStr, false)}
-      ${sectionBand('02', 'The business case')}
+      ${pageHeader(companyName, dateStr)}
+      ${sectionBand('03', 'The business case')}
 
       <p class="paragraph">
-        The figures below are based on the team sizes, time estimates, and seniority levels you provided in the diagnostic. They include a standard 25% employer cost uplift for pension, NI, and benefits. These are directional estimates designed to frame the scale of the opportunity.
+        This is the time your team could recover and the estimated value of that time, based on achieving target savings across three high-potential workflows. The figures are based on the team sizes, seniority levels, and time estimates you provided, with a 25% employer cost uplift for pension, NI, and benefits.
       </p>
 
       <div class="stat-row">
-        <div class="stat-box-hero">
-          <div class="stat-value-coral">${weeklyHoursText} hours per week</div>
-          <div class="stat-label">Estimated time your team could recover</div>
+        <div class="stat-box-accent">
+          <div class="stat-value">${weeklyHoursText}</div>
+          <div class="stat-label">Hours per week your team could recover</div>
         </div>
-        <div class="stat-box">
-          <div class="stat-value">${heroRecovery}</div>
+        <div class="stat-box-accent">
+          <div class="stat-value-coral">${heroRecovery}</div>
           <div class="stat-label">Estimated annual saving</div>
         </div>
       </div>
@@ -882,10 +992,10 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
       <table class="data-table">
         <thead>
           <tr>
-            <th style="width:35%">Workflow</th>
-            <th class="text-right">Current est. annual hours</th>
-            <th class="text-right">Current est. annual cost</th>
-            <th class="text-right">Target saving range</th>
+            <th style="width:30%">Workflow</th>
+            <th class="text-right" style="width:20%">Annual hours</th>
+            <th class="text-right" style="width:20%">Annual cost</th>
+            <th class="text-right" style="width:30%">Target saving range</th>
           </tr>
         </thead>
         <tbody>
@@ -895,7 +1005,7 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
               <tr>
                 <td>
                   ${h(report.workflows[i]?.name ?? '')}
-                  <div class="sub-text">Target time savings: ${pctRange.low}\u2013${pctRange.high}%</div>
+                  <div class="sub-text">Target: ${pctRange.low}\u2013${pctRange.high}%</div>
                 </td>
                 <td class="text-right">${area.annualHours.toLocaleString('en-GB')}</td>
                 <td class="text-right">${formatCurrency(area.annualCost)}</td>
@@ -906,7 +1016,7 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
         </tbody>
         <tfoot>
           <tr>
-            <td>Total across three workflows</td>
+            <td>Total</td>
             <td class="text-right">${businessCase.totalAnnualHours.toLocaleString('en-GB')}</td>
             <td class="text-right">${formatCurrency(businessCase.totalAnnualCost)}</td>
             <td class="text-right">${formatRecovery(businessCase.conservativeRecovery)}</td>
@@ -915,18 +1025,27 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
       </table>
 
       <div class="bar-chart">
+        <div class="chart-title">Annual cost and target saving range by workflow</div>
         <svg width="${chartWidth}" height="${svgHeight}" viewBox="0 0 ${chartWidth} ${svgHeight}">
+          <!-- Legend -->
+          <rect x="${labelWidth}" y="0" width="10" height="10" rx="2" fill="#1a3d56" opacity="0.2"/>
+          <text x="${labelWidth + 14}" y="9" font-family="Manrope,sans-serif" font-size="7" fill="#1a3d56">Current annual cost</text>
+          <rect x="${labelWidth + 120}" y="0" width="10" height="10" rx="2" fill="#f7c9c0"/>
+          <text x="${labelWidth + 134}" y="9" font-family="Manrope,sans-serif" font-size="7" fill="#1a3d56">Conservative saving</text>
+          <rect x="${labelWidth + 250}" y="0" width="10" height="10" rx="2" fill="#f7c9c0" opacity="0.5"/>
+          <text x="${labelWidth + 264}" y="9" font-family="Manrope,sans-serif" font-size="7" fill="#1a3d56">Upper saving target</text>
+
           ${businessCase.perArea.map((area, i) => {
-            const y = i * (barHeight + barGap)
-            const barW = maxCost > 0 ? (area.annualCost / maxCost) * chartAreaWidth : 0
-            const recoveryLowW = maxCost > 0 ? (area.recoveryRange.low / maxCost) * chartAreaWidth : 0
-            const recoveryHighW = maxCost > 0 ? (area.recoveryRange.high / maxCost) * chartAreaWidth : 0
+            const y = i * (barHeight + barGap) + 20
+            const barW = maxVal > 0 ? (area.annualCost / maxVal) * chartAreaWidth : 0
+            const recoveryLowW = maxVal > 0 ? (area.recoveryRange.low / maxVal) * chartAreaWidth : 0
+            const recoveryHighW = maxVal > 0 ? (area.recoveryRange.high / maxVal) * chartAreaWidth : 0
             return `
               <text x="0" y="${y + barHeight / 2 + 3}" font-family="Manrope,sans-serif" font-size="8" fill="#1a3d56">${h(report.workflows[i]?.name ?? '')}</text>
-              <rect x="${labelWidth}" y="${y}" width="${barW}" height="${barHeight}" rx="3" fill="#1a3d56" opacity="0.15"/>
+              <rect x="${labelWidth}" y="${y}" width="${barW}" height="${barHeight}" rx="3" fill="#1a3d56" opacity="0.2"/>
               <rect x="${labelWidth}" y="${y + 2}" width="${recoveryHighW}" height="${barHeight - 4}" rx="2" fill="#f7c9c0" opacity="0.5"/>
               <rect x="${labelWidth}" y="${y + 4}" width="${recoveryLowW}" height="${barHeight - 8}" rx="2" fill="#f7c9c0"/>
-              <text x="${labelWidth + barW + 6}" y="${y + barHeight / 2 + 3}" font-family="Manrope,sans-serif" font-size="8" fill="#1a3d56">${formatCurrency(area.annualCost)}</text>
+              <text x="${labelWidth + Math.max(barW, recoveryHighW) + 6}" y="${y + barHeight / 2 + 3}" font-family="Manrope,sans-serif" font-size="8" fill="#1a3d56">${formatCurrency(area.annualCost)}</text>
             `
           }).join('')}
         </svg>
@@ -934,23 +1053,23 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
 
       <div class="section-subtitle">How we calculated this</div>
       <p class="paragraph">
-        Base salary estimate x 1.25 employer uplift = fully loaded cost. People involved x weekly hours x 45 working weeks = annual hours. Annual hours x hourly rate = annual cost. Target time savings range applied per workflow type. Sum across three workflows = combined target saving range. These are directional estimates based on the sizing data you provided. A full Diagnose engagement would validate these figures with access to your team and data.
+        Base salary midpoint multiplied by 1.25 employer uplift gives the fully loaded cost per person. People involved multiplied by weekly hours and 45 working weeks gives annual hours. Annual hours multiplied by the hourly rate gives annual cost. Target time savings are applied per workflow type based on our assessment of automation potential. These are directional estimates. A full Diagnose engagement would validate them with access to your team and data.
       </p>
 
     </div>
   `
 }
 
-function workflowDetailPage(data: PdfTemplateData, wfIndex: number, dateStr: string, totalPages: number): string {
+// ── Pages 5-7: Workflow detail ──
+
+function workflowDetailPage(data: PdfTemplateData, wfIndex: number, dateStr: string): string {
   const { report, companyName } = data
   const wf = report.workflows[wfIndex]
-  const pageNum = wfIndex + 4
 
   return `
     <div class="page page-break">
       ${pageHeader(companyName, dateStr)}
-
-      <div class="section-title">${wfIndex + 1}. ${h(wf.name)}</div>
+      ${sectionBand('04', `Key opportunities: ${wf.name}`)}
 
       <div class="pull-quote">
         <div class="pull-quote-text">${h(wf.whyThisMatters)}</div>
@@ -967,8 +1086,10 @@ function workflowDetailPage(data: PdfTemplateData, wfIndex: number, dateStr: str
         </div>
       </div>
 
-      <div class="col-label">Key considerations</div>
-      <p class="paragraph" style="margin-bottom:10px">${h(wf.considerations)}</p>
+      <div class="considerations-box">
+        <div class="col-label">Key considerations</div>
+        <p class="paragraph" style="margin-bottom:0">${h(wf.considerations)}</p>
+      </div>
 
       <div class="two-col">
         <div class="detail-box">
@@ -985,100 +1106,36 @@ function workflowDetailPage(data: PdfTemplateData, wfIndex: number, dateStr: str
   `
 }
 
-function foundationsPage(data: PdfTemplateData, dateStr: string, totalPages: number): string {
-  const { companyName } = data
-  const foundations = [
-    {
-      title: 'Assign clear ownership',
-      explanation: 'Each workflow needs a single owner with authority to approve changes. Without this, improvements stall at the first disagreement.',
-      whatToDo: 'Assign a single owner per workflow who has authority to approve changes.',
-      how: 'Start with a RACI chart for the first workflow. Expand as you add more.',
-    },
-    {
-      title: 'Involve the people doing the work',
-      explanation: 'People adopt what they helped shape. A structured transition works when those affected are part of the design.',
-      whatToDo: 'Include the people who do the work in designing the new workflow.',
-      how: 'Run a design workshop with the team before building anything.',
-    },
-    {
-      title: 'Make leadership visible',
-      explanation: 'Teams watch what leaders do. Visible sponsorship from senior leaders who model the new behaviours sets the tone.',
-      whatToDo: 'Have one senior leader use the new workflow publicly within the first week.',
-      how: 'Build the first pilot around a workflow the sponsor directly oversees.',
-    },
-    {
-      title: 'Communicate early and often',
-      explanation: 'Regular, honest updates on what is changing, why, and what it means for individuals. Silence breeds resistance.',
-      whatToDo: 'Establish a fortnightly update rhythm from day one.',
-      how: 'A standing 15-minute slot covering: what changed, what is next, what we learned.',
-    },
-    {
-      title: 'Train for the specific workflow',
-      explanation: 'Role-specific training on the new tools and workflows. Generic AI training does not change daily behaviour.',
-      whatToDo: 'Create training materials specific to each role\u2019s interaction with the workflow.',
-      how: 'Shadow the current process first, then train on the difference.',
-    },
-    {
-      title: 'Protect time to learn',
-      explanation: 'Teams need space to experiment and build confidence. Bolting AI onto a full workload produces frustration, not adoption.',
-      whatToDo: 'Ring-fence 2\u20133 hours per week per person during the transition period.',
-      how: 'Reduce meeting load or defer non-critical work to create the space.',
-    },
-  ]
+// ── Page 8: Your current situation ──
 
-  return `
-    <div class="page page-break">
-      ${pageHeader(companyName, dateStr, false)}
-      ${sectionBand('04', 'What makes AI adoption stick')}
-
-      <div class="foundation-grid">
-        ${foundations.map(f => `
-          <div class="foundation-card">
-            <div class="foundation-title">${h(f.title)}</div>
-            <div class="foundation-text">${h(f.explanation)}</div>
-            <div class="foundation-label">What to do</div>
-            <div class="foundation-text">${h(f.whatToDo)}</div>
-            <div class="foundation-label">How</div>
-            <div class="foundation-text">${h(f.how)}</div>
-          </div>
-        `).join('')}
-      </div>
-
-      <p class="disclaimer">
-        These foundations build through the engagement. You do not need all of them in place before starting. The first workflow pilot is where most of them develop.
-      </p>
-
-    </div>
-  `
-}
-
-function readinessPage(data: PdfTemplateData, dateStr: string, totalPages: number): string {
+function readinessPage(data: PdfTemplateData, dateStr: string): string {
   const { report, companyName } = data
 
   return `
     <div class="page page-break">
-      ${pageHeader(companyName, dateStr, false)}
-      ${sectionBand('05', 'Your current position')}
+      ${pageHeader(companyName, dateStr)}
+      ${sectionBand('05', 'Your current situation')}
 
       ${report.maturityAssessment ? `
-        <div style="margin-bottom:14px">
-          <div class="two-col">
+        <div style="margin-bottom:6px">
+          <div class="section-subtitle" style="margin-top:0;margin-bottom:4px">Your operational maturity</div>
+          <div class="two-col" style="gap:8px">
             <div class="col">
               <div class="col-label">Strengths</div>
-              ${report.maturityAssessment.strengths.map(s => `<div class="list-item">\u2022 ${h(s)}</div>`).join('')}
+              ${report.maturityAssessment.strengths.map(s => `<div class="list-item" style="font-size:8pt;line-height:1.4;margin-bottom:1px">\u2022 ${h(s)}</div>`).join('')}
             </div>
             <div class="col">
               <div class="col-label">Areas for development</div>
-              ${report.maturityAssessment.development.map(d => `<div class="list-item">\u2022 ${h(d)}</div>`).join('')}
+              ${report.maturityAssessment.development.map(d => `<div class="list-item" style="font-size:8pt;line-height:1.4;margin-bottom:1px">\u2022 ${h(d)}</div>`).join('')}
             </div>
           </div>
         </div>
       ` : ''}
 
       ${report.quickWins && report.quickWins.length > 0 ? `
-        <div style="margin-bottom:14px">
-          <div class="section-subtitle">What you can start this week</div>
-          <p style="font-size:10pt;color:var(--slate);margin-bottom:8px">Zero-cost actions to build momentum and surface information for next steps.</p>
+        <div style="margin-bottom:6px">
+          <div class="section-subtitle" style="margin-bottom:4px">Three actions for this week</div>
+          <p style="font-size:9pt;color:var(--slate);margin-bottom:4px">Zero-cost actions to build momentum and surface information for next steps.</p>
           ${report.quickWins.map((win, i) => `
             <div class="step-row">
               <div class="step-number">${i + 1}</div>
@@ -1088,15 +1145,15 @@ function readinessPage(data: PdfTemplateData, dateStr: string, totalPages: numbe
         </div>
       ` : ''}
 
-      <div class="section-subtitle">${h(companyName)}\u2019s readiness for AI change</div>
-      <div class="two-col" style="margin-bottom:14px">
+      <div class="section-subtitle" style="margin-bottom:4px">${h(companyName)}\u2019s readiness for AI change</div>
+      <div class="two-col" style="gap:8px;margin-bottom:6px">
         <div class="col">
           <div class="col-label">Strengths</div>
-          ${report.readiness.strengths.map(s => `<div class="list-item">\u2022 ${h(s)}</div>`).join('')}
+          ${report.readiness.strengths.map(s => `<div class="list-item" style="font-size:8pt;line-height:1.4;margin-bottom:1px">\u2022 ${h(s)}</div>`).join('')}
         </div>
         <div class="col">
           <div class="col-label">Gaps to address</div>
-          ${report.readiness.gaps.map(g => `<div class="list-item">\u2022 ${h(g)}</div>`).join('')}
+          ${report.readiness.gaps.map(g => `<div class="list-item" style="font-size:8pt;line-height:1.4;margin-bottom:1px">\u2022 ${h(g)}</div>`).join('')}
         </div>
       </div>
 
@@ -1104,15 +1161,80 @@ function readinessPage(data: PdfTemplateData, dateStr: string, totalPages: numbe
   `
 }
 
-function roadmapPage(data: PdfTemplateData, dateStr: string, totalPages: number): string {
+// ── Page 9: What makes AI adoption stick ──
+
+function foundationsPage(data: PdfTemplateData, dateStr: string): string {
+  const { companyName, report } = data
+  const firstWorkflow = report.workflows[0]?.name ?? 'the first workflow'
+
+  const foundations = [
+    {
+      title: 'Assign clear ownership',
+      explanation: `Each workflow needs a single owner with authority to approve changes. Without this, improvements stall at the first disagreement. For ${h(firstWorkflow)}, identify the person who owns the process end to end.`,
+      action: `Start with a RACI chart for ${h(firstWorkflow)}. Clarify who decides, who executes, who needs to be informed. Expand the model as you add more workflows.`,
+    },
+    {
+      title: 'Involve the people doing the work',
+      explanation: 'People adopt what they helped shape. A structured transition works when those affected are part of the design. The team doing the work today understands the edge cases, workarounds, and unwritten rules that no process map captures.',
+      action: 'Run a design workshop with the team before building anything. Map the current workflow together, then co-design the target state.',
+    },
+    {
+      title: 'Make leadership visible',
+      explanation: 'Teams watch what leaders do. Visible sponsorship from senior leaders who model the new behaviours sets the tone. This is not about endorsement in a meeting. It is about using the new workflow publicly.',
+      action: 'Have the sponsor use the redesigned workflow in their own work within the first week. Build the pilot around a workflow they directly oversee.',
+    },
+    {
+      title: 'Communicate early and often',
+      explanation: 'Regular, honest updates on what is changing, why, and what it means for individuals. Silence breeds resistance. Most change resistance comes from uncertainty, not opposition.',
+      action: 'Establish a fortnightly update rhythm from day one. A standing 15-minute slot covering: what changed, what is next, what we learned.',
+    },
+    {
+      title: 'Train for the specific workflow',
+      explanation: 'Role-specific training on the new tools and workflows. Generic AI training does not change daily behaviour. People need to see how their specific tasks change, not learn about AI in the abstract.',
+      action: 'Shadow the current process first, then train on the difference. Create materials specific to each role\u2019s interaction with the workflow.',
+    },
+    {
+      title: 'Protect time to learn',
+      explanation: 'Teams need space to experiment and build confidence. Bolting AI onto a full workload produces frustration, not adoption. The transition period requires dedicated time for learning and iteration.',
+      action: 'Ring-fence 2\u20133 hours per week per person during the transition. Reduce meeting load or defer non-critical work to create the space.',
+    },
+  ]
+
+  return `
+    <div class="page page-break">
+      ${pageHeader(companyName, dateStr)}
+      ${sectionBand('06', 'What makes AI adoption stick')}
+
+      <p class="paragraph" style="margin-bottom:12px">
+        Beyond the technical implementation, these are the practices that help AI adoption succeed. You do not need all of them in place before starting. The first workflow pilot is where most of them develop, and our guidance addresses each as part of the engagement.
+      </p>
+
+      <div class="foundation-grid">
+        ${foundations.map(f => `
+          <div class="foundation-card">
+            <div class="foundation-title">${h(f.title)}</div>
+            <div class="foundation-text">${h(f.explanation)}</div>
+            <div class="foundation-label">Getting started</div>
+            <div class="foundation-text">${h(f.action)}</div>
+          </div>
+        `).join('')}
+      </div>
+
+    </div>
+  `
+}
+
+// ── Page 10: Suggested roadmap ──
+
+function roadmapPage(data: PdfTemplateData, dateStr: string): string {
   const { report, companyName } = data
 
   return `
     <div class="page page-break">
-      ${pageHeader(companyName, dateStr, false)}
-      ${sectionBand('06', 'Your roadmap from here')}
+      ${pageHeader(companyName, dateStr)}
+      ${sectionBand('07', 'Suggested roadmap: diagnosis to implementation')}
 
-      <p style="font-size:10pt;color:var(--slate);margin-bottom:6px">Structured steps to move from diagnostic to implementation.</p>
+      <p class="paragraph">Structured steps to move from this diagnostic to a working implementation.</p>
       ${report.nextSteps.map((step, i) => `
         <div class="step-row">
           <div class="step-number">${i + 1}</div>
@@ -1123,17 +1245,33 @@ function roadmapPage(data: PdfTemplateData, dateStr: string, totalPages: number)
       <div class="cta-box">
         <div class="cta-title">Ready to move from diagnostic to design?</div>
         <div class="cta-text">
-          This report is a starting point. A full Diagnose engagement validates these findings with access to your team, your data, and your systems, and produces implementation-ready blueprints.
+          This report is a starting point. A full Diagnose engagement validates these findings with access to your team, your data, and your systems. The output is an implementation-ready blueprint: redesigned workflows, technical architecture, team training plan, and a measured business case.
+        </div>
+        <div class="cta-steps">
+          <div class="cta-step">
+            <div class="cta-step-number">1</div><br/>
+            30-minute discovery call
+          </div>
+          <div class="cta-step">
+            <div class="cta-step-number">2</div><br/>
+            Scope and proposal
+          </div>
+          <div class="cta-step">
+            <div class="cta-step-number">3</div><br/>
+            Diagnose engagement
+          </div>
         </div>
         <div class="cta-link">Book a discovery call: calendly.com/tom-leomayn/30min</div>
-        <div class="cta-link" style="margin-top:3px">Email: hello@leomayn.com</div>
+        <div class="cta-link" style="margin-top:4px">Email: hello@leomayn.com</div>
       </div>
 
     </div>
   `
 }
 
-function appendixPage(data: PdfTemplateData, dateStr: string, totalPages: number): string {
+// ── Appendix 1: What you told us ──
+
+function appendixPage(data: PdfTemplateData, dateStr: string): string {
   const { companyName, diagnostic } = data
   if (!diagnostic) return ''
 
@@ -1171,6 +1309,8 @@ function appendixPage(data: PdfTemplateData, dateStr: string, totalPages: number
   `
 }
 
+// ── Appendix 2: Salary benchmarks ──
+
 function salaryBenchmarksAppendix(data: PdfTemplateData, dateStr: string): string {
   const { companyName, diagnostic } = data
   if (!diagnostic) return ''
@@ -1180,7 +1320,6 @@ function salaryBenchmarksAppendix(data: PdfTemplateData, dateStr: string): strin
   const industryLabel = FIRM_TYPE_OPTIONS.find(o => o.value === firmType)?.label ?? firmType
   const upliftMultiplier = 1 + EMPLOYER_COST_UPLIFT
 
-  // Check if tiers use the new tier-1..tier-6 format
   const hasNewTiers = tiers.some(t => t.value.startsWith('tier-'))
   if (!hasNewTiers) return ''
 
@@ -1232,25 +1371,29 @@ export function buildPdfHtml(data: PdfTemplateData): string {
   })
   const heroRecovery = formatRecovery(report.businessCase.conservativeRecovery)
 
-  // Total pages: cover + priority map + business case + 3 workflows + foundations + readiness + roadmap + optional appendix + salary benchmarks
-  const totalPages = diagnostic ? 11 : 9
+  // Total pages: cover + exec summary + priority map + business case + 3 workflows + situation + foundations + roadmap + optional appendices
+  const totalPages = diagnostic ? 12 : 10
 
-  return `<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <style>${cssBlock()}</style>
 </head>
 <body>
-  ${coverPage(data, dateStr, heroRecovery, totalPages)}
-  ${priorityMapPage(data, dateStr, totalPages)}
-  ${businessCasePage(data, dateStr, heroRecovery, totalPages)}
-  ${report.workflows.map((_, i) => workflowDetailPage(data, i, dateStr, totalPages)).join('')}
-  ${foundationsPage(data, dateStr, totalPages)}
-  ${readinessPage(data, dateStr, totalPages)}
-  ${roadmapPage(data, dateStr, totalPages)}
-  ${appendixPage(data, dateStr, totalPages)}
+  ${coverPage(data, dateStr, totalPages)}
+  ${executiveSummaryPage(data, dateStr, heroRecovery)}
+  ${priorityMapPage(data, dateStr)}
+  ${businessCasePage(data, dateStr, heroRecovery)}
+  ${report.workflows.map((_, i) => workflowDetailPage(data, i, dateStr)).join('')}
+  ${readinessPage(data, dateStr)}
+  ${foundationsPage(data, dateStr)}
+  ${roadmapPage(data, dateStr)}
+  ${appendixPage(data, dateStr)}
   ${salaryBenchmarksAppendix(data, dateStr)}
 </body>
 </html>`
+
+  // Global em-dash sanitisation — catches any that slip through from AI-generated content
+  return stripEmDashes(html)
 }
