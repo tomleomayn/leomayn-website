@@ -34,6 +34,8 @@ export function validateReportSchema(output: unknown): GeneratedReport {
  * Escape HTML entities to prevent XSS in email templates.
  */
 export function escapeHtml(text: string): string {
+  // Strip em dashes (safety net — prompt bans them but models sometimes slip)
+  const cleaned = text.replace(/\u2014/g, '. ')
   const htmlEntities: Record<string, string> = {
     '&': '&amp;',
     '<': '&lt;',
@@ -41,5 +43,5 @@ export function escapeHtml(text: string): string {
     '"': '&quot;',
     "'": '&#039;',
   }
-  return text.replace(/[&<>"']/g, (char) => htmlEntities[char])
+  return cleaned.replace(/[&<>"']/g, (char) => htmlEntities[char])
 }

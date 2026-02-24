@@ -53,6 +53,7 @@ export async function GET(
       report: stored.report,
       companyName: stored.company,
       recipientName: stored.name,
+      jobTitle: stored.qualification?.jobTitle,
       qualification: stored.qualification,
       diagnostic: stored.diagnostic,
       topArchetypes: stored.topArchetypes,

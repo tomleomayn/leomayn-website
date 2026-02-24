@@ -11,6 +11,7 @@ export const qualificationSchema = z.object({
   companyWebsite: z.string().max(200).optional(),
   role: z.string().min(1, 'Please select your role'),
   roleOther: z.string().max(100).optional(),
+  jobTitle: z.string().max(100).optional(),
   turnover: z.string().min(1, 'Please select your turnover range'),
   consentGiven: z.literal(true, {
     error: 'Please accept the privacy notice to continue',

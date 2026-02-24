@@ -27,6 +27,7 @@ export default function QualificationStep() {
       companyWebsite: '',
       role: '',
       roleOther: '',
+      jobTitle: '',
       turnover: '',
       consentGiven: false as unknown as true,
     },
@@ -113,6 +114,13 @@ export default function QualificationStep() {
             registration={register('roleOther')}
           />
         )}
+
+        <TextField
+          label="Job title"
+          error={errors.jobTitle}
+          registration={register('jobTitle')}
+          placeholder="e.g. Operations Director, Head of Delivery"
+        />
 
         <SelectField
           label="Annual company turnover"
