@@ -135,6 +135,7 @@ export interface GeneratedReport {
   id: string
   situationSummary: string
   priorityMapIntro?: string
+  notRecommendedNote?: string
   workflows: WorkflowReport[]
   businessCase: BusinessCase
   maturityAssessment?: { strengths: string[]; development: string[] }
@@ -170,6 +171,7 @@ export const generatedReportSchema = z.object({
   id: z.string(),
   situationSummary: z.string(),
   priorityMapIntro: z.string().optional(),
+  notRecommendedNote: z.string().max(250).optional(),
   workflows: z.array(workflowReportSchema).length(3),
   businessCase: z.object({
     perArea: z.array(z.object({

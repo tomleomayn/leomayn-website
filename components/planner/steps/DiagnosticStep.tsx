@@ -14,6 +14,7 @@ import {
   TEAM_SIZE_OPTIONS,
   STRATEGIC_FOCUS_OPTIONS,
   AREA_OPTIONS,
+  AREA_CATEGORIES,
   SYMPTOM_OPTIONS,
   PROCESS_KNOWLEDGE_OPTIONS,
   DATA_FOUNDATIONS_OPTIONS,
@@ -158,6 +159,7 @@ export default function DiagnosticStep() {
                 symptomContext={QUESTION_CONTEXT.painSymptoms}
                 areaOptions={AREA_OPTIONS}
                 symptomOptions={SYMPTOM_OPTIONS}
+                categories={AREA_CATEGORIES}
                 value={field.value}
                 onChange={field.onChange}
                 maxAreas={3}

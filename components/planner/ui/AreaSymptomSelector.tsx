@@ -7,12 +7,30 @@ interface PainPoint {
   symptom: string
 }
 
+interface AreaOption {
+  value: string
+  shortLabel: string
+  label: string
+}
+
+interface SymptomOption {
+  value: string
+  shortLabel: string
+  label: string
+}
+
+interface CategoryGroup {
+  label: string
+  areas: readonly string[]
+}
+
 interface AreaSymptomSelectorProps {
   areaLabel: string
   areaContext?: string
   symptomContext?: string
-  areaOptions: readonly { value: string; label: string }[]
-  symptomOptions: readonly { value: string; label: string }[]
+  areaOptions: readonly AreaOption[]
+  symptomOptions: readonly SymptomOption[]
+  categories?: readonly CategoryGroup[]
   value: PainPoint[]
   onChange: (value: PainPoint[]) => void
   maxAreas?: number
@@ -26,6 +44,7 @@ export function AreaSymptomSelector({
   symptomContext,
   areaOptions,
   symptomOptions,
+  categories,
   value,
   onChange,
   maxAreas = 3,
@@ -85,6 +104,111 @@ export function AreaSymptomSelector({
         ? error.root?.message
         : undefined
 
+  // Render a single area card with inline symptom expansion
+  const renderAreaCard = (opt: AreaOption) => {
+    const checked = selectedAreas.includes(opt.value)
+    const disabled = atLimit && !checked
+    const selectedSymptoms = getSymptomsForArea(opt.value)
+    const atSymptomLimit = selectedSymptoms.length >= maxSymptomsPerArea
+
+    return (
+      <div key={opt.value}>
+        <label
+          className={`flex items-start gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
+            checked
+              ? 'border-rock bg-pearl rounded-b-none'
+              : disabled
+                ? 'border-steel/20 opacity-50 cursor-not-allowed'
+                : 'border-steel/40 hover:border-rock'
+          }`}
+        >
+          <input
+            type="checkbox"
+            checked={checked}
+            disabled={disabled}
+            onChange={() => handleAreaToggle(opt.value)}
+            className="mt-0.5 accent-slate"
+          />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-baseline justify-between">
+              <span className="text-sm font-semibold text-slate">{opt.shortLabel}</span>
+              {checked && (
+                <span className="text-xs text-slate/50 ml-2 flex-shrink-0">
+                  {selectedSymptoms.length}/{maxSymptomsPerArea}
+                </span>
+              )}
+            </div>
+            <span className="text-xs text-slate/50 leading-snug">{opt.label}</span>
+          </div>
+        </label>
+
+        {/* Inline symptom expansion */}
+        {checked && (
+          <div className="border border-t-0 border-rock bg-white rounded-b-md p-3 space-y-1.5 transition-all">
+            {symptomContext && selectedSymptoms.length === 0 && (
+              <p className="text-xs text-slate/50 mb-2">Select up to {maxSymptomsPerArea} symptoms</p>
+            )}
+            {symptomOptions.map(symptom => {
+              const isChecked = selectedSymptoms.includes(symptom.value)
+              const isDisabled = atSymptomLimit && !isChecked
+              return (
+                <label
+                  key={symptom.value}
+                  className={`flex items-start gap-2.5 p-2 border rounded cursor-pointer transition-colors ${
+                    isChecked
+                      ? 'border-rock bg-pearl'
+                      : isDisabled
+                        ? 'border-steel/20 opacity-50 cursor-not-allowed'
+                        : 'border-steel/30 hover:border-rock'
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    disabled={isDisabled}
+                    onChange={() => handleSymptomToggle(opt.value, symptom.value)}
+                    className="mt-0.5 accent-slate"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-sm font-medium text-slate">{symptom.shortLabel}</span>
+                    <span className="text-xs text-slate/50 ml-1.5">{symptom.label}</span>
+                  </div>
+                </label>
+              )
+            })}
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  // Group areas by category, or render flat if no categories provided
+  const renderAreas = () => {
+    if (categories) {
+      return categories.map(cat => {
+        const catAreas = cat.areas
+          .map(areaValue => areaOptions.find(o => o.value === areaValue))
+          .filter((o): o is AreaOption => !!o)
+
+        if (catAreas.length === 0) return null
+
+        return (
+          <div key={cat.label}>
+            <p className="text-xs font-semibold text-slate/40 uppercase tracking-wide mb-2 mt-1">
+              {cat.label}
+            </p>
+            <div className="space-y-2">
+              {catAreas.map(opt => renderAreaCard(opt))}
+            </div>
+          </div>
+        )
+      })
+    }
+
+    // Flat rendering fallback
+    return areaOptions.map(opt => renderAreaCard(opt))
+  }
+
   return (
     <div>
       {/* Area selection */}
@@ -103,103 +227,12 @@ export function AreaSymptomSelector({
       <p className="text-sm text-slate/60 mb-3">
         Select {maxAreas === 3 ? 'two or three' : `up to ${maxAreas}`} areas ({selectedAreas.length}/{maxAreas} selected)
       </p>
-      <div className="space-y-3">
-        {areaOptions.map(opt => {
-          const checked = selectedAreas.includes(opt.value)
-          const disabled = atLimit && !checked
-          return (
-            <label
-              key={opt.value}
-              className={`flex items-start gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
-                checked
-                  ? 'border-rock bg-pearl'
-                  : disabled
-                    ? 'border-steel/20 opacity-50 cursor-not-allowed'
-                    : 'border-steel/40 hover:border-rock'
-              }`}
-            >
-              <input
-                type="checkbox"
-                checked={checked}
-                disabled={disabled}
-                onChange={() => handleAreaToggle(opt.value)}
-                className="mt-0.5 accent-slate"
-              />
-              <span className="text-sm text-slate leading-relaxed">{opt.label}</span>
-            </label>
-          )
-        })}
+      <div className="space-y-4">
+        {renderAreas()}
       </div>
 
       {errorMessage && (
         <p className="text-sm text-red-600 mt-1">{errorMessage}</p>
-      )}
-
-      {/* Symptom cards — one per selected area */}
-      {selectedAreas.length > 0 && (
-        <div className="mt-8 space-y-6">
-          {symptomContext && (
-            <div>
-              <label className="block text-sm font-sans font-semibold text-slate mb-2">
-                Q5. What does the problem mainly look like?
-              </label>
-              <div className="flex items-stretch mt-2 mb-2">
-                <div
-                  className="bg-rock rounded-full my-[3px]"
-                  style={{ width: '2px', minWidth: '2px' }}
-                />
-                <p className="text-sm leading-relaxed text-slate/70 pl-4">{symptomContext}</p>
-              </div>
-            </div>
-          )}
-          {selectedAreas.map(areaValue => {
-            const areaOpt = areaOptions.find(o => o.value === areaValue)
-            const selectedSymptoms = getSymptomsForArea(areaValue)
-            const atSymptomLimit = selectedSymptoms.length >= maxSymptomsPerArea
-            return (
-              <div
-                key={areaValue}
-                className="bg-white border border-steel/30 rounded-lg p-5"
-              >
-                <div className="flex items-baseline justify-between mb-4">
-                  <p className="text-sm font-semibold text-slate">
-                    {areaOpt?.label ?? areaValue}
-                  </p>
-                  <p className="text-sm text-slate/50">
-                    {selectedSymptoms.length}/{maxSymptomsPerArea} selected
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  {symptomOptions.map(symptom => {
-                    const isChecked = selectedSymptoms.includes(symptom.value)
-                    const isDisabled = atSymptomLimit && !isChecked
-                    return (
-                      <label
-                        key={symptom.value}
-                        className={`flex items-start gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
-                          isChecked
-                            ? 'border-rock bg-pearl'
-                            : isDisabled
-                              ? 'border-steel/20 opacity-50 cursor-not-allowed'
-                              : 'border-steel/40 hover:border-rock'
-                        }`}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={isChecked}
-                          disabled={isDisabled}
-                          onChange={() => handleSymptomToggle(areaValue, symptom.value)}
-                          className="mt-0.5 accent-slate"
-                        />
-                        <span className="text-sm text-slate leading-relaxed">{symptom.label}</span>
-                      </label>
-                    )
-                  })}
-                </div>
-              </div>
-            )
-          })}
-        </div>
       )}
     </div>
   )

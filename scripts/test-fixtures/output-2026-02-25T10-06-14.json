@@ -1,0 +1,167 @@
+{
+  "status": "success",
+  "report": {
+    "id": "e4eff1e4-caaf-4596-b488-692ea8e4d7fd",
+    "situationSummary": "Emsere operates at the intersection of clinical trial logistics and equipment management, coordinating complex workflows across 100+ countries for pharmaceutical and biotech clients. With a team in the range of 76 to 150 people, you are managing study startup, equipment rental, distribution, site closedown, and asset management at scale. From what you have described, the invisible work is coordination friction: late information that does not work, inaccurate data that consumes time, reports that arrive late and cannot be trusted. Your team is spending significant hours chasing updates, reconciling information across systems, and working around limitations in how data flows between project stages. What positions you to act: your processes are well documented, your data foundations are strong, and AI is already part of how your organisation works. You have the infrastructure. The opportunity is to redesign how information moves through your workflows so your team can focus on the clinical trial expertise that differentiates Emsere.",
+    "priorityMapIntro": "Two workflows emerged as equally strong starting points: project delivery coordination and proposal and scoping. Both accumulate signal from multiple pain points you identified. Management reporting ranked third, supported by your strong data foundations.",
+    "notRecommendedNote": "Document processing scored fourth. While your documentation maturity is high, the immediate friction is in how information flows between people and systems, not in document generation itself.",
+    "workflows": [
+      {
+        "archetypeId": "project-delivery",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "This workflow sits at the centre of three pain points you identified: late information in project delivery, handoff friction in reporting, and tool limitations across both. For a clinical trial partner managing equipment across study phases and geographies, coordination breakdowns compound quickly.",
+        "impactPotential": "high",
+        "implementationComplexity": "medium",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "From what you have described, a project moves through study startup, equipment deployment, site management, and closedown. Information about equipment status, site readiness, or protocol changes arrives late or incomplete. Your team chases updates across systems, reconciles conflicting data, and works around limitations in how your platform surfaces what matters. The result: things fall through the cracks when work moves between people or teams.",
+        "futureState": "If you were to redesign this workflow with AI assistance, the system would monitor project state across all touchpoints and surface exceptions before they become problems. AI would reconcile data from your integrated platform, flag inconsistencies, and route decisions to the right person with full context. Your team still makes the calls on site readiness or equipment allocation, but the system ensures they are working from accurate, timely information. Velocity gain: faster handoffs. Capability gain: proactive exception management.",
+        "considerations": "Your integrated platform is a strength here, but the workflow redesign will require mapping how information currently flows between study phases and identifying where AI can close the gap between what your system knows and what your team needs to act on. Given your global footprint, time zone coordination and customs clearance dependencies will shape how you structure alerts and escalations.",
+        "prerequisites": [
+          "Map current handoff points between study phases and identify where information lag creates downstream friction",
+          "Define what 'project health' looks like for Emsere: the signals that indicate a study is on track versus at risk",
+          "Identify which decisions require human judgment versus which can be automated based on rules or thresholds"
+        ],
+        "pitfalls": [
+          "Automating status updates without fixing the underlying data quality issues that cause late or inaccurate information",
+          "Building AI workflows that assume perfect data from your platform when the real problem is reconciliation across sources",
+          "Treating this as a reporting problem when the root cause is coordination friction between teams and study phases"
+        ]
+      },
+      {
+        "archetypeId": "proposals",
+        "name": "Proposal and scoping",
+        "whyThisMatters": "This workflow connects three pain points: time spent on coordination and admin in proposals, rework from inaccurate information, and scope creep in reporting. For a clinical trial partner, proposals require synthesising equipment needs, logistics constraints, and protocol requirements. When that process is manual and inconsistent, it consumes senior capacity and creates downstream delivery risk.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "From what you have described, a proposal starts with a client brief: study protocol, site locations, equipment requirements, timeline. Your team researches equipment availability, pricing, logistics constraints, and customs requirements. The process is time-consuming because information is pulled from multiple sources and reconciled manually. Inaccurate information leads to revisions. Senior people bottleneck the process because they hold the context on what is feasible and how to price complex logistics.",
+        "futureState": "If you were to redesign this workflow with AI assistance, the system would pull equipment availability, pricing, and logistics data from your platform and structure it against the client brief. AI would flag constraints early: customs complexity, equipment lead times, site access limitations. Your team still makes the judgment calls on feasibility and pricing strategy, but the system surfaces the data they need to scope accurately the first time. Velocity gain: faster turnaround. Capability gain: more consistent pricing and fewer downstream surprises.",
+        "considerations": "Your strong data foundations mean this workflow can move quickly. The design question is how much pricing discretion to encode in the system versus reserve for human judgment. Given your 25 years of expertise, the AI's role is to surface patterns from past proposals and flag when a new brief sits outside normal parameters, not to automate the pricing decision itself.",
+        "prerequisites": [
+          "Audit past proposals to identify patterns: what drives pricing variation, where rework happens, which constraints are predictable",
+          "Define the data inputs required to scope a study: equipment specs, site locations, protocol phases, timeline",
+          "Map the current approval workflow and identify where senior input is essential versus where it is a bottleneck by default"
+        ],
+        "pitfalls": [
+          "Automating proposal generation without addressing the root cause: inaccurate or incomplete information at the scoping stage",
+          "Building a system that optimises for speed but loses the nuance that comes from your team's clinical trial expertise",
+          "Treating this as a document generation problem when the real value is in structuring the scoping process itself"
+        ]
+      },
+      {
+        "archetypeId": "reporting",
+        "name": "Management reporting",
+        "whyThisMatters": "This workflow connects scope creep, handoff friction, and tool limitations. For a clinical trial partner managing global logistics, management reporting is how you track utilisation, equipment deployment, revenue by study phase, and operational health. When reports are late and inaccurate, leadership cannot make informed decisions about capacity or resource allocation.",
+        "impactPotential": "medium",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "amber",
+          "complexity": "green",
+          "learning": "red"
+        },
+        "currentState": "From what you have described, someone pulls data from your integrated platform, reconciles it across study phases or geographies, formats it for leadership, and delivers it late because the process is manual. The data is often inaccurate because it reflects point-in-time snapshots that do not account for changes in study status or equipment allocation. Leadership does not trust the numbers, so decisions get delayed or made on instinct rather than data.",
+        "futureState": "If you were to redesign this workflow with AI assistance, the system would pull data from your platform in real time, reconcile it automatically, and generate reports on a schedule or on demand. AI would flag anomalies: utilisation spikes, equipment shortages, revenue variance by study phase. Your leadership team still interprets the data and makes strategic calls, but the system ensures the numbers are accurate and timely. Velocity gain: reports delivered on time. Capability gain: proactive identification of operational issues before they escalate.",
+        "considerations": "Your strong data foundations and integrated platform mean this workflow is highly automatable. The design question is what leadership actually needs to see: high-level dashboards versus detailed breakdowns, real-time alerts versus scheduled reports. Given your global operations, time zone and currency considerations will shape how you structure the reporting cadence.",
+        "prerequisites": [
+          "Define the reporting requirements: what metrics matter, how often they need to be updated, who consumes them",
+          "Audit current data sources and identify where reconciliation happens manually today",
+          "Map the approval or review process: who validates the numbers before they go to leadership"
+        ],
+        "pitfalls": [
+          "Automating report generation without fixing the data quality issues that cause inaccuracies in the first place",
+          "Building dashboards that surface too much information and overwhelm leadership rather than highlighting what requires action",
+          "Treating this as a pure automation play when the real value is in designing what gets measured and how it informs decisions"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 2700,
+          "annualCost": 0,
+          "recoveryRange": {
+            "low": 0,
+            "high": 0
+          }
+        },
+        {
+          "archetypeId": "proposal-scoping",
+          "annualHours": 5400,
+          "annualCost": 0,
+          "recoveryRange": {
+            "low": 0,
+            "high": 0
+          }
+        },
+        {
+          "archetypeId": "management-reporting",
+          "annualHours": 2700,
+          "annualCost": 0,
+          "recoveryRange": {
+            "low": 0,
+            "high": 0
+          }
+        }
+      ],
+      "totalAnnualHours": 10800,
+      "totalAnnualCost": 0,
+      "conservativeRecovery": {
+        "low": 0,
+        "high": 0
+      },
+      "weeklyHoursRecovered": {
+        "low": 84,
+        "high": 156
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Your processes are well documented, with SOPs, templates, and playbooks in place. This gives you a clear baseline to work from when redesigning workflows.",
+        "Your data foundations are strong: data is consistent, accessible, and trusted for decisions. This positions you to move quickly on AI-augmented reporting and coordination workflows.",
+        "AI is already part of how your organisation works. Your team has experience with AI tools, which reduces the learning curve and accelerates adoption of new workflows."
+      ],
+      "development": [
+        "Your integrated platform is a strength, but the pain points you described suggest the system is not surfacing the right information at the right time. Workflow redesign will require mapping how data flows between study phases and identifying where AI can close the gap.",
+        "With a team in the range of 76 to 150 people, change management and communication will be critical. New workflows need to be rolled out in a way that builds confidence and demonstrates value quickly.",
+        "Your strategic focus is increasing capacity without hiring. That requires not just automating tasks, but redesigning how your team spends their time so recovered hours go to higher-value work: client relationships, protocol design, exception handling."
+      ]
+    },
+    "quickWins": [
+      "Run a retrospective with your project delivery team on the last three studies where information arrived late or inaccurate. Map the handoff points and identify where the friction originated.",
+      "Audit your last ten proposals: how long did each take, where did rework happen, what information was missing or wrong at the scoping stage. Look for patterns.",
+      "Interview three people who produce management reports. Ask them to walk you through the process step by step: where they pull data, how they reconcile it, what takes the most time."
+    ],
+    "readiness": {
+      "strengths": [
+        "Your strong data foundations mean AI-augmented workflows can start delivering value quickly without a long data cleanup phase.",
+        "Your integrated platform provides a single source of truth, which simplifies workflow redesign and reduces the complexity of connecting AI tools to your systems.",
+        "Your team's existing AI adoption means you can focus on workflow design rather than basic AI literacy training."
+      ],
+      "gaps": [
+        "Governance and change management will need attention. With AI embedded across the organisation, you will need clear protocols for how AI-augmented workflows are approved, monitored, and iterated.",
+        "Leadership alignment on what capacity recovery looks like. Recovered hours only create value if they are redirected to strategic work, not absorbed by scope creep or new admin.",
+        "Communication across a team of 76 to 150 people. New workflows need to be rolled out in a way that builds confidence and demonstrates value quickly, not imposed top-down."
+      ]
+    },
+    "nextSteps": [
+      "Map your current project delivery workflow on a whiteboard with your operations team. Identify every handoff point, every place where information gets reconciled manually, every decision that requires senior input. This is the baseline for redesign.",
+      "Define what 'good' looks like for each of the three workflows recommended above. What does a successful proposal process look like? What does proactive project coordination look like? What does trusted management reporting look like?",
+      "Audit your data flows. Your integrated platform is a strength, but the pain points you described suggest information is not surfacing where it is needed. Identify where data lives, how it moves between systems, and where reconciliation happens manually today.",
+      "Run a pilot on one of the three workflows with a small team. Choose the workflow where you have the clearest pain signal and the most engaged team members. Test the redesigned process, measure the impact, and iterate based on what you learn.",
+      "Align your leadership team on what capacity recovery means for Emsere. Recovered hours only create value if they are redirected to client relationships, protocol design, or operational improvements. Define what that looks like before you start automating.",
+      "Decide whether to validate these findings through internal testing or through a structured Diagnose engagement that provides access to process data, team input, and an implementation blueprint. The difference is depth: internal testing gives you directional confidence; a Diagnose engagement gives you a roadmap with buy-in from the people who will execute it."
+    ],
+    "generatedAt": "2026-02-25T10:06:14.560Z"
+  },
+  "reportId": "e4eff1e4-caaf-4596-b488-692ea8e4d7fd"
+}

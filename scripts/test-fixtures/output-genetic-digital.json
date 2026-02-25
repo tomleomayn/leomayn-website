@@ -1,0 +1,297 @@
+{
+  "report": {
+    "id": "0a2680f5-cac0-4090-be1d-26be69db55a5",
+    "situationSummary": "Genetic Digital is a UK-based life sciences digital studio with a team of 10 to 30 people, delivering compliant websites, apps, and digital platforms for pharma and healthcare clients. You are facing a pattern common in regulated agency environments: your team spends too much time on coordination and admin around the real work, rather than on the strategic thinking that differentiates you. Research outputs are variable, with data scattered across systems. Reports that should be template-driven require manual assembly. Work falls through the cracks during handoffs, and scope expands beyond what was agreed. You have some process documentation in place, mixed data foundations, and individual team members already using AI tools. That positions you well to move quickly.",
+    "priorityMapIntro": "Three workflows emerged as your strongest starting points. Research and analysis scored highest because it accumulates signal from both research inefficiency and document coordination overhead. Document processing ranked second as the infrastructure that supports your primary workflow.",
+    "workflows": [
+      {
+        "archetypeId": "research-analysis",
+        "name": "Research and analysis for client work",
+        "whyThisMatters": "This workflow scored highest because it connects two pain points you identified: time lost to coordination and admin, and work being done more than once. In a regulated environment like pharma, research quality and consistency matter. Fixing this workflow addresses both symptoms.",
+        "impactPotential": "high",
+        "implementationComplexity": "medium",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "amber",
+          "learning": "green"
+        },
+        "currentState": "A client brief arrives. Someone starts researching competitors, regulatory landscape, or market intelligence. The data lives in emails, browser tabs, and personal notes. Another team member duplicates the same research a month later because they cannot find the original work. Outputs vary depending on who did the research.",
+        "futureState": "If you were to redesign this workflow with AI assistance, research requests would trigger a structured process: AI surfaces existing work on similar topics, suggests sources, and extracts key findings into a reusable knowledge base. Your team still makes the judgment calls on what matters, but the system prevents duplication and surfaces patterns across projects.",
+        "considerations": "In pharma, compliance and audit trails matter. Any AI-assisted research workflow will need version control and source attribution built in from day one. The bigger decision is whether to start with one therapeutic area or client type, or design a system that works across your portfolio.",
+        "prerequisites": [
+          "Identify three to five recurring research types (competitor analysis, regulatory landscape, market sizing)",
+          "Define quality standards: what makes research output reusable versus disposable",
+          "Map where research findings currently live (emails, folders, heads)"
+        ],
+        "pitfalls": [
+          "Treating AI as a search engine rather than a research assistant that learns your standards",
+          "Building a knowledge base without clear ownership of who maintains and curates it",
+          "Automating research without addressing the coordination overhead that triggered the pain point"
+        ]
+      },
+      {
+        "archetypeId": "document-processing",
+        "name": "Document processing and review",
+        "whyThisMatters": "Document processing underpins your research workflow by providing the templates and standards that prevent the coordination overhead you described. You identified too much time spent pulling together reports that should be template-driven. This is infrastructure work, but it is the foundation that makes research reusable.",
+        "impactPotential": "high",
+        "implementationComplexity": "low",
+        "threeConditionsCheck": {
+          "impact": "amber",
+          "complexity": "green",
+          "learning": "amber"
+        },
+        "currentState": "From what you described, your team spends significant time assembling reports manually when the structure should be consistent. Data sits in disconnected systems. Someone opens a blank document and starts formatting. Another person reviews and reformats. The output quality depends on who built it and how much time they had.",
+        "futureState": "If you were to redesign this workflow with AI assistance, report generation would start with structured templates populated from your systems. AI handles formatting, version control, and compliance checks. Your team focuses on the narrative and strategic recommendations, not the assembly. The system ensures consistency across clients and projects.",
+        "considerations": "You have mixed data foundations, which means some reports will be easier to automate than others. Start with the highest-volume, most standardised document type. In pharma, compliance and audit trails are non-negotiable, so any document workflow will need robust version control and approval gates.",
+        "prerequisites": [
+          "Identify the three highest-volume document types (client reports, compliance documents, internal briefings)",
+          "Map where the data for each document type currently lives",
+          "Define approval and review gates for each document type"
+        ],
+        "pitfalls": [
+          "Automating document generation without fixing the underlying data quality issues",
+          "Building templates that are too rigid to accommodate client-specific requirements",
+          "Treating document processing as purely mechanical when narrative quality still requires human judgment"
+        ]
+      },
+      {
+        "archetypeId": "project-delivery",
+        "name": "Project delivery coordination",
+        "whyThisMatters": "You identified two specific symptoms in project delivery: work falling through the cracks during handoffs, and scope expanding beyond what was agreed. In a small agency, these issues compound quickly. This workflow addresses both by making handoffs visible and scope changes explicit.",
+        "impactPotential": "medium",
+        "implementationComplexity": "high",
+        "threeConditionsCheck": {
+          "impact": "green",
+          "complexity": "red",
+          "learning": "green"
+        },
+        "currentState": "A project moves from strategy to design to development. Handoffs happen in Slack, email, or verbal conversations. Status updates are manual and often out of date. Scope expands because no one has a single view of what was agreed versus what is being delivered. Clients do not get the right information at the right time.",
+        "futureState": "If you were to redesign this workflow with AI assistance, project status would be visible in real time. AI flags handoff points, tracks scope changes against the original brief, and surfaces risks before they become problems. Your team still makes the decisions, but the system ensures nothing falls through the cracks and clients get proactive updates.",
+        "considerations": "Your tech environment is siloed, which means project coordination will require some integration work. The bigger question is whether to start with internal visibility (helping your team see handoffs and scope) or client-facing visibility (giving clients real-time access to project status).",
+        "prerequisites": [
+          "Map your current project stages and handoff points, even if informal",
+          "Identify where scope creep happens most often (discovery, design, development)",
+          "Define what 'good' client communication looks like at each project stage"
+        ],
+        "pitfalls": [
+          "Building a coordination system that adds overhead rather than reducing it",
+          "Automating status updates without addressing the root cause of handoff friction",
+          "Treating project coordination as a tool problem when it is often a process design problem"
+        ]
+      }
+    ],
+    "businessCase": {
+      "perArea": [
+        {
+          "archetypeId": "research-analysis",
+          "annualHours": 810,
+          "annualCost": 37200,
+          "recoveryRange": {
+            "low": 15810,
+            "high": 21390
+          }
+        },
+        {
+          "archetypeId": "document-processing",
+          "annualHours": 1620,
+          "annualCost": 43200,
+          "recoveryRange": {
+            "low": 29160,
+            "high": 35640
+          }
+        },
+        {
+          "archetypeId": "project-delivery",
+          "annualHours": 900,
+          "annualCost": 24000,
+          "recoveryRange": {
+            "low": 10200,
+            "high": 13800
+          }
+        }
+      ],
+      "totalAnnualHours": 3330,
+      "totalAnnualCost": 104400,
+      "conservativeRecovery": {
+        "low": 55170,
+        "high": 70830
+      },
+      "weeklyHoursRecovered": {
+        "low": 39,
+        "high": 50
+      },
+      "revenueFraming": false
+    },
+    "maturityAssessment": {
+      "strengths": [
+        "Individual team members are already using AI tools, which means you have early adopters who can champion new workflows.",
+        "You have some process documentation in place, which provides a foundation for structured AI collaboration.",
+        "Your strategic focus on building new capabilities with AI aligns with the learning value of the workflows recommended."
+      ],
+      "development": [
+        "Your tech environment is siloed, with dedicated systems for each function that do not talk to each other. Integration will be a key enabler for project coordination and document workflows.",
+        "Process documentation is partial, which means some workflows depend on who you ask. Structured AI collaboration requires clearer process definitions.",
+        "Data foundations are mixed, with some systems requiring manual cleanup. Data quality disciplines will need building alongside AI deployment."
+      ]
+    },
+    "quickWins": [
+      "Interview three team members about how they currently approach research: where they look, how they store findings, and what they wish they could reuse.",
+      "Map your most common report types on a whiteboard: what data feeds each one, where that data lives, and how much time assembly takes.",
+      "Run a retrospective on your last three projects with handoff issues: what fell through the cracks, where scope expanded, and what early warning signs you missed."
+    ],
+    "readiness": {
+      "strengths": [
+        "You have individual AI adoption already happening, which means you can build on existing momentum rather than starting from zero.",
+        "Your team size (10 to 30 people) is large enough to feel the pain of coordination overhead, but small enough to implement new workflows without heavy change management.",
+        "Your strategic focus on building new capabilities positions this as an investment in team development, not just efficiency."
+      ],
+      "gaps": [
+        "Your siloed tech environment means some workflows will require integration work before AI can deliver full value. That is not a blocker, but it shapes the sequencing.",
+        "Mixed data foundations mean document processing and research workflows will need data quality disciplines built alongside automation.",
+        "Partial process documentation means some workflows will require clearer definitions before AI can assist effectively. That clarity improves through engagement, not as a prerequisite to it."
+      ]
+    },
+    "nextSteps": [
+      "Choose one research type (competitor analysis, regulatory landscape, or market intelligence) and map the current workflow end to end: who does what, where data lives, and what makes output reusable.",
+      "Identify your three highest-volume document types and assess which has the most consistent structure and cleanest data sources. That is your starting point for template-driven automation.",
+      "Define what 'good' looks like for project handoffs: what information needs to pass between stages, who needs visibility, and what triggers a scope change conversation.",
+      "Audit your current data sources for one workflow area: where is the data, how reliable is it, and what cleanup would be required to make it AI-ready.",
+      "Run a team workshop on AI-assisted workflows: show examples of research assistance, document automation, and project coordination, then ask where your team sees the biggest opportunity.",
+      "Map your approval and compliance requirements for client-facing documents: what needs human review, what can be automated, and what audit trail is required."
+    ],
+    "generatedAt": "2026-02-24T21:28:53.897Z"
+  },
+  "email": "tom@leomayn.com",
+  "company": "Genetic Digital",
+  "name": "Gareth Hughes",
+  "qualification": {
+    "name": "Gareth Hughes",
+    "email": "tom@leomayn.com",
+    "company": "Genetic Digital",
+    "companyWebsite": "https://www.geneticdigital.co.uk/",
+    "role": "founder-ceo",
+    "roleOther": "",
+    "jobTitle": "Technical Director",
+    "turnover": "1m-5m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "agency",
+    "teamSize": "10-30",
+    "strategicFocus": {
+      "primary": "capability",
+      "secondary": "capacity"
+    },
+    "painPoints": [
+      {
+        "area": "research",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "handoff-friction"
+      },
+      {
+        "area": "research",
+        "symptom": "rework"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "scope-creep"
+      },
+      {
+        "area": "documents",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "documents",
+        "symptom": "production-heavy"
+      }
+    ],
+    "aiAdoption": "individual",
+    "techEnvironment": "disconnected",
+    "processKnowledge": "partially-documented",
+    "dataFoundations": "mixed",
+    "billableSplit": 25
+  },
+  "topArchetypes": [
+    {
+      "id": "research-analysis",
+      "name": "Research and analysis for client work",
+      "description": "Conducting bespoke research, competitive analysis, market intelligence, due diligence, or background research as part of client delivery.",
+      "compositeScore": 33.5,
+      "signalScore": 16.5,
+      "goalScore": 15,
+      "feasibilityModifier": 2,
+      "foundationModifier": 0,
+      "matchedSignals": [
+        {
+          "area": "research",
+          "symptom": "work-about-work",
+          "weight": 9
+        },
+        {
+          "area": "research",
+          "symptom": "rework",
+          "weight": 3.5
+        },
+        {
+          "area": "documents",
+          "symptom": "work-about-work",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "document-processing",
+      "name": "Document processing and review",
+      "description": "Reviewing, extracting information from, generating, or processing documents: contracts, agreements, reports, compliance documents, templates.",
+      "compositeScore": 30,
+      "signalScore": 18,
+      "goalScore": 10,
+      "feasibilityModifier": 2,
+      "foundationModifier": 0,
+      "matchedSignals": [
+        {
+          "area": "research",
+          "symptom": "rework",
+          "weight": 4
+        },
+        {
+          "area": "documents",
+          "symptom": "production-heavy",
+          "weight": 10
+        },
+        {
+          "area": "documents",
+          "symptom": "work-about-work",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "project-delivery",
+      "name": "Project delivery coordination",
+      "description": "Managing the flow of client work through the organisation: task assignment, status tracking, handoffs between teams, quality gates, deadline management.",
+      "compositeScore": 23.5,
+      "signalScore": 14.5,
+      "goalScore": 7,
+      "feasibilityModifier": 2,
+      "foundationModifier": 0,
+      "matchedSignals": [
+        {
+          "area": "project-delivery",
+          "symptom": "handoff-friction",
+          "weight": 10
+        },
+        {
+          "area": "project-delivery",
+          "symptom": "scope-creep",
+          "weight": 4.5
+        }
+      ]
+    }
+  ],
+  "companyContext": "Company: Pharma &amp; Healthcare Digital Marketing Agency: Genetic Digital. Description: We deliver transformative &amp; compliant website design, app development and digital marketing solutions for healthcare, pharma &amp; medical device brands.. Homepage: Helping life-sciences and pharma marketing teams make better digital decisions in high-scrutiny environments. Our Showreel\n\n\n\nDirect access to senior digital leadership.Genetic Digital is a UK-based life-sciences digital studio specialising in compliant websites, apps and digital platforms for regulated environments. Clients work directly with our founders &#8211; not account layers &#8211; gaining access to over 50 years of combined experience across digital strategy, design and development in healthcare and pharma. We focus on what works, guided by experience rather than assumption &#8211; t. About: Founded by Damon Lightley\u00a0and\u00a0Gareth Hughes in 2011, Genetic Digital has built a reputation for delivering top-tier digital solutions to life sciences and pharma brands. What began as a shared goal to harness emerging web and app technologies has grown into a mission to advance the digital capabilities of the healthcare, medical and pharmaceutical fields. Our MissionTo help life sciences and pharmaceutical companies succeed in today\u2019s complex and fast-evolving digital landscape. With years of experience tackling industry-specific challenges, we create smart, tailored strategies to meet your un",
+  "createdAt": "2026-02-24T21:28:53.900Z"
+}

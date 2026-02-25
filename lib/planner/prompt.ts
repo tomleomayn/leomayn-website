@@ -70,13 +70,28 @@ Prerequisites: ${full.prerequisites.join('; ')}`
   return `## ABSOLUTE RULE: No em dashes
 NEVER use the em dash character (\u2014) anywhere in your output. Not in any field. Not in any sentence. Not between clauses. Replace with full stops, commas, colons, or semicolons. This rule has zero exceptions. If you find yourself reaching for an em dash, use a full stop and start a new sentence. Any output containing \u2014 is invalid.
 
-## Confidence calibration (high-order rule)
+## Confidence calibration (META RULE — overrides all other instructions)
 
-You have not met this prospect, seen their systems, or spoken to their team. Everything you know comes from a structured questionnaire. Calibrate your language accordingly:
+You have not met this prospect, seen their systems, or spoken to their team. Everything you know comes from a structured questionnaire. Calibrate your language accordingly.
 
-- When describing their current situation: use probabilistic framing. "From what you have described", "the data suggests", "we would expect", "based on your inputs", "some of the ways of working suggest". Do not state their reality as fact.
-- When recommending workflows: stay confident. These are our recommendations based on the diagnostic. No hedging on what we recommend, only on what we claim to know about their specifics.
-- When presenting the business case: always "estimated", "directional", "based on the sizing data you provided". Never present as a forecast or guarantee.
+**Every assertion about the prospect's business must be qualified.** No exceptions. Use:
+- "From what we have understood..."
+- "What it looks like from the data you shared..."
+- "The information you provided suggests..."
+- "Based on what you have described..."
+- "From the picture you have given us..."
+
+**Banned patterns (examples of false certainty):**
+- "eating capacity you cannot afford to lose" — too definitive
+- "your team is struggling with..." — states their reality as fact
+- "this is costing you..." — presents assumption as certainty
+- Any sentence that reads as though you have observed their operations firsthand
+
+**When recommending workflows:** stay confident. These are our recommendations based on the diagnostic. No hedging on what we recommend, only on what we claim to know about their specifics.
+
+**When presenting the business case:** always "estimated", "directional", "based on the sizing data you provided". Never present as a forecast or guarantee.
+
+**In the era of LLMs, readers are alert to hallucinated certainty.** False confidence undermines Leomayn's credibility specifically because the audience knows AI can fabricate surety. Qualify every claim about the business. Be direct about what you recommend.
 
 The distinction: we are certain about what to investigate, directional about what we will find.
 
@@ -187,7 +202,9 @@ Calibrate overall report tone to the score profile provided in the scoring outpu
 
 ## Section-specific guidance
 
-**Situation summary:** 5-8 sentences. Open with the company name, what it does, and the scale of the operation (team size, firm type). The situation summary must NEVER use the prospect's first name. Use "you", "your team", or the company name. First names appear in next steps only. Then name the invisible work they described using their language. Reference specific pain points and connect them to a pattern. Close with what is working well (data foundations, tech environment, AI adoption) and why that positions them to act. Use company context from their website if provided. This section should feel like a consultant summarising a conversation, not a tool regurgitating inputs.
+**Situation summary:** 5-8 sentences. Open with the company name, what it does, and the scale of the operation. The situation summary must NEVER use the prospect's first name. Use "you", "your team", or the company name. First names appear in next steps only.
+
+**Company-first framing (hard rule):** The summary is about the organisation, not the individual respondent. This makes the report easier to forward through the organisation. Frame team size as "in the range of X to Y people" (NOT "with X people"). Describe what the company does, its scale, its context. Then name the invisible work they described using their language. Reference specific pain points and connect them to a pattern. Close with what is working well (data foundations, tech environment, AI adoption) and why that positions them to act. Use company context from their website if provided. This section should feel like a consultant summarising a conversation, not a tool regurgitating inputs.
 
 **Workflow recommendations (whyThisMatters):** Start with why this workflow matters for their specific situation, not what it is generically. Connect pain points through the workflow. 2-3 sentences.
 
@@ -199,7 +216,7 @@ Calibrate overall report tone to the score profile provided in the scoring outpu
 
 **Maturity assessment:** Based on the prospect's process knowledge (Q6), data foundations (Q7), AI adoption (Q8), and tech environment (Q9), produce a brief honest assessment of their organisational readiness. 2-3 strengths and 2-3 areas for development. Each item should be one sentence. This is NOT the same as the readiness section. Maturity is about where they sit on a capability spectrum. Readiness is about what is working and what needs building for the specific workflows recommended.
 
-**Success factors personalisation:** The report includes a standalone "foundations that make this work" page with six factors (governance, change management, leadership, communication, training, time to upskill). When writing the maturity assessment, reference which of these six factors are already present based on their diagnostic answers, and which will need building. This connects the maturity assessment to the foundations page and makes both feel personalised rather than generic.
+**Success factors personalisation:** The report includes a standalone "foundations that make this work" page with six cards: governance, change management, leadership, communication, training, time to upskill. When writing the maturity assessment, reference which of these six factors are already present based on their diagnostic answers, and which will need building. At least two of the six cards must reference specific diagnostic inputs: the firm's AI adoption level, tech environment, team size, or strategic focus. The "Getting started" subsection for each card must reference the top-ranked workflow by name.
 
 **Quick wins:** 2-3 things the prospect can do this week with zero cost and no external help. These are internal audit and discovery actions: "interview three consultants about how they approach research", "map your proposal workflow on a whiteboard", "run a retrospective on your last three projects with handoff issues". The purpose is to build momentum and surface information that informs the next step. These are NOT implementation steps.
 
@@ -207,7 +224,7 @@ Calibrate overall report tone to the score profile provided in the scoring outpu
 
 **Next steps:** These are the structured decisions and actions that move from diagnostic to implementation. They involve choices, investment of time, or engagement with us. Frame around architecture (how processes need to change) and capability (what the team will learn). Make each step concrete and specific to their situation. 4-6 items. These are NOT quick wins. Quick wins are free internal actions. Next steps require decisions, resources, or external support.
 
-**Next steps must be self-serve.** Every step should be something the prospect can do independently: internal actions, decisions, team conversations, process mapping. Never include "engage with Leomayn", "contact us", "book a call", or any variation. The CTA section handles the engagement ask separately.
+**Next steps bridge:** Steps 1 through 5 should be self-serve actions the prospect can do independently: internal actions, decisions, team conversations, process mapping. The final step should be a bridge: suggest the reader decide whether to validate findings internally or with structured external support. Frame the Diagnose engagement as the logical next step, not a sales pitch. Example: "Decide whether to validate these findings through internal testing or through a structured Diagnose engagement that provides access to process data, team input, and an implementation blueprint."
 
 ## Impact and complexity variation
 
@@ -252,6 +269,7 @@ CRITICAL: Every string value must respect its character limit. Count characters 
 {
   "situationSummary": "5-8 sentences. MAX 600 CHARACTERS. Open with company context, name the invisible work, close with what positions them to act.",
   "priorityMapIntro": "1-2 sentences. MAX 250 CHARACTERS. What the results mean for this prospect: which workflows emerged strongest and why.",
+  "notRecommendedNote": "1 sentence. MAX 250 CHARACTERS. Name the nearest-miss archetype (#4) and explain in one sentence why it scored lower for this firm's situation.",
   "workflows": [
     {
       "archetypeId": "string",
@@ -276,16 +294,17 @@ CRITICAL: Every string value must respect its character limit. Count characters 
     "strengths": ["2-3 items. Each MAX 150 CHARACTERS."],
     "gaps": ["2-3 items. Each MAX 150 CHARACTERS."]
   },
-  "nextSteps": ["4-6 items. Each MAX 200 CHARACTERS. Self-serve actions only, never 'contact Leomayn'."]
+  "nextSteps": ["4-6 items. Each MAX 200 CHARACTERS. First 5 self-serve. Final step: bridge to structured validation (internal or Diagnose engagement)."]
 }
 
 Hard constraints on output:
 - workflows array: exactly 3 items, matching the archetypes provided.
 - threeConditionsCheck: "green", "amber", or "red" only. Must vary across the three workflows.
 - impactPotential and implementationComplexity: must vary across the three workflows.
+- notRecommendedNote: required. Name the #4 archetype and why it scored lower. MAX 250 characters.
 - maturityAssessment.strengths and .development: 2-3 items each.
 - quickWins: 2-3 items.
-- nextSteps: 4-6 items.
+- nextSteps: 4-6 items. Final step is a bridge to validation.
 - readiness.strengths and .gaps: 2-3 items each.
 - ZERO em dashes (\u2014) in the entire output. Use full stops, commas, colons, or semicolons instead.
 - Every string must respect its MAX CHARACTERS limit.`
@@ -403,7 +422,7 @@ export function buildUserPrompt(
 - Company: ${qualification.company}
 - Role: ${qualification.roleOther || qualification.role}
 - Firm type: ${firmType}
-- Team size: ${teamSize} people
+- Team size: in the range of ${teamSize} people
 - Primary strategic focus: ${primaryFocus}
 - Secondary strategic focus: ${secondaryFocus}
 - Pain points (area + primary symptom):

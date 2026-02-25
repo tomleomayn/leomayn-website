@@ -206,6 +206,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'communications', symptom: 'decision-bottleneck', weight: 5 },
       { area: 'research', symptom: 'decision-bottleneck', weight: 4 },
       { area: 'reporting', symptom: 'production-heavy', weight: 8 },
+      { area: 'reporting', symptom: 'no-visibility', weight: 7 },
       { area: 'documents', symptom: 'production-heavy', weight: 5 },
       { area: 'documents', symptom: 'work-about-work', weight: 4 },
     ],
@@ -237,6 +238,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'project-delivery', symptom: 'tool-limitation', weight: 7 },
       { area: 'project-delivery', symptom: 'inconsistency', weight: 8 },
       { area: 'project-delivery', symptom: 'work-about-work', weight: 5 },
+      { area: 'project-delivery', symptom: 'no-visibility', weight: 8 },
       { area: 'reporting', symptom: 'handoff-friction', weight: 5 },
       { area: 'invoicing', symptom: 'rework', weight: 5 },
       { area: 'invoicing', symptom: 'handoff-friction', weight: 5 },
@@ -333,6 +335,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'communications', symptom: 'scope-creep', weight: 4 },
       { area: 'communications', symptom: 'tool-limitation', weight: 5 },
       { area: 'communications', symptom: 'inconsistency', weight: 7 },
+      { area: 'communications', symptom: 'no-visibility', weight: 5 },
       { area: 'proposals', symptom: 'handoff-friction', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'Low', dataDependency: 'Medium' },
@@ -372,6 +375,76 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     recoveryRate: 0.5,
     painMapping: ['research'],
     feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 0 },
+  },
+  {
+    id: 'sales-pipeline',
+    name: 'Sales and business development pipeline',
+    description:
+      'Managing the flow from lead identification through qualification, proposal, and close. Includes cross-selling to existing clients, pipeline visibility, and forecasting accuracy.',
+    painSignals: [
+      'Pipeline lives in someone\'s head or a spreadsheet',
+      'Cross-selling opportunities are missed',
+      'Forecasting is guesswork',
+      'Follow-ups depend on individual memory',
+    ],
+    prerequisites: [
+      'Some form of contact or deal tracking (even a spreadsheet)',
+      'Defined sales stages or qualification criteria',
+    ],
+    goalAlignment: { costs: 2, capacity: 4, quality: 2, speed: 3, capability: 3 },
+    signalMatrix: [
+      { area: 'sales-bd', symptom: 'work-about-work', weight: 9 },
+      { area: 'sales-bd', symptom: 'rework', weight: 5 },
+      { area: 'sales-bd', symptom: 'handoff-friction', weight: 7 },
+      { area: 'sales-bd', symptom: 'scope-creep', weight: 4 },
+      { area: 'sales-bd', symptom: 'decision-bottleneck', weight: 6 },
+      { area: 'sales-bd', symptom: 'tool-limitation', weight: 7 },
+      { area: 'sales-bd', symptom: 'inconsistency', weight: 8 },
+      { area: 'sales-bd', symptom: 'no-visibility', weight: 6 },
+      { area: 'proposals', symptom: 'work-about-work', weight: 5 },
+      { area: 'proposals', symptom: 'handoff-friction', weight: 4 },
+      { area: 'communications', symptom: 'work-about-work', weight: 4 },
+      { area: 'communications', symptom: 'inconsistency', weight: 4 },
+      { area: 'knowledge', symptom: 'handoff-friction', weight: 4 },
+    ],
+    foundationProfile: { knowledgeDependency: 'Low', dataDependency: 'Medium' },
+    recoveryRate: 0.35,
+    painMapping: ['sales-bd'],
+    feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
+  },
+  {
+    id: 'compliance-qa',
+    name: 'Compliance and quality assurance',
+    description:
+      'Managing regulatory compliance, quality checks, audit trails, version control, and certification requirements. Includes internal QA processes and external reporting obligations.',
+    painSignals: [
+      'Compliance checks are manual and repetitive',
+      'Audit trail gaps surface during reviews',
+      'Version control is inconsistent across teams',
+      'Quality depends on who reviews the work',
+    ],
+    prerequisites: [
+      'Identified compliance or QA requirements',
+      'Some form of document or version management',
+      'Clear quality standards (even informal)',
+    ],
+    goalAlignment: { costs: 3, capacity: 3, quality: 5, speed: 2, capability: 2 },
+    signalMatrix: [
+      { area: 'compliance', symptom: 'work-about-work', weight: 8 },
+      { area: 'compliance', symptom: 'rework', weight: 7 },
+      { area: 'compliance', symptom: 'handoff-friction', weight: 6 },
+      { area: 'compliance', symptom: 'tool-limitation', weight: 8 },
+      { area: 'compliance', symptom: 'inconsistency', weight: 10 },
+      { area: 'compliance', symptom: 'no-visibility', weight: 5 },
+      { area: 'documents', symptom: 'inconsistency', weight: 5 },
+      { area: 'documents', symptom: 'rework', weight: 4 },
+      { area: 'project-delivery', symptom: 'inconsistency', weight: 4 },
+      { area: 'reporting', symptom: 'inconsistency', weight: 4 },
+    ],
+    foundationProfile: { knowledgeDependency: 'High', dataDependency: 'High' },
+    recoveryRate: 0.5,
+    painMapping: ['compliance'],
+    feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
   },
 ]
 
@@ -441,26 +514,44 @@ export const STRATEGIC_FOCUS_OPTIONS = [
 ] as const
 
 export const AREA_OPTIONS = [
-  { value: 'documents', label: 'Preparing documents, presentations, and internal materials' },
-  { value: 'proposals', label: 'Producing proposals, scoping, and pricing' },
-  { value: 'onboarding', label: 'Getting new clients set up and onboarded' },
-  { value: 'research', label: 'Research and analysis for client work' },
-  { value: 'communications', label: 'Client communications and follow-ups' },
-  { value: 'project-delivery', label: 'Managing active project delivery' },
-  { value: 'invoicing', label: 'Processing invoices, timesheets, and approvals' },
-  { value: 'reporting', label: 'Generating reports and management information' },
-  { value: 'knowledge', label: 'Capturing and sharing knowledge across the team' },
+  { value: 'proposals', shortLabel: 'Proposals and pricing', label: 'Producing proposals, scoping, and pricing' },
+  { value: 'research', shortLabel: 'Research and analysis', label: 'Research and analysis for client work' },
+  { value: 'communications', shortLabel: 'Client communications', label: 'Client communications and follow-ups' },
+  { value: 'onboarding', shortLabel: 'Client onboarding', label: 'Getting new clients set up and onboarded' },
+  { value: 'project-delivery', shortLabel: 'Project delivery', label: 'Managing active project delivery' },
+  { value: 'documents', shortLabel: 'Documents and reports', label: 'Preparing documents, presentations, and internal materials' },
+  { value: 'knowledge', shortLabel: 'Knowledge management', label: 'Capturing and sharing knowledge across the team' },
+  { value: 'reporting', shortLabel: 'Reporting and MI', label: 'Generating reports and management information' },
+  { value: 'invoicing', shortLabel: 'Invoicing and time', label: 'Processing invoices, timesheets, and approvals' },
+  { value: 'sales-bd', shortLabel: 'Sales and pipeline', label: 'Sales, business development, and pipeline management' },
+  { value: 'compliance', shortLabel: 'Compliance and QA', label: 'Compliance, quality assurance, and regulatory requirements' },
+] as const
+
+export const AREA_CATEGORIES = [
+  {
+    label: 'Winning work',
+    areas: ['proposals', 'research', 'communications', 'onboarding'],
+  },
+  {
+    label: 'Delivering work',
+    areas: ['project-delivery', 'documents', 'knowledge'],
+  },
+  {
+    label: 'Running the business',
+    areas: ['reporting', 'invoicing', 'sales-bd', 'compliance'],
+  },
 ] as const
 
 export const SYMPTOM_OPTIONS = [
-  { value: 'work-about-work', label: 'Too much time on coordination, updates, and admin around the real work' },
-  { value: 'rework', label: 'Work gets done more than once: revisions, corrections, miscommunication' },
-  { value: 'handoff-friction', label: 'Things fall through the cracks when work moves between people or teams' },
-  { value: 'scope-creep', label: 'Scope expands beyond what was planned or agreed' },
-  { value: 'decision-bottleneck', label: 'Progress stalls waiting for decisions, approvals, or information from senior people' },
-  { value: 'tool-limitation', label: 'Working around existing system limitations' },
-  { value: 'inconsistency', label: 'No standard way of doing it. Quality depends on who picks it up' },
-  { value: 'production-heavy', label: 'Too much time spent producing and formatting, not enough time thinking' },
+  { value: 'work-about-work', shortLabel: 'Admin overhead', label: 'Too much time on coordination, updates, and admin around the real work' },
+  { value: 'rework', shortLabel: 'Duplication and rework', label: 'Work gets done more than once: revisions, corrections, miscommunication' },
+  { value: 'handoff-friction', shortLabel: 'Handoff problems', label: 'Things fall through the cracks when work moves between people or teams' },
+  { value: 'scope-creep', shortLabel: 'Scope creep', label: 'Scope expands beyond what was planned or agreed' },
+  { value: 'decision-bottleneck', shortLabel: 'Decision bottlenecks', label: 'Progress stalls waiting for decisions, approvals, or information from senior people' },
+  { value: 'tool-limitation', shortLabel: 'Tool workarounds', label: 'Working around existing system limitations' },
+  { value: 'inconsistency', shortLabel: 'Inconsistent quality', label: 'No standard way of doing it. Quality depends on who picks it up' },
+  { value: 'production-heavy', shortLabel: 'Production-heavy', label: 'Too much time spent producing and formatting, not enough time thinking' },
+  { value: 'no-visibility', shortLabel: 'No visible progress', label: 'No visible progress until someone chases' },
 ] as const
 
 // Legacy alias — kept for backward compatibility in scoring shim
