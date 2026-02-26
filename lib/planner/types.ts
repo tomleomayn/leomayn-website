@@ -25,23 +25,26 @@ export const diagnosticSchema = z.object({
     primary: z.string().min(1, 'Please select your primary focus'),
     secondary: z.string().min(1, 'Please select your secondary focus'),
   }),
-  painPoints: z.preprocess(
-    (val) => Array.isArray(val) ? val.filter((p: any) => p?.symptom !== '') : val,
-    z
-      .array(z.object({
-        area: z.string().min(1),
-        symptom: z.string().min(1, 'Please select at least one symptom for each area'),
-      }))
-      .min(2, 'Please select at least two areas')
-      .max(6)
-      .refine(
-        (points) => {
-          const areas = new Set(points.map(p => p.area))
-          return areas.size >= 2 && areas.size <= 3
-        },
-        'Please select two or three areas'
-      ),
-  ),
+  painPoints: z
+    .array(z.object({
+      area: z.string().min(1),
+      symptom: z.string(),
+    }))
+    .refine(
+      (points) => {
+        const withSymptoms = points.filter(p => p.symptom !== '')
+        return withSymptoms.length >= 2
+      },
+      'Please select at least two areas with symptoms'
+    )
+    .refine(
+      (points) => {
+        const withSymptoms = points.filter(p => p.symptom !== '')
+        const areas = new Set(withSymptoms.map(p => p.area))
+        return areas.size >= 2 && areas.size <= 3
+      },
+      'Please select two or three areas'
+    ),
   aiAdoption: z.string().min(1, 'Please select your AI adoption level'),
   techEnvironment: z.string().min(1, 'Please select your tech environment'),
   processKnowledge: z.string().min(1, 'Please select how well documented your processes are'),

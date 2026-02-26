@@ -52,12 +52,18 @@ export default function DiagnosticStep() {
     setSubmitting(true)
     setSubmitError('')
 
+    // Strip placeholder entries (area selected, no symptom yet)
+    const cleanedData = {
+      ...data,
+      painPoints: data.painPoints.filter(p => p.symptom !== ''),
+    }
+
     try {
       // Call scoring API
       const response = await fetch('/api/planner/score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(cleanedData),
       })
 
       if (!response.ok) {
@@ -70,14 +76,14 @@ export default function DiagnosticStep() {
       if (typeof window !== 'undefined' && window.dataLayer) {
         window.dataLayer.push({
           event: 'planner_diagnostic_complete',
-          firm_type: data.firmType,
-          strategic_focus_primary: data.strategicFocus.primary,
-          strategic_focus_secondary: data.strategicFocus.secondary,
-          pain_points: data.painPoints.map(p => `${p.area}:${p.symptom}`).join(','),
+          firm_type: cleanedData.firmType,
+          strategic_focus_primary: cleanedData.strategicFocus.primary,
+          strategic_focus_secondary: cleanedData.strategicFocus.secondary,
+          pain_points: cleanedData.painPoints.map(p => `${p.area}:${p.symptom}`).join(','),
         })
       }
 
-      updateDiagnostic(data)
+      updateDiagnostic(cleanedData)
       setScoringResult(scoringResult)
       setStep(1)
     } catch {
