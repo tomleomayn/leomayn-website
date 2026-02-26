@@ -47,11 +47,11 @@ export default function PlannerLandingPage() {
               </div>
             </div>
             <div className="mt-10 animate-fade-in-up stagger-2">
-              <p className="text-base text-slate/60 mb-6">Five to ten minutes. Free. No sales pitch.</p>
+              <p className="text-base text-slate/60 mb-6">Five to ten minutes of your time. Totally free. No obligation, no sales pitch.</p>
               <Link
                 href="/planning-for-ai-deployment/start"
                 onClick={trackCTA}
-                className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-lg bg-slate text-white px-14 py-5 rounded-md hover:bg-slate-light transition-all"
+                className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-lg bg-slate text-white px-20 py-5 rounded-md hover:bg-slate-light transition-all"
               >
                 Produce your plan
               </Link>
@@ -184,24 +184,24 @@ export default function PlannerLandingPage() {
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
-                  name: 'Hype Paralysis',
+                  name: 'Paralysed by AI hype',
                   description:
                     'Reading about AI constantly but never starting. The gap between awareness and action grows wider every quarter.',
                 },
                 {
-                  name: 'Pilot Purgatory',
+                  name: 'Pilots stuck in purgatory',
                   description:
                     'Running experiments that never scale. Proofs of concept that prove the concept but never become production workflows.',
                 },
                 {
-                  name: 'Tool Sprawl',
+                  name: 'Tool sprawl but no impact',
                   description:
                     'Adopting AI tools without redesigning workflows. Adding technology to broken processes and wondering why nothing improves.',
                 },
                 {
-                  name: 'Compliance Black Box',
+                  name: 'Shadow AI and no guardrails',
                   description:
-                    'Ignoring governance until it becomes an emergency. Teams using AI without policies, creating risk that compounds silently.',
+                    'Teams adopting AI tools without policies or oversight. Risk compounds silently until governance becomes an emergency.',
                 },
               ].map((mode) => (
                 <ScrollReveal key={mode.name}>
