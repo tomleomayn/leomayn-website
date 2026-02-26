@@ -1,0 +1,151 @@
+# Law (Solicitors, Barristers, Legal Services)
+# Last updated: 2026-02-25
+
+industry: law
+label: "Law and legal services"
+
+recoveryRates:
+  document-processing:
+    range: [0.45, 0.65]
+    rationale: "Legal document assembly is one of the most documented automation use cases. Template-driven documents (NDAs, engagement letters, standard contracts) show recovery at the higher end. Complex bespoke drafting (litigation, regulatory filings) sits lower. AI contract review tools report 75-85% reduction in review time for standard documents. Clio data shows 74% of hourly billable work is exposed to AI automation."
+    sources:
+      - clio-ltr-2024
+    confidence: high
+
+  research-and-analysis:
+    range: [0.30, 0.45]
+    rationale: "Legal research tools (Westlaw, LexisNexis, newer AI-native tools like Harvey) significantly compress the search-and-summarise phase. But senior review, case strategy, and legal reasoning remain human-led. Recovery concentrated in the initial research phase, not the analysis or advice."
+    sources:
+      - clio-ltr-2024
+      - tr-georgetown-2025
+    confidence: moderate
+
+  proposal-production:
+    range: [0.30, 0.50]
+    rationale: "Law firm proposals include engagement letters, fee estimates, team bios, and credentials. Much of this is reusable content that can be assembled from templates. The scoping and pricing judgement component is less automatable. Smaller firms with less proposal infrastructure see higher gains."
+    sources:
+      - clio-ltr-2024
+    confidence: low
+
+  client-communications:
+    range: [0.15, 0.30]
+    rationale: "Client communication in law is highly consequential — advice, risk warnings, and negotiations require precision. Recovery limited to routine updates, scheduling, follow-up tracking, and file note generation. The substantive communication layer is not a recovery target."
+    sources:
+      - clio-ltr-2024
+    confidence: low
+
+  project-delivery:
+    range: [0.20, 0.35]
+    rationale: "Matter management involves progress tracking, deadline management, court date coordination, and internal handoffs. These coordination activities are automatable. The legal work itself is not. Recovery particularly relevant for high-volume practices with many concurrent matters."
+    sources:
+      - clio-ltr-2024
+    confidence: low
+
+  client-onboarding:
+    range: [0.40, 0.60]
+    rationale: "Client onboarding in law involves conflict checks, engagement letters, ID verification (KYC/AML), and matter setup. These are process-driven, checklist-heavy activities with clear automation potential. Conflict checking in particular benefits from systematic search across firm records."
+    sources:
+      - clio-ltr-2024
+    confidence: moderate
+
+  knowledge-management:
+    range: [0.35, 0.55]
+    rationale: "Law firms produce vast quantities of precedent, advice, and research that is often poorly indexed. AI-powered search and retrieval across matter files, know-how databases, and past advice is a high-value use case. Recovery depends heavily on the firm's existing knowledge infrastructure."
+    sources:
+      - mcksinsey-info-search
+      - clio-ltr-2024
+    confidence: moderate
+
+  management-reporting:
+    range: [0.40, 0.60]
+    rationale: "Financial reporting (WIP, billing, utilisation), matter reporting, and partner dashboards involve significant data aggregation from practice management systems. The reporting layer is highly automatable; the strategic interpretation is not."
+    sources:
+      - tr-georgetown-2025
+    confidence: low
+
+  sales-pipeline:
+    range: [0.15, 0.25]
+    rationale: "Business development in law is relationship-driven and reputation-dependent. Lateral hiring, referral networks, and thought leadership drive work, not CRM pipelines. Recovery limited to tracking and follow-up automation. Most law firms have minimal systematic BD processes to automate."
+    sources:
+      - clio-ltr-2024
+    confidence: low
+
+  compliance-qa:
+    range: [0.35, 0.55]
+    rationale: "Regulatory compliance (SRA requirements, AML checks, file review standards) involves systematic checking against known rules. AI-assisted compliance review is a well-documented use case in legal. Audit trail maintenance and supervision file reviews are high-potential targets."
+    sources:
+      - clio-ltr-2024
+    confidence: moderate
+
+strategicConsiderations:
+  - id: law-01
+    observation: "Lawyer utilisation averages just 37% — only 2.9 billable hours per 8-hour day. 48% of non-billable time goes to administration; 33% to business development. The gap between available capacity and billable output is the largest in professional services."
+    implication: "The recovery opportunity in law is not primarily about doing billable work faster — it is about converting non-billable administrative time into billable capacity. A small improvement in the admin ratio moves the needle significantly."
+    sources:
+      - clio-ltr-2024
+    tags: [capacity, billing-model, business-case-framing]
+
+  - id: law-02
+    observation: "The billable hour model creates a structural tension with efficiency. In a strict hours-billed-equals-revenue model, recovered hours reduce output unless the firm actively redeploys that capacity into more client work or shifts to value-based billing."
+    implication: "Business cases framed as 'save hours' can backfire in firms where hours equal revenue. Frame as 'redeploy capacity to higher-value work', 'improve realisation rates', or 'serve more clients without hiring.'"
+    sources:
+      - tr-georgetown-2025
+      - clio-ltr-2024
+    tags: [billing-model, capacity, business-case-framing]
+
+  - id: law-03
+    observation: "Partner-led governance means adoption decisions are made by the people least likely to use the tools directly. Partners spend 46% of time on billable work (RIBA data for analogous seniority), with the rest on management, BD, and supervision. The person approving investment is rarely the person doing the work."
+    implication: "Pilots must include visible senior participation. Delegation to associates without partner engagement produces tools that get adopted bottom-up (slowly) or not at all."
+    sources:
+      - tr-georgetown-2025
+    tags: [governance, adoption, decision-making]
+
+  - id: law-04
+    observation: "The proportion of non-equity partners has risen from 14.3% to 19.1% over the past two decades, while equity partners fell from 31.2% to 27.8%. Firms are restructuring to manage costs, creating more layers of management."
+    implication: "Workflow improvements must account for multi-layered review and approval processes. Efficiency gains at one level can create bottlenecks at the next if the review chain is not redesigned alongside the production process."
+    sources:
+      - tr-georgetown-2025
+    tags: [governance, capacity, adoption]
+
+  - id: law-05
+    observation: "74% of hourly billable work that law firms bill by the hour is exposed to AI automation. This is not a prediction — it is a measurement of which task types overlap with current AI capabilities."
+    implication: "Firms billing primarily by the hour face a strategic inflection: either adopt AI and shift billing models, or maintain current practices and face margin pressure as competitors become more efficient. The status quo is not stable."
+    sources:
+      - clio-ltr-2024
+    tags: [billing-model, competitive-dynamics, technology]
+
+  - id: law-06
+    observation: "Attorney burnout is reported 42% of the time. 49% cannot disconnect from work. 73% say the work environment contributed to mental health issues. These are not fringe cases — they are structural characteristics of how legal work operates."
+    implication: "Recovered time has a retention and wellbeing value beyond the billing arithmetic. In a sector with high burnout and turnover costs, the non-financial case for workflow improvement is as strong as the financial one."
+    sources:
+      - clio-ltr-2025
+    tags: [talent, capacity, adoption]
+
+  - id: law-07
+    observation: "79% of law firms are using AI in some form, but only 40% are using legal-specific solutions (down from 58% in 2024). Most adoption is generic tools (ChatGPT) rather than purpose-built legal AI."
+    implication: "The gap between generic AI experimentation and systematic workflow deployment is where the value lies. Most firms have tried AI; few have integrated it into their operational processes."
+    sources:
+      - clio-ltr-2024
+      - clio-ltr-2025
+    tags: [technology, adoption, competitive-dynamics]
+
+  - id: law-08
+    observation: "Documenting and recording information, getting information, and analysing data make up 66% of hourly work at the average law firm. These are the three activity categories with the highest AI exposure."
+    implication: "The workflow improvement opportunity in law is concentrated in the information layer — how information is found, recorded, and assembled — rather than the advice layer."
+    sources:
+      - clio-ltr-2024
+    tags: [capacity, technology, business-case-framing]
+
+  - id: law-09
+    observation: "Billing rates increased 6.5% in 2024 despite weakening inflation — the fastest pace since the financial crisis. Client pushback on rates remained minimal. This suggests pricing power remains strong, at least for now."
+    implication: "Law firms are in a position to invest in efficiency without immediate margin pressure. The business case does not need to be survival — it can be about competitive positioning and capacity for growth."
+    sources:
+      - tr-georgetown-2025
+    tags: [competitive-dynamics, billing-model, business-case-framing]
+
+  - id: law-10
+    observation: "Demand for legal services grew 2.6% in 2024 — the strongest genuine growth since before 2008. Firms achieved record profitability. But expense growth is elevated, particularly GenAI implementation costs."
+    implication: "The window for investment is now, while firms are profitable and demand is growing. Waiting for a downturn makes adoption harder (budget pressure) and the competitive gap wider."
+    sources:
+      - tr-georgetown-2025
+    tags: [competitive-dynamics, business-case-framing]

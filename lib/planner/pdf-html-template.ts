@@ -37,6 +37,7 @@ export interface PdfTemplateData {
   qualification?: QualificationData
   diagnostic?: DiagnosticData
   topArchetypes?: RankedArchetype[]
+  theoreticalMax?: number
   companyContext?: string
 }
 
@@ -392,7 +393,8 @@ function cssBlock(): string {
       align-items: center;
       gap: 6px;
       padding: 8px 10px;
-      margin-bottom: 4px;
+      min-height: 52px;
+      margin-bottom: 10px;
       background: var(--light-blue);
       border-radius: 4px;
       border-left: 3px solid var(--coral);
@@ -403,8 +405,12 @@ function cssBlock(): string {
     .es-wf-pill {
       text-align: center;
       font-size: 7pt;
-      padding: 3px 6px;
+      padding: 2px 4px;
       min-width: 0;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .workflow-name {
@@ -476,7 +482,7 @@ function cssBlock(): string {
       border-left: 4px solid var(--coral);
       background: var(--pearl);
       padding: 6px 12px;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
     .pull-quote-text {
       font-size: 9.5pt;
@@ -489,7 +495,7 @@ function cssBlock(): string {
     .two-col {
       display: flex;
       gap: 10px;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
     .col {
       flex: 1;
@@ -639,7 +645,7 @@ function cssBlock(): string {
     }
     .bc-card-header {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr auto;
       gap: 14px;
       align-items: baseline;
       margin-bottom: 4px;
@@ -648,7 +654,6 @@ function cssBlock(): string {
       font-family: var(--font-serif);
       font-size: 11pt;
       color: var(--slate);
-      grid-column: 1 / 3;
     }
     .bc-card-saving-cell {
       text-align: right;
@@ -686,11 +691,12 @@ function cssBlock(): string {
     .bc-target-badge {
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 9pt;
-      color: var(--coral-text);
-      background: #fdf0ed;
-      padding: 1px 8px;
-      border-radius: 8px;
+      font-size: 8pt;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 2px 6px;
+      border-radius: 6px;
+      text-align: center;
     }
     .bc-bars-stacked {
       display: flex;
@@ -708,16 +714,15 @@ function cssBlock(): string {
       height: 100%;
       border-radius: 3px;
     }
+    .bc-bar-conservative {
+      background: var(--coral);
+    }
+    .bc-bar-upper {
+      background: var(--coral-dark);
+    }
     .bc-bar-total-cost {
       background: var(--slate);
       opacity: 0.25;
-    }
-    .bc-bar-upper {
-      background: var(--coral);
-      opacity: 0.5;
-    }
-    .bc-bar-conservative {
-      background: var(--coral);
     }
     .bc-total-row {
       background: var(--slate);
@@ -907,7 +912,7 @@ function cssBlock(): string {
       background: var(--light-blue);
       padding: 6px 10px;
       border-radius: 4px;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
   `
 }
@@ -987,7 +992,7 @@ function coverPage(data: PdfTemplateData, dateStr: string, totalPages: number): 
 
 function executiveSummaryPage(data: PdfTemplateData, dateStr: string, heroRecovery: string): string {
   const { report, companyName, topArchetypes } = data
-  const maxScore = topArchetypes?.[0]?.compositeScore ?? 25
+  const theoreticalMax = data.theoreticalMax ?? topArchetypes?.[0]?.compositeScore ?? 25
 
   return `
     <div class="page page-break">
@@ -1008,7 +1013,8 @@ function executiveSummaryPage(data: PdfTemplateData, dateStr: string, heroRecove
       </div>
 
       <div class="section-subtitle">Three workflows to investigate</div>
-      <p class="paragraph" style="margin-bottom:10px">${report.priorityMapIntro ? h(report.priorityMapIntro) : 'We scored nine workflow archetypes against your diagnostic inputs and ranked them by the potential to have a positive business impact, the likely technical feasibility of delivering the improvement, and the extent to which the opportunity would provide good learning experience for your team to support the overall upskilling of the workforce in AI. These three emerged as the strongest starting points.'}</p>
+      <p class="paragraph" style="margin-bottom:4px">${report.priorityMapIntro ? h(report.priorityMapIntro) : 'We scored nine workflow archetypes against your diagnostic inputs and ranked them by the potential to have a positive business impact, the likely technical feasibility of delivering the improvement, and the extent to which the opportunity would provide good learning experience for your team to support the overall upskilling of the workforce in AI. These three emerged as the strongest starting points.'}</p>
+      <p class="paragraph" style="font-size:9pt;color:var(--steel);margin-bottom:10px">The opportunity score reflects how well each workflow matches your situation, based on the pain points you described, your strategic priorities, and your current technical readiness. A higher score means a stronger fit between what you told us and what this workflow addresses.</p>
 
       ${report.workflows.map((wf, i) => {
         const impact = normaliseCondition(wf.threeConditionsCheck.impact)
@@ -1017,14 +1023,17 @@ function executiveSummaryPage(data: PdfTemplateData, dateStr: string, heroRecove
         const compositeScore = topArchetypes?.find(
           a => a.id === wf.archetypeId || normalise(wf.archetypeId).startsWith(normalise(a.id))
         )?.compositeScore
+        const normalisedScore = compositeScore !== undefined && theoreticalMax > 0
+          ? Math.max(0, Math.round((compositeScore / theoreticalMax) * 100))
+          : undefined
 
         return `
           <div class="es-wf-row">
             <div class="workflow-number">${i + 1}</div>
             <div class="es-wf-name">
               <div style="font-weight:700;font-size:10pt;color:var(--slate)">${h(wf.name)}</div>
-              ${compositeScore !== undefined ? `
-                <div style="font-size:8pt;color:var(--steel);margin-top:2px">Opportunity score: ${compositeScore.toFixed(1)} / ${maxScore.toFixed(1)}</div>
+              ${normalisedScore !== undefined ? `
+                <div style="font-size:8pt;color:var(--steel);margin-top:2px">Opportunity score: ${normalisedScore} / 100</div>
               ` : ''}
             </div>
             <span class="pill es-wf-pill" style="background:${CONDITION_PILL[impact].bg};color:${CONDITION_PILL[impact].color}">${h(CONDITION_LABELS.impact[impact])}</span>
@@ -1042,7 +1051,7 @@ function executiveSummaryPage(data: PdfTemplateData, dateStr: string, heroRecove
 
 function priorityMapPage(data: PdfTemplateData, dateStr: string): string {
   const { report, companyName, topArchetypes } = data
-  const maxScore = topArchetypes?.[0]?.compositeScore ?? 25
+  const theoreticalMax = data.theoreticalMax ?? topArchetypes?.[0]?.compositeScore ?? 25
 
   return `
     <div class="page page-break">
@@ -1060,7 +1069,10 @@ function priorityMapPage(data: PdfTemplateData, dateStr: string): string {
         const compositeScore = topArchetypes?.find(
           a => a.id === wf.archetypeId || normalise(wf.archetypeId).startsWith(normalise(a.id))
         )?.compositeScore
-        const barWidth = compositeScore !== undefined ? Math.round((compositeScore / maxScore) * 100) : 0
+        const normalisedScore = compositeScore !== undefined && theoreticalMax > 0
+          ? Math.max(0, Math.round((compositeScore / theoreticalMax) * 100))
+          : undefined
+        const barWidth = normalisedScore ?? 0
 
         return `
           <div class="workflow-card">
@@ -1068,8 +1080,8 @@ function priorityMapPage(data: PdfTemplateData, dateStr: string): string {
               <div class="workflow-number">${i + 1}</div>
               <div style="flex:1">
                 <span class="workflow-name">${h(wf.name)}</span>
-                ${compositeScore !== undefined ? `
-                  <span class="workflow-score"> (${compositeScore.toFixed(1)} / ${maxScore.toFixed(1)})</span>
+                ${normalisedScore !== undefined ? `
+                  <span class="workflow-score"> (${normalisedScore} / 100)</span>
                   <div class="score-bar-container">
                     <div class="score-bar-fill" style="width:${barWidth}%"></div>
                   </div>
@@ -1092,6 +1104,22 @@ function priorityMapPage(data: PdfTemplateData, dateStr: string): string {
 
 // ── Page 4: Business case ──
 
+function computeBarScaleTicks(maxCost: number): { value: number; pct: number }[] {
+  // Pick a nice round interval based on maxCost
+  const rawInterval = maxCost / 4
+  const magnitude = Math.pow(10, Math.floor(Math.log10(rawInterval)))
+  const niceMultiples = [1, 2, 2.5, 5, 10]
+  const normalized = rawInterval / magnitude
+  const niceFactor = niceMultiples.find(m => m >= normalized) ?? 10
+  const interval = niceFactor * magnitude
+
+  const ticks: { value: number; pct: number }[] = []
+  for (let v = 0; v <= maxCost; v += interval) {
+    ticks.push({ value: v, pct: maxCost > 0 ? Math.round((v / maxCost) * 100) : 0 })
+  }
+  return ticks
+}
+
 function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: string): string {
   const { report, companyName } = data
   const { businessCase } = report
@@ -1102,6 +1130,7 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
 
   // Max annual cost for bar scaling (each bar is relative to the largest cost)
   const maxCost = Math.max(...businessCase.perArea.map(a => a.annualCost))
+  const scaleTicks = computeBarScaleTicks(maxCost)
 
   return `
     <div class="page page-break">
@@ -1123,45 +1152,55 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
         </div>
       </div>
 
+      <div class="bc-legend" style="margin-bottom:6px">
+        <div class="bc-legend-item"><div class="bc-legend-dot" style="background:var(--coral)"></div>Lower estimated saving</div>
+        <div class="bc-legend-item"><div class="bc-legend-dot" style="background:var(--coral-dark)"></div>Upper estimated saving</div>
+        <div class="bc-legend-item"><div class="bc-legend-dot" style="background:var(--slate);opacity:0.25"></div>Current total workflow cost</div>
+      </div>
+
       ${businessCase.perArea.map((area, i) => {
         const pctRange = getRecoveryPercentageRange(area.archetypeId)
         const costBarWidth = maxCost > 0 ? Math.round((area.annualCost / maxCost) * 100) : 0
         const upperSavingWidth = area.annualCost > 0 ? Math.round((area.recoveryRange.high / maxCost) * 100) : 0
         const lowerSavingWidth = area.annualCost > 0 ? Math.round((area.recoveryRange.low / maxCost) * 100) : 0
+        const isLast = i === businessCase.perArea.length - 1
 
         return `
           <div class="bc-card">
             <div class="bc-card-header">
               <div class="bc-card-name">${h(report.workflows[i]?.name ?? '')}</div>
-              <div class="bc-card-saving-cell">
-                <div class="bc-card-saving">${formatRecovery(area.recoveryRange)}</div>
-                <div class="bc-metric-label">Target annual cost saving</div>
+              <div class="bc-card-saving-cell" style="display:flex;align-items:center;gap:4px">
+                <div class="bc-metric-label" style="font-size:6pt;text-align:right">Target workflow<br/>efficiency saving</div>
+                <div class="bc-target-badge">${pctRange.low}\u2013${pctRange.high}%</div>
               </div>
             </div>
             <div class="bc-grid">
               <div class="bc-grid-cell">
                 <div class="bc-metric-value">${area.annualHours.toLocaleString('en-GB')}</div>
-                <div class="bc-metric-label">Current estimated<br/>hours per year</div>
+                <div class="bc-metric-label">Estimated hours<br/>per year</div>
               </div>
-              <div class="bc-grid-cell">
+              <div class="bc-grid-cell" style="align-items:center">
+                <div class="bc-metric-value">${formatRecovery(area.recoveryRange)}</div>
+                <div class="bc-metric-label">Target annual<br/>cost saving</div>
+              </div>
+              <div class="bc-grid-cell" style="text-align:right">
                 <div class="bc-metric-value">${formatCurrency(area.annualCost)}</div>
                 <div class="bc-metric-label">Current estimated<br/>annual cost</div>
-              </div>
-              <div class="bc-grid-cell">
-                <div class="bc-target-badge">${pctRange.low}\u2013${pctRange.high}%</div>
-                <div class="bc-metric-label">Target workflow<br/>efficiency saving</div>
               </div>
             </div>
             <div class="bc-bars-stacked">
               <div class="bc-bar-row">
-                <div class="bc-bar-segment bc-bar-total-cost" style="width:${costBarWidth}%"></div>
+                <div class="bc-bar-segment bc-bar-conservative" style="width:${lowerSavingWidth}%"></div>
               </div>
               <div class="bc-bar-row">
                 <div class="bc-bar-segment bc-bar-upper" style="width:${upperSavingWidth}%"></div>
               </div>
               <div class="bc-bar-row">
-                <div class="bc-bar-segment bc-bar-conservative" style="width:${lowerSavingWidth}%"></div>
+                <div class="bc-bar-segment bc-bar-total-cost" style="width:${costBarWidth}%"></div>
               </div>
+            </div>
+            <div style="position:relative;height:10px;margin-top:2px">
+              ${scaleTicks.map(t => `<span style="position:absolute;left:${t.pct}%;transform:translateX(-50%);font-size:5.5pt;color:var(--steel)">${formatCurrency(t.value)}</span>`).join('')}
             </div>
           </div>
         `
@@ -1171,22 +1210,16 @@ function businessCasePage(data: PdfTemplateData, dateStr: string, heroRecovery: 
         <div>
           <div class="bc-total-label">Total</div>
           <div class="bc-total-value">${businessCase.totalAnnualHours.toLocaleString('en-GB')}</div>
-          <div class="bc-total-sublabel">Current estimated<br/>hours per year</div>
+          <div class="bc-total-sublabel">Estimated hours<br/>per year</div>
         </div>
-        <div>
-          <div class="bc-total-value" style="margin-top:18px">${formatCurrency(businessCase.totalAnnualCost)}</div>
-          <div class="bc-total-sublabel">Current estimated<br/>annual cost</div>
-        </div>
-        <div>
+        <div style="display:flex;flex-direction:column;align-items:center">
           <div class="bc-total-value" style="margin-top:18px">${formatRecovery(businessCase.conservativeRecovery)}</div>
           <div class="bc-total-sublabel">Target annual<br/>cost saving</div>
         </div>
-      </div>
-
-      <div class="bc-legend">
-        <div class="bc-legend-item"><div class="bc-legend-dot" style="background:var(--slate);opacity:0.25"></div>Current total workflow cost</div>
-        <div class="bc-legend-item"><div class="bc-legend-dot" style="background:var(--coral);opacity:0.5"></div>Upper estimated saving</div>
-        <div class="bc-legend-item"><div class="bc-legend-dot" style="background:var(--coral)"></div>Lower estimated saving</div>
+        <div style="text-align:right">
+          <div class="bc-total-value" style="margin-top:18px">${formatCurrency(businessCase.totalAnnualCost)}</div>
+          <div class="bc-total-sublabel">Current estimated<br/>annual cost</div>
+        </div>
       </div>
 
       <div class="section-subtitle" style="margin-top:6px">How we calculated this</div>
@@ -1258,7 +1291,7 @@ function readinessPage(data: PdfTemplateData, dateStr: string): string {
 
       ${report.maturityAssessment ? `
         <div style="margin-bottom:10px">
-          <div class="section-subtitle" style="margin-top:0;margin-bottom:4px">Your operational maturity</div>
+          <div class="section-subtitle" style="margin-top:0;margin-bottom:4px">${h(companyName)}\u2019s current operational profile</div>
           <div class="two-col" style="gap:8px">
             <div class="col">
               <div class="col-label">Strengths</div>
@@ -1401,8 +1434,8 @@ function roadmapPage(data: PdfTemplateData, dateStr: string): string {
             Diagnose engagement
           </div>
         </div>
-        <div class="cta-link">Book a discovery call: calendly.com/tom-leomayn/30min</div>
-        <div class="cta-link" style="margin-top:4px">Email: hello@leomayn.com</div>
+        <a href="https://calendly.com/tom-leomayn/30min" class="cta-link" style="text-decoration:none">Book a discovery call: calendly.com/tom-leomayn/30min</a>
+        <a href="mailto:hello@leomayn.com" class="cta-link" style="display:block;margin-top:4px;text-decoration:none">Email: hello@leomayn.com</a>
       </div>
 
     </div>

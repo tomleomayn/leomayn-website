@@ -1,0 +1,163 @@
+# Consulting (Management, Strategy, Specialist Consulting)
+# Last updated: 2026-02-25
+
+industry: consulting
+label: "Management and strategy consulting"
+
+recoveryRates:
+  document-processing:
+    range: [0.45, 0.65]
+    rationale: "Consulting produces high volumes of formatted deliverables — slide decks, reports, executive summaries, workshop packs. Much of this is assembly from existing intellectual capital: past case studies, frameworks, data charts, and boilerplate methodology descriptions. Template-driven assembly and formatting sit at the upper end. Bespoke thought-leadership pieces and novel strategic analyses sit lower. Consulting firms generally have better document infrastructure than the cross-sector average, which lifts the lower bound slightly."
+    sources:
+      - mckinsey-genai-2023
+      - microsoft-wti-2025
+    confidence: moderate
+
+  research-and-analysis:
+    range: [0.30, 0.45]
+    rationale: "Research is a core consulting activity — market sizing, competitor analysis, benchmarking, literature review. The search-and-gather phase is highly compressible with AI tools, and consultants already spend 19-20% of their time finding information. But the synthesis, framing, and insight generation that distinguishes consulting from data collection remains human-led. Junior consultants doing desk research see the highest recovery; partners interpreting findings see the least."
+    sources:
+      - mcksinsey-info-search
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  proposal-production:
+    range: [0.40, 0.60]
+    rationale: "Proposals are a significant investment in consulting — competitive bids can consume hundreds of hours across team bios, credentials, methodology sections, pricing models, case studies, and formatting. Most of this content already exists somewhere in the firm. The assembly, retrieval, and first-draft generation phases are highly automatable. The strategic positioning, pricing judgement, and client-specific tailoring are not. Large firms with formal bid teams see recovery at the upper end; boutiques writing from scratch sit lower."
+    sources:
+      - mckinsey-genai-2023
+      - mcksinsey-info-search
+    confidence: moderate
+
+  client-communications:
+    range: [0.20, 0.35]
+    rationale: "Client communication in consulting is frequent and consequential — status updates, steering committee papers, workshop pre-reads, email follow-ups. Microsoft data shows 57% of knowledge worker time goes to communication. Recovery is concentrated in routine updates, meeting summaries, and follow-up tracking. The advisory conversations, stakeholder management, and relationship-building that define senior consulting work are not automatable."
+    sources:
+      - microsoft-wti-2025
+      - worklytics-2025
+    confidence: low
+
+  project-delivery:
+    range: [0.30, 0.45]
+    rationale: "Consulting is project-based with defined scopes, milestones, and deliverable schedules. Project coordination — resource allocation, timeline tracking, status reporting, internal handoffs between workstreams — consumes significant time, particularly for engagement managers. SPI data shows utilisation at 68.9%, meaning over 30% of time goes to non-billable overhead. The coordination layer is automatable; the client-facing delivery decisions are not. Consulting's structured project model makes this archetype slightly more recoverable than the generic baseline."
+    sources:
+      - spi-benchmark-2025
+      - worklytics-2025
+    confidence: moderate
+
+  client-onboarding:
+    range: [0.35, 0.55]
+    rationale: "Consulting onboarding involves NDA processing, data room setup, stakeholder mapping, interview scheduling, background research on the client organisation, and project kickoff logistics. These are process-driven activities with clear automation potential. The relationship-building and scope-clarification conversations are not automatable but the administrative machinery is. Similar to the generic baseline — consulting onboarding is structured but not notably more so than other professional services."
+    sources:
+      - mckinsey-genai-2023
+      - source-global-uk-2024
+    confidence: low
+
+  knowledge-management:
+    range: [0.40, 0.60]
+    rationale: "Knowledge management is a competitive differentiator in consulting — the ability to reuse intellectual capital from past engagements (frameworks, benchmarks, case studies, deliverable templates) directly affects margin and quality. McKinsey found 1.8 hours per day spent searching for information. Consulting firms invest heavily in knowledge systems but adoption is uneven. AI-powered retrieval across past proposals, project files, and methodology libraries is a high-value use case. The curation, quality control, and contextual judgement remain human-led. Higher than generic because the knowledge base is larger and more structured."
+    sources:
+      - mcksinsey-info-search
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  management-reporting:
+    range: [0.45, 0.65]
+    rationale: "Consulting firms track utilisation, pipeline, revenue recognition, project profitability, and resource forecasting with high granularity. SPI benchmarks show these metrics are central to firm management. The data aggregation and report formatting phases are highly automatable. Consulting firms typically have better PSA and ERP systems than other professional services, which lifts recovery potential. The interpretation — why utilisation dropped, which projects are at risk — remains human-led."
+    sources:
+      - spi-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  sales-pipeline:
+    range: [0.25, 0.40]
+    rationale: "Consulting business development is more systematic than in law or accounting — formal CRM processes, pursuit tracking, go/no-go decisions, and structured proposal workflows. But the core of BD remains relationship-driven: partner networks, speaking engagements, and repeat client relationships. Recovery is in pipeline administration, pursuit tracking, competitor intelligence gathering, and proposal coordination. Higher than generic because consulting has more formalised BD processes to automate."
+    sources:
+      - mckinsey-genai-2023
+      - source-global-uk-2024
+    confidence: low
+
+  compliance-qa:
+    range: [0.30, 0.50]
+    rationale: "Consulting has lighter regulatory compliance than law or accounting, but quality assurance is critical — deliverable review, methodology adherence, independence checks, and brand standards enforcement. Peer review processes consume senior time. Automated checking against known standards and templates is feasible. The judgement calls on analytical quality and client-readiness remain human-led. Similar to generic baseline — consulting QA is important but less regulated than other professions."
+    sources:
+      - mckinsey-genai-2023
+    confidence: low
+
+strategicConsiderations:
+  - id: con-01
+    observation: "Billable utilisation across professional services fell to 68.9% in 2024, down from 73.2% in 2021. This sits below the 70-80% optimal band for profitability. Over 30% of consultant time goes to non-billable overhead — internal meetings, administration, business development, and knowledge management."
+    implication: "The primary recovery opportunity in consulting is converting non-billable overhead into billable capacity. A 5-percentage-point improvement in utilisation (from 69% to 74%) can translate to a 15-20% profit improvement for a typical firm, without winning a single new client."
+    sources:
+      - spi-benchmark-2025
+    tags: [capacity, billing-model, business-case-framing]
+
+  - id: con-02
+    observation: "The UK consulting market contracted 3.4% in 2024 (from £15.2bn to £15bn) while the MCA reports total industry value at £20.4bn including exports. Clients are buying smaller, more tactical pieces of work rather than large transformation programmes."
+    implication: "Smaller engagements mean more proposals per pound of revenue, more project setups, and more transitions between clients. The administrative overhead per revenue pound increases. Firms that cannot reduce the cost-to-serve for smaller engagements will see margins compress."
+    sources:
+      - source-global-uk-2024
+      - mca-annual-2025
+    tags: [competitive-dynamics, billing-model, business-case-framing]
+
+  - id: con-03
+    observation: "66% of consulting leaders cite AI as the top growth driver, and 59% cite digital technology more broadly. Yet 59% of senior leaders also say they need to invest in upgrading their own technology urgently. Firms are selling digital transformation while running on legacy internal systems."
+    implication: "The gap between what consulting firms sell and how they operate creates a credibility risk. Firms that systematically deploy AI into their own workflows — not just into client deliverables — will have a stronger proof point and a structural cost advantage."
+    sources:
+      - mca-annual-2025
+      - source-global-uk-2024
+    tags: [technology, adoption, competitive-dynamics]
+
+  - id: con-04
+    observation: "Knowledge workers spend 1.8 hours per day searching for and gathering information. In consulting, where past intellectual capital (frameworks, benchmarks, case studies, deliverable templates) is the raw material for new engagements, the cost of poor retrieval is amplified."
+    implication: "Knowledge management is the highest-ROI starting point for most consulting firms. Improving how consultants find and reuse existing work reduces research time, improves deliverable quality, and shortens ramp-up on new engagements. This does not require changing how people work — just how they find things."
+    sources:
+      - mcksinsey-info-search
+    tags: [capacity, technology, business-case-framing]
+
+  - id: con-05
+    observation: "Professional services workers spend 4.2 hours daily in meetings and have only 3.0 hours of focus time. Managers get 22% less focus time than individual contributors. In consulting, where partners and directors split time between client delivery, business development, and firm management, the focus deficit is acute."
+    implication: "Senior consultants are the most expensive resource and the most time-constrained. Workflow improvements that protect their focus time — automated status updates, AI-assisted meeting prep, async reporting — have an outsized impact because the hourly cost of interruption is highest at the top."
+    sources:
+      - worklytics-2025
+      - microsoft-wti-2025
+    tags: [capacity, productivity, decision-making]
+
+  - id: con-06
+    observation: "Revenue growth across professional services slowed to 4.6% in 2024. Consulting firms face a margin squeeze: clients demanding more for less, talent costs rising, and the shift to smaller engagements increasing overhead per revenue pound."
+    implication: "The economic case for workflow improvement is stronger in a slow-growth environment. Firms cannot grow their way out of margin pressure — they need to improve productivity with existing headcount. This makes the business case more receptive but also raises the bar for demonstrable ROI."
+    sources:
+      - spi-benchmark-2025
+      - source-global-uk-2024
+    tags: [competitive-dynamics, business-case-framing, capacity]
+
+  - id: con-07
+    observation: "Partner and director time in professional services splits roughly 46% billable, with the remainder on management, business development, and supervision. Junior consultants run at 70%+ billable. The people making adoption decisions have fundamentally different work patterns from those doing the work."
+    implication: "Pilots must demonstrate value at multiple seniority levels. A tool that saves an analyst 2 hours per week on research will not impress a partner whose bottleneck is meeting overload and email triage. Design adoption programmes with separate use cases for each tier."
+    sources:
+      - spi-benchmark-2025
+      - worklytics-2025
+    tags: [governance, adoption, decision-making]
+
+  - id: con-08
+    observation: "Consulting has a strong 'up or out' culture. Talent acquisition and retention are expensive — firms invest heavily in training, only to lose experienced consultants to industry or competitors. The pressure on the talent pipeline is constant."
+    implication: "Recovered time has a retention value beyond the billing arithmetic. Reducing administrative burden — particularly for mid-level consultants who carry the heaviest delivery load — directly addresses a top driver of attrition. The non-financial case for workflow improvement is as strong as the utilisation case."
+    sources:
+      - spi-benchmark-2025
+    tags: [talent, capacity, adoption]
+
+  - id: con-09
+    observation: "Most consulting firms have experimented with AI — ChatGPT for drafting, Copilot for presentations, internal GPT wrappers for knowledge search. But systematic deployment into defined workflows with measurable outcomes remains rare. The gap is between experimentation and operational integration."
+    implication: "The competitive advantage is not in AI adoption — most firms have already started. It is in moving from scattered tool use to workflow-level deployment: specific processes, measured before and after, with clear ownership. Firms that bridge the experimentation-to-deployment gap first will set the productivity benchmark."
+    sources:
+      - mca-annual-2025
+      - mckinsey-genai-2023
+    tags: [technology, adoption, competitive-dynamics]
+
+  - id: con-10
+    observation: "Consulting engagements produce significant intellectual capital — methodologies, frameworks, benchmarks, diagnostic tools — that depreciates rapidly if not captured and reused. The shift toward smaller, more tactical engagements increases the volume of distinct projects and amplifies the knowledge capture challenge."
+    implication: "Automated knowledge capture at engagement close — extracting reusable assets, tagging by industry and capability, indexing deliverables — becomes more valuable as engagement volumes increase. Firms that systematise this will compound their intellectual capital; those that do not will keep rebuilding from scratch."
+    sources:
+      - source-global-uk-2024
+      - mcksinsey-info-search
+    tags: [technology, capacity, competitive-dynamics, seasonality]

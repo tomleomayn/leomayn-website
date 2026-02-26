@@ -200,6 +200,7 @@ export async function POST(request: Request) {
           qualification,
           diagnostic,
           topArchetypes,
+          theoreticalMax: scoringResult.theoreticalMax,
           companyContext,
           createdAt: new Date().toISOString(),
         },

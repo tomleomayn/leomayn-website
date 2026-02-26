@@ -25,6 +25,7 @@ module.exports = {
           DEFAULT: '#f7c9c0',
           light: '#fae0dc',
           dark: '#f0b3a8',
+          text: '#c8675a',
         },
         // Neutrals
         chalk: '#fffcfa',

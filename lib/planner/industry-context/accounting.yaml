@@ -1,0 +1,148 @@
+# Accounting (Audit, Tax, Advisory)
+# Last updated: 2026-02-25
+
+industry: accounting
+label: "Accounting, tax, and audit"
+
+recoveryRates:
+  document-processing:
+    range: [0.45, 0.70]
+    rationale: "Accounting produces high volumes of standardised documents — tax returns, financial statements, audit reports, management accounts. Template-driven compliance output is at the upper end. Advisory reports and bespoke analysis sit lower. Accountants record 87% of client time and bill 86% — the leakage is small, suggesting the time spent is real."
+    sources:
+      - icaew-benchmark-2025
+    confidence: moderate
+
+  research-and-analysis:
+    range: [0.25, 0.40]
+    rationale: "Tax research and technical advisory involve searching HMRC guidance, case law, and professional standards. The search phase is automatable; the interpretation and advice are not. Recovery depends on practice type — general practice has less research; specialist tax/audit has more."
+    sources:
+      - icaew-benchmark-2025
+    confidence: low
+
+  proposal-production:
+    range: [0.35, 0.50]
+    rationale: "Accounting proposals are relatively standardised — scope of work, fee estimates, team credentials, engagement terms. Much of this is reusable content. The pricing component involves judgement but can be supported by historical data. Smaller practices produce fewer proposals; the payoff is proportionally lower."
+    sources:
+      - icaew-benchmark-2025
+    confidence: low
+
+  client-communications:
+    range: [0.20, 0.35]
+    rationale: "Client communication in accounting follows predictable cycles — year-end, tax deadlines, interim reviews. Routine updates, document requests, and deadline reminders are automatable. Substantive advice communication is not."
+    sources:
+      - icaew-benchmark-2025
+    confidence: low
+
+  project-delivery:
+    range: [0.25, 0.40]
+    rationale: "Audit and accounts preparation follows structured methodologies with clear milestones. Scheduling, task allocation, progress tracking, and sign-off management are automatable. The audit work itself requires professional judgement."
+    sources:
+      - icaew-benchmark-2025
+      - spi-benchmark-2025
+    confidence: low
+
+  client-onboarding:
+    range: [0.40, 0.60]
+    rationale: "Client onboarding involves AML/KYC checks, engagement letters, authority letters (HMRC, Companies House), data collection, and system setup. These are largely process-driven with well-defined checklists. High-volume practices see particular benefit."
+    sources:
+      - icaew-benchmark-2025
+    confidence: moderate
+
+  knowledge-management:
+    range: [0.30, 0.45]
+    rationale: "Accounting knowledge is heavily codified — standards, legislation, HMRC guidance. Retrieval from these structured sources is well-suited to AI. The challenge is more in staying current with regulatory changes than in finding historical knowledge."
+    sources:
+      - mcksinsey-info-search
+    confidence: low
+
+  management-reporting:
+    range: [0.45, 0.65]
+    rationale: "Management reporting is core to accounting. Aggregating financial data, producing dashboards, variance analysis, and board packs involve significant data processing that is highly automatable. The narrative interpretation layer remains human-led. This is typically the highest-confidence recovery area in accounting."
+    sources:
+      - icaew-benchmark-2025
+    confidence: moderate
+
+  sales-pipeline:
+    range: [0.15, 0.30]
+    rationale: "Business development in accounting is largely referral-driven. Cross-selling to existing clients is the primary growth mechanism. Pipeline tracking, referral follow-up, and proposal status management are automatable. The relationship and trust-building are not."
+    sources:
+      - icaew-benchmark-2025
+    confidence: low
+
+  compliance-qa:
+    range: [0.40, 0.60]
+    rationale: "Compliance is deeply embedded in accounting — ISQM requirements, ethical standards, filing deadlines, regulatory submissions. Systematic checking of workpapers, completion checklists, and filing status is process-driven and highly automatable. The professional judgement layer (materiality, going concern) is not."
+    sources:
+      - icaew-benchmark-2025
+    confidence: moderate
+
+strategicConsiderations:
+  - id: acc-01
+    observation: "UK accounting practices achieve a median of 773 chargeable hours per fee earner per year against a target of 1,000-1,200. The gap between aspiration and reality is 23-36%, representing a structural efficiency shortfall."
+    implication: "Recovering even 100 hours per fee earner per year through workflow improvement closes 10% of the chargeability gap. This is a concrete, measurable target that finance-literate partners will respond to."
+    sources:
+      - icaew-benchmark-2025
+    tags: [capacity, billing-model, business-case-framing]
+
+  - id: acc-02
+    observation: "Accounting work is intensely seasonal. Tax deadlines (January, July), year-end filing windows, and audit cycles create predictable capacity crunches. During peak periods, staff work significantly above sustainable utilisation. During troughs, utilisation drops below 60%."
+    implication: "Adoption windows are narrow. AI deployment must target the peak-period bottlenecks (where the pain is) but the implementation and training must happen during the troughs (where the time is). Timing the rollout to the annual cycle is critical."
+    sources:
+      - icaew-benchmark-2025
+    tags: [seasonality, adoption, capacity]
+
+  - id: acc-03
+    observation: "Chargeability targets vary sharply by seniority: entry-level 80-90%, senior staff 70-85%, managers 60-75%, partners 40-60%. Partners spend more time on management, BD, and supervision than on chargeable work."
+    implication: "Workflow improvements that free up partner time for BD and client relationships have a disproportionate revenue impact — not through hourly billing, but through client retention and cross-selling."
+    sources:
+      - icaew-benchmark-2025
+    tags: [capacity, billing-model, governance]
+
+  - id: acc-04
+    observation: "Routine compliance work operates at 20-25% profit margins. Advisory and specialist services command 30-40%. The margin differential incentivises firms to move up the value chain — but most fee income still comes from compliance."
+    implication: "Automating compliance work has two effects: it protects the margin on the base revenue, and it frees capacity to deliver higher-margin advisory work. Both effects compound."
+    sources:
+      - icaew-benchmark-2025
+    tags: [billing-model, competitive-dynamics, business-case-framing]
+
+  - id: acc-05
+    observation: "Profit per equity partner increased 20% year-on-year, but removing client money interest income shows underlying trading growth was flat. Real operational efficiency has not improved — the headline number is inflated by interest rates."
+    implication: "Partners who look at the headline PEP number may not feel urgency. The operational efficiency case needs to be made on underlying trading metrics, not headline profitability."
+    sources:
+      - icaew-benchmark-2025
+    tags: [business-case-framing, governance, competitive-dynamics]
+
+  - id: acc-06
+    observation: "Fee income grew by a median of 6%, but this barely kept pace with inflation over 2022-2024. In real terms, most practices have not grown. The profession is maintaining, not advancing."
+    implication: "Efficiency gains are the primary lever for real income growth when top-line growth is inflation-matching at best. This is a 'do more with what you have' environment."
+    sources:
+      - icaew-benchmark-2025
+    tags: [competitive-dynamics, business-case-framing]
+
+  - id: acc-07
+    observation: "Keeping staff working productively was identified as one of the biggest challenges facing firms. This is not a technology problem — it is a workflow, management, and utilisation problem."
+    implication: "Technology is a means to the end of better utilisation, not an end in itself. Firms that approach AI as a 'productivity tool' without addressing underlying workflow design will be disappointed."
+    sources:
+      - icaew-benchmark-2025
+    tags: [adoption, capacity, talent]
+
+  - id: acc-08
+    observation: "Accountants record 87% of client time and bill 86% of recorded time. Time leakage is relatively low compared to other professional services. The efficiency opportunity is in the work itself, not in the billing process."
+    implication: "Unlike law (where billing capture is a major issue), accounting's recovery potential is in reducing the time spent on each task, not in capturing more of the time already spent."
+    sources:
+      - icaew-benchmark-2025
+    tags: [billing-model, business-case-framing]
+
+  - id: acc-09
+    observation: "The accounting profession is heavily regulated (FRC, PCAOB, ISQM, ethical standards). Any automation must maintain audit trail integrity, documented review processes, and regulatory compliance. This is non-negotiable."
+    implication: "AI deployment in accounting must be audit-trail-compatible from day one. 'Move fast and break things' does not work in a regulated environment. The quality assurance framework must be designed into the workflow, not bolted on."
+    sources:
+      - icaew-benchmark-2025
+    tags: [compliance, adoption, governance]
+
+  - id: acc-10
+    observation: "The shift from compliance to advisory is the stated strategic direction of most practices, but compliance work still generates the majority of fee income. The transition is slow because clients expect compliance as the baseline."
+    implication: "AI that makes compliance work faster and cheaper supports the strategic transition — it makes the base sustainable while freeing capacity for advisory growth. The business case should connect to the firm's strategic direction, not just operational efficiency."
+    sources:
+      - icaew-benchmark-2025
+    tags: [competitive-dynamics, business-case-framing, capacity]

@@ -1,0 +1,156 @@
+# Generic Cross-Sector Baseline
+# Applies to all industries as a fallback and to "internal services" and "other" firm types.
+# Last updated: 2026-02-25
+
+industry: generic
+label: "Cross-sector professional services"
+
+recoveryRates:
+  document-processing:
+    range: [0.40, 0.65]
+    rationale: "Document assembly, formatting, and production are among the most automatable knowledge work activities. McKinsey estimates 60-70% of employee time involves activities that could be automated. The lower bound reflects judgement-heavy documents; the upper bound reflects template-driven, repetitive output."
+    sources:
+      - mckinsey-genai-2023
+      - microsoft-wti-2025
+    confidence: moderate
+
+  research-and-analysis:
+    range: [0.25, 0.40]
+    rationale: "Research involves significant judgement, but the search, gathering, and initial synthesis phases are highly automatable. McKinsey (2012) found knowledge workers spend 19-20% of time searching for information. AI-assisted search can compress this significantly, but the analysis and interpretation phases remain human-led."
+    sources:
+      - mcksinsey-info-search
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  proposal-production:
+    range: [0.35, 0.55]
+    rationale: "Proposal assembly combines research (pricing, case studies), writing (methodology, approach), and formatting. The assembly and formatting phases are highly automatable; the strategic positioning and pricing judgement less so. Recovery concentrated in first-draft generation and historical content retrieval."
+    sources:
+      - mckinsey-genai-2023
+      - microsoft-wti-2025
+    confidence: low
+
+  client-communications:
+    range: [0.20, 0.35]
+    rationale: "Client communication is relationship-driven and context-dependent. Microsoft WTI shows 57% of knowledge worker time goes to communication, but most of this requires human judgement. Recovery potential is in drafting routine updates, scheduling, follow-up tracking, and status reporting — not in the relationship itself."
+    sources:
+      - microsoft-wti-2025
+      - worklytics-2025
+    confidence: low
+
+  project-delivery:
+    range: [0.25, 0.40]
+    rationale: "Project coordination involves significant admin overhead — status updates, scheduling, resource allocation, progress tracking. These coordination activities are automatable. The project decisions and client interactions are not. Recovery concentrated in the coordination layer, not the delivery layer."
+    sources:
+      - spi-benchmark-2025
+      - worklytics-2025
+    confidence: low
+
+  client-onboarding:
+    range: [0.35, 0.55]
+    rationale: "Onboarding involves document collection, data entry, checklist management, and initial setup — largely process-driven activities with clear automation potential. The relationship-building component is not automatable but the administrative machinery around it is."
+    sources:
+      - mckinsey-genai-2023
+    confidence: low
+
+  knowledge-management:
+    range: [0.30, 0.50]
+    rationale: "Knowledge retrieval, tagging, and organisation are directly addressable by AI. McKinsey (2012) found 1.8 hours/day spent searching for information. Modern search and RAG tools can reduce this substantially. The curation and quality judgement component remains human-led."
+    sources:
+      - mcksinsey-info-search
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  management-reporting:
+    range: [0.40, 0.60]
+    rationale: "Data gathering, aggregation, and report formatting are among the most automatable activities. The interpretation and narrative layers require human judgement. Recovery highest in organisations with structured data sources; lower where data is scattered across spreadsheets and emails."
+    sources:
+      - mckinsey-genai-2023
+      - microsoft-wti-2025
+    confidence: moderate
+
+  sales-pipeline:
+    range: [0.20, 0.35]
+    rationale: "Pipeline management involves CRM updates, follow-up scheduling, proposal tracking, and activity reporting — automatable admin. The relationship, judgement, and persuasion components are fundamentally human. Conservative estimate reflects the high proportion of judgement-based activity."
+    sources:
+      - mckinsey-genai-2023
+    confidence: low
+
+  compliance-qa:
+    range: [0.30, 0.50]
+    rationale: "Compliance checking against known rules and standards is well-suited to automation. Document review, checklist verification, and audit trail maintenance are process-driven. The judgement calls on edge cases and regulatory interpretation remain human-led."
+    sources:
+      - mckinsey-genai-2023
+    confidence: low
+
+strategicConsiderations:
+  - id: generic-01
+    observation: "Knowledge workers spend 57% of their time communicating (meetings, email, chat) and only 43% creating. This means the majority of recoverable time is in how people coordinate, not in what they produce."
+    implication: "Workflow improvements that target communication overhead (status updates, meeting prep, email triage) often yield more time than those targeting the work product itself."
+    sources:
+      - microsoft-wti-2025
+    tags: [capacity, communication, business-case-framing]
+
+  - id: generic-02
+    observation: "Billable utilisation across professional services has fallen steadily from 73.2% (2021) to 68.9% (2024), well below the 75% profitability threshold. Non-billable overhead is growing, not shrinking."
+    implication: "Firms are not short of work — they are short of capacity. Time recovered from non-billable overhead directly improves utilisation and therefore profitability, without needing to win new clients."
+    sources:
+      - spi-benchmark-2025
+    tags: [capacity, billing-model, business-case-framing]
+
+  - id: generic-03
+    observation: "Knowledge workers are interrupted every 2 minutes during core hours — 275 times per day. Focus time averages just 3.2 hours per day (median). Professional services is worse: 3.0 hours daily focus against 4.2 hours of meetings."
+    implication: "Protecting focus time is as important as automating tasks. Workflow improvements that reduce interruptions (async status updates, automated triage) compound over the full workday."
+    sources:
+      - worklytics-2025
+      - microsoft-wti-2025
+    tags: [capacity, adoption, productivity]
+
+  - id: generic-04
+    observation: "1.8 hours per day — nearly 20% of the working week — is spent searching for and gathering information. A 2025 study found teams lose 3.2 hours per week re-finding the same things."
+    implication: "Knowledge management and retrieval improvements have a measurable, near-universal payoff. This is often the quickest win because it does not require changing how people work — just how they find things."
+    sources:
+      - mcksinsey-info-search
+    tags: [capacity, technology, knowledge-management]
+
+  - id: generic-05
+    observation: "Managers get 22% less focus time than individual contributors (2.8 vs 3.6 hours/day) but spend 71% more time in meetings (4.1 vs 2.4 hours/day). Senior leaders have the least time to evaluate and adopt new tools."
+    implication: "AI adoption programmes must account for the decision-maker's time constraints. Pilots should be designed to show results within existing schedules, not require additional time investment from already-stretched managers."
+    sources:
+      - worklytics-2025
+    tags: [adoption, governance, decision-making]
+
+  - id: generic-06
+    observation: "The optimal utilisation band is 70-80%. Below 70%, profitability suffers. Above 85%, burnout risk increases sharply and staff turnover follows. Most professional services firms are currently below the lower threshold."
+    implication: "Recovered time should be redeployed, not eliminated. The goal is to move utilisation from 69% toward 75%, not to reduce headcount. Framing matters: 'recover capacity' not 'reduce staff.'"
+    sources:
+      - spi-benchmark-2025
+    tags: [capacity, billing-model, talent, business-case-framing]
+
+  - id: generic-07
+    observation: "AI adoption in professional services stands at 52%, higher than healthcare (28%) but lower than technology (78%). The gap between adoption and productive use remains large — most firms are experimenting, not systematically deploying."
+    implication: "The competitive advantage is not in adopting AI but in deploying it into specific workflows with measurable outcomes. Most firms are still at the exploration stage."
+    sources:
+      - worklytics-2025
+    tags: [adoption, technology, competitive-dynamics]
+
+  - id: generic-08
+    observation: "60-70% of employee time involves activities that could theoretically be automated with current technology. But this measures technical potential, not practical recovery. Organisational readiness, data quality, process documentation, and change management determine what is actually achievable."
+    implication: "The gap between theoretical automation potential and realised efficiency gain is typically 3-5x. A workflow with 60% theoretical automation potential might realistically recover 15-25% in the first year. Set expectations accordingly."
+    sources:
+      - mckinsey-genai-2023
+    tags: [business-case-framing, adoption, technology]
+
+  - id: generic-09
+    observation: "Training investment in professional services averages 2-3% of revenue. Yet the transition to AI-enabled workflows requires dedicated learning time that competes with billable work."
+    implication: "Firms that ring-fence 2-3 hours per week per person during transition periods see faster adoption. The cost is real (billable hours forgone) but the alternative — bolting AI onto a full workload — produces frustration, not adoption."
+    sources:
+      - spi-benchmark-2025
+    tags: [adoption, talent, capacity]
+
+  - id: generic-10
+    observation: "Revenue growth across professional services slowed to 4.6% in 2024, down from 7.8% in 2023. Firms are under pressure to do more with existing capacity rather than grow headcount."
+    implication: "The economic environment favours efficiency investment over hiring. This creates a receptive audience for workflow improvement — but also raises scrutiny on ROI claims."
+    sources:
+      - spi-benchmark-2025
+    tags: [competitive-dynamics, business-case-framing]

@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'AI Deployment Planner | Leomayn',
   description:
-    'Answer ten questions about your firm and receive a personalised AI deployment report with prioritised workflow recommendations and business case numbers.',
+    'Answer a few questions about your firm and receive a personalised AI deployment report with prioritised workflow recommendations and business case numbers.',
   alternates: {
     canonical: '/planning-for-ai-deployment/start',
   },

@@ -14,6 +14,7 @@ interface StoredReport {
   qualification?: QualificationData
   diagnostic?: DiagnosticData
   topArchetypes?: RankedArchetype[]
+  theoreticalMax?: number
   companyContext?: string
   createdAt: string
 }
@@ -57,6 +58,7 @@ export async function GET(
       qualification: stored.qualification,
       diagnostic: stored.diagnostic,
       topArchetypes: stored.topArchetypes,
+      theoreticalMax: stored.theoreticalMax,
       companyContext: stored.companyContext,
     })
 

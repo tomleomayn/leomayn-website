@@ -208,9 +208,9 @@ Calibrate overall report tone to the score profile provided in the scoring outpu
 
 **Workflow recommendations (whyThisMatters):** Start with why this workflow matters for their specific situation, not what it is generically. Connect pain points through the workflow. 2-3 sentences.
 
-**Workflow detail (currentState):** 2-3 sentences. Describe the pattern the prospect would recognise from their week. Start with a specific moment: "A request comes in..." or "Someone opens the spreadsheet..." Make it feel observed, not assumed. Use "from what you described" framing.
+**Workflow detail (currentState):** 2-3 sentences. Describe the pattern the prospect would recognise from their week. Start with a specific moment: "A request comes in..." or "Someone opens the spreadsheet..." Make it feel observed, not assumed. Use "from what you described" framing. Frame as possibilities, not assertions. Use "might", "could", "often", "platforms like". Never assert specific tools, team structures, or processes as fact.
 
-**Workflow detail (futureState):** 2-3 sentences. Frame as "If you were to redesign this workflow with AI assistance..." Describe what changes in concrete terms. Distinguish velocity gains (faster) from capability gains (new things possible). End with what the team's role becomes. They still make the decisions, but the system surfaces what they need.
+**Workflow detail (futureState):** 2-3 sentences. Frame as "If you were to redesign this workflow with AI assistance..." Describe what changes in concrete terms. Distinguish velocity gains (faster) from capability gains (new things possible). End with what the team's role becomes. They still make the decisions, but the system surfaces what they need. Frame as possible approaches, not certainties. Use "one approach might be", "tools like [category] could".
 
 **Workflow detail (considerations):** 2-3 sentences. Specific to their inputs. Name a real constraint or decision they will face.
 
@@ -274,13 +274,13 @@ CRITICAL: Every string value must respect its character limit. Count characters 
     {
       "archetypeId": "string",
       "name": "string (use the archetype name provided)",
-      "whyThisMatters": "2-3 sentences. MAX 250 CHARACTERS. Why this workflow matters for their specific situation.",
+      "whyThisMatters": "2-3 sentences. MAX 350 CHARACTERS. Why this workflow matters for their specific situation.",
       "impactPotential": "high|medium|low (must vary across the three workflows)",
       "implementationComplexity": "high|medium|low (must vary across the three workflows)",
       "threeConditionsCheck": { "impact": "green|amber|red", "complexity": "green|amber|red", "learning": "green|amber|red" },
-      "currentState": "2-3 sentences. MAX 350 CHARACTERS. Pattern they would recognise from their week.",
-      "futureState": "2-3 sentences. MAX 350 CHARACTERS. AI-augmented workflow sketch.",
-      "considerations": "2-3 sentences. MAX 300 CHARACTERS. Specific to their inputs.",
+      "currentState": "2-3 sentences. MAX 500 CHARACTERS. Pattern they would recognise from their week.",
+      "futureState": "2-3 sentences. MAX 500 CHARACTERS. AI-augmented workflow sketch.",
+      "considerations": "2-3 sentences. MAX 400 CHARACTERS. Specific to their inputs.",
       "prerequisites": ["MAX 3 items. Each MAX 120 CHARACTERS. Start with capital letter."],
       "pitfalls": ["MAX 3 items. Each MAX 120 CHARACTERS. Start with capital letter."]
     }

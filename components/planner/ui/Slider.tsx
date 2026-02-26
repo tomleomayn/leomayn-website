@@ -49,8 +49,14 @@ export function Slider({
           className="w-full h-2 bg-steel/30 rounded-full appearance-none cursor-pointer accent-slate"
         />
         <div className="flex justify-between mt-2">
-          <span className="text-xs text-slate/60">{leftAnchor} {touched && `(${value}%)`}</span>
-          <span className="text-xs text-slate/60">{rightAnchor} {touched && `(${100 - value}%)`}</span>
+          <div className="text-left">
+            {touched && <span className="block text-lg font-semibold text-coral-text">{value}%</span>}
+            <span className="text-xs text-slate/60">{leftAnchor}</span>
+          </div>
+          <div className="text-right">
+            {touched && <span className="block text-lg font-semibold text-coral-text">{100 - value}%</span>}
+            <span className="text-xs text-slate/60">{rightAnchor}</span>
+          </div>
         </div>
       </div>
     </div>

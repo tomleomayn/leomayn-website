@@ -1,0 +1,190 @@
+# Source Library
+# Profile of each major publication used in the industry context research.
+# Last updated: 2026-02-25
+
+sources:
+  - id: mckinsey-genai-2023
+    name: "The Economic Potential of Generative AI: The Next Productivity Frontier"
+    publisher: McKinsey Global Institute
+    year: 2023
+    url: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+    scope: "Global analysis of generative AI impact across 63 use cases and 850 occupations. Breaks work into activity types and estimates automation potential per activity."
+    methodology: "Occupation-level analysis using O*NET work activity data. Estimates technical automation potential, not actual adoption rates."
+    limitations: "Measures theoretical potential, not realised gains. US-centric occupation taxonomy. Does not account for organisational readiness or adoption friction."
+    keyFindings:
+      - "60-70% of employee time could be automated with current technology (up from ~50% pre-generative AI)"
+      - "Generative AI increases automation potential most for knowledge work — activities requiring natural language understanding account for 25% of total work time"
+      - "$2.6-4.4 trillion annual value across 63 use cases analysed"
+
+  - id: mckinsey-agents-2025
+    name: "Agents, Robots, and Us: Skill Partnerships in the Age of AI"
+    publisher: McKinsey Global Institute
+    year: 2025
+    url: "https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai"
+    scope: "Updated automation potential estimates incorporating AI agents and physical automation."
+    methodology: "Extension of 2023 methodology with AI agent capabilities factored in."
+    limitations: "Forward-looking estimates. Agent capabilities assumed, not yet widely deployed."
+    keyFindings:
+      - "57% of US work hours automatable with current technology"
+
+  - id: microsoft-wti-2025
+    name: "2025 Work Trend Index Annual Report"
+    publisher: Microsoft / LinkedIn
+    year: 2025
+    url: "https://www.microsoft.com/en-us/worklab/work-trend-index"
+    scope: "Global survey of knowledge workers on time allocation, collaboration patterns, and AI adoption."
+    methodology: "Analysis of Microsoft 365 telemetry data (aggregated, anonymised) plus survey of 31,000 workers across 31 countries."
+    limitations: "Skewed toward Microsoft 365 users. Telemetry captures digital activity only — not offline work, thinking time, or client meetings."
+    keyFindings:
+      - "57% of time spent communicating (meetings, email, chat); 43% creating (documents, spreadsheets, presentations)"
+      - "117 emails and 153 Teams messages received daily per average employee"
+      - "Employees interrupted every 2 minutes during core hours — 275 times per day"
+      - "4.2 hours daily meetings in professional services; 3.0 hours focus time"
+
+  - id: worklytics-2025
+    name: "2025 Productivity Benchmarks for Knowledge Workers"
+    publisher: Worklytics
+    year: 2025
+    url: "https://www.worklytics.co/resources/2025-productivity-benchmarks-knowledge-workers-teams-above-below-line"
+    scope: "Benchmarks for focus time, collaboration load, and workday span by role and industry."
+    methodology: "Aggregated workplace analytics data. Sample size not published."
+    limitations: "Primarily US tech and professional services companies. May not represent small firms."
+    keyFindings:
+      - "Median focus time: 3.2 hours/day (16 hours/week)"
+      - "Median collaboration time: 48% of workday"
+      - "Professional services: 4.2 hours daily meetings, 3.0 hours focus, 52% AI adoption"
+      - "Managers get 22% less focus time than individual contributors"
+
+  - id: spi-benchmark-2025
+    name: "18th Annual Professional Services Maturity Benchmark Report"
+    publisher: Service Performance Insight (SPI Research)
+    year: 2025
+    url: "https://spiresearch.com/reports/2025-ps-maturity-benchmark/"
+    scope: "Annual survey of 403 professional services firms across IT consulting, management consulting, accounting, marketing, architecture, engineering."
+    methodology: "Self-reported firm-level data. Firms segmented by maturity level (1-5)."
+    limitations: "Self-reported data. Skews toward firms that actively measure these metrics. US-centric sample."
+    keyFindings:
+      - "Billable utilisation fell to 68.9% (from 73.2% in 2021)"
+      - "Revenue growth slowed to 4.6% YoY (down from 7.8% in 2023)"
+      - "Optimal utilisation range: 70-80% for profitability without burnout"
+
+  - id: clio-ltr-2024
+    name: "2024 Legal Trends Report"
+    publisher: Clio
+    year: 2024
+    url: "https://www.clio.com/resources/legal-trends/2024-report/"
+    scope: "Annual analysis of legal industry data from tens of thousands of legal professionals. Covers utilisation, billing, AI adoption."
+    methodology: "Aggregated and anonymised data from Clio's platform (primarily small-mid law firms). Supplemented by survey data."
+    limitations: "Skewed toward Clio's user base — predominantly small and mid-sized firms in North America. May not represent UK firms or large practices."
+    keyFindings:
+      - "Average lawyer utilisation rate: 37% (2.9 billable hours per 8-hour day)"
+      - "48% of non-billable time goes to administrative tasks"
+      - "33% of non-billable time goes to business development"
+      - "74% of hourly billable work exposed to AI automation"
+      - "79% of firms using AI; 40% using legal-specific AI solutions"
+
+  - id: clio-ltr-2025
+    name: "2025 Legal Trends Report"
+    publisher: Clio
+    year: 2025
+    url: "https://www.clio.com/resources/legal-trends/read-online/"
+    scope: "Updated legal industry benchmarks including AI revenue impact data."
+    methodology: "Same as 2024 — Clio platform data plus survey."
+    limitations: "Same as 2024."
+    keyFindings:
+      - "36% report AI positively influenced revenues; 69% among wide adopters"
+      - "Attorney burnout reported 42% of the time"
+
+  - id: tr-georgetown-2025
+    name: "2025 Report on the State of the US Legal Market"
+    publisher: Thomson Reuters Institute / Georgetown Law Center on Ethics
+    year: 2025
+    url: "https://www.legal.io/articles/5564524/State-of-the-Legal-Market-2025-Adapting-to-Change-Amid-Record-Profits"
+    scope: "Annual review of US law firm financial performance, demand, billing rates, structural changes."
+    methodology: "Peer Monitor data from large and mid-size US law firms. Not a survey — based on actual financial data."
+    limitations: "US market only. Skewed toward large firms (Am Law 200 / NLJ 500). Does not cover high-street or small practices."
+    keyFindings:
+      - "Profits per lawyer grew 8.3% in 2024; PPE up 11.6%"
+      - "Demand grew 2.6% — strongest genuine growth since before 2008"
+      - "Billing rates up 6.5% despite weakening inflation"
+      - "Non-equity partners rose from 14.3% to 19.1% (2005-2024); equity partners fell from 31.2% to 27.8%"
+
+  - id: icaew-benchmark-2025
+    name: "ICAEW Financial Benchmarking Survey 2025"
+    publisher: ICAEW (Institute of Chartered Accountants in England and Wales)
+    year: 2025
+    url: "https://www.icaew.com/technical/trust-and-ethics/solicitors/news/financial-benchmarking-survey-2025"
+    scope: "UK accounting practices — fee income, chargeability, profitability, staff metrics."
+    methodology: "Annual survey of ICAEW member practices. UK-specific."
+    limitations: "Primarily smaller practices (ICAEW membership base). May not represent Big 4 or large mid-tier."
+    keyFindings:
+      - "Median chargeable hours: 773 per fee earner per year (up from 765 in 2023)"
+      - "Target chargeability: 1,000-1,200 hours/year — significant gap vs reality"
+      - "Profit per equity partner up ~20% YoY (but flat when excluding client money interest)"
+      - "Fee income median increase: 6%"
+
+  - id: riba-benchmark-2025
+    name: "RIBA Business Benchmarking 2025"
+    publisher: RIBA (Royal Institute of British Architects)
+    year: 2025
+    url: "https://www.riba.org/work/insights-and-resources/riba-business-benchmarking/"
+    scope: "UK architecture practices — utilisation, revenue, profitability, staff metrics."
+    methodology: "Annual survey of RIBA Chartered Practices. UK-specific."
+    limitations: "Architecture-focused. May not represent broader engineering or technical consultancy."
+    keyFindings:
+      - "Architects/technologists/assistants: 70%+ time on billable work"
+      - "Associates: 64% billable"
+      - "Partners/directors: 46% billable"
+      - "Large practices (100+ staff): 80%+ billable for architects"
+      - "Total revenue for RIBA Chartered Practices estimated at £5 billion"
+
+  - id: source-global-uk-2024
+    name: "The UK Consulting Market in 2024"
+    publisher: Source Global Research
+    year: 2024
+    url: "https://www.sourceglobalresearch.com/reports/9494-the-uk-consulting-market-in-2024"
+    scope: "Annual review of UK consulting market — size, growth, client priorities, service line trends."
+    methodology: "Survey of 200 senior buyers of consulting in UK. MegaModel revenue database."
+    limitations: "Buyer-side survey — reflects client perception, not firm-level operational data. Does not cover utilisation or internal productivity."
+    keyFindings:
+      - "UK consulting market: £15.2bn in 2023, contracted 3.4% to £15bn in 2024"
+      - "Clients buying smaller, more tactical pieces of work"
+      - "59% of senior leaders say they need to invest in upgrading technology urgently"
+
+  - id: mca-annual-2025
+    name: "MCA Annual Report 2025"
+    publisher: Management Consultancies Association
+    year: 2025
+    url: "https://www.mca.org.uk/reports/mca-annual-report"
+    scope: "UK consulting industry overview — market size, growth forecasts, service line trends."
+    methodology: "Member survey plus industry modelling."
+    limitations: "Trade body report — tends toward positive framing. Does not contain firm-level operational benchmarks."
+    keyFindings:
+      - "UK consulting industry worth £20.4bn with £5.9bn in exports"
+      - "Growth forecast: 6.4% next 12 months, 8.7% in 2026"
+      - "Top growth drivers: AI (66%), digital technology (59%), cost reduction (46%)"
+
+  - id: ipa-census-2025
+    name: "IPA Agency Census 2025"
+    publisher: IPA (Institute of Practitioners in Advertising)
+    year: 2025
+    url: "https://ipa.co.uk/knowledge/publications-reports/agency-census-2025/"
+    scope: "Annual headcount census of IPA member agencies — workforce size, turnover, diversity."
+    methodology: "Member survey. 66th annual edition."
+    limitations: "Headcount and workforce data only. Does not cover utilisation, billing, or productivity metrics."
+    keyFindings:
+      - "IPA member agencies employed 24,963 people (down 6.8% from 2024)"
+      - "Creative/non-media agencies contracted 14.3%; media agencies grew 2.4%"
+      - "Staff turnover: 24.8%"
+
+  - id: mcksinsey-info-search
+    name: "The Social Economy (information search data)"
+    publisher: McKinsey Global Institute
+    year: 2012
+    url: "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy"
+    scope: "Cross-sector analysis of knowledge worker time allocation."
+    methodology: "Modelled from US Bureau of Labor Statistics and O*NET data."
+    limitations: "2012 data — pre-generative AI. Time spent searching may have changed with modern tools."
+    keyFindings:
+      - "Knowledge workers spend 19-20% of time (nearly one full day per week) searching for and gathering information"
+      - "1.8 hours per day on average searching for information"

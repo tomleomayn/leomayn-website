@@ -1,0 +1,164 @@
+# Technical Services (Architecture, Engineering, Surveying, Technical Consultancy)
+# Last updated: 2026-02-25
+
+industry: technical
+label: "Technical services (architecture, engineering, surveying)"
+
+recoveryRates:
+  document-processing:
+    range: [0.50, 0.70]
+    rationale: "Technical services produce high volumes of structured documentation — specifications, schedules, reports, drawing registers, and statutory submissions. Much of this content is assembled from standard clauses, specification libraries, and previous projects. BIM adoption has already digitised the production workflow, giving AI a structured data layer to build on. The upper bound reflects specification and schedule production where clause libraries exist. The lower bound reflects bespoke technical reports requiring engineering judgement. RIBA data shows architects and technologists already spend 70%+ of time on billable work, so recovery here is about throughput and quality rather than converting idle time."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: high
+
+  research-and-analysis:
+    range: [0.25, 0.40]
+    rationale: "Technical research spans precedent review (similar past projects), product and material selection, regulatory interpretation, and site analysis. AI can compress the search and retrieval phases — finding relevant precedents, comparing product specifications, summarising planning policy. But the technical judgement layer (structural calculations, design decisions, suitability assessments) remains human-led. Recovery concentrated in the information-gathering phase, not the analysis."
+    sources:
+      - mcksinsey-info-search
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  proposal-production:
+    range: [0.35, 0.55]
+    rationale: "Fee proposals in technical services follow established templates — scope of services aligned to RIBA stages or equivalent, team CVs, relevant project credentials, fee schedules, and programme assumptions. The assembly and formatting of these elements is highly automatable. The strategic pricing decisions and scope judgement less so. Fee competition is intense in technical services, especially for smaller commissions, making faster proposal turnaround commercially valuable."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  client-communications:
+    range: [0.15, 0.30]
+    rationale: "Client communication in technical services is often contractually significant — instructions, design approvals, variation confirmations, and formal notices carry legal weight. Recovery limited to routine project updates, meeting minutes, progress reports, and scheduling coordination. The substantive technical and contractual communication layer cannot be delegated. Microsoft WTI data shows 57% of knowledge worker time goes to communication, but in technical services much of this is structured around formal project processes."
+    sources:
+      - microsoft-wti-2025
+      - riba-benchmark-2025
+    confidence: low
+
+  project-delivery:
+    range: [0.25, 0.40]
+    rationale: "Technical projects follow defined stage-gate processes (RIBA Plan of Work, ACE schedules of services) with clear deliverables and milestones. This structure makes coordination activities — programme tracking, resource allocation, progress monitoring, design review scheduling — amenable to automation. Construction projects routinely overrun, creating constant re-planning work. The technical delivery itself (design, calculations, inspections) requires professional judgement and is not a recovery target."
+    sources:
+      - spi-benchmark-2025
+      - riba-benchmark-2025
+    confidence: moderate
+
+  client-onboarding:
+    range: [0.30, 0.50]
+    rationale: "Onboarding in technical services involves appointment confirmations, collateral warranty processing, professional indemnity insurance checks, project information gathering (site data, planning history, existing building information), and initial team setup. These are process-driven activities with clear automation potential. Smaller practices often lack formalised onboarding processes, so the baseline is low but the improvement potential is real."
+    sources:
+      - mckinsey-genai-2023
+      - riba-benchmark-2025
+    confidence: low
+
+  knowledge-management:
+    range: [0.35, 0.55]
+    rationale: "Past project data is core intellectual property in technical practices — specification libraries, detail libraries, precedent designs, lessons learned, and cost benchmarks. McKinsey found knowledge workers spend 1.8 hours per day searching for information. In technical services this means hunting through previous project files for reusable details, standard specifications, or comparable cost data. AI-powered search across project archives and specification libraries is a high-value use case. Recovery depends heavily on whether the practice has digitised its project archive."
+    sources:
+      - mcksinsey-info-search
+      - riba-benchmark-2025
+    confidence: moderate
+
+  management-reporting:
+    range: [0.35, 0.55]
+    rationale: "Financial reporting in technical practices covers project profitability, resource utilisation, WIP tracking, and fee forecasting. The typical architecture practice is 5-15 people, meaning reporting infrastructure is often basic — spreadsheets rather than enterprise systems. AI can automate data aggregation and report production, but the smaller firm size means less data complexity. The interpretation layer (why a project is over budget, how to rebalance the team) remains human-led."
+    sources:
+      - riba-benchmark-2025
+      - spi-benchmark-2025
+    confidence: low
+
+  sales-pipeline:
+    range: [0.15, 0.30]
+    rationale: "Business development in technical services is heavily relationship-driven and reputation-dependent. Work comes through repeat clients, referral networks, and competitive tenders. Smaller practices rarely have formal CRM or pipeline processes. Recovery limited to tender tracking, follow-up scheduling, and credentials management. The relationship and reputation components are fundamentally human. The intense fee competition in the sector means winning work requires judgement on pricing and positioning, not process automation."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: low
+
+  compliance-qa:
+    range: [0.40, 0.60]
+    rationale: "Technical services operate under heavy regulatory requirements — Building Regulations, CDM regulations, planning conditions, energy performance standards, fire safety requirements, and professional indemnity obligations. Compliance checking against these known rule sets is well-suited to automation. Drawing review against regulation checklists, specification compliance checks, and statutory submission validation are all process-driven. Sustainability and energy performance requirements are adding new compliance layers, increasing the volume of checking work. The judgement calls on edge cases and novel design solutions remain human-led."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: moderate
+
+strategicConsiderations:
+  - id: tech-01
+    observation: "Technical staff in architecture practices are already highly utilised — 70%+ of time on billable work, rising to 80%+ in large practices. This is significantly higher than the professional services average of 68.9%. There is less idle time to convert."
+    implication: "The recovery opportunity in technical services is about quality and throughput, not about converting non-billable time into billable hours. Business cases framed as 'do more with the same team' or 'reduce rework' will resonate more than 'recover wasted time.'"
+    sources:
+      - riba-benchmark-2025
+      - spi-benchmark-2025
+    tags: [capacity, billing-model, business-case-framing]
+
+  - id: tech-02
+    observation: "Partners and directors in technical practices spend only 46% of time on billable work, with the remainder on management, business development, and supervision. Associates sit at 64%. The utilisation gap between senior and junior staff is 24 percentage points."
+    implication: "Senior staff time is the bottleneck. Workflow improvements that reduce the supervision and review burden on partners — automated checking, structured handoff processes, better information retrieval — unlock the scarcest resource in the practice."
+    sources:
+      - riba-benchmark-2025
+    tags: [capacity, governance, business-case-framing]
+
+  - id: tech-03
+    observation: "BIM (Building Information Modelling) has already digitised much of the production workflow in technical services. 3D models, parametric data, and structured information are standard practice. This existing digital infrastructure provides a foundation that many other industries lack."
+    implication: "Technical practices are better positioned for AI adoption than most professional services because their core work product is already digital and structured. AI tools can read BIM data, parse specification databases, and cross-reference regulatory requirements against structured models. The adoption barrier is cultural and commercial, not technical."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    tags: [technology, adoption, competitive-dynamics]
+
+  - id: tech-04
+    observation: "The construction industry is cyclical, tied to property markets and public infrastructure spending. Utilisation in technical practices swings significantly with market conditions — a downturn can shift practices from overstretched to under-utilised within a single quarter."
+    implication: "Efficiency investments made during busy periods pay dividends during downturns, when the practice needs to operate leaner. Conversely, downturns create time for adoption that busy periods do not. The business case should account for the full cycle, not just current workload."
+    sources:
+      - riba-benchmark-2025
+      - spi-benchmark-2025
+    tags: [seasonality, capacity, business-case-framing]
+
+  - id: tech-05
+    observation: "Fee competition is intense in technical services, particularly for smaller commissions. Clients increasingly procure on price rather than quality, especially for routine projects. RIBA data shows total revenue for Chartered Practices at approximately five billion pounds, spread across thousands of practices."
+    implication: "Efficiency gains translate directly to competitive advantage in a price-sensitive market. Practices that can produce higher-quality output at lower cost win more work. But the framing must go beyond cost reduction — speed of response and consistency of output are the visible differentiators."
+    sources:
+      - riba-benchmark-2025
+    tags: [competitive-dynamics, billing-model, business-case-framing]
+
+  - id: tech-06
+    observation: "Construction projects routinely overrun their programmes. Delays cascade through the design team, creating unplanned rework, extended contract administration, and resource allocation challenges. The gap between planned and actual project duration is a structural feature of the industry."
+    implication: "AI-assisted programme monitoring, early warning systems for scope creep, and automated re-planning could address one of the industry's most persistent problems. Recovery is not just about doing the planned work faster — it is about reducing the unplanned work that delays generate."
+    sources:
+      - riba-benchmark-2025
+      - spi-benchmark-2025
+    tags: [capacity, quality, business-case-framing]
+
+  - id: tech-07
+    observation: "Sustainability, energy performance, and fire safety requirements are adding new compliance layers to every project. These requirements generate additional documentation, modelling, and checking work. The regulatory burden is growing, not shrinking."
+    implication: "New compliance requirements create new automation opportunities. Practices that automate existing compliance checking free capacity for the new requirements without growing headcount. The regulatory trend makes the efficiency case stronger each year."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    tags: [compliance, capacity, competitive-dynamics]
+
+  - id: tech-08
+    observation: "The typical architecture practice employs 5-15 people. Even large practices rarely exceed a few hundred. This means adoption decisions are made by practising professionals, not by IT departments or innovation teams. The decision-maker is usually the person who will use the tool."
+    implication: "Adoption in technical services is faster when tools are practice-led rather than IT-led. The barrier is not procurement or governance — it is whether the tool fits into the daily workflow of a working architect or engineer. Proof of value must be demonstrated in the specific context of technical work, not in generic productivity terms."
+    sources:
+      - riba-benchmark-2025
+    tags: [adoption, governance, talent]
+
+  - id: tech-09
+    observation: "Knowledge workers spend 1.8 hours per day searching for information. In technical practices, this manifests as searching through previous project files, specification libraries, product literature, and regulatory guidance. Past project knowledge is core IP but is often poorly indexed and trapped in individual project folders."
+    implication: "Knowledge retrieval is a high-return, low-risk starting point for AI adoption in technical services. The practice already owns the data. The value is in making it findable. This avoids the sensitivity concerns of client-facing AI use while delivering measurable time savings."
+    sources:
+      - mcksinsey-info-search
+      - riba-benchmark-2025
+    tags: [technology, capacity, productivity]
+
+  - id: tech-10
+    observation: "Professional services firms are interrupted every two minutes during core hours, with only three hours of focus time per day. Technical work — detailed design, calculations, specification writing — requires sustained concentration. The cost of interruptions in technical services is particularly high because context-switching mid-calculation or mid-detail wastes disproportionate time."
+    implication: "Workflow improvements that protect focus time (automated status updates, self-service project information, async coordination tools) may deliver more value per hour than tools targeting the technical work itself. Reducing interruptions to technical staff compounds over the full workday."
+    sources:
+      - worklytics-2025
+      - microsoft-wti-2025
+    tags: [capacity, productivity, adoption]

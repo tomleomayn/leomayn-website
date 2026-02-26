@@ -577,7 +577,7 @@ export const TECH_ENVIRONMENT_OPTIONS = [
   },
   {
     value: 'disconnected',
-    label: 'Dedicated systems for each function (CRM, project management, finance) but not connected',
+    label: 'Mostly unconnected systems for each function',
     level: 1,
   },
   {
@@ -751,7 +751,7 @@ export const RECOVERY_CEILING = 0.85
 
 export const CONDITION_LABELS = {
   impact: { green: 'Higher potential impact', amber: 'Medium potential impact', red: 'Lower potential impact' },
-  complexity: { green: 'Lower implementation complexity', amber: 'Medium implementation complexity', red: 'Higher implementation complexity' },
+  complexity: { green: 'Lower complexity', amber: 'Medium complexity', red: 'Higher complexity' },
   learning: { green: 'Higher learning value', amber: 'Medium learning value', red: 'Lower learning value' },
 } as const
 
@@ -813,6 +813,6 @@ export function getRecoveryPercentageRange(archetypeId: string): { low: number; 
 export const WIZARD_STEPS = [
   { label: 'Your firm', shortLabel: 'Firm' },
   { label: 'About you', shortLabel: 'You' },
-  { label: 'Size it up', shortLabel: 'Sizing' },
+  { label: 'Estimate impact', shortLabel: 'Impact' },
   { label: 'Your report', shortLabel: 'Report' },
 ] as const

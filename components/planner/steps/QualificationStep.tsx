@@ -68,8 +68,11 @@ export default function QualificationStep() {
   return (
     <div>
       <h2 className="text-3xl font-serif text-slate mb-2">Generate your personalised report</h2>
+      <p className="text-base text-slate/70 mb-2">
+        The diagnostic phase is complete. Two short steps remain: your details below, then a quick estimation exercise for each recommended workflow which will inform the business case.
+      </p>
       <p className="text-base text-slate/70 mb-8">
-        Your diagnostic is complete. To generate your personalised AI deployment report, we need a few details about you and your organisation.
+        We need a few details about you and your organisation to personalise the report.
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

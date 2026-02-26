@@ -1,0 +1,159 @@
+# Agency (Creative, Digital, PR, Media)
+# Last updated: 2026-02-25
+
+industry: agency
+label: "Creative, digital, PR, and media agencies"
+
+recoveryRates:
+  document-processing:
+    range: [0.50, 0.70]
+    rationale: "Agency document processing is dominated by production work: resizing assets, reformatting across platforms, versioning creative for different channels and specs, and assembling decks from existing components. This is the single highest-recovery archetype in agencies. Unlike law or consulting, the documents are visual and repetitive rather than bespoke and judgement-heavy. AI-powered production tools already handle image resizing, copy adaptation, and slide assembly at scale. The upper bound reflects pure production shops; the lower bound reflects agencies with more custom, art-directed output."
+    sources:
+      - mckinsey-genai-2023
+      - microsoft-wti-2025
+    confidence: moderate
+
+  research-and-analysis:
+    range: [0.25, 0.40]
+    rationale: "Agency research spans audience analysis, competitive audits, media landscape reviews, and trend monitoring. The gathering and synthesis phases compress well with AI tools. But the interpretation layer, the part where a strategist spots an insight that becomes a campaign angle, is irreducibly human. Media agencies with structured data pipelines sit at the higher end; creative agencies doing cultural and qualitative research sit lower."
+    sources:
+      - mckinsey-genai-2023
+      - mcksinsey-info-search
+    confidence: moderate
+
+  proposal-production:
+    range: [0.25, 0.45]
+    rationale: "Agency pitching is a major cost centre with low win rates, typically 20-30% in competitive pitches. Proposals involve credentials decks, case studies, strategic approach, and creative concepts. The assembly of credentials and case study content is highly automatable. The strategic narrative and creative idea are not. Recovery is lower than generic because agencies invest heavily in bespoke pitch creative that cannot be templated. The pitch economics make even modest recovery valuable given the volume of unsuccessful pitches."
+    sources:
+      - mckinsey-genai-2023
+      - ipa-census-2025
+    confidence: low
+
+  client-communications:
+    range: [0.15, 0.30]
+    rationale: "Client communication in agencies is relationship-intensive: status calls, creative reviews, approval routing, and expectation management. Much of it is verbal or visual rather than written. Recovery is limited to status update generation, meeting note distribution, contact report automation, and approval workflow management. The relationship layer, where account directors manage client confidence and navigate feedback, is not a recovery target."
+    sources:
+      - microsoft-wti-2025
+      - worklytics-2025
+    confidence: low
+
+  project-delivery:
+    range: [0.25, 0.40]
+    rationale: "Agency project management involves trafficking jobs through creative, production, and media teams, managing timelines, coordinating freelancers, and tracking deliverables across multiple concurrent clients. Agencies are generally less structured than consulting firms, with more ad-hoc processes and reactive scheduling. Recovery potential is in the coordination and tracking layer, not in the creative or strategic delivery. The lower bound reflects the organisational immaturity that makes automation harder to implement."
+    sources:
+      - spi-benchmark-2025
+      - worklytics-2025
+    confidence: low
+
+  client-onboarding:
+    range: [0.30, 0.50]
+    rationale: "Client onboarding in agencies involves brand immersion, asset collection, platform access setup, team introductions, and briefing processes. With client tenure shrinking, this is an increasingly frequent cost. The administrative components are automatable, but the relationship-building and brand understanding phases are not. Lower than generic because agency onboarding involves more qualitative, cultural understanding than process-driven professional services onboarding."
+    sources:
+      - mckinsey-genai-2023
+      - ipa-census-2025
+    confidence: low
+
+  knowledge-management:
+    range: [0.35, 0.55]
+    rationale: "With 24.8% annual staff turnover, agencies haemorrhage institutional knowledge regularly. Campaign histories, client preferences, past creative approaches, and supplier relationships are poorly documented and often exist only in people's heads. AI-powered retrieval across past briefs, campaign reports, and creative archives is high-value. Recovery is strong because the problem is acute and the baseline is low: most agencies have minimal formal KM, so even basic search and retrieval tools represent a step change."
+    sources:
+      - mcksinsey-info-search
+      - ipa-census-2025
+    confidence: moderate
+
+  management-reporting:
+    range: [0.35, 0.55]
+    rationale: "Agency reporting covers utilisation tracking, project profitability, client revenue analysis, and resource forecasting. Data is often scattered across timesheets, project management tools, and finance systems. The aggregation and formatting layer is automatable; the narrative interpretation is not. Slightly below generic because agencies tend to have less structured data infrastructure and more fragmented tooling than consulting or accounting firms."
+    sources:
+      - mckinsey-genai-2023
+      - spi-benchmark-2025
+    confidence: low
+
+  sales-pipeline:
+    range: [0.15, 0.30]
+    rationale: "Agency new business is heavily relationship-driven and reputation-dependent. Work comes through referrals, industry reputation, chemistry meetings, and competitive pitches. Formal pipeline management is less systematic than in consulting. Recovery limited to pitch tracking, credentials maintenance, prospect research, and follow-up automation. The chemistry and creative spark that wins pitches cannot be automated."
+    sources:
+      - mckinsey-genai-2023
+      - ipa-census-2025
+    confidence: low
+
+  compliance-qa:
+    range: [0.35, 0.55]
+    rationale: "Agency compliance means brand guideline adherence, accessibility standards, platform specifications, ad format requirements, and regulatory checks (ASA, GDPR for data-driven campaigns). These are rule-based checks against known specifications, well-suited to automation. AI tools can verify asset dimensions, colour compliance, copy length limits, alt text presence, and regulatory disclaimers. Higher than generic because the rules are concrete and machine-readable, not interpretive."
+    sources:
+      - mckinsey-genai-2023
+    confidence: moderate
+
+strategicConsiderations:
+  - id: ag-01
+    observation: "IPA member agencies employed 24,963 people in 2025, down 6.8% year-on-year. Creative and non-media agencies contracted 14.3% while media agencies grew 2.4%. The industry is bifurcating: data-driven media work is growing, idea-driven creative work is shrinking."
+    implication: "Recovery strategies must account for two distinct agency types. Media agencies have structured, data-rich workflows where automation compounds. Creative agencies have more variable, judgement-heavy workflows where the gains are in production, not ideation. A single framework will not fit both."
+    sources:
+      - ipa-census-2025
+    tags: [competitive-dynamics, capacity, business-case-framing]
+
+  - id: ag-02
+    observation: "Agencies typically bill on retainers or project fees rather than hourly rates. When an agency recovers time, the mechanism is not billing more hours. It is either doing more work within the same fee envelope, improving margins on fixed-fee projects, or redeploying capacity to win and service additional clients."
+    implication: "Business cases framed as 'hours saved' miss the point. The value of recovered time in agencies is margin improvement on existing work and capacity to take on new clients without proportional headcount growth. Frame as 'do more within existing retainers' or 'improve project profitability.'"
+    sources:
+      - spi-benchmark-2025
+    tags: [billing-model, capacity, business-case-framing]
+
+  - id: ag-03
+    observation: "Staff turnover across IPA agencies is 24.8%, meaning roughly one in four people leave each year. This is structurally higher than most professional services. Each departure takes client context, creative history, and relationship knowledge with it."
+    implication: "Knowledge management is not a nice-to-have in agencies; it is a survival function. At 25% turnover, any knowledge that exists only in someone's head has a one-in-four chance of disappearing each year. Agencies that systematise institutional knowledge gain a compounding advantage over those that rely on individual memory."
+    sources:
+      - ipa-census-2025
+    tags: [talent, capacity, competitive-dynamics]
+
+  - id: ag-04
+    observation: "Billable utilisation across professional services fell to 68.9% in 2024, below the 70-80% optimal band. Agencies, with their high meeting load, pitch investment, and client entertainment, often sit at the lower end of this range."
+    implication: "Agencies are not short of demand; they are short of productive capacity. Non-billable overhead (pitching, internal meetings, admin) consumes time that could be spent on client work. Recovering even 5 percentage points of utilisation improves profitability without needing new clients."
+    sources:
+      - spi-benchmark-2025
+    tags: [capacity, billing-model, business-case-framing]
+
+  - id: ag-05
+    observation: "Production work, including resizing, reformatting, versioning, and adaptation of creative assets for different channels and platforms, consumes a significant share of agency capacity. This work is repetitive, rule-bound, and increasingly automatable with AI-powered production tools."
+    implication: "Production automation is the near-term high-impact opportunity for agencies. It does not threaten the creative proposition; it frees creative people from production tasks to focus on ideas and strategy. The agencies that automate production fastest will either reduce costs or reallocate that capacity to higher-value creative work."
+    sources:
+      - mckinsey-genai-2023
+    tags: [technology, capacity, productivity]
+
+  - id: ag-06
+    observation: "Pitching is a major cost centre. Industry estimates suggest agencies invest heavily in competitive pitches with win rates of 20-30%. The cost of losing a pitch is entirely unrecoverable. This creates a structural inefficiency unique to the agency model."
+    implication: "Any recovery in the pitch process, faster credentials assembly, quicker research, more efficient proposal production, has outsized value because of the volume of unsuccessful pitches. Reducing pitch cost by 30% across ten pitches saves more than optimising delivery on one won project."
+    sources:
+      - ipa-census-2025
+      - mckinsey-genai-2023
+    tags: [competitive-dynamics, capacity, business-case-framing]
+
+  - id: ag-07
+    observation: "Clients are buying smaller, more tactical pieces of work. Source Global Research reports this trend across professional services. For agencies, this means more projects to scope, onboard, deliver, and close per unit of revenue. Fixed costs (onboarding, briefing, setup) spread across smaller budgets."
+    implication: "Operational efficiency becomes more critical as project sizes shrink. The overhead-to-delivery ratio worsens with smaller projects. Agencies that can onboard faster, brief more efficiently, and reduce per-project admin costs protect their margins on tactical work."
+    sources:
+      - source-global-uk-2024
+    tags: [client-expectations, capacity, billing-model]
+
+  - id: ag-08
+    observation: "Knowledge workers spend 57% of their time communicating and only 43% creating. In agencies, this communication load includes status meetings, creative reviews, client calls, and internal alignment. Professional services workers average 4.2 hours of meetings per day with only 3.0 hours of focus time."
+    implication: "The biggest time tax in agencies is not the work itself but the coordination around it. Status automation, asynchronous creative review tools, and meeting reduction strategies can recover significant capacity without changing the creative process at all."
+    sources:
+      - microsoft-wti-2025
+      - worklytics-2025
+    tags: [capacity, productivity, adoption]
+
+  - id: ag-09
+    observation: "Compliance in agencies is concrete and machine-readable: brand guidelines specify exact colours, fonts, and logo clearance; platforms specify pixel dimensions, file sizes, and character limits; accessibility standards define alt text, contrast ratios, and caption requirements. These are verifiable rules, not matters of interpretation."
+    implication: "QA automation in agencies can be more deterministic than in regulated industries. A brand compliance check can produce a pass/fail result rather than a judgement call. This makes the business case simpler and the implementation more straightforward than compliance automation in law or financial services."
+    sources:
+      - mckinsey-genai-2023
+    tags: [compliance, quality, technology]
+
+  - id: ag-10
+    observation: "Agencies face sustained margin pressure from multiple directions: procurement-led client negotiations demanding more for less, rising freelance and offshoring competition on production work, and clients bringing capabilities in-house. The IPA census shows the workforce contracting 6.8% while client expectations are not shrinking proportionally."
+    implication: "The case for operational improvement in agencies is not aspirational; it is defensive. Agencies that cannot deliver more efficiently within shrinking fee envelopes will lose to those that can. The margin pressure makes efficiency investment urgent rather than optional."
+    sources:
+      - ipa-census-2025
+      - source-global-uk-2024
+    tags: [competitive-dynamics, client-expectations, business-case-framing]

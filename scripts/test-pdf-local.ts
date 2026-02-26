@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { buildPdfHtml, type PdfTemplateData } from '../lib/planner/pdf-html-template'
 import { renderPdfWithPuppeteer } from '../lib/planner/pdf-renderer'
+import { calculateTheoreticalMax } from '../lib/planner/scoring'
 
 const FIXTURES_DIR = join(__dirname, 'test-fixtures')
 const fixtureName = process.argv[2]
@@ -105,6 +106,7 @@ const templateData: PdfTemplateData = {
   qualification,
   diagnostic,
   topArchetypes,
+  theoreticalMax: output.theoreticalMax ?? (diagnostic ? calculateTheoreticalMax(diagnostic.painPoints) : undefined),
   companyContext: output.companyContext,
 }
 

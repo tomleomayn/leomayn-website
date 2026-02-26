@@ -33,28 +33,27 @@ export default function PlannerLandingPage() {
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              Find out where AI will move the needle for your business
+              Find out where to start with AI in your firm
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-rock rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }} />
               <div className="pl-6">
                 <p className="text-xl leading-[1.6] text-coral-accessible">
-                  A diagnostic tool for leaders in professional services and knowledge work environments.
+                  A few questions about your team, your workflows, and where time goes.
                 </p>
                 <p className="text-xl leading-[1.6] text-coral-accessible mt-2">
-                  Five to ten minutes. A prioritised plan for where to start with AI in your business.
+                  A prioritised plan showing where AI will have the most impact, with a business case and practical next steps.
                 </p>
               </div>
             </div>
             <div className="mt-10 animate-fade-in-up stagger-2">
-              <p className="text-base text-slate/70 mb-4">The hardest part of AI adoption is knowing where to begin. Start here.</p>
-              <p className="text-sm text-slate/50 mb-6">Free tool. No sales pitch. No obligation.</p>
+              <p className="text-base text-slate/60 mb-6">Five to ten minutes. Free. No sales pitch.</p>
               <Link
                 href="/planning-for-ai-deployment/start"
                 onClick={trackCTA}
-                className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-base bg-slate text-white px-10 py-4 rounded-md hover:bg-slate-light transition-all"
+                className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-lg bg-slate text-white px-14 py-5 rounded-md hover:bg-slate-light transition-all"
               >
-                Start your diagnostic
+                Produce your plan
               </Link>
             </div>
           </div>
@@ -67,11 +66,8 @@ export default function PlannerLandingPage() {
               <h2 className="text-3xl lg:text-4xl font-serif text-slate text-center mb-4">
                 What you will get
               </h2>
-              <p className="text-center text-slate/70 max-w-2xl mx-auto mb-2">
-                A shortened version of the methodology we use with paying clients.
-              </p>
-              <p className="text-center text-slate/50 text-sm max-w-2xl mx-auto mb-16">
-                Built to help you think about where you might start embedding AI into your workflows.
+              <p className="text-center text-slate/70 max-w-2xl mx-auto mb-16">
+                A shortened version of the methodology we use with paying clients, designed for professional services and knowledge-intensive organisations.
               </p>
             </ScrollReveal>
 
@@ -134,7 +130,7 @@ export default function PlannerLandingPage() {
               {[
                 {
                   step: '01',
-                  title: 'Answer ten questions about your firm',
+                  title: 'Answer a few questions about your firm',
                   description:
                     'Firm type, team size, strategic goals, where time goes, and your current tech landscape. Each question comes with context explaining why it matters.',
                 },
@@ -174,8 +170,14 @@ export default function PlannerLandingPage() {
               <h2 className="text-3xl lg:text-4xl font-serif text-slate text-center mb-4">
                 We built this because getting started is the hardest part
               </h2>
-              <p className="text-center text-slate/70 max-w-2xl mx-auto mb-16">
-                The challenge is working out which workflows and what order to tackle them in. Get that right and it helps you avoid some of the common traps that derail most AI programmes.
+              <p className="text-center text-slate/70 max-w-2xl mx-auto mb-12">
+                The challenge is not whether AI can help. The challenge is working out which workflows to tackle, in what order, and how to avoid the traps along the way.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <p className="text-center text-slate/70 max-w-2xl mx-auto mb-8">
+                Our diagnostic approach has been built to help avoid four failure patterns we see repeatedly:
               </p>
             </ScrollReveal>
 
@@ -225,9 +227,9 @@ export default function PlannerLandingPage() {
             <Link
               href="/planning-for-ai-deployment/start"
               onClick={trackCTA}
-              className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-10 py-4 rounded-md hover:bg-coral-dark transition-all"
+              className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-lg bg-coral text-slate px-14 py-5 rounded-md hover:bg-coral-dark transition-all"
             >
-              Start your diagnostic
+              Produce your plan
             </Link>
           </div>
         </section>

@@ -116,6 +116,20 @@ function calculateFoundationModifier(
   return -(knowledgeGap + dataGap) * FOUNDATION_PENALTY_WEIGHT
 }
 
+export function calculateTheoreticalMax(
+  painPoints: { area: string; symptom: string }[]
+): number {
+  let maxSignal = 0
+
+  for (const archetype of ARCHETYPES) {
+    const { score } = calculateSignalScore(painPoints, archetype)
+    if (score > maxSignal) maxSignal = score
+  }
+
+  const goalMax = 5 * GOAL_PRIMARY_WEIGHT + 5 * GOAL_SECONDARY_WEIGHT // 15
+  return maxSignal + goalMax + FEASIBILITY_BONUS // signal + 15 + 2
+}
+
 export function scoreArchetypes(diagnostic: DiagnosticData): ScoringResult {
   const userAiLevel = getAiAdoptionLevel(diagnostic.aiAdoption)
   const userTechLevel = getTechLevel(diagnostic.techEnvironment)
@@ -155,5 +169,7 @@ export function scoreArchetypes(diagnostic: DiagnosticData): ScoringResult {
   scored.sort((a, b) => b.compositeScore - a.compositeScore)
   const topArchetypes = scored.slice(0, 3)
 
-  return { topArchetypes, allScores }
+  const theoreticalMax = calculateTheoreticalMax(diagnostic.painPoints)
+
+  return { topArchetypes, allScores, theoreticalMax }
 }

@@ -92,13 +92,13 @@ export default function DiagnosticStep() {
       {/* Who this is for */}
       <div className="bg-pearl rounded-lg p-5 mb-8 border border-coral/30">
         <p className="text-sm text-slate/80">
-          This tool is designed for leaders in professional services and knowledge-work organisations with 10+ employees. You will answer ten questions about your firm, then receive a personalised report with prioritised workflow recommendations and business case numbers.
+          This tool is designed for leaders in professional services and knowledge-work organisations with 10+ employees. Answer a few questions about your firm, then receive a personalised report with prioritised workflow recommendations and business case numbers.
         </p>
       </div>
 
       <h2 className="text-3xl font-serif text-slate mb-2">About your organisation</h2>
       <p className="text-base text-slate/70 mb-8">
-        Ten questions that help us understand your situation. Each one shapes your personalised report. Answer to the best of your ability.
+        First, we need to understand more about your firm and your situation.
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
@@ -144,8 +144,8 @@ export default function DiagnosticStep() {
         {/* ── Section 2: Diagnosis ── */}
         <div className="space-y-10">
           <div className="border-t border-steel/20 pt-10">
-            <h3 className="text-xl font-serif text-slate mb-1">Where the friction is</h3>
-            <p className="text-sm text-slate/60 mb-6">Select the areas where your team loses the most time, then tell us what the problem looks like.</p>
+            <h2 className="text-3xl font-serif text-slate mb-2">Where the friction is</h2>
+            <p className="text-base text-slate/70 mb-6">Select the areas where your team loses the most time, then tell us what the problem looks like.</p>
           </div>
 
           {/* Q4 + Q5: Pain points — two-axis model (areas, then symptoms per area) */}
@@ -154,7 +154,7 @@ export default function DiagnosticStep() {
             control={control}
             render={({ field }) => (
               <AreaSymptomSelector
-                areaLabel="Q4. Where does your workforce lose the most time to manual, repetitive, or frustrating work?"
+                areaLabel="Q4. Pick the two or three areas where your workforce loses the most time to manual, repetitive, or frustrating work. We will then ask you to identify the key symptoms for each workflow."
                 areaContext={QUESTION_CONTEXT.painAreas}
                 symptomContext={QUESTION_CONTEXT.painSymptoms}
                 areaOptions={AREA_OPTIONS}
@@ -172,13 +172,13 @@ export default function DiagnosticStep() {
         {/* ── Section 3: Readiness ── */}
         <div className="space-y-10">
           <div className="border-t border-steel/20 pt-10">
-            <h3 className="text-xl font-serif text-slate mb-1">Your foundations</h3>
-            <p className="text-sm text-slate/60 mb-6">These help us assess which improvements are achievable as a starting point.</p>
+            <h2 className="text-3xl font-serif text-slate mb-2">Your foundations</h2>
+            <p className="text-base text-slate/70 mb-6">These help us assess which improvements are achievable as a starting point.</p>
           </div>
 
           {/* Q6: Process knowledge */}
           <RadioGroup
-            label="Q6. How well documented are your core processes?"
+            label="Q5. How well documented are your core processes?"
             error={errors.processKnowledge}
             context={QUESTION_CONTEXT.processKnowledge}
             registration={register('processKnowledge')}
@@ -187,7 +187,7 @@ export default function DiagnosticStep() {
 
           {/* Q7: Data foundations */}
           <RadioGroup
-            label="Q7. How reliable is the data in your core business systems?"
+            label="Q6. How reliable is the data in your core business systems?"
             error={errors.dataFoundations}
             context={QUESTION_CONTEXT.dataFoundations}
             registration={register('dataFoundations')}
@@ -196,7 +196,7 @@ export default function DiagnosticStep() {
 
           {/* Q8: AI adoption */}
           <RadioGroup
-            label="Q8. How is your organisation currently using AI?"
+            label="Q7. How is your organisation currently using AI?"
             error={errors.aiAdoption}
             context={QUESTION_CONTEXT.aiAdoption}
             registration={register('aiAdoption')}
@@ -205,7 +205,7 @@ export default function DiagnosticStep() {
 
           {/* Q9: Tech environment */}
           <RadioGroup
-            label="Q9. Broadly, what does your organisation's tech stack look like?"
+            label="Q8. Broadly, what does your organisation's tech stack look like?"
             error={errors.techEnvironment}
             context={QUESTION_CONTEXT.techEnvironment}
             registration={register('techEnvironment')}
@@ -218,12 +218,12 @@ export default function DiagnosticStep() {
             control={control}
             render={({ field }) => (
               <Slider
-                label="Q10. Approximately what proportion of your workforce is client-facing vs internal operations?"
+                label="Q9. Approximately what proportion of your workforce is client-facing vs internal operations?"
                 context={QUESTION_CONTEXT.billableSplit}
                 value={100 - field.value}
                 onChange={(v) => field.onChange(100 - v)}
-                leftAnchor="All client-facing"
-                rightAnchor="All internal"
+                leftAnchor="Client-facing"
+                rightAnchor="Internal"
               />
             )}
           />

@@ -194,7 +194,7 @@ export function AreaSymptomSelector({
 
         return (
           <div key={cat.label}>
-            <p className="text-xs font-semibold text-slate/40 uppercase tracking-wide mb-2 mt-1">
+            <p className="text-base font-semibold text-coral-text uppercase tracking-wide mb-3 mt-4">
               {cat.label}
             </p>
             <div className="space-y-2">
