@@ -70,8 +70,7 @@ export async function POST(request: Request) {
       )
     }
 
-    // TEMP: debug output — remove after diagnosis
-    return NextResponse.json({ qualified, _debug: { attioResult, attioInput: { email, name, company, description: `Role: ${displayRole}\nTurnover: ${turnover}` } } }, { status: 200 })
+    return NextResponse.json({ qualified }, { status: 200 })
   } catch (error) {
     console.error('Qualify route error:', error)
     return NextResponse.json({ error: 'Internal error' }, { status: 500 })
