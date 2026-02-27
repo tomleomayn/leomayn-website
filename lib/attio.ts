@@ -41,17 +41,17 @@ export async function upsertAttioPerson(data: AttioPersonData): Promise<AttioUps
     values.description = [{ value: description }]
   }
 
+  const body = JSON.stringify({ data: { values } })
+  console.log('[Attio] Request body:', body)
+
   const response = await fetch('https://api.attio.com/v2/objects/people/records?matching_attribute=email_addresses', {
     method: 'PUT',
+    cache: 'no-store',
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      data: {
-        values,
-      },
-    }),
+    body,
   })
 
   if (!response.ok) {
@@ -60,7 +60,9 @@ export async function upsertAttioPerson(data: AttioPersonData): Promise<AttioUps
     return { success: false }
   }
 
-  const result = await response.json()
+  const responseText = await response.text()
+  console.log('[Attio] Response:', responseText.slice(0, 500))
+  const result = JSON.parse(responseText)
   const recordId = result?.data?.id?.record_id
   console.log('[Attio] Upsert success, record:', recordId)
   return { success: true, recordId }
