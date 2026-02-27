@@ -78,35 +78,18 @@ export async function POST(request: Request) {
       })
     }
 
-    // If Attio integration is configured, create a lead
-    if (process.env.ATTIO_API_KEY && process.env.ATTIO_WEBSITE_LEADS_LIST_ID) {
+    // Attio person upsert — fire-and-forget
+    if (process.env.ATTIO_API_KEY) {
       try {
-        const attioResponse = await fetch(`https://api.attio.com/v2/lists/${process.env.ATTIO_WEBSITE_LEADS_LIST_ID}/entries`, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${process.env.ATTIO_API_KEY}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            data: {
-              values: {
-                'name': [{ value: name }],
-                'email_addresses': [{ email_address: email }],
-                ...(company && { 'company': [{ value: company }] }),
-                'notes': [{ value: message }],
-                'source': [{ value: 'Website Contact Form' }],
-              }
-            }
-          })
+        const { upsertAttioPerson } = await import('@/lib/attio')
+        await upsertAttioPerson({
+          email,
+          name,
+          company: company || undefined,
+          description: `Source: Website Contact Form\nMessage: ${message}`,
         })
-
-        if (!attioResponse.ok) {
-          // Log error internally but don't expose details to client
-          console.error('Attio API error:', attioResponse.status)
-        }
       } catch (attioError) {
-        // Log error but don't fail the request
-        console.error('Attio integration error')
+        console.error('Attio integration error:', attioError)
       }
     }
 

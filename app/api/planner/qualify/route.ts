@@ -1,16 +1,7 @@
 import { NextResponse } from 'next/server'
 import { qualificationSchema } from '@/lib/planner/types'
-
-function escapeHtml(text: string): string {
-  const htmlEntities: Record<string, string> = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;',
-  }
-  return text.replace(/[&<>"']/g, (char) => htmlEntities[char])
-}
+import { upsertAttioPerson } from '@/lib/attio'
+import { insertPlannerLead } from '@/lib/supabase'
 
 const ALLOWED_ORIGINS = [
   'https://leomayn.com',
@@ -37,43 +28,46 @@ export async function POST(request: Request) {
       )
     }
 
-    const { name, email, company, role, roleOther, turnover, consentGiven } = result.data
+    const { name, email, company, companyWebsite, role, roleOther, turnover, consentGiven } = result.data
     const qualified = turnover !== 'under-1m'
+    const displayRole = roleOther || role
+    const consentTimestamp = new Date().toISOString()
 
-    // Attio lead creation — fire-and-forget
-    if (process.env.ATTIO_API_KEY && process.env.ATTIO_WEBSITE_LEADS_LIST_ID) {
-      try {
-        const displayRole = roleOther || role
-        const consentTimestamp = new Date().toISOString()
+    // Attio person upsert — fire-and-forget
+    const attioPromise = upsertAttioPerson({
+      email,
+      name,
+      company,
+      description: `Role: ${displayRole}\nTurnover: ${turnover}\nConsent: ${consentGiven} at ${consentTimestamp}\nQualified: ${qualified}\nSource: AI Deployment Planner`,
+    }).catch((err) => {
+      console.error('Attio upsert error:', err)
+      return { success: false, recordId: undefined }
+    })
 
-        await fetch(
-          `https://api.attio.com/v2/lists/${process.env.ATTIO_WEBSITE_LEADS_LIST_ID}/entries`,
-          {
-            method: 'POST',
-            headers: {
-              Authorization: `Bearer ${process.env.ATTIO_API_KEY}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              data: {
-                values: {
-                  name: [{ value: escapeHtml(name) }],
-                  email_addresses: [{ email_address: email }],
-                  company: [{ value: escapeHtml(company) }],
-                  notes: [
-                    {
-                      value: `Role: ${escapeHtml(displayRole)}\nTurnover: ${turnover}\nConsent: ${consentGiven} at ${consentTimestamp}\nQualified: ${qualified}`,
-                    },
-                  ],
-                  source: [{ value: 'AI Deployment Planner' }],
-                },
-              },
-            }),
-          }
-        )
-      } catch (attioError) {
-        console.error('Attio integration error:', attioError)
-      }
+    // Supabase lead insert — fire-and-forget
+    const supabasePromise = insertPlannerLead({
+      email,
+      name,
+      company,
+      company_website: companyWebsite || undefined,
+      role: displayRole,
+      turnover,
+      qualified,
+      attio_record_id: undefined,
+    }).catch((err) => {
+      console.error('Supabase insert error:', err)
+      return null
+    })
+
+    // Wait for both in parallel (best-effort — don't block response on failure)
+    const [attioResult] = await Promise.all([attioPromise, supabasePromise])
+
+    // If we got an Attio record ID, update the Supabase row (best-effort)
+    if (attioResult?.recordId) {
+      // Non-blocking — don't await
+      import('@/lib/supabase').then(({ updatePlannerLead }) =>
+        updatePlannerLead(email, { attio_record_id: attioResult.recordId }).catch(() => {})
+      )
     }
 
     return NextResponse.json({ qualified }, { status: 200 })

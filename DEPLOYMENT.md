@@ -20,9 +20,16 @@ Get this from: https://resend.com/api-keys
 ### Optional: Attio CRM Integration
 ```
 ATTIO_API_KEY=your_attio_api_key
-ATTIO_WEBSITE_LEADS_LIST_ID=your_list_id
 ```
-Get these from: https://attio.com/settings/api
+Get this from: https://attio.com/settings/api
+
+### Optional: Supabase (Planner Lead Tracking)
+```
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_ANON_KEY=your_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+```
+Get these from: https://supabase.com/dashboard/project/settings/api
 
 ### Optional: Analytics
 ```

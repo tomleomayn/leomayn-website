@@ -152,15 +152,13 @@ If you want contact form submissions to create CRM leads:
   - Sign up at https://attio.com if needed
   - Go to Settings > API
   - Create API key
-  - Create or find your "Website Leads" list ID
 
 - [ ] **Add to Vercel environment variables:**
   ```
   ATTIO_API_KEY=your_key_here
-  ATTIO_WEBSITE_LEADS_LIST_ID=your_list_id
   ```
 
-- [ ] **Test:** Submit contact form and check Attio for new lead
+- [ ] **Test:** Submit contact form and check Attio for new person record
 
 #### Google Analytics (Optional)
 Track visitor data:

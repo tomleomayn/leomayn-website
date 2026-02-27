@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import { usePlanner } from './PlannerContext'
 import { ARCHETYPES, getRecoveryPercentageRange, CONDITION_LABELS } from '@/lib/planner/constants'
 import { normaliseCondition, type ConditionLevel } from '@/lib/planner/types'
@@ -82,7 +83,7 @@ export default function ReportView() {
 
   const handlePdfDownload = () => {
     if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({ event: 'planner_pdf_download' })
+      window.dataLayer.push({ event: 'planner_pdf_download', report_id: reportId })
     }
     window.open(`/api/planner/pdf/${reportId}`, '_blank')
   }
@@ -93,10 +94,14 @@ export default function ReportView() {
     }
   }
 
-  // Track report generated
-  if (typeof window !== 'undefined' && window.dataLayer) {
-    window.dataLayer.push({ event: 'planner_report_generated' })
-  }
+  // Track report generated — once only
+  const reportTrackedRef = useRef(false)
+  useEffect(() => {
+    if (!reportTrackedRef.current && window.dataLayer) {
+      window.dataLayer.push({ event: 'planner_report_generated', report_id: reportId })
+      reportTrackedRef.current = true
+    }
+  }, [reportId])
 
   return (
     <div className="max-w-4xl mx-auto">

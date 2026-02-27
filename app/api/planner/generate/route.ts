@@ -14,6 +14,8 @@ import { calculateBusinessCase } from '@/lib/planner/business-case'
 import { buildSystemPrompt, buildUserPrompt, loadFirmTypeContent } from '@/lib/planner/prompt'
 import { validateReportSchema, escapeHtml } from '@/lib/planner/sanitise'
 import { scrapeCompanyContext } from '@/lib/planner/scrape-company'
+import { upsertAttioPerson } from '@/lib/attio'
+import { updatePlannerLead } from '@/lib/supabase'
 
 export const maxDuration = 300
 
@@ -232,11 +234,51 @@ export async function POST(request: Request) {
 
       // Priority 2: Attio enrichment
       try {
-        if (process.env.ATTIO_API_KEY && process.env.ATTIO_WEBSITE_LEADS_LIST_ID) {
-          await enrichAttio(qualification, diagnostic, topArchetypes, businessCase)
-        }
+        const enrichmentNotes = [
+          `Diagnostic completed: ${new Date().toISOString()}`,
+          `Firm type: ${diagnostic.firmType}`,
+          `Team size: ${diagnostic.teamSize}`,
+          `Strategic focus: ${diagnostic.strategicFocus.primary} (primary), ${diagnostic.strategicFocus.secondary} (secondary)`,
+          `Pain points: ${diagnostic.painPoints.map((p: { area: string; symptom: string }) => `${p.area}:${p.symptom}`).join(', ')}`,
+          `Process knowledge: ${diagnostic.processKnowledge}`,
+          `Data foundations: ${diagnostic.dataFoundations}`,
+          `AI adoption: ${diagnostic.aiAdoption}`,
+          `Top archetypes: ${topArchetypes.map((a: { name: string; compositeScore: number }) => `${a.name} (${a.compositeScore})`).join(', ')}`,
+          `Annual cost: ${new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(businessCase.totalAnnualCost)}`,
+          `Recovery range: ${new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(businessCase.conservativeRecovery.low)} - ${new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(businessCase.conservativeRecovery.high)}`,
+        ].join('\n')
+
+        await upsertAttioPerson({
+          email: qualification.email,
+          name: qualification.name,
+          company: qualification.company,
+          description: enrichmentNotes,
+        })
       } catch (attioError) {
         console.error('Attio enrichment failed:', attioError)
+      }
+
+      // Priority 3: Supabase lead update with diagnostic data
+      try {
+        await updatePlannerLead(qualification.email, {
+          firm_type: diagnostic.firmType,
+          team_size: diagnostic.teamSize,
+          strategic_focus: diagnostic.strategicFocus,
+          pain_points: diagnostic.painPoints,
+          process_knowledge: diagnostic.processKnowledge,
+          data_foundations: diagnostic.dataFoundations,
+          ai_adoption: diagnostic.aiAdoption,
+          top_archetypes: topArchetypes.map((a) => ({
+            id: a.id,
+            name: a.name,
+            score: a.compositeScore,
+          })),
+          business_case: businessCase,
+          report_id: reportId,
+          report_generated_at: new Date().toISOString(),
+        })
+      } catch (supabaseError) {
+        console.error('Supabase lead update failed:', supabaseError)
       }
     })
 
@@ -335,58 +377,3 @@ function buildEmailHtml(name: string, company: string, reportId: string, baseUrl
   `
 }
 
-async function enrichAttio(
-  qualification: import('@/lib/planner/types').QualificationData,
-  diagnostic: import('@/lib/planner/types').DiagnosticData,
-  topArchetypes: import('@/lib/planner/types').RankedArchetype[],
-  businessCase: import('@/lib/planner/types').BusinessCase
-) {
-  const enrichmentNotes = [
-    `Diagnostic completed: ${new Date().toISOString()}`,
-    `Firm type: ${diagnostic.firmType}`,
-    `Team size: ${diagnostic.teamSize}`,
-    `Strategic focus: ${diagnostic.strategicFocus.primary} (primary), ${diagnostic.strategicFocus.secondary} (secondary)`,
-    `Pain points: ${diagnostic.painPoints.map(p => `${p.area}:${p.symptom}`).join(', ')}`,
-    `Process knowledge: ${diagnostic.processKnowledge}`,
-    `Data foundations: ${diagnostic.dataFoundations}`,
-    `AI adoption: ${diagnostic.aiAdoption}`,
-    `Top archetypes: ${topArchetypes.map(a => `${a.name} (${a.compositeScore})`).join(', ')}`,
-    `Annual cost: ${new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(businessCase.totalAnnualCost)}`,
-    `Recovery range: ${new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(businessCase.conservativeRecovery.low)} - ${new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(businessCase.conservativeRecovery.high)}`,
-  ].join('\n')
-
-  // Search for existing lead by email, then update
-  const searchResponse = await fetch('https://api.attio.com/v2/objects/people/records/query', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.ATTIO_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      filter: {
-        email_addresses: { contains: qualification.email },
-      },
-    }),
-  })
-
-  if (searchResponse.ok) {
-    const searchData = await searchResponse.json()
-    if (searchData.data?.length > 0) {
-      const personId = searchData.data[0].id.record_id
-      await fetch(`https://api.attio.com/v2/objects/people/records/${personId}`, {
-        method: 'PATCH',
-        headers: {
-          Authorization: `Bearer ${process.env.ATTIO_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          data: {
-            values: {
-              description: [{ value: enrichmentNotes }],
-            },
-          },
-        }),
-      })
-    }
-  }
-}

@@ -107,7 +107,9 @@ See `.env.example` for all available environment variables.
 ### Optional Integrations
 
 - `ATTIO_API_KEY` - CRM integration (get from attio.com)
-- `ATTIO_WEBSITE_LEADS_LIST_ID` - Attio list ID
+- `SUPABASE_URL` - Supabase project URL
+- `SUPABASE_ANON_KEY` - Supabase anon key (for inserts)
+- `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key (for updates)
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Google Analytics
 - `NEXT_PUBLIC_CALENDLY_URL` - Calendly scheduling link
 
