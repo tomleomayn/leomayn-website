@@ -14,7 +14,7 @@ interface AttioPersonData {
 interface AttioUpsertResult {
   success: boolean
   recordId?: string
-  _debug?: { sentBody?: string; responseStatus?: number; responseBody?: string }
+  _debug?: { sentBody?: string; responseStatus?: number; responseBody?: string; respName?: string; respDesc?: string }
 }
 
 export async function upsertAttioPerson(data: AttioPersonData): Promise<AttioUpsertResult> {
