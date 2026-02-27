@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { usePlanner } from '../PlannerContext'
@@ -10,6 +11,7 @@ import { ROLE_OPTIONS, TURNOVER_OPTIONS } from '@/lib/planner/constants'
 
 export default function QualificationStep() {
   const { state, updateQualification, setStep } = usePlanner()
+  const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
@@ -40,12 +42,14 @@ export default function QualificationStep() {
     setSubmitError('')
 
     try {
-      // Send to qualify API for Attio lead capture (fire-and-forget)
-      fetch('/api/planner/qualify', {
+      // Send to qualify API — captures lead in Attio + Supabase
+      const response = await fetch('/api/planner/qualify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
-      }).catch(() => {})
+      })
+
+      const result = await response.json()
 
       // Track GA event
       if (typeof window !== 'undefined' && window.dataLayer) {
@@ -54,6 +58,18 @@ export default function QualificationStep() {
           turnover_range: data.turnover,
           role: data.role,
         })
+      }
+
+      // Route disqualified users to decline page
+      if (!result.qualified) {
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            event: 'planner_disqualified',
+            turnover_range: data.turnover,
+          })
+        }
+        router.push('/ai-planner/decline')
+        return
       }
 
       updateQualification(data)
