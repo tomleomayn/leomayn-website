@@ -14,6 +14,7 @@ interface AttioPersonData {
 interface AttioUpsertResult {
   success: boolean
   recordId?: string
+  _debug?: { sentBody?: string; responseStatus?: number; responseBody?: string }
 }
 
 export async function upsertAttioPerson(data: AttioPersonData): Promise<AttioUpsertResult> {
@@ -65,5 +66,5 @@ export async function upsertAttioPerson(data: AttioPersonData): Promise<AttioUps
   const result = JSON.parse(responseText)
   const recordId = result?.data?.id?.record_id
   console.log('[Attio] Upsert success, record:', recordId)
-  return { success: true, recordId }
+  return { success: true, recordId, _debug: { sentBody: body, responseStatus: response.status, responseBody: responseText.slice(0, 300) } }
 }
