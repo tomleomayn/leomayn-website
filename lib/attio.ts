@@ -66,5 +66,9 @@ export async function upsertAttioPerson(data: AttioPersonData): Promise<AttioUps
   const result = JSON.parse(responseText)
   const recordId = result?.data?.id?.record_id
   console.log('[Attio] Upsert success, record:', recordId)
-  return { success: true, recordId, _debug: { sentBody: body, responseStatus: response.status, responseBody: responseText.slice(0, 300) } }
+  // Check if Attio response includes the name/description values
+  const respValues = result?.data?.values || {}
+  const respName = respValues.name?.[0]?.full_name || 'EMPTY'
+  const respDesc = respValues.description?.[0]?.value?.slice(0, 50) || 'EMPTY'
+  return { success: true, recordId, _debug: { sentBody: body, responseStatus: response.status, respName, respDesc } }
 }
