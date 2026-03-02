@@ -17,7 +17,7 @@ recoveryRates:
     range: [0.30, 0.45]
     rationale: "Research is a core consulting activity — market sizing, competitor analysis, benchmarking, literature review. The search-and-gather phase is highly compressible with AI tools, and consultants already spend 19-20% of their time finding information. But the synthesis, framing, and insight generation that distinguishes consulting from data collection remains human-led. Junior consultants doing desk research see the highest recovery; partners interpreting findings see the least."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - mckinsey-genai-2023
     confidence: moderate
 
@@ -26,7 +26,7 @@ recoveryRates:
     rationale: "Proposals are a significant investment in consulting — competitive bids can consume hundreds of hours across team bios, credentials, methodology sections, pricing models, case studies, and formatting. Most of this content already exists somewhere in the firm. The assembly, retrieval, and first-draft generation phases are highly automatable. The strategic positioning, pricing judgement, and client-specific tailoring are not. Large firms with formal bid teams see recovery at the upper end; boutiques writing from scratch sit lower."
     sources:
       - mckinsey-genai-2023
-      - mcksinsey-info-search
+      - mckinsey-info-search
     confidence: moderate
 
   client-communications:
@@ -57,7 +57,7 @@ recoveryRates:
     range: [0.40, 0.60]
     rationale: "Knowledge management is a competitive differentiator in consulting — the ability to reuse intellectual capital from past engagements (frameworks, benchmarks, case studies, deliverable templates) directly affects margin and quality. McKinsey found 1.8 hours per day spent searching for information. Consulting firms invest heavily in knowledge systems but adoption is uneven. AI-powered retrieval across past proposals, project files, and methodology libraries is a high-value use case. The curation, quality control, and contextual judgement remain human-led. Higher than generic because the knowledge base is larger and more structured."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - mckinsey-genai-2023
     confidence: moderate
 
@@ -83,6 +83,30 @@ recoveryRates:
     sources:
       - mckinsey-genai-2023
     confidence: low
+
+  marketing-operations:
+    range: [0.35, 0.55]
+    rationale: "Consulting firms invest significantly in thought leadership, sector events, and content production as BD tools. The content production pipeline (research briefs, articles, event invitations, case study write-ups) is substantial and repetitive. AI can accelerate drafting, repurposing, and distribution. The strategic positioning and editorial judgement remain human-led. Consulting has the most mature marketing function among professional services, which means more structured processes to automate."
+    sources:
+      - source-global-uk-2024
+      - mca-annual-2025
+    confidence: moderate
+
+  people-operations:
+    range: [0.35, 0.55]
+    rationale: "Consulting runs structured people processes — campus recruitment campaigns, assessment centres, up-or-out reviews, promotion panels, and structured L&D programmes. These are calendar-driven and process-heavy. The judgement layer (hiring decisions, performance calibration, promotion calls) is not automatable, but the administrative machinery around it consumes significant HR and partner time. The 'up or out' model creates constant recruitment and transition cycles."
+    sources:
+      - spi-benchmark-2025
+      - cipd-resourcing-2024
+    confidence: low
+
+  resource-allocation:
+    range: [0.45, 0.65]
+    rationale: "Resource allocation is a core operational challenge in consulting — matching consultants to engagements by skill, seniority, availability, and development needs. Larger firms have dedicated resource management functions; mid-market firms rely on partners negotiating informally. SPI data showing 68.9% utilisation suggests significant allocation waste. The project-based model with defined start and end dates makes demand forecasting more feasible than in ongoing service models. This is the highest-recovery archetype in consulting because the data already exists in PSA systems."
+    sources:
+      - spi-benchmark-2025
+      - source-global-uk-2024
+    confidence: moderate
 
 strategicConsiderations:
   - id: con-01
@@ -112,7 +136,7 @@ strategicConsiderations:
     observation: "Knowledge workers spend 1.8 hours per day searching for and gathering information. In consulting, where past intellectual capital (frameworks, benchmarks, case studies, deliverable templates) is the raw material for new engagements, the cost of poor retrieval is amplified."
     implication: "Knowledge management is the highest-ROI starting point for most consulting firms. Improving how consultants find and reuse existing work reduces research time, improves deliverable quality, and shortens ramp-up on new engagements. This does not require changing how people work — just how they find things."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
     tags: [capacity, technology, business-case-framing]
 
   - id: con-05
@@ -132,7 +156,7 @@ strategicConsiderations:
     tags: [competitive-dynamics, business-case-framing, capacity]
 
   - id: con-07
-    observation: "Partner and director time in professional services splits roughly 46% billable, with the remainder on management, business development, and supervision. Junior consultants run at 70%+ billable. The people making adoption decisions have fundamentally different work patterns from those doing the work."
+    observation: "Senior leaders in professional services spend the majority of their time on management, business development, and supervision rather than billable delivery. RIBA data for analogous seniority shows partners at 46% billable; junior staff run at 70%+. The people making adoption decisions have fundamentally different work patterns from those doing the work."
     implication: "Pilots must demonstrate value at multiple seniority levels. A tool that saves an analyst 2 hours per week on research will not impress a partner whose bottleneck is meeting overload and email triage. Design adoption programmes with separate use cases for each tier."
     sources:
       - spi-benchmark-2025
@@ -159,5 +183,28 @@ strategicConsiderations:
     implication: "Automated knowledge capture at engagement close — extracting reusable assets, tagging by industry and capability, indexing deliverables — becomes more valuable as engagement volumes increase. Firms that systematise this will compound their intellectual capital; those that do not will keep rebuilding from scratch."
     sources:
       - source-global-uk-2024
-      - mcksinsey-info-search
+      - mckinsey-info-search
     tags: [technology, capacity, competitive-dynamics, seasonality]
+
+  - id: con-11
+    observation: "Consulting firms use thought leadership as a primary BD channel — sector reports, benchmarking studies, opinion pieces, and event presentations. The production pipeline is labour-intensive: research, drafting, review, design, and distribution across channels. Content production economics are poor because the output is used for positioning, not direct revenue."
+    implication: "Marketing operations automation has high leverage in consulting because the content volume is high and the production cost is sunk. AI-assisted drafting, repurposing (report to article to social post), and performance tracking can reduce the cost per piece while maintaining strategic control over messaging."
+    sources:
+      - source-global-uk-2024
+      - mca-annual-2025
+    tags: [marketing, capacity, competitive-dynamics]
+
+  - id: con-12
+    observation: "The up-or-out model in consulting creates constant hiring pressure. Campus recruitment, lateral hiring, and contractor onboarding run year-round. Each cycle involves screening, assessment, interviewing, and onboarding — consuming time from people who are also delivering client work. The talent pipeline is a permanent operational cost."
+    implication: "People operations automation in consulting addresses a structural cost, not a one-off problem. Reducing the administrative burden of the recruitment and review cycles frees delivery capacity. The compounding effect matters: if you hire 20 people per year and save 5 hours per hire in admin, that is 100 hours back into the delivery pool."
+    sources:
+      - spi-benchmark-2025
+      - cipd-resourcing-2024
+    tags: [talent, capacity, business-case-framing]
+
+  - id: con-13
+    observation: "Resource allocation in consulting is a known operational challenge. Partners compete for the best consultants, creating informal allocation markets. Mid-market firms without dedicated resource management functions rely on partners negotiating over email or in hallway conversations. The result is suboptimal matching, uneven utilisation, and missed development opportunities."
+    implication: "The value of resource allocation automation in consulting is threefold: better utilisation (directly improving profitability), better skill matching (improving delivery quality), and better visibility into capacity (enabling more confident pipeline commitments). Firms that solve allocation first create the data foundation for all other operational improvements."
+    sources:
+      - spi-benchmark-2025
+    tags: [capacity, governance, business-case-framing]

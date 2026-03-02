@@ -18,7 +18,7 @@ recoveryRates:
     range: [0.25, 0.40]
     rationale: "Research involves significant judgement, but the search, gathering, and initial synthesis phases are highly automatable. McKinsey (2012) found knowledge workers spend 19-20% of time searching for information. AI-assisted search can compress this significantly, but the analysis and interpretation phases remain human-led."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - mckinsey-genai-2023
     confidence: moderate
 
@@ -57,7 +57,7 @@ recoveryRates:
     range: [0.30, 0.50]
     rationale: "Knowledge retrieval, tagging, and organisation are directly addressable by AI. McKinsey (2012) found 1.8 hours/day spent searching for information. Modern search and RAG tools can reduce this substantially. The curation and quality judgement component remains human-led."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - mckinsey-genai-2023
     confidence: moderate
 
@@ -83,6 +83,30 @@ recoveryRates:
       - mckinsey-genai-2023
     confidence: low
 
+  marketing-operations:
+    range: [0.30, 0.50]
+    rationale: "Marketing operations spans content production, campaign coordination, lead tracking, and event logistics. Production and coordination work is highly automatable — content scheduling, email campaigns, asset assembly, and performance reporting. Strategic decisions (messaging, positioning, channel selection) and creative work remain human-led. Recovery varies widely by marketing maturity: firms with structured processes see higher gains than those where marketing is ad hoc."
+    sources:
+      - mckinsey-genai-2023
+      - microsoft-wti-2025
+    confidence: low
+
+  people-operations:
+    range: [0.35, 0.55]
+    rationale: "People operations involves recruitment administration, onboarding checklists, performance review scheduling, absence tracking, and L&D coordination. The administrative and scheduling components are highly automatable. Hiring decisions, performance conversations, and employee relations require human judgement. Recovery concentrated in the process layer — scheduling, tracking, document generation — not the relationship and judgement layer."
+    sources:
+      - mckinsey-genai-2023
+      - cipd-resourcing-2024
+    confidence: low
+
+  resource-allocation:
+    range: [0.40, 0.60]
+    rationale: "Resource allocation involves capacity tracking, skill matching, utilisation forecasting, and workload balancing. The data aggregation and modelling phases are highly automatable — particularly where firms track time and projects in structured systems. The allocation decisions (who works on what, how to balance client needs with development goals) require human judgement. SPI data shows utilisation is a primary concern at 68.9%, making this a high-visibility area."
+    sources:
+      - spi-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: moderate
+
 strategicConsiderations:
   - id: generic-01
     observation: "Knowledge workers spend 57% of their time communicating (meetings, email, chat) and only 43% creating. This means the majority of recoverable time is in how people coordinate, not in what they produce."
@@ -107,10 +131,10 @@ strategicConsiderations:
     tags: [capacity, adoption, productivity]
 
   - id: generic-04
-    observation: "1.8 hours per day — nearly 20% of the working week — is spent searching for and gathering information. A 2025 study found teams lose 3.2 hours per week re-finding the same things."
+    observation: "1.8 hours per day — nearly 20% of the working week — is spent searching for and gathering information. In most firms, the same questions get researched repeatedly because past answers are not findable."
     implication: "Knowledge management and retrieval improvements have a measurable, near-universal payoff. This is often the quickest win because it does not require changing how people work — just how they find things."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
     tags: [capacity, technology, knowledge-management]
 
   - id: generic-05
@@ -136,14 +160,14 @@ strategicConsiderations:
 
   - id: generic-08
     observation: "60-70% of employee time involves activities that could theoretically be automated with current technology. But this measures technical potential, not practical recovery. Organisational readiness, data quality, process documentation, and change management determine what is actually achievable."
-    implication: "The gap between theoretical automation potential and realised efficiency gain is typically 3-5x. A workflow with 60% theoretical automation potential might realistically recover 15-25% in the first year. Set expectations accordingly."
+    implication: "Theoretical potential consistently overstates what firms actually realise in the first year of any workflow change. Organisational friction — training, change management, data cleanup, process redesign — absorbs a large share of the theoretical gain. Set expectations well below the headline automation potential."
     sources:
       - mckinsey-genai-2023
     tags: [business-case-framing, adoption, technology]
 
   - id: generic-09
-    observation: "Training investment in professional services averages 2-3% of revenue. Yet the transition to AI-enabled workflows requires dedicated learning time that competes with billable work."
-    implication: "Firms that ring-fence 2-3 hours per week per person during transition periods see faster adoption. The cost is real (billable hours forgone) but the alternative — bolting AI onto a full workload — produces frustration, not adoption."
+    observation: "The transition to AI-enabled workflows requires dedicated learning time that competes with billable work. Most professional services firms underinvest in transition capacity — expecting staff to adopt new tools while maintaining existing output."
+    implication: "Firms that ring-fence dedicated learning time during transition periods see faster adoption. The cost is real (billable hours forgone) but the alternative — bolting AI onto a full workload — produces frustration, not adoption."
     sources:
       - spi-benchmark-2025
     tags: [adoption, talent, capacity]
@@ -154,3 +178,24 @@ strategicConsiderations:
     sources:
       - spi-benchmark-2025
     tags: [competitive-dynamics, business-case-framing]
+
+  - id: generic-11
+    observation: "Marketing in professional services is structurally underfunded compared to product companies. Most firms under 200 people have one or two marketing staff covering content, events, campaigns, and BD support. The marketing function is stretched across too many channels with too few people."
+    implication: "Marketing operations recovery is not about scaling a large team — it is about making a small team viable. AI-assisted content production, campaign coordination, and performance reporting can turn a one-person marketing function from reactive to systematic."
+    sources:
+      - mckinsey-genai-2023
+    tags: [capacity, marketing, business-case-framing]
+
+  - id: generic-12
+    observation: "CIPD data shows average cost per hire at £6,125, with a median time to fill of 42 days. 78% of firms have increased use of technology in recruitment and onboarding. 31% are using AI/ML in recruitment (up from 16% in 2022), and 66% of those report improved efficiency. 69% report increased competition for skilled workers."
+    implication: "People operations automation has a measurable cost-avoidance component. At £6,125 per hire across multiple recruitment cycles per year, streamlining screening, scheduling, and onboarding directly reduces the cost of growth. The ROI is easiest to demonstrate in firms that are actively hiring."
+    sources:
+      - cipd-resourcing-2024
+    tags: [capacity, talent, business-case-framing]
+
+  - id: generic-13
+    observation: "Resource allocation in most mid-market firms is informal — a partner or director allocates people based on availability and familiarity rather than skills match or utilisation data. This creates both under-utilisation (people on the bench) and over-utilisation (the same people always staffed on everything)."
+    implication: "Formalising resource allocation with data-driven matching addresses utilisation, burnout, and development goals simultaneously. The starting point is visibility — most firms cannot answer 'who is available next week with these skills' without asking around."
+    sources:
+      - spi-benchmark-2025
+    tags: [capacity, talent, business-case-framing]

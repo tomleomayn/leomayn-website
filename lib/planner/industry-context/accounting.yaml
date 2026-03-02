@@ -1,5 +1,16 @@
 # Accounting (Audit, Tax, Advisory)
-# Last updated: 2026-02-25
+# Last updated: 2026-03-02
+#
+# REBUILD NOTE (2026-03-02): This file was rebuilt after discovering the original
+# was based on `icaew-benchmark-2025`, which was actually the Law Society Financial
+# Benchmarking Survey about solicitors' law firms — not accounting practices.
+# Recovery rates now use verified cross-sector sources (McKinsey, SPI, CIPD).
+# Strategic considerations rebuilt from real desk research: FRC Key Facts 2025,
+# Accountancy Age Top 50+50, Wolters Kluwer AI survey, Acenteus/CABA talent data,
+# Distinct Recruitment talent pipeline, Accountancy Age billing paradox analysis.
+# No operational benchmarks (chargeable hours, utilisation by seniority) exist in
+# public sources for UK accounting practices — these have been replaced with
+# evidence-backed insights on talent, technology, and market structure.
 
 industry: accounting
 label: "Accounting, tax, and audit"
@@ -7,37 +18,37 @@ label: "Accounting, tax, and audit"
 recoveryRates:
   document-processing:
     range: [0.45, 0.70]
-    rationale: "Accounting produces high volumes of standardised documents — tax returns, financial statements, audit reports, management accounts. Template-driven compliance output is at the upper end. Advisory reports and bespoke analysis sit lower. Accountants record 87% of client time and bill 86% — the leakage is small, suggesting the time spent is real."
+    rationale: "Accounting produces high volumes of standardised documents — tax returns, financial statements, audit reports, management accounts. Template-driven compliance output is at the upper end. Advisory reports and bespoke analysis sit lower. McKinsey estimates 60-70% of employee time involves activities automatable with current technology, and document assembly is among the most automatable categories."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-genai-2023
     confidence: moderate
 
   research-and-analysis:
     range: [0.25, 0.40]
-    rationale: "Tax research and technical advisory involve searching HMRC guidance, case law, and professional standards. The search phase is automatable; the interpretation and advice are not. Recovery depends on practice type — general practice has less research; specialist tax/audit has more."
+    rationale: "Tax research and technical advisory involve searching HMRC guidance, case law, and professional standards. The search phase is automatable — knowledge workers spend 19-20% of time searching for information. The interpretation and advice layers are not. Recovery depends on practice type — general practice has less research; specialist tax/audit has more."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-info-search
+      - mckinsey-genai-2023
     confidence: low
 
   proposal-production:
     range: [0.35, 0.50]
     rationale: "Accounting proposals are relatively standardised — scope of work, fee estimates, team credentials, engagement terms. Much of this is reusable content. The pricing component involves judgement but can be supported by historical data. Smaller practices produce fewer proposals; the payoff is proportionally lower."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-genai-2023
     confidence: low
 
   client-communications:
     range: [0.20, 0.35]
-    rationale: "Client communication in accounting follows predictable cycles — year-end, tax deadlines, interim reviews. Routine updates, document requests, and deadline reminders are automatable. Substantive advice communication is not."
+    rationale: "Client communication in accounting follows predictable cycles — year-end, tax deadlines, interim reviews. Routine updates, document requests, and deadline reminders are automatable. Microsoft WTI data shows 57% of knowledge worker time goes to communication. Substantive advice communication is not a recovery target."
     sources:
-      - icaew-benchmark-2025
+      - microsoft-wti-2025
     confidence: low
 
   project-delivery:
     range: [0.25, 0.40]
-    rationale: "Audit and accounts preparation follows structured methodologies with clear milestones. Scheduling, task allocation, progress tracking, and sign-off management are automatable. The audit work itself requires professional judgement."
+    rationale: "Audit and accounts preparation follows structured methodologies with clear milestones. Scheduling, task allocation, progress tracking, and sign-off management are automatable. The audit work itself requires professional judgement. SPI benchmarks show utilisation across professional services at 68.9%."
     sources:
-      - icaew-benchmark-2025
       - spi-benchmark-2025
     confidence: low
 
@@ -45,104 +56,152 @@ recoveryRates:
     range: [0.40, 0.60]
     rationale: "Client onboarding involves AML/KYC checks, engagement letters, authority letters (HMRC, Companies House), data collection, and system setup. These are largely process-driven with well-defined checklists. High-volume practices see particular benefit."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-genai-2023
     confidence: moderate
 
   knowledge-management:
     range: [0.30, 0.45]
-    rationale: "Accounting knowledge is heavily codified — standards, legislation, HMRC guidance. Retrieval from these structured sources is well-suited to AI. The challenge is more in staying current with regulatory changes than in finding historical knowledge."
+    rationale: "Accounting knowledge is heavily codified — standards, legislation, HMRC guidance. Retrieval from these structured sources is well-suited to AI. McKinsey found knowledge workers spend 1.8 hours per day searching for information. The challenge is more in staying current with regulatory changes than in finding historical knowledge."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
     confidence: low
 
   management-reporting:
     range: [0.45, 0.65]
     rationale: "Management reporting is core to accounting. Aggregating financial data, producing dashboards, variance analysis, and board packs involve significant data processing that is highly automatable. The narrative interpretation layer remains human-led. This is typically the highest-confidence recovery area in accounting."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-genai-2023
+      - spi-benchmark-2025
     confidence: moderate
 
   sales-pipeline:
     range: [0.15, 0.30]
     rationale: "Business development in accounting is largely referral-driven. Cross-selling to existing clients is the primary growth mechanism. Pipeline tracking, referral follow-up, and proposal status management are automatable. The relationship and trust-building are not."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-genai-2023
     confidence: low
 
   compliance-qa:
     range: [0.40, 0.60]
     rationale: "Compliance is deeply embedded in accounting — ISQM requirements, ethical standards, filing deadlines, regulatory submissions. Systematic checking of workpapers, completion checklists, and filing status is process-driven and highly automatable. The professional judgement layer (materiality, going concern) is not."
     sources:
-      - icaew-benchmark-2025
+      - mckinsey-genai-2023
     confidence: moderate
+
+  marketing-operations:
+    range: [0.25, 0.40]
+    rationale: "Marketing in accounting is nascent for most practices. Referrals and partner networks drive growth, not campaigns. Where marketing exists, it is typically one person producing newsletters, maintaining the website, and coordinating events. Content production and scheduling are automatable. But the low starting maturity means there is less existing process to automate."
+    sources:
+      - mckinsey-genai-2023
+    confidence: low
+
+  people-operations:
+    range: [0.40, 0.60]
+    rationale: "Accounting practices run structured people processes — trainee intake cycles, ACA/ACCA study programmes, annual performance reviews, and CPD tracking for professional development. These are process-heavy, calendar-driven activities with clear automation potential. CIPD data shows 78% of firms have increased technology use in recruitment and onboarding."
+    sources:
+      - cipd-resourcing-2024
+      - spi-benchmark-2025
+    confidence: low
+
+  resource-allocation:
+    range: [0.40, 0.60]
+    rationale: "Accounting work is highly seasonal with predictable peaks. Resource planning involves matching available fee earners to client portfolios, managing trainee rotations, and balancing audit teams. 30-40% of new business is turned away during peak seasons due to staffing constraints, suggesting significant allocation inefficiency. SPI cross-sector data shows utilisation at 68.9%. The structured, cyclical nature of accounting work makes forecasting and matching more automatable than in project-based industries."
+    sources:
+      - spi-benchmark-2025
+    confidence: low
 
 strategicConsiderations:
   - id: acc-01
-    observation: "UK accounting practices achieve a median of 773 chargeable hours per fee earner per year against a target of 1,000-1,200. The gap between aspiration and reality is 23-36%, representing a structural efficiency shortfall."
-    implication: "Recovering even 100 hours per fee earner per year through workflow improvement closes 10% of the chargeability gap. This is a concrete, measurable target that finance-literate partners will respond to."
+    observation: "94% of UK accounting firms report that recruitment issues are holding back growth. 74% are unable to take on new clients due to staffing constraints. 30-40% of new business is turned away during peak seasons. The binding constraint on growth is not demand — it is capacity."
+    implication: "Workflow automation addresses the binding constraint directly. Recovering even 5% of fee earner time through process improvement is equivalent to adding headcount — without the 40-60 day recruitment timeline or £15,000+ training cost per junior hire. The business case writes itself in a capacity-constrained market."
     sources:
-      - icaew-benchmark-2025
-    tags: [capacity, billing-model, business-case-framing]
+      - acenteus-talent-crisis-2025
+    tags: [capacity, talent, business-case-framing]
 
   - id: acc-02
-    observation: "Accounting work is intensely seasonal. Tax deadlines (January, July), year-end filing windows, and audit cycles create predictable capacity crunches. During peak periods, staff work significantly above sustainable utilisation. During troughs, utilisation drops below 60%."
+    observation: "Accounting work is intensely seasonal. Tax deadlines (January, July), year-end filing windows, and audit cycles create predictable capacity crunches. During peak periods, staff work significantly above sustainable utilisation. During troughs, utilisation drops."
     implication: "Adoption windows are narrow. AI deployment must target the peak-period bottlenecks (where the pain is) but the implementation and training must happen during the troughs (where the time is). Timing the rollout to the annual cycle is critical."
     sources:
-      - icaew-benchmark-2025
+      - spi-benchmark-2025
     tags: [seasonality, adoption, capacity]
 
   - id: acc-03
-    observation: "Chargeability targets vary sharply by seniority: entry-level 80-90%, senior staff 70-85%, managers 60-75%, partners 40-60%. Partners spend more time on management, BD, and supervision than on chargeable work."
-    implication: "Workflow improvements that free up partner time for BD and client relationships have a disproportionate revenue impact — not through hourly billing, but through client retention and cross-selling."
+    observation: "Only 9% of UK accounting firms report fully utilising their existing technology. Yet firms with 75%+ technology integration are 63% more likely to report significant revenue growth. 75% report increased technology spending year-on-year, but 15% admit to struggling with technological adaptation. The gap is between buying tools and embedding them into workflows."
+    implication: "The opportunity is not in acquiring more technology — most firms have already invested. It is in closing the integration gap: connecting tools into end-to-end workflows, training people to use them, and measuring the impact. The 63% revenue growth differential makes the case for integration over acquisition."
     sources:
-      - icaew-benchmark-2025
-    tags: [capacity, billing-model, governance]
+      - accountancy-age-5050-2025
+      - accountancy-age-talent-retention-2024
+    tags: [technology, adoption, business-case-framing]
 
   - id: acc-04
-    observation: "Routine compliance work operates at 20-25% profit margins. Advisory and specialist services command 30-40%. The margin differential incentivises firms to move up the value chain — but most fee income still comes from compliance."
-    implication: "Automating compliance work has two effects: it protects the margin on the base revenue, and it frees capacity to deliver higher-margin advisory work. Both effects compound."
+    observation: "AI-driven compliance is creating a billing paradox: efficiency is soaring, but revenue remains tethered to time. Advisory exists 'everywhere in theory, but accidental in practice' — insights are embedded in emails, calls, and personal notes rather than shared systems. Firms are experimenting with subscription-style relationships, value-based pricing, and productised service bundles alongside core compliance."
+    implication: "The compliance-to-advisory transition requires more than efficiency gains — it requires a commercial model change. Firms that automate compliance without rethinking pricing will shrink revenue. Those that use the freed capacity to systematise advisory and move to value-based pricing will grow it."
     sources:
-      - icaew-benchmark-2025
+      - accountancy-age-billing-paradox-2026
     tags: [billing-model, competitive-dynamics, business-case-framing]
 
   - id: acc-05
-    observation: "Profit per equity partner increased 20% year-on-year, but removing client money interest income shows underlying trading growth was flat. Real operational efficiency has not improved — the headline number is inflated by interest rates."
-    implication: "Partners who look at the headline PEP number may not feel urgency. The operational efficiency case needs to be made on underlying trading metrics, not headline profitability."
+    observation: "66% of UK accountants are already using AI, and 91% are using or planning to. But adoption is shallow: 70% use generative AI for drafting and summarising, while only 46% automate routine tasks like payroll and invoicing. 43% are worried about accuracy and 42% about data security. The profession has crossed the experimentation threshold but not the integration threshold."
+    implication: "The competitive gap is no longer between firms that use AI and those that do not. It is between firms that use AI to draft documents and those that embed it into operational workflows — compliance checking, client onboarding, resource scheduling. Moving from 'AI-assisted drafting' to 'AI-integrated operations' is the transition that produces measurable efficiency gains."
     sources:
-      - icaew-benchmark-2025
-    tags: [business-case-framing, governance, competitive-dynamics]
+      - wolters-kluwer-ai-uk-2025
+    tags: [technology, adoption, competitive-dynamics]
 
   - id: acc-06
-    observation: "Fee income grew by a median of 6%, but this barely kept pace with inflation over 2022-2024. In real terms, most practices have not grown. The profession is maintaining, not advancing."
-    implication: "Efficiency gains are the primary lever for real income growth when top-line growth is inflation-matching at best. This is a 'do more with what you have' environment."
+    observation: "FRC data shows Big Four UK firms grew fee income just 1.2% in 2024, while non-Big Four firms grew 9.8%. Accountancy Age reports 65% of Top 100 firms saw fee income growth but the sector is bifurcating — larger firms are consolidating while mid-market firms compete on agility. Cross-sector professional services revenue growth slowed to 4.6%."
+    implication: "Efficiency gains are the primary lever for real income growth, especially for larger firms where top-line growth is near-flat. For mid-market firms, the opportunity is to compete on service quality and responsiveness rather than price."
     sources:
-      - icaew-benchmark-2025
+      - frc-key-facts-2025
+      - accountancy-age-5050-2025
+      - spi-benchmark-2025
     tags: [competitive-dynamics, business-case-framing]
 
   - id: acc-07
-    observation: "Keeping staff working productively was identified as one of the biggest challenges facing firms. This is not a technology problem — it is a workflow, management, and utilisation problem."
+    observation: "Keeping staff working productively is a persistent challenge across professional services. SPI data shows utilisation falling from 73.2% (2021) to 68.9% (2024), well below the 70-80% optimal band. This is not a technology problem — it is a workflow, management, and utilisation problem."
     implication: "Technology is a means to the end of better utilisation, not an end in itself. Firms that approach AI as a 'productivity tool' without addressing underlying workflow design will be disappointed."
     sources:
-      - icaew-benchmark-2025
+      - spi-benchmark-2025
     tags: [adoption, capacity, talent]
 
   - id: acc-08
-    observation: "Accountants record 87% of client time and bill 86% of recorded time. Time leakage is relatively low compared to other professional services. The efficiency opportunity is in the work itself, not in the billing process."
-    implication: "Unlike law (where billing capture is a major issue), accounting's recovery potential is in reducing the time spent on each task, not in capturing more of the time already spent."
+    observation: "The talent pipeline is shrinking at both ends. 9,000 fewer students enrolled with ICAEW, ACCA, and CIMA from 2017 to 2022. 75% of experienced practitioners are expected to retire within the next decade. 60% of accountants plan to change jobs in 2025. The 2024 ACA intake rose 8.5%, reversing the decline — but even with this uptick, each junior hire costs £15,000+ in training before becoming productive."
+    implication: "The economics of the talent pipeline make retention and productivity investments more valuable than recruitment spending. Reducing the administrative burden on existing staff — the single most common complaint — directly addresses the 60% job mobility figure. Firms that make work less frustrating will lose fewer people than firms that simply pay more."
     sources:
-      - icaew-benchmark-2025
-    tags: [billing-model, business-case-framing]
+      - distinct-talent-shortage-2025
+      - acenteus-talent-crisis-2025
+    tags: [talent, capacity, business-case-framing]
 
   - id: acc-09
-    observation: "The accounting profession is heavily regulated (FRC, PCAOB, ISQM, ethical standards). Any automation must maintain audit trail integrity, documented review processes, and regulatory compliance. This is non-negotiable."
+    observation: "The accounting profession is heavily regulated (FRC, PCAOB, ISQM, ethical standards). FRC data shows 3,760 registered audit firms in 2024, down 24.9% over five years — the regulatory burden is concentrating the market. Any automation must maintain audit trail integrity, documented review processes, and regulatory compliance. This is non-negotiable."
     implication: "AI deployment in accounting must be audit-trail-compatible from day one. 'Move fast and break things' does not work in a regulated environment. The quality assurance framework must be designed into the workflow, not bolted on."
     sources:
-      - icaew-benchmark-2025
+      - frc-key-facts-2025
     tags: [compliance, adoption, governance]
 
   - id: acc-10
-    observation: "The shift from compliance to advisory is the stated strategic direction of most practices, but compliance work still generates the majority of fee income. The transition is slow because clients expect compliance as the baseline."
+    observation: "The shift from compliance to advisory is the stated strategic direction of most practices. Accountancy Age data shows audit/assurance at 38% of fee income, tax at 25%, and advisory/consulting now over 25%. The transition is real but compliance still dominates. 46% of accountants now use AI daily and 95% report technology reduces compliance time."
     implication: "AI that makes compliance work faster and cheaper supports the strategic transition — it makes the base sustainable while freeing capacity for advisory growth. The business case should connect to the firm's strategic direction, not just operational efficiency."
     sources:
-      - icaew-benchmark-2025
+      - accountancy-age-5050-2025
     tags: [competitive-dynamics, business-case-framing, capacity]
+
+  - id: acc-11
+    observation: "Marketing in accounting practices is typically referral-driven with minimal structured activity. Partner networks and existing client relationships generate most new work. Practices that do invest in marketing focus on thought leadership articles, sector seminars, and local networking events."
+    implication: "Marketing operations automation for accounting is less about scaling campaigns and more about systematising the BD support function — maintaining contact lists, tracking referral sources, and producing sector-specific content consistently. The bar is low, which means even basic automation represents a visible improvement."
+    sources:
+      - mckinsey-genai-2023
+    tags: [marketing, competitive-dynamics, capacity]
+
+  - id: acc-12
+    observation: "Trainee recruitment is a structured annual cycle in accounting — application windows, assessment centres, offer management, and onboarding cohorts. CIPD data shows average cost per hire at £6,125 with a median 42-day time to fill. 31% of firms now use AI/ML in recruitment."
+    implication: "The cyclical, structured nature of accounting recruitment makes it more automatable than in sectors with irregular hiring. Screening, scheduling, and onboarding checklists follow repeatable patterns. Reducing the administrative burden of the trainee cycle frees partner time during already-busy periods."
+    sources:
+      - cipd-resourcing-2024
+    tags: [talent, capacity, seasonality]
+
+  - id: acc-13
+    observation: "30-40% of new business is turned away during peak seasons due to staffing constraints, while recruitment timelines have extended 40-60 days beyond pre-2020 norms. The seasonal capacity crunch is structural: tax deadlines and year-end windows create predictable demand spikes that cannot be met by hiring because recruitment takes too long and training costs £15,000+ per head."
+    implication: "Resource allocation and workflow automation are the only short-term solutions to the peak-season capacity crunch. Hiring cannot respond fast enough. Outsourcing addresses volume but not quality. Recovering 10-15% of fee earner time through process improvement during peak periods is equivalent to adding temporary staff — but the capability remains year-round."
+    sources:
+      - acenteus-talent-crisis-2025
+    tags: [capacity, seasonality, business-case-framing]

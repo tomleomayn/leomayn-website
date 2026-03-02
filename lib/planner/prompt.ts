@@ -38,9 +38,9 @@ function formatCurrency(amount: number): string {
 }
 
 function getRecoveryTierLabel(rate: number): string {
-  if (rate >= 0.75) return 'High (75%): largely data entry and reconciliation, most automatable'
-  if (rate >= 0.50) return 'Medium (50%): AI assists significantly, human judgment at key decision points'
-  return 'Low (25%): capture is automatable, action and follow-through still need people'
+  if (rate >= 0.60) return `High (${Math.round(rate * 100)}%): largely process-driven work, most automatable`
+  if (rate >= 0.40) return `Medium (${Math.round(rate * 100)}%): AI assists significantly, human judgement at key decision points`
+  return `Low (${Math.round(rate * 100)}%): capture is automatable, action and follow-through still need people`
 }
 
 export function buildSystemPrompt(
@@ -317,7 +317,8 @@ export function buildUserPrompt(
   topArchetypes: RankedArchetype[],
   businessCase: BusinessCase,
   allScores: Record<string, number>,
-  companyContext?: string
+  companyContext?: string,
+  recoveryRateOverrides?: Record<string, number>
 ): string {
   const firmType = FIRM_TYPE_REPORT_LABELS[diagnostic.firmType] ?? getLabel(diagnostic.firmType, FIRM_TYPE_OPTIONS)
   const teamSize = getLabel(diagnostic.teamSize, TEAM_SIZE_OPTIONS)
@@ -376,7 +377,7 @@ export function buildUserPrompt(
   // Per-archetype presentation context
   const archetypeContext = topArchetypes.map((a, i) => {
     const full = ARCHETYPES.find(arch => arch.id === a.id)
-    const recoveryRate = full?.recoveryRate ?? 0.5
+    const recoveryRate = recoveryRateOverrides?.[a.id] ?? full?.recoveryRate ?? 0.5
     const recoveryTier = getRecoveryTierLabel(recoveryRate)
 
     const signalDetail = a.matchedSignals.length > 0
@@ -471,18 +472,11 @@ Generate the diagnostic report for this prospect. Make it specific to their situ
 }
 
 /**
- * Attempt to load firm-type RAG content from the content directory.
- * Returns undefined if no file exists for this firm type.
+ * Load firm-type RAG content from industry-context YAML.
+ * Reads strategicConsiderations from the YAML file for the given firm type.
+ * Returns undefined if no file exists or has no considerations.
  */
 export async function loadFirmTypeContent(firmType: string): Promise<string | undefined> {
-  try {
-    const fs = await import('fs/promises')
-    const path = await import('path')
-    const filePath = path.join(process.cwd(), 'content', 'planner', 'firm-types', `${firmType}.md`)
-    const content = await fs.readFile(filePath, 'utf-8')
-    return content
-  } catch {
-    // No file for this firm type — graceful fallback
-    return undefined
-  }
+  const { loadStrategicConsiderations } = await import('./industry-rates')
+  return loadStrategicConsiderations(firmType)
 }

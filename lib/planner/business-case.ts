@@ -25,7 +25,8 @@ function getRecoveryRate(archetypeId: string): number {
 
 export function calculateBusinessCase(
   sizing: SizingEntry[],
-  diagnostic: DiagnosticData
+  diagnostic: DiagnosticData,
+  recoveryRateOverrides?: Record<string, number>
 ): BusinessCase {
   const tiers = getSalaryTiers(diagnostic.firmType)
   const perArea: AreaBusinessCase[] = sizing.map(entry => {
@@ -38,7 +39,7 @@ export function calculateBusinessCase(
     const hourlyRate = fullyLoadedCost / (WORKING_WEEKS_PER_YEAR * HOURS_PER_WEEK)
     const annualCost = annualHours * hourlyRate
 
-    const recoveryRate = getRecoveryRate(entry.archetypeId)
+    const recoveryRate = recoveryRateOverrides?.[entry.archetypeId] ?? getRecoveryRate(entry.archetypeId)
     const lowRate = Math.max(RECOVERY_FLOOR, recoveryRate - RECOVERY_SPREAD)
     const highRate = Math.min(RECOVERY_CEILING, recoveryRate + RECOVERY_SPREAD)
 

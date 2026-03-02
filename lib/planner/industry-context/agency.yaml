@@ -18,7 +18,7 @@ recoveryRates:
     rationale: "Agency research spans audience analysis, competitive audits, media landscape reviews, and trend monitoring. The gathering and synthesis phases compress well with AI tools. But the interpretation layer, the part where a strategist spots an insight that becomes a campaign angle, is irreducibly human. Media agencies with structured data pipelines sit at the higher end; creative agencies doing cultural and qualitative research sit lower."
     sources:
       - mckinsey-genai-2023
-      - mcksinsey-info-search
+      - mckinsey-info-search
     confidence: moderate
 
   proposal-production:
@@ -57,7 +57,7 @@ recoveryRates:
     range: [0.35, 0.55]
     rationale: "With 24.8% annual staff turnover, agencies haemorrhage institutional knowledge regularly. Campaign histories, client preferences, past creative approaches, and supplier relationships are poorly documented and often exist only in people's heads. AI-powered retrieval across past briefs, campaign reports, and creative archives is high-value. Recovery is strong because the problem is acute and the baseline is low: most agencies have minimal formal KM, so even basic search and retrieval tools represent a step change."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - ipa-census-2025
     confidence: moderate
 
@@ -83,6 +83,30 @@ recoveryRates:
     sources:
       - mckinsey-genai-2023
     confidence: moderate
+
+  marketing-operations:
+    range: [0.45, 0.65]
+    rationale: "Agencies practise marketing as a core competency — but rarely apply it systematically to their own business. When they do, the content production, social media management, case study assembly, and campaign coordination are directly analogous to what they do for clients. This is the highest marketing recovery rate across industries because agencies already have the skills and tools; they just lack the dedicated time. AI can automate the production and distribution layer, freeing strategy and creative direction."
+    sources:
+      - ipa-census-2025
+      - mckinsey-genai-2023
+    confidence: moderate
+
+  people-operations:
+    range: [0.30, 0.50]
+    rationale: "Agency people processes are less structured than in accounting or law. High turnover (24.8%) creates constant recruitment churn but the processes around it are often informal — no structured trainee programmes, variable onboarding quality, and performance reviews that happen when they happen. The automation opportunity is in creating the structure that does not yet exist, not in optimising existing processes. Recovery is lower because the baseline process maturity is lower."
+    sources:
+      - ipa-census-2025
+      - cipd-resourcing-2024
+    confidence: low
+
+  resource-allocation:
+    range: [0.35, 0.55]
+    rationale: "Agency resource allocation involves matching creative, strategic, and production staff across multiple concurrent projects with variable scopes. Unlike consulting, much agency work runs on retainers with flexible scope, making demand forecasting harder. The trafficking function (allocating work to production teams) is process-driven and automatable. Strategic allocation (which creative director leads which account) involves relationship and capability judgement. Lower than consulting because the work patterns are less predictable and the systems infrastructure is typically less mature."
+    sources:
+      - ipa-census-2025
+      - spi-benchmark-2025
+    confidence: low
 
 strategicConsiderations:
   - id: ag-01
@@ -157,3 +181,26 @@ strategicConsiderations:
       - ipa-census-2025
       - source-global-uk-2024
     tags: [competitive-dynamics, client-expectations, business-case-framing]
+
+  - id: ag-11
+    observation: "Agencies have the ironic distinction of being marketing experts who neglect their own marketing. Case study production, social content, awards submissions, and new business materials are perpetually deprioritised in favour of client work. The cobbler's children go unshod."
+    implication: "Marketing operations automation for agencies is about removing the excuse. AI-assisted case study drafting, content repurposing, and social scheduling can turn sporadic marketing into a consistent pipeline without pulling people off client work. The skills already exist in-house; the constraint is time, not capability."
+    sources:
+      - ipa-census-2025
+    tags: [marketing, capacity, competitive-dynamics]
+
+  - id: ag-12
+    observation: "With 24.8% annual staff turnover, agencies onboard and offboard roughly one in four people every year. Each departure triggers knowledge loss, client relationship disruption, and recruitment cost. Each arrival requires induction, system access, cultural onboarding, and client briefing. The people operations cycle runs continuously."
+    implication: "People operations automation in agencies addresses a permanent operational cost. Streamlining onboarding, offboarding, and the constant recruitment cycle reduces the friction of high turnover without solving the underlying retention problem. The volume alone justifies automation: agencies process more people transitions per head than any other professional service."
+    sources:
+      - ipa-census-2025
+      - cipd-resourcing-2024
+    tags: [talent, capacity, business-case-framing]
+
+  - id: ag-13
+    observation: "Agency resource allocation operates on shorter cycles than consulting — projects turn over weekly or monthly rather than quarterly. The trafficking function (assigning work to creatives, producers, and media planners across concurrent clients) is a daily operational challenge that becomes the bottleneck in busy periods."
+    implication: "Resource allocation in agencies benefits more from real-time visibility than from long-range forecasting. The value is in answering 'who can take this brief today?' rather than 'what does Q3 look like?' This changes the tool requirements: agencies need allocation dashboards with daily granularity, not quarterly capacity models."
+    sources:
+      - ipa-census-2025
+      - spi-benchmark-2025
+    tags: [capacity, productivity, business-case-framing]

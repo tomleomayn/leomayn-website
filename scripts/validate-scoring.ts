@@ -1,12 +1,16 @@
 /**
- * Validates the TypeScript scoring engine against the Python simulator's expected results.
+ * Validates the TypeScript scoring engine against expected baseline results.
  * Run: npx tsx scripts/validate-scoring.ts
+ *
+ * Modes:
+ *   --discover   Print actual scores for all personas (no pass/fail)
+ *   (default)    Compare actual scores against expectedTop3
  */
 
 import { scoreArchetypes } from '../lib/planner/scoring'
 import type { DiagnosticData } from '../lib/planner/types'
 
-// Archetype ID mapping (Python short codes → TypeScript IDs)
+// Archetype ID mapping — all 14 archetypes
 const ID_MAP: Record<string, string> = {
   CO: 'client-onboarding',
   MI: 'meeting-intelligence',
@@ -17,6 +21,11 @@ const ID_MAP: Record<string, string> = {
   DP: 'document-processing',
   CC: 'client-communications',
   RA: 'research-analysis',
+  SP: 'sales-pipeline',
+  CQ: 'compliance-qa',
+  MO: 'marketing-ops',
+  PO: 'people-ops',
+  RP: 'resource-planning',
 }
 
 const REVERSE_ID_MAP: Record<string, string> = Object.fromEntries(
@@ -30,6 +39,7 @@ interface PersonaTest {
 }
 
 const PERSONAS: PersonaTest[] = [
+  // ── Original 10 personas (diagnostic values updated to current constants) ──
   {
     name: 'Drowning Agency COO',
     diagnostic: {
@@ -42,14 +52,14 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'partially-documented',
       dataFoundations: 'mixed',
-      aiAdoption: 'experimenting',
+      aiAdoption: 'individual',       // was: experimenting
       techEnvironment: 'disconnected',
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'MI', composite: 20 },
-      { code: 'PD', composite: 16 },
-      { code: 'PS', composite: 15 },
+      { code: 'MI', composite: 25 },
+      { code: 'PD', composite: 21 },
+      { code: 'PS', composite: 20 },
     ],
   },
   {
@@ -65,19 +75,19 @@ const PERSONAS: PersonaTest[] = [
       processKnowledge: 'partially-documented',
       dataFoundations: 'mixed',
       aiAdoption: 'not-started',
-      techEnvironment: 'connected',
+      techEnvironment: 'integrated',  // was: connected
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'MR', composite: 21 },
-      { code: 'TI', composite: 18 },
-      { code: 'DP', composite: 13 },
+      { code: 'MR', composite: 26 },
+      { code: 'TI', composite: 23 },
+      { code: 'RP', composite: 15 },
     ],
   },
   {
     name: 'Consulting Knowledge Problem',
     diagnostic: {
-      firmType: 'consultancy',
+      firmType: 'consulting',          // was: consultancy
       teamSize: '11-50',
       strategicFocus: { primary: 'capacity', secondary: 'capability' },
       painPoints: [
@@ -86,20 +96,20 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'mostly-undocumented',
       dataFoundations: 'mixed',
-      aiAdoption: 'early-adopters',
-      techEnvironment: 'mix',
+      aiAdoption: 'partial',           // was: early-adopters
+      techEnvironment: 'disconnected', // was: mix
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'DP', composite: 23 },
       { code: 'RA', composite: 22 },
+      { code: 'DP', composite: 19 },
       { code: 'PS', composite: 17 },
     ],
   },
   {
     name: 'Scaling Accountancy',
     diagnostic: {
-      firmType: 'accountancy',
+      firmType: 'accounting',          // was: accountancy
       teamSize: '51-200',
       strategicFocus: { primary: 'speed', secondary: 'costs' },
       painPoints: [
@@ -108,13 +118,13 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'partially-documented',
       dataFoundations: 'strong',
-      aiAdoption: 'experimenting',
-      techEnvironment: 'connected',
+      aiAdoption: 'individual',        // was: experimenting
+      techEnvironment: 'integrated',   // was: connected
       billableSplit: 50,
     },
     expectedTop3: [
       { code: 'CO', composite: 25 },
-      { code: 'DP', composite: 19 },
+      { code: 'DP', composite: 18 },
       { code: 'TI', composite: 15 },
     ],
   },
@@ -130,8 +140,8 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'well-documented',
       dataFoundations: 'strong',
-      aiAdoption: 'actively-using',
-      techEnvironment: 'well-connected',
+      aiAdoption: 'embedded',          // was: actively-using
+      techEnvironment: 'fully-integrated', // was: well-connected
       billableSplit: 50,
     },
     expectedTop3: [
@@ -157,9 +167,9 @@ const PERSONAS: PersonaTest[] = [
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'PD', composite: 14 },
-      { code: 'DP', composite: 11 },
-      { code: 'MI', composite: 10 },
+      { code: 'PD', composite: 19 },
+      { code: 'DP', composite: 13 },
+      { code: 'MI', composite: 12 },
     ],
   },
   {
@@ -179,15 +189,15 @@ const PERSONAS: PersonaTest[] = [
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'MR', composite: 18 },
-      { code: 'DP', composite: 14 },
-      { code: 'TI', composite: 13 },
+      { code: 'MR', composite: 23 },
+      { code: 'TI', composite: 18 },
+      { code: 'DP', composite: 15 },
     ],
   },
   {
     name: 'Proposal Bottleneck Consultancy',
     diagnostic: {
-      firmType: 'consultancy',
+      firmType: 'consulting',          // was: consultancy
       teamSize: '11-50',
       strategicFocus: { primary: 'speed', secondary: 'capacity' },
       painPoints: [
@@ -196,14 +206,14 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'partially-documented',
       dataFoundations: 'mixed',
-      aiAdoption: 'early-adopters',
-      techEnvironment: 'mix',
+      aiAdoption: 'partial',           // was: early-adopters
+      techEnvironment: 'disconnected', // was: mix
       billableSplit: 50,
     },
     expectedTop3: [
       { code: 'PS', composite: 25 },
       { code: 'CO', composite: 24 },
-      { code: 'DP', composite: 18 },
+      { code: 'MI', composite: 16 },
     ],
   },
   {
@@ -218,20 +228,20 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'well-documented',
       dataFoundations: 'strong',
-      aiAdoption: 'actively-using',
-      techEnvironment: 'well-connected',
+      aiAdoption: 'embedded',          // was: actively-using
+      techEnvironment: 'fully-integrated', // was: well-connected
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'DP', composite: 23 },
       { code: 'CC', composite: 20 },
       { code: 'PD', composite: 18 },
+      { code: 'DP', composite: 18 },
     ],
   },
   {
     name: 'Data-Blind Ops Leader',
     diagnostic: {
-      firmType: 'consultancy',
+      firmType: 'consulting',          // was: consultancy
       teamSize: '51-200',
       strategicFocus: { primary: 'capacity', secondary: 'quality' },
       painPoints: [
@@ -240,17 +250,86 @@ const PERSONAS: PersonaTest[] = [
       ],
       processKnowledge: 'mostly-undocumented',
       dataFoundations: 'weak',
-      aiAdoption: 'experimenting',
+      aiAdoption: 'individual',        // was: experimenting
       techEnvironment: 'disconnected',
       billableSplit: 50,
     },
     expectedTop3: [
-      { code: 'MR', composite: 13 },
-      { code: 'DP', composite: 12 },
-      { code: 'MI', composite: 12 },
+      { code: 'MR', composite: 18 },
+      { code: 'MI', composite: 17 },
+      { code: 'RA', composite: 17 },
+    ],
+  },
+  // ── New personas: exercise the 3 new archetypes ──
+  {
+    name: 'Marketing-Heavy Agency',
+    diagnostic: {
+      firmType: 'agency',
+      teamSize: '11-50',
+      strategicFocus: { primary: 'capacity', secondary: 'speed' },
+      painPoints: [
+        { area: 'marketing-ops', symptom: 'production-heavy' },
+        { area: 'marketing-ops', symptom: 'work-about-work' },
+      ],
+      processKnowledge: 'partially-documented',
+      dataFoundations: 'mixed',
+      aiAdoption: 'individual',
+      techEnvironment: 'disconnected',
+      billableSplit: 50,
+    },
+    expectedTop3: [
+      { code: 'MO', composite: 30.5 },
+      { code: 'DP', composite: 20 },
+      { code: 'SP', composite: 18 },
+    ],
+  },
+  {
+    name: 'HR-Burdened Law Firm',
+    diagnostic: {
+      firmType: 'law',
+      teamSize: '201-500',
+      strategicFocus: { primary: 'quality', secondary: 'capacity' },
+      painPoints: [
+        { area: 'people-ops', symptom: 'inconsistency' },
+        { area: 'people-ops', symptom: 'work-about-work' },
+      ],
+      processKnowledge: 'partially-documented',
+      dataFoundations: 'mixed',
+      aiAdoption: 'not-started',
+      techEnvironment: 'integrated',
+      billableSplit: 50,
+    },
+    expectedTop3: [
+      { code: 'PO', composite: 26.5 },
+      { code: 'CO', composite: 20 },
+      { code: 'CQ', composite: 18 },
+    ],
+  },
+  {
+    name: 'Resource-Blind Consultancy',
+    diagnostic: {
+      firmType: 'consulting',
+      teamSize: '51-200',
+      strategicFocus: { primary: 'capacity', secondary: 'costs' },
+      painPoints: [
+        { area: 'resource-planning', symptom: 'no-visibility' },
+        { area: 'reporting', symptom: 'work-about-work' },
+      ],
+      processKnowledge: 'partially-documented',
+      dataFoundations: 'mixed',
+      aiAdoption: 'individual',
+      techEnvironment: 'disconnected',
+      billableSplit: 50,
+    },
+    expectedTop3: [
+      { code: 'MR', composite: 29 },
+      { code: 'RP', composite: 29 },
+      { code: 'DP', composite: 18 },
     ],
   },
 ]
+
+const discoverMode = process.argv.includes('--discover')
 
 // Run validation
 let passed = 0
@@ -259,6 +338,34 @@ let failed = 0
 for (const persona of PERSONAS) {
   const result = scoreArchetypes(persona.diagnostic)
   const top3 = result.topArchetypes.slice(0, 3)
+
+  if (discoverMode) {
+    // Discovery mode: print top 5 with breakdown using allScores
+    const allSorted = Object.entries(result.allScores)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 5)
+
+    console.log(`\n${persona.name}:`)
+    console.log(`  Top 5:`)
+    for (let i = 0; i < allSorted.length; i++) {
+      const [id, score] = allSorted[i]
+      const code = REVERSE_ID_MAP[id] ?? id
+      console.log(`    #${i + 1} ${code}(${score})`)
+    }
+
+    // Gap analysis: #3 vs #4
+    if (allSorted.length >= 4) {
+      const gap = allSorted[2][1] - allSorted[3][1]
+      console.log(`  Gap #3/#4: ${gap}`)
+    }
+    continue
+  }
+
+  // Validation mode: compare against expected
+  if (persona.expectedTop3.length === 0) {
+    console.log(`SKIP  ${persona.name}: no expected values (run --discover first)`)
+    continue
+  }
 
   let match = true
   const details: string[] = []
@@ -284,11 +391,13 @@ for (const persona of PERSONAS) {
   } else {
     console.log(`FAIL  ${persona.name}:`)
     console.log(`  Expected: ${persona.expectedTop3.map(e => `${e.code}(${e.composite})`).join(' | ')}`)
-    console.log(`  Got:      ${top3.map(a => `${REVERSE_ID_MAP[a.id]}(${a.compositeScore})`).join(' | ')}`)
+    console.log(`  Got:      ${top3.map(a => `${REVERSE_ID_MAP[a.id] ?? a.id}(${a.compositeScore})`).join(' | ')}`)
     for (const d of details) console.log(d)
     failed++
   }
 }
 
-console.log(`\n${passed} passed, ${failed} failed out of ${PERSONAS.length} personas`)
-process.exit(failed > 0 ? 1 : 0)
+if (!discoverMode) {
+  console.log(`\n${passed} passed, ${failed} failed out of ${PERSONAS.length} personas`)
+  process.exit(failed > 0 ? 1 : 0)
+}

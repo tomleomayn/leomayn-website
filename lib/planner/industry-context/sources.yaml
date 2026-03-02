@@ -1,6 +1,10 @@
 # Source Library
 # Profile of each major publication used in the industry context research.
-# Last updated: 2026-02-25
+# Last updated: 2026-03-02
+#
+# PROVENANCE RULE: Every keyFinding must trace to a WebFetch or WebSearch call.
+# If a finding cannot be verified, mark it UNVERIFIED.
+# Audit date: 2026-03-02
 
 sources:
   - id: mckinsey-genai-2023
@@ -8,6 +12,7 @@ sources:
     publisher: McKinsey Global Institute
     year: 2023
     url: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+    verified: true # WebSearch 2026-03-02 — all keyFindings confirmed
     scope: "Global analysis of generative AI impact across 63 use cases and 850 occupations. Breaks work into activity types and estimates automation potential per activity."
     methodology: "Occupation-level analysis using O*NET work activity data. Estimates technical automation potential, not actual adoption rates."
     limitations: "Measures theoretical potential, not realised gains. US-centric occupation taxonomy. Does not account for organisational readiness or adoption friction."
@@ -21,6 +26,7 @@ sources:
     publisher: McKinsey Global Institute
     year: 2025
     url: "https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai"
+    verified: true # WebSearch 2026-03-02 — confirmed
     scope: "Updated automation potential estimates incorporating AI agents and physical automation."
     methodology: "Extension of 2023 methodology with AI agent capabilities factored in."
     limitations: "Forward-looking estimates. Agent capabilities assumed, not yet widely deployed."
@@ -32,20 +38,22 @@ sources:
     publisher: Microsoft / LinkedIn
     year: 2025
     url: "https://www.microsoft.com/en-us/worklab/work-trend-index"
+    verified: true # WebFetch 2026-03-02 page renders as CSS; stats confirmed via secondary sources (Going Concern, Microsoft Switzerland, Smartbridge, Moor Insights)
     scope: "Global survey of knowledge workers on time allocation, collaboration patterns, and AI adoption."
     methodology: "Analysis of Microsoft 365 telemetry data (aggregated, anonymised) plus survey of 31,000 workers across 31 countries."
     limitations: "Skewed toward Microsoft 365 users. Telemetry captures digital activity only — not offline work, thinking time, or client meetings."
     keyFindings:
-      - "57% of time spent communicating (meetings, email, chat); 43% creating (documents, spreadsheets, presentations)"
-      - "117 emails and 153 Teams messages received daily per average employee"
-      - "Employees interrupted every 2 minutes during core hours — 275 times per day"
-      - "4.2 hours daily meetings in professional services; 3.0 hours focus time"
+      - "57% of time spent communicating (meetings, email, chat); 43% creating (documents, spreadsheets, presentations) — confirmed via secondary sources"
+      - "117 emails and 153 Teams messages received daily per average employee — confirmed via secondary sources"
+      - "Employees interrupted every 2 minutes during core hours — 275 times per day — confirmed via Microsoft news, secondary coverage"
+      - "UNVERIFIED: 4.2 hours daily meetings in professional services; 3.0 hours focus time (independently confirmed by Worklytics, not directly by WTI secondary sources)"
 
   - id: worklytics-2025
     name: "2025 Productivity Benchmarks for Knowledge Workers"
     publisher: Worklytics
     year: 2025
     url: "https://www.worklytics.co/resources/2025-productivity-benchmarks-knowledge-workers-teams-above-below-line"
+    verified: true # WebFetch 2026-03-02 — all 4 keyFindings confirmed exactly
     scope: "Benchmarks for focus time, collaboration load, and workday span by role and industry."
     methodology: "Aggregated workplace analytics data. Sample size not published."
     limitations: "Primarily US tech and professional services companies. May not represent small firms."
@@ -60,46 +68,50 @@ sources:
     publisher: Service Performance Insight (SPI Research)
     year: 2025
     url: "https://spiresearch.com/reports/2025-ps-maturity-benchmark/"
+    verified: true # WebFetch 2026-03-02 — landing page behind paywall. All stats confirmed via Kantata, Mosaicapp, and secondary sources.
     scope: "Annual survey of 403 professional services firms across IT consulting, management consulting, accounting, marketing, architecture, engineering."
     methodology: "Self-reported firm-level data. Firms segmented by maturity level (1-5)."
-    limitations: "Self-reported data. Skews toward firms that actively measure these metrics. US-centric sample."
+    limitations: "Self-reported data. Skews toward firms that actively measure these metrics. US-centric sample. Full report behind paywall."
     keyFindings:
-      - "Billable utilisation fell to 68.9% (from 73.2% in 2021)"
-      - "Revenue growth slowed to 4.6% YoY (down from 7.8% in 2023)"
-      - "Optimal utilisation range: 70-80% for profitability without burnout"
+      - "Billable utilisation fell to 68.9% (from 73.2% in 2021) — confirmed via Kantata, Mosaicapp"
+      - "Revenue growth slowed to 4.6% YoY (down from 7.8% in 2023) — confirmed via Kantata"
+      - "Optimal utilisation range: 70-80% for profitability without burnout — confirmed via Mosaicapp"
 
   - id: clio-ltr-2024
     name: "2024 Legal Trends Report"
     publisher: Clio
     year: 2024
     url: "https://www.clio.com/resources/legal-trends/2024-report/"
+    verified: true # WebFetch 2026-03-02 — landing page exists. Core stats confirmed via Clio blog post and multiple secondary sources. AI stats confirmed via clio-ltr-2025 page.
     scope: "Annual analysis of legal industry data from tens of thousands of legal professionals. Covers utilisation, billing, AI adoption."
     methodology: "Aggregated and anonymised data from Clio's platform (primarily small-mid law firms). Supplemented by survey data."
     limitations: "Skewed toward Clio's user base — predominantly small and mid-sized firms in North America. May not represent UK firms or large practices."
     keyFindings:
-      - "Average lawyer utilisation rate: 37% (2.9 billable hours per 8-hour day)"
-      - "48% of non-billable time goes to administrative tasks"
-      - "33% of non-billable time goes to business development"
-      - "74% of hourly billable work exposed to AI automation"
-      - "79% of firms using AI; 40% using legal-specific AI solutions"
+      - "Average lawyer utilisation rate: 37% (2.9 billable hours per 8-hour day) — confirmed via Clio blog and secondary sources"
+      - "48% of non-billable time goes to administrative tasks — confirmed via secondary sources"
+      - "33% of non-billable time goes to business development — confirmed via secondary sources"
+      - "74% of hourly billable work exposed to AI automation — confirmed via secondary sources"
+      - "79% of firms using AI; 40% using legal-specific AI solutions (confirmed via 2025 report page)"
 
   - id: clio-ltr-2025
     name: "2025 Legal Trends Report"
     publisher: Clio
     year: 2025
     url: "https://www.clio.com/resources/legal-trends/read-online/"
+    verified: true # WebFetch 2026-03-02 — both keyFindings confirmed
     scope: "Updated legal industry benchmarks including AI revenue impact data."
     methodology: "Same as 2024 — Clio platform data plus survey."
     limitations: "Same as 2024."
     keyFindings:
       - "36% report AI positively influenced revenues; 69% among wide adopters"
-      - "Attorney burnout reported 42% of the time"
+      - "Attorney burnout reported 42% of the time (Bloomberg Law study cited)"
 
   - id: tr-georgetown-2025
     name: "2025 Report on the State of the US Legal Market"
     publisher: Thomson Reuters Institute / Georgetown Law Center on Ethics
     year: 2025
     url: "https://www.legal.io/articles/5564524/State-of-the-Legal-Market-2025-Adapting-to-Change-Amid-Record-Profits"
+    verified: true # WebFetch 2026-03-02 — all 5 stats confirmed exactly
     scope: "Annual review of US law firm financial performance, demand, billing rates, structural changes."
     methodology: "Peer Monitor data from large and mid-size US law firms. Not a survey — based on actual financial data."
     limitations: "US market only. Skewed toward large firms (Am Law 200 / NLJ 500). Does not cover high-street or small practices."
@@ -109,82 +121,225 @@ sources:
       - "Billing rates up 6.5% despite weakening inflation"
       - "Non-equity partners rose from 14.3% to 19.1% (2005-2024); equity partners fell from 31.2% to 27.8%"
 
-  - id: icaew-benchmark-2025
-    name: "ICAEW Financial Benchmarking Survey 2025"
-    publisher: ICAEW (Institute of Chartered Accountants in England and Wales)
+  # CORRECTED: Previously misattributed as "ICAEW Financial Benchmarking Survey" about accounting.
+  # This is actually the Law Society Financial Benchmarking Survey about solicitors' law firms.
+  # The ICAEW hosts it under /solicitors/ because they regulate solicitors' accounts.
+  # The data (773 hours, PEP, fee income) describes LEGAL practices, not accounting firms.
+  - id: law-society-fbs-2025
+    name: "Financial Benchmarking Survey 2025"
+    publisher: The Law Society (prepared by Hazlewoods)
     year: 2025
-    url: "https://www.icaew.com/technical/trust-and-ethics/solicitors/news/financial-benchmarking-survey-2025"
-    scope: "UK accounting practices — fee income, chargeability, profitability, staff metrics."
-    methodology: "Annual survey of ICAEW member practices. UK-specific."
-    limitations: "Primarily smaller practices (ICAEW membership base). May not represent Big 4 or large mid-tier."
+    url: "https://www.lawsociety.org.uk/topics/research/financial-benchmarking-survey-2025"
+    verified: true # WebSearch 2026-03-02 — stats confirmed via Law Society page, Law Gazette, and Aquarius Reporting
+    scope: "Financial data from 145 law firms across England and Wales with combined fee income of over £1.1bn."
+    methodology: "Annual survey of law firms, prepared by Hazlewoods specialist accountants. Over 20 years of data."
+    limitations: "UK solicitors' practices only. Does NOT cover accounting firms despite being hosted on ICAEW site. Average firm size £7.8m fee income."
     keyFindings:
       - "Median chargeable hours: 773 per fee earner per year (up from 765 in 2023)"
       - "Target chargeability: 1,000-1,200 hours/year — significant gap vs reality"
       - "Profit per equity partner up ~20% YoY (but flat when excluding client money interest)"
       - "Fee income median increase: 6%"
+      - "Fee earners record 87% of client time and bill 86% of recorded time"
 
   - id: riba-benchmark-2025
     name: "RIBA Business Benchmarking 2025"
     publisher: RIBA (Royal Institute of British Architects)
     year: 2025
     url: "https://www.riba.org/work/insights-and-resources/riba-business-benchmarking/"
+    verified: true # WebFetch 2026-03-02 — "£5 billion" confirmed on RIBA page. Billable % stats confirmed via RIBAJ article citing 2023 RIBA Business Benchmarking Report.
     scope: "UK architecture practices — utilisation, revenue, profitability, staff metrics."
     methodology: "Annual survey of RIBA Chartered Practices. UK-specific."
-    limitations: "Architecture-focused. May not represent broader engineering or technical consultancy."
+    limitations: "Architecture-focused. May not represent broader engineering or technical consultancy. Full report behind member access."
     keyFindings:
-      - "Architects/technologists/assistants: 70%+ time on billable work"
-      - "Associates: 64% billable"
-      - "Partners/directors: 46% billable"
-      - "Large practices (100+ staff): 80%+ billable for architects"
       - "Total revenue for RIBA Chartered Practices estimated at £5 billion"
+      - "Architects/technologists/assistants: 70%+ time on billable work — confirmed via RIBAJ secondary source"
+      - "Associates: 64% billable — confirmed via RIBAJ secondary source"
+      - "Partners/directors: 46% billable — confirmed via RIBAJ secondary source"
+      - "Large practices (100+ staff): 80%+ billable for architects — confirmed via RIBAJ secondary source"
 
   - id: source-global-uk-2024
     name: "The UK Consulting Market in 2024"
     publisher: Source Global Research
     year: 2024
     url: "https://www.sourceglobalresearch.com/reports/9494-the-uk-consulting-market-in-2024"
+    verified: true # WebFetch 2026-03-02 — market size confirmed on Source Global page. 3.4% contraction and client behaviour confirmed via consultancy.uk secondary source.
     scope: "Annual review of UK consulting market — size, growth, client priorities, service line trends."
     methodology: "Survey of 200 senior buyers of consulting in UK. MegaModel revenue database."
     limitations: "Buyer-side survey — reflects client perception, not firm-level operational data. Does not cover utilisation or internal productivity."
     keyFindings:
-      - "UK consulting market: £15.2bn in 2023, contracted 3.4% to £15bn in 2024"
-      - "Clients buying smaller, more tactical pieces of work"
-      - "59% of senior leaders say they need to invest in upgrading technology urgently"
+      - "UK consulting market: £15.2bn in 2023, contracting 3.4% to £14.9bn in 2024 — confirmed via consultancy.uk"
+      - "Clients buying smaller, more tactical pieces of work — confirmed via consultancy.uk and Source Global summaries"
+      - "UNVERIFIED: 59% of senior leaders say they need to invest in upgrading technology urgently"
 
   - id: mca-annual-2025
     name: "MCA Annual Report 2025"
     publisher: Management Consultancies Association
     year: 2025
     url: "https://www.mca.org.uk/reports/mca-annual-report"
+    verified: true # WebFetch 2026-03-02 — all stats confirmed via MCA press release on PRNewswire.
     scope: "UK consulting industry overview — market size, growth forecasts, service line trends."
-    methodology: "Member survey plus industry modelling."
+    methodology: "MCA Member Survey 2025, conducted by Savanta. Member survey plus industry modelling."
     limitations: "Trade body report — tends toward positive framing. Does not contain firm-level operational benchmarks."
     keyFindings:
-      - "UK consulting industry worth £20.4bn with £5.9bn in exports"
-      - "Growth forecast: 6.4% next 12 months, 8.7% in 2026"
-      - "Top growth drivers: AI (66%), digital technology (59%), cost reduction (46%)"
+      - "UK consulting industry worth over £20 billion with £5.9bn in exports"
+      - "Growth forecast: 6.4% in 2025, 8.7% in 2026 — confirmed via PRNewswire press release (previous 'correction' to 3.6%/7.8% was itself wrong)"
+      - "Top growth drivers: AI (66%), digital technology (59%), cost reduction (46%) — confirmed via PRNewswire press release"
+      - "Three-quarters of member firms planning significant AI investment over next two years, averaging £1.9m per firm"
 
   - id: ipa-census-2025
     name: "IPA Agency Census 2025"
     publisher: IPA (Institute of Practitioners in Advertising)
     year: 2025
     url: "https://ipa.co.uk/knowledge/publications-reports/agency-census-2025/"
+    verified: true # WebFetch 2026-03-02 — headcount stats on IPA page. Turnover 24.8% confirmed via LBBOnline and Decision Marketing secondary sources (breaks down to 27.6% creative, 21.7% media).
     scope: "Annual headcount census of IPA member agencies — workforce size, turnover, diversity."
     methodology: "Member survey. 66th annual edition."
     limitations: "Headcount and workforce data only. Does not cover utilisation, billing, or productivity metrics."
     keyFindings:
       - "IPA member agencies employed 24,963 people (down 6.8% from 2024)"
       - "Creative/non-media agencies contracted 14.3%; media agencies grew 2.4%"
-      - "Staff turnover: 24.8%"
+      - "Staff turnover: 24.8% overall (27.6% creative, 21.7% media) — confirmed via LBBOnline and Decision Marketing"
+      - "Staff retention declined to 68.6% — confirmed via secondary sources"
 
-  - id: mcksinsey-info-search
+  - id: mckinsey-info-search
     name: "The Social Economy (information search data)"
     publisher: McKinsey Global Institute
     year: 2012
     url: "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy"
+    verified: true # WebSearch 2026-03-02 — both findings confirmed
     scope: "Cross-sector analysis of knowledge worker time allocation."
     methodology: "Modelled from US Bureau of Labor Statistics and O*NET data."
     limitations: "2012 data — pre-generative AI. Time spent searching may have changed with modern tools."
     keyFindings:
       - "Knowledge workers spend 19-20% of time (nearly one full day per week) searching for and gathering information"
       - "1.8 hours per day on average searching for information"
+
+  # CORRECTED: Previously listed as "People Profession 2025". The real publication is "Resourcing and
+  # Talent Planning 2024". The People Profession survey exists but covers different ground. The
+  # keyFindings previously attributed to CIPD were fabricated (2026-03-02 incident).
+  - id: cipd-resourcing-2024
+    name: "Resourcing and Talent Planning Report 2024"
+    publisher: CIPD (Chartered Institute of Personnel and Development)
+    year: 2024
+    url: "https://www.cipd.org/uk/knowledge/reports/resourcing-surveys/"
+    verified: partial # WebSearch 2026-03-02 — cost per hire confirmed via secondary sources. Other stats from summaries.
+    scope: "Annual survey of UK employers on recruitment, talent management, and workforce planning. 1,016 respondents."
+    methodology: "Survey of HR professionals across UK sectors. Published September 2024."
+    limitations: "Self-reported data from HR practitioners. Does not include sector-specific breakdowns for professional services."
+    keyFindings:
+      - "Average cost per hire: £6,125 (confirmed via CIPD secondary sources)"
+      - "Median cost: £2,000 for senior managers (down from £3,000 in 2022); £1,500 for other employees"
+      - "Time to fill: 42 days average (confirmed via secondary source standout-cv.com citing CIPD)"
+      - "78% increased use of technology in recruitment/onboarding"
+      - "31% using AI/ML in recruitment (up from 16% in 2022); 66% of those report improved efficiency"
+      - "69% report increased competition for skilled workers"
+
+  - id: frc-key-facts-2025
+    name: "Key Facts and Trends in the Accountancy Profession 2025"
+    publisher: Financial Reporting Council (FRC)
+    year: 2025
+    url: "https://www.frc.org.uk/library/supervision/professional-bodies-supervision/key-facts-and-trends-in-the-accountancy-profession/key-facts-and-trends-in-the-accountancy-profession-2025/"
+    verified: true # WebFetch 2026-03-02 — all stats confirmed
+    scope: "UK accountancy profession: membership, audit firm numbers, fee income, market structure."
+    methodology: "Regulatory data from professional bodies (ICAEW, ACCA, ICAS, etc.) and audit firm returns."
+    limitations: "Structural/market data only. Does not cover operational benchmarks (utilisation, chargeable hours, productivity)."
+    keyFindings:
+      - "408,000+ members in UK/ROI; 623,000+ worldwide"
+      - "3,760 registered audit firms in 2024 (down from 5,007 in 2020 — 24.9% decline over 5 years)"
+      - "Big Four UK fee income: minimal growth of 1.2% in 2024; non-Big Four: 9.8% growth"
+      - "Audit fee income up 9.9% (Big Four) and 15.4% (non-Big Four) in 2024"
+
+  - id: accountancy-age-5050-2025
+    name: "Top 50+50 Rankings 2025"
+    publisher: Accountancy Age
+    year: 2025
+    url: "https://accountancyage.com/2025/12/11/rankings-top-50-50-accountancy-firms-2025-report/"
+    verified: true # WebFetch 2026-03-02 — key stats confirmed
+    scope: "Annual ranking of UK accounting firms — fee income, growth, service mix, technology investment."
+    methodology: "Survey of Top 100 UK accounting firms. Supplemented by editorial analysis."
+    limitations: "Top 100 firms only — does not represent the majority of UK practices which are small/sole-practitioner. No operational benchmarks (utilisation, chargeable hours)."
+    keyFindings:
+      - "65% of Top 100 firms reported UK fee-income growth; 70% expect growth to accelerate"
+      - "Service mix: audit/assurance ~38%, tax ~25%, advisory/consulting >25% of fee income"
+      - "Median tech spend (firms with £10k+): just under £300k; top quartile exceeds £900k"
+      - "46% of accountants use AI daily (QuickBooks data); 95% report technology reduces compliance time"
+      - "44% engaged in M&A activity"
+
+  - id: wolters-kluwer-ai-uk-2025
+    name: "How Are Accountants in the UK Using Artificial Intelligence?"
+    publisher: Wolters Kluwer
+    year: 2025
+    url: "https://www.wolterskluwer.com/en-gb/expert-insights/how-is-ai-being-used-by-accountants-in-the-uk"
+    verified: true # WebFetch 2026-03-02 — all stats confirmed
+    scope: "UK-specific survey of accountants on AI adoption, use cases, barriers, and trust levels."
+    methodology: "Survey of UK accountants. Sample size not published."
+    limitations: "Likely skewed toward Wolters Kluwer's customer base. No breakdown by firm size or practice type."
+    keyFindings:
+      - "66% of UK accountants currently using AI; 91% using or planning to use"
+      - "70% leverage generative AI for drafting reports, summarising data, and client communications"
+      - "54% use machine learning for predictive analytics and fraud detection"
+      - "46% use automation for routine tasks like payroll and invoice processing"
+      - "43% worried about accuracy of results; 42% concerned about data security"
+
+  - id: acenteus-talent-crisis-2025
+    name: "The Accountancy Talent Crisis: How Outsourcing Solves Recruitment in 2025"
+    publisher: Acenteus (citing CABA survey data)
+    year: 2025
+    url: "https://acenteus-cca.com/blog/accountancy-talent-crisis-outsourcing-recruitment-headaches"
+    verified: true # WebFetch 2026-03-02 — all stats confirmed
+    scope: "UK accounting talent shortage analysis with recruitment, attrition, and cost data."
+    methodology: "Aggregated from CABA surveys, industry data, and editorial analysis."
+    limitations: "Secondary compilation, not primary research. Some stats attributed to 'firm reports' without named source."
+    keyFindings:
+      - "94% of firms report recruitment issues holding back growth"
+      - "74% unable to take on new clients due to staffing constraints"
+      - "36% decline in candidates per vacancy year-over-year"
+      - "75% of experienced practitioners expected to retire within the next decade"
+      - "£15,000+ training cost per junior hire (software, technical development, mentoring, reduced productivity)"
+      - "30-40% of new business turned away during peak seasons due to staffing constraints"
+      - "40-60 day longer recruitment timelines compared to pre-2020"
+
+  - id: distinct-talent-shortage-2025
+    name: "The Accounting Talent Shortage: How to Attract the Next Generation"
+    publisher: Distinct Recruitment
+    year: 2025
+    url: "https://www.distinctrecruitment.com/uk/resources/blog/the-accounting-talent-shortage-how-to-attract-the-next-generation/"
+    verified: true # WebFetch 2026-03-02 — all stats confirmed
+    scope: "UK accounting talent pipeline analysis: student enrolment, job mobility, generational attitudes."
+    methodology: "Aggregated from ICAEW/ACCA data, Dext surveys, and recruitment industry data."
+    limitations: "Secondary compilation. Some stats from multiple underlying surveys."
+    keyFindings:
+      - "9,000 fewer students enrolled with ICAEW, ACCA, CIMA from 2017-2022 (164,000 to 155,000)"
+      - "ACA student numbers increased 8.5% in 2024, reversing downward trend"
+      - "60% of accountants plan to change jobs in 2025"
+      - "67% of accountants aged 55+ planned to retire soon (2023 Dext survey)"
+      - "75% of Gen Z believe technology will replace entry-level accounting roles"
+
+  - id: accountancy-age-billing-paradox-2026
+    name: "AI-Driven Compliance Will Soon Create a Billing Paradox in Accountancy Firms"
+    publisher: Accountancy Age
+    year: 2026
+    url: "https://accountancyage.com/2026/02/10/ai-driven-compliance-will-soon-create-a-billing-paradox-in-accountancy-firms/"
+    verified: true # WebFetch 2026-03-02 — article fully read
+    scope: "Analysis of how AI-driven compliance efficiency creates a billing paradox for time-based accounting practices."
+    methodology: "Editorial analysis with industry commentary."
+    limitations: "Opinion/analysis piece, not primary research. No quantified operational data."
+    keyFindings:
+      - "Efficiency is soaring, but revenue remains tethered to time — the core paradox"
+      - "Advisory exists everywhere in theory, but accidental in practice — insights embedded in emails, calls, and personal notes rather than shared systems"
+      - "Firms experimenting with subscription-style relationships, value-based pricing, and productised service bundles"
+
+  - id: accountancy-age-talent-retention-2024
+    name: "Why Talent Retention Tops the Agenda for UK Accountancy Firms"
+    publisher: Accountancy Age
+    year: 2024
+    url: "https://www.accountancyage.com/2024/12/16/why-talent-retention-tops-the-agenda-for-uk-accountancy-firms/"
+    verified: true # WebFetch 2026-03-02 — key stats confirmed
+    scope: "UK accounting firm talent retention priorities by firm size."
+    methodology: "Survey-based analysis from UK Accountancy Sector Outlook Report."
+    limitations: "Survey data, self-reported. No attrition rate or turnover figures."
+    keyFindings:
+      - "67% of firms rank talent acquisition and retention as top priority"
+      - "Medium firms: 82.4% cite talent acquisition as pressing; large firms: 58.3% cite retention"
+      - "77.8% of small firms offer flexible working; 91.7% of medium firms invest in career development"
+      - "75% report year-on-year increases in technology spending; 15% struggling with technological adaptation"

@@ -52,7 +52,7 @@ recoveryRates:
     range: [0.35, 0.55]
     rationale: "Law firms produce vast quantities of precedent, advice, and research that is often poorly indexed. AI-powered search and retrieval across matter files, know-how databases, and past advice is a high-value use case. Recovery depends heavily on the firm's existing knowledge infrastructure."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - clio-ltr-2024
     confidence: moderate
 
@@ -76,6 +76,31 @@ recoveryRates:
     sources:
       - clio-ltr-2024
     confidence: moderate
+
+  marketing-operations:
+    range: [0.20, 0.35]
+    rationale: "Most law firms below the top 100 have minimal dedicated marketing. BD is partner-led and relationship-driven. Where marketing exists, it focuses on directory submissions, event coordination, and thought leadership articles. Content production and directory management are automatable but the volume is low. Larger firms with marketing teams see higher recovery; most mid-market firms barely have a function to automate."
+    sources:
+      - clio-ltr-2024
+      - tr-georgetown-2025
+    confidence: low
+
+  people-operations:
+    range: [0.35, 0.50]
+    rationale: "Law firms run structured people processes — trainee recruitment cycles (training contracts), qualification rotations, SRA compliance on CPD, annual appraisals, and lateral hire onboarding. These are process-driven but the regulatory layer (SRA authorisation, practising certificates) adds complexity that limits full automation. The 42% burnout rate suggests people processes are not functioning well, creating both a need and an opportunity."
+    sources:
+      - clio-ltr-2024
+      - clio-ltr-2025
+      - cipd-resourcing-2024
+    confidence: low
+
+  resource-allocation:
+    range: [0.30, 0.45]
+    rationale: "Resource allocation in law is complicated by the partner model — partners tend to draw on familiar associates for their matters, creating uneven workloads. Utilisation at 37% (Clio data) suggests massive allocation inefficiency, but the causes are structural (billing model, matter unpredictability) not just process failures. Automated visibility into capacity and skill matching can help, but the cultural barriers to reallocation are significant."
+    sources:
+      - clio-ltr-2024
+      - spi-benchmark-2025
+    confidence: low
 
 strategicConsiderations:
   - id: law-01
@@ -115,10 +140,11 @@ strategicConsiderations:
     tags: [billing-model, competitive-dynamics, technology]
 
   - id: law-06
-    observation: "Attorney burnout is reported 42% of the time. 49% cannot disconnect from work. 73% say the work environment contributed to mental health issues. These are not fringe cases — they are structural characteristics of how legal work operates."
+    observation: "Attorney burnout is reported 42% of the time. Bloomberg Law's 2024 workload survey found 44% report inability to disconnect from work. Clio data shows 86% work outside typical schedules. These are not fringe cases — they are structural characteristics of how legal work operates."
     implication: "Recovered time has a retention and wellbeing value beyond the billing arithmetic. In a sector with high burnout and turnover costs, the non-financial case for workflow improvement is as strong as the financial one."
     sources:
       - clio-ltr-2025
+      - clio-ltr-2024
     tags: [talent, capacity, adoption]
 
   - id: law-07
@@ -149,3 +175,26 @@ strategicConsiderations:
     sources:
       - tr-georgetown-2025
     tags: [competitive-dynamics, business-case-framing]
+
+  - id: law-11
+    observation: "The BD-versus-marketing tension in law is structural. Partners see business development as their personal domain (relationships, referrals, reputation) and are sceptical of marketing-led campaigns. Most mid-market firms have a marketing coordinator, not a marketing function."
+    implication: "Marketing operations automation in law should not try to replace partner-led BD. It should support it — systematising the administrative layer around events, directory submissions, contact tracking, and thought leadership production. Framing matters: 'support your BD efforts' not 'run your marketing.'"
+    sources:
+      - clio-ltr-2024
+    tags: [marketing, governance, adoption]
+
+  - id: law-12
+    observation: "Training contract recruitment is a structured, high-stakes process in law firms — application screening, vacation scheme management, assessment centres, and NQ retention decisions. Each cycle involves significant partner and HR time. Lateral hiring at qualified level is more ad hoc but equally time-intensive."
+    implication: "The structured nature of trainee recruitment makes it a strong automation candidate. Screening, scheduling, and onboarding follow repeatable patterns with clear quality criteria. Reducing the administrative burden of the recruitment cycle frees time from the people least able to spare it."
+    sources:
+      - clio-ltr-2024
+      - cipd-resourcing-2024
+    tags: [talent, capacity, adoption]
+
+  - id: law-13
+    observation: "The partner-hoarding problem in law is well-documented: partners allocate work to their preferred associates regardless of firm-wide capacity. This creates overwork for some, underwork for others, and poor visibility into true utilisation. Clio data showing 37% utilisation reflects this structural inefficiency."
+    implication: "Resource allocation automation faces a cultural challenge in law: partners value autonomy over firm-wide optimisation. Tools must make it easy for partners to see alternatives without threatening their control. The entry point is visibility and recommendation, not mandated reallocation."
+    sources:
+      - clio-ltr-2024
+      - spi-benchmark-2025
+    tags: [capacity, governance, business-case-framing]

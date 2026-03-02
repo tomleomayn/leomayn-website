@@ -37,7 +37,7 @@ export interface ArchetypeDefinition {
 
 export const ARCHETYPES: ArchetypeDefinition[] = [
   {
-    id: 'client-onboarding',
+    id: 'client-onboarding', // yamlKey: client-onboarding
     name: 'Client onboarding and intake',
     description:
       'The end-to-end process of setting up a new client: collecting information, provisioning systems, briefing the team, establishing communication rhythms.',
@@ -60,6 +60,9 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'onboarding', symptom: 'inconsistency', weight: 9 },
       { area: 'proposals', symptom: 'scope-creep', weight: 7 },
       { area: 'communications', symptom: 'scope-creep', weight: 6 },
+      // Cross-cutting from people-ops
+      { area: 'people-ops', symptom: 'inconsistency', weight: 4 },
+      { area: 'people-ops', symptom: 'work-about-work', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'Medium', dataDependency: 'Medium' },
     recoveryRate: 0.5,
@@ -67,7 +70,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
   },
   {
-    id: 'meeting-intelligence',
+    id: 'meeting-intelligence', // yamlKey: meeting-intelligence (no YAML entry — uses archetype default)
     name: 'Meeting intelligence and CRM capture',
     description:
       'Automating the capture, storage, and distribution of meeting outcomes (notes, actions, decisions, follow-ups) and routing them to the right systems.',
@@ -105,7 +108,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 1 },
   },
   {
-    id: 'proposal-scoping',
+    id: 'proposal-scoping', // yamlKey: proposal-production
     name: 'Proposal and scoping',
     description:
       'The process from receiving a brief or enquiry through to producing a scoped, priced proposal, including research, pricing, document generation, and internal review.',
@@ -144,7 +147,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 0 },
   },
   {
-    id: 'time-invoicing',
+    id: 'time-invoicing', // yamlKey: time-invoicing (no YAML entry — uses archetype default)
     name: 'Time tracking and invoicing',
     description:
       'Capturing time spent on client work, routing through approval workflows, generating invoices, reconciling against budgets, and handling exceptions.',
@@ -168,7 +171,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'invoicing', symptom: 'inconsistency', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'Low', dataDependency: 'High' },
-    recoveryRate: 0.75,
+    recoveryRate: 0.55, // yamlKey: time-invoicing
     painMapping: ['invoicing'],
     feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
   },
@@ -209,14 +212,18 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'reporting', symptom: 'no-visibility', weight: 7 },
       { area: 'documents', symptom: 'production-heavy', weight: 5 },
       { area: 'documents', symptom: 'work-about-work', weight: 4 },
+      // Cross-cutting from resource-planning
+      { area: 'resource-planning', symptom: 'no-visibility', weight: 7 },
+      { area: 'resource-planning', symptom: 'work-about-work', weight: 5 },
+      { area: 'resource-planning', symptom: 'tool-limitation', weight: 5 },
     ],
     foundationProfile: { knowledgeDependency: 'Low', dataDependency: 'High' },
-    recoveryRate: 0.75,
+    recoveryRate: 0.55, // yamlKey: management-reporting
     painMapping: ['reporting'],
     feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
   },
   {
-    id: 'project-delivery',
+    id: 'project-delivery', // yamlKey: project-delivery
     name: 'Project delivery coordination',
     description:
       'Managing the flow of client work through the organisation: task assignment, status tracking, handoffs between teams, quality gates, deadline management.',
@@ -245,6 +252,9 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'invoicing', symptom: 'scope-creep', weight: 4 },
       { area: 'research', symptom: 'scope-creep', weight: 4 },
       { area: 'knowledge', symptom: 'scope-creep', weight: 5 },
+      // Cross-cutting from resource-planning
+      { area: 'resource-planning', symptom: 'handoff-friction', weight: 5 },
+      { area: 'resource-planning', symptom: 'no-visibility', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'Medium', dataDependency: 'Medium' },
     recoveryRate: 0.5,
@@ -305,14 +315,17 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'proposals', symptom: 'production-heavy', weight: 5 },
       { area: 'reporting', symptom: 'production-heavy', weight: 5 },
       { area: 'research', symptom: 'production-heavy', weight: 4 },
+      // Cross-cutting from marketing-ops
+      { area: 'marketing-ops', symptom: 'production-heavy', weight: 6 },
+      { area: 'marketing-ops', symptom: 'inconsistency', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'Medium', dataDependency: 'Low' },
-    recoveryRate: 0.75,
+    recoveryRate: 0.60, // yamlKey: document-processing
     painMapping: ['documents'],
     feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 0 },
   },
   {
-    id: 'client-communications',
+    id: 'client-communications', // yamlKey: client-communications
     name: 'Client communications and follow-ups',
     description:
       'Managing ongoing client communication: scheduled updates, check-ins, satisfaction tracking, renewal reminders, and proactive outreach.',
@@ -344,7 +357,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 1 },
   },
   {
-    id: 'research-analysis',
+    id: 'research-analysis', // yamlKey: research-and-analysis
     name: 'Research and analysis for client work',
     description:
       'Conducting bespoke research, competitive analysis, market intelligence, due diligence, or background research as part of client delivery.',
@@ -377,7 +390,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 0 },
   },
   {
-    id: 'sales-pipeline',
+    id: 'sales-pipeline', // yamlKey: sales-pipeline
     name: 'Sales and business development pipeline',
     description:
       'Managing the flow from lead identification through qualification, proposal, and close. Includes cross-selling to existing clients, pipeline visibility, and forecasting accuracy.',
@@ -406,6 +419,10 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'communications', symptom: 'work-about-work', weight: 4 },
       { area: 'communications', symptom: 'inconsistency', weight: 4 },
       { area: 'knowledge', symptom: 'handoff-friction', weight: 4 },
+      // Cross-cutting from marketing-ops
+      { area: 'marketing-ops', symptom: 'no-visibility', weight: 6 },
+      { area: 'marketing-ops', symptom: 'work-about-work', weight: 5 },
+      { area: 'marketing-ops', symptom: 'inconsistency', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'Low', dataDependency: 'Medium' },
     recoveryRate: 0.35,
@@ -413,7 +430,7 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
     feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
   },
   {
-    id: 'compliance-qa',
+    id: 'compliance-qa', // yamlKey: compliance-qa
     name: 'Compliance and quality assurance',
     description:
       'Managing regulatory compliance, quality checks, audit trails, version control, and certification requirements. Includes internal QA processes and external reporting obligations.',
@@ -440,10 +457,119 @@ export const ARCHETYPES: ArchetypeDefinition[] = [
       { area: 'documents', symptom: 'rework', weight: 4 },
       { area: 'project-delivery', symptom: 'inconsistency', weight: 4 },
       { area: 'reporting', symptom: 'inconsistency', weight: 4 },
+      // Cross-cutting from people-ops
+      { area: 'people-ops', symptom: 'inconsistency', weight: 5 },
+      { area: 'people-ops', symptom: 'work-about-work', weight: 4 },
     ],
     foundationProfile: { knowledgeDependency: 'High', dataDependency: 'High' },
     recoveryRate: 0.5,
     painMapping: ['compliance'],
+    feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
+  },
+  {
+    id: 'marketing-ops', // yamlKey: marketing-operations
+    name: 'Marketing operations',
+    description:
+      'Managing lead generation, content production, campaign coordination, event logistics, and marketing performance tracking across channels.',
+    painSignals: [
+      'Content production is slow and ad hoc',
+      'Campaigns rely on manual coordination across teams',
+      'Lead follow-up is inconsistent',
+      'Marketing activity is not connected to pipeline data',
+    ],
+    prerequisites: [
+      'Some form of marketing activity (even informal BD efforts)',
+      'Access to existing content or campaign materials',
+      'One person who owns or coordinates marketing',
+    ],
+    goalAlignment: { costs: 2, capacity: 5, quality: 3, speed: 4, capability: 4 },
+    signalMatrix: [
+      // Primary signals — marketing-ops area
+      { area: 'marketing-ops', symptom: 'production-heavy', weight: 10 },
+      { area: 'marketing-ops', symptom: 'work-about-work', weight: 9 },
+      { area: 'marketing-ops', symptom: 'handoff-friction', weight: 7 },
+      { area: 'marketing-ops', symptom: 'inconsistency', weight: 7 },
+      // Cross-cutting from adjacent areas
+      { area: 'sales-bd', symptom: 'work-about-work', weight: 6 },
+      { area: 'sales-bd', symptom: 'inconsistency', weight: 5 },
+      { area: 'proposals', symptom: 'production-heavy', weight: 5 },
+      { area: 'documents', symptom: 'production-heavy', weight: 5 },
+      { area: 'communications', symptom: 'inconsistency', weight: 4 },
+      { area: 'communications', symptom: 'work-about-work', weight: 4 },
+    ],
+    foundationProfile: { knowledgeDependency: 'Medium', dataDependency: 'Medium' },
+    recoveryRate: 0.40,
+    painMapping: ['marketing-ops'],
+    feasibilityRequirements: { minAiAdoption: 1, minTechLevel: 1 },
+  },
+  {
+    id: 'people-ops', // yamlKey: people-operations
+    name: 'People operations',
+    description:
+      'Managing recruitment, staff onboarding, performance review cycles, learning and development, absence tracking, and HR compliance processes.',
+    painSignals: [
+      'Onboarding new hires is inconsistent and slow',
+      'Performance reviews are manual and dreaded',
+      'Recruitment pipeline lacks visibility',
+      'HR processes depend on who remembers to do what',
+    ],
+    prerequisites: [
+      'Some form of people records (even spreadsheets)',
+      'Defined HR touchpoints (hiring, onboarding, reviews)',
+      'One person responsible for people processes',
+    ],
+    goalAlignment: { costs: 3, capacity: 4, quality: 4, speed: 2, capability: 3 },
+    signalMatrix: [
+      // Primary signals — people-ops area
+      { area: 'people-ops', symptom: 'inconsistency', weight: 10 },
+      { area: 'people-ops', symptom: 'work-about-work', weight: 9 },
+      { area: 'people-ops', symptom: 'tool-limitation', weight: 7 },
+      { area: 'people-ops', symptom: 'handoff-friction', weight: 7 },
+      // Cross-cutting from adjacent areas
+      { area: 'onboarding', symptom: 'inconsistency', weight: 5 },
+      { area: 'onboarding', symptom: 'work-about-work', weight: 4 },
+      { area: 'reporting', symptom: 'work-about-work', weight: 4 },
+      { area: 'compliance', symptom: 'inconsistency', weight: 4 },
+      { area: 'compliance', symptom: 'work-about-work', weight: 4 },
+    ],
+    foundationProfile: { knowledgeDependency: 'High', dataDependency: 'Medium' },
+    recoveryRate: 0.45,
+    painMapping: ['people-ops'],
+    feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
+  },
+  {
+    id: 'resource-planning', // yamlKey: resource-allocation
+    name: 'Resource allocation and capacity planning',
+    description:
+      'Planning team capacity, matching skills to projects, forecasting utilisation, managing bench time, and balancing workload across the organisation.',
+    painSignals: [
+      'Capacity planning lives in a spreadsheet or someone\'s head',
+      'Utilisation is tracked retrospectively, not forecast',
+      'Skill matching is informal and based on availability',
+      'Partners or managers hoard resources',
+    ],
+    prerequisites: [
+      'Some form of project or resource tracking',
+      'Visibility of team skills and availability',
+      'Defined project types or engagement categories',
+    ],
+    goalAlignment: { costs: 4, capacity: 5, quality: 3, speed: 2, capability: 4 },
+    signalMatrix: [
+      // Primary signals — resource-planning area
+      { area: 'resource-planning', symptom: 'no-visibility', weight: 10 },
+      { area: 'resource-planning', symptom: 'work-about-work', weight: 8 },
+      { area: 'resource-planning', symptom: 'decision-bottleneck', weight: 8 },
+      { area: 'resource-planning', symptom: 'tool-limitation', weight: 7 },
+      // Cross-cutting from adjacent areas
+      { area: 'reporting', symptom: 'no-visibility', weight: 6 },
+      { area: 'reporting', symptom: 'work-about-work', weight: 5 },
+      { area: 'project-delivery', symptom: 'handoff-friction', weight: 5 },
+      { area: 'project-delivery', symptom: 'no-visibility', weight: 5 },
+      { area: 'invoicing', symptom: 'work-about-work', weight: 4 },
+    ],
+    foundationProfile: { knowledgeDependency: 'Low', dataDependency: 'High' },
+    recoveryRate: 0.50,
+    painMapping: ['resource-planning'],
     feasibilityRequirements: { minAiAdoption: 0, minTechLevel: 1 },
   },
 ]
@@ -525,12 +651,15 @@ export const AREA_OPTIONS = [
   { value: 'invoicing', shortLabel: 'Invoicing and time', label: 'Processing invoices, timesheets, and approvals' },
   { value: 'sales-bd', shortLabel: 'Sales and pipeline', label: 'Sales, business development, and pipeline management' },
   { value: 'compliance', shortLabel: 'Compliance and QA', label: 'Compliance, quality assurance, and regulatory requirements' },
+  { value: 'marketing-ops', shortLabel: 'Marketing operations', label: 'Marketing operations, lead generation, and campaign coordination' },
+  { value: 'people-ops', shortLabel: 'People operations', label: 'Recruitment, onboarding staff, performance cycles, and HR processes' },
+  { value: 'resource-planning', shortLabel: 'Resource planning', label: 'Capacity planning, skill matching, and utilisation management' },
 ] as const
 
 export const AREA_CATEGORIES = [
   {
     label: 'Winning work',
-    areas: ['proposals', 'research', 'communications', 'onboarding'],
+    areas: ['proposals', 'research', 'communications', 'onboarding', 'marketing-ops'],
   },
   {
     label: 'Delivering work',
@@ -538,7 +667,7 @@ export const AREA_CATEGORIES = [
   },
   {
     label: 'Running the business',
-    areas: ['reporting', 'invoicing', 'sales-bd', 'compliance'],
+    areas: ['reporting', 'invoicing', 'sales-bd', 'compliance', 'people-ops', 'resource-planning'],
   },
 ] as const
 

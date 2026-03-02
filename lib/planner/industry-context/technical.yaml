@@ -17,7 +17,7 @@ recoveryRates:
     range: [0.25, 0.40]
     rationale: "Technical research spans precedent review (similar past projects), product and material selection, regulatory interpretation, and site analysis. AI can compress the search and retrieval phases — finding relevant precedents, comparing product specifications, summarising planning policy. But the technical judgement layer (structural calculations, design decisions, suitability assessments) remains human-led. Recovery concentrated in the information-gathering phase, not the analysis."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - mckinsey-genai-2023
     confidence: moderate
 
@@ -57,7 +57,7 @@ recoveryRates:
     range: [0.35, 0.55]
     rationale: "Past project data is core intellectual property in technical practices — specification libraries, detail libraries, precedent designs, lessons learned, and cost benchmarks. McKinsey found knowledge workers spend 1.8 hours per day searching for information. In technical services this means hunting through previous project files for reusable details, standard specifications, or comparable cost data. AI-powered search across project archives and specification libraries is a high-value use case. Recovery depends heavily on whether the practice has digitised its project archive."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - riba-benchmark-2025
     confidence: moderate
 
@@ -84,6 +84,30 @@ recoveryRates:
       - riba-benchmark-2025
       - mckinsey-genai-2023
     confidence: moderate
+
+  marketing-operations:
+    range: [0.25, 0.40]
+    rationale: "Marketing in technical services is minimal for most practices. Work comes through repeat clients, competitive tenders, and professional networks. Where marketing exists, it focuses on awards submissions, project photography, sector articles, and maintaining an online portfolio. The volume of marketing activity is low, which limits the total recovery potential. Larger multidisciplinary practices with dedicated marketing teams see higher recovery; typical practices of 5-15 people have no dedicated marketing function."
+    sources:
+      - riba-benchmark-2025
+      - mckinsey-genai-2023
+    confidence: low
+
+  people-operations:
+    range: [0.35, 0.55]
+    rationale: "Technical practices manage graduate recruitment, professional accreditation pathways (chartered status, RIBA Part 3, IStructE exams), CPD tracking, and periodic staff reviews. These are structured processes with regulatory requirements (professional body CPD compliance). The small firm size (5-15 people) means HR is often a partner responsibility, not a dedicated function. Automation can formalise what is currently ad hoc while reducing the administrative burden on practising professionals."
+    sources:
+      - riba-benchmark-2025
+      - cipd-resourcing-2024
+    confidence: low
+
+  resource-allocation:
+    range: [0.35, 0.55]
+    rationale: "Resource allocation in technical services involves matching architects, engineers, and technicians to projects by skill, availability, and project stage. Projects run for months or years with variable intensity across RIBA stages. The cyclical nature of construction means capacity swings between overstretched and underutilised. Spreadsheet-based resource planning is the norm for most practices. The structured project model (defined stages, deliverables, and milestones) makes forecasting feasible but the market cyclicality adds uncertainty."
+    sources:
+      - riba-benchmark-2025
+      - spi-benchmark-2025
+    confidence: low
 
 strategicConsiderations:
   - id: tech-01
@@ -151,7 +175,7 @@ strategicConsiderations:
     observation: "Knowledge workers spend 1.8 hours per day searching for information. In technical practices, this manifests as searching through previous project files, specification libraries, product literature, and regulatory guidance. Past project knowledge is core IP but is often poorly indexed and trapped in individual project folders."
     implication: "Knowledge retrieval is a high-return, low-risk starting point for AI adoption in technical services. The practice already owns the data. The value is in making it findable. This avoids the sensitivity concerns of client-facing AI use while delivering measurable time savings."
     sources:
-      - mcksinsey-info-search
+      - mckinsey-info-search
       - riba-benchmark-2025
     tags: [technology, capacity, productivity]
 
@@ -162,3 +186,26 @@ strategicConsiderations:
       - worklytics-2025
       - microsoft-wti-2025
     tags: [capacity, productivity, adoption]
+
+  - id: tech-11
+    observation: "Marketing in technical practices centres on project portfolio presentation — awards, publications, and online showcases of completed work. The competitive tender process often requires credentials submissions with project descriptions, team CVs, and capability statements. This is production work, not strategic marketing."
+    implication: "Marketing operations automation for technical practices is less about campaigns and more about credentials management — maintaining an up-to-date project portfolio, generating tender submissions from a master library, and producing consistent capability statements. The recovery is concentrated in the production layer of BD support."
+    sources:
+      - riba-benchmark-2025
+    tags: [marketing, competitive-dynamics, capacity]
+
+  - id: tech-12
+    observation: "Professional accreditation pathways in technical services are lengthy and structured — RIBA Part 3 for architects, chartership for engineers, and continuing professional development requirements for all. Small practices manage these alongside project delivery, creating a dual administrative burden on partners who are both practitioners and people managers."
+    implication: "People operations automation in technical services should focus on compliance tracking (CPD logs, accreditation milestones) and reducing the admin burden of reviews and development planning. The structured nature of professional accreditation makes it well-suited to automated tracking and reminders."
+    sources:
+      - riba-benchmark-2025
+      - cipd-resourcing-2024
+    tags: [talent, compliance, capacity]
+
+  - id: tech-13
+    observation: "Construction market cyclicality creates a resource planning challenge unique to technical services. During booms, practices over-hire and over-commit; during downturns, they face painful reductions. Most practices lack the data infrastructure to forecast demand beyond their current order book, making capacity planning reactive rather than predictive."
+    implication: "Resource allocation automation in technical services has a strategic dimension beyond daily staffing: it provides the forward visibility needed to make better hiring, contracting, and pipeline decisions. Practices that can see three months ahead rather than three weeks ahead make structurally better decisions about capacity."
+    sources:
+      - riba-benchmark-2025
+      - spi-benchmark-2025
+    tags: [capacity, seasonality, business-case-framing]

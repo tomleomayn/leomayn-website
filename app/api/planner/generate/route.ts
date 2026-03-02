@@ -12,6 +12,7 @@ import {
 import { scoreArchetypes } from '@/lib/planner/scoring'
 import { calculateBusinessCase } from '@/lib/planner/business-case'
 import { buildSystemPrompt, buildUserPrompt, loadFirmTypeContent } from '@/lib/planner/prompt'
+import { resolveRecoveryRates, loadIndustryRates } from '@/lib/planner/industry-rates'
 import { validateReportSchema, escapeHtml } from '@/lib/planner/sanitise'
 import { scrapeCompanyContext } from '@/lib/planner/scrape-company'
 import { upsertAttioPerson } from '@/lib/attio'
@@ -132,10 +133,22 @@ export async function POST(request: Request) {
     const scoringResult = scoreArchetypes(diagnostic)
     const topArchetypes = scoringResult.topArchetypes
 
-    // Business case calculation
-    const businessCase = calculateBusinessCase(sizing, diagnostic)
+    // Load industry-specific recovery rates (single load point — teardown fix S1)
+    const industryRates = await resolveRecoveryRates(diagnostic.firmType)
 
-    // Load firm-type RAG content (graceful fallback)
+    // Observability: warn if YAML not found for a firm type that should have data (teardown fix R1)
+    const firmTypesWithDedicatedYaml = ['accounting', 'agency', 'consulting', 'law', 'technical']
+    if (firmTypesWithDedicatedYaml.includes(diagnostic.firmType)) {
+      const yamlData = await loadIndustryRates(diagnostic.firmType)
+      if (!yamlData) {
+        console.warn(`[planner] Industry YAML not loaded for firmType="${diagnostic.firmType}" — using archetype defaults`)
+      }
+    }
+
+    // Business case calculation (uses industry-specific rates)
+    const businessCase = calculateBusinessCase(sizing, diagnostic, industryRates)
+
+    // Load firm-type RAG content from industry YAML (graceful fallback)
     const firmTypeContent = await loadFirmTypeContent(diagnostic.firmType)
 
     // Build AI prompts
@@ -147,7 +160,8 @@ export async function POST(request: Request) {
       topArchetypes,
       businessCase,
       scoringResult.allScores,
-      companyContext
+      companyContext,
+      industryRates
     )
 
     // Call Anthropic
