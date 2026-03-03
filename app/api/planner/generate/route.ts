@@ -27,6 +27,12 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3001',
 ]
 
+function isOriginAllowed(origin: string): boolean {
+  if (ALLOWED_ORIGINS.includes(origin)) return true
+  if (origin.endsWith('.vercel.app') && origin.includes('leomayn-website')) return true
+  return false
+}
+
 const KV_REPORT_TTL = 60 * 60 * 24 * 30 // 30 days in seconds
 const KV_DAILY_CAP_KEY = 'planner:daily-cap'
 const DAILY_GENERATION_LIMIT = 50
@@ -69,7 +75,7 @@ export async function POST(request: Request) {
   try {
     // Origin validation
     const origin = request.headers.get('origin')
-    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    if (origin && !isOriginAllowed(origin)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 

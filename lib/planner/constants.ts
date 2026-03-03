@@ -647,7 +647,7 @@ export const AREA_OPTIONS = [
   { value: 'project-delivery', shortLabel: 'Project delivery', label: 'Managing active project delivery' },
   { value: 'documents', shortLabel: 'Documents and reports', label: 'Preparing documents, presentations, and internal materials' },
   { value: 'knowledge', shortLabel: 'Knowledge management', label: 'Capturing and sharing knowledge across the team' },
-  { value: 'reporting', shortLabel: 'Reporting and MI', label: 'Generating reports and management information' },
+  { value: 'reporting', shortLabel: 'Reporting and management information', label: 'Generating reports and management information' },
   { value: 'invoicing', shortLabel: 'Invoicing and time', label: 'Processing invoices, timesheets, and approvals' },
   { value: 'sales-bd', shortLabel: 'Sales and pipeline', label: 'Sales, business development, and pipeline management' },
   { value: 'compliance', shortLabel: 'Compliance and QA', label: 'Compliance, quality assurance, and regulatory requirements' },
@@ -659,7 +659,7 @@ export const AREA_OPTIONS = [
 export const AREA_CATEGORIES = [
   {
     label: 'Winning work',
-    areas: ['proposals', 'research', 'communications', 'onboarding', 'marketing-ops'],
+    areas: ['marketing-ops', 'sales-bd', 'proposals', 'research', 'communications', 'onboarding'],
   },
   {
     label: 'Delivering work',
@@ -667,7 +667,7 @@ export const AREA_CATEGORIES = [
   },
   {
     label: 'Running the business',
-    areas: ['reporting', 'invoicing', 'sales-bd', 'compliance', 'people-ops', 'resource-planning'],
+    areas: ['reporting', 'invoicing', 'compliance', 'people-ops', 'resource-planning'],
   },
 ] as const
 
