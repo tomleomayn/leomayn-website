@@ -323,14 +323,13 @@ export default function ContactPage() {
             <h2 className="text-3xl font-serif leading-tight text-slate mb-6">
               Or email us directly
             </h2>
-            <p className="text-xl leading-relaxed text-slate mb-4">
-              <a href="mailto:hello@leomayn.com" onClick={handleMailtoClick} className="text-coral hover:underline">
-                hello@leomayn.com
-              </a>
-            </p>
-            <p className="text-base text-slate/70 mb-8">
-              We respond to all enquiries within one business day.
-            </p>
+            <a
+              href="mailto:hello@leomayn.com"
+              onClick={handleMailtoClick}
+              className="inline-block bg-slate text-white font-sans font-semibold text-lg px-8 py-3 rounded-md hover:bg-slate-light transition-all mb-8"
+            >
+              hello@leomayn.com
+            </a>
             <a
               href="https://www.linkedin.com/in/thomasallanjones/"
               target="_blank"
