@@ -2,8 +2,6 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
-import DecryptedText from '@/components/reactbits/DecryptedText'
-import CountUp from '@/components/reactbits/CountUp'
 
 export const metadata = {
   title: 'AI Strategy & Implementation Philosophy | Leomayn',
@@ -57,8 +55,8 @@ export default function HowWeThinkPage() {
             />
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6">
-              <DecryptedText text="AI strategy pillars to help chart the transition ahead" animateOn="view" />
+            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
+              AI strategy pillars to help chart the transition ahead
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
@@ -86,29 +84,21 @@ export default function HowWeThinkPage() {
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
-                <div className="flex items-start gap-6 md:gap-8">
-                  <div className="flex-shrink-0 text-center">
-                    <p className="text-5xl md:text-6xl font-serif text-coral-accessible leading-none">
-                      <CountUp to={70} suffix="%" />
-                    </p>
-                    <p className="text-xs font-sans text-slate/60 mt-1">GDPval score</p>
-                  </div>
-                  <p>
-                    AI is rewriting the rules of knowledge work. When{' '}
-                    <a
-                      href="https://openai.com/index/introducing-gpt-5-2/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-coral-accessible underline hover:text-coral-dark"
-                    >
-                      OpenAI released GPT-5.2
+                <p>
+                  AI is rewriting the rules of knowledge work. When{' '}
+                  <a
+                    href="https://openai.com/index/introducing-gpt-5-2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-coral-accessible underline hover:text-coral-dark"
+                  >
+                    OpenAI released GPT-5.2
                     </a>{' '}
                     in December 2025, it achieved a 70% score on the GDPval benchmark,
-                    meaning it met or exceeded human expert performance on 70% of
-                    economically valuable tasks across 44 occupations. The gap between
-                    having an idea and executing it has collapsed.
-                  </p>
-                </div>
+                  meaning it met or exceeded human expert performance on 70% of
+                  economically valuable tasks across 44 occupations. The gap between
+                  having an idea and executing it has collapsed.
+                </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
@@ -144,7 +134,7 @@ export default function HowWeThinkPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                <DecryptedText text="Context engineering is a new and vital skill" animateOn="view" />
+                Context engineering is a new and vital skill
               </h2>
             </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">

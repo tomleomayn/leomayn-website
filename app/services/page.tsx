@@ -5,7 +5,6 @@ import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import BlurText from '@/components/reactbits/BlurText'
-import DecryptedText from '@/components/reactbits/DecryptedText'
 
 export const metadata = {
   title: 'AI consulting for service organisations | Leomayn',
@@ -272,7 +271,7 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-8">
-                <DecryptedText text="How we price" animateOn="view" />
+                How we price
               </h2>
             </ScrollReveal>
             <div className="space-y-4 text-lg leading-relaxed text-slate">

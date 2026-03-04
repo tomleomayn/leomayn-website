@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
-import CountUp from '@/components/reactbits/CountUp'
 
 export const metadata = {
   title: 'Why Leomayn - Leomayn',
@@ -124,20 +123,6 @@ export default function WhyLeomaynPage() {
               <div>
                 <ScrollReveal delay={0.1}>
                   <h2 className="text-3xl font-serif text-slate mb-4">Tom Jones, Founder</h2>
-                  <div className="flex gap-6 mb-6 py-4 border-y border-steel/20">
-                    <div className="text-center flex-1">
-                      <p className="text-3xl font-serif text-coral-accessible"><CountUp to={20} suffix="yr" /></p>
-                      <p className="text-xs font-sans text-slate/60">Experience</p>
-                    </div>
-                    <div className="text-center flex-1">
-                      <p className="text-3xl font-serif text-coral-accessible">$<CountUp to={28} suffix="M" /></p>
-                      <p className="text-xs font-sans text-slate/60">Turnover</p>
-                    </div>
-                    <div className="text-center flex-1">
-                      <p className="text-3xl font-serif text-coral-accessible"><CountUp to={19} suffix="%" /></p>
-                      <p className="text-xs font-sans text-slate/60">EBITDA</p>
-                    </div>
-                  </div>
                   <a
                     href="https://www.linkedin.com/in/thomasallanjones/"
                     target="_blank"

@@ -3,7 +3,6 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import SpotlightCard from '@/components/reactbits/SpotlightCard'
-import CountUp from '@/components/reactbits/CountUp'
 
 export const metadata = {
   title: 'About Us | AI Consultants for Professional Services | Leomayn',
@@ -102,26 +101,6 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
               Founded by Tom Jones
             </h2>
-            <div className="grid grid-cols-3 gap-6 mb-10 py-6 border-y border-steel/20">
-              <div className="text-center">
-                <p className="text-4xl font-serif text-coral-accessible mb-1">
-                  <CountUp to={20} suffix="+" />
-                </p>
-                <p className="text-sm font-sans text-slate/70">Years experience</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl font-serif text-coral-accessible mb-1">
-                  $<CountUp to={28} suffix="M" />
-                </p>
-                <p className="text-sm font-sans text-slate/70">Turnover scaled</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl font-serif text-coral-accessible mb-1">
-                  <CountUp to={19} suffix="%" />
-                </p>
-                <p className="text-sm font-sans text-slate/70">EBITDA achieved</p>
-              </div>
-            </div>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
                 Tom has spent 20 years solving operational problems across technology,
