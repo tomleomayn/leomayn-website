@@ -4,6 +4,8 @@ import ServiceCard from '@/components/ServiceCard'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import BlurText from '@/components/reactbits/BlurText'
+import DecryptedText from '@/components/reactbits/DecryptedText'
 
 export const metadata = {
   title: 'AI consulting for service organisations | Leomayn',
@@ -77,9 +79,11 @@ export default function ServicesPage() {
             />
           </div>
           <div className="max-w-4xl mx-auto relative z-10">
-            <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              Workflow redesign and AI implementation
-            </h1>
+            <BlurText
+              text="Workflow redesign and AI implementation"
+              as="h1"
+              className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6"
+            />
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <div className="text-xl leading-[1.6] text-coral-accessible pl-6 space-y-4">
@@ -268,7 +272,7 @@ export default function ServicesPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-8">
-                How we price
+                <DecryptedText text="How we price" animateOn="view" />
               </h2>
             </ScrollReveal>
             <div className="space-y-4 text-lg leading-relaxed text-slate">

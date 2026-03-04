@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useRef } from 'react'
 
 interface ServiceCardProps {
   number: string
@@ -10,14 +13,30 @@ interface ServiceCardProps {
 }
 
 export default function ServiceCard({ number, title, subtitle, description, href, features }: ServiceCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
+    card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
+  }
+
   return (
-    <div className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral hover:-translate-y-1 hover:shadow-lg hover:shadow-coral/20 transition-all duration-300 group overflow-hidden">
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.13] transition-opacity duration-300 pointer-events-none"
-           style={{
-             backgroundImage: `linear-gradient(#9da7b0 1px, transparent 1px), linear-gradient(90deg, #9da7b0 1px, transparent 1px)`,
-             backgroundSize: '12px 12px'
-           }}>
-      </div>
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="relative bg-pearl border border-steel rounded-lg p-8 hover:border-coral hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
+    >
+      {/* Spotlight overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{
+          background: 'radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(247, 201, 192, 0.12), transparent 40%)',
+        }}
+        aria-hidden="true"
+      />
 
       <div className="relative z-10">
         <div className="flex items-start gap-4 mb-4">

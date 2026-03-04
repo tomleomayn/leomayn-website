@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import SpotlightCard from '@/components/reactbits/SpotlightCard'
 import Link from 'next/link'
 
 export const metadata = {
@@ -136,23 +137,25 @@ export default function AppliedAIPage() {
               {insights.map((insight, index) => (
                 <ScrollReveal key={insight.href} delay={index * 0.1}>
                   <Link href={insight.href} className="block group">
-                    <article className="bg-white border border-steel rounded-md p-8 hover:border-coral hover:-translate-y-1 hover:shadow-lg transition-all">
-                      <span className="text-sm font-sans font-semibold text-coral-accessible uppercase tracking-wide">
-                        {insight.category}
-                      </span>
-                      <h2 className="text-2xl lg:text-3xl font-serif leading-snug text-slate mt-2 mb-4 group-hover:text-coral-accessible transition-colors">
-                        {insight.title}
-                      </h2>
-                      <p className="text-lg leading-relaxed text-slate/70">
-                        {insight.description}
-                      </p>
-                      <span className="inline-flex items-center text-sm font-sans font-semibold text-coral-accessible mt-4 group-hover:gap-2 transition-all">
-                        Read more
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                    </article>
+                    <SpotlightCard className="bg-white border border-steel p-8 group hover:border-coral hover:-translate-y-1 transition-all">
+                      <article>
+                        <span className="text-sm font-sans font-semibold text-coral-accessible uppercase tracking-wide">
+                          {insight.category}
+                        </span>
+                        <h2 className="text-2xl lg:text-3xl font-serif leading-snug text-slate mt-2 mb-4 group-hover:text-coral-accessible transition-colors">
+                          {insight.title}
+                        </h2>
+                        <p className="text-lg leading-relaxed text-slate/70">
+                          {insight.description}
+                        </p>
+                        <span className="inline-flex items-center text-sm font-sans font-semibold text-coral-accessible mt-4 group-hover:gap-2 transition-all">
+                          Read more
+                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </span>
+                      </article>
+                    </SpotlightCard>
                   </Link>
                 </ScrollReveal>
               ))}

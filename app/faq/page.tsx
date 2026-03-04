@@ -181,24 +181,33 @@ export default function FAQPage() {
                   {category.category}
                 </h2>
               </ScrollReveal>
-              <div className="space-y-8">
+              <div>
                 {category.questions.map((faq, faqIndex) => (
-                  <ScrollReveal key={faq.q} delay={0.1 + faqIndex * 0.05}>
-                    <div className="border-b border-steel/20 pb-8 last:border-b-0">
-                      <h3 className="text-xl font-serif text-slate mb-3">{faq.q}</h3>
-                      <p className="text-base leading-relaxed text-slate">
-                        {faq.a}
-                      </p>
-                      {faq.link && (
-                        <Link
-                          href={faq.link.href}
-                          className="inline-block mt-3 text-sm font-semibold text-coral-accessible hover:text-coral-dark transition-colors"
-                        >
-                          {faq.link.text} →
-                        </Link>
-                      )}
+                  <details key={faq.q} open={faqIndex === 0}>
+                    <summary className="text-xl font-serif text-slate">
+                      {faq.q}
+                      <svg className="chevron text-slate/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="details-content">
+                      <div>
+                        <div className="pb-6">
+                          <p className="text-base leading-relaxed text-slate">
+                            {faq.a}
+                          </p>
+                          {faq.link && (
+                            <Link
+                              href={faq.link.href}
+                              className="inline-block mt-3 text-sm font-semibold text-coral-accessible hover:text-coral-dark transition-colors"
+                            >
+                              {faq.link.text} →
+                            </Link>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </ScrollReveal>
+                  </details>
                 ))}
               </div>
             </div>

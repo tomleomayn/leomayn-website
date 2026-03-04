@@ -8,6 +8,8 @@ import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import HeroBlobs from '@/components/HeroBlobs'
 import ScrollReveal from '@/components/ScrollReveal'
+import BlurText from '@/components/reactbits/BlurText'
+import SpotlightCard from '@/components/reactbits/SpotlightCard'
 
 // Extend window interface for dataLayer
 declare global {
@@ -52,9 +54,11 @@ export default function HomePage() {
       <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
         <HeroBlobs />
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-4 animate-fade-in-up">
-            Fix work, then scale with AI
-          </h1>
+          <BlurText
+            text="Fix work, then scale with AI"
+            as="h1"
+            className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-4"
+          />
           <div className="max-w-2xl mb-8 flex items-stretch animate-fade-in-up stagger-1">
             <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
             <div className="text-xl leading-[1.6] text-coral-accessible pl-6 space-y-4">
@@ -220,82 +224,46 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <ScrollReveal delay={0}>
-              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
-                {/* Hover blobs */}
-                <div
-                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
-                  style={{ animation: 'blobFloat 15s ease-in-out infinite' }}
-                />
-                <div
-                  className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
-                  style={{ animation: 'blobFloat 18s ease-in-out infinite reverse' }}
-                />
-
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-serif text-slate mb-4">
-                    Excessive manual work crowds out time for strategic work
-                  </h3>
-                  <p className="text-base font-sans text-slate leading-relaxed">
-                    Time spent chasing updates, switching systems, and doing manual data entry
-                    doesn't add value. Knowledge workers spend up to 60% of time on 'work about work'
-                    rather than skilled tasks
-                    <sup className="text-coral-accessible font-bold">[1]</sup>
-                    . Little capacity remains for strategic work that drives growth.
-                  </p>
-                </div>
-              </div>
+              <SpotlightCard className="bg-pearl p-8 h-full group hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <h3 className="text-2xl font-serif text-slate mb-4">
+                  Excessive manual work crowds out time for strategic work
+                </h3>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  Time spent chasing updates, switching systems, and doing manual data entry
+                  doesn&apos;t add value. Knowledge workers spend up to 60% of time on &apos;work about work&apos;
+                  rather than skilled tasks
+                  <sup className="text-coral-accessible font-bold">[1]</sup>
+                  . Little capacity remains for strategic work that drives growth.
+                </p>
+              </SpotlightCard>
             </ScrollReveal>
 
             {/* Card 2 */}
             <ScrollReveal delay={0.1}>
-              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
-                {/* Hover blobs */}
-                <div
-                  className="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
-                  style={{ animation: 'blobFloat 16s ease-in-out infinite' }}
-                />
-                <div
-                  className="absolute -bottom-10 -right-10 w-28 h-28 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
-                  style={{ animation: 'blobFloat 20s ease-in-out infinite reverse' }}
-                />
-
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-serif text-slate mb-4">
-                    Automating broken workflows compounds problems
-                  </h3>
-                  <p className="text-base font-sans text-slate leading-relaxed">
-                    Automating inefficient processes makes them faster but not better
-                    <sup className="text-coral-accessible font-bold">[2]</sup>
-                    . Technology overlaid on broken workflows magnifies problems rather than solving them. Fix the workflow first, then scale what works.
-                  </p>
-                </div>
-              </div>
+              <SpotlightCard className="bg-pearl p-8 h-full group hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <h3 className="text-2xl font-serif text-slate mb-4">
+                  Automating broken workflows compounds problems
+                </h3>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  Automating inefficient processes makes them faster but not better
+                  <sup className="text-coral-accessible font-bold">[2]</sup>
+                  . Technology overlaid on broken workflows magnifies problems rather than solving them. Fix the workflow first, then scale what works.
+                </p>
+              </SpotlightCard>
             </ScrollReveal>
 
             {/* Card 3 */}
             <ScrollReveal delay={0.2}>
-              <div className="relative bg-pearl rounded-md p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 group overflow-hidden h-full">
-                {/* Hover blobs */}
-                <div
-                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-rock opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500 pointer-events-none"
-                  style={{ animation: 'blobFloat 17s ease-in-out infinite' }}
-                />
-                <div
-                  className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full bg-coral opacity-0 group-hover:opacity-40 blur-2xl transition-opacity duration-500 pointer-events-none"
-                  style={{ animation: 'blobFloat 19s ease-in-out infinite reverse' }}
-                />
-
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-serif text-slate mb-4">
-                    Tool selection before diagnosis creates waste
-                  </h3>
-                  <p className="text-base font-sans text-slate leading-relaxed">
-                    Organisations waste 20% - 30% of software spending on unused licenses
-                    <sup className="text-coral-accessible font-bold">[3]</sup>
-                    . Selecting technology before understanding the operational problem leads to shelfware and disappointing results.
-                  </p>
-                </div>
-              </div>
+              <SpotlightCard className="bg-pearl p-8 h-full group hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <h3 className="text-2xl font-serif text-slate mb-4">
+                  Tool selection before diagnosis creates waste
+                </h3>
+                <p className="text-base font-sans text-slate leading-relaxed">
+                  Organisations waste 20% - 30% of software spending on unused licenses
+                  <sup className="text-coral-accessible font-bold">[3]</sup>
+                  . Selecting technology before understanding the operational problem leads to shelfware and disappointing results.
+                </p>
+              </SpotlightCard>
             </ScrollReveal>
           </div>
 
@@ -477,46 +445,46 @@ export default function HomePage() {
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ScrollReveal delay={0}>
-              <div className="bg-pearl rounded-md p-6 h-full">
+              <SpotlightCard className="bg-pearl p-6 h-full group" spotlightColor="rgba(154, 184, 203, 0.15)">
                 <h3 className="text-xl font-serif text-slate mb-3">Client onboarding</h3>
                 <p className="text-sm text-slate/60 mb-2">Before: Six manual handoffs, three systems, two weeks of chasing.</p>
                 <p className="text-sm font-semibold text-coral-accessible">After: Automated intake, routing, and status tracking. Reduced cycle time and team processing.</p>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
             <ScrollReveal delay={0.05}>
-              <div className="bg-pearl rounded-md p-6 h-full">
+              <SpotlightCard className="bg-pearl p-6 h-full group" spotlightColor="rgba(154, 184, 203, 0.15)">
                 <h3 className="text-xl font-serif text-slate mb-3">Proposal and scoping</h3>
                 <p className="text-sm text-slate/60 mb-2">Before: Every proposal starts from scratch. Senior time burned on formatting, not strategy.</p>
                 <p className="text-sm font-semibold text-coral-accessible">After: Templated generation with firm-specific data. Scoping in hours, not days.</p>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="bg-pearl rounded-md p-6 h-full">
+              <SpotlightCard className="bg-pearl p-6 h-full group" spotlightColor="rgba(154, 184, 203, 0.15)">
                 <h3 className="text-xl font-serif text-slate mb-3">Reporting and MI</h3>
                 <p className="text-sm text-slate/60 mb-2">Before: Monday mornings spent pulling numbers from four systems into a spreadsheet.</p>
                 <p className="text-sm font-semibold text-coral-accessible">After: Automated reporting with real-time dashboards. Hours reclaimed for analysis.</p>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="bg-pearl rounded-md p-6 h-full">
+              <SpotlightCard className="bg-pearl p-6 h-full group" spotlightColor="rgba(154, 184, 203, 0.15)">
                 <h3 className="text-xl font-serif text-slate mb-3">Compliance and audit prep</h3>
                 <p className="text-sm text-slate/60 mb-2">Before: Annual audit prep is a fire drill. Evidence scattered, team stretched.</p>
                 <p className="text-sm font-semibold text-coral-accessible">After: Continuous evidence collection. Audit-ready at any point, not just once a year.</p>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="bg-pearl rounded-md p-6 h-full">
+              <SpotlightCard className="bg-pearl p-6 h-full group" spotlightColor="rgba(154, 184, 203, 0.15)">
                 <h3 className="text-xl font-serif text-slate mb-3">Resource allocation</h3>
                 <p className="text-sm text-slate/60 mb-2">Before: Capacity planning lives in one person&apos;s head and a shared spreadsheet.</p>
                 <p className="text-sm font-semibold text-coral-accessible">After: Visible capacity across teams. Allocation decisions based on data, not gut feel.</p>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
             <ScrollReveal delay={0.25}>
-              <div className="bg-pearl rounded-md p-6 h-full">
+              <SpotlightCard className="bg-pearl p-6 h-full group" spotlightColor="rgba(154, 184, 203, 0.15)">
                 <h3 className="text-xl font-serif text-slate mb-3">Invoice and billing</h3>
                 <p className="text-sm text-slate/60 mb-2">Before: Manual time capture, rate calculations, and invoice generation. Errors caught late.</p>
                 <p className="text-sm font-semibold text-coral-accessible">After: Automated capture-to-invoice with validation checks. Billing accuracy up, cycle time down.</p>
-              </div>
+              </SpotlightCard>
             </ScrollReveal>
           </div>
         </div>

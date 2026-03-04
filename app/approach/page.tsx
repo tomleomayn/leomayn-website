@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import CountUp from '@/components/reactbits/CountUp'
 
 export const metadata = {
   title: 'Our Approach to AI Consulting | Leomayn',
@@ -74,27 +75,35 @@ export default function ApproachPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <div className="p-8 bg-chalk rounded-md">
-                <p className="text-lg leading-relaxed text-slate">
-                  AI performance now matches or exceeds human experts on most knowledge tasks. In December 2025, OpenAI reported{' '}
-                  <a
-                    href="https://openai.com/index/introducing-gpt-5-2/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-coral-accessible hover:text-coral-dark underline"
-                  >
-                    GPT-5.2
-                  </a>{' '}
-                  Thinking beat or tied experts on 70.9% of{' '}
-                  <a
-                    href="https://openai.com/index/gdpval/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-coral-accessible hover:text-coral-dark underline"
-                  >
-                    GDPval
-                  </a>{' '}
-                  tasks across 44 occupations. The constraint has shifted from capability to implementation: how work is designed, how context flows, and how decisions get made.
-                </p>
+                <div className="flex items-start gap-6 md:gap-8">
+                  <div className="flex-shrink-0 text-center">
+                    <p className="text-5xl md:text-6xl font-serif text-coral-accessible leading-none">
+                      <CountUp to={70.9} decimals={1} suffix="%" />
+                    </p>
+                    <p className="text-xs font-sans text-slate/60 mt-1">GDPval score</p>
+                  </div>
+                  <p className="text-lg leading-relaxed text-slate">
+                    AI performance now matches or exceeds human experts on most knowledge tasks. In December 2025, OpenAI reported{' '}
+                    <a
+                      href="https://openai.com/index/introducing-gpt-5-2/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-coral-accessible hover:text-coral-dark underline"
+                    >
+                      GPT-5.2
+                    </a>{' '}
+                    Thinking beat or tied experts on 70.9% of{' '}
+                    <a
+                      href="https://openai.com/index/gdpval/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-coral-accessible hover:text-coral-dark underline"
+                    >
+                      GDPval
+                    </a>{' '}
+                    tasks across 44 occupations. The constraint has shifted from capability to implementation: how work is designed, how context flows, and how decisions get made.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
           </div>

@@ -2,6 +2,8 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import SpotlightCard from '@/components/reactbits/SpotlightCard'
+import CountUp from '@/components/reactbits/CountUp'
 
 export const metadata = {
   title: 'About Us | AI Consultants for Professional Services | Leomayn',
@@ -100,6 +102,26 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
               Founded by Tom Jones
             </h2>
+            <div className="grid grid-cols-3 gap-6 mb-10 py-6 border-y border-steel/20">
+              <div className="text-center">
+                <p className="text-4xl font-serif text-coral-accessible mb-1">
+                  <CountUp to={20} suffix="+" />
+                </p>
+                <p className="text-sm font-sans text-slate/70">Years experience</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-serif text-coral-accessible mb-1">
+                  $<CountUp to={28} suffix="M" />
+                </p>
+                <p className="text-sm font-sans text-slate/70">Turnover scaled</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl font-serif text-coral-accessible mb-1">
+                  <CountUp to={19} suffix="%" />
+                </p>
+                <p className="text-sm font-sans text-slate/70">EBITDA achieved</p>
+              </div>
+            </div>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <p>
                 Tom has spent 20 years solving operational problems across technology,
@@ -128,8 +150,8 @@ export default function AboutPage() {
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
               What we believe
             </h2>
-            <div className="space-y-8">
-              <div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <SpotlightCard className="bg-pearl border border-steel/20 p-6 group">
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
                   Operations before technology
                 </h3>
@@ -137,9 +159,9 @@ export default function AboutPage() {
                   Fix the workflow first. Technology amplifies what you build on top of.
                   If the foundation is broken, automation makes things worse, not better.
                 </p>
-              </div>
+              </SpotlightCard>
 
-              <div>
+              <SpotlightCard className="bg-pearl border border-steel/20 p-6 group">
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
                   Outcomes over hours
                 </h3>
@@ -148,9 +170,9 @@ export default function AboutPage() {
                   the cost before we start. No scope creep, no hourly rate anxiety, no
                   billing surprises.
                 </p>
-              </div>
+              </SpotlightCard>
 
-              <div>
+              <SpotlightCard className="bg-pearl border border-steel/20 p-6 group">
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
                   Transfer capability, not dependency
                 </h3>
@@ -159,9 +181,9 @@ export default function AboutPage() {
                   to maintain and improve systems independently. We make ourselves
                   redundant, not indispensable.
                 </p>
-              </div>
+              </SpotlightCard>
 
-              <div>
+              <SpotlightCard className="bg-pearl border border-steel/20 p-6 group">
                 <h3 className="text-2xl font-serif leading-snug text-slate mb-3">
                   Evidence over assumptions
                 </h3>
@@ -170,7 +192,7 @@ export default function AboutPage() {
                   bottlenecks before recommending solutions. No generic frameworks,
                   no cookie-cutter approaches.
                 </p>
-              </div>
+              </SpotlightCard>
             </div>
           </div>
         </section>

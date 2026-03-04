@@ -11,7 +11,7 @@ const nextConfig = {
   },
   // Enable experimental optimizations
   experimental: {
-    optimizePackageImports: ['react', 'react-dom'],
+    optimizePackageImports: ['react', 'react-dom', 'motion'],
   },
   outputFileTracingIncludes: {
     '/api/planner/pdf/[id]': [

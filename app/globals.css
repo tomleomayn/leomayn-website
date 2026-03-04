@@ -147,6 +147,21 @@ p, li, span, div {
   }
 }
 
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -20px) scale(1.04);
+  }
+  50% {
+    transform: translate(-20px, 15px) scale(0.96);
+  }
+  75% {
+    transform: translate(15px, 25px) scale(1.02);
+  }
+}
+
 @keyframes shimmer {
   0% {
     background-position: -200% center;
@@ -311,4 +326,51 @@ p, li, span, div {
   .card-gradient-border:hover::before {
     opacity: 1;
   }
+}
+
+/* ============================================
+   DETAILS/SUMMARY ACCORDION
+   ============================================ */
+
+details {
+  border-bottom: 1px solid rgba(157, 167, 176, 0.2);
+}
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary .chevron {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: rotate 0.3s var(--ease-smooth);
+}
+
+details[open] > summary .chevron {
+  rotate: 180deg;
+}
+
+details .details-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s var(--ease-smooth);
+}
+
+details[open] .details-content {
+  grid-template-rows: 1fr;
+}
+
+details .details-content > div {
+  overflow: hidden;
 }
