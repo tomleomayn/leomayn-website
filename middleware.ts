@@ -62,6 +62,15 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
+  // Internal API key bypass — skip middleware rate limiting
+  const authHeader = request.headers.get('authorization')
+  if (authHeader?.startsWith('Bearer ') && process.env.PLANNER_INTERNAL_KEY) {
+    const token = authHeader.slice(7)
+    if (token === process.env.PLANNER_INTERNAL_KEY) {
+      return NextResponse.next()
+    }
+  }
+
   const ip = getClientIP(request)
   // Use path-specific key to separate rate limit counters
   const rateLimitKey = `${ip}:${request.nextUrl.pathname}`

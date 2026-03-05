@@ -18,10 +18,18 @@ function isOriginAllowed(origin: string): boolean {
 
 export async function POST(request: Request) {
   try {
-    // Origin validation
-    const origin = request.headers.get('origin')
-    if (origin && !isOriginAllowed(origin)) {
-      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    // Internal API key bypass — skip origin validation
+    const authHeader = request.headers.get('authorization')
+    const isInternal = authHeader?.startsWith('Bearer ')
+      && process.env.PLANNER_INTERNAL_KEY
+      && authHeader.slice(7) === process.env.PLANNER_INTERNAL_KEY
+
+    // Origin validation (skip for internal calls)
+    if (!isInternal) {
+      const origin = request.headers.get('origin')
+      if (origin && !isOriginAllowed(origin)) {
+        return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+      }
     }
 
     const body = await request.json()

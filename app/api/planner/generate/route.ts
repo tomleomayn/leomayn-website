@@ -73,13 +73,22 @@ async function checkRateLimits(email: string): Promise<{ allowed: boolean; reaso
 
 export async function POST(request: Request) {
   try {
-    // Origin validation
-    const origin = request.headers.get('origin')
-    if (origin && !isOriginAllowed(origin)) {
-      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    // Internal API key bypass — skip origin validation and rate limiting
+    const authHeader = request.headers.get('authorization')
+    const isInternal = authHeader?.startsWith('Bearer ')
+      && process.env.PLANNER_INTERNAL_KEY
+      && authHeader.slice(7) === process.env.PLANNER_INTERNAL_KEY
+
+    // Origin validation (skip for internal calls)
+    if (!isInternal) {
+      const origin = request.headers.get('origin')
+      if (origin && !isOriginAllowed(origin)) {
+        return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+      }
     }
 
     // Derive base URL for email links (use origin if available, fall back to production)
+    const origin = request.headers.get('origin')
     const baseUrl = origin && ALLOWED_ORIGINS.includes(origin)
       ? origin
       : 'https://leomayn.com'
@@ -123,10 +132,12 @@ export async function POST(request: Request) {
     const diagnostic = diagResult.data
     const sizing = sizingResult.data
 
-    // Rate limiting (per-email + global)
-    const rateLimitCheck = await checkRateLimits(qualification.email)
-    if (!rateLimitCheck.allowed) {
-      return NextResponse.json({ error: rateLimitCheck.reason }, { status: 429 })
+    // Rate limiting — skip for internal calls
+    if (!isInternal) {
+      const rateLimitCheck = await checkRateLimits(qualification.email)
+      if (!rateLimitCheck.allowed) {
+        return NextResponse.json({ error: rateLimitCheck.reason }, { status: 429 })
+      }
     }
 
     // Company website scrape (non-blocking — undefined on failure)
