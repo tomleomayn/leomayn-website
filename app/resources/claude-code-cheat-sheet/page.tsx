@@ -139,7 +139,7 @@ export default function CheatSheetPage() {
                           value={formData.name}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate"
-                          placeholder="Tom Jones"
+                          placeholder="Your name"
                         />
                       </div>
                       <div>
@@ -154,7 +154,7 @@ export default function CheatSheetPage() {
                           value={formData.email}
                           onChange={handleChange}
                           className="w-full px-4 py-3 border border-steel rounded-md focus:outline-none focus:border-coral bg-white text-slate"
-                          placeholder="tom@example.com"
+                          placeholder="you@example.com"
                         />
                       </div>
 
