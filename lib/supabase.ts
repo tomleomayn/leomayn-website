@@ -60,6 +60,70 @@ export async function insertPlannerLead(data: PlannerLeadInsert): Promise<string
   return rows?.[0]?.id ?? null
 }
 
+// --- Resource leads ---
+
+interface ResourceLeadInsert {
+  email: string
+  name: string
+  resource_slug: string
+}
+
+interface ResourceDownloadResult {
+  success: boolean
+  signedUrl?: string
+}
+
+export async function insertResourceLeadAndSign(
+  data: ResourceLeadInsert,
+  storagePath: string
+): Promise<ResourceDownloadResult> {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    console.error('Supabase not configured')
+    return { success: false }
+  }
+
+  // Upsert lead (unique on email + slug)
+  const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/resource_leads`, {
+    method: 'POST',
+    headers: {
+      apikey: SUPABASE_SERVICE_ROLE_KEY,
+      Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+      'Content-Type': 'application/json',
+      Prefer: 'resolution=merge-duplicates,return=minimal',
+    },
+    body: JSON.stringify(data),
+  })
+
+  if (!insertRes.ok) {
+    console.error('Resource lead insert failed:', insertRes.status, await insertRes.text().catch(() => ''))
+    return { success: false }
+  }
+
+  // Generate signed URL (valid for 1 hour)
+  const signRes = await fetch(
+    `${SUPABASE_URL}/storage/v1/object/sign/${storagePath}`,
+    {
+      method: 'POST',
+      headers: {
+        apikey: SUPABASE_SERVICE_ROLE_KEY,
+        Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ expiresIn: 3600 }),
+    }
+  )
+
+  if (!signRes.ok) {
+    console.error('Signed URL failed:', signRes.status, await signRes.text().catch(() => ''))
+    return { success: false }
+  }
+
+  const signData = await signRes.json()
+  const signedUrl = `${SUPABASE_URL}/storage/v1${signData.signedURL}`
+
+  return { success: true, signedUrl }
+}
+
 export async function updatePlannerLead(email: string, data: PlannerLeadUpdate): Promise<boolean> {
   if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
     console.error('Supabase not configured — missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY')
