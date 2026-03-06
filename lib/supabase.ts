@@ -82,19 +82,19 @@ export async function insertResourceLeadAndSign(
     return { success: false }
   }
 
-  // Upsert lead (unique on email + slug)
+  // Insert lead — ignore duplicates (409 = already exists, that's fine)
   const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/resource_leads`, {
     method: 'POST',
     headers: {
       apikey: SUPABASE_SERVICE_ROLE_KEY,
       Authorization: `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
       'Content-Type': 'application/json',
-      Prefer: 'resolution=merge-duplicates,return=minimal',
+      Prefer: 'return=minimal',
     },
     body: JSON.stringify(data),
   })
 
-  if (!insertRes.ok) {
+  if (!insertRes.ok && insertRes.status !== 409) {
     console.error('Resource lead insert failed:', insertRes.status, await insertRes.text().catch(() => ''))
     return { success: false }
   }
