@@ -242,7 +242,7 @@ export default function CheatSheetPage() {
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
               <p className="text-lg text-slate/70 leading-relaxed">
-                Every technique is pulled from a working system — 32 commands, 36 skills, 7 automated hooks, and 53 service integrations. All built in plain English, running a real consulting practice.
+                Every technique is pulled from a working system — 32 commands, 35 skills, 7 automated hooks, and 64 service integrations. All built in plain English, running a real consulting practice.
               </p>
               <p className="text-sm text-slate/50 mt-6">
                 By Tom Jones, founder of Leomayn
