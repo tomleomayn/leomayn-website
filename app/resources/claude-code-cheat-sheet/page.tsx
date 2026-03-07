@@ -112,6 +112,15 @@ export default function CheatSheetPage() {
                       href={downloadUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => {
+                        if (typeof window !== 'undefined' && window.dataLayer) {
+                          window.dataLayer.push({
+                            event: 'file_download',
+                            file_name: 'claude-code-cheat-sheet.pdf',
+                            resource: RESOURCE_SLUG,
+                          })
+                        }
+                      }}
                       className="inline-flex items-center justify-center font-sans font-semibold text-base bg-slate text-white px-10 py-4 rounded-md hover:bg-slate-light transition-all w-full"
                     >
                       Download PDF
