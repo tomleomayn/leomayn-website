@@ -43,8 +43,9 @@ export default function CheatSheetPage() {
         setDownloadUrl(data.downloadUrl)
         setStatus('success')
 
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'generate_lead', {
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            event: 'generate_lead',
             lead_type: 'resource_download',
             resource: RESOURCE_SLUG,
             method: 'form_submit',
@@ -113,8 +114,9 @@ export default function CheatSheetPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => {
-                        if (typeof window !== 'undefined' && window.gtag) {
-                          window.gtag('event', 'file_download', {
+                        if (typeof window !== 'undefined' && window.dataLayer) {
+                          window.dataLayer.push({
+                            event: 'file_download',
                             file_name: 'claude-code-cheat-sheet.pdf',
                             resource: RESOURCE_SLUG,
                           })
