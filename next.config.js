@@ -70,7 +70,7 @@ const nextConfig = {
               "img-src 'self' https: data:",
               "font-src 'self' data:",
               "frame-src https://calendly.com https://www.googletagmanager.com",
-              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+              "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
