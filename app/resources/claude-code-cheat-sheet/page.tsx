@@ -9,7 +9,6 @@ import ScrollReveal from '@/components/ScrollReveal'
 declare global {
   interface Window {
     dataLayer: any[]
-    gtag: (...args: any[]) => void
   }
 }
 
