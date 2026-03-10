@@ -263,6 +263,43 @@ export async function POST(request: Request) {
         console.error('Email delivery failed:', emailError)
       }
 
+      // Priority 1b: Internal notification to Tom
+      try {
+        if (process.env.RESEND_API_KEY) {
+          const { Resend } = await import('resend')
+          const resend = new Resend(process.env.RESEND_API_KEY)
+
+          const fmt = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 })
+          const pdfUrl = `${baseUrl}/api/planner/pdf/${reportId}`
+          const painSummary = diagnostic.painPoints
+            .map((p: { area: string; symptom: string }) => `${p.area} → ${p.symptom}`)
+            .join(', ')
+          const archetypeSummary = topArchetypes
+            .map((a: { name: string; compositeScore: number }, i: number) => `${i + 1}. ${a.name} (${a.compositeScore})`)
+            .join('<br/>')
+
+          await resend.emails.send({
+            from: 'Leomayn <website@leomayn.com>',
+            to: 'tom@leomayn.com',
+            subject: `New planner report: ${qualification.name} @ ${qualification.company}`,
+            html: `
+              <div style="font-family: sans-serif; max-width: 600px; color: #1a3d56;">
+                <p><strong>${escapeHtml(qualification.name)}</strong> (${escapeHtml(qualification.email)})<br/>
+                ${escapeHtml(qualification.company)} · ${diagnostic.firmType} · ${diagnostic.teamSize} staff</p>
+                <p><strong>Focus:</strong> ${diagnostic.strategicFocus.primary} (primary), ${diagnostic.strategicFocus.secondary} (secondary)<br/>
+                <strong>Pain:</strong> ${painSummary}<br/>
+                <strong>AI adoption:</strong> ${diagnostic.aiAdoption} · <strong>Tech:</strong> ${diagnostic.techEnvironment}</p>
+                <p><strong>Top archetypes:</strong><br/>${archetypeSummary}</p>
+                <p><strong>Business case:</strong> ${fmt.format(businessCase.totalAnnualCost)} annual cost · Recovery ${fmt.format(businessCase.conservativeRecovery.low)}–${fmt.format(businessCase.conservativeRecovery.high)}</p>
+                <p><a href="${pdfUrl}">View PDF report</a></p>
+              </div>
+            `,
+          })
+        }
+      } catch (notifyError) {
+        console.error('Internal notification failed:', notifyError)
+      }
+
       // Priority 2: Attio enrichment
       try {
         const enrichmentNotes = [
