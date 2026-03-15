@@ -126,7 +126,7 @@ export default function CheatSheetPage() {
                       Download PDF
                     </a>
                     <p className="text-xs text-slate/50 mt-4">
-                      Check your email for a copy too.
+                      This link expires in one hour.
                     </p>
                   </div>
                 ) : (
