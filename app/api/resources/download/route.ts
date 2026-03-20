@@ -13,6 +13,7 @@ const downloadSchema = z.object({
 const RESOURCE_MAP: Record<string, string> = {
   'claude-code-cheat-sheet': 'resources/claude-code-cheat-sheet.pdf',
   'claude-code-reporting-guide': 'resources/claude-code-reporting-guide.pdf',
+  'ai-vendor-due-diligence': 'resources/ai-vendor-due-diligence.pdf',
 }
 
 const ALLOWED_ORIGINS = [
