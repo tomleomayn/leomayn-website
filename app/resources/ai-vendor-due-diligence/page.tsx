@@ -89,7 +89,7 @@ export default function VendorDueDiligencePage() {
                 <div className="max-w-lg flex items-stretch animate-fade-in-up stagger-2">
                   <div className="bg-rock rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }} />
                   <p className="text-lg leading-[1.6] text-coral-accessible pl-6">
-                    Seven model providers. Six dimensions each. 109 sourced references. The research your AI vendor probably hasn&apos;t done for you.
+                    Seven model providers. Six dimensions each. 109 sourced references. The research your AI vendor probably hasn&apos;t shared with you.
                   </p>
                 </div>
               </div>
