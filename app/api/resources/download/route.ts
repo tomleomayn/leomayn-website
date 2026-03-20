@@ -22,10 +22,16 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3000',
 ]
 
+function isAllowedOrigin(origin: string): boolean {
+  if (ALLOWED_ORIGINS.includes(origin)) return true
+  if (origin.endsWith('.vercel.app') && origin.includes('leomayn')) return true
+  return false
+}
+
 export async function POST(request: Request) {
   try {
     const origin = request.headers.get('origin')
-    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    if (origin && !isAllowedOrigin(origin)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
