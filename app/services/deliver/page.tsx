@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Automation Services - Deliver Phase | Leomayn',
@@ -386,6 +387,27 @@ export default function DeliverPage() {
             </Link>
           </div>
         </section>
+
+        <RelatedPages
+          heading="Next steps"
+          pages={[
+            {
+              href: '/services/define',
+              title: 'Define',
+              description: 'Every Deliver phase starts with a clear blueprint. See how we create one.',
+            },
+            {
+              href: '/services/support',
+              title: 'Support',
+              description: 'Keep what we build running smoothly with ongoing optimisation and monitoring.',
+            },
+            {
+              href: '/applied-ai/scale-without-headcount',
+              title: 'Scale Without Headcount',
+              description: 'How automation lets firms grow output without growing the team.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'FAQ - AI Consulting & Workflow Automation | Leomayn',
@@ -238,6 +239,25 @@ export default function FAQPage() {
           </div>
         </section>
 
+        <RelatedPages
+          pages={[
+            {
+              href: '/services',
+              title: 'Services',
+              description: 'See the full engagement model: Diagnose, Define, Deliver, Support.',
+            },
+            {
+              href: '/contact',
+              title: 'Still Have Questions?',
+              description: 'Book a 30-minute discovery call or send us a message.',
+            },
+            {
+              href: '/approach',
+              title: 'Our Approach',
+              description: 'How we work with clients to remove delivery friction and build capacity.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
@@ -407,6 +408,27 @@ export default function DefinePage() {
             </Link>
           </div>
         </section>
+
+        <RelatedPages
+          heading="Next steps"
+          pages={[
+            {
+              href: '/services/diagnose',
+              title: 'Diagnose',
+              description: 'Not sure where friction sits? Start with a delivery audit to map the landscape.',
+            },
+            {
+              href: '/services/deliver',
+              title: 'Deliver',
+              description: 'Once the roadmap is agreed, we build and deploy working automation.',
+            },
+            {
+              href: '/applied-ai/operating-architecture',
+              title: 'Operating Architecture',
+              description: 'How AI fits into existing workflows without replacing what already works.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

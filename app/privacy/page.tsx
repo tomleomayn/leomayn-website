@@ -1,11 +1,20 @@
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'Privacy Policy - Leomayn',
   description: 'Privacy policy for Leomayn Limited - how we collect, use, and protect your personal information.',
   alternates: {
     canonical: '/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy - Leomayn',
+    description: 'Privacy policy for Leomayn Limited - how we collect, use, and protect your personal information.',
+    url: 'https://leomayn.com/privacy',
+    siteName: 'Leomayn',
+    locale: 'en_GB',
+    type: 'website',
   },
 }
 
@@ -181,6 +190,21 @@ export default function PrivacyPage() {
 
           </div>
         </section>
+
+        <RelatedPages
+          pages={[
+            {
+              href: '/security-compliance',
+              title: 'Security and Compliance',
+              description: 'How we handle data protection, access controls, and regulatory requirements.',
+            },
+            {
+              href: '/contact',
+              title: 'Contact Us',
+              description: 'Questions about your data or our privacy practices? Get in touch.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

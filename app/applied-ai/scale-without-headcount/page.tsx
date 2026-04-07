@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'Scale Without Headcount: AI for Mid-Market Growth | Leomayn',
@@ -443,6 +444,26 @@ export default function ScaleWithoutHeadcountPage() {
             </ScrollReveal>
           </div>
         </section>
+        <RelatedPages
+          heading="More from Applied AI"
+          pages={[
+            {
+              href: '/applied-ai/beyond-hourly-billing',
+              title: 'Beyond Hourly Billing',
+              description: 'Why the billable hour model fails with AI and what replaces it.',
+            },
+            {
+              href: '/applied-ai/operating-architecture',
+              title: 'Operating Architecture',
+              description: 'How AI fits into existing workflows without replacing what already works.',
+            },
+            {
+              href: '/applied-ai',
+              title: 'All Articles',
+              description: 'Browse all Applied AI perspectives for professional services.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

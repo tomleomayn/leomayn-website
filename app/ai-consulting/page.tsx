@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI consulting for service organisations | Leomayn',
@@ -250,6 +251,26 @@ export default function AIConsultingPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <RelatedPages
+          pages={[
+            {
+              href: '/applied-ai',
+              title: 'Applied AI',
+              description: 'Practical perspectives on AI implementation for professional services.',
+            },
+            {
+              href: '/services',
+              title: 'Services',
+              description: 'Our four-phase engagement model: Diagnose, Define, Deliver, Support.',
+            },
+            {
+              href: '/approach',
+              title: 'Our Approach',
+              description: 'How we turn operational friction into measurable capacity gains.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

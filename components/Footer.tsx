@@ -95,6 +95,11 @@ export default function Footer() {
             </p>
             <ul className="space-y-2">
               <li>
+                <Link href="/resources" className="text-sm text-white/60 hover:text-white transition-colors">
+                  Guides &amp; Tools
+                </Link>
+              </li>
+              <li>
                 <Link href="/applied-ai" className="text-sm text-white/60 hover:text-white transition-colors">
                   Applied AI
                 </Link>
