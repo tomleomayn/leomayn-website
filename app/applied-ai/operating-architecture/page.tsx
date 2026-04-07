@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'The Operating Architecture Your AI Tools Need | Leomayn',
@@ -353,6 +354,26 @@ export default function OperatingArchitecturePage() {
             </ScrollReveal>
           </div>
         </section>
+        <RelatedPages
+          heading="More from Applied AI"
+          pages={[
+            {
+              href: '/applied-ai/ai-agents-for-business',
+              title: 'AI Agents for Business',
+              description: 'What AI agents actually do in professional services and when they make sense.',
+            },
+            {
+              href: '/applied-ai/why-ai-projects-fail',
+              title: 'Why AI Projects Fail',
+              description: 'Five patterns that kill AI initiatives before they deliver value.',
+            },
+            {
+              href: '/applied-ai',
+              title: 'All Articles',
+              description: 'Browse all Applied AI perspectives for professional services.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

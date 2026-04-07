@@ -4,12 +4,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'Why Leomayn - Leomayn',
-  description: 'Founded by Tom Jones to solve operational challenges through AI and automation. Operations and AI consulting for knowledge work.',
+  description: 'Why choose a specialist AI consultancy? Operational leadership, hands-on technical delivery, and a track record of scaling professional services firms.',
   alternates: {
     canonical: '/why-leomayn',
+  },
+  openGraph: {
+    title: 'Why Leomayn - Leomayn',
+    description: 'Why choose a specialist AI consultancy? Operational leadership, hands-on technical delivery, and a track record of scaling professional services firms.',
+    url: 'https://leomayn.com/why-leomayn',
+    siteName: 'Leomayn',
+    locale: 'en_GB',
+    type: 'website',
   },
 }
 
@@ -268,6 +277,26 @@ export default function WhyLeomaynPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <RelatedPages
+          pages={[
+            {
+              href: '/about',
+              title: 'About Leomayn',
+              description: 'Who we are, what we believe, and how we work with clients.',
+            },
+            {
+              href: '/services',
+              title: 'Services',
+              description: 'Four phases of engagement: Diagnose, Define, Deliver, and Support.',
+            },
+            {
+              href: '/contact',
+              title: 'Get in Touch',
+              description: 'Book a 30-minute discovery call to explore how we can help.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

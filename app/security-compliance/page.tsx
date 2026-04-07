@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Security & Compliance | Leomayn',
@@ -310,6 +311,25 @@ export default function SecurityCompliancePage() {
           </div>
         </section>
 
+        <RelatedPages
+          pages={[
+            {
+              href: '/services',
+              title: 'Services',
+              description: 'Our four-phase engagement model with built-in security at every stage.',
+            },
+            {
+              href: '/faq',
+              title: 'FAQ',
+              description: 'Common questions about working with Leomayn, including data handling.',
+            },
+            {
+              href: '/privacy',
+              title: 'Privacy Policy',
+              description: 'How we collect, use, and protect your personal information.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

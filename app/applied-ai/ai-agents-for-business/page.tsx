@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Agents for Business: Where to Draw the Line | Leomayn',
@@ -444,6 +445,26 @@ export default function AIAgentsForBusinessPage() {
             </ScrollReveal>
           </div>
         </section>
+        <RelatedPages
+          heading="More from Applied AI"
+          pages={[
+            {
+              href: '/applied-ai/operating-architecture',
+              title: 'Operating Architecture',
+              description: 'How AI fits into existing workflows without replacing what already works.',
+            },
+            {
+              href: '/applied-ai/sophistication-gap',
+              title: 'The Sophistication Gap',
+              description: 'Why 90% adoption but only 5% sophistication is the real AI challenge.',
+            },
+            {
+              href: '/applied-ai',
+              title: 'All Articles',
+              description: 'Browse all Applied AI perspectives for professional services.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import SpotlightCard from '@/components/reactbits/SpotlightCard'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'About Us | AI Consultants for Professional Services | Leomayn',
@@ -246,6 +247,26 @@ export default function AboutPage() {
             </Link>
           </div>
         </section>
+
+        <RelatedPages
+          pages={[
+            {
+              href: '/why-leomayn',
+              title: 'Why Leomayn',
+              description: 'What sets us apart: the case for working with a specialist AI consultancy.',
+            },
+            {
+              href: '/approach',
+              title: 'Our Approach',
+              description: 'How we work with clients: diagnose, design, build, and own.',
+            },
+            {
+              href: '/contact',
+              title: 'Get in Touch',
+              description: 'Book a 30-minute discovery call to discuss your operational challenges.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

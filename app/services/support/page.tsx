@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Training & Support - Ongoing Optimisation | Leomayn',
@@ -402,6 +403,27 @@ export default function SupportPage() {
             </Link>
           </div>
         </section>
+
+        <RelatedPages
+          heading="Next steps"
+          pages={[
+            {
+              href: '/services/deliver',
+              title: 'Deliver',
+              description: 'See how we build and deploy the automation that Support keeps running.',
+            },
+            {
+              href: '/security-compliance',
+              title: 'Security and Compliance',
+              description: 'How we handle data protection, access controls, and regulatory requirements.',
+            },
+            {
+              href: '/contact',
+              title: 'Book a Call',
+              description: 'Discuss your ongoing support needs with a 30-minute discovery call.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

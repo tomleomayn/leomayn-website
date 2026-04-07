@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Strategy & Implementation Philosophy | Leomayn',
@@ -306,6 +307,26 @@ export default function HowWeThinkPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <RelatedPages
+          pages={[
+            {
+              href: '/approach',
+              title: 'Our Approach',
+              description: 'How we put these principles into practice: the four-phase engagement framework.',
+            },
+            {
+              href: '/applied-ai',
+              title: 'Applied AI',
+              description: 'Deep dives on AI implementation challenges for professional services firms.',
+            },
+            {
+              href: '/ai-readiness',
+              title: 'AI Readiness',
+              description: 'Assess whether your organisation has the foundations to adopt AI effectively.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

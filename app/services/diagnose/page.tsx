@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'Diagnose: Delivery Friction Audit | Leomayn',
@@ -445,6 +446,27 @@ export default function DiagnosePage() {
             </Link>
           </div>
         </section>
+
+        <RelatedPages
+          heading="Next steps"
+          pages={[
+            {
+              href: '/services/define',
+              title: 'Define',
+              description: 'Turn diagnosis into a prioritised roadmap with business cases and delivery sequences.',
+            },
+            {
+              href: '/ai-readiness',
+              title: 'AI Readiness Assessment',
+              description: 'Evaluate whether your organisation has the foundations to adopt AI effectively.',
+            },
+            {
+              href: '/approach',
+              title: 'Our Approach',
+              description: 'How we work: the four-phase framework behind every engagement.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

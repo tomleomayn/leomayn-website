@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'Our Approach to AI Consulting | Leomayn',
@@ -304,6 +305,26 @@ export default function ApproachPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <RelatedPages
+          pages={[
+            {
+              href: '/how-we-think',
+              title: 'How We Think',
+              description: 'The principles behind our consulting: context engineering, AI strategy, and sustainable change.',
+            },
+            {
+              href: '/services',
+              title: 'Services',
+              description: 'Four phases of engagement: Diagnose, Define, Deliver, and Support.',
+            },
+            {
+              href: '/applied-ai',
+              title: 'Applied AI',
+              description: 'Practical perspectives on AI implementation for professional services.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>
