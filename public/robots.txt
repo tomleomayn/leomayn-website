@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /_next/
+
+Host: https://leomayn.com
 
 Sitemap: https://leomayn.com/sitemap.xml
