@@ -26,6 +26,12 @@ export const metadata = {
 
 const insights = [
   {
+    title: 'Context engineering: the skill that makes all your AI smarter',
+    description: 'The difference between generic AI output and genuinely useful work is not the model. It is what the model knows before you ask.',
+    href: '/applied-ai/context-engineering',
+    category: 'Framework',
+  },
+  {
     title: 'Avoiding common pitfalls when deploying AI',
     description: 'Most AI projects stall for fixable reasons. Three operational problems explain the gap between adoption and value.',
     href: '/applied-ai/why-ai-projects-fail',
