@@ -1,106 +1,69 @@
 import type { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
+
+type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'
+
+const EXCLUDE = new Set([
+  '/ai-planner/start',
+  '/ai-planner/decline',
+  '/not-found',
+])
+
+const OVERRIDES: Record<string, { priority?: number; changeFrequency?: ChangeFrequency }> = {
+  '/':                    { priority: 1.0, changeFrequency: 'weekly' },
+  '/services':            { priority: 0.9, changeFrequency: 'weekly' },
+  '/applied-ai':          { priority: 0.9, changeFrequency: 'weekly' },
+  '/contact':             { priority: 0.9, changeFrequency: 'monthly' },
+  '/ai-planner':          { priority: 0.8, changeFrequency: 'monthly' },
+  '/ai-readiness':        { priority: 0.8, changeFrequency: 'monthly' },
+  '/privacy':             { priority: 0.3, changeFrequency: 'yearly' },
+}
+
+function discoverRoutes(dir: string, base: string = ''): string[] {
+  const routes: string[] = []
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue
+    if (entry.name === 'api' || entry.name === 'd') continue
+    if (entry.name.startsWith('[')) continue
+
+    const fullPath = path.join(dir, entry.name)
+    const routePath = `${base}/${entry.name}`
+
+    if (fs.existsSync(path.join(fullPath, 'page.tsx'))) {
+      routes.push(routePath)
+    }
+
+    routes.push(...discoverRoutes(fullPath, routePath))
+  }
+
+  return routes
+}
+
+function defaultPriority(route: string): number {
+  const depth = route.split('/').filter(Boolean).length
+  if (depth <= 1) return 0.8
+  return 0.7
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://leomayn.com'
   const now = new Date().toISOString().split('T')[0]
+  const appDir = path.join(process.cwd(), 'app')
 
-  // Core pages — high priority, change frequently
-  const corePages = [
-    { path: '/', priority: 1.0, changeFrequency: 'weekly' as const },
-    { path: '/services', priority: 0.9, changeFrequency: 'weekly' as const },
-    { path: '/applied-ai', priority: 0.9, changeFrequency: 'weekly' as const },
-    { path: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
-  ]
+  const homePage = fs.existsSync(path.join(appDir, 'page.tsx')) ? ['/'] : []
+  const discovered = [...homePage, ...discoverRoutes(appDir)]
+  const routes = discovered.filter(r => !EXCLUDE.has(r))
 
-  // Service pages
-  const servicePages = [
-    '/services/diagnose',
-    '/services/define',
-    '/services/deliver',
-    '/services/support',
-  ].map(path => ({
-    path,
-    priority: 0.8,
-    changeFrequency: 'monthly' as const,
-  }))
-
-  // Applied AI articles
-  const appliedAiPages = [
-    '/applied-ai/why-ai-projects-fail',
-    '/applied-ai/beyond-hourly-billing',
-    '/applied-ai/scale-without-headcount',
-    '/applied-ai/operating-architecture',
-    '/applied-ai/ai-agents-for-business',
-    '/applied-ai/sophistication-gap',
-  ].map(path => ({
-    path,
-    priority: 0.8,
-    changeFrequency: 'monthly' as const,
-  }))
-
-  // Tools
-  const toolPages = [
-    { path: '/ai-planner', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/ai-readiness', priority: 0.8, changeFrequency: 'monthly' as const },
-  ]
-
-  // Company / thought leadership pages
-  const companyPages = [
-    '/approach',
-    '/how-we-think',
-    '/about',
-    '/why-leomayn',
-    '/ai-consulting',
-    '/security-compliance',
-    '/faq',
-  ].map(path => ({
-    path,
-    priority: 0.7,
-    changeFrequency: 'monthly' as const,
-  }))
-
-  // Resources
-  const resourcePages = [
-    '/resources',
-    '/resources/claude-code-cheat-sheet',
-    '/resources/claude-code-reporting-guide',
-    '/resources/ai-vendor-due-diligence',
-    '/resources/claude-code-deck-guide',
-  ].map(path => ({
-    path,
-    priority: 0.7,
-    changeFrequency: 'monthly' as const,
-  }))
-
-  // Case studies
-  const caseStudyPages = [
-    '/why-leomayn/case-studies/emsere',
-  ].map(path => ({
-    path,
-    priority: 0.8,
-    changeFrequency: 'monthly' as const,
-  }))
-
-  // Legal
-  const legalPages = [
-    { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
-  ]
-
-  const allPages = [
-    ...corePages,
-    ...servicePages,
-    ...appliedAiPages,
-    ...toolPages,
-    ...companyPages,
-    ...resourcePages,
-    ...caseStudyPages,
-    ...legalPages,
-  ]
-
-  return allPages.map(({ path, priority, changeFrequency }) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: now,
-    changeFrequency,
-    priority,
-  }))
+  return routes.map(route => {
+    const override = OVERRIDES[route] ?? {}
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified: now,
+      changeFrequency: override.changeFrequency ?? 'monthly',
+      priority: override.priority ?? defaultPriority(route),
+    }
+  })
 }
