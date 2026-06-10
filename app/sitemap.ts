@@ -72,6 +72,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
   }))
 
+  // Case studies
+  const caseStudyPages = [
+    '/why-leomayn/case-studies/emsere',
+  ].map(path => ({
+    path,
+    priority: 0.8,
+    changeFrequency: 'monthly' as const,
+  }))
+
   // Legal
   const legalPages = [
     { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
@@ -84,6 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolPages,
     ...companyPages,
     ...resourcePages,
+    ...caseStudyPages,
     ...legalPages,
   ]
 
