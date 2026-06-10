@@ -118,7 +118,10 @@ export default function NavBar() {
               </Link>
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden">
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden">
+                <Link href="/why-leomayn/case-studies/emsere" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
+                  Case Study: Emsere
+                </Link>
                 <Link href="/faq" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
                   FAQ
                 </Link>
@@ -159,6 +162,7 @@ export default function NavBar() {
             <Link href="/how-we-think" className="block py-2 text-sm font-sans text-slate">How We Think</Link>
             <Link href="/applied-ai" className="block py-2 text-sm font-sans text-slate">Applied AI</Link>
             <Link href="/why-leomayn" className="block py-2 text-sm font-sans text-slate">Why Leomayn</Link>
+            <Link href="/why-leomayn/case-studies/emsere" className="block py-2 text-sm font-sans text-slate pl-4">Case Study: Emsere</Link>
             <Link href="/faq" className="block py-2 text-sm font-sans text-slate pl-4">FAQ</Link>
             <Link href="/contact" onClick={trackNavCTA} className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
           </div>
