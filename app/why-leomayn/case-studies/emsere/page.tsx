@@ -156,7 +156,7 @@ export default function EmsereCaseStudyPage() {
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Emsere manages over 13,000 rental devices across 80+ countries, supporting 900+ clinical trials for the world&apos;s largest pharmaceutical companies. As the business continues on its strong growth journey, the commercial leadership team saw an opportunity: use AI to elevate the quality and speed of board-level reporting, and build a platform that could extend across the commercial function.
+                  <a href="https://www.emsere.com" target="_blank" rel="noopener noreferrer" className="text-coral-accessible hover:text-coral-dark transition-colors underline underline-offset-2">Emsere</a> manages over 13,000 rental devices across 80+ countries, supporting 900+ clinical trials for the world&apos;s largest pharmaceutical companies. As the business continues on its strong growth journey, the commercial leadership team saw an opportunity: use AI to elevate the quality and speed of board-level reporting, and build a platform that could extend across the commercial function.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
