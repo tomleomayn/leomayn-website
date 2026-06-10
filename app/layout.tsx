@@ -28,8 +28,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://leomayn.com'),
-  title: 'Fix work, then scale with AI | Leomayn',
-  description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
+  title: 'AI Consulting and Managed AI Agents | Leomayn',
+  description: 'We help ambitious businesses do more with AI. We design, build, and manage AI agents that get real work done.',
   alternates: {
     canonical: '/',
   },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     icon: '/favicon-192.svg',
   },
   openGraph: {
-    title: 'Fix work, then scale with AI | Leomayn',
-    description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
+    title: 'AI Consulting and Managed AI Agents | Leomayn',
+    description: 'We help ambitious businesses do more with AI. We design, build, and manage AI agents that get real work done.',
     url: 'https://leomayn.com',
     siteName: 'Leomayn',
     locale: 'en_GB',
@@ -47,13 +47,13 @@ export const metadata: Metadata = {
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
       height: 630,
-      alt: 'Leomayn - Workflow redesign and AI implementation',
+      alt: 'Leomayn - AI agents designed, built, and managed',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fix work, then scale with AI | Leomayn',
-    description: 'We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.',
+    title: 'AI Consulting and Managed AI Agents | Leomayn',
+    description: 'We help ambitious businesses do more with AI. We design, build, and manage AI agents that get real work done.',
     images: ['https://leomayn.com/logo/logo-social-1200x630.png'],
   },
 }
@@ -69,8 +69,8 @@ export default function RootLayout({
     "name": "Leomayn",
     "legalName": "Leomayn Limited",
     "url": "https://leomayn.com",
-    "logo": "https://leomayn.com/images/leomayn-logo.png",
-    "description": "Workflow redesign and AI implementation for service organisations",
+    "logo": "https://leomayn.com/logo/logo-horizontal.svg",
+    "description": "We design, build, and manage AI agents that get real work done",
     "foundingDate": "2024",
     "founder": {
       "@type": "Person",

@@ -38,7 +38,7 @@ export default function HomePage() {
     "@type": "WebSite",
     "name": "Leomayn",
     "url": "https://leomayn.com",
-    "description": "Workflow redesign and AI implementation for service organisations",
+    "description": "We design, build, and manage AI agents that get real work done",
     "publisher": {
       "@type": "Organization",
       "name": "Leomayn"
@@ -54,11 +54,10 @@ export default function HomePage() {
       <section className="bg-pearl py-24 px-6 lg:px-8 relative overflow-hidden">
         <HeroBlobs />
         <div className="max-w-4xl mx-auto relative z-10">
-          <BlurText
-            text="Fix work, then scale with AI"
-            as="h1"
-            className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-4"
-          />
+          <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-4">
+            <BlurText text="We help ambitious businesses" as="span" className="block" style={{ fontFamily: 'var(--font-serif)' }} />
+            <BlurText text="do more with AI" as="span" delay={0.4} className="block" style={{ fontFamily: 'var(--font-serif)' }} />
+          </h1>
           <div className="max-w-2xl mb-8 flex items-stretch animate-fade-in-up stagger-1">
             <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
             <div className="text-xl leading-[1.6] text-coral-accessible pl-6 space-y-4">
@@ -66,20 +65,20 @@ export default function HomePage() {
                 Your team's capacity is stuck in manual processes, scattered information, and error-prone handoffs.
               </p>
               <p>
-                We diagnose what's broken, redesign how work flows, then use AI to scale what works.
+                We diagnose what's broken, redesign how work flows, then use AI agents to scale what works.
               </p>
               <p>
-                We help service organisations remove delivery friction to free up capacity, reduce rework, and improve margins.
+                First we make existing work faster and more effective. Then we build new capabilities that improve how you compete.
               </p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 items-start animate-fade-in-up stagger-2">
             <Link
-              href="/services/diagnose"
-              onClick={() => trackCTAClick('Start with Diagnose', 'hero', '/services/diagnose')}
+              href="/contact"
+              onClick={() => trackCTAClick('Book a free discovery call', 'hero', '/contact')}
               className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark hover:shadow-lg hover:-translate-y-0.5 transition-all min-w-[220px] w-full sm:w-auto"
             >
-              Start with Diagnose
+              Book a free discovery call
             </Link>
             <Link
               href="/services"

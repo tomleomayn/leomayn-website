@@ -17,6 +17,7 @@ interface BlurTextProps {
   as?: ElementType
   delay?: number
   className?: string
+  style?: React.CSSProperties
 }
 
 export default function BlurText({
@@ -24,6 +25,7 @@ export default function BlurText({
   as: Tag = 'span',
   delay = 0,
   className = '',
+  style,
 }: BlurTextProps) {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, margin: '0px 0px -80px 0px' })
@@ -47,7 +49,7 @@ export default function BlurText({
 
   // Always render Tag with ref so useInView can observe the element
   return (
-    <Tag ref={ref} className={className}>
+    <Tag ref={ref} className={className} style={style}>
       {shouldAnimate
         ? words.map((word, i) => (
             <motion.span

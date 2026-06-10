@@ -16,7 +16,7 @@ export default function Footer() {
               <div className="bg-coral mt-1 h-[3px] w-full" />
             </div>
             <p className="font-sans text-sm text-white/60">
-              Workflow redesign and AI implementation for service organisations
+              We design, build, and manage AI agents that get real work done
             </p>
           </div>
 
