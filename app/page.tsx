@@ -435,6 +435,86 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Case Study — Social Proof */}
+      <section className="py-24 px-6 lg:px-8 bg-slate">
+        <div className="max-w-5xl mx-auto">
+          <ScrollReveal>
+            <span className="text-sm font-sans font-bold uppercase tracking-widest text-white bg-coral-accessible px-4 py-1.5 rounded-full shadow-sm">
+              Case Study
+            </span>
+          </ScrollReveal>
+          <ScrollReveal delay={0.05}>
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mt-6 mb-4">
+              AI-powered board intelligence for a global commercial team
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div className="grid grid-cols-2 items-center gap-6 mb-10">
+              <div className="flex justify-center">
+                <Image
+                  src="/images/case-studies/logo-emsere.svg"
+                  alt="Emsere"
+                  width={220}
+                  height={73}
+                />
+              </div>
+              <span className="text-lg font-sans text-white">Clinical trial equipment rental and logistics</span>
+            </div>
+          </ScrollReveal>
+
+          {/* Stats row */}
+          <ScrollReveal delay={0.15}>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+              <div className="bg-white/10 rounded-lg p-5 text-center">
+                <p className="text-3xl lg:text-4xl font-serif text-coral">4</p>
+                <p className="text-xs font-sans text-white/60 uppercase tracking-wider font-semibold mt-1">Weeks to delivery</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-5 text-center">
+                <p className="text-3xl lg:text-4xl font-serif text-coral">10,500+</p>
+                <p className="text-xs font-sans text-white/60 uppercase tracking-wider font-semibold mt-1">Deals connected</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-5 text-center">
+                <p className="text-3xl lg:text-4xl font-serif text-coral">700+</p>
+                <p className="text-xs font-sans text-white/60 uppercase tracking-wider font-semibold mt-1">Signals harvested weekly</p>
+              </div>
+              <div className="bg-white/10 rounded-lg p-5 text-center">
+                <p className="text-3xl lg:text-4xl font-serif text-coral">21</p>
+                <p className="text-xs font-sans text-white/60 uppercase tracking-wider font-semibold mt-1">Slide automated deck</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Quote */}
+          <ScrollReveal delay={0.2}>
+            <div className="flex items-start gap-5">
+              <Image
+                src="/images/case-studies/jon-raven.jpg"
+                alt="Jon Raven"
+                width={64}
+                height={64}
+                className="rounded-full object-cover object-top flex-shrink-0 border-2 border-white/20"
+                style={{ width: 64, height: 64 }}
+              />
+              <div>
+                <blockquote className="text-lg lg:text-xl font-serif leading-snug text-white/90">
+                  &ldquo;I was highly impressed with Leomayn&apos;s combination of strategic thinking and technical delivery.&rdquo;
+                </blockquote>
+                <p className="text-sm font-sans text-white/50 mt-2">Jon Raven, Chief Commercial Officer, Emsere</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.25}>
+            <Link
+              href="/why-leomayn/case-studies/emsere"
+              className="inline-flex items-center gap-2 text-lg font-sans font-semibold text-coral hover:text-coral-dark transition-colors mt-8"
+            >
+              Read the full case study <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Common Workflows Section */}
       <section className="py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">

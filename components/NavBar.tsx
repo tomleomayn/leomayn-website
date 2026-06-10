@@ -118,12 +118,14 @@ export default function NavBar() {
               </Link>
 
               {/* Dropdown Menu */}
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden">
-                <Link href="/why-leomayn/case-studies/emsere" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
-                  Case Studies
+              <div className="absolute top-full right-0 mt-2 w-72 bg-white border border-steel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all overflow-hidden">
+                <Link href="/why-leomayn/case-studies/emsere" className="block px-4 py-3 hover:bg-chalk">
+                  <p className="text-sm font-sans font-semibold text-slate">Case Studies</p>
+                  <p className="text-xs font-sans text-slate/60 mt-0.5">Real engagements, real outcomes</p>
                 </Link>
-                <Link href="/faq" className="block px-4 py-2 text-sm font-sans text-slate/70 hover:text-slate hover:bg-chalk">
-                  FAQ
+                <Link href="/faq" className="block px-4 py-3 hover:bg-chalk">
+                  <p className="text-sm font-sans font-semibold text-slate">FAQ</p>
+                  <p className="text-xs font-sans text-slate/60 mt-0.5">How we work, what it costs, what to expect</p>
                 </Link>
               </div>
             </div>
