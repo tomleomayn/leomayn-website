@@ -61,6 +61,33 @@ export default function EmsereCaseStudyPage() {
     },
   }
 
+  const reviewSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    'reviewBody': 'I was highly impressed with Leomayn\'s combination of strategic thinking and technical delivery, and we\'re excited to develop further AI use-cases across the commercial team that drive our growth plan.',
+    'author': {
+      '@type': 'Person',
+      'name': 'Jon Raven',
+      'jobTitle': 'Chief Commercial Officer',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Emsere',
+        'url': 'https://www.emsere.com',
+      },
+    },
+    'itemReviewed': {
+      '@type': 'ProfessionalService',
+      'name': 'Leomayn',
+      'url': 'https://leomayn.com',
+      'description': 'AI consulting and managed AI agents',
+    },
+    'reviewRating': {
+      '@type': 'Rating',
+      'ratingValue': '5',
+      'bestRating': '5',
+    },
+  }
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -74,6 +101,7 @@ export default function EmsereCaseStudyPage() {
   return (
     <>
       <SchemaMarkup data={articleSchema} />
+      <SchemaMarkup data={reviewSchema} />
       <SchemaMarkup data={breadcrumbSchema} />
       <NavBar />
       <main className="min-h-screen">
@@ -343,12 +371,12 @@ export default function EmsereCaseStudyPage() {
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-                Ready to bring AI into your boardroom?
+                Ready to bring AI into your operations?
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                We help commercial teams build intelligence systems that connect live data to board-level reporting. Book a call to explore what this could look like for your business.
+                We help ambitious businesses build AI systems that connect live data to real decisions. Book a free discovery call to explore what this could look like for you.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -356,7 +384,7 @@ export default function EmsereCaseStudyPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book a Call
+                Book a free discovery call
               </Link>
             </ScrollReveal>
           </div>
