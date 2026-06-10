@@ -139,7 +139,7 @@ export default function EmsereCaseStudyPage() {
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <p className="text-xs font-sans font-semibold uppercase tracking-wider text-slate/50 mb-3">Scale</p>
-                <p className="text-lg font-sans text-slate">10,000+ devices, 900+ studies, 80+ countries</p>
+                <p className="text-lg font-sans text-slate">13,000+ devices, 900+ studies, 80+ countries</p>
               </div>
             </div>
           </div>
@@ -156,12 +156,12 @@ export default function EmsereCaseStudyPage() {
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Emsere manages over 10,000 rental devices across 80+ countries, supporting 900+ clinical trials for the world&apos;s largest pharmaceutical companies. As the business continues on its strong growth journey, the commercial leadership team saw an opportunity: use AI to elevate the quality and speed of board-level reporting, and build a platform that could extend across the commercial function.
+                  Emsere manages over 13,000 rental devices across 80+ countries, supporting 900+ clinical trials for the world&apos;s largest pharmaceutical companies. As the business continues on its strong growth journey, the commercial leadership team saw an opportunity: use AI to elevate the quality and speed of board-level reporting, and build a platform that could extend across the commercial function.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <p>
-                  Jon Raven, Emsere&apos;s Chief Commercial Officer, chose to invest in a contained pilot timed to a live board meeting. Not a proof of concept divorced from the business; a working system that had to deliver for a PE board that expected precision and pace.
+                  Jon Raven, Emsere&apos;s Chief Commercial Officer, chose to invest in a contained pilot timed to a live board meeting. Not a proof of concept divorced from the business; a working system that had to deliver for a board that expected precision and pace.
                 </p>
               </ScrollReveal>
             </div>
@@ -321,7 +321,7 @@ export default function EmsereCaseStudyPage() {
                     </tr>
                     <tr className="border-b border-steel/10">
                       <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Scale</td>
-                      <td className="px-6 py-4 text-sm font-sans text-slate">10,000+ rental devices, 5,000+ contracts, 900+ studies, 80+ countries</td>
+                      <td className="px-6 py-4 text-sm font-sans text-slate">13,000+ rental devices, 8,000+ contracts, 900+ studies, 80+ countries</td>
                     </tr>
                     <tr className="border-b border-steel/10 bg-pearl/50">
                       <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Project duration</td>
