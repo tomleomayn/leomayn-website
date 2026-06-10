@@ -102,7 +102,7 @@ export default function EmsereCaseStudyPage() {
               &larr; Why Leomayn
             </Link>
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-xs font-sans font-semibold uppercase tracking-wider text-coral-accessible bg-coral/20 px-3 py-1 rounded-full">
+              <span className="text-sm font-sans font-bold uppercase tracking-widest text-white bg-coral-accessible px-4 py-1.5 rounded-full shadow-sm">
                 Case Study
               </span>
             </div>
@@ -121,60 +121,26 @@ export default function EmsereCaseStudyPage() {
         {/* Client profile bar */}
         <section className="bg-slate py-8 px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-wrap items-center gap-8 lg:gap-16">
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/images/case-studies/logo-emsere.svg"
-                  alt="Emsere"
-                  width={120}
-                  height={40}
-                  className="brightness-0 invert opacity-80"
-                />
-              </div>
-              <div>
-                <p className="text-xs font-sans font-semibold uppercase tracking-wider text-rock-light mb-1">Client</p>
-                <p className="text-base font-sans text-white">Emsere B.V.</p>
-              </div>
-              <div>
-                <p className="text-xs font-sans font-semibold uppercase tracking-wider text-rock-light mb-1">Sector</p>
-                <p className="text-base font-sans text-white">Clinical trial equipment and logistics</p>
-              </div>
-              <div>
-                <p className="text-xs font-sans font-semibold uppercase tracking-wider text-rock-light mb-1">Scale</p>
-                <p className="text-base font-sans text-white">10,000+ devices, 900+ studies, 80+ countries</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats band */}
-        <section className="bg-chalk py-16 px-6 lg:px-8 border-b border-steel/20">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              <ScrollReveal>
-                <div className="text-center">
-                  <p className="text-4xl lg:text-5xl font-serif text-coral-accessible mb-2">4</p>
-                  <p className="text-sm font-sans text-slate/70 uppercase tracking-wider font-semibold">Weeks to board delivery</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-6 shadow-sm flex flex-col">
+                <p className="text-xs font-sans font-semibold uppercase tracking-wider text-slate/50 mb-3">Client</p>
+                <div className="flex-1 flex items-center justify-center">
+                  <Image
+                    src="/images/case-studies/logo-emsere.svg"
+                    alt="Emsere B.V."
+                    width={180}
+                    height={60}
+                  />
                 </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.1}>
-                <div className="text-center">
-                  <p className="text-4xl lg:text-5xl font-serif text-coral-accessible mb-2">10,500+</p>
-                  <p className="text-sm font-sans text-slate/70 uppercase tracking-wider font-semibold">Live CRM deals connected</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.2}>
-                <div className="text-center">
-                  <p className="text-4xl lg:text-5xl font-serif text-coral-accessible mb-2">700+</p>
-                  <p className="text-sm font-sans text-slate/70 uppercase tracking-wider font-semibold">Signals harvested weekly</p>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.3}>
-                <div className="text-center">
-                  <p className="text-4xl lg:text-5xl font-serif text-coral-accessible mb-2">21</p>
-                  <p className="text-sm font-sans text-slate/70 uppercase tracking-wider font-semibold">Slide narrative deck</p>
-                </div>
-              </ScrollReveal>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <p className="text-xs font-sans font-semibold uppercase tracking-wider text-slate/50 mb-3">Sector</p>
+                <p className="text-lg font-sans text-slate">Clinical trial equipment rental and logistics</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <p className="text-xs font-sans font-semibold uppercase tracking-wider text-slate/50 mb-3">Scale</p>
+                <p className="text-lg font-sans text-slate">10,000+ devices, 900+ studies, 80+ countries</p>
+              </div>
             </div>
           </div>
         </section>
@@ -184,7 +150,7 @@ export default function EmsereCaseStudyPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                The decision
+                The decision to invest in AI
               </h2>
             </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
@@ -197,6 +163,38 @@ export default function EmsereCaseStudyPage() {
                 <p>
                   Jon Raven, Emsere&apos;s Chief Commercial Officer, chose to invest in a contained pilot timed to a live board meeting. Not a proof of concept divorced from the business; a working system that had to deliver for a PE board that expected precision and pace.
                 </p>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats band */}
+        <section className="bg-chalk pt-8 pb-16 px-6 lg:px-8 border-b border-steel/20">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              <ScrollReveal>
+                <div className="text-center">
+                  <p className="text-5xl lg:text-6xl font-serif text-coral-accessible mb-3">4</p>
+                  <p className="text-sm lg:text-base font-sans text-slate/70 uppercase tracking-wider font-semibold">Weeks from brief to delivery</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <div className="text-center">
+                  <p className="text-5xl lg:text-6xl font-serif text-coral-accessible mb-3">10,500+</p>
+                  <p className="text-sm lg:text-base font-sans text-slate/70 uppercase tracking-wider font-semibold">Live CRM deals connected</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <div className="text-center">
+                  <p className="text-5xl lg:text-6xl font-serif text-coral-accessible mb-3">700+</p>
+                  <p className="text-sm lg:text-base font-sans text-slate/70 uppercase tracking-wider font-semibold">Signals harvested weekly</p>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.3}>
+                <div className="text-center">
+                  <p className="text-5xl lg:text-6xl font-serif text-coral-accessible mb-3">21</p>
+                  <p className="text-sm lg:text-base font-sans text-slate/70 uppercase tracking-wider font-semibold">Slide bespoke narrative deck</p>
+                </div>
               </ScrollReveal>
             </div>
           </div>
@@ -243,26 +241,8 @@ export default function EmsereCaseStudyPage() {
           </div>
         </section>
 
-        {/* Building from Pilot to Programme */}
-        <section className="py-24 px-6 lg:px-8 bg-pearl">
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                From one deck to an AI-powered commercial system
-              </h2>
-            </ScrollReveal>
-            <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <ScrollReveal delay={0.1}>
-                <p>
-                  Following the board presentation, the commercial leadership team continued working with Leomayn on improved commentary quality, automated QA, new visualisations, and a pipeline review dossier giving each salesperson their own intelligence briefing for monthly pipeline reviews.
-                </p>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
-
         {/* Quote */}
-        <section className="py-24 px-6 lg:px-8 bg-chalk">
+        <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row gap-10 items-center">
@@ -270,19 +250,19 @@ export default function EmsereCaseStudyPage() {
                   <Image
                     src="/images/case-studies/jon-raven.jpg"
                     alt="Jon Raven, Chief Commercial Officer at Emsere"
-                    width={160}
-                    height={160}
-                    className="rounded-full object-cover"
-                    style={{ width: 160, height: 160 }}
+                    width={140}
+                    height={140}
+                    className="rounded-full object-cover object-top"
+                    style={{ width: 140, height: 140 }}
                   />
                 </div>
                 <div>
-                  <div className="relative">
+                  <div className="relative pb-4">
                     <span className="text-6xl font-serif text-coral leading-none absolute -top-4 -left-2" aria-hidden="true">&ldquo;</span>
-                    <blockquote className="text-xl lg:text-2xl font-serif leading-snug text-slate pl-8 pr-4">
+                    <blockquote className="text-xl lg:text-2xl font-serif leading-snug text-slate pl-8">
                       I was highly impressed with Leomayn&apos;s combination of strategic thinking and technical delivery, and we&apos;re excited to develop further AI use-cases across the commercial team that drive our growth plan.
-                      <span className="text-6xl font-serif text-coral leading-none align-bottom ml-1" aria-hidden="true">&rdquo;</span>
                     </blockquote>
+                    <span className="text-6xl font-serif text-coral leading-none absolute -bottom-2 right-0" aria-hidden="true">&rdquo;</span>
                   </div>
                   <p className="text-base font-sans font-semibold text-slate mt-4 pl-8">
                     Jon Raven
@@ -296,8 +276,31 @@ export default function EmsereCaseStudyPage() {
           </div>
         </section>
 
+        {/* Building from Pilot to Programme */}
+        <section className="py-24 px-6 lg:px-8 bg-chalk">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
+                From one deck to an AI-powered commercial system
+              </h2>
+            </ScrollReveal>
+            <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <ScrollReveal delay={0.1}>
+                <p>
+                  Following the board presentation, Leomayn built a complementary automated pipeline review dossier. Each salesperson now receives their own intelligence briefing ahead of monthly pipeline reviews, combining live CRM data with the same external signals that power the board deck.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.15}>
+                <p>
+                  The insight captured during those reviews feeds back into the system. When the commercial team identifies context the AI missed, or corrects a narrative that needs local knowledge, those inputs sharpen the next board deck. The result is a cycle where the work of reviewing the pipeline directly improves the quality of board reporting.
+                </p>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
         {/* Key Facts Table */}
-        <section className="py-24 px-6 lg:px-8 bg-pearl">
+        <section className="pt-12 pb-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
@@ -314,27 +317,19 @@ export default function EmsereCaseStudyPage() {
                     </tr>
                     <tr className="border-b border-steel/10 bg-pearl/50">
                       <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Sector</td>
-                      <td className="px-6 py-4 text-sm font-sans text-slate">Clinical trial equipment and logistics</td>
+                      <td className="px-6 py-4 text-sm font-sans text-slate">Clinical trial equipment rental and logistics</td>
                     </tr>
                     <tr className="border-b border-steel/10">
                       <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Scale</td>
                       <td className="px-6 py-4 text-sm font-sans text-slate">10,000+ rental devices, 5,000+ contracts, 900+ studies, 80+ countries</td>
                     </tr>
                     <tr className="border-b border-steel/10 bg-pearl/50">
-                      <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Pilot duration</td>
+                      <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Project duration</td>
                       <td className="px-6 py-4 text-sm font-sans text-slate">4 weeks (kickoff to board delivery)</td>
                     </tr>
-                    <tr className="border-b border-steel/10">
+                    <tr>
                       <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Data sources</td>
                       <td className="px-6 py-4 text-sm font-sans text-slate">Live CRM (10,500+ deals) + 9 external intelligence feeds</td>
-                    </tr>
-                    <tr className="border-b border-steel/10 bg-pearl/50">
-                      <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Board outcome</td>
-                      <td className="px-6 py-4 text-sm font-sans text-slate">AI disclosure upfront; no questions from the board</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 text-sm font-sans font-semibold text-slate">Expansion</td>
-                      <td className="px-6 py-4 text-sm font-sans text-slate">Two new workstreams signed within one week; seven candidate projects evaluated by the leadership team</td>
                     </tr>
                   </tbody>
                 </table>
