@@ -75,10 +75,10 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 items-start animate-fade-in-up stagger-2">
             <Link
               href="/contact"
-              onClick={() => trackCTAClick('Book a free 30-minute discovery call', 'hero', '/contact')}
+              onClick={() => trackCTAClick('Book a free discovery call', 'hero', '/contact')}
               className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark hover:shadow-lg hover:-translate-y-0.5 transition-all min-w-[220px] w-full sm:w-auto"
             >
-              Book a free 30-minute discovery call
+              Book a free discovery call
             </Link>
             <Link
               href="/services"
@@ -665,17 +665,17 @@ className="inline-flex items-center justify-center font-sans font-semibold text-
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <p className="text-xl font-sans leading-relaxed text-white mb-6">
-              Book a free 30-minute discovery call.<br />
+              Book a 30-minute discovery call.<br />
               We'll map one broken workflow and show you what's possible.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <Link
               href="/contact"
-              onClick={() => trackCTAClick('Book a free 30-minute discovery call', 'final_cta', '/contact')}
+              onClick={() => trackCTAClick('Book Discovery Call', 'final_cta', '/contact')}
               className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
-              Book a free 30-minute discovery call
+              Book Discovery Call
             </Link>
           </ScrollReveal>
         </div>
