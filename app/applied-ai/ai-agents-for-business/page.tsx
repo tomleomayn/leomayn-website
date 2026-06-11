@@ -7,7 +7,7 @@ import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'AI Agents for Business: Where to Draw the Line | Leomayn',
-  description: '79% of companies use agentic AI but fewer than one in 20 capture value. Learn where AI agents work and how to draw the line. Book a discovery call.',
+  description: '79% of companies use agentic AI but fewer than one in 20 capture value. Learn where AI agents work and how to draw the line. Book a free discovery call.',
   keywords: ['AI agents for business', 'agentic AI', 'AI agent implementation', 'AI agents examples', 'AI governance', 'professional services'],
   alternates: {
     canonical: '/applied-ai/ai-agents-for-business',
@@ -440,7 +440,7 @@ export default function AIAgentsForBusinessPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book Discovery Call
+                Book a free 30-minute discovery call
               </Link>
             </ScrollReveal>
           </div>

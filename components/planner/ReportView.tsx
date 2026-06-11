@@ -492,7 +492,7 @@ export default function ReportView() {
             onClick={handleDiscoveryCTA}
             className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all"
           >
-            Book a discovery call
+            Book a free 30-minute discovery call
           </a>
           <a
             href="mailto:hello@leomayn.com"

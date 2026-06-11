@@ -93,7 +93,7 @@ export default function ResourcesPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-lg text-white/70 mb-8 max-w-xl mx-auto">
-                Book a discovery call and we will map your specific challenge
+                Book a free 30-minute discovery call and we will map your specific challenge
                 together.
               </p>
             </ScrollReveal>
@@ -102,7 +102,7 @@ export default function ResourcesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book Discovery Call
+                Book a free 30-minute discovery call
               </Link>
             </ScrollReveal>
           </div>

@@ -291,7 +291,7 @@ export default function ApproachPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                Book a 30-minute discovery call. We'll discuss one workflow and
+                Book a free 30-minute discovery call. We'll discuss one workflow and
                 show you where we'd focus.
               </p>
             </ScrollReveal>
@@ -300,7 +300,7 @@ export default function ApproachPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book Discovery Call
+                Book a free 30-minute discovery call
               </Link>
             </ScrollReveal>
           </div>

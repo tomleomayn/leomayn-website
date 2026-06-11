@@ -432,7 +432,7 @@ export default function DiagnosePage() {
         <section className="py-24 px-6 lg:px-8 bg-slate">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-              Start with a discovery call
+              Start with a free discovery call
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
               In 30 minutes, we'll map one workflow and show you where improvement
@@ -442,7 +442,7 @@ export default function DiagnosePage() {
               href="/contact"
               className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
-              Book Discovery Call
+              Book a free 30-minute discovery call
             </Link>
           </div>
         </section>

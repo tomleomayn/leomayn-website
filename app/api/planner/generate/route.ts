@@ -436,7 +436,7 @@ function buildEmailHtml(name: string, company: string, reportId: string, baseUrl
         <p style="color: #9da7b0; font-size: 14px;">This link will be available for 30 days.</p>
         <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
         <p>Want to go deeper? Our Diagnose engagement applies this same methodology with full access to your team and data.</p>
-        <p><a href="https://calendly.com/tom-leomayn/30min" style="color: #1a3d56; font-weight: 600;">Book a discovery call</a></p>
+        <p><a href="https://calendly.com/tom-leomayn/30min" style="color: #1a3d56; font-weight: 600;">Book a free 30-minute discovery call</a></p>
       </div>
       <div style="padding: 16px 0; border-top: 1px solid #e5e5e5; font-size: 12px; color: #9da7b0;">
         <p>Leomayn Limited | leomayn.com</p>

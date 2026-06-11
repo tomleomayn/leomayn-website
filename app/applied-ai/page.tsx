@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'Applied AI for Professional Services | Leomayn',
-  description: 'Practical AI implementation guidance for professional services firms. Operating architecture, scaling, pricing, and AI agents. Book a discovery call.',
+  description: 'Practical AI implementation guidance for professional services firms. Operating architecture, scaling, pricing, and AI agents. Book a free discovery call.',
   keywords: ['applied AI', 'AI implementation', 'professional services AI', 'operating architecture', 'AI strategy', 'AI agents', 'agentic AI'],
   alternates: {
     canonical: '/applied-ai',
@@ -60,6 +60,12 @@ const insights = [
     description: '79% of companies now use agentic AI. Fewer than one in 20 capture real value. The difference is governance, not technology.',
     href: '/applied-ai/ai-agents-for-business',
     category: 'AI Agents',
+  },
+  {
+    title: 'The AI sophistication gap: why adoption is not enough',
+    description: '90% of employees at one firm used AI regularly. Only 5% used it well. The gap between adoption and sophistication is where organisations lose value.',
+    href: '/applied-ai/sophistication-gap',
+    category: 'Capability',
   },
 ]
 
@@ -179,7 +185,7 @@ export default function AppliedAIPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                Book a 30-minute discovery call. We will discuss your operational
+                Book a free 30-minute discovery call. We will discuss your operational
                 challenges and identify where to start.
               </p>
             </ScrollReveal>
@@ -188,7 +194,7 @@ export default function AppliedAIPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book Discovery Call
+                Book a free 30-minute discovery call
               </Link>
             </ScrollReveal>
           </div>

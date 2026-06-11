@@ -7,7 +7,7 @@ import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'The Operating Architecture Your AI Tools Need | Leomayn',
-  description: 'Your AI tools are not failing. The layer beneath them is missing. Six elements of operating architecture that separate real value from pilots. Book a discovery call.',
+  description: 'Your AI tools are not failing. The layer beneath them is missing. Six elements of operating architecture that separate real value from pilots. Book a free discovery call.',
   keywords: ['AI operating architecture', 'AI workflow design', 'AI integration framework', 'operating model AI', 'professional services'],
   alternates: {
     canonical: '/applied-ai/operating-architecture',
@@ -349,7 +349,7 @@ export default function OperatingArchitecturePage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book Discovery Call
+                Book a free 30-minute discovery call
               </Link>
             </ScrollReveal>
           </div>
