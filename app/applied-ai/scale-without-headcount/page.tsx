@@ -7,7 +7,7 @@ import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'Scale Without Headcount: AI for Mid-Market Growth | Leomayn',
-  description: 'Your board wants growth. Your ops team is stretched. Learn how mid-market firms use AI to create operational leverage without hiring. Book a free discovery call.',
+  description: 'Your board wants growth. Your ops team is stretched. Learn how mid-market firms use AI to create operational leverage without hiring. Book a discovery call.',
   keywords: ['AI scaling operations', 'scale without hiring', 'operational leverage AI', 'AI mid-market', 'AI business growth'],
   alternates: {
     canonical: '/applied-ai/scale-without-headcount',
@@ -439,7 +439,7 @@ export default function ScaleWithoutHeadcountPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book a free 30-minute discovery call
+                Book Discovery Call
               </Link>
             </ScrollReveal>
           </div>

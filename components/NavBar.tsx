@@ -15,7 +15,7 @@ export default function NavBar() {
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({
         event: 'cta_click',
-        cta_name: 'Book a Free Discovery Call',
+        cta_name: 'Book Discovery Call',
         cta_location: 'top_nav',
         link_destination: '/contact'
       })
@@ -131,7 +131,7 @@ export default function NavBar() {
             </div>
 
             <Link href="/contact" onClick={trackNavCTA} className="btn-shimmer inline-flex items-center justify-center font-sans font-semibold text-sm bg-slate text-white px-6 py-3 rounded-lg hover:bg-slate-light transition-all whitespace-nowrap">
-              Book a Free Discovery Call
+              Book Discovery Call
             </Link>
           </div>
 
@@ -166,7 +166,7 @@ export default function NavBar() {
             <Link href="/why-leomayn" className="block py-2 text-sm font-sans text-slate">Why Leomayn</Link>
             <Link href="/why-leomayn/case-studies/emsere" className="block py-2 text-sm font-sans text-slate pl-4">Case Studies</Link>
             <Link href="/faq" className="block py-2 text-sm font-sans text-slate pl-4">FAQ</Link>
-            <Link href="/contact" onClick={trackNavCTA} className="block py-2 text-sm font-sans text-coral font-semibold">Book a Free Discovery Call</Link>
+            <Link href="/contact" onClick={trackNavCTA} className="block py-2 text-sm font-sans text-coral font-semibold">Book Discovery Call</Link>
           </div>
         )}
       </div>

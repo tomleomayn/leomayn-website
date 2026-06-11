@@ -376,7 +376,7 @@ export default function EmsereCaseStudyPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                We help ambitious businesses build AI systems that connect live data to real decisions. Book a free 30-minute discovery call to explore what this could look like for you.
+                We help ambitious businesses build AI systems that connect live data to real decisions. Book a free discovery call to explore what this could look like for you.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -384,7 +384,7 @@ export default function EmsereCaseStudyPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book a free 30-minute discovery call
+                Book a free discovery call
               </Link>
             </ScrollReveal>
           </div>
@@ -406,7 +406,7 @@ export default function EmsereCaseStudyPage() {
             {
               href: '/contact',
               title: 'Get in Touch',
-              description: 'Book a free 30-minute discovery call to explore how we can help.',
+              description: 'Book a 30-minute discovery call to explore how we can help.',
             },
           ]}
         />

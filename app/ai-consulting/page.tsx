@@ -245,7 +245,7 @@ export default function AIConsultingPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center font-sans font-semibold text-base border border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-slate transition-all min-w-[220px]"
                 >
-                  Book a free 30-minute discovery call
+                  Book a discovery call
                 </Link>
               </div>
             </ScrollReveal>

@@ -225,7 +225,7 @@ export default function FAQPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                We would rather answer directly than make you search. Book a free 30-minute discovery call and ask us anything.
+                We would rather answer directly than make you search. Book a 30-minute discovery call and ask us anything.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -233,7 +233,7 @@ export default function FAQPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book a free 30-minute discovery call
+                Book Discovery Call
               </Link>
             </ScrollReveal>
           </div>
@@ -249,7 +249,7 @@ export default function FAQPage() {
             {
               href: '/contact',
               title: 'Still Have Questions?',
-              description: 'Book a free 30-minute discovery call or send us a message.',
+              description: 'Book a 30-minute discovery call or send us a message.',
             },
             {
               href: '/approach',

@@ -469,7 +469,7 @@ export default function AIReadinessPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center font-sans font-semibold text-base bg-transparent text-white border border-white/25 px-8 py-4 rounded-md hover:border-white/50 transition-all min-w-[220px]"
                 >
-                  Book a free 30-minute discovery call
+                  Book a Discovery Call
                 </Link>
               </div>
             </ScrollReveal>

@@ -236,14 +236,14 @@ export default function AboutPage() {
               Work with us
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
-              Book a free 30-minute discovery call. We will map one workflow and show you
+              Book a 30-minute discovery call. We will map one workflow and show you
               where operational leverage exists in your business.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
             >
-              Book a free 30-minute discovery call
+              Book Discovery Call
             </Link>
           </div>
         </section>
@@ -263,7 +263,7 @@ export default function AboutPage() {
             {
               href: '/contact',
               title: 'Get in Touch',
-              description: 'Book a free 30-minute discovery call to discuss your operational challenges.',
+              description: 'Book a 30-minute discovery call to discuss your operational challenges.',
             },
           ]}
         />

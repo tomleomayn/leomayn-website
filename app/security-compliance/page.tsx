@@ -297,7 +297,7 @@ export default function SecurityCompliancePage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                We are happy to walk through our security practices in a free 30-minute discovery call.
+                We are happy to walk through our security practices in a discovery call.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -305,7 +305,7 @@ export default function SecurityCompliancePage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book a free 30-minute discovery call
+                Book Discovery Call
               </Link>
             </ScrollReveal>
           </div>

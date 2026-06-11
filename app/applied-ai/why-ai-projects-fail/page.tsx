@@ -7,7 +7,7 @@ import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'How to Avoid AI Project Failure | Leomayn',
-  description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow. Book a free discovery call.',
+  description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow. Book a discovery call.',
   keywords: ['how to avoid AI project failure', 'AI implementation failure', 'AI pilot failure', 'AI workflow redesign', 'operations', 'professional services'],
   alternates: {
     canonical: '/applied-ai/why-ai-projects-fail',
@@ -432,7 +432,7 @@ export default function WhyAIProjectsFailPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
               >
-                Book a free 30-minute discovery call
+                Book Discovery Call
               </Link>
             </ScrollReveal>
           </div>

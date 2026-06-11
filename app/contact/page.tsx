@@ -144,7 +144,7 @@ export default function ContactPage() {
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                Book a free 30-minute discovery call, send us a message, or drop us an email.
+                Book a 30-minute discovery call, send us a message, or drop us an email.
               </p>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
               {/* Calendly Section */}
               <div>
                 <h2 className="text-3xl font-serif leading-tight text-slate mb-6">
-                  Book a free 30-minute discovery call
+                  Book a discovery call
                 </h2>
                 <p className="text-base leading-relaxed text-slate mb-8">
                   The fastest way to start is a 30-minute discovery call. We'll discuss your goals, map one workflow, and consider improvement opportunities.
