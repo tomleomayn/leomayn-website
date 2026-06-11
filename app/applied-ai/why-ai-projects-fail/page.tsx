@@ -6,14 +6,14 @@ import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
-  title: 'How to Avoid AI Project Failure | Leomayn',
-  description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow. Book a discovery call.',
+  title: 'Why AI Projects Fail: Three Operational Fixes | Leomayn',
+  description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow.',
   keywords: ['how to avoid AI project failure', 'AI implementation failure', 'AI pilot failure', 'AI workflow redesign', 'operations', 'professional services'],
   alternates: {
     canonical: '/applied-ai/why-ai-projects-fail',
   },
   openGraph: {
-    title: 'How to Avoid AI Project Failure | Leomayn',
+    title: 'Why AI Projects Fail: Three Operational Fixes | Leomayn',
     description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
@@ -63,7 +63,7 @@ export default function WhyAIProjectsFailPage() {
     'itemListElement': [
       { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://leomayn.com' },
       { '@type': 'ListItem', 'position': 2, 'name': 'Applied AI', 'item': 'https://leomayn.com/applied-ai' },
-      { '@type': 'ListItem', 'position': 3, 'name': 'How to Avoid AI Project Failure', 'item': 'https://leomayn.com/applied-ai/why-ai-projects-fail' },
+      { '@type': 'ListItem', 'position': 3, 'name': 'Why AI Projects Fail', 'item': 'https://leomayn.com/applied-ai/why-ai-projects-fail' },
     ],
   }
 
