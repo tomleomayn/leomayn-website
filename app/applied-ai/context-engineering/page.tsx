@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'Context Engineering: The Skill That Makes All Your AI Smarter | Leomayn',
@@ -38,9 +39,16 @@ export default function ContextEngineeringPage() {
     'articleSection': 'Framework',
     'keywords': ['context engineering', 'AI context', 'prompt engineering', 'AI implementation', 'professional services'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -106,6 +114,7 @@ export default function ContextEngineeringPage() {
                 work is not the model. It is what the model knows before you ask.
               </p>
             </div>
+            <ArticleByline published="2026-05-13" />
           </div>
         </section>
 

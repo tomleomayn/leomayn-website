@@ -6,13 +6,13 @@ import ScrollReveal from '@/components/ScrollReveal'
 import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
-  title: 'Diagnose: Delivery Friction Audit | Leomayn',
+  title: 'Workflow Friction Audit: Find Where Capacity Is Stuck | Leomayn',
   description: 'Start here to identify where capacity is stuck. We map workflows, interview stakeholders, and quantify delivery friction before recommending solutions.',
   alternates: {
     canonical: '/services/diagnose',
   },
   openGraph: {
-    title: 'Diagnose: Delivery Friction Audit | Leomayn',
+    title: 'Workflow Friction Audit: Find Where Capacity Is Stuck | Leomayn',
     description: 'Start here to identify where capacity is stuck. We map workflows, interview stakeholders, and quantify delivery friction before recommending solutions.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',

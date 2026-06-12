@@ -6,10 +6,10 @@ import ScrollReveal from '@/components/ScrollReveal'
 import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
-  title: 'AI consulting for service organisations | Leomayn',
+  title: 'AI Consulting UK: Managed AI Agents for Growing Businesses | Leomayn',
   description: 'AI consulting that starts with workflow redesign. We diagnose what\'s broken, redesign how work flows, then use AI to scale what works.',
   openGraph: {
-    title: 'AI consulting for service organisations | Leomayn',
+    title: 'AI Consulting UK: Managed AI Agents for Growing Businesses | Leomayn',
     description: 'AI consulting that starts with workflow redesign. We diagnose what\'s broken, redesign how work flows, then use AI to scale what works.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',

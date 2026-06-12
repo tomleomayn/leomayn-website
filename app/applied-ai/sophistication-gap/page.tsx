@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'The AI Sophistication Gap: Why Adoption Is Not Enough | Leomayn',
@@ -38,9 +39,16 @@ export default function SophisticationGapPage() {
     'articleSection': 'Capability',
     'keywords': ['AI adoption', 'AI sophistication', 'capability building', 'upskilling', 'professional services'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -106,6 +114,7 @@ export default function SophisticationGapPage() {
                 it well. Adoption is not the metric that matters.
               </p>
             </div>
+            <ArticleByline published="2026-03-25" />
           </div>
         </section>
 

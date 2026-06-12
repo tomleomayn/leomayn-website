@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'Beyond Hourly Billing: AI and Services Pricing | Leomayn',
@@ -38,9 +39,16 @@ export default function BeyondHourlyBillingPage() {
     'articleSection': 'Strategy',
     'keywords': ['hourly billing', 'value pricing', 'professional services', 'AI economics', 'productisation'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -106,6 +114,7 @@ export default function BeyondHourlyBillingPage() {
                 earned 40% less. The value hasn&apos;t changed. The time has collapsed.
               </p>
             </div>
+            <ArticleByline published="2026-02-11" />
           </div>
         </section>
 

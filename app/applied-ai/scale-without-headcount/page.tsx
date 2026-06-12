@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'Scale Without Headcount: AI for Mid-Market Growth | Leomayn',
@@ -38,9 +39,16 @@ export default function ScaleWithoutHeadcountPage() {
     'articleSection': 'Growth',
     'keywords': ['scaling operations', 'operational leverage', 'mid-market', 'AI augmentation', 'professional services'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -106,6 +114,7 @@ export default function ScaleWithoutHeadcountPage() {
                 answer starts with understanding where capacity is trapped.
               </p>
             </div>
+            <ArticleByline published="2026-02-11" />
           </div>
         </section>
 
