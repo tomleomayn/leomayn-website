@@ -6,14 +6,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
-  title: 'AI Automation Services - Deliver Phase | Leomayn',
-  description: 'AI automation services that deliver working systems. We build, test, and deploy with your team involved. You own all code and IP. Get started.',
+  title: 'AI Implementation: Working Automation, Full Ownership | Leomayn',
+  description: 'We build, test, and deploy AI automation with your team involved. You own all code and IP. Working systems in weeks.',
   alternates: {
     canonical: '/services/deliver',
   },
   openGraph: {
-    title: 'AI Automation Services - Deliver Phase | Leomayn',
-    description: 'AI automation services that deliver working systems. We build, test, and deploy with your team involved. You own all code and IP. Get started.',
+    title: 'AI Implementation: Working Automation, Full Ownership | Leomayn',
+    description: 'We build, test, and deploy AI automation with your team involved. You own all code and IP. Working systems in weeks.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
