@@ -154,8 +154,9 @@ export default function DeliverPage() {
                   System build and integration
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  We configure automation platforms, build custom workflows, connect
-                  APIs, and integrate with your existing systems. Development follows
+                  We configure automation platforms,{' '}
+                  <Link href="/applied-ai/ai-agents-for-business" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">build the agents and workflows that do the work</Link>,
+                  connect APIs, and integrate with your existing systems. Development follows
                   the blueprint, with progress visible throughout.
                 </p>
               </div>
@@ -377,7 +378,8 @@ export default function DeliverPage() {
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
               Turns blueprints into working systems.<br />
-              Book a call to discuss your automation project.
+              Book a call to discuss your automation project, or start with the free{' '}
+              <Link href="/ai-planner" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link>.
             </p>
             <Link
               href="/contact"

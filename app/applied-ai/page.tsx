@@ -32,8 +32,8 @@ const insights = [
     category: 'Framework',
   },
   {
-    title: 'Avoiding common pitfalls when deploying AI',
-    description: 'Most AI projects stall for fixable reasons. Three operational problems explain the gap between adoption and value.',
+    title: 'Why AI projects fail and how to make yours succeed',
+    description: 'Most AI projects stall for fixable reasons. Five operational patterns explain the gap between adoption and value.',
     href: '/applied-ai/why-ai-projects-fail',
     category: 'Operations',
   },

@@ -136,7 +136,7 @@ export default function BeyondHourlyBillingPage() {
               <ScrollReveal delay={0.2}>
                 <p>
                   The work is still valuable. The judgment is still required. The client
-                  still needs the outcome. But the clock — the thing you invoice against —
+                  still needs the outcome. But the clock, the thing you invoice against,
                   has shrunk.
                 </p>
               </ScrollReveal>
@@ -261,12 +261,13 @@ export default function BeyondHourlyBillingPage() {
               <ScrollReveal delay={0.15}>
                 <p>
                   AI is collapsing the cost of phase two. Draft documents, research
-                  synthesis, data analysis, initial modelling — all are accelerating.
+                  synthesis, data analysis, initial modelling. All are accelerating.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
-                  The valuable skill is asking the right questions before the work starts,
+                  The valuable skill is{' '}
+                  <Link href="/applied-ai/context-engineering" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">asking the right questions before the work starts</Link>,
                   and applying the right judgment when it comes back.
                 </p>
               </ScrollReveal>
@@ -341,15 +342,15 @@ export default function BeyondHourlyBillingPage() {
                 <p>
                   You already have the hard part: client relationships, domain expertise,
                   institutional knowledge, and a track record of solving real problems.
-                  The opportunity is to remove the operational drag that prevents you from
-                  scaling them.
+                  The opportunity is to remove the operational drag that prevents you from{' '}
+                  <Link href="/applied-ai/scale-without-headcount" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">scaling them without adding headcount</Link>.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
                   Take an existing service. Automate the repetitive components. Elevate
                   the human judgment that clients actually pay for. That is the sustainable
-                  path — and it starts with understanding where your <Link href="/services/diagnose" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">delivery time goes</Link>.
+                  path, and it starts with understanding where your <Link href="/services/diagnose" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">delivery time goes</Link>.
                 </p>
               </ScrollReveal>
             </div>
@@ -383,7 +384,8 @@ export default function BeyondHourlyBillingPage() {
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
                 We help professional services firms identify which services are ready for
                 productisation and what the commercial impact could be. It starts with
-                mapping one value flow.
+                mapping one value flow. The free{' '}
+                <Link href="/ai-planner" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> is a good first step.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>

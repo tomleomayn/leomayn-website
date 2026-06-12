@@ -6,15 +6,15 @@ import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
-  title: 'Why AI Projects Fail: Three Operational Fixes | Leomayn',
-  description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow.',
-  keywords: ['how to avoid AI project failure', 'AI implementation failure', 'AI pilot failure', 'AI workflow redesign', 'operations', 'professional services'],
+  title: 'Why AI Projects Fail and How to Make Yours Succeed | Leomayn',
+  description: 'Five predictable reasons AI projects stall. All operational, not technical. Identify which one you face and fix it before you build anything.',
+  keywords: ['why AI projects fail', 'AI project failure', 'AI implementation failure', 'AI pilot failure', 'AI workflow redesign', 'operations'],
   alternates: {
     canonical: '/applied-ai/why-ai-projects-fail',
   },
   openGraph: {
-    title: 'Why AI Projects Fail: Three Operational Fixes | Leomayn',
-    description: 'Three fixable problems explain why most AI projects stall. Identify which one you face and start with the right workflow.',
+    title: 'Why AI Projects Fail and How to Make Yours Succeed | Leomayn',
+    description: 'Five predictable reasons AI projects stall. All operational, not technical. Identify which one you face and fix it before you build anything.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
@@ -28,15 +28,15 @@ export default function WhyAIProjectsFailPage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    'headline': 'Avoiding common pitfalls when deploying AI',
-    'description': 'Three fixable problems explain why most AI projects stall. All of them sit in operations, not technology.',
+    'headline': 'Why AI projects fail and how to make yours succeed',
+    'description': 'Five predictable reasons AI projects stall. All operational, not technical.',
     'image': 'https://leomayn.com/logo/logo-social-1200x630.png',
     'url': 'https://leomayn.com/applied-ai/why-ai-projects-fail',
     'datePublished': '2026-02-11',
-    'dateModified': '2026-02-12',
-    'wordCount': 980,
+    'dateModified': '2026-06-11',
+    'wordCount': 2200,
     'articleSection': 'Operations',
-    'keywords': ['AI implementation', 'workflow redesign', 'AI failure', 'operations', 'professional services'],
+    'keywords': ['why AI projects fail', 'AI implementation', 'workflow redesign', 'AI failure', 'operations'],
     'author': {
       '@type': 'Organization',
       'name': 'Leomayn',
@@ -57,6 +57,45 @@ export default function WhyAIProjectsFailPage() {
     },
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': 'What percentage of AI projects fail?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'MIT research found that fewer than one in 20 organisations have AI meaningfully integrated into their workflows. McKinsey found that only 6% of organisations achieve real margin impact from AI. Many AI projects stall not because of the technology, but because of operational gaps in how the work is organised around the technology.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'Why do AI projects fail?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'AI projects fail for five predictable operational reasons: automating broken processes instead of fixing them first, choosing tools before defining problems, deploying without evaluation criteria, allowing shadow AI to spread without governance, and measuring hours saved instead of business outcomes. None of these are technology problems.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'How do you prevent AI project failure?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Start with the work, not the tool. Map your critical workflows as they actually happen (not as documented). Diagnose where time is lost, where rework originates, and where handoffs break. Fix the process, define evaluation criteria for quality, then select and deploy AI tools that fit the redesigned workflow.',
+        },
+      },
+      {
+        '@type': 'Question',
+        'name': 'What is the difference between a successful AI pilot and a successful AI rollout?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Pilots test whether the technology works. Rollouts test whether the organisation can absorb it. These are different challenges. The first is technical; the second is operational. Many firms prepare for the first and are caught out by the second. Successful rollouts require process redesign, evaluation criteria, governance, and change capacity.',
+        },
+      },
+    ],
+  }
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -70,6 +109,7 @@ export default function WhyAIProjectsFailPage() {
   return (
     <>
       <SchemaMarkup data={articleSchema} />
+      <SchemaMarkup data={faqSchema} />
       <SchemaMarkup data={breadcrumbSchema} />
       <NavBar />
       <main className="min-h-screen">
@@ -97,142 +137,270 @@ export default function WhyAIProjectsFailPage() {
               &larr; All applied AI
             </Link>
             <h1 className="text-5xl lg:text-6xl font-serif leading-[1.1] text-slate mb-6 animate-fade-in-up">
-              Avoiding common pitfalls when deploying AI
+              Why AI projects fail and how to make yours succeed
             </h1>
             <div className="max-w-2xl flex items-stretch animate-fade-in-up stagger-1">
               <div className="bg-[#9ab8cb] rounded-full my-[5px]" style={{ width: '3px', minWidth: '3px' }}></div>
               <p className="text-xl leading-[1.6] text-coral-accessible pl-6">
-                Most AI projects stall for fixable reasons. Three operational
-                problems explain the gap between adoption and value.
+                The technology is not the problem. Five predictable, operational
+                reasons explain why many AI projects stall. All of them are fixable.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section 1: The gap */}
+        {/* TL;DR */}
+        <section className="py-12 px-6 lg:px-8 bg-chalk border-b border-steel/20">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-pearl border border-steel rounded-lg p-6 lg:p-8">
+              <h2 className="text-sm font-sans font-bold uppercase tracking-widest text-coral-accessible mb-4">Summary</h2>
+              <ul className="space-y-3 text-base leading-relaxed text-slate">
+                <li className="flex items-start">
+                  <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
+                  <span><a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Fewer than one in 20</a> organisations have AI meaningfully integrated into their workflows. The gap is operational, not technical.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
+                  <span>Five failure patterns account for many stalled AI projects: broken processes, tool-first thinking, no evaluation criteria, ungoverned shadow AI, and wrong metrics.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
+                  <span>The fix is the same in every case: understand the work before you try to change it.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Opening: The pilot worked */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                The gap between adoption and value
+                The pilot worked. The rollout did not.
               </h2>
             </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Most organisations have investigated generative AI. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Fewer than one in 20</a> have
-                  it meaningfully integrated into their workflows.
+                  This is the most common AI story. A team runs a
+                  pilot. The technology performs. Leadership signs off on scaling. Then nothing
+                  happens, or worse, what scales does not deliver the value the pilot promised.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <p>
-                  That is an operations problem.
+                  The reason is straightforward: pilots test whether the technology works.
+                  Rollouts test whether the organisation can absorb it. These are different
+                  challenges. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">MIT researchers</a> call
+                  it the Learning Gap: when AI tools forget corrections and keep producing
+                  first-draft output, teams spend more time fixing than creating. <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">McKinsey</a> found
+                  that the top-performing 6% achieving real margin impact from AI share one
+                  trait: they redesigned their workflows first.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
-                  <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">MIT researchers</a> call
-                  it the Learning Gap. When AI tools forget corrections
-                  and keep producing first-draft output, teams spend more time fixing than
-                  creating. The result is visible adoption with invisible value. People use
-                  the tools. The metrics don&apos;t move.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={0.25}>
-                <p>
-                  The number that matters is how many workflows have been redesigned around
-                  AI. <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">McKinsey</a> found
-                  that the top-performing 6% of organisations achieving
-                  real margin impact from AI share one trait: they redesigned their workflows.
-                  55% of high performers did this, compared with 20% across the broader market.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={0.3}>
-                <p>
-                  The gap is not technology. It is how the work is organised around the technology.
+                  We see five failure patterns that account for many stalled
+                  AI deployments. None of them are about the models.
                 </p>
               </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* Section 2: Three failure modes */}
+        {/* Five Failure Patterns */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                Three failure modes
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-12">
+                Five failure patterns
               </h2>
             </ScrollReveal>
+
+            {/* Pattern 1 */}
             <ScrollReveal delay={0.1}>
-              <p className="text-lg leading-relaxed text-slate mb-12">
-                When AI projects stall, the cause is almost always one of three things.
-                Recognising which one you are dealing with helps you determine the right response.
-              </p>
-            </ScrollReveal>
-
-            {/* Failure mode 1 */}
-            <ScrollReveal delay={0.15}>
-              <div className="mb-12">
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  1. You chose the wrong starting point
-                </h3>
-                <p className="text-lg leading-relaxed text-slate">
-                  The best starting points have clear inputs, repeatable steps, and measurable
-                  outputs. If you automated a process that relies on tacit knowledge,
-                  undocumented exceptions, or cross-team negotiations, the tool was never
-                  going to work. The workflow was not the right place to start with applying AI.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Failure mode 2 */}
-            <ScrollReveal delay={0.2}>
-              <div className="mb-12">
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  2. You automated a broken workflow
-                </h3>
-                <div className="space-y-6 text-lg leading-relaxed text-slate">
+              <div className="bg-white border border-steel rounded-lg p-8 mb-8">
+                <span className="text-xs font-mono font-medium uppercase tracking-wider text-coral-accessible">Pattern 01</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mt-2 mb-4">Automating a broken process</h3>
+                <div className="space-y-4 text-base leading-relaxed text-slate/80">
                   <p>
-                    Your process documentation says:
-                    Brief, Work, Review, Deliver. The actual process is: Brief, Clarification,
-                    Re-brief, Partial work, Scope creep, Fire drills, Rework, Stakeholder loops,
-                    Version chaos, Delivery.
-                  </p>
-                  <p className="font-semibold">
-                    If you automate the workaround, you scale dysfunction.
+                    A firm identifies a slow, painful workflow (client onboarding, proposal
+                    generation, compliance reporting) and reaches for AI to speed it up.
+                    But the workflow was never designed. It grew organically over years,
+                    through workarounds and tribal knowledge.
                   </p>
                   <p>
-                    Your real process lives in someone&apos;s browser history, in Slack DMs,
-                    in the spreadsheet called FINAL_v5. When the documented process and the
-                    actual process diverge, organisations run on goodwill. Handoffs break.
-                    Metrics lie. Rework spikes.
+                    AI applied to a broken process does not fix it. It accelerates it.
+                    You produce the same errors faster, at greater scale, with more confidence.
                   </p>
+                  <p className="font-semibold text-slate text-sm">What this looks like:</p>
                   <p>
-                    Before any automation, watch how work actually gets done. Count the
-                    browser tabs. Document the workarounds. That is the process you need to fix.
+                    An accounting firm automates tax return preparation. Turnaround drops
+                    from four days to one. But the review process has not changed, so
+                    senior staff still take three days to review. Net gain: one day, not three.
+                    The bottleneck was never preparation.
+                  </p>
+                </div>
+                <div className="bg-pearl rounded-lg p-5 mt-5">
+                  <span className="text-xs font-mono font-medium uppercase tracking-wider text-rock-dark">What to do instead</span>
+                  <p className="text-base leading-relaxed text-slate mt-2">
+                    <Link href="/applied-ai/operating-architecture" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Map the end-to-end workflow</Link> before selecting any tool. Identify where
+                    time is actually lost, where decisions happen, and where rework
+                    originates. Fix the process, then automate the fixed version. Our{' '}
+                    <Link href="/services/diagnose" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Diagnose phase</Link> does
+                    exactly this.
                   </p>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Failure mode 3 */}
-            <ScrollReveal delay={0.25}>
-              <div>
-                <h3 className="text-2xl font-serif leading-snug text-slate mb-4">
-                  3. You didn&apos;t equip the team
-                </h3>
-                <div className="space-y-6 text-lg leading-relaxed text-slate">
+            {/* Pattern 2 */}
+            <ScrollReveal delay={0.1}>
+              <div className="bg-white border border-steel rounded-lg p-8 mb-8">
+                <span className="text-xs font-mono font-medium uppercase tracking-wider text-coral-accessible">Pattern 02</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mt-2 mb-4">Choosing tools before defining problems</h3>
+                <div className="space-y-4 text-base leading-relaxed text-slate/80">
                   <p>
-                    AI tools arrive without operating instructions. Teams receive access but
-                    not context: which tasks to use them for, what good output looks like,
-                    how to review AI-generated work, or when to override it.
+                    A partner reads about an AI tool at a conference. The firm buys it.
+                    Then a team is asked to find uses for it. This is backwards. Tool
+                    selection should be the last step, not the first.
                   </p>
                   <p>
-                    The result is a tool that sits unused after week two. <a href="https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">BCG research</a> suggests
-                    that while most organisations have adopted AI tools, fewer
-                    than one in 20 are creating real value from them. Without context
-                    for how to use the tools well, adoption stalls.
+                    Without a clear diagnosis of which problems matter most, firms
+                    accumulate tools without building capability.
+                  </p>
+                  <p className="font-semibold text-slate text-sm">What this looks like:</p>
+                  <p>
+                    A company adopts a contract review AI, a research assistant, and a
+                    document automation platform. Each works in isolation. None share data.
+                    Staff use whichever one they remember, inconsistently. Twelve months
+                    later, usage is declining and nobody can quantify the return.
+                  </p>
+                </div>
+                <div className="bg-pearl rounded-lg p-5 mt-5">
+                  <span className="text-xs font-mono font-medium uppercase tracking-wider text-rock-dark">What to do instead</span>
+                  <p className="text-base leading-relaxed text-slate mt-2">
+                    Start with the problem, not the product. Diagnose which workflows
+                    create the most friction, cost, or risk. Score opportunities by impact
+                    and feasibility. Then select tools that fit the architecture you need.
+                    The free{' '}
+                    <Link href="/ai-planner" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> helps
+                    you identify which problems to solve first.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Pattern 3 */}
+            <ScrollReveal delay={0.1}>
+              <div className="bg-white border border-steel rounded-lg p-8 mb-8">
+                <span className="text-xs font-mono font-medium uppercase tracking-wider text-coral-accessible">Pattern 03</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mt-2 mb-4">No evaluation, no trust</h3>
+                <div className="space-y-4 text-base leading-relaxed text-slate/80">
+                  <p>
+                    Teams deploy AI to draft client communications, summarise meetings, or
+                    analyse data. But nobody has defined what &ldquo;good enough&rdquo;
+                    looks like. Without evaluation criteria, every output requires manual
+                    review, defeating the purpose.
+                  </p>
+                  <p>
+                    <Link href="/applied-ai/context-engineering" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Prompt quality becomes folklore</Link>: &ldquo;Sarah gets good results because
+                    she knows how to ask.&rdquo; That is not a capability. That is a single
+                    point of failure.
+                  </p>
+                  <p className="font-semibold text-slate text-sm">What this looks like:</p>
+                  <p>
+                    A team uses AI to draft client proposals. Some are excellent. Some are
+                    embarrassing. Nobody has a rubric. Senior staff review everything line
+                    by line, adding time rather than saving it. The AI is technically
+                    functional but operationally untrusted.
+                  </p>
+                </div>
+                <div className="bg-pearl rounded-lg p-5 mt-5">
+                  <span className="text-xs font-mono font-medium uppercase tracking-wider text-rock-dark">What to do instead</span>
+                  <p className="text-base leading-relaxed text-slate mt-2">
+                    Define evaluation criteria before deployment. What does a passing
+                    output look like? What fails? Build rubrics that anyone on the team
+                    can apply consistently. Trust is not a feeling. It is an architecture.
+                    This is a core part of{' '}
+                    <Link href="/ai-readiness" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI readiness</Link>.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Pattern 4 */}
+            <ScrollReveal delay={0.1}>
+              <div className="bg-white border border-steel rounded-lg p-8 mb-8">
+                <span className="text-xs font-mono font-medium uppercase tracking-wider text-coral-accessible">Pattern 04</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mt-2 mb-4">Shadow AI without governance</h3>
+                <div className="space-y-4 text-base leading-relaxed text-slate/80">
+                  <p>
+                    When official AI rollouts are slow, people find their own tools. This
+                    is not a technology risk. It is a management signal. Employees are
+                    telling you that the approved path is too slow, too restrictive, or
+                    nonexistent.
+                  </p>
+                  <p>
+                    <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Gartner predicts</a> 40%
+                    of enterprise applications will embed AI agents by the end of 2026, up
+                    from less than 5% in 2025. Many will be adopted without a governance
+                    framework. The result: overlapping capabilities, no audit trail, and no
+                    single owner accountable for what the AI is doing.
+                  </p>
+                  <p className="font-semibold text-slate text-sm">What this looks like:</p>
+                  <p>
+                    Different teams in the same firm use different AI tools for the same
+                    task. Client data flows into three separate platforms. Nobody has an
+                    inventory. When a compliance question arises, it takes two weeks to work
+                    out what data went where.
+                  </p>
+                </div>
+                <div className="bg-pearl rounded-lg p-5 mt-5">
+                  <span className="text-xs font-mono font-medium uppercase tracking-wider text-rock-dark">What to do instead</span>
+                  <p className="text-base leading-relaxed text-slate mt-2">
+                    Govern the decision, not the tool. Approve faster than people can
+                    self-serve and you eliminate the incentive for shadow adoption. Maintain
+                    an inventory of what is deployed, who owns it, and what data it touches.
+                    Leadership owns this. It cannot be delegated to IT alone.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Pattern 5 */}
+            <ScrollReveal delay={0.1}>
+              <div className="bg-white border border-steel rounded-lg p-8">
+                <span className="text-xs font-mono font-medium uppercase tracking-wider text-coral-accessible">Pattern 05</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mt-2 mb-4">Measuring the wrong thing</h3>
+                <div className="space-y-4 text-base leading-relaxed text-slate/80">
+                  <p>
+                    The default AI business case is &ldquo;hours saved.&rdquo; It sounds
+                    concrete but it is misleading. If your team saves two hours per week but
+                    cannot bill more, close faster, or take on additional clients, the saving
+                    is invisible to the P&amp;L.
+                  </p>
+                  <p>
+                    Hours saved is an input metric. What matters is the output: capacity
+                    recovered, rework eliminated, revenue protected, risk reduced. The firms
+                    that sustain AI investment are the ones that measure value in terms their
+                    board already cares about.
+                  </p>
+                  <p className="font-semibold text-slate text-sm">What this looks like:</p>
+                  <p>
+                    A firm reports that AI saves 500 hours per quarter. Leadership asks
+                    what happened to those hours. Nobody can answer. The budget comes under
+                    scrutiny at the next review cycle.
+                  </p>
+                </div>
+                <div className="bg-pearl rounded-lg p-5 mt-5">
+                  <span className="text-xs font-mono font-medium uppercase tracking-wider text-rock-dark">What to do instead</span>
+                  <p className="text-base leading-relaxed text-slate mt-2">
+                    Measure the cost of the problem, not the speed of the solution. What
+                    does rework cost you? How much does it cost when a senior associate
+                    leaves and their knowledge goes with them? Frame AI value in the
+                    language of the problem it solves.
                   </p>
                 </div>
               </div>
@@ -240,173 +408,132 @@ export default function WhyAIProjectsFailPage() {
           </div>
         </section>
 
-        {/* Section 3: Between paralysis and chaos */}
+        {/* The common thread + comparison table */}
         <section className="py-24 px-6 lg:px-8 bg-chalk">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                Between paralysis and chaos
+                The common thread
               </h2>
             </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Beyond individual workflows, organisations face two traps.
+                  All five patterns share the same root cause: the work was never properly
+                  understood before the technology was applied. Process was assumed, not
+                  mapped. Quality was hoped for, not defined. Governance was deferred, not
+                  designed.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
-                <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-pearl border border-steel rounded-md p-6">
-                    <h3 className="text-lg font-serif text-slate mb-2">Paralysis</h3>
-                    <p className="text-base text-slate/70">Waiting for the perfect strategy, the perfect tool, the perfect moment. Nothing ships. Months pass.</p>
-                  </div>
-                  <div className="bg-pearl border border-steel rounded-md p-6">
-                    <h3 className="text-lg font-serif text-slate mb-2">Chaos</h3>
-                    <p className="text-base text-slate/70">Starting ten projects simultaneously with no coordination or measurement. Everything ships. Nothing lands.</p>
-                  </div>
+                <div className="overflow-x-auto my-8">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b-2 border-slate/20">
+                        <th className="py-3 pr-6 text-xs font-mono font-medium uppercase tracking-wider text-steel">What fails</th>
+                        <th className="py-3 text-xs font-mono font-medium uppercase tracking-wider text-steel">What works</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-base leading-relaxed">
+                      <tr className="border-b border-steel/20">
+                        <td className="py-3 pr-6 text-coral-accessible">Buy tools, then find problems</td>
+                        <td className="py-3 text-slate">Diagnose problems, then select tools</td>
+                      </tr>
+                      <tr className="border-b border-steel/20">
+                        <td className="py-3 pr-6 text-coral-accessible">Automate existing workflows as-is</td>
+                        <td className="py-3 text-slate">Redesign workflows, then automate</td>
+                      </tr>
+                      <tr className="border-b border-steel/20">
+                        <td className="py-3 pr-6 text-coral-accessible">Trust AI output by default</td>
+                        <td className="py-3 text-slate">Define evaluation criteria upfront</td>
+                      </tr>
+                      <tr className="border-b border-steel/20">
+                        <td className="py-3 pr-6 text-coral-accessible">Restrict tools, hope for compliance</td>
+                        <td className="py-3 text-slate">Govern decisions, enable adoption</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 pr-6 text-coral-accessible">Measure hours saved</td>
+                        <td className="py-3 text-slate">Measure cost of the problem solved</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
-                  The answer sits between them. Progress with intention.
+                  This is why we start every engagement with a{' '}
+                  <Link href="/services/diagnose" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">diagnosis</Link>.
+                  Not because the technology is complicated, but because the work underneath
+                  it usually is, and nobody has taken the time to look at it clearly.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.25}>
                 <p>
-                  Start where three conditions intersect:
-                </p>
-                <div className="grid md:grid-cols-3 gap-6 my-8">
-                  <div className="bg-white border-2 border-coral rounded-md p-6 text-center">
-                    <p className="text-base font-semibold text-slate">High impact on a measurable outcome</p>
-                  </div>
-                  <div className="bg-white border-2 border-coral rounded-md p-6 text-center">
-                    <p className="text-base font-semibold text-slate">Low complexity to implement</p>
-                  </div>
-                  <div className="bg-white border-2 border-coral rounded-md p-6 text-center">
-                    <p className="text-base font-semibold text-slate">High learning value for the team</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.3}>
-                <p>One focused project beats ten half-started ones.</p>
-              </ScrollReveal>
-              <ScrollReveal delay={0.35}>
-                <div className="p-8 bg-coral/10 rounded-md my-8">
-                  <h3 className="text-xl font-serif text-slate mb-4">The right first workflows share common traits</h3>
-                  <p className="text-base text-slate mb-4">Clear inputs. Repeatable steps. Measurable output. Examples:</p>
-                  <ul className="space-y-2 text-base text-slate">
-                    <li className="flex items-start">
-                      <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Weekly reporting</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Pipeline updates</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Meeting preparation</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Proposal drafting</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-coral rounded-full w-2 h-2 mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Client onboarding documentation</span>
-                    </li>
-                  </ul>
-                </div>
-              </ScrollReveal>
-              <ScrollReveal delay={0.4}>
-                <p>
-                  Pick one workflow. Redesign it end-to-end. Measure the result. Learn from it.
-                  Then pick the next one.
+                  If you want to start smaller, the{' '}
+                  <Link href="/ai-planner" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> is
+                  a free, five-minute self-assessment that surfaces the same patterns.
+                  It will not solve the problem, but it will show you where to look.
                 </p>
               </ScrollReveal>
             </div>
           </div>
         </section>
 
-        {/* Section 4: Fix work first */}
+        {/* FAQ Section */}
         <section className="py-24 px-6 lg:px-8 bg-pearl">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
-              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                What &ldquo;fix work first&rdquo; actually means
+              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-10">
+                Frequently asked questions
               </h2>
             </ScrollReveal>
-            <div className="space-y-6 text-lg leading-relaxed text-slate">
+            <div className="space-y-8">
               <ScrollReveal delay={0.1}>
-                <p>
-                  Fixing work means a focused <Link href="/services/diagnose" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">diagnostic</Link> on how value actually flows through
-                  your organisation.
-                </p>
+                <div>
+                  <h3 className="text-xl font-serif text-slate mb-3">What percentage of AI projects fail?</h3>
+                  <p className="text-base leading-relaxed text-slate/80">
+                    MIT research found that fewer than one in 20 organisations have AI
+                    meaningfully integrated into their workflows. McKinsey found that only
+                    6% of organisations achieve real margin impact from AI. Many
+                    stall because of operational gaps, not technical ones.
+                  </p>
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
-                <p>
-                  Start with one critical value flow. Pitch to retainer. Brief to delivered
-                  work. Intake to matter close. Map it as it actually happens.
-                </p>
+                <div>
+                  <h3 className="text-xl font-serif text-slate mb-3">Why do AI projects fail?</h3>
+                  <p className="text-base leading-relaxed text-slate/80">
+                    Five predictable operational reasons: automating broken processes
+                    instead of fixing them first, choosing tools before defining problems,
+                    deploying without evaluation criteria, allowing shadow AI to spread
+                    without governance, and measuring hours saved instead of business
+                    outcomes.
+                  </p>
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
-                <p>Look for five things:</p>
-                <ul className="mt-4 space-y-4">
-                  <li className="flex items-start">
-                    <span className="bg-coral rounded-full w-2 h-2 mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span><strong>Time spent on work about work.</strong> Coordination, chasing approvals, reformatting, copying data between systems. Capacity that creates no client value.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-coral rounded-full w-2 h-2 mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span><strong>Rework and revision rates.</strong> How many passes does a deliverable take before it is right? Where do errors enter?</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-coral rounded-full w-2 h-2 mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span><strong>Handoff friction.</strong> Where does work stall between people or teams? What information gets lost in the transition?</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-coral rounded-full w-2 h-2 mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span><strong>Scope creep patterns.</strong> Where does agreed work expand without corresponding adjustment to timelines or pricing?</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-coral rounded-full w-2 h-2 mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span><strong>Decision bottlenecks.</strong> Where does one person&apos;s availability hold up an entire workflow?</span>
-                  </li>
-                </ul>
+                <div>
+                  <h3 className="text-xl font-serif text-slate mb-3">How do you prevent AI project failure?</h3>
+                  <p className="text-base leading-relaxed text-slate/80">
+                    Start with the work, not the tool. Map your critical workflows as they
+                    actually happen. Diagnose where time is lost, where rework originates,
+                    and where handoffs break. Fix the process, define evaluation criteria
+                    for quality, then select and deploy AI tools that fit the redesigned
+                    workflow.
+                  </p>
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={0.25}>
-                <p>
-                  Quantify these. Put hours and pounds against them. That creates the
-                  business case for change and tells you precisely where AI and automation
-                  will create the most value.
-                </p>
-              </ScrollReveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5: Operating architecture */}
-        <section className="py-24 px-6 lg:px-8 bg-chalk">
-          <div className="max-w-4xl mx-auto">
-            <ScrollReveal>
-              <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                The operating architecture beneath your tools
-              </h2>
-            </ScrollReveal>
-            <div className="space-y-6 text-lg leading-relaxed text-slate">
-              <ScrollReveal delay={0.1}>
-                <p>
-                  AI delivers durable value only when your pricing model, your delivery
-                  workflows, and your technology work together. Most firms invest in the
-                  technology and hope it redesigns the rest. It does not.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={0.15}>
-                <p>
-                  <Link href="/applied-ai/operating-architecture" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">
-                    Read more about the operating architecture your AI tools need &rarr;
-                  </Link>
-                </p>
+                <div>
+                  <h3 className="text-xl font-serif text-slate mb-3">What is the difference between a successful AI pilot and a successful rollout?</h3>
+                  <p className="text-base leading-relaxed text-slate/80">
+                    Pilots test whether the technology works. Rollouts test whether the
+                    organisation can absorb it. These are different challenges. Successful
+                    rollouts require process redesign, evaluation criteria, governance, and
+                    change capacity. Many firms prepare for the first and are caught out by
+                    the second.
+                  </p>
+                </div>
               </ScrollReveal>
             </div>
           </div>
@@ -417,23 +544,29 @@ export default function WhyAIProjectsFailPage() {
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-white mb-6">
-                Start with one workflow
+                Fix the work first
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
-                You don&apos;t need a company-wide AI strategy to make progress. You need
-                one workflow, diagnosed honestly, redesigned thoughtfully, and measured
-                rigorously. We will identify which one to start with.
+                Start with a diagnosis. Understand the work. Then decide where AI fits.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
-              >
-                Book Discovery Call
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/services/diagnose"
+                  className="inline-flex items-center justify-center font-sans font-semibold text-base bg-coral text-slate px-8 py-4 rounded-md hover:bg-coral-dark transition-all min-w-[220px]"
+                >
+                  Start with Diagnose
+                </Link>
+                <Link
+                  href="/ai-planner"
+                  className="inline-flex items-center justify-center font-sans font-semibold text-base bg-transparent text-white border border-white/25 px-8 py-4 rounded-md hover:border-white/50 transition-all min-w-[220px]"
+                >
+                  Try the AI Planner (free)
+                </Link>
+              </div>
             </ScrollReveal>
           </div>
         </section>
@@ -452,6 +585,9 @@ export default function WhyAIProjectsFailPage() {
               <li>
                 <a href="https://www.bcg.com/publications/2025/are-you-generating-value-from-ai-the-widening-gap" target="_blank" rel="noopener noreferrer" className="hover:text-coral-accessible transition-colors">BCG, &ldquo;The Widening AI Value Gap: Build for the Future&rdquo; (2025)</a>
               </li>
+              <li>
+                <a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" target="_blank" rel="noopener noreferrer" className="hover:text-coral-accessible transition-colors">Gartner, &ldquo;40% of Enterprise Apps Will Feature AI Agents by 2026&rdquo;</a>
+              </li>
             </ol>
           </div>
         </section>
@@ -459,19 +595,19 @@ export default function WhyAIProjectsFailPage() {
           heading="More from Applied AI"
           pages={[
             {
-              href: '/applied-ai/scale-without-headcount',
-              title: 'Scale Without Headcount',
-              description: 'How automation lets firms grow output without growing the team.',
+              href: '/ai-readiness',
+              title: 'AI Readiness',
+              description: 'What to fix before you build anything with AI.',
             },
             {
               href: '/applied-ai/operating-architecture',
               title: 'Operating Architecture',
-              description: 'How AI fits into existing workflows without replacing what already works.',
+              description: 'The layer beneath your AI tools that makes them work.',
             },
             {
               href: '/applied-ai',
               title: 'All Articles',
-              description: 'Browse all Applied AI perspectives for professional services.',
+              description: 'Browse all Applied AI perspectives.',
             },
           ]}
         />

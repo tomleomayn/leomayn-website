@@ -171,6 +171,12 @@ export default function DiagnosePage() {
               prioritised by impact and effort. We don't make assumptions or offer generic advice.
               We provide evidence-based analysis of your specific operational reality.
             </p>
+            <p className="text-lg leading-relaxed text-slate mt-6">
+              Skipping this step is the most common{' '}
+              <Link href="/applied-ai/why-ai-projects-fail" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">reason AI projects fail</Link>.
+              If you want a quick read before we talk, the free{' '}
+              <Link href="/ai-planner" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> surfaces where the friction sits.
+            </p>
           </div>
         </section>
 

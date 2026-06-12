@@ -120,7 +120,7 @@ export default function ContextEngineeringPage() {
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Most organisations start their AI journey with prompt engineering.
+                  Many organisations start their AI journey with prompt engineering.
                   Learning to write clear, specific instructions is a genuine skill,
                   and teams that invest in it get better outputs.
                 </p>
@@ -142,8 +142,8 @@ export default function ContextEngineeringPage() {
               <ScrollReveal delay={0.25}>
                 <p>
                   Organisations that invest only in prompting tend to say: &ldquo;Our
-                  best people get great results from AI.&rdquo; That is a ceiling,
-                  not a strategy.
+                  best people get great results from AI.&rdquo; That is{' '}
+                  <Link href="/applied-ai/sophistication-gap" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">a ceiling, not a strategy</Link>.
                 </p>
               </ScrollReveal>
             </div>
@@ -409,7 +409,9 @@ export default function ContextEngineeringPage() {
               <ScrollReveal delay={0.1}>
                 <p>
                   The shift does not need to start with technology. It starts
-                  with documentation.
+                  with documentation. If you want to see where your foundations
+                  stand first, start with an{' '}
+                  <Link href="/ai-readiness" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI readiness</Link> view.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
@@ -475,7 +477,7 @@ export default function ContextEngineeringPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <p>
-                  Most firms invest in AI tools and hope the tools redesign
+                  Many firms invest in AI tools and hope the tools redesign
                   the work. They do not. AI delivers durable value only when
                   your knowledge, your standards, and your way of working are
                   structured into the system that sits beneath those tools.
@@ -504,8 +506,8 @@ export default function ContextEngineeringPage() {
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
                 We help businesses structure their knowledge,
                 standards, and client history into systems that make every AI
-                interaction more useful. Together we will identify where your
-                context gaps are and which layer to build first.
+                interaction more useful. Together we will{' '}
+                <Link href="/services/diagnose" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">identify where your context gaps are</Link> and which layer to build first.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -529,8 +531,8 @@ export default function ContextEngineeringPage() {
             },
             {
               href: '/applied-ai/why-ai-projects-fail',
-              title: 'Avoiding Common Pitfalls',
-              description: 'Three fixable problems explain why most AI projects stall.',
+              title: 'Why AI Projects Fail',
+              description: 'Five predictable reasons AI projects stall, and how to fix them.',
             },
             {
               href: '/applied-ai',

@@ -190,7 +190,9 @@ export default function HomePage() {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p>
-                Our approach starts with diagnosis, not technology. We work with you to
+                Our approach to{' '}
+                <Link href="/ai-consulting" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI consulting</Link>{' '}
+                starts with diagnosis, not technology. We work with you to
                 review your operations and pinpoint where you'll get the biggest return:
                 better quality, less wasted effort, and your team focused where they add
                 the most value.
@@ -434,7 +436,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Case Study — Social Proof */}
+      {/* Case Study: Social Proof */}
       <section className="py-24 px-6 lg:px-8 bg-slate">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
