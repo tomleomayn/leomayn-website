@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'Why AI Projects Fail and How to Make Yours Succeed | Leomayn',
@@ -38,9 +39,16 @@ export default function WhyAIProjectsFailPage() {
     'articleSection': 'Operations',
     'keywords': ['why AI projects fail', 'AI implementation', 'workflow redesign', 'AI failure', 'operations'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -146,6 +154,7 @@ export default function WhyAIProjectsFailPage() {
                 reasons explain why many AI projects stall. All of them are fixable.
               </p>
             </div>
+            <ArticleByline published="2026-02-11" updated="2026-06-11" />
           </div>
         </section>
 

@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'AI Agents for Business: Where to Draw the Line | Leomayn',
@@ -38,9 +39,16 @@ export default function AIAgentsForBusinessPage() {
     'articleSection': 'AI Agents',
     'keywords': ['AI agents', 'agentic AI', 'AI governance', 'professional services', 'operating architecture'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -105,6 +113,7 @@ export default function AIAgentsForBusinessPage() {
                 79% of companies now use agentic AI. Fewer than one in 20 capture real value. The difference is governance.
               </p>
             </div>
+            <ArticleByline published="2026-02-12" />
           </div>
         </section>
 

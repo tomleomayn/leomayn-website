@@ -4,6 +4,7 @@ import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 import RelatedPages from '@/components/RelatedPages'
+import ArticleByline from '@/components/ArticleByline'
 
 export const metadata = {
   title: 'The Operating Architecture Your AI Tools Need | Leomayn',
@@ -38,9 +39,16 @@ export default function OperatingArchitecturePage() {
     'articleSection': 'Framework',
     'keywords': ['operating architecture', 'workflow design', 'AI integration', 'professional services', 'technology stack'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -107,6 +115,7 @@ export default function OperatingArchitecturePage() {
                 firms skip this layer. That is why their tools don&apos;t stick.
               </p>
             </div>
+            <ArticleByline published="2026-02-11" />
           </div>
         </section>
 

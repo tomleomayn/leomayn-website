@@ -5,6 +5,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
 import BlurText from '@/components/reactbits/BlurText'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 // Extend window interface for dataLayer
 declare global {
@@ -103,8 +104,28 @@ export default function ContactPage() {
     }))
   }
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    'name': 'Contact Leomayn',
+    'url': 'https://leomayn.com/contact',
+    'mainEntity': {
+      '@type': 'Organization',
+      'name': 'Leomayn',
+      'url': 'https://leomayn.com',
+      'email': 'hello@leomayn.com',
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'contactType': 'sales',
+        'email': 'hello@leomayn.com',
+        'telephone': '+44 20 8058 1513',
+      },
+    },
+  }
+
   return (
     <>
+      <SchemaMarkup data={contactSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}

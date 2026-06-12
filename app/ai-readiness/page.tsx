@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
+import ArticleByline from '@/components/ArticleByline'
 import Link from 'next/link'
 
 export const metadata = {
@@ -37,9 +38,16 @@ export default function AIReadinessPage() {
     'articleSection': 'AI Readiness',
     'keywords': ['AI readiness', 'operational readiness', 'AI implementation', 'AI strategy'],
     'author': {
-      '@type': 'Organization',
-      'name': 'Leomayn',
-      'url': 'https://leomayn.com',
+      '@type': 'Person',
+      'name': 'Tom Jones',
+      'jobTitle': 'Founder',
+      'url': 'https://leomayn.com/about',
+      'sameAs': 'https://www.linkedin.com/in/thomasallanjones/',
+      'worksFor': {
+        '@type': 'Organization',
+        'name': 'Leomayn',
+        'url': 'https://leomayn.com',
+      },
     },
     'publisher': {
       '@type': 'Organization',
@@ -150,6 +158,7 @@ export default function AIReadinessPage() {
                 the right model. It is about understanding the work underneath it.
               </p>
             </div>
+            <ArticleByline published="2026-03-30" updated="2026-06-11" />
           </div>
         </section>
 

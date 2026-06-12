@@ -7,13 +7,13 @@ import ScrollReveal from '@/components/ScrollReveal'
 import BlurText from '@/components/reactbits/BlurText'
 
 export const metadata = {
-  title: 'AI consulting for service organisations | Leomayn',
+  title: 'AI Workflow Redesign and Implementation Services | Leomayn',
   description: 'We diagnose what\'s broken, redesign how work flows, then use AI to scale what works. Workflow redesign and AI implementation for service organisations.',
   alternates: {
     canonical: '/services',
   },
   openGraph: {
-    title: 'AI consulting for service organisations | Leomayn',
+    title: 'AI Workflow Redesign and Implementation Services | Leomayn',
     description: 'We diagnose what\'s broken, redesign how work flows, then use AI to scale what works. Workflow redesign and AI implementation for service organisations.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
@@ -44,9 +44,21 @@ export default function ServicesPage() {
     ]
   }
 
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': [
+      { '@type': 'ListItem', 'position': 1, 'item': { '@type': 'Service', 'name': 'Diagnose', 'description': 'A delivery friction audit that finds where capacity is stuck.', 'url': 'https://leomayn.com/services/diagnose', 'provider': { '@type': 'Organization', 'name': 'Leomayn' } } },
+      { '@type': 'ListItem', 'position': 2, 'item': { '@type': 'Service', 'name': 'Define', 'description': 'A prioritised roadmap with business cases and delivery sequences.', 'url': 'https://leomayn.com/services/define', 'provider': { '@type': 'Organization', 'name': 'Leomayn' } } },
+      { '@type': 'ListItem', 'position': 3, 'item': { '@type': 'Service', 'name': 'Deliver', 'description': 'Build, test, and deploy working automation with full ownership transferred to you.', 'url': 'https://leomayn.com/services/deliver', 'provider': { '@type': 'Organization', 'name': 'Leomayn' } } },
+      { '@type': 'ListItem', 'position': 4, 'item': { '@type': 'Service', 'name': 'Support', 'description': 'Ongoing optimisation, monitoring, and applied AI coaching.', 'url': 'https://leomayn.com/services/support', 'provider': { '@type': 'Organization', 'name': 'Leomayn' } } },
+    ],
+  }
+
   return (
     <>
       <SchemaMarkup data={breadcrumbSchema} />
+      <SchemaMarkup data={servicesSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}

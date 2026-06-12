@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import SpotlightCard from '@/components/reactbits/SpotlightCard'
 import RelatedPages from '@/components/RelatedPages'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 export const metadata = {
   title: 'About Us | AI Consultants for Professional Services | Leomayn',
@@ -24,8 +25,37 @@ export const metadata = {
 }
 
 export default function AboutPage() {
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    'name': 'Tom Jones',
+    'jobTitle': 'Founder',
+    'url': 'https://leomayn.com/about',
+    'sameAs': ['https://www.linkedin.com/in/thomasallanjones/'],
+    'worksFor': {
+      '@type': 'Organization',
+      'name': 'Leomayn',
+      'url': 'https://leomayn.com',
+    },
+  }
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'Leomayn',
+    'url': 'https://leomayn.com',
+    'logo': 'https://leomayn.com/logo/logo-social-1200x630.png',
+    'description': 'AI consultancy. We design, build, and manage AI agents that get real work done.',
+    'founder': {
+      '@type': 'Person',
+      'name': 'Tom Jones',
+    },
+  }
+
   return (
     <>
+      <SchemaMarkup data={personSchema} />
+      <SchemaMarkup data={organizationSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero Section */}

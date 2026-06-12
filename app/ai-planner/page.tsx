@@ -4,6 +4,7 @@ import Link from 'next/link'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
+import SchemaMarkup from '@/components/SchemaMarkup'
 
 const trackCTA = () => {
   if (typeof window !== 'undefined' && window.dataLayer) {
@@ -15,8 +16,29 @@ const trackCTA = () => {
 }
 
 export default function PlannerLandingPage() {
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': 'AI Deployment Planner',
+    'url': 'https://leomayn.com/ai-planner',
+    'applicationCategory': 'BusinessApplication',
+    'operatingSystem': 'Web',
+    'description': 'A free assessment that shows where AI will have the most impact in your business, with a prioritised plan and practical next steps.',
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'GBP',
+    },
+    'provider': {
+      '@type': 'Organization',
+      'name': 'Leomayn',
+      'url': 'https://leomayn.com',
+    },
+  }
+
   return (
     <>
+      <SchemaMarkup data={softwareSchema} />
       <NavBar />
       <main className="min-h-screen">
         {/* Hero */}
