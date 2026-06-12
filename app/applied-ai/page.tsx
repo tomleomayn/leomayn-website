@@ -61,6 +61,12 @@ const insights = [
     href: '/applied-ai/ai-agents-for-business',
     category: 'AI Agents',
   },
+  {
+    title: 'The AI sophistication gap: why adoption is not enough',
+    description: '90% of employees at one firm used AI regularly. Only 5% used it well. The gap between adoption and sophistication is where organisations lose value.',
+    href: '/applied-ai/sophistication-gap',
+    category: 'Capability',
+  },
 ]
 
 export default function AppliedAIPage() {

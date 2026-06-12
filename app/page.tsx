@@ -623,6 +623,38 @@ className="inline-flex items-center justify-center font-sans font-semibold text-
         </div>
       </section>
 
+      {/* Self-Service Tools */}
+      <section className="py-24 px-6 lg:px-8 bg-pearl">
+        <div className="max-w-4xl mx-auto">
+          <ScrollReveal>
+            <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate text-center mb-4">
+              Not ready to talk? Start here.
+            </h2>
+            <p className="text-lg text-slate/70 text-center mb-12 max-w-2xl mx-auto">
+              Two free tools to help you figure out where AI fits before you speak to anyone.
+            </p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-8">
+            <ScrollReveal delay={0}>
+              <Link href="/ai-planner" className="block bg-chalk rounded-lg p-8 hover:shadow-lg transition-all group h-full">
+                <span className="text-sm font-sans font-bold uppercase tracking-widest text-coral-accessible mb-3 block">Free tool</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-3 group-hover:text-coral-accessible transition-colors">AI Deployment Planner</h3>
+                <p className="text-base font-sans text-slate/70 mb-4">Answer a few questions about your business. Get a prioritised AI deployment plan in five minutes.</p>
+                <span className="text-sm font-sans font-semibold text-coral-accessible group-hover:underline">Try the planner &rarr;</span>
+              </Link>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <Link href="/ai-readiness" className="block bg-chalk rounded-lg p-8 hover:shadow-lg transition-all group h-full">
+                <span className="text-sm font-sans font-bold uppercase tracking-widest text-coral-accessible mb-3 block">Assessment</span>
+                <h3 className="text-2xl font-serif leading-snug text-slate mb-3 group-hover:text-coral-accessible transition-colors">AI Readiness</h3>
+                <p className="text-base font-sans text-slate/70 mb-4">Find out where your organisation stands on readiness, and what to fix before you build anything.</p>
+                <span className="text-sm font-sans font-semibold text-coral-accessible group-hover:underline">Check your readiness &rarr;</span>
+              </Link>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-24 px-6 lg:px-8 bg-slate">
         <div className="max-w-3xl mx-auto text-center">
