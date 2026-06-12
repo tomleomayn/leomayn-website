@@ -6,14 +6,14 @@ import ScrollReveal from '@/components/ScrollReveal'
 import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
-  title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
-  description: 'Design the right AI solution once. We create detailed blueprints covering workflows, architecture, and governance before building begins. Learn more.',
+  title: 'AI Strategy Consulting: Get the Design Right First | Leomayn',
+  description: 'Design the right AI solution once. Detailed blueprints covering workflows, architecture, and governance before building begins.',
   alternates: {
     canonical: '/services/define',
   },
   openGraph: {
-    title: 'AI Strategy & Solution Design - Define Phase | Leomayn',
-    description: 'Design the right AI solution once. We create detailed blueprints covering workflows, architecture, and governance before building begins. Learn more.',
+    title: 'AI Strategy Consulting: Get the Design Right First | Leomayn',
+    description: 'Design the right AI solution once. Detailed blueprints covering workflows, architecture, and governance before building begins.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,

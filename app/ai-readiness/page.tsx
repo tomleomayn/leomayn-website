@@ -5,15 +5,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'AI Readiness for Professional Services | Leomayn',
-  description: 'Most professional services firms have tried AI tools. Few have the operational foundations to make them stick. Here is what readiness actually means.',
+  title: 'AI Readiness: What to Fix Before You Build Anything | Leomayn',
+  description: 'Most firms have tried AI tools. Few have the operational foundations to make them stick. Four readiness gaps to close before AI will deliver value.',
   keywords: ['AI readiness', 'AI readiness assessment', 'professional services AI', 'AI implementation', 'operational readiness', 'AI strategy'],
   alternates: {
     canonical: '/ai-readiness',
   },
   openGraph: {
-    title: 'AI Readiness for Professional Services | Leomayn',
-    description: 'Most professional services firms have tried AI tools. Few have the operational foundations to make them stick.',
+    title: 'AI Readiness: What to Fix Before You Build Anything | Leomayn',
+    description: 'Most firms have tried AI tools. Few have the operational foundations to make them stick. Four readiness gaps to close before AI will deliver value.',
     images: [{
       url: 'https://leomayn.com/logo/logo-social-1200x630.png',
       width: 1200,
