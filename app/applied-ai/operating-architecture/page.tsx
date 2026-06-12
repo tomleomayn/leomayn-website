@@ -178,7 +178,7 @@ export default function OperatingArchitecturePage() {
                 {
                   num: '4',
                   title: 'Technology stack and integration',
-                  desc: 'The systems of record. How AI tools connect to those systems. How data flows between tools without manual intervention. This is where most firms start — and where most get stuck.',
+                  desc: 'The systems of record. How AI tools connect to those systems. How data flows between tools without manual intervention. This is where many firms start, and where many get stuck.',
                 },
                 {
                   num: '5',
@@ -218,7 +218,7 @@ export default function OperatingArchitecturePage() {
                 <p>
                   Consider how these layers work together. A professional services firm
                   generates proposals regularly. The typical process involves senior people
-                  spending four to six hours per proposal — gathering client context, selecting
+                  spending four to six hours per proposal: gathering client context, selecting
                   services, calculating pricing, and writing the document.
                 </p>
               </ScrollReveal>
@@ -257,7 +257,8 @@ export default function OperatingArchitecturePage() {
                   <p className="text-base text-slate/70 mt-4">
                     But this only works because all six layers are in place. The value model
                     defines how pricing connects to complexity. The workflow defines which
-                    decisions need human input. The data layer provides the context AI needs.
+                    decisions need human input. The data layer provides the{' '}
+                    <Link href="/applied-ai/context-engineering" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">context AI needs</Link>.
                     Remove any layer and the automation breaks.
                   </p>
                 </div>
@@ -309,7 +310,8 @@ export default function OperatingArchitecturePage() {
                 <p>
                   These three criteria separate genuine integration from surface adoption.
                   The firms seeing real value from AI tend to meet all three. The rest are
-                  running pilots.
+                  running pilots that{' '}
+                  <Link href="/applied-ai/why-ai-projects-fail" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">stall before they scale</Link>.
                 </p>
               </ScrollReveal>
             </div>
@@ -339,9 +341,9 @@ export default function OperatingArchitecturePage() {
             <ScrollReveal delay={0.1}>
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
                 You do not need to redesign your entire operating architecture to start.
-                Choose one workflow that is repeatable, measurable, and commercially
                 important. We will help you <Link href="/services/diagnose" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral text-white transition-colors">diagnose it</Link> against these six layers and
-                rebuild it with intention.
+                rebuild it with intention. The free{' '}
+                <Link href="/ai-planner" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral text-white transition-colors">AI Deployment Planner</Link> is a quick way to find that first workflow.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>

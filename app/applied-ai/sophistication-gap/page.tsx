@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import SchemaMarkup from '@/components/SchemaMarkup'
 import ScrollReveal from '@/components/ScrollReveal'
 import Link from 'next/link'
+import RelatedPages from '@/components/RelatedPages'
 
 export const metadata = {
   title: 'The AI Sophistication Gap: Why Adoption Is Not Enough | Leomayn',
@@ -113,7 +114,7 @@ export default function SophisticationGapPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <h2 className="text-3xl lg:text-4xl font-serif leading-tight text-slate mb-8">
-                The number everyone celebrates is the wrong one
+                Adoption is the easy number to track
               </h2>
             </ScrollReveal>
             <div className="space-y-6 text-lg leading-relaxed text-slate">
@@ -139,7 +140,7 @@ export default function SophisticationGapPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p>
-                  Most firms track logins, licence utilisation, and monthly active users.
+                  Many firms track logins, licence utilisation, and monthly active users.
                   These metrics confirm that people have opened the tool. They say nothing
                   about whether the tool is creating value.
                 </p>
@@ -192,7 +193,9 @@ export default function SophisticationGapPage() {
                 </h3>
                 <p className="text-lg leading-relaxed text-slate">
                   Rather than issuing instructions and hoping for the best, sophisticated
-                  users set context. They define roles, provide examples of good output,
+                  users{' '}
+                  <Link href="/applied-ai/context-engineering" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">set context</Link>.
+                  They define roles, provide examples of good output,
                   and explain the reasoning they expect. They are not writing longer prompts
                   for the sake of it. They are giving the tool enough context to produce
                   something useful on the first pass.
@@ -271,7 +274,8 @@ export default function SophisticationGapPage() {
                 <p>
                   Junior staff still matter. But training them to use AI without first
                   building their domain knowledge creates a different risk: confident use
-                  of tools they cannot evaluate.
+                  of{' '}
+                  <Link href="/applied-ai/why-ai-projects-fail" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">tools they cannot evaluate</Link>.
                 </p>
               </ScrollReveal>
             </div>
@@ -406,7 +410,8 @@ export default function SophisticationGapPage() {
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
                 Your team is already using AI. The question is whether they are using it
                 well enough to create real value. We will diagnose where the sophistication
-                gap sits in your operations and build a plan to close it.
+                gap sits in your operations and build a plan to close it. The free{' '}
+                <Link href="/ai-planner" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> is a quick first read on where you stand.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -419,6 +424,26 @@ export default function SophisticationGapPage() {
             </ScrollReveal>
           </div>
         </section>
+        <RelatedPages
+          heading="More from Applied AI"
+          pages={[
+            {
+              href: '/applied-ai/context-engineering',
+              title: 'Context Engineering',
+              description: 'The skill that separates sophisticated AI users from everyone else.',
+            },
+            {
+              href: '/applied-ai/why-ai-projects-fail',
+              title: 'Why AI Projects Fail',
+              description: 'Five predictable reasons AI projects stall, and how to fix them.',
+            },
+            {
+              href: '/applied-ai',
+              title: 'All Articles',
+              description: 'Browse all Applied AI perspectives.',
+            },
+          ]}
+        />
       </main>
       <Footer />
     </>

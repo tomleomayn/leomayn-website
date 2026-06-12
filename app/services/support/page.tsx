@@ -152,10 +152,12 @@ export default function SupportPage() {
                   Applied AI coaching
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  We build confidence in using AI in daily work through three layers: foundational
-                  knowledge of what AI can and cannot do, hands-on training with the tools your
-                  team uses, and practice on real situations from your actual processes. Your
-                  team learns to apply AI effectively in their specific context.
+                  We help your team{' '}
+                  <Link href="/applied-ai/sophistication-gap" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">use AI with real sophistication</Link>{' '}
+                  through three layers: foundational knowledge of what AI can and cannot do,
+                  hands-on training with the tools your team uses, and practice on real
+                  situations from your actual processes. Your team learns to apply AI
+                  effectively in their specific context.
                 </p>
               </div>
 
@@ -393,7 +395,9 @@ export default function SupportPage() {
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
               Book a call to discuss how ongoing support keeps your automation
-              optimised as your business scales.
+              optimised as your business scales. To gauge where your team&apos;s
+              capability stands, start with an{' '}
+              <Link href="/ai-readiness" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI readiness</Link> view.
             </p>
             <Link
               href="/contact"

@@ -217,7 +217,8 @@ export default function ScaleWithoutHeadcountPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-lg leading-relaxed text-slate mb-12">
-                Leverage comes from redesigning how work flows through your organisation
+                Leverage comes from{' '}
+                <Link href="/applied-ai/operating-architecture" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">redesigning how work flows through your organisation</Link>{' '}
                 so that each person&apos;s effort compounds rather than dissipates.
               </p>
             </ScrollReveal>
@@ -333,7 +334,8 @@ export default function ScaleWithoutHeadcountPage() {
             <div className="space-y-6 text-lg leading-relaxed text-slate">
               <ScrollReveal delay={0.1}>
                 <p>
-                  <a href="https://hbr.org/2026/02/9-trends-shaping-work-in-2026-and-beyond" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Gartner</a> found that 81% of CIOs report an AI skill gap stopping them from
+                  <a href="https://hbr.org/2026/02/9-trends-shaping-work-in-2026-and-beyond" target="_blank" rel="noopener noreferrer" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">Gartner</a> found that 81% of CIOs report{' '}
+                  <Link href="/applied-ai/sophistication-gap" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">an AI skill gap</Link> stopping them from
                   meeting their objectives. The natural response is to hire AI talent.
                 </p>
               </ScrollReveal>
@@ -431,7 +433,8 @@ export default function ScaleWithoutHeadcountPage() {
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
                 Every firm has capacity trapped in low-value work. The question is how much,
                 and where. We will identify the workflows with the highest leverage potential
-                in your operations.
+                in your operations. The free{' '}
+                <Link href="/ai-planner" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> is a fast way to spot the first one.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>

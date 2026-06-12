@@ -140,8 +140,9 @@ export default function AIAgentsForBusinessPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.25}>
                 <p>
-                  For professional services firms, agents offer something specific: operational
-                  leverage without proportional headcount growth. An agent that handles meeting
+                  For professional services firms, agents offer something specific:{' '}
+                  <Link href="/applied-ai/scale-without-headcount" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">operational leverage without proportional headcount growth</Link>.
+                  An agent that handles meeting
                   preparation, client research, or proposal drafting removes the work about work
                   that keeps your best people from client-facing activity.
                 </p>
@@ -372,7 +373,7 @@ export default function AIAgentsForBusinessPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
                 <p>
-                  Most organisations invert this. They spend on technology and wonder why
+                  Many organisations invert this. They spend on technology and wonder why
                   adoption stalls.
                 </p>
               </ScrollReveal>
@@ -432,7 +433,8 @@ export default function AIAgentsForBusinessPage() {
               <p className="text-xl font-sans leading-relaxed text-white mb-8">
                 Pick one workflow where an agent could augment your team&apos;s capacity.
                 <Link href="/services/diagnose" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors"> Diagnose it</Link>.
-                Define the boundaries. Then build.
+                Define the boundaries. Then build. Not sure which workflow? The{' '}
+                <Link href="/ai-planner" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> is a free place to start.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>

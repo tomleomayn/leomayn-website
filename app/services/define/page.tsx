@@ -188,8 +188,9 @@ export default function DefinePage() {
                   Workflow redesign
                 </h3>
                 <p className="text-base leading-relaxed text-slate">
-                  Future state process maps showing how work will flow once automation
-                  is in place. We document decision points, error handling, exception
+                  Future state process maps showing{' '}
+                  <Link href="/applied-ai/operating-architecture" className="underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">how work will flow once automation is in place</Link>.
+                  We document decision points, error handling, exception
                   management, and human-in-the-loop requirements.
                 </p>
               </div>
@@ -398,7 +399,8 @@ export default function DefinePage() {
             </h2>
             <p className="text-xl font-sans leading-relaxed text-white mb-8">
               Book a call to discuss your operational challenge and how the Define
-              phase creates clarity before building begins.
+              phase creates clarity before building begins. The free{' '}
+              <Link href="/ai-planner" className="text-white underline decoration-coral/30 underline-offset-2 hover:decoration-coral transition-colors">AI Deployment Planner</Link> is a useful starting point.
             </p>
             <Link
               href="/contact"
