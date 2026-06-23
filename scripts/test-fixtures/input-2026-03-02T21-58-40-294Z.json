@@ -1,0 +1,57 @@
+{
+  "qualification": {
+    "name": "Test Solicitor",
+    "email": "test2@leomayn.com",
+    "company": "Test Law LLP",
+    "role": "operations-director",
+    "companyWebsite": "",
+    "turnover": "1m-5m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "law",
+    "teamSize": "201-500",
+    "strategicFocus": {
+      "primary": "costs",
+      "secondary": "quality"
+    },
+    "painPoints": [
+      {
+        "area": "invoicing",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "reporting",
+        "symptom": "tool-limitation"
+      }
+    ],
+    "processKnowledge": "partially-documented",
+    "dataFoundations": "mixed",
+    "aiAdoption": "not-started",
+    "techEnvironment": "integrated",
+    "billableSplit": 50
+  },
+  "sizing": [
+    {
+      "archetypeId": "management-reporting",
+      "peopleInvolved": "4-8",
+      "weeklyHours": "5-15",
+      "costPerPerson": "tier-3",
+      "freeText": ""
+    },
+    {
+      "archetypeId": "time-invoicing",
+      "peopleInvolved": "9-15",
+      "weeklyHours": "5-15",
+      "costPerPerson": "tier-2",
+      "freeText": ""
+    },
+    {
+      "archetypeId": "resource-planning",
+      "peopleInvolved": "1-3",
+      "weeklyHours": "under-5",
+      "costPerPerson": "tier-4",
+      "freeText": ""
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "qualification": {
+    "name": "Gareth Hughes",
+    "email": "tom@leomayn.com",
+    "company": "Genetic Digital",
+    "companyWebsite": "https://www.geneticdigital.co.uk/",
+    "role": "founder-ceo",
+    "roleOther": "",
+    "jobTitle": "Technical Director",
+    "turnover": "1m-5m",
+    "consentGiven": true
+  },
+  "diagnostic": {
+    "firmType": "agency",
+    "teamSize": "10-30",
+    "strategicFocus": {
+      "primary": "capability",
+      "secondary": "capacity"
+    },
+    "painPoints": [
+      {
+        "area": "research",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "handoff-friction"
+      },
+      {
+        "area": "research",
+        "symptom": "rework"
+      },
+      {
+        "area": "project-delivery",
+        "symptom": "scope-creep"
+      },
+      {
+        "area": "documents",
+        "symptom": "work-about-work"
+      },
+      {
+        "area": "documents",
+        "symptom": "production-heavy"
+      }
+    ],
+    "aiAdoption": "individual",
+    "techEnvironment": "disconnected",
+    "processKnowledge": "partially-documented",
+    "dataFoundations": "mixed",
+    "billableSplit": 25
+  }
+}
