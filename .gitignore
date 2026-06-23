@@ -76,3 +76,9 @@ qa-screenshots/
 # PDF test outputs
 scripts/test-output.*
 scripts/test-page-*.png
+
+# Supabase CLI scratch state
+supabase/.temp/
+
+# Test fixtures (local-only sample inputs)
+scripts/test-fixtures/
