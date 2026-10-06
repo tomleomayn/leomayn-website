@@ -19,7 +19,6 @@ Notion databases are accessed via API, not web scraping (WebFetch won't work on 
 |----------|----------|
 | API credentials | `leomayn-hq/.env` |
 | Database IDs | `leomayn-hq/.env` |
-| Integration docs | `leomayn-hq/integrations/notion.md` |
 | Python scripts | `leomayn-hq/automation/notion-*.py` |
 
 **Website Backlog Database:** `NOTION_DB_WEBSITE_BACKLOG` in the `.env` file
@@ -31,8 +30,7 @@ All content must follow Leomayn voice and visual standards. These live in leomay
 | Resource | Location |
 |----------|----------|
 | Voice guide | `leomayn-hq/brain/frameworks/leomayn-voice-guide.md` |
-| Visual style guide | `leomayn-hq/brain/frameworks/leomayn-visual-style-guide.md` |
-| Service framework | `leomayn-hq/brain/frameworks/service-framework-schema.md` |
+| Visual style guide | `leomayn-hq/brain/frameworks/leomayn-visual-identity.md` |
 
 **Quick voice rules:**
 - UK English only (prioritise, organisation, programme)
