@@ -40,15 +40,18 @@ export async function insertPlannerLead(data: PlannerLeadInsert): Promise<string
     return null
   }
 
+  const id = crypto.randomUUID()
   const response = await fetch(`${SUPABASE_URL}/rest/v1/planner_leads`, {
     method: 'POST',
     headers: {
       apikey: SUPABASE_ANON_KEY,
       Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
       'Content-Type': 'application/json',
-      Prefer: 'return=representation',
+      // return=minimal: the anon key has no read access to leads, so the id is
+      // generated here rather than read back.
+      Prefer: 'return=minimal',
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify({ ...data, id }),
   })
 
   if (!response.ok) {
@@ -56,8 +59,7 @@ export async function insertPlannerLead(data: PlannerLeadInsert): Promise<string
     return null
   }
 
-  const rows = await response.json()
-  return rows?.[0]?.id ?? null
+  return id
 }
 
 // --- Resource leads ---
