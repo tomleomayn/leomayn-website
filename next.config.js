@@ -92,6 +92,18 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=()'
           }
         ]
+      },
+      {
+        // Shared documents: allow camera and microphone so a screen recorder's
+        // camera bubble (e.g. the Loom extension) can run on the page. Later
+        // entries override earlier ones for the same header key.
+        source: '/d/:path*',
+        headers: [
+          {
+            key: 'Permissions-Policy',
+            value: 'geolocation=()'
+          }
+        ]
       }
     ]
   },
