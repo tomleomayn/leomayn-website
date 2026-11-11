@@ -1,0 +1,9 @@
+# Orca worktree configuration (https://www.onorca.dev/docs/model/worktrees).
+# node_modules is shared into every new worktree (one copy; 521 MB saved per worktree); the
+# setup script still runs `npm install` so a changed lockfile is honoured. .env and .env.local
+# are copied per worktree by .worktreeinclude. .next is build output and is never shared.
+worktree:
+  sharedDirectories:
+    - node_modules
+scripts:
+  setup: npm install
